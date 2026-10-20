@@ -62,6 +62,12 @@ object CertLibrary {
         cache ?: load(context).also { cache = it }
     }
 
+    /** Used by screenshot tests, which read the JSON files straight from the source folder. */
+    fun preload(texts: List<String>) {
+        cache = texts.mapNotNull { runCatching { parse(JSONObject(it)) }.getOrNull() }
+            .sortedWith(compareBy({ it.order }, { it.name }))
+    }
+
     private fun load(context: Context): List<Certification> {
         val files = context.assets.list("certs").orEmpty().filter { it.startsWith("cert_") && it.endsWith(".json") }
         return files.mapNotNull { name ->

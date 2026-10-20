@@ -29,6 +29,11 @@ class StoreScreenshots {
     @get:Rule
     val paparazzi = Paparazzi(deviceConfig = DeviceConfig.PIXEL_6, maxPercentDifference = 100.0)
 
+    init {
+        val dir = listOf(java.io.File("src/main/assets/certs"), java.io.File("app/src/main/assets/certs")).first { it.exists() }
+        com.qortn.certo.data.CertLibrary.preload(dir.listFiles()!!.filter { it.name.endsWith(".json") }.map { it.readText() })
+    }
+
     private fun store(): StudyStore {
         val s = StudyStore(paparazzi.context)
         s.isPremium = true
