@@ -24,9 +24,14 @@ jobs:
         run: |
           set -o pipefail
           ./gradlew --no-daemon bundleRelease -PversionCode=$((100 + ${{ github.run_number }})) 2>&1 | tee build.log
+      - name: Render store screenshots
+        continue-on-error: true
+        run: ./gradlew --no-daemon recordPaparazziDebug 2>&1 | tail -40 > shots.log
       - name: Publish result to the builds branch
         run: |
-          mkdir -p out
+          mkdir -p out/screens
+          cp shots.log out/ 2>/dev/null || true
+          find app/src/test/snapshots -name '*.png' -exec cp {} out/screens/ \; 2>/dev/null || true
           cp build.log out/build.log
           cp app/build/outputs/bundle/release/app-release.aab out/certo-unsigned.aab 2>/dev/null || true
           echo "${{ steps.build.outcome }} run=${{ github.run_number }} sha=${{ github.sha }} versionCode=$((100 + ${{ github.run_number }}))" > out/STATUS
