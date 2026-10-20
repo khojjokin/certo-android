@@ -41,7 +41,7 @@ class StudyStore(private val context: Context) {
     fun update(transform: (AppData) -> AppData) {
         data = transform(data)
         val json = data.toJson()
-        prefs.edit().putString(storageKey, json.toString()).apply()
+        runCatching { prefs.edit().putString(storageKey, json.toString()).apply() }
         onSave?.invoke(json)
     }
 
@@ -49,18 +49,18 @@ class StudyStore(private val context: Context) {
         val appearance = data.appearance
         val decoded = runCatching { AppData.fromJson(remote) }.getOrNull() ?: return
         data = decoded.copy(appearance = appearance)
-        prefs.edit().putString(storageKey, data.toJson().toString()).apply()
+        runCatching { prefs.edit().putString(storageKey, data.toJson().toString()).apply() }
     }
 
     fun encoded(): JSONObject = data.toJson()
 
     fun clearLocal(userId: String) {
-        prefs.edit().remove("appdata.user.$userId").apply()
+        runCatching { prefs.edit().remove("appdata.user.$userId").apply() }
     }
 
     fun applySubscriptionsEnabled(on: Boolean) {
         subscriptionsEnabled = on
-        prefs.edit().putBoolean("subsEnabled", on).apply()
+        runCatching { prefs.edit().putBoolean("subsEnabled", on).apply() }
     }
 
     /** Premium is effectively on when the admin has switched subscriptions off. */
