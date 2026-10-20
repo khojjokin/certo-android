@@ -27,7 +27,7 @@ import org.junit.Test
 /** Renders real app screens with sample progress for the Google Play listing. */
 class StoreScreenshots {
     @get:Rule
-    val paparazzi = Paparazzi(deviceConfig = DeviceConfig.PIXEL_6, maxPercentDifference = 100.0)
+    val paparazzi = Paparazzi(deviceConfig = DeviceConfig.PIXEL_6, maxPercentDifference = 100.0, useDeviceResolution = true)
 
     init {
         val dir = listOf(java.io.File("src/main/assets/certs"), java.io.File("app/src/main/assets/certs")).first { it.exists() }
