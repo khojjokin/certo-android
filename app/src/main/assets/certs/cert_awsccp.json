@@ -1,0 +1,2949 @@
+{
+ "id": "awsccp",
+ "order": 4,
+ "name": "AWS Cloud Practitioner",
+ "shortName": "AWS CCP",
+ "vendor": "AWS",
+ "examCode": "CLF-C02",
+ "symbol": "cloud",
+ "colorHex": "EAB308",
+ "passingPercent": 70,
+ "summary": "Cloud concepts, AWS security, core services, billing and support.",
+ "domains": [
+  {
+   "id": "concepts",
+   "name": "Cloud Concepts",
+   "summary": "Why the cloud and how to design for it on AWS.",
+   "topics": [
+    "Benefits of the AWS Cloud",
+    "Well-Architected Framework pillars",
+    "Migration strategies and the Cloud Adoption Framework",
+    "Cloud economics"
+   ]
+  },
+  {
+   "id": "sec",
+   "name": "Security & Compliance",
+   "summary": "Security and compliance in the AWS Cloud.",
+   "topics": [
+    "Shared responsibility model",
+    "Security, governance and compliance concepts",
+    "Access management: IAM, root user, MFA, Identity Center",
+    "Security services and resources"
+   ]
+  },
+  {
+   "id": "tech",
+   "name": "Cloud Technology & Services",
+   "summary": "The core AWS services and global infrastructure.",
+   "topics": [
+    "Deploying and operating in AWS",
+    "Global infrastructure: Regions, AZs, edge",
+    "Compute services",
+    "Database services",
+    "Network services",
+    "Storage services",
+    "AI/ML and analytics services",
+    "Other services: messaging, IoT, developer tools"
+   ]
+  },
+  {
+   "id": "billing",
+   "name": "Billing, Pricing & Support",
+   "summary": "Pricing, billing and support on AWS.",
+   "topics": [
+    "Pricing models: On-Demand, Reserved, Spot, Savings Plans",
+    "Billing, budget and cost management tools",
+    "Technical resources and AWS Support plans"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "awsccp-001",
+   "domain": "concepts",
+   "prompt": "Which is a benefit of cloud computing?",
+   "choices": [
+    "Trade variable expense for capital expense",
+    "Stop guessing capacity",
+    "Increase time to market",
+    "Own all hardware"
+   ],
+   "answer": 1,
+   "explanation": "Elastic scaling means you no longer have to guess capacity up front."
+  },
+  {
+   "id": "awsccp-002",
+   "domain": "concepts",
+   "prompt": "Which pillar of the Well-Architected Framework focuses on recovering from failures?",
+   "choices": [
+    "Security",
+    "Reliability",
+    "Cost Optimization",
+    "Sustainability"
+   ],
+   "answer": 1,
+   "explanation": "Reliability covers recovering from failures and meeting demand."
+  },
+  {
+   "id": "awsccp-003",
+   "domain": "concepts",
+   "prompt": "Running applications across multiple Availability Zones primarily improves:",
+   "choices": [
+    "Cost",
+    "High availability",
+    "Latency to one user",
+    "Compliance"
+   ],
+   "answer": 1,
+   "explanation": "Multiple AZs protect against a single data-centre failure."
+  },
+  {
+   "id": "awsccp-004",
+   "domain": "concepts",
+   "prompt": "Which describes an AWS Region?",
+   "choices": [
+    "A single data centre",
+    "A geographic area with multiple isolated AZs",
+    "An edge cache location",
+    "A VPC"
+   ],
+   "answer": 1,
+   "explanation": "A Region is a geographic area containing multiple Availability Zones."
+  },
+  {
+   "id": "awsccp-005",
+   "domain": "sec",
+   "prompt": "Under the shared responsibility model, who is responsible for physical security of data centres?",
+   "choices": [
+    "Customer",
+    "AWS",
+    "Both",
+    "Third-party auditors"
+   ],
+   "answer": 1,
+   "explanation": "AWS is responsible for security OF the cloud, including physical facilities."
+  },
+  {
+   "id": "awsccp-006",
+   "domain": "sec",
+   "prompt": "What is the best practice for the AWS account root user?",
+   "choices": [
+    "Use it daily",
+    "Enable MFA and avoid everyday use",
+    "Share it with admins",
+    "Delete it"
+   ],
+   "answer": 1,
+   "explanation": "Protect the root user with MFA and use IAM identities for daily tasks."
+  },
+  {
+   "id": "awsccp-007",
+   "domain": "sec",
+   "prompt": "Which service gives on-demand access to AWS compliance reports?",
+   "choices": [
+    "AWS Artifact",
+    "Amazon Inspector",
+    "AWS Config",
+    "Amazon Macie"
+   ],
+   "answer": 0,
+   "explanation": "AWS Artifact provides compliance reports such as SOC and ISO."
+  },
+  {
+   "id": "awsccp-008",
+   "domain": "sec",
+   "prompt": "Which service protects against DDoS attacks?",
+   "choices": [
+    "AWS Shield",
+    "Amazon GuardDuty",
+    "AWS KMS",
+    "IAM"
+   ],
+   "answer": 0,
+   "explanation": "AWS Shield (Standard is free) protects against DDoS."
+  },
+  {
+   "id": "awsccp-009",
+   "domain": "sec",
+   "prompt": "Which service detects threats by analysing CloudTrail, VPC Flow Logs and DNS logs?",
+   "choices": [
+    "Amazon GuardDuty",
+    "AWS WAF",
+    "AWS Trusted Advisor",
+    "Amazon Cognito"
+   ],
+   "answer": 0,
+   "explanation": "GuardDuty is an intelligent threat detection service."
+  },
+  {
+   "id": "awsccp-010",
+   "domain": "sec",
+   "prompt": "Which service records API calls made in an AWS account?",
+   "choices": [
+    "CloudWatch",
+    "CloudTrail",
+    "X-Ray",
+    "Config"
+   ],
+   "answer": 1,
+   "explanation": "CloudTrail logs API activity for auditing."
+  },
+  {
+   "id": "awsccp-011",
+   "domain": "tech",
+   "prompt": "Which service provides resizable virtual servers?",
+   "choices": [
+    "Amazon S3",
+    "Amazon EC2",
+    "AWS Lambda",
+    "Amazon RDS"
+   ],
+   "answer": 1,
+   "explanation": "EC2 provides virtual machines (instances)."
+  },
+  {
+   "id": "awsccp-012",
+   "domain": "tech",
+   "prompt": "Which service runs code without provisioning servers?",
+   "choices": [
+    "EC2",
+    "Lambda",
+    "Lightsail",
+    "Elastic Beanstalk"
+   ],
+   "answer": 1,
+   "explanation": "Lambda is serverless compute billed per request and duration."
+  },
+  {
+   "id": "awsccp-013",
+   "domain": "tech",
+   "prompt": "Which storage service is object storage with very high durability?",
+   "choices": [
+    "Amazon EBS",
+    "Amazon S3",
+    "Amazon EFS",
+    "Instance store"
+   ],
+   "answer": 1,
+   "explanation": "S3 is object storage designed for 11 nines of durability."
+  },
+  {
+   "id": "awsccp-014",
+   "domain": "tech",
+   "prompt": "Which service is a managed NoSQL key-value database?",
+   "choices": [
+    "Amazon RDS",
+    "Amazon DynamoDB",
+    "Amazon Redshift",
+    "Amazon Aurora"
+   ],
+   "answer": 1,
+   "explanation": "DynamoDB is a serverless NoSQL key-value and document database."
+  },
+  {
+   "id": "awsccp-015",
+   "domain": "tech",
+   "prompt": "Which service is a content delivery network?",
+   "choices": [
+    "Route 53",
+    "CloudFront",
+    "Direct Connect",
+    "Global Accelerator"
+   ],
+   "answer": 1,
+   "explanation": "CloudFront caches content at edge locations worldwide."
+  },
+  {
+   "id": "awsccp-016",
+   "domain": "tech",
+   "prompt": "Which service provides a dedicated private network connection from on-premises to AWS?",
+   "choices": [
+    "Site-to-Site VPN",
+    "AWS Direct Connect",
+    "Internet Gateway",
+    "Transit Gateway"
+   ],
+   "answer": 1,
+   "explanation": "Direct Connect is a dedicated private link that doesn't traverse the internet."
+  },
+  {
+   "id": "awsccp-017",
+   "domain": "tech",
+   "prompt": "Which service is AWS's DNS service?",
+   "choices": [
+    "Route 53",
+    "CloudFront",
+    "ELB",
+    "API Gateway"
+   ],
+   "answer": 0,
+   "explanation": "Amazon Route 53 provides DNS and domain registration."
+  },
+  {
+   "id": "awsccp-018",
+   "domain": "billing",
+   "prompt": "Which EC2 pricing option is best for interruptible, flexible workloads at the lowest cost?",
+   "choices": [
+    "On-Demand",
+    "Reserved Instances",
+    "Spot Instances",
+    "Dedicated Hosts"
+   ],
+   "answer": 2,
+   "explanation": "Spot Instances use spare capacity at large discounts but can be interrupted."
+  },
+  {
+   "id": "awsccp-019",
+   "domain": "billing",
+   "prompt": "Which tool helps forecast and visualise AWS spending over time?",
+   "choices": [
+    "AWS Budgets",
+    "Cost Explorer",
+    "Pricing Calculator",
+    "Organizations"
+   ],
+   "answer": 1,
+   "explanation": "Cost Explorer visualises historical costs and forecasts."
+  },
+  {
+   "id": "awsccp-020",
+   "domain": "billing",
+   "prompt": "Which tool estimates costs BEFORE deploying an architecture?",
+   "choices": [
+    "AWS Pricing Calculator",
+    "Cost Explorer",
+    "Billing Dashboard",
+    "Trusted Advisor"
+   ],
+   "answer": 0,
+   "explanation": "The Pricing Calculator estimates costs for planned workloads."
+  },
+  {
+   "id": "awsccp-021",
+   "domain": "billing",
+   "prompt": "Which support plan is the lowest tier that includes a designated Technical Account Manager?",
+   "choices": [
+    "Business",
+    "Enterprise On-Ramp",
+    "Developer",
+    "Basic"
+   ],
+   "answer": 1,
+   "explanation": "Enterprise On-Ramp gives access to a pool of TAMs; Enterprise gives a designated TAM. (Check current AWS docs, as plans change.)"
+  },
+  {
+   "id": "awsccp-022",
+   "domain": "billing",
+   "prompt": "Which feature of AWS Organizations combines billing for multiple accounts?",
+   "choices": [
+    "Consolidated billing",
+    "Service Control Policies",
+    "Cost tags",
+    "Savings Plans"
+   ],
+   "answer": 0,
+   "explanation": "Consolidated billing gives one bill and volume discounts across accounts."
+  },
+  {
+   "id": "awsccp-023",
+   "domain": "concepts",
+   "prompt": "A startup wants to avoid buying servers up front and pay only for the compute it actually uses. Which cloud benefit does this describe?",
+   "choices": [
+    "Trade fixed capital expense for variable expense",
+    "Benefit from massive economies of scale",
+    "Go global in minutes",
+    "Stop spending money on data center cooling only"
+   ],
+   "answer": 0,
+   "explanation": "Paying as you go replaces large up-front hardware purchases (CapEx) with variable operating expense (OpEx)."
+  },
+  {
+   "id": "awsccp-024",
+   "domain": "concepts",
+   "prompt": "Why can AWS often offer lower pay-as-you-go prices than a company could achieve on its own?",
+   "choices": [
+    "Aggregated usage from many customers creates massive economies of scale",
+    "AWS requires multi-year contracts from every customer",
+    "AWS uses only refurbished hardware",
+    "Customers manage the physical hardware themselves"
+   ],
+   "answer": 0,
+   "explanation": "Because AWS serves hundreds of thousands of customers, its scale lowers costs, which it passes on as lower prices."
+  },
+  {
+   "id": "awsccp-025",
+   "domain": "concepts",
+   "prompt": "A retailer's traffic spikes during holidays and falls afterward. Which cloud characteristic lets it add and remove capacity automatically to match demand?",
+   "choices": [
+    "Durability",
+    "Elasticity",
+    "Fault isolation",
+    "Data sovereignty"
+   ],
+   "answer": 1,
+   "explanation": "Elasticity is the ability to acquire resources when needed and release them when no longer needed."
+  },
+  {
+   "id": "awsccp-026",
+   "domain": "concepts",
+   "prompt": "Which statement best describes 'go global in minutes' as a benefit of AWS?",
+   "choices": [
+    "Applications can be deployed in multiple Regions worldwide with a few clicks",
+    "AWS automatically translates application interfaces into local languages",
+    "All AWS services are free in every country",
+    "Data is automatically replicated to every Region"
+   ],
+   "answer": 0,
+   "explanation": "AWS's global infrastructure lets you deploy to Regions around the world quickly, reducing latency for global users."
+  },
+  {
+   "id": "awsccp-027",
+   "domain": "concepts",
+   "prompt": "Which cloud deployment model runs all application parts in the cloud with no on-premises components?",
+   "choices": [
+    "Hybrid deployment",
+    "Cloud (cloud-native) deployment",
+    "On-premises (private cloud) deployment",
+    "Colocation deployment"
+   ],
+   "answer": 1,
+   "explanation": "A cloud deployment runs all parts of the application in the cloud, either migrated or built there from the start."
+  },
+  {
+   "id": "awsccp-028",
+   "domain": "concepts",
+   "prompt": "A company connects its on-premises data center to AWS and runs some workloads in each. Which deployment model is this?",
+   "choices": [
+    "Public-only",
+    "Multi-tenant SaaS",
+    "Hybrid",
+    "Edge-only"
+   ],
+   "answer": 2,
+   "explanation": "A hybrid deployment links cloud resources with existing on-premises infrastructure."
+  },
+  {
+   "id": "awsccp-029",
+   "domain": "concepts",
+   "prompt": "Amazon EC2, where the customer manages the operating system and applications, is an example of which cloud computing model?",
+   "choices": [
+    "Infrastructure as a Service (IaaS)",
+    "Software as a Service (SaaS)",
+    "Platform as a Service (PaaS)",
+    "Function as a Service only"
+   ],
+   "answer": 0,
+   "explanation": "IaaS provides virtual compute, storage and networking while the customer manages the OS and above."
+  },
+  {
+   "id": "awsccp-030",
+   "domain": "concepts",
+   "prompt": "AWS Elastic Beanstalk lets developers upload code while AWS handles capacity provisioning, load balancing and patching of the platform. Which model best fits?",
+   "choices": [
+    "Infrastructure as a Service (IaaS)",
+    "Platform as a Service (PaaS)",
+    "Software as a Service (SaaS)",
+    "On-premises virtualization"
+   ],
+   "answer": 1,
+   "explanation": "PaaS removes the need to manage underlying infrastructure so teams can focus on deploying and managing applications."
+  },
+  {
+   "id": "awsccp-031",
+   "domain": "concepts",
+   "prompt": "Which is an example of Software as a Service (SaaS)?",
+   "choices": [
+    "A virtual machine you patch yourself",
+    "A complete hosted email application used through a web browser",
+    "A managed container runtime where you deploy code",
+    "A rack of servers in your data center"
+   ],
+   "answer": 1,
+   "explanation": "SaaS delivers a finished product run and managed by the provider; users simply consume it."
+  },
+  {
+   "id": "awsccp-032",
+   "domain": "concepts",
+   "prompt": "Which Well-Architected pillar focuses on minimizing the environmental impact of running cloud workloads?",
+   "choices": [
+    "Sustainability",
+    "Cost Optimization",
+    "Performance Efficiency",
+    "Operational Excellence"
+   ],
+   "answer": 0,
+   "explanation": "The Sustainability pillar covers reducing energy use and improving resource efficiency to lower environmental impact."
+  },
+  {
+   "id": "awsccp-033",
+   "domain": "concepts",
+   "prompt": "Which Well-Architected pillar includes the design principle 'perform operations as code'?",
+   "choices": [
+    "Reliability",
+    "Operational Excellence",
+    "Security",
+    "Sustainability"
+   ],
+   "answer": 1,
+   "explanation": "Operational Excellence emphasizes running and monitoring systems, including defining operations as code."
+  },
+  {
+   "id": "awsccp-034",
+   "domain": "concepts",
+   "prompt": "A team wants to choose the right instance types and use serverless technologies so resources meet requirements as demand changes. Which Well-Architected pillar is this?",
+   "choices": [
+    "Reliability",
+    "Cost Optimization",
+    "Performance Efficiency",
+    "Operational Excellence"
+   ],
+   "answer": 2,
+   "explanation": "Performance Efficiency is about using computing resources efficiently to meet requirements and maintaining that efficiency as demand changes."
+  },
+  {
+   "id": "awsccp-035",
+   "domain": "concepts",
+   "prompt": "'Apply security at all layers' and 'enable traceability' are design principles of which Well-Architected pillar?",
+   "choices": [
+    "Reliability",
+    "Operational Excellence",
+    "Security",
+    "Performance Efficiency"
+   ],
+   "answer": 2,
+   "explanation": "These principles belong to the Security pillar, which focuses on protecting data, systems and assets."
+  },
+  {
+   "id": "awsccp-036",
+   "domain": "concepts",
+   "prompt": "Which Well-Architected pillar includes 'adopt a consumption model' and 'measure overall efficiency' as design principles?",
+   "choices": [
+    "Sustainability",
+    "Performance Efficiency",
+    "Reliability",
+    "Cost Optimization"
+   ],
+   "answer": 3,
+   "explanation": "Cost Optimization focuses on avoiding unnecessary cost, including paying only for what you consume."
+  },
+  {
+   "id": "awsccp-037",
+   "domain": "concepts",
+   "prompt": "Which free AWS tool lets you review a workload against Well-Architected best practices and track improvement items?",
+   "choices": [
+    "AWS Trusted Advisor",
+    "AWS Config",
+    "AWS Artifact",
+    "AWS Well-Architected Tool"
+   ],
+   "answer": 3,
+   "explanation": "The Well-Architected Tool in the console guides you through questions per pillar and records high- and medium-risk issues."
+  },
+  {
+   "id": "awsccp-038",
+   "domain": "concepts",
+   "prompt": "How many pillars does the AWS Well-Architected Framework currently define?",
+   "choices": [
+    "Four",
+    "Five",
+    "Seven",
+    "Six"
+   ],
+   "answer": 3,
+   "explanation": "The six pillars are Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization and Sustainability."
+  },
+  {
+   "id": "awsccp-039",
+   "domain": "concepts",
+   "prompt": "What is an AWS Availability Zone?",
+   "choices": [
+    "A single server rack shared by many customers",
+    "A content delivery cache in a major city",
+    "One or more discrete data centers with redundant power, networking and connectivity within a Region",
+    "A logical grouping of AWS accounts"
+   ],
+   "answer": 2,
+   "explanation": "Each AZ consists of one or more physically separate data centers, isolated from failures in other AZs."
+  },
+  {
+   "id": "awsccp-040",
+   "domain": "concepts",
+   "prompt": "Which factor is usually the FIRST consideration when selecting an AWS Region for a workload holding regulated personal data?",
+   "choices": [
+    "The number of edge locations in the Region",
+    "Compliance and data residency requirements",
+    "The Region's alphabetical position in the console",
+    "Whether the Region launched recently"
+   ],
+   "answer": 1,
+   "explanation": "Legal and regulatory requirements about where data must reside often rule Regions in or out before latency, service availability or price."
+  },
+  {
+   "id": "awsccp-041",
+   "domain": "concepts",
+   "prompt": "Which three factors, besides compliance, commonly guide Region selection?",
+   "choices": [
+    "Number of IAM users, VPC count and bucket names",
+    "Proximity to users, service availability and pricing",
+    "Support plan level, account age and root user email",
+    "Operating system, programming language and IDE"
+   ],
+   "answer": 1,
+   "explanation": "Latency to customers, which services are offered in the Region, and Region-specific pricing all influence the choice."
+  },
+  {
+   "id": "awsccp-042",
+   "domain": "concepts",
+   "prompt": "What are AWS edge locations primarily used for?",
+   "choices": [
+    "Caching content closer to users for services such as CloudFront and Route 53",
+    "Running all EC2 instances for a Region",
+    "Storing the only copy of S3 data",
+    "Hosting AWS billing systems"
+   ],
+   "answer": 0,
+   "explanation": "Edge locations serve cached content and DNS responses near users to reduce latency."
+  },
+  {
+   "id": "awsccp-043",
+   "domain": "concepts",
+   "prompt": "A game company needs single-digit millisecond latency for players in a specific metropolitan area. Which infrastructure option places AWS compute closer to those users?",
+   "choices": [
+    "AWS Artifact",
+    "Additional IAM Regions",
+    "AWS Local Zones",
+    "AWS Organizations"
+   ],
+   "answer": 2,
+   "explanation": "Local Zones extend a Region by placing compute, storage and other services in large metro areas near end users."
+  },
+  {
+   "id": "awsccp-044",
+   "domain": "concepts",
+   "prompt": "Which AWS infrastructure offering embeds compute and storage within 5G telecommunication networks for ultra-low latency to mobile devices?",
+   "choices": [
+    "AWS Outposts",
+    "AWS Wavelength",
+    "AWS Snowball Edge",
+    "Amazon CloudFront"
+   ],
+   "answer": 1,
+   "explanation": "Wavelength Zones embed AWS services inside telecom providers' 5G networks."
+  },
+  {
+   "id": "awsccp-045",
+   "domain": "concepts",
+   "prompt": "A company needs to run AWS services on premises in its own data center with the same APIs and tools as the cloud. Which offering fits?",
+   "choices": [
+    "AWS Outposts",
+    "AWS Local Zones",
+    "AWS Wavelength",
+    "Amazon Lightsail"
+   ],
+   "answer": 0,
+   "explanation": "Outposts delivers AWS-managed infrastructure installed in the customer's facility for a consistent hybrid experience."
+  },
+  {
+   "id": "awsccp-046",
+   "domain": "concepts",
+   "prompt": "Designing an application so that the failure of one component does not bring down the whole system describes which architectural concept?",
+   "choices": [
+    "Tight integration",
+    "Loose coupling",
+    "Vertical scaling",
+    "Single point of failure"
+   ],
+   "answer": 1,
+   "explanation": "Loosely coupled components, for example connected through queues, reduce dependencies so one failure does not cascade."
+  },
+  {
+   "id": "awsccp-047",
+   "domain": "concepts",
+   "prompt": "Adding more EC2 instances behind a load balancer rather than upgrading to a larger instance is called:",
+   "choices": [
+    "Vertical scaling",
+    "Horizontal scaling",
+    "Reserved scaling",
+    "Static provisioning"
+   ],
+   "answer": 1,
+   "explanation": "Horizontal scaling (scaling out) adds more resources of the same type to share the load."
+  },
+  {
+   "id": "awsccp-048",
+   "domain": "concepts",
+   "prompt": "Replacing a server with a larger instance type that has more CPU and memory is an example of:",
+   "choices": [
+    "Horizontal scaling",
+    "Decoupling",
+    "Vertical scaling",
+    "Edge caching"
+   ],
+   "answer": 2,
+   "explanation": "Vertical scaling (scaling up) increases the size of an individual resource."
+  },
+  {
+   "id": "awsccp-049",
+   "domain": "concepts",
+   "prompt": "Which design principle suggests treating servers as disposable resources that can be replaced rather than repaired?",
+   "choices": [
+    "Use immutable, disposable infrastructure",
+    "Name servers individually and patch by hand",
+    "Keep a single large server for simplicity",
+    "Avoid automation to reduce risk"
+   ],
+   "answer": 0,
+   "explanation": "In the cloud, automated replacement of resources is faster and more consistent than repairing long-lived servers."
+  },
+  {
+   "id": "awsccp-050",
+   "domain": "concepts",
+   "prompt": "Which of the six perspectives of the AWS Cloud Adoption Framework (AWS CAF) focuses on ensuring cloud investments accelerate digital transformation and business outcomes?",
+   "choices": [
+    "Platform",
+    "Operations",
+    "Security",
+    "Business"
+   ],
+   "answer": 3,
+   "explanation": "The Business perspective helps ensure cloud investments align with and accelerate business outcomes."
+  },
+  {
+   "id": "awsccp-051",
+   "domain": "concepts",
+   "prompt": "Which AWS CAF perspective addresses culture, organizational structure, leadership and workforce skills during cloud adoption?",
+   "choices": [
+    "Governance",
+    "Platform",
+    "People",
+    "Operations"
+   ],
+   "answer": 2,
+   "explanation": "The People perspective bridges technology and business, focusing on culture, change and talent."
+  },
+  {
+   "id": "awsccp-052",
+   "domain": "concepts",
+   "prompt": "Which AWS CAF perspective focuses on orchestrating cloud initiatives while maximizing benefits and minimizing transformation risks, including program and portfolio management?",
+   "choices": [
+    "Business",
+    "Security",
+    "Governance",
+    "Platform"
+   ],
+   "answer": 2,
+   "explanation": "The Governance perspective covers program and project management, benefits management, risk and financial management."
+  },
+  {
+   "id": "awsccp-053",
+   "domain": "concepts",
+   "prompt": "Which AWS CAF perspective helps build an enterprise-grade, scalable hybrid cloud platform and modernize workloads?",
+   "choices": [
+    "People",
+    "Platform",
+    "Governance",
+    "Business"
+   ],
+   "answer": 1,
+   "explanation": "The Platform perspective covers platform architecture, engineering, data engineering and CI/CD."
+  },
+  {
+   "id": "awsccp-054",
+   "domain": "concepts",
+   "prompt": "Which AWS CAF perspective ensures cloud services are delivered at an agreed level, including observability, incident and problem management?",
+   "choices": [
+    "Platform",
+    "Operations",
+    "People",
+    "Business"
+   ],
+   "answer": 1,
+   "explanation": "The Operations perspective focuses on running cloud services reliably to meet business needs."
+  },
+  {
+   "id": "awsccp-055",
+   "domain": "concepts",
+   "prompt": "Which list correctly names the four transformation domains described in the AWS Cloud Adoption Framework?",
+   "choices": [
+    "Compute, Storage, Network and Database",
+    "Plan, Build, Run and Retire",
+    "Technology, Process, Organization and Product",
+    "People, Money, Time and Risk"
+   ],
+   "answer": 2,
+   "explanation": "AWS CAF says value comes from transforming technology, process, organization and product."
+  },
+  {
+   "id": "awsccp-056",
+   "domain": "concepts",
+   "prompt": "A company moves an application to EC2 with no code changes. Which migration strategy is this?",
+   "choices": [
+    "Rehost (lift and shift)",
+    "Refactor",
+    "Repurchase",
+    "Retire"
+   ],
+   "answer": 0,
+   "explanation": "Rehosting moves applications as-is to the cloud without modification."
+  },
+  {
+   "id": "awsccp-057",
+   "domain": "concepts",
+   "prompt": "A company migrates its self-managed database to Amazon RDS to reduce administration, without changing the application's core architecture. Which migration strategy is this?",
+   "choices": [
+    "Rehost",
+    "Retain",
+    "Refactor",
+    "Replatform (lift, tinker and shift)"
+   ],
+   "answer": 3,
+   "explanation": "Replatforming makes a few cloud optimizations, such as using a managed database, without re-architecting."
+  },
+  {
+   "id": "awsccp-058",
+   "domain": "concepts",
+   "prompt": "Moving from an on-premises CRM to a SaaS CRM product is which migration strategy?",
+   "choices": [
+    "Repurchase",
+    "Rehost",
+    "Relocate",
+    "Retain"
+   ],
+   "answer": 0,
+   "explanation": "Repurchasing means moving to a different product, often a SaaS offering."
+  },
+  {
+   "id": "awsccp-059",
+   "domain": "concepts",
+   "prompt": "A company re-architects a monolith into microservices using AWS Lambda to add features and scale. Which migration strategy is this?",
+   "choices": [
+    "Rehost",
+    "Repurchase",
+    "Retire",
+    "Refactor / re-architect"
+   ],
+   "answer": 3,
+   "explanation": "Refactoring reimagines how the application is architected using cloud-native features."
+  },
+  {
+   "id": "awsccp-060",
+   "domain": "concepts",
+   "prompt": "During migration planning, a team finds applications that are no longer used and decides to shut them down. Which strategy is this?",
+   "choices": [
+    "Retain",
+    "Relocate",
+    "Retire",
+    "Rehost"
+   ],
+   "answer": 2,
+   "explanation": "Retiring removes applications that are no longer needed, reducing cost and attack surface."
+  },
+  {
+   "id": "awsccp-061",
+   "domain": "concepts",
+   "prompt": "Which migration strategy describes keeping certain applications on premises for now, for example because they were recently upgraded?",
+   "choices": [
+    "Retain (revisit)",
+    "Retire",
+    "Repurchase",
+    "Replatform"
+   ],
+   "answer": 0,
+   "explanation": "Retain means leaving applications in the source environment until migrating makes sense."
+  },
+  {
+   "id": "awsccp-062",
+   "domain": "concepts",
+   "prompt": "Moving VMware-based workloads to VMware Cloud on AWS without buying new hardware or rewriting applications is an example of which strategy?",
+   "choices": [
+    "Refactor",
+    "Repurchase",
+    "Retire",
+    "Relocate"
+   ],
+   "answer": 3,
+   "explanation": "Relocate moves infrastructure to the cloud at the hypervisor level without changing the applications."
+  },
+  {
+   "id": "awsccp-063",
+   "domain": "concepts",
+   "prompt": "Which is a key benefit of the AWS Cloud regarding speed and agility?",
+   "choices": [
+    "Procurement cycles are replaced by annual hardware refreshes",
+    "New IT resources are available in minutes, lowering the cost and time of experimentation",
+    "Developers must wait for capacity planning reviews",
+    "Every resource requires a signed purchase order"
+   ],
+   "answer": 1,
+   "explanation": "Fast provisioning lets teams experiment and innovate quickly with little up-front cost."
+  },
+  {
+   "id": "awsccp-064",
+   "domain": "concepts",
+   "prompt": "A company no longer wants staff spending time racking, stacking and powering servers. Which cloud benefit addresses this?",
+   "choices": [
+    "Increase speed of data replication between disks",
+    "Gain physical access to AWS hardware",
+    "Stop spending money running and maintaining data centers",
+    "Eliminate all security responsibilities"
+   ],
+   "answer": 2,
+   "explanation": "AWS handles the physical infrastructure, freeing teams to focus on projects that differentiate the business."
+  },
+  {
+   "id": "awsccp-065",
+   "domain": "concepts",
+   "prompt": "Which concept describes AWS infrastructure being shared securely among many customers with logical isolation?",
+   "choices": [
+    "Multi-tenancy",
+    "Single tenancy",
+    "Air-gapping",
+    "Data repatriation"
+   ],
+   "answer": 0,
+   "explanation": "Cloud resources are pooled across customers, with isolation enforced logically by the provider."
+  },
+  {
+   "id": "awsccp-066",
+   "domain": "concepts",
+   "prompt": "Why is deploying an application across multiple AWS Regions useful beyond multi-AZ deployments?",
+   "choices": [
+    "It is required for all AWS workloads",
+    "It removes the need for backups",
+    "It makes data transfer between Regions free",
+    "It protects against a Region-wide disruption and can reduce latency for users in other geographies"
+   ],
+   "answer": 3,
+   "explanation": "Multi-Region designs add geographic resilience and can serve global users from nearby locations."
+  },
+  {
+   "id": "awsccp-067",
+   "domain": "concepts",
+   "prompt": "Which statement about the total cost of ownership (TCO) of moving to the cloud is accurate?",
+   "choices": [
+    "TCO only compares server purchase prices",
+    "TCO ignores labor costs",
+    "TCO includes indirect costs such as facilities, power, cooling and staff time, not just server prices",
+    "TCO is always higher in the cloud"
+   ],
+   "answer": 2,
+   "explanation": "A full TCO comparison accounts for data center, hardware, software, labor and operational overheads."
+  },
+  {
+   "id": "awsccp-068",
+   "domain": "concepts",
+   "prompt": "Rightsizing in the cloud means:",
+   "choices": [
+    "Always choosing the largest instance available",
+    "Matching instance types and sizes to actual workload performance and capacity needs",
+    "Buying hardware sized for five years of growth",
+    "Moving every workload to a single Region"
+   ],
+   "answer": 1,
+   "explanation": "Rightsizing removes over-provisioning so you pay only for capacity you actually need."
+  },
+  {
+   "id": "awsccp-069",
+   "domain": "concepts",
+   "prompt": "Which statement best describes high availability in AWS?",
+   "choices": [
+    "Systems never require maintenance",
+    "All data is stored on one very large server",
+    "Applications run only during business hours",
+    "Systems keep running with minimal downtime by removing single points of failure, for example using multiple AZs"
+   ],
+   "answer": 3,
+   "explanation": "High availability designs use redundancy across isolated infrastructure so failures cause little or no downtime."
+  },
+  {
+   "id": "awsccp-070",
+   "domain": "concepts",
+   "prompt": "Which practice is part of the Sustainability pillar's guidance?",
+   "choices": [
+    "Keep idle servers running in case they are needed",
+    "Choose Regions only by alphabetical order",
+    "Duplicate all data to every Region by default",
+    "Maximize utilization so fewer, more efficiently used resources do the same work"
+   ],
+   "answer": 3,
+   "explanation": "Higher utilization and removing idle resources reduce energy consumed per unit of work."
+  },
+  {
+   "id": "awsccp-071",
+   "domain": "sec",
+   "prompt": "Under the shared responsibility model, which task is the customer's responsibility when using Amazon EC2?",
+   "choices": [
+    "Patching the guest operating system",
+    "Replacing failed physical disks",
+    "Securing the hypervisor",
+    "Maintaining data center power"
+   ],
+   "answer": 0,
+   "explanation": "With EC2 (IaaS), customers manage the guest OS, including updates and security patches."
+  },
+  {
+   "id": "awsccp-072",
+   "domain": "sec",
+   "prompt": "When using Amazon RDS, who is responsible for patching the database engine software?",
+   "choices": [
+    "The customer must patch it manually by logging into the host",
+    "The application vendor",
+    "AWS, within the maintenance window the customer configures",
+    "Nobody; RDS engines are never patched"
+   ],
+   "answer": 2,
+   "explanation": "RDS is a managed service, so AWS applies OS and engine patches while customers control timing and settings."
+  },
+  {
+   "id": "awsccp-073",
+   "domain": "sec",
+   "prompt": "Which responsibility is shared between AWS and the customer under the shared responsibility model?",
+   "choices": [
+    "Physical security of facilities",
+    "Customer data classification",
+    "Decommissioning storage devices",
+    "Patch management"
+   ],
+   "answer": 3,
+   "explanation": "Patch management, configuration management and awareness and training are shared controls: AWS patches its infrastructure, customers patch their systems."
+  },
+  {
+   "id": "awsccp-074",
+   "domain": "sec",
+   "prompt": "Under the shared responsibility model, which item is ALWAYS the customer's responsibility regardless of the service used?",
+   "choices": [
+    "Hardware lifecycle management",
+    "Customer data and who is granted access to it",
+    "Global network backbone",
+    "Hypervisor isolation"
+   ],
+   "answer": 1,
+   "explanation": "Customers always own their data, its classification and access management, even with fully managed services."
+  },
+  {
+   "id": "awsccp-075",
+   "domain": "sec",
+   "prompt": "For AWS Lambda, which security task remains the customer's responsibility?",
+   "choices": [
+    "Patching the underlying execution environment OS",
+    "Scaling the physical fleet",
+    "Securing the facility network",
+    "Securing the function code and its IAM permissions"
+   ],
+   "answer": 3,
+   "explanation": "AWS manages the Lambda runtime infrastructure; customers are responsible for their code, configuration and permissions."
+  },
+  {
+   "id": "awsccp-076",
+   "domain": "sec",
+   "prompt": "Configuring security groups on EC2 instances is the responsibility of:",
+   "choices": [
+    "AWS",
+    "The customer",
+    "The Internet service provider",
+    "AWS Support"
+   ],
+   "answer": 1,
+   "explanation": "Security groups are customer-configured virtual firewalls, part of security in the cloud."
+  },
+  {
+   "id": "awsccp-077",
+   "domain": "sec",
+   "prompt": "What does the phrase 'security OF the cloud' refer to?",
+   "choices": [
+    "AWS protecting the infrastructure that runs all AWS services",
+    "Customers encrypting their own data",
+    "Customers configuring IAM policies",
+    "Customers patching their applications"
+   ],
+   "answer": 0,
+   "explanation": "AWS is responsible for security of the cloud: hardware, software, networking and facilities."
+  },
+  {
+   "id": "awsccp-078",
+   "domain": "sec",
+   "prompt": "Which IAM best practice grants users only the permissions needed to perform their tasks?",
+   "choices": [
+    "Shared root credentials",
+    "Full administrator access for all developers",
+    "Permission inheritance from the root user",
+    "Principle of least privilege"
+   ],
+   "answer": 3,
+   "explanation": "Least privilege reduces risk by limiting permissions to what each identity actually needs."
+  },
+  {
+   "id": "awsccp-079",
+   "domain": "sec",
+   "prompt": "An application on an EC2 instance needs to read from an S3 bucket. What is the most secure way to grant access?",
+   "choices": [
+    "Store an IAM user's access keys in the application's configuration file",
+    "Use the root user's access keys",
+    "Attach an IAM role to the instance with a policy allowing the required S3 actions",
+    "Make the bucket public"
+   ],
+   "answer": 2,
+   "explanation": "IAM roles provide temporary credentials automatically, avoiding long-term keys stored on the instance."
+  },
+  {
+   "id": "awsccp-080",
+   "domain": "sec",
+   "prompt": "What is an IAM group used for?",
+   "choices": [
+    "Attaching permissions to a collection of IAM users so they share the same access",
+    "Grouping EC2 instances in an Auto Scaling group",
+    "Combining multiple AWS accounts for billing",
+    "Signing in to the console as a team"
+   ],
+   "answer": 0,
+   "explanation": "Groups simplify permission management; users in a group inherit the group's policies. Groups cannot sign in themselves."
+  },
+  {
+   "id": "awsccp-081",
+   "domain": "sec",
+   "prompt": "Which format are IAM policies written in?",
+   "choices": [
+    "YAML only",
+    "XML",
+    "CSV",
+    "JSON"
+   ],
+   "answer": 3,
+   "explanation": "IAM policy documents are JSON statements with Effect, Action, Resource and optional Condition elements."
+  },
+  {
+   "id": "awsccp-082",
+   "domain": "sec",
+   "prompt": "If an IAM policy explicitly denies an action that another attached policy allows, what is the result?",
+   "choices": [
+    "The action is allowed",
+    "The most recently attached policy wins",
+    "The action is denied",
+    "The user is prompted to choose"
+   ],
+   "answer": 2,
+   "explanation": "In IAM policy evaluation, an explicit deny always overrides any allow."
+  },
+  {
+   "id": "awsccp-083",
+   "domain": "sec",
+   "prompt": "Which task can be performed ONLY by the AWS account root user?",
+   "choices": [
+    "Launching an EC2 instance",
+    "Creating an S3 bucket",
+    "Viewing CloudWatch metrics",
+    "Closing the AWS account"
+   ],
+   "answer": 3,
+   "explanation": "A small set of tasks require the root user, such as closing the account, changing the root email or account name, and restoring IAM user permissions; everyday tasks like launching instances or creating buckets should be done with IAM identities."
+  },
+  {
+   "id": "awsccp-084",
+   "domain": "sec",
+   "prompt": "Which service provides a central place for workforce users to sign in once and access multiple AWS accounts and business applications?",
+   "choices": [
+    "Amazon Cognito",
+    "AWS Directory Service only",
+    "AWS IAM Identity Center",
+    "AWS Certificate Manager"
+   ],
+   "answer": 2,
+   "explanation": "IAM Identity Center (successor to AWS SSO) provides single sign-on across AWS accounts and applications."
+  },
+  {
+   "id": "awsccp-085",
+   "domain": "sec",
+   "prompt": "A mobile app needs user sign-up, sign-in and social identity provider login for its customers. Which service fits?",
+   "choices": [
+    "AWS IAM Identity Center",
+    "Amazon Cognito",
+    "AWS Organizations",
+    "AWS Secrets Manager"
+   ],
+   "answer": 1,
+   "explanation": "Cognito provides customer identity and access management for web and mobile apps."
+  },
+  {
+   "id": "awsccp-086",
+   "domain": "sec",
+   "prompt": "Which AWS Organizations feature sets the maximum permissions available to accounts in an organizational unit?",
+   "choices": [
+    "Security groups",
+    "Network ACLs",
+    "S3 bucket policies",
+    "Service control policies (SCPs)"
+   ],
+   "answer": 3,
+   "explanation": "SCPs act as guardrails that limit the permissions IAM identities in member accounts can use."
+  },
+  {
+   "id": "awsccp-087",
+   "domain": "sec",
+   "prompt": "Which service helps set up and govern a secure multi-account AWS environment using pre-configured guardrails?",
+   "choices": [
+    "AWS Artifact",
+    "Amazon Inspector",
+    "AWS Shield",
+    "AWS Control Tower"
+   ],
+   "answer": 3,
+   "explanation": "Control Tower automates a landing zone with best-practice accounts and preventive and detective controls."
+  },
+  {
+   "id": "awsccp-088",
+   "domain": "sec",
+   "prompt": "Which IAM feature requires users to provide a second factor, such as a code from a device, in addition to a password?",
+   "choices": [
+    "Access key rotation",
+    "Password policy length",
+    "IAM Access Analyzer",
+    "Multi-factor authentication (MFA)"
+   ],
+   "answer": 3,
+   "explanation": "MFA adds a second authentication factor, greatly reducing the risk from stolen passwords."
+  },
+  {
+   "id": "awsccp-089",
+   "domain": "sec",
+   "prompt": "Which tool identifies resources, such as S3 buckets or IAM roles, that are shared with an external entity?",
+   "choices": [
+    "AWS Cost Explorer",
+    "Amazon Macie",
+    "AWS Budgets",
+    "IAM Access Analyzer"
+   ],
+   "answer": 3,
+   "explanation": "IAM Access Analyzer uses logic-based reasoning to find resource policies that grant access outside your zone of trust."
+  },
+  {
+   "id": "awsccp-090",
+   "domain": "sec",
+   "prompt": "Which report lists IAM users and the status of their credentials, such as passwords, access keys and MFA devices?",
+   "choices": [
+    "AWS Cost and Usage Report",
+    "AWS Artifact report",
+    "IAM credential report",
+    "Trusted Advisor cost report"
+   ],
+   "answer": 2,
+   "explanation": "The credential report helps audit credential lifecycle and MFA use across an account."
+  },
+  {
+   "id": "awsccp-091",
+   "domain": "sec",
+   "prompt": "Which service creates and controls cryptographic keys used to encrypt data across AWS services?",
+   "choices": [
+    "AWS Key Management Service (AWS KMS)",
+    "AWS Certificate Manager",
+    "Amazon Macie",
+    "AWS Secrets Manager"
+   ],
+   "answer": 0,
+   "explanation": "KMS manages encryption keys and integrates with many AWS services for data-at-rest encryption."
+  },
+  {
+   "id": "awsccp-092",
+   "domain": "sec",
+   "prompt": "A company must store encryption keys in dedicated, single-tenant hardware security modules that it controls. Which service fits?",
+   "choices": [
+    "AWS KMS with AWS managed keys",
+    "AWS Secrets Manager",
+    "AWS CloudHSM",
+    "AWS Artifact"
+   ],
+   "answer": 2,
+   "explanation": "CloudHSM provides dedicated FIPS-validated HSMs in your VPC under your exclusive control."
+  },
+  {
+   "id": "awsccp-093",
+   "domain": "sec",
+   "prompt": "Which service provisions and automatically renews public SSL/TLS certificates for use with Elastic Load Balancing and CloudFront?",
+   "choices": [
+    "AWS KMS",
+    "AWS CloudHSM",
+    "AWS Certificate Manager (ACM)",
+    "AWS Shield"
+   ],
+   "answer": 2,
+   "explanation": "ACM issues and renews certificates and deploys them to integrated services such as ELB and CloudFront."
+  },
+  {
+   "id": "awsccp-094",
+   "domain": "sec",
+   "prompt": "An application needs to store a database password and rotate it automatically on a schedule. Which service is designed for this?",
+   "choices": [
+    "Amazon S3 with versioning",
+    "AWS Certificate Manager",
+    "AWS CloudTrail",
+    "AWS Secrets Manager"
+   ],
+   "answer": 3,
+   "explanation": "Secrets Manager stores secrets securely and can rotate them automatically, including for RDS credentials."
+  },
+  {
+   "id": "awsccp-095",
+   "domain": "sec",
+   "prompt": "Encrypting data while it moves between a client and a web server, such as with TLS, protects data:",
+   "choices": [
+    "At rest",
+    "In transit",
+    "In archive only",
+    "During deletion"
+   ],
+   "answer": 1,
+   "explanation": "TLS encryption protects data in transit across networks."
+  },
+  {
+   "id": "awsccp-096",
+   "domain": "sec",
+   "prompt": "Which service uses machine learning to discover and protect sensitive data such as personally identifiable information in Amazon S3?",
+   "choices": [
+    "Amazon Macie",
+    "Amazon GuardDuty",
+    "Amazon Inspector",
+    "AWS WAF"
+   ],
+   "answer": 0,
+   "explanation": "Macie automatically discovers, classifies and reports sensitive data stored in S3."
+  },
+  {
+   "id": "awsccp-097",
+   "domain": "sec",
+   "prompt": "Which service automatically scans EC2 instances, container images in Amazon ECR and Lambda functions for software vulnerabilities and unintended network exposure?",
+   "choices": [
+    "Amazon Macie",
+    "AWS Shield",
+    "AWS Artifact",
+    "Amazon Inspector"
+   ],
+   "answer": 3,
+   "explanation": "Inspector continuously scans workloads for known CVEs and network reachability issues."
+  },
+  {
+   "id": "awsccp-098",
+   "domain": "sec",
+   "prompt": "A security team wants to filter HTTP requests to an Application Load Balancer, blocking SQL injection and cross-site scripting attempts. Which service should they use?",
+   "choices": [
+    "AWS Shield Standard",
+    "Amazon GuardDuty",
+    "Network ACLs",
+    "AWS WAF"
+   ],
+   "answer": 3,
+   "explanation": "AWS WAF is a web application firewall that inspects layer 7 requests against rules such as SQLi and XSS protections."
+  },
+  {
+   "id": "awsccp-099",
+   "domain": "sec",
+   "prompt": "Which statement about AWS Shield Standard is correct?",
+   "choices": [
+    "It must be purchased with a one-year commitment",
+    "It includes 24/7 access to the Shield Response Team",
+    "It only protects on-premises servers",
+    "It is automatically enabled for all AWS customers at no additional cost"
+   ],
+   "answer": 3,
+   "explanation": "Shield Standard protects against common network and transport layer DDoS attacks for every customer by default."
+  },
+  {
+   "id": "awsccp-100",
+   "domain": "sec",
+   "prompt": "Which benefit is included with AWS Shield Advanced but NOT Shield Standard?",
+   "choices": [
+    "Basic protection against SYN floods",
+    "Access to the AWS Shield Response Team and DDoS cost protection",
+    "Automatic enablement for all accounts",
+    "Free AWS WAF for any account without subscription"
+   ],
+   "answer": 1,
+   "explanation": "Shield Advanced adds enhanced detection, 24/7 SRT support and protection against scaling charges caused by DDoS attacks."
+  },
+  {
+   "id": "awsccp-101",
+   "domain": "sec",
+   "prompt": "Which service aggregates and prioritizes security findings from GuardDuty, Inspector, Macie and partner tools, and runs automated best-practice checks?",
+   "choices": [
+    "Amazon Detective",
+    "AWS Config",
+    "AWS Security Hub",
+    "AWS Artifact"
+   ],
+   "answer": 2,
+   "explanation": "Security Hub provides a consolidated view of security alerts and posture checks against standards such as AWS Foundational Security Best Practices."
+  },
+  {
+   "id": "awsccp-102",
+   "domain": "sec",
+   "prompt": "After GuardDuty raises a finding, an analyst wants to visualize related activity and investigate the root cause. Which service helps most?",
+   "choices": [
+    "Amazon Inspector",
+    "Amazon Detective",
+    "AWS Trusted Advisor",
+    "AWS Shield"
+   ],
+   "answer": 1,
+   "explanation": "Detective builds behavior graphs from log data to help investigate security findings."
+  },
+  {
+   "id": "awsccp-103",
+   "domain": "sec",
+   "prompt": "Which statement about Amazon GuardDuty is accurate?",
+   "choices": [
+    "It is a firewall that blocks traffic at the edge",
+    "It encrypts S3 objects automatically",
+    "It scans application source code for bugs",
+    "It analyzes data sources continuously without requiring agents to be installed for its core log analysis"
+   ],
+   "answer": 3,
+   "explanation": "GuardDuty is a managed threat detection service that analyzes logs such as CloudTrail, VPC Flow Logs and DNS logs."
+  },
+  {
+   "id": "awsccp-104",
+   "domain": "sec",
+   "prompt": "Which service continuously records resource configuration changes and evaluates them against rules, such as 'S3 buckets must have encryption enabled'?",
+   "choices": [
+    "AWS CloudTrail",
+    "Amazon CloudWatch",
+    "AWS Config",
+    "AWS Shield"
+   ],
+   "answer": 2,
+   "explanation": "AWS Config tracks configuration history and assesses compliance with Config rules."
+  },
+  {
+   "id": "awsccp-105",
+   "domain": "sec",
+   "prompt": "An auditor asks who deleted a security group yesterday. Which service provides that information?",
+   "choices": [
+    "AWS Config",
+    "Amazon Inspector",
+    "AWS CloudTrail",
+    "AWS Trusted Advisor"
+   ],
+   "answer": 2,
+   "explanation": "CloudTrail logs API calls including the identity, time, source IP and parameters of the request."
+  },
+  {
+   "id": "awsccp-106",
+   "domain": "sec",
+   "prompt": "Which service helps continuously collect evidence and audit AWS usage to simplify assessments against standards and regulations?",
+   "choices": [
+    "AWS Artifact",
+    "AWS Audit Manager",
+    "AWS Budgets",
+    "Amazon Detective"
+   ],
+   "answer": 1,
+   "explanation": "Audit Manager automates evidence collection and maps it to compliance frameworks."
+  },
+  {
+   "id": "awsccp-107",
+   "domain": "sec",
+   "prompt": "Which service lets you review and accept agreements such as the Business Associate Addendum (BAA) with AWS?",
+   "choices": [
+    "AWS Artifact",
+    "AWS Audit Manager",
+    "AWS Organizations",
+    "AWS Marketplace"
+   ],
+   "answer": 0,
+   "explanation": "Artifact provides compliance reports and lets you manage agreements such as the BAA."
+  },
+  {
+   "id": "awsccp-108",
+   "domain": "sec",
+   "prompt": "Which VPC feature is a stateful firewall applied at the instance (elastic network interface) level?",
+   "choices": [
+    "Network ACL",
+    "Security group",
+    "Route table",
+    "Internet gateway"
+   ],
+   "answer": 1,
+   "explanation": "Security groups are stateful: return traffic is automatically allowed, and they support allow rules only."
+  },
+  {
+   "id": "awsccp-109",
+   "domain": "sec",
+   "prompt": "Which statement correctly describes a network ACL?",
+   "choices": [
+    "It is a stateless firewall at the subnet level that supports both allow and deny rules",
+    "It is a stateful firewall attached to an instance",
+    "It encrypts traffic between subnets",
+    "It supports only allow rules"
+   ],
+   "answer": 0,
+   "explanation": "Network ACLs evaluate inbound and outbound traffic separately for a subnet and can explicitly deny traffic."
+  },
+  {
+   "id": "awsccp-110",
+   "domain": "sec",
+   "prompt": "A company wants to block traffic from a specific malicious IP address range at the subnet level. Which feature should it use?",
+   "choices": [
+    "A security group deny rule",
+    "An IAM policy",
+    "An S3 bucket policy",
+    "A network ACL deny rule"
+   ],
+   "answer": 3,
+   "explanation": "Security groups cannot contain deny rules; network ACLs can deny specific IP ranges."
+  },
+  {
+   "id": "awsccp-111",
+   "domain": "sec",
+   "prompt": "Which managed service centrally configures and manages firewall rules, such as AWS WAF rules and security group policies, across accounts in AWS Organizations?",
+   "choices": [
+    "AWS Network Firewall",
+    "Amazon GuardDuty",
+    "AWS Artifact",
+    "AWS Firewall Manager"
+   ],
+   "answer": 3,
+   "explanation": "Firewall Manager applies security policies consistently across accounts and resources."
+  },
+  {
+   "id": "awsccp-112",
+   "domain": "sec",
+   "prompt": "Which AWS service provides a managed, stateful network firewall and intrusion prevention for traffic in a VPC?",
+   "choices": [
+    "AWS Shield Standard",
+    "Amazon Inspector",
+    "AWS Certificate Manager",
+    "AWS Network Firewall"
+   ],
+   "answer": 3,
+   "explanation": "Network Firewall deploys managed firewall endpoints with stateful inspection and IPS rules in VPCs."
+  },
+  {
+   "id": "awsccp-113",
+   "domain": "sec",
+   "prompt": "Who is permitted to perform penetration testing on certain AWS services, such as EC2, without prior approval?",
+   "choices": [
+    "Only AWS employees",
+    "AWS customers, on their own resources and for the permitted services",
+    "Nobody; it is always prohibited",
+    "Any third party against any AWS customer"
+   ],
+   "answer": 1,
+   "explanation": "AWS allows customers to pentest their own resources on listed services without approval, subject to AWS policy."
+  },
+  {
+   "id": "awsccp-114",
+   "domain": "sec",
+   "prompt": "What should a customer do if they suspect AWS resources are being used for abusive activity such as spam or DDoS attacks?",
+   "choices": [
+    "Report it to the AWS Trust & Safety team",
+    "Contact the AWS Marketplace seller",
+    "Post it in AWS re:Post only",
+    "Open a billing case"
+   ],
+   "answer": 0,
+   "explanation": "The AWS Trust & Safety team handles abuse reports involving AWS resources."
+  },
+  {
+   "id": "awsccp-115",
+   "domain": "sec",
+   "prompt": "Which statement about encryption of Amazon S3 objects is correct?",
+   "choices": [
+    "S3 objects can never be encrypted",
+    "New objects are encrypted at rest by default with S3 managed keys",
+    "Encryption requires a third-party appliance",
+    "Only Glacier storage classes support encryption"
+   ],
+   "answer": 1,
+   "explanation": "S3 applies server-side encryption with S3 managed keys (SSE-S3) to all new objects by default."
+  },
+  {
+   "id": "awsccp-116",
+   "domain": "sec",
+   "prompt": "Which S3 feature can prevent objects from being deleted or overwritten for a fixed period, supporting write-once-read-many (WORM) requirements?",
+   "choices": [
+    "S3 Object Lock",
+    "S3 Transfer Acceleration",
+    "S3 Intelligent-Tiering",
+    "S3 static website hosting"
+   ],
+   "answer": 0,
+   "explanation": "Object Lock enforces retention periods or legal holds so objects cannot be changed or deleted."
+  },
+  {
+   "id": "awsccp-117",
+   "domain": "sec",
+   "prompt": "Which setting helps prevent accidental public exposure of S3 buckets across an entire account?",
+   "choices": [
+    "S3 Versioning",
+    "S3 Replication",
+    "S3 Block Public Access",
+    "S3 Requester Pays"
+   ],
+   "answer": 2,
+   "explanation": "Block Public Access settings override policies and ACLs that would grant public access."
+  },
+  {
+   "id": "awsccp-118",
+   "domain": "sec",
+   "prompt": "Which program provides details on how AWS meets compliance standards such as ISO 27001, PCI DSS and SOC 2?",
+   "choices": [
+    "AWS compliance programs with reports available in AWS Artifact",
+    "AWS Partner Network tiers",
+    "AWS Free Tier",
+    "AWS Activate"
+   ],
+   "answer": 0,
+   "explanation": "AWS participates in many assurance programs, and customers download the related reports from Artifact."
+  },
+  {
+   "id": "awsccp-119",
+   "domain": "sec",
+   "prompt": "A company is responsible for complying with regulations for its workload on AWS. Which statement is accurate?",
+   "choices": [
+    "AWS compliance certifications cover the infrastructure, but the customer must still make its own workload compliant",
+    "AWS certifications automatically make every customer workload compliant",
+    "Compliance is entirely AWS's responsibility",
+    "Compliance applies only to on-premises systems"
+   ],
+   "answer": 0,
+   "explanation": "Under shared responsibility, customers inherit infrastructure controls but must configure their applications and data to meet requirements."
+  },
+  {
+   "id": "awsccp-120",
+   "domain": "sec",
+   "prompt": "Which AWS service lets you store, audit and manage the lifecycle of encryption keys and logs every key use in CloudTrail?",
+   "choices": [
+    "Amazon Macie",
+    "AWS WAF",
+    "AWS KMS",
+    "AWS Shield"
+   ],
+   "answer": 2,
+   "explanation": "KMS integrates with CloudTrail so every use of a key can be audited."
+  },
+  {
+   "id": "awsccp-121",
+   "domain": "sec",
+   "prompt": "Which feature of Amazon VPC captures information about IP traffic going to and from network interfaces?",
+   "choices": [
+    "AWS Config rules",
+    "VPC Flow Logs",
+    "CloudFront access logs",
+    "IAM credential report"
+   ],
+   "answer": 1,
+   "explanation": "Flow Logs record accepted and rejected traffic metadata for troubleshooting and security analysis."
+  },
+  {
+   "id": "awsccp-122",
+   "domain": "sec",
+   "prompt": "A company wants AWS to automatically block requests from countries it does not serve before they reach its CloudFront distribution. Which service can apply this geographic rule?",
+   "choices": [
+    "Amazon Macie",
+    "AWS WAF",
+    "AWS Secrets Manager",
+    "AWS Audit Manager"
+   ],
+   "answer": 1,
+   "explanation": "AWS WAF rules can match the country of origin of requests and block them at CloudFront or other protected resources."
+  },
+  {
+   "id": "awsccp-123",
+   "domain": "sec",
+   "prompt": "Which AWS service provides a centralized security data lake by normalizing security logs into the Open Cybersecurity Schema Framework (OCSF)?",
+   "choices": [
+    "Amazon Security Lake",
+    "Amazon Macie",
+    "AWS Glue DataBrew",
+    "Amazon Redshift"
+   ],
+   "answer": 0,
+   "explanation": "Security Lake centralizes security data from AWS, SaaS and on-premises sources in OCSF format."
+  },
+  {
+   "id": "awsccp-124",
+   "domain": "sec",
+   "prompt": "A developer accidentally committed IAM access keys to a public repository. What should be done FIRST?",
+   "choices": [
+    "Deactivate and delete the exposed access keys, then create new ones if needed",
+    "Delete the repository and take no other action",
+    "Enable S3 Versioning",
+    "Upgrade the support plan"
+   ],
+   "answer": 0,
+   "explanation": "Exposed long-term credentials must be revoked immediately to stop misuse."
+  },
+  {
+   "id": "awsccp-125",
+   "domain": "sec",
+   "prompt": "Which type of IAM identity provides temporary credentials and can be assumed by users, applications or AWS services?",
+   "choices": [
+    "IAM role",
+    "IAM user",
+    "IAM group",
+    "Root user"
+   ],
+   "answer": 0,
+   "explanation": "Roles have no long-term credentials; principals assume them to receive temporary security credentials."
+  },
+  {
+   "id": "awsccp-126",
+   "domain": "sec",
+   "prompt": "Which feature lets you require that an IAM user's password meet complexity rules and be rotated periodically?",
+   "choices": [
+    "A service control policy",
+    "A bucket policy",
+    "An account password policy",
+    "A security group rule"
+   ],
+   "answer": 2,
+   "explanation": "IAM password policies set requirements such as minimum length, character types and expiration."
+  },
+  {
+   "id": "awsccp-127",
+   "domain": "sec",
+   "prompt": "Which type of policy is attached directly to a resource, such as an S3 bucket, to specify who can access it?",
+   "choices": [
+    "Resource-based policy",
+    "Identity-based policy only",
+    "Service control policy",
+    "Trust boundary list"
+   ],
+   "answer": 0,
+   "explanation": "Resource-based policies are attached to resources and specify which principals can perform actions on them."
+  },
+  {
+   "id": "awsccp-128",
+   "domain": "sec",
+   "prompt": "Which AWS offering lets customers deploy security solutions from third-party vendors, such as firewalls and endpoint protection, often billed through their AWS account?",
+   "choices": [
+    "AWS Marketplace",
+    "AWS Artifact",
+    "AWS Professional Services",
+    "AWS Activate"
+   ],
+   "answer": 0,
+   "explanation": "AWS Marketplace is a curated catalog of third-party software, including security products."
+  },
+  {
+   "id": "awsccp-129",
+   "domain": "sec",
+   "prompt": "Which service helps you quickly assess, monitor and improve the security posture of your Amazon EKS or ECS container workloads by detecting runtime threats?",
+   "choices": [
+    "AWS Artifact",
+    "AWS Cost Explorer",
+    "Amazon Lightsail",
+    "Amazon GuardDuty Runtime Monitoring"
+   ],
+   "answer": 3,
+   "explanation": "GuardDuty Runtime Monitoring detects threats such as suspicious processes in EKS, ECS and EC2 workloads."
+  },
+  {
+   "id": "awsccp-130",
+   "domain": "sec",
+   "prompt": "Which concept describes encrypting data with a data key and then encrypting that data key with a KMS key?",
+   "choices": [
+    "Tokenization",
+    "Envelope encryption",
+    "Hashing",
+    "Steganography"
+   ],
+   "answer": 1,
+   "explanation": "Envelope encryption protects data keys with a master (KMS) key, improving performance and key management."
+  },
+  {
+   "id": "awsccp-131",
+   "domain": "tech",
+   "prompt": "Which EC2 instance family is optimized for memory-intensive workloads such as in-memory databases?",
+   "choices": [
+    "Compute optimized (C family)",
+    "Storage optimized (I family)",
+    "Accelerated computing (P family)",
+    "Memory optimized (for example R family)"
+   ],
+   "answer": 3,
+   "explanation": "Memory optimized instances provide high memory-to-CPU ratios for large in-memory datasets."
+  },
+  {
+   "id": "awsccp-132",
+   "domain": "tech",
+   "prompt": "A batch job performs high-performance scientific modeling that needs many fast CPU cores. Which EC2 instance family is most suitable?",
+   "choices": [
+    "Memory optimized",
+    "Compute optimized",
+    "Storage optimized",
+    "General purpose burstable"
+   ],
+   "answer": 1,
+   "explanation": "Compute optimized instances suit compute-bound workloads like HPC, batch processing and scientific modeling."
+  },
+  {
+   "id": "awsccp-133",
+   "domain": "tech",
+   "prompt": "Which EC2 instance category uses hardware accelerators such as GPUs for machine learning training?",
+   "choices": [
+    "General purpose",
+    "Memory optimized",
+    "Accelerated computing",
+    "Storage optimized"
+   ],
+   "answer": 2,
+   "explanation": "Accelerated computing instances include GPUs or custom chips like AWS Trainium and Inferentia."
+  },
+  {
+   "id": "awsccp-134",
+   "domain": "tech",
+   "prompt": "Which service automatically adds or removes EC2 instances based on demand or a schedule?",
+   "choices": [
+    "Elastic Load Balancing",
+    "Amazon EC2 Auto Scaling",
+    "AWS Config",
+    "Amazon Route 53"
+   ],
+   "answer": 1,
+   "explanation": "EC2 Auto Scaling maintains the desired capacity and scales based on policies or schedules."
+  },
+  {
+   "id": "awsccp-135",
+   "domain": "tech",
+   "prompt": "Which Elastic Load Balancing type operates at layer 7 and can route requests based on URL path or host header?",
+   "choices": [
+    "Network Load Balancer",
+    "Application Load Balancer",
+    "Gateway Load Balancer",
+    "Classic Load Balancer only"
+   ],
+   "answer": 1,
+   "explanation": "ALB supports content-based routing for HTTP and HTTPS traffic."
+  },
+  {
+   "id": "awsccp-136",
+   "domain": "tech",
+   "prompt": "An application needs to handle millions of TCP requests per second with ultra-low latency and static IP addresses. Which load balancer fits best?",
+   "choices": [
+    "Application Load Balancer",
+    "Network Load Balancer",
+    "Gateway Load Balancer",
+    "Amazon CloudFront"
+   ],
+   "answer": 1,
+   "explanation": "NLB operates at layer 4, offering very high throughput, low latency and static IPs per AZ."
+  },
+  {
+   "id": "awsccp-137",
+   "domain": "tech",
+   "prompt": "Which service offers simple virtual private servers with bundled storage, networking and predictable monthly pricing, ideal for small websites?",
+   "choices": [
+    "AWS Outposts",
+    "Amazon EMR",
+    "AWS Batch",
+    "Amazon Lightsail"
+   ],
+   "answer": 3,
+   "explanation": "Lightsail provides easy-to-use VPS bundles for simple workloads."
+  },
+  {
+   "id": "awsccp-138",
+   "domain": "tech",
+   "prompt": "Which AWS service runs Docker containers without requiring you to manage servers or clusters of EC2 instances?",
+   "choices": [
+    "Amazon EC2 Image Builder",
+    "AWS Outposts",
+    "Amazon Lightsail",
+    "AWS Fargate"
+   ],
+   "answer": 3,
+   "explanation": "Fargate is a serverless compute engine for containers used with ECS and EKS."
+  },
+  {
+   "id": "awsccp-139",
+   "domain": "tech",
+   "prompt": "Which service is a managed Kubernetes control plane on AWS?",
+   "choices": [
+    "Amazon Elastic Container Registry (Amazon ECR)",
+    "AWS Batch",
+    "AWS App Runner",
+    "Amazon Elastic Kubernetes Service (Amazon EKS)"
+   ],
+   "answer": 3,
+   "explanation": "EKS runs and scales the Kubernetes control plane for you."
+  },
+  {
+   "id": "awsccp-140",
+   "domain": "tech",
+   "prompt": "Where can developers store, manage and share Docker container images in AWS?",
+   "choices": [
+    "Amazon Elastic Container Registry (Amazon ECR)",
+    "Amazon EBS",
+    "AWS CodeArtifact",
+    "Amazon S3 Glacier"
+   ],
+   "answer": 0,
+   "explanation": "ECR is a fully managed container image registry integrated with ECS, EKS and Lambda."
+  },
+  {
+   "id": "awsccp-141",
+   "domain": "tech",
+   "prompt": "Which service plans, schedules and runs batch computing workloads across EC2 and Fargate?",
+   "choices": [
+    "AWS Step Functions",
+    "AWS Batch",
+    "Amazon EventBridge",
+    "Amazon Lightsail"
+   ],
+   "answer": 1,
+   "explanation": "AWS Batch dynamically provisions compute resources based on the volume and requirements of batch jobs."
+  },
+  {
+   "id": "awsccp-142",
+   "domain": "tech",
+   "prompt": "A developer wants to deploy a containerized web application from source code or an image with automatic scaling and no infrastructure configuration. Which service is simplest?",
+   "choices": [
+    "Amazon EKS on EC2",
+    "AWS App Runner",
+    "AWS Outposts",
+    "Amazon EMR"
+   ],
+   "answer": 1,
+   "explanation": "App Runner builds and runs web apps and APIs from code or container images with minimal setup."
+  },
+  {
+   "id": "awsccp-143",
+   "domain": "tech",
+   "prompt": "What is the maximum execution duration of a single AWS Lambda function invocation?",
+   "choices": [
+    "1 minute",
+    "15 minutes",
+    "1 hour",
+    "24 hours"
+   ],
+   "answer": 1,
+   "explanation": "Lambda functions can run for up to 900 seconds per invocation."
+  },
+  {
+   "id": "awsccp-144",
+   "domain": "tech",
+   "prompt": "Which storage type is block storage that can be attached to a single EC2 instance in the same Availability Zone, persisting independently of the instance's life?",
+   "choices": [
+    "Amazon S3",
+    "Amazon EFS",
+    "Amazon Elastic Block Store (Amazon EBS)",
+    "EC2 instance store"
+   ],
+   "answer": 2,
+   "explanation": "EBS volumes are network-attached block storage that persist after the instance stops and are AZ-scoped."
+  },
+  {
+   "id": "awsccp-145",
+   "domain": "tech",
+   "prompt": "Which statement about EC2 instance store volumes is correct?",
+   "choices": [
+    "Data is automatically replicated across Regions",
+    "They are the same as EBS snapshots",
+    "Data is lost when the instance is stopped or terminated",
+    "They can be detached and attached to other instances"
+   ],
+   "answer": 2,
+   "explanation": "Instance store provides temporary block storage physically attached to the host; it is ephemeral."
+  },
+  {
+   "id": "awsccp-146",
+   "domain": "tech",
+   "prompt": "Several Linux EC2 instances across multiple AZs need to share a file system that grows and shrinks automatically. Which service fits?",
+   "choices": [
+    "Amazon EBS",
+    "Amazon Elastic File System (Amazon EFS)",
+    "EC2 instance store",
+    "Amazon S3 Glacier Deep Archive"
+   ],
+   "answer": 1,
+   "explanation": "EFS is a managed, elastic NFS file system that many instances can mount concurrently."
+  },
+  {
+   "id": "awsccp-147",
+   "domain": "tech",
+   "prompt": "A company needs a fully managed Windows-native file system accessible over SMB that integrates with Microsoft Active Directory. Which service fits?",
+   "choices": [
+    "Amazon EFS",
+    "Amazon FSx for Lustre",
+    "Amazon S3",
+    "Amazon FSx for Windows File Server"
+   ],
+   "answer": 3,
+   "explanation": "FSx for Windows File Server provides SMB shares with AD integration."
+  },
+  {
+   "id": "awsccp-148",
+   "domain": "tech",
+   "prompt": "Which service provides a high-performance file system for compute-intensive workloads like HPC and machine learning, and can link to S3?",
+   "choices": [
+    "Amazon FSx for Windows File Server",
+    "AWS Storage Gateway",
+    "Amazon FSx for Lustre",
+    "Amazon EBS Cold HDD"
+   ],
+   "answer": 2,
+   "explanation": "FSx for Lustre offers sub-millisecond latency and high throughput and integrates with S3."
+  },
+  {
+   "id": "awsccp-149",
+   "domain": "tech",
+   "prompt": "Which S3 storage class automatically moves objects between access tiers when access patterns change, without retrieval fees?",
+   "choices": [
+    "S3 Standard-IA",
+    "S3 Glacier Flexible Retrieval",
+    "S3 One Zone-IA",
+    "S3 Intelligent-Tiering"
+   ],
+   "answer": 3,
+   "explanation": "Intelligent-Tiering monitors access and moves objects to the most cost-effective tier automatically."
+  },
+  {
+   "id": "awsccp-150",
+   "domain": "tech",
+   "prompt": "Which S3 storage class is the lowest-cost option for data retained for years and accessed rarely, with retrieval times of hours?",
+   "choices": [
+    "S3 Standard",
+    "S3 Glacier Instant Retrieval",
+    "S3 Express One Zone",
+    "S3 Glacier Deep Archive"
+   ],
+   "answer": 3,
+   "explanation": "Deep Archive is the cheapest S3 class, designed for long-term retention with retrieval within about 12 to 48 hours."
+  },
+  {
+   "id": "awsccp-151",
+   "domain": "tech",
+   "prompt": "Which S3 storage class stores data in a single Availability Zone at lower cost, suitable for easily re-creatable, infrequently accessed data?",
+   "choices": [
+    "S3 Standard",
+    "S3 Intelligent-Tiering",
+    "S3 One Zone-Infrequent Access",
+    "S3 Glacier Deep Archive"
+   ],
+   "answer": 2,
+   "explanation": "One Zone-IA costs less because it does not replicate across multiple AZs."
+  },
+  {
+   "id": "awsccp-152",
+   "domain": "tech",
+   "prompt": "Which S3 feature automatically transitions objects to cheaper storage classes or deletes them after a defined period?",
+   "choices": [
+    "S3 Transfer Acceleration",
+    "S3 Object Lock",
+    "S3 Lifecycle policies",
+    "S3 Select"
+   ],
+   "answer": 2,
+   "explanation": "Lifecycle rules define transitions and expirations based on object age."
+  },
+  {
+   "id": "awsccp-153",
+   "domain": "tech",
+   "prompt": "Which S3 feature keeps multiple variants of an object so you can recover from accidental overwrites or deletions?",
+   "choices": [
+    "Versioning",
+    "Static website hosting",
+    "Requester Pays",
+    "Event notifications"
+   ],
+   "answer": 0,
+   "explanation": "Versioning preserves every version of every object in a bucket."
+  },
+  {
+   "id": "awsccp-154",
+   "domain": "tech",
+   "prompt": "Which service connects on-premises applications to AWS cloud storage using file, volume or tape interfaces?",
+   "choices": [
+    "AWS Direct Connect",
+    "Amazon EFS",
+    "AWS Storage Gateway",
+    "AWS Transfer Family"
+   ],
+   "answer": 2,
+   "explanation": "Storage Gateway is a hybrid storage service offering file, volume and tape gateways."
+  },
+  {
+   "id": "awsccp-155",
+   "domain": "tech",
+   "prompt": "Which service centrally manages and automates backups across services such as EBS, RDS, DynamoDB and EFS?",
+   "choices": [
+    "AWS Config",
+    "AWS Backup",
+    "Amazon S3 Replication",
+    "AWS DataSync"
+   ],
+   "answer": 1,
+   "explanation": "AWS Backup provides policy-based backup plans across many AWS services."
+  },
+  {
+   "id": "awsccp-156",
+   "domain": "tech",
+   "prompt": "Which managed relational database engine, built by AWS, is compatible with MySQL and PostgreSQL and offers higher performance than standard engines?",
+   "choices": [
+    "Amazon DynamoDB",
+    "Amazon Neptune",
+    "Amazon DocumentDB",
+    "Amazon Aurora"
+   ],
+   "answer": 3,
+   "explanation": "Aurora is a cloud-native relational database compatible with MySQL and PostgreSQL."
+  },
+  {
+   "id": "awsccp-157",
+   "domain": "tech",
+   "prompt": "Which Amazon RDS feature creates a synchronous standby copy of the database in another AZ for automatic failover?",
+   "choices": [
+    "Multi-AZ deployment",
+    "Read replicas",
+    "Automated snapshots",
+    "Parameter groups"
+   ],
+   "answer": 0,
+   "explanation": "Multi-AZ provides high availability by synchronously replicating to a standby in a different AZ."
+  },
+  {
+   "id": "awsccp-158",
+   "domain": "tech",
+   "prompt": "A read-heavy application wants to offload read traffic from its primary RDS database. What should it use?",
+   "choices": [
+    "Read replicas",
+    "Multi-AZ standby instance",
+    "Larger EBS volume",
+    "AWS Backup"
+   ],
+   "answer": 0,
+   "explanation": "Read replicas use asynchronous replication to serve read queries and scale read capacity."
+  },
+  {
+   "id": "awsccp-159",
+   "domain": "tech",
+   "prompt": "Which service is a fully managed in-memory caching service compatible with Redis OSS, Valkey or Memcached?",
+   "choices": [
+    "Amazon ElastiCache",
+    "Amazon Redshift",
+    "Amazon Neptune",
+    "Amazon Timestream"
+   ],
+   "answer": 0,
+   "explanation": "ElastiCache provides in-memory caches that reduce database load and latency."
+  },
+  {
+   "id": "awsccp-160",
+   "domain": "tech",
+   "prompt": "Which feature adds a microsecond-latency in-memory cache specifically for Amazon DynamoDB?",
+   "choices": [
+    "Amazon CloudFront",
+    "DynamoDB Streams",
+    "Amazon ElastiCache for Memcached",
+    "DynamoDB Accelerator (DAX)"
+   ],
+   "answer": 3,
+   "explanation": "DAX is a fully managed, DynamoDB-compatible in-memory cache."
+  },
+  {
+   "id": "awsccp-161",
+   "domain": "tech",
+   "prompt": "A social network needs to store and query highly connected relationship data such as friends of friends. Which database is purpose-built for this?",
+   "choices": [
+    "Amazon Neptune",
+    "Amazon RDS for MySQL",
+    "Amazon Redshift",
+    "Amazon Timestream"
+   ],
+   "answer": 0,
+   "explanation": "Neptune is a managed graph database optimized for relationships."
+  },
+  {
+   "id": "awsccp-162",
+   "domain": "tech",
+   "prompt": "Which service is a managed document database compatible with MongoDB workloads?",
+   "choices": [
+    "Amazon Neptune",
+    "Amazon DocumentDB",
+    "Amazon Keyspaces",
+    "Amazon QLDB"
+   ],
+   "answer": 1,
+   "explanation": "DocumentDB stores, queries and indexes JSON data with MongoDB compatibility."
+  },
+  {
+   "id": "awsccp-163",
+   "domain": "tech",
+   "prompt": "An IoT application needs to store and analyze trillions of time-stamped sensor readings. Which database is purpose-built for this?",
+   "choices": [
+    "Amazon Timestream",
+    "Amazon Neptune",
+    "Amazon DocumentDB",
+    "Amazon RDS for Oracle"
+   ],
+   "answer": 0,
+   "explanation": "Timestream is a time series database optimized for IoT and operational metrics."
+  },
+  {
+   "id": "awsccp-164",
+   "domain": "tech",
+   "prompt": "Which service is a petabyte-scale data warehouse for running complex analytic SQL queries?",
+   "choices": [
+    "Amazon DynamoDB",
+    "Amazon ElastiCache",
+    "Amazon RDS for SQL Server",
+    "Amazon Redshift"
+   ],
+   "answer": 3,
+   "explanation": "Redshift is a columnar, managed data warehouse for analytics."
+  },
+  {
+   "id": "awsccp-165",
+   "domain": "tech",
+   "prompt": "Which service lets analysts run standard SQL queries directly against data in Amazon S3 without loading it or managing servers?",
+   "choices": [
+    "Amazon Athena",
+    "Amazon EMR",
+    "AWS Glue DataBrew",
+    "Amazon Kinesis Data Streams"
+   ],
+   "answer": 0,
+   "explanation": "Athena is a serverless interactive query service that bills per data scanned."
+  },
+  {
+   "id": "awsccp-166",
+   "domain": "tech",
+   "prompt": "Which service is a serverless data integration (ETL) service with a Data Catalog for discovering data?",
+   "choices": [
+    "Amazon QuickSight",
+    "Amazon Kinesis",
+    "AWS Glue",
+    "AWS DataSync"
+   ],
+   "answer": 2,
+   "explanation": "Glue crawls data sources, builds a catalog and runs ETL jobs without servers."
+  },
+  {
+   "id": "awsccp-167",
+   "domain": "tech",
+   "prompt": "Which service provides managed big data frameworks such as Apache Spark and Hadoop?",
+   "choices": [
+    "Amazon EMR",
+    "Amazon Athena",
+    "Amazon QuickSight",
+    "AWS Glue Data Catalog only"
+   ],
+   "answer": 0,
+   "explanation": "EMR runs open-source big data frameworks on managed clusters or serverless."
+  },
+  {
+   "id": "awsccp-168",
+   "domain": "tech",
+   "prompt": "Which service creates interactive business intelligence dashboards and visualizations?",
+   "choices": [
+    "Amazon QuickSight",
+    "Amazon Athena",
+    "AWS Glue",
+    "Amazon EMR"
+   ],
+   "answer": 0,
+   "explanation": "QuickSight is a cloud-scale BI service for dashboards and reports."
+  },
+  {
+   "id": "awsccp-169",
+   "domain": "tech",
+   "prompt": "A company needs to collect and process clickstream data in real time from thousands of sources. Which service fits?",
+   "choices": [
+    "Amazon Kinesis Data Streams",
+    "Amazon S3 Glacier",
+    "AWS Snowball Edge",
+    "Amazon Redshift Spectrum only"
+   ],
+   "answer": 0,
+   "explanation": "Kinesis Data Streams captures and stores real-time streaming data for processing."
+  },
+  {
+   "id": "awsccp-170",
+   "domain": "tech",
+   "prompt": "Which service delivers streaming data to destinations such as S3, Redshift and OpenSearch with no code required?",
+   "choices": [
+    "Amazon Data Firehose",
+    "Amazon SQS",
+    "AWS Step Functions",
+    "Amazon MQ"
+   ],
+   "answer": 0,
+   "explanation": "Amazon Data Firehose (formerly Kinesis Data Firehose) loads streaming data into data stores and analytics tools."
+  },
+  {
+   "id": "awsccp-171",
+   "domain": "tech",
+   "prompt": "Which service is a managed search and log analytics engine, derived from Elasticsearch?",
+   "choices": [
+    "Amazon Kendra",
+    "Amazon Athena",
+    "Amazon Neptune",
+    "Amazon OpenSearch Service"
+   ],
+   "answer": 3,
+   "explanation": "OpenSearch Service runs OpenSearch clusters for search, log analytics and observability."
+  },
+  {
+   "id": "awsccp-172",
+   "domain": "tech",
+   "prompt": "Which service provides a fully managed message queue to decouple application components?",
+   "choices": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    "Amazon SNS",
+    "Amazon EventBridge Scheduler",
+    "Amazon Kinesis Video Streams"
+   ],
+   "answer": 0,
+   "explanation": "SQS stores messages until consumers process them, decoupling producers from consumers."
+  },
+  {
+   "id": "awsccp-173",
+   "domain": "tech",
+   "prompt": "Which service uses a publish/subscribe model to push notifications to multiple subscribers such as email, SMS and SQS queues?",
+   "choices": [
+    "Amazon Simple Notification Service (Amazon SNS)",
+    "Amazon SQS",
+    "AWS Batch",
+    "Amazon AppFlow"
+   ],
+   "answer": 0,
+   "explanation": "SNS fans out messages from topics to many subscribers."
+  },
+  {
+   "id": "awsccp-174",
+   "domain": "tech",
+   "prompt": "Which serverless event bus routes events from AWS services, SaaS applications and custom apps to targets using rules?",
+   "choices": [
+    "Amazon EventBridge",
+    "Amazon SQS",
+    "AWS CloudFormation",
+    "Amazon Lightsail"
+   ],
+   "answer": 0,
+   "explanation": "EventBridge is a serverless event bus that matches events to targets with rules."
+  },
+  {
+   "id": "awsccp-175",
+   "domain": "tech",
+   "prompt": "Which service coordinates multiple AWS services into serverless workflows using a visual state machine?",
+   "choices": [
+    "Amazon SNS",
+    "AWS CodeCommit",
+    "AWS Step Functions",
+    "Amazon Inspector"
+   ],
+   "answer": 2,
+   "explanation": "Step Functions orchestrates steps, retries and branching between services."
+  },
+  {
+   "id": "awsccp-176",
+   "domain": "tech",
+   "prompt": "Which service lets you create, publish and secure REST and WebSocket APIs at any scale?",
+   "choices": [
+    "Amazon Route 53",
+    "AWS Direct Connect",
+    "Amazon API Gateway",
+    "Elastic Load Balancing"
+   ],
+   "answer": 2,
+   "explanation": "API Gateway is a managed service for creating and managing APIs."
+  },
+  {
+   "id": "awsccp-177",
+   "domain": "tech",
+   "prompt": "Which VPC component allows resources in a public subnet to communicate with the internet?",
+   "choices": [
+    "Virtual private gateway",
+    "VPC endpoint",
+    "Transit gateway attachment only",
+    "Internet gateway"
+   ],
+   "answer": 3,
+   "explanation": "An internet gateway attached to a VPC, plus a route, enables internet access for public subnets."
+  },
+  {
+   "id": "awsccp-178",
+   "domain": "tech",
+   "prompt": "Instances in a private subnet need to download software updates from the internet without accepting inbound connections. What should be used?",
+   "choices": [
+    "Internet gateway attached to the private subnet",
+    "Elastic IP on each instance",
+    "NAT gateway",
+    "AWS Direct Connect"
+   ],
+   "answer": 2,
+   "explanation": "A NAT gateway lets private instances initiate outbound internet traffic while blocking unsolicited inbound traffic."
+  },
+  {
+   "id": "awsccp-179",
+   "domain": "tech",
+   "prompt": "Which service creates encrypted IPsec tunnels over the internet between an on-premises network and a VPC?",
+   "choices": [
+    "AWS Direct Connect",
+    "Amazon CloudFront",
+    "AWS Site-to-Site VPN",
+    "AWS Global Accelerator"
+   ],
+   "answer": 2,
+   "explanation": "Site-to-Site VPN provides encrypted connectivity over the public internet, quick to set up."
+  },
+  {
+   "id": "awsccp-180",
+   "domain": "tech",
+   "prompt": "A company has dozens of VPCs and on-premises networks and wants a central hub to interconnect them. Which service fits?",
+   "choices": [
+    "VPC peering for each pair",
+    "Internet gateway",
+    "AWS Transit Gateway",
+    "NAT gateway"
+   ],
+   "answer": 2,
+   "explanation": "Transit Gateway acts as a regional hub connecting VPCs and on-premises networks, simplifying routing."
+  },
+  {
+   "id": "awsccp-181",
+   "domain": "tech",
+   "prompt": "Which feature allows private connectivity from a VPC to services such as S3 or DynamoDB without traversing the internet?",
+   "choices": [
+    "Internet gateways",
+    "Elastic IP addresses",
+    "VPC endpoints",
+    "Public subnets"
+   ],
+   "answer": 2,
+   "explanation": "Gateway and interface VPC endpoints keep traffic to supported services on the AWS network."
+  },
+  {
+   "id": "awsccp-182",
+   "domain": "tech",
+   "prompt": "Which service improves availability and performance of global applications by routing users over the AWS global network using static anycast IP addresses?",
+   "choices": [
+    "AWS Global Accelerator",
+    "Amazon CloudFront",
+    "Amazon Route 53 Resolver",
+    "AWS Site-to-Site VPN"
+   ],
+   "answer": 0,
+   "explanation": "Global Accelerator provides two static anycast IPs and routes traffic to the optimal healthy endpoint."
+  },
+  {
+   "id": "awsccp-183",
+   "domain": "tech",
+   "prompt": "Which Route 53 routing policy sends users to the Region that gives them the lowest network latency?",
+   "choices": [
+    "Simple routing",
+    "Weighted routing",
+    "Geolocation routing",
+    "Latency-based routing"
+   ],
+   "answer": 3,
+   "explanation": "Latency routing directs users to the resource with the lowest measured latency."
+  },
+  {
+   "id": "awsccp-184",
+   "domain": "tech",
+   "prompt": "Which service lets you model and provision AWS infrastructure using templates written in JSON or YAML?",
+   "choices": [
+    "AWS Systems Manager Session Manager",
+    "Amazon CloudWatch",
+    "AWS CloudFormation",
+    "AWS Trusted Advisor"
+   ],
+   "answer": 2,
+   "explanation": "CloudFormation provisions resources as stacks from infrastructure-as-code templates."
+  },
+  {
+   "id": "awsccp-185",
+   "domain": "tech",
+   "prompt": "Which tool lets developers define AWS infrastructure using familiar programming languages such as TypeScript or Python?",
+   "choices": [
+    "AWS CLI",
+    "AWS Artifact",
+    "AWS Cloud Development Kit (AWS CDK)",
+    "AWS Management Console"
+   ],
+   "answer": 2,
+   "explanation": "The CDK synthesizes code into CloudFormation templates."
+  },
+  {
+   "id": "awsccp-186",
+   "domain": "tech",
+   "prompt": "Which service provides operational tools to patch, run commands on and manage fleets of EC2 and on-premises servers?",
+   "choices": [
+    "AWS Shield",
+    "Amazon Inspector",
+    "AWS Systems Manager",
+    "AWS Budgets"
+   ],
+   "answer": 2,
+   "explanation": "Systems Manager includes Patch Manager, Run Command, Session Manager and Parameter Store."
+  },
+  {
+   "id": "awsccp-187",
+   "domain": "tech",
+   "prompt": "Which service collects metrics and logs and lets you set alarms on AWS resources?",
+   "choices": [
+    "AWS CloudTrail",
+    "AWS Artifact",
+    "AWS Organizations",
+    "Amazon CloudWatch"
+   ],
+   "answer": 3,
+   "explanation": "CloudWatch monitors resources and applications with metrics, logs, dashboards and alarms."
+  },
+  {
+   "id": "awsccp-188",
+   "domain": "tech",
+   "prompt": "Which service helps developers trace requests through distributed applications to find performance bottlenecks?",
+   "choices": [
+    "AWS X-Ray",
+    "AWS Config",
+    "Amazon Inspector",
+    "AWS Artifact"
+   ],
+   "answer": 0,
+   "explanation": "X-Ray provides end-to-end tracing and service maps for applications."
+  },
+  {
+   "id": "awsccp-189",
+   "domain": "tech",
+   "prompt": "Which service gives a personalized view of AWS service events that may affect your specific resources?",
+   "choices": [
+    "AWS Budgets",
+    "AWS Service Catalog",
+    "Amazon Macie",
+    "AWS Health Dashboard (your account health)"
+   ],
+   "answer": 3,
+   "explanation": "The AWS Health Dashboard shows account-specific events and scheduled changes."
+  },
+  {
+   "id": "awsccp-190",
+   "domain": "tech",
+   "prompt": "Which tool tracks the progress of application migrations across multiple AWS and partner tools in one place?",
+   "choices": [
+    "AWS Backup",
+    "AWS Migration Hub",
+    "AWS Config",
+    "Amazon AppFlow"
+   ],
+   "answer": 1,
+   "explanation": "Migration Hub provides a single location to track migration status."
+  },
+  {
+   "id": "awsccp-191",
+   "domain": "tech",
+   "prompt": "Which service migrates databases to AWS while the source database stays operational, supporting both homogeneous and heterogeneous migrations?",
+   "choices": [
+    "AWS DataSync",
+    "AWS Snowcone",
+    "AWS Glue DataBrew",
+    "AWS Database Migration Service (AWS DMS)"
+   ],
+   "answer": 3,
+   "explanation": "DMS replicates data continuously so the source remains available, and works with the Schema Conversion Tool for different engines."
+  },
+  {
+   "id": "awsccp-192",
+   "domain": "tech",
+   "prompt": "Which service performs automated lift-and-shift migration of physical, virtual and cloud servers to AWS with minimal downtime?",
+   "choices": [
+    "AWS DMS",
+    "AWS Snowball Edge",
+    "AWS Transfer Family",
+    "AWS Application Migration Service"
+   ],
+   "answer": 3,
+   "explanation": "Application Migration Service continuously replicates source servers and launches them on EC2."
+  },
+  {
+   "id": "awsccp-193",
+   "domain": "tech",
+   "prompt": "A company must transfer 80 TB of data from a remote site with limited bandwidth. Which option is most practical?",
+   "choices": [
+    "Uploading over the existing internet link",
+    "AWS Snowball Edge",
+    "AWS Site-to-Site VPN",
+    "Amazon CloudFront"
+   ],
+   "answer": 1,
+   "explanation": "Snowball Edge is a rugged physical device for transferring tens of terabytes offline, and also offers edge compute."
+  },
+  {
+   "id": "awsccp-194",
+   "domain": "tech",
+   "prompt": "Which service automates online data transfer between on-premises storage (such as NFS or SMB) and AWS storage services?",
+   "choices": [
+    "AWS Snowball Edge",
+    "AWS Application Migration Service",
+    "AWS DataSync",
+    "Amazon Kinesis"
+   ],
+   "answer": 2,
+   "explanation": "DataSync moves data over the network quickly with automation, encryption and validation."
+  },
+  {
+   "id": "awsccp-195",
+   "domain": "tech",
+   "prompt": "Which service lets developers build, train and deploy custom machine learning models at scale?",
+   "choices": [
+    "Amazon SageMaker AI",
+    "Amazon Rekognition",
+    "Amazon Polly",
+    "Amazon Comprehend"
+   ],
+   "answer": 0,
+   "explanation": "SageMaker AI provides tools across the full ML lifecycle for building, training and deploying models."
+  },
+  {
+   "id": "awsccp-196",
+   "domain": "tech",
+   "prompt": "Which service provides access to foundation models from Amazon and leading AI companies through a single API to build generative AI applications?",
+   "choices": [
+    "Amazon Textract",
+    "Amazon Bedrock",
+    "Amazon Lex",
+    "AWS Glue"
+   ],
+   "answer": 1,
+   "explanation": "Bedrock is a managed service offering foundation models via API without managing infrastructure."
+  },
+  {
+   "id": "awsccp-197",
+   "domain": "tech",
+   "prompt": "A company wants to automatically extract text, forms and tables from scanned documents. Which service fits?",
+   "choices": [
+    "Amazon Translate",
+    "Amazon Textract",
+    "Amazon Polly",
+    "Amazon Kendra"
+   ],
+   "answer": 1,
+   "explanation": "Textract uses ML to extract printed and handwritten text and structured data from documents."
+  },
+  {
+   "id": "awsccp-198",
+   "domain": "tech",
+   "prompt": "Which service converts text into lifelike speech?",
+   "choices": [
+    "Amazon Transcribe",
+    "Amazon Lex",
+    "Amazon Comprehend",
+    "Amazon Polly"
+   ],
+   "answer": 3,
+   "explanation": "Polly is a text-to-speech service; Transcribe does the reverse."
+  },
+  {
+   "id": "awsccp-199",
+   "domain": "billing",
+   "prompt": "A company runs a steady database server 24/7 and will keep it for three years on the same instance type in one Region. Which pricing option gives significant savings with that commitment?",
+   "choices": [
+    "EC2 Reserved Instances (or an EC2 Instance Savings Plan)",
+    "On-Demand Instances",
+    "Spot Instances",
+    "Dedicated Host billed On-Demand"
+   ],
+   "answer": 0,
+   "explanation": "Committing to steady usage for one or three years provides large discounts compared with On-Demand."
+  },
+  {
+   "id": "awsccp-200",
+   "domain": "billing",
+   "prompt": "Which Savings Plan type applies automatically to EC2, AWS Fargate and AWS Lambda usage regardless of instance family or Region?",
+   "choices": [
+    "EC2 Instance Savings Plans",
+    "Standard Reserved Instances",
+    "Spot Fleet",
+    "Compute Savings Plans"
+   ],
+   "answer": 3,
+   "explanation": "Compute Savings Plans offer the most flexibility, applying across instance families, Regions, OS, Fargate and Lambda."
+  },
+  {
+   "id": "awsccp-201",
+   "domain": "billing",
+   "prompt": "What does a customer commit to when purchasing a Savings Plan?",
+   "choices": [
+    "A consistent amount of usage measured in dollars per hour for a one- or three-year term",
+    "A fixed number of EC2 instances for one month",
+    "A minimum number of IAM users",
+    "A fixed amount of S3 storage per year"
+   ],
+   "answer": 0,
+   "explanation": "Savings Plans trade an hourly spend commitment for lower prices."
+  },
+  {
+   "id": "awsccp-202",
+   "domain": "billing",
+   "prompt": "A developer is testing a short-lived workload with unpredictable usage that cannot be interrupted. Which EC2 pricing option is most appropriate?",
+   "choices": [
+    "Spot Instances",
+    "On-Demand Instances",
+    "Three-year Reserved Instances",
+    "Dedicated Hosts with a three-year reservation"
+   ],
+   "answer": 1,
+   "explanation": "On-Demand has no commitment and is not interrupted, ideal for short-term, unpredictable workloads."
+  },
+  {
+   "id": "awsccp-203",
+   "domain": "billing",
+   "prompt": "Which EC2 option lets a company use existing server-bound software licenses, such as per-socket licenses, on physical servers dedicated to it?",
+   "choices": [
+    "Spot Instances",
+    "Lambda",
+    "Shared-tenancy On-Demand Instances",
+    "Dedicated Hosts"
+   ],
+   "answer": 3,
+   "explanation": "Dedicated Hosts give visibility into sockets and cores, supporting bring-your-own-license scenarios."
+  },
+  {
+   "id": "awsccp-204",
+   "domain": "billing",
+   "prompt": "Which statement about AWS data transfer pricing is generally true?",
+   "choices": [
+    "All data transfer is free",
+    "Inbound data transfer from the internet into AWS is free, while outbound data transfer to the internet is charged",
+    "Inbound data is charged but outbound is free",
+    "Data transfer is charged only within an AZ"
+   ],
+   "answer": 1,
+   "explanation": "AWS typically does not charge for data in, but charges for data out to the internet and some inter-Region and inter-AZ traffic."
+  },
+  {
+   "id": "awsccp-205",
+   "domain": "billing",
+   "prompt": "Which tool lets a company set a custom cost or usage threshold and receive alerts when actual or forecasted spending exceeds it?",
+   "choices": [
+    "AWS Cost Explorer",
+    "AWS Budgets",
+    "AWS Pricing Calculator",
+    "AWS Artifact"
+   ],
+   "answer": 1,
+   "explanation": "AWS Budgets sends alerts based on actual or forecasted cost and usage, and can trigger actions."
+  },
+  {
+   "id": "awsccp-206",
+   "domain": "billing",
+   "prompt": "Which source provides the most detailed, line-item billing data, delivered to an S3 bucket for analysis in tools like Athena?",
+   "choices": [
+    "AWS Budgets alerts",
+    "AWS Health Dashboard",
+    "AWS Trusted Advisor",
+    "AWS Cost and Usage Report (CUR)"
+   ],
+   "answer": 3,
+   "explanation": "The CUR contains the most comprehensive cost and usage data, including hourly line items and resource IDs."
+  },
+  {
+   "id": "awsccp-207",
+   "domain": "billing",
+   "prompt": "What are cost allocation tags used for?",
+   "choices": [
+    "Encrypting billing data",
+    "Granting IAM permissions to billing",
+    "Reducing On-Demand prices automatically",
+    "Organizing and tracking AWS costs by labels such as project or department in billing reports"
+   ],
+   "answer": 3,
+   "explanation": "Activated cost allocation tags appear in Cost Explorer and the CUR so costs can be grouped by tag."
+  },
+  {
+   "id": "awsccp-208",
+   "domain": "billing",
+   "prompt": "Which service uses machine learning to detect unusual spikes in AWS spending and alert you?",
+   "choices": [
+    "Amazon GuardDuty",
+    "AWS Config",
+    "AWS Cost Anomaly Detection",
+    "Amazon Inspector"
+   ],
+   "answer": 2,
+   "explanation": "Cost Anomaly Detection monitors spending patterns and notifies you of anomalies with root cause analysis."
+  },
+  {
+   "id": "awsccp-209",
+   "domain": "billing",
+   "prompt": "With consolidated billing in AWS Organizations, how are volume pricing tiers applied?",
+   "choices": [
+    "Each account is billed separately at the highest tier",
+    "Usage across all member accounts is combined, so the organization may reach lower tier prices sooner",
+    "Volume discounts are disabled",
+    "Only the management account's usage counts"
+   ],
+   "answer": 1,
+   "explanation": "Consolidated billing aggregates usage, allowing tiered discounts and Reserved Instance or Savings Plan sharing across accounts."
+  },
+  {
+   "id": "awsccp-210",
+   "domain": "billing",
+   "prompt": "Which support plan is the lowest-cost plan that provides 24/7 access to Cloud Support Engineers by phone, chat and email?",
+   "choices": [
+    "Basic",
+    "Developer",
+    "Business",
+    "Enterprise"
+   ],
+   "answer": 2,
+   "explanation": "Business is the first tier with 24/7 technical support via phone, chat and email; Developer offers business-hours email access."
+  },
+  {
+   "id": "awsccp-211",
+   "domain": "billing",
+   "prompt": "Which capability is included with the AWS Basic Support plan at no cost?",
+   "choices": [
+    "A designated Technical Account Manager",
+    "Access to AWS re:Post, documentation, the AWS Health Dashboard and core Trusted Advisor checks",
+    "24/7 phone support with Cloud Support Engineers",
+    "Infrastructure Event Management"
+   ],
+   "answer": 1,
+   "explanation": "Basic Support includes customer service, documentation, community forums and a limited set of Trusted Advisor checks."
+  },
+  {
+   "id": "awsccp-212",
+   "domain": "billing",
+   "prompt": "Which AWS support plan level is the first to include access to the full set of AWS Trusted Advisor checks?",
+   "choices": [
+    "Basic",
+    "Developer",
+    "Business",
+    "There is no plan that includes them"
+   ],
+   "answer": 2,
+   "explanation": "Business, Enterprise On-Ramp and Enterprise Support include all Trusted Advisor checks."
+  },
+  {
+   "id": "awsccp-213",
+   "domain": "billing",
+   "prompt": "Which AWS Trusted Advisor category would identify idle EC2 instances and underutilized EBS volumes?",
+   "choices": [
+    "Fault tolerance",
+    "Cost optimization",
+    "Security",
+    "Service limits"
+   ],
+   "answer": 1,
+   "explanation": "Trusted Advisor's cost optimization checks flag resources you may be paying for but not using."
+  },
+  {
+   "id": "awsccp-214",
+   "domain": "billing",
+   "prompt": "Which team, available to Enterprise Support customers, offers proactive guidance and helps coordinate access to programs and experts?",
+   "choices": [
+    "AWS Trust & Safety team",
+    "Technical Account Manager (TAM) and the Concierge Support Team",
+    "AWS Marketplace sellers",
+    "AWS Partner Network only"
+   ],
+   "answer": 1,
+   "explanation": "Enterprise Support includes a designated TAM and a Concierge team for billing and account assistance."
+  },
+  {
+   "id": "awsccp-215",
+   "domain": "billing",
+   "prompt": "Which AWS program helps customers find consulting partners and software vendors that are validated for specific AWS competencies?",
+   "choices": [
+    "AWS Partner Network (APN)",
+    "AWS Artifact",
+    "AWS Budgets",
+    "AWS Organizations"
+   ],
+   "answer": 0,
+   "explanation": "The APN includes consulting and technology partners, and customers can find validated partners through the AWS Partner Solutions Finder."
+  },
+  {
+   "id": "awsccp-216",
+   "domain": "billing",
+   "prompt": "Which AWS offering lets customers try many services free within certain usage limits, including always-free offers and short-term trials?",
+   "choices": [
+    "AWS Activate Enterprise",
+    "AWS Free Tier",
+    "AWS Credits Marketplace",
+    "AWS Support Basic Plus"
+   ],
+   "answer": 1,
+   "explanation": "The Free Tier includes always-free offers, free trials and limited free usage for new accounts."
+  },
+  {
+   "id": "awsccp-217",
+   "domain": "billing",
+   "prompt": "Which EC2 pricing model can be up to 90% cheaper than On-Demand but can be interrupted by AWS with a two-minute warning?",
+   "choices": [
+    "Reserved Instances",
+    "Savings Plans",
+    "Spot Instances",
+    "Dedicated Instances"
+   ],
+   "answer": 2,
+   "explanation": "Spot Instances use spare capacity at steep discounts, but AWS can reclaim them with a two-minute interruption notice."
+  },
+  {
+   "id": "awsccp-218",
+   "domain": "billing",
+   "prompt": "A company wants to reserve EC2 capacity in a specific Availability Zone for a short planned event without a long-term commitment. Which option fits?",
+   "choices": [
+    "On-Demand Capacity Reservations",
+    "Three-year Standard Reserved Instances",
+    "Spot Instances",
+    "Compute Savings Plans"
+   ],
+   "answer": 0,
+   "explanation": "On-Demand Capacity Reservations guarantee capacity in an AZ for any duration and can be cancelled anytime."
+  },
+  {
+   "id": "awsccp-219",
+   "domain": "billing",
+   "prompt": "Which AWS service lets you manage charges and pricing for internal teams or end customers by creating custom billing groups and rates?",
+   "choices": [
+    "AWS Cost Anomaly Detection",
+    "AWS Service Catalog",
+    "AWS Billing Conductor",
+    "AWS License Manager"
+   ],
+   "answer": 2,
+   "explanation": "Billing Conductor creates pro forma billing data with custom pricing for showback and chargeback."
+  },
+  {
+   "id": "awsccp-220",
+   "domain": "billing",
+   "prompt": "Which statement about Reserved Instances is accurate?",
+   "choices": [
+    "Standard Reserved Instances can be changed to any instance family at any time",
+    "Convertible Reserved Instances let you change instance family and OS, with a lower discount than Standard Reserved Instances",
+    "Reserved Instances are cheaper when bought for one month",
+    "Reserved Instances cannot be shared across accounts in an organization"
+   ],
+   "answer": 1,
+   "explanation": "Convertible RIs trade some discount for flexibility to exchange for different instance attributes."
+  },
+  {
+   "id": "awsccp-221",
+   "domain": "billing",
+   "prompt": "Which Enterprise Support capability helps plan and run large events such as product launches or migrations with AWS experts?",
+   "choices": [
+    "AWS Free Tier",
+    "AWS Cost Explorer forecasts",
+    "Infrastructure Event Management",
+    "Amazon Inspector scans"
+   ],
+   "answer": 2,
+   "explanation": "Infrastructure Event Management provides architecture and scaling guidance for planned high-traffic events."
+  },
+  {
+   "id": "awsccp-222",
+   "domain": "billing",
+   "prompt": "Which free AWS service gives recommendations to rightsize EC2 instances, EBS volumes and Lambda functions based on utilization metrics?",
+   "choices": [
+    "AWS Pricing Calculator",
+    "AWS Artifact",
+    "AWS Compute Optimizer",
+    "AWS Marketplace"
+   ],
+   "answer": 2,
+   "explanation": "Compute Optimizer uses machine learning on usage metrics to recommend optimal resource configurations."
+  }
+ ]
+}

@@ -1,0 +1,3135 @@
+{
+ "id": "aplus",
+ "order": 1,
+ "name": "CompTIA A+",
+ "shortName": "A+",
+ "vendor": "CompTIA",
+ "examCode": "220-1201 / 220-1202",
+ "symbol": "desktopcomputer",
+ "colorHex": "F97316",
+ "passingPercent": 75,
+ "summary": "Hardware, mobile devices, networking, operating systems, security and troubleshooting for IT support roles.",
+ "domains": [
+  {
+   "id": "mobile",
+   "name": "Mobile Devices",
+   "part": "core1",
+   "summary": "Set up, configure and support laptops, phones and tablets.",
+   "topics": [
+    "Laptop hardware: RAM, storage, batteries, keyboards, displays",
+    "Mobile accessories and connection methods (USB-C, Bluetooth, NFC, hotspot)",
+    "Mobile device network connectivity and app support",
+    "Email, MDM and synchronization",
+    "Display components: LCD, OLED, digitizer, inverter"
+   ]
+  },
+  {
+   "id": "net",
+   "name": "Networking",
+   "part": "core1",
+   "summary": "Networking fundamentals for supporting small offices and home networks.",
+   "topics": [
+    "TCP and UDP ports and protocols",
+    "Networking hardware: switches, routers, APs, firewalls, PoE",
+    "Wireless standards and frequencies",
+    "Networked host services (DNS, DHCP, web, mail, syslog)",
+    "IP addressing: IPv4, IPv6, APIPA, static vs dynamic",
+    "SOHO network configuration and tools (crimpers, testers, toner)"
+   ]
+  },
+  {
+   "id": "hw",
+   "name": "Hardware",
+   "part": "core1",
+   "summary": "Install, configure and maintain PC components and peripherals.",
+   "topics": [
+    "Cables and connectors",
+    "RAM types and installation",
+    "Storage: HDD, SSD, NVMe, RAID",
+    "Motherboards, CPUs, add-on cards and cooling",
+    "Power supplies",
+    "Printers and multifunction devices: laser, inkjet, thermal, impact"
+   ]
+  },
+  {
+   "id": "virt",
+   "name": "Virtualization & Cloud",
+   "part": "core1",
+   "summary": "Virtualization and cloud computing concepts for IT support.",
+   "topics": [
+    "Cloud models: public, private, hybrid, community",
+    "Service models: IaaS, PaaS, SaaS",
+    "Cloud characteristics: elasticity, metered use, shared resources",
+    "Client-side virtualization and hypervisors",
+    "Virtual desktops and sandboxes"
+   ]
+  },
+  {
+   "id": "hwts",
+   "name": "Hardware & Network Troubleshooting",
+   "part": "core1",
+   "summary": "Diagnose and fix hardware and network problems using a proven method.",
+   "topics": [
+    "The troubleshooting methodology",
+    "Motherboard, RAM, CPU and power faults",
+    "Storage drive and RAID failures",
+    "Display and video issues",
+    "Mobile device problems",
+    "Printer problems",
+    "Wired and wireless network issues"
+   ]
+  },
+  {
+   "id": "os",
+   "name": "Operating Systems",
+   "part": "core2",
+   "summary": "Install, configure and manage Windows, macOS and Linux.",
+   "topics": [
+    "Windows editions, features and upgrades",
+    "Windows tools: Task Manager, MMC snap-ins, Control Panel, Settings",
+    "Command-line tools (ipconfig, sfc, chkdsk, robocopy, gpupdate)",
+    "Windows networking and file sharing",
+    "macOS and Linux features and commands",
+    "OS installation, file systems and partitioning",
+    "Application installation and requirements"
+   ]
+  },
+  {
+   "id": "sec",
+   "name": "Security",
+   "part": "core2",
+   "summary": "Protect devices, users and data in a small business.",
+   "topics": [
+    "Physical security and logical controls",
+    "Wireless security protocols and authentication",
+    "Malware types, removal and prevention",
+    "Social engineering and common threats",
+    "Windows security settings: Defender, firewall, BitLocker, UAC",
+    "Securing mobile and SOHO devices",
+    "Browser security"
+   ]
+  },
+  {
+   "id": "swts",
+   "name": "Software Troubleshooting",
+   "part": "core2",
+   "summary": "Fix operating system, security and application problems.",
+   "topics": [
+    "Common Windows OS problems and fixes",
+    "Personal computer security issues",
+    "Malware removal steps",
+    "Mobile OS and application issues",
+    "Mobile security issues"
+   ]
+  },
+  {
+   "id": "ops",
+   "name": "Operational Procedures",
+   "part": "core2",
+   "summary": "Professional practices that keep IT support safe and reliable.",
+   "topics": [
+    "Documentation, ticketing and asset management",
+    "Change management",
+    "Backup and recovery methods",
+    "Safety procedures and ESD",
+    "Environmental controls and disposal",
+    "Privacy, licensing and policy",
+    "Communication and professionalism",
+    "Scripting basics and remote access"
+   ]
+  }
+ ],
+ "parts": [
+  {
+   "id": "core1",
+   "name": "Core 1",
+   "examCode": "220-1201",
+   "summary": "The hardware side: devices, networking, hardware, virtualization & cloud, and troubleshooting them."
+  },
+  {
+   "id": "core2",
+   "name": "Core 2",
+   "examCode": "220-1202",
+   "summary": "The software side: operating systems, security, software troubleshooting and operational procedures."
+  }
+ ],
+ "questions": [
+  {
+   "id": "aplus-001",
+   "domain": "mobile",
+   "prompt": "A user's smartphone battery drains quickly and the phone feels hot even when idle. What is the BEST first step?",
+   "choices": [
+    "Replace the battery",
+    "Check battery usage for a misbehaving app",
+    "Perform a factory reset",
+    "Disable Wi-Fi permanently"
+   ],
+   "answer": 1,
+   "explanation": "Start with the least invasive step: battery usage settings reveal apps running in the background and consuming power."
+  },
+  {
+   "id": "aplus-002",
+   "domain": "mobile",
+   "prompt": "Which technology lets a phone pay at a checkout terminal by holding it a few centimetres away?",
+   "choices": [
+    "Bluetooth",
+    "NFC",
+    "Infrared",
+    "Wi-Fi Direct"
+   ],
+   "answer": 1,
+   "explanation": "Near Field Communication (NFC) works over a few centimetres and is used for contactless payments."
+  },
+  {
+   "id": "aplus-003",
+   "domain": "mobile",
+   "prompt": "A laptop's display is very dim but an image is faintly visible with a flashlight. What has MOST likely failed?",
+   "choices": [
+    "GPU",
+    "Backlight or inverter",
+    "Digitizer",
+    "Display cable to the keyboard"
+   ],
+   "answer": 1,
+   "explanation": "A faint image visible under a flashlight means the LCD panel works but the backlight (or inverter on older CCFL screens) does not."
+  },
+  {
+   "id": "aplus-004",
+   "domain": "net",
+   "prompt": "Which port does HTTPS use by default?",
+   "choices": [
+    "80",
+    "443",
+    "22",
+    "3389"
+   ],
+   "answer": 1,
+   "explanation": "HTTPS uses TCP 443. HTTP is 80, SSH is 22 and RDP is 3389."
+  },
+  {
+   "id": "aplus-005",
+   "domain": "net",
+   "prompt": "A PC shows an IP address of 169.254.12.40. What does this indicate?",
+   "choices": [
+    "It received a DHCP lease",
+    "It could not reach a DHCP server (APIPA)",
+    "It has a static public IP",
+    "It is using IPv6"
+   ],
+   "answer": 1,
+   "explanation": "169.254.x.x is an APIPA address, self-assigned when a DHCP server can't be reached."
+  },
+  {
+   "id": "aplus-006",
+   "domain": "net",
+   "prompt": "Which Wi-Fi standard is also known as Wi-Fi 6?",
+   "choices": [
+    "802.11n",
+    "802.11ac",
+    "802.11ax",
+    "802.11g"
+   ],
+   "answer": 2,
+   "explanation": "802.11ax is Wi-Fi 6 (and Wi-Fi 6E on 6 GHz). 802.11ac is Wi-Fi 5, 802.11n is Wi-Fi 4."
+  },
+  {
+   "id": "aplus-007",
+   "domain": "net",
+   "prompt": "Which protocol translates hostnames like example.com into IP addresses?",
+   "choices": [
+    "DHCP",
+    "DNS",
+    "SMTP",
+    "SNMP"
+   ],
+   "answer": 1,
+   "explanation": "DNS (port 53) resolves names to IP addresses."
+  },
+  {
+   "id": "aplus-008",
+   "domain": "hw",
+   "prompt": "Which RAM type is used in most modern laptops due to its smaller size?",
+   "choices": [
+    "DIMM",
+    "SO-DIMM",
+    "SIMM",
+    "RIMM"
+   ],
+   "answer": 1,
+   "explanation": "SO-DIMM (small outline DIMM) modules are used in laptops and small form factor PCs."
+  },
+  {
+   "id": "aplus-009",
+   "domain": "hw",
+   "prompt": "A technician needs the fastest storage option for a new desktop with an M.2 slot. What should they choose?",
+   "choices": [
+    "SATA HDD",
+    "M.2 SATA SSD",
+    "M.2 NVMe SSD",
+    "eMMC"
+   ],
+   "answer": 2,
+   "explanation": "NVMe SSDs use PCIe lanes and are far faster than SATA-based drives."
+  },
+  {
+   "id": "aplus-010",
+   "domain": "hw",
+   "prompt": "Which RAID level provides mirroring with no striping?",
+   "choices": [
+    "RAID 0",
+    "RAID 1",
+    "RAID 5",
+    "RAID 10"
+   ],
+   "answer": 1,
+   "explanation": "RAID 1 mirrors data across two drives. RAID 0 stripes, RAID 5 stripes with parity, RAID 10 is a stripe of mirrors."
+  },
+  {
+   "id": "aplus-011",
+   "domain": "hw",
+   "prompt": "What is the main purpose of thermal paste between a CPU and its heat sink?",
+   "choices": [
+    "Electrically insulate the CPU",
+    "Fill microscopic gaps to improve heat transfer",
+    "Glue the cooler in place",
+    "Reduce fan noise"
+   ],
+   "answer": 1,
+   "explanation": "Thermal paste fills tiny air gaps so heat moves efficiently from the CPU to the heat sink."
+  },
+  {
+   "id": "aplus-012",
+   "domain": "virt",
+   "prompt": "Which cloud model provides virtual machines while the customer manages the OS?",
+   "choices": [
+    "SaaS",
+    "PaaS",
+    "IaaS",
+    "DaaS"
+   ],
+   "answer": 2,
+   "explanation": "With IaaS the provider supplies infrastructure; the customer manages the OS and everything above it."
+  },
+  {
+   "id": "aplus-013",
+   "domain": "virt",
+   "prompt": "A Type 1 hypervisor is BEST described as:",
+   "choices": [
+    "Software running on top of a host OS",
+    "A hypervisor running directly on hardware",
+    "A container runtime",
+    "A cloud billing tool"
+   ],
+   "answer": 1,
+   "explanation": "Type 1 (bare-metal) hypervisors like ESXi or Hyper-V Server run directly on hardware."
+  },
+  {
+   "id": "aplus-014",
+   "domain": "hwts",
+   "prompt": "A PC powers on, fans spin, but there is no display and it emits a repeating beep pattern. What should the tech do FIRST?",
+   "choices": [
+    "Replace the motherboard",
+    "Look up the POST beep code",
+    "Reinstall the OS",
+    "Replace the monitor"
+   ],
+   "answer": 1,
+   "explanation": "Beep codes are POST diagnostics; look them up for that BIOS vendor to identify the failing component."
+  },
+  {
+   "id": "aplus-015",
+   "domain": "hwts",
+   "prompt": "Users report a printer produces pages with a repeating smudge at the same interval. What is the MOST likely cause?",
+   "choices": [
+    "Low toner",
+    "Damaged drum or fuser roller",
+    "Wrong driver",
+    "Network congestion"
+   ],
+   "answer": 1,
+   "explanation": "Defects repeating at regular intervals point to a roller, drum or fuser with damage matching its circumference."
+  },
+  {
+   "id": "aplus-016",
+   "domain": "hwts",
+   "prompt": "A user can reach websites by IP address but not by name. What is the MOST likely issue?",
+   "choices": [
+    "Bad cable",
+    "DNS misconfiguration",
+    "DHCP exhausted",
+    "Firewall blocking 443"
+   ],
+   "answer": 1,
+   "explanation": "If IP access works but names fail, name resolution (DNS) is the problem."
+  },
+  {
+   "id": "aplus-017",
+   "domain": "os",
+   "prompt": "Which Windows command checks and repairs protected system files?",
+   "choices": [
+    "chkdsk",
+    "sfc /scannow",
+    "gpupdate",
+    "diskpart"
+   ],
+   "answer": 1,
+   "explanation": "System File Checker (sfc /scannow) scans and restores protected Windows system files."
+  },
+  {
+   "id": "aplus-018",
+   "domain": "os",
+   "prompt": "Which Windows tool shows running processes and lets you end a frozen app?",
+   "choices": [
+    "Event Viewer",
+    "Task Manager",
+    "Device Manager",
+    "Disk Management"
+   ],
+   "answer": 1,
+   "explanation": "Task Manager (Ctrl+Shift+Esc) lists processes and can end unresponsive tasks."
+  },
+  {
+   "id": "aplus-019",
+   "domain": "os",
+   "prompt": "Which file system is used by default on modern macOS?",
+   "choices": [
+    "NTFS",
+    "ext4",
+    "APFS",
+    "FAT32"
+   ],
+   "answer": 2,
+   "explanation": "APFS (Apple File System) is the default on modern macOS and iOS."
+  },
+  {
+   "id": "aplus-020",
+   "domain": "os",
+   "prompt": "Which Linux command changes file permissions?",
+   "choices": [
+    "chown",
+    "chmod",
+    "sudo",
+    "grep"
+   ],
+   "answer": 1,
+   "explanation": "chmod changes permissions; chown changes ownership."
+  },
+  {
+   "id": "aplus-021",
+   "domain": "sec",
+   "prompt": "An email appears to come from the CEO urgently asking an employee to buy gift cards. This is an example of:",
+   "choices": [
+    "Tailgating",
+    "Phishing / whaling impersonation",
+    "Shoulder surfing",
+    "Brute force"
+   ],
+   "answer": 1,
+   "explanation": "Impersonating an executive by email to trick staff is phishing (business email compromise)."
+  },
+  {
+   "id": "aplus-022",
+   "domain": "sec",
+   "prompt": "Which is the MOST secure wireless encryption option?",
+   "choices": [
+    "WEP",
+    "WPA",
+    "WPA2-TKIP",
+    "WPA3"
+   ],
+   "answer": 3,
+   "explanation": "WPA3 is the current, strongest Wi-Fi security standard."
+  },
+  {
+   "id": "aplus-023",
+   "domain": "sec",
+   "prompt": "Requiring a password and a code from an authenticator app is an example of:",
+   "choices": [
+    "Single sign-on",
+    "Multifactor authentication",
+    "Least privilege",
+    "Biometrics only"
+   ],
+   "answer": 1,
+   "explanation": "Something you know plus something you have is MFA."
+  },
+  {
+   "id": "aplus-024",
+   "domain": "swts",
+   "prompt": "After a Windows update, a PC repeatedly crashes on startup. What should be tried FIRST?",
+   "choices": [
+    "Reinstall Windows",
+    "Boot into Safe Mode / use System Restore",
+    "Replace the drive",
+    "Update BIOS"
+   ],
+   "answer": 1,
+   "explanation": "Safe Mode or System Restore can roll back the problematic change without data loss."
+  },
+  {
+   "id": "aplus-025",
+   "domain": "swts",
+   "prompt": "Browser keeps redirecting to unknown search pages and shows pop-ups. What is MOST likely?",
+   "choices": [
+    "Failing RAM",
+    "Browser hijacker / malware",
+    "DNS server outage",
+    "Expired certificate"
+   ],
+   "answer": 1,
+   "explanation": "Redirects and pop-ups are classic signs of a browser hijacker or adware."
+  },
+  {
+   "id": "aplus-026",
+   "domain": "ops",
+   "prompt": "What is the FIRST step in the CompTIA troubleshooting methodology?",
+   "choices": [
+    "Establish a theory",
+    "Identify the problem",
+    "Test the theory",
+    "Document findings"
+   ],
+   "answer": 1,
+   "explanation": "The process starts with identifying the problem, then establishing a theory of probable cause."
+  },
+  {
+   "id": "aplus-027",
+   "domain": "ops",
+   "prompt": "Before opening a PC case, which should a technician use to prevent ESD damage?",
+   "choices": [
+    "Rubber gloves",
+    "Antistatic wrist strap",
+    "Magnetic screwdriver",
+    "Compressed air"
+   ],
+   "answer": 1,
+   "explanation": "An antistatic wrist strap equalises charge between you and the equipment."
+  },
+  {
+   "id": "aplus-028",
+   "domain": "ops",
+   "prompt": "Which document lists the hazards and safe handling of a chemical such as toner?",
+   "choices": [
+    "SLA",
+    "SDS",
+    "AUP",
+    "MOU"
+   ],
+   "answer": 1,
+   "explanation": "A Safety Data Sheet (SDS) explains handling, hazards and disposal of materials."
+  },
+  {
+   "id": "aplus-029",
+   "domain": "ops",
+   "prompt": "Which backup type copies only files changed since the last FULL backup and does not reset the archive bit?",
+   "choices": [
+    "Incremental",
+    "Differential",
+    "Full",
+    "Synthetic"
+   ],
+   "answer": 1,
+   "explanation": "Differential backups grow until the next full backup; incrementals capture changes since the last backup of any kind."
+  },
+  {
+   "id": "aplus-030",
+   "domain": "mobile",
+   "prompt": "A user wants to share a phone's cellular data connection with a laptop over a USB cable. Which feature should be enabled?",
+   "choices": [
+    "NFC pairing",
+    "USB tethering",
+    "Airplane mode",
+    "Wi-Fi calling"
+   ],
+   "answer": 1,
+   "explanation": "USB tethering shares the phone's mobile data with a computer through the cable. Wi-Fi calling routes voice calls over Wi-Fi and does not share data."
+  },
+  {
+   "id": "aplus-031",
+   "domain": "mobile",
+   "prompt": "A company wants to remotely wipe lost corporate phones and enforce passcode policies. Which solution should it deploy?",
+   "choices": [
+    "Mobile device management (MDM)",
+    "A VPN concentrator",
+    "A captive portal",
+    "A proxy server"
+   ],
+   "answer": 0,
+   "explanation": "MDM platforms enroll devices so administrators can push policies, enforce passcodes and wipe lost devices remotely."
+  },
+  {
+   "id": "aplus-032",
+   "domain": "mobile",
+   "prompt": "A laptop's touchpad works, but the cursor moves on its own while the user types. What should the technician check FIRST?",
+   "choices": [
+    "Touchpad sensitivity and palm-rejection settings",
+    "Replace the motherboard",
+    "Reinstall the operating system",
+    "Replace the keyboard"
+   ],
+   "answer": 0,
+   "explanation": "Accidental palm contact is the usual cause; adjusting sensitivity or enabling palm rejection is quick and non-invasive."
+  },
+  {
+   "id": "aplus-033",
+   "domain": "mobile",
+   "prompt": "Which wireless technology is MOST commonly used to pair a smartwatch with a smartphone?",
+   "choices": [
+    "Infrared",
+    "Wi-Fi Direct",
+    "Bluetooth",
+    "Zigbee"
+   ],
+   "answer": 2,
+   "explanation": "Smartwatches use Bluetooth (often Bluetooth Low Energy) for a constant low-power link with the paired phone."
+  },
+  {
+   "id": "aplus-034",
+   "domain": "mobile",
+   "prompt": "A laptop user has to plug in a monitor, wired network, keyboard and charger every morning. Which accessory would let them connect all of these with one cable?",
+   "choices": [
+    "A KVM switch",
+    "A USB 2.0 hub",
+    "An HDMI splitter",
+    "A USB-C or Thunderbolt docking station"
+   ],
+   "answer": 3,
+   "explanation": "A USB-C/Thunderbolt dock carries video, data, network and power delivery over a single connection to the laptop."
+  },
+  {
+   "id": "aplus-035",
+   "domain": "mobile",
+   "prompt": "A smartphone screen does not rotate when the device is turned sideways. What should be checked FIRST?",
+   "choices": [
+    "Whether rotation lock is enabled",
+    "Whether the gyroscope needs replacing",
+    "Whether the screen digitizer is cracked",
+    "Whether the battery is swollen"
+   ],
+   "answer": 0,
+   "explanation": "Rotation lock is a simple software toggle and is the most common reason the display stays in one orientation."
+  },
+  {
+   "id": "aplus-036",
+   "domain": "mobile",
+   "prompt": "Which component in a laptop display converts the touch of a finger or stylus into input?",
+   "choices": [
+    "Inverter",
+    "Backlight",
+    "Digitizer",
+    "Webcam"
+   ],
+   "answer": 2,
+   "explanation": "The digitizer is the touch-sensitive layer that translates touches into coordinates; the inverter powers older CCFL backlights."
+  },
+  {
+   "id": "aplus-037",
+   "domain": "mobile",
+   "prompt": "A user's phone shows full Wi-Fi bars but email will not sync while connected to a hotel network. Websites in the browser redirect to a login page. What is the MOST likely cause?",
+   "choices": [
+    "The phone's email certificate expired",
+    "The phone's SIM card is faulty",
+    "Bluetooth is interfering with Wi-Fi",
+    "The hotel's captive portal has not been accepted"
+   ],
+   "answer": 3,
+   "explanation": "Captive portals block traffic until the user signs in or accepts terms, which is why browsing redirects to a login page."
+  },
+  {
+   "id": "aplus-038",
+   "domain": "mobile",
+   "prompt": "A technician is replacing a laptop's M.2 SSD. What should be done BEFORE removing the bottom panel?",
+   "choices": [
+    "Update the BIOS",
+    "Enable hibernation",
+    "Disconnect the AC adapter and the internal battery",
+    "Remove the RAM modules"
+   ],
+   "answer": 2,
+   "explanation": "Removing all power sources protects both the technician and components from shorts while working inside the laptop."
+  },
+  {
+   "id": "aplus-039",
+   "domain": "mobile",
+   "prompt": "Which hardware feature is required for a phone to use an eSIM profile instead of a physical SIM card?",
+   "choices": [
+    "A dual-band Wi-Fi radio",
+    "An NFC secure element only",
+    "A microSD expansion slot",
+    "An embedded, reprogrammable SIM chip on the device"
+   ],
+   "answer": 3,
+   "explanation": "An eSIM is a soldered, rewritable SIM chip that can download carrier profiles without a removable card."
+  },
+  {
+   "id": "aplus-040",
+   "domain": "mobile",
+   "prompt": "A user reports their phone's GPS location is inaccurate indoors but fine outside. What is the BEST explanation?",
+   "choices": [
+    "The GPS antenna is defective",
+    "Location services are disabled",
+    "Building materials block satellite signals, so the phone relies on less precise Wi-Fi and cell data",
+    "The phone needs a new SIM card"
+   ],
+   "answer": 2,
+   "explanation": "GPS needs line of sight to satellites; indoors the device falls back to Wi-Fi and cell-tower positioning, which is less precise."
+  },
+  {
+   "id": "aplus-041",
+   "domain": "mobile",
+   "prompt": "A laptop's keyboard has several dead keys after a coffee spill. What is the MOST appropriate repair?",
+   "choices": [
+    "Update the keyboard driver",
+    "Replace the keyboard assembly",
+    "Replace the touchpad",
+    "Reseat the RAM"
+   ],
+   "answer": 1,
+   "explanation": "Liquid damage to keyboard membranes is generally permanent, so the keyboard module should be replaced."
+  },
+  {
+   "id": "aplus-042",
+   "domain": "mobile",
+   "prompt": "A sales team needs their phones to sync corporate email, contacts and calendars from Microsoft Exchange. Which protocol is typically used?",
+   "choices": [
+    "SNMP",
+    "Exchange ActiveSync",
+    "TFTP",
+    "RDP"
+   ],
+   "answer": 1,
+   "explanation": "Exchange ActiveSync synchronizes mail, calendar and contacts between Exchange and mobile devices."
+  },
+  {
+   "id": "aplus-043",
+   "domain": "mobile",
+   "prompt": "A phone's battery is bulging and the screen is starting to lift from the frame. What should the technician do?",
+   "choices": [
+    "Press the screen back down and seal it with adhesive",
+    "Fully charge the battery to recalibrate it",
+    "Put the phone in a freezer to shrink the battery",
+    "Stop using the device and replace the battery following safe-handling procedures"
+   ],
+   "answer": 3,
+   "explanation": "A swollen lithium-ion battery is a fire risk; the device should be powered off and the battery replaced and recycled properly."
+  },
+  {
+   "id": "aplus-044",
+   "domain": "mobile",
+   "prompt": "A user wants to unlock their laptop with a fingerprint. Which component and Windows feature are needed?",
+   "choices": [
+    "A smart card reader and BitLocker",
+    "A TPM and Credential Manager",
+    "A fingerprint reader and Windows Hello",
+    "A webcam and Windows Defender"
+   ],
+   "answer": 2,
+   "explanation": "Windows Hello provides biometric sign-in using a compatible fingerprint reader or IR camera."
+  },
+  {
+   "id": "aplus-045",
+   "domain": "net",
+   "prompt": "Which port and protocol are used by Remote Desktop Protocol by default?",
+   "choices": [
+    "TCP 3389",
+    "TCP 22",
+    "TCP 445",
+    "UDP 161"
+   ],
+   "answer": 0,
+   "explanation": "RDP listens on TCP 3389 by default. Port 22 is SSH and 445 is SMB."
+  },
+  {
+   "id": "aplus-046",
+   "domain": "net",
+   "prompt": "Which protocol automatically assigns IP addresses, subnet masks and default gateways to clients?",
+   "choices": [
+    "DNS",
+    "SNMP",
+    "DHCP",
+    "LDAP"
+   ],
+   "answer": 2,
+   "explanation": "DHCP leases IP configuration to clients automatically; DNS only resolves names."
+  },
+  {
+   "id": "aplus-047",
+   "domain": "net",
+   "prompt": "Which port does SMB use for Windows file and printer sharing over TCP/IP?",
+   "choices": [
+    "137",
+    "445",
+    "389",
+    "143"
+   ],
+   "answer": 1,
+   "explanation": "Modern SMB runs directly over TCP 445. Port 389 is LDAP and 143 is IMAP."
+  },
+  {
+   "id": "aplus-048",
+   "domain": "net",
+   "prompt": "A small office needs devices on the internet to reach an internal web server at 192.168.1.20. What should be configured on the router?",
+   "choices": [
+    "A DHCP reservation only",
+    "Port forwarding for TCP 443 to 192.168.1.20",
+    "MAC filtering",
+    "A DMZ for every internal host"
+   ],
+   "answer": 1,
+   "explanation": "Port forwarding maps an external port on the router's public IP to the internal server so outside clients can reach it."
+  },
+  {
+   "id": "aplus-049",
+   "domain": "net",
+   "prompt": "Which IPv4 address range is a private address space defined by RFC 1918?",
+   "choices": [
+    "169.254.0.0 – 169.254.255.255",
+    "100.64.0.0 – 100.127.255.255",
+    "172.16.0.0 – 172.31.255.255",
+    "224.0.0.0 – 239.255.255.255"
+   ],
+   "answer": 2,
+   "explanation": "172.16.0.0/12 is one of the three RFC 1918 private ranges; 169.254.0.0/16 is link-local and 224.0.0.0/4 is multicast."
+  },
+  {
+   "id": "aplus-050",
+   "domain": "net",
+   "prompt": "Which device forwards traffic based on MAC addresses within a single LAN?",
+   "choices": [
+    "Router",
+    "Modem",
+    "Switch",
+    "Firewall"
+   ],
+   "answer": 2,
+   "explanation": "Switches operate at Layer 2 and use MAC address tables; routers forward between networks using IP addresses."
+  },
+  {
+   "id": "aplus-051",
+   "domain": "net",
+   "prompt": "Which cable type is required for a 10 Gbps Ethernet run of 100 meters over copper?",
+   "choices": [
+    "Cat 5",
+    "Cat 5e",
+    "Cat 6a",
+    "Cat 6"
+   ],
+   "answer": 2,
+   "explanation": "Cat 6a supports 10GBASE-T to 100 m; Cat 6 only supports 10 Gbps to about 55 m."
+  },
+  {
+   "id": "aplus-052",
+   "domain": "net",
+   "prompt": "Which protocol is used to securely manage a network switch from the command line?",
+   "choices": [
+    "Telnet",
+    "SSH",
+    "FTP",
+    "HTTP"
+   ],
+   "answer": 1,
+   "explanation": "SSH encrypts the remote session, while Telnet sends credentials in plaintext."
+  },
+  {
+   "id": "aplus-053",
+   "domain": "net",
+   "prompt": "Which wireless frequency band offers the greatest range but the most interference from devices like microwaves?",
+   "choices": [
+    "2.4 GHz",
+    "5 GHz",
+    "6 GHz",
+    "60 GHz"
+   ],
+   "answer": 0,
+   "explanation": "2.4 GHz penetrates walls best and travels farther, but it is crowded and shares spectrum with microwaves and Bluetooth."
+  },
+  {
+   "id": "aplus-054",
+   "domain": "net",
+   "prompt": "A technician needs to give a printer the same IP address every time while still managing it from the DHCP server. What should be configured?",
+   "choices": [
+    "A DHCP scope exclusion only",
+    "An APIPA address",
+    "A DHCP reservation",
+    "A DNS CNAME record"
+   ],
+   "answer": 2,
+   "explanation": "A reservation ties a MAC address to a specific IP so the device always receives the same lease."
+  },
+  {
+   "id": "aplus-055",
+   "domain": "net",
+   "prompt": "Which DNS record type maps a hostname to an IPv6 address?",
+   "choices": [
+    "A",
+    "MX",
+    "AAAA",
+    "PTR"
+   ],
+   "answer": 2,
+   "explanation": "AAAA records hold IPv6 addresses; A records hold IPv4 addresses and MX records identify mail servers."
+  },
+  {
+   "id": "aplus-056",
+   "domain": "net",
+   "prompt": "Which DNS record is used by receiving mail servers to verify which servers are allowed to send email for a domain?",
+   "choices": [
+    "CNAME record",
+    "AAAA record",
+    "SRV record for LDAP",
+    "TXT record containing an SPF policy"
+   ],
+   "answer": 3,
+   "explanation": "SPF policies are published in TXT records and list the hosts authorized to send mail for the domain."
+  },
+  {
+   "id": "aplus-057",
+   "domain": "net",
+   "prompt": "Which network type connects devices across a city, such as several campus buildings linked by fiber?",
+   "choices": [
+    "PAN",
+    "MAN",
+    "LAN",
+    "SAN"
+   ],
+   "answer": 1,
+   "explanation": "A metropolitan area network spans a city or large campus; a PAN covers only a few meters around a person."
+  },
+  {
+   "id": "aplus-058",
+   "domain": "net",
+   "prompt": "Which protocol and port are used to send outgoing email from a client to a mail server with encryption?",
+   "choices": [
+    "POP3 on TCP 110",
+    "IMAP on TCP 143",
+    "SNMP on UDP 162",
+    "SMTP on TCP 587 with STARTTLS"
+   ],
+   "answer": 3,
+   "explanation": "Mail submission uses SMTP on 587 with STARTTLS; POP3 and IMAP are for retrieving mail."
+  },
+  {
+   "id": "aplus-059",
+   "domain": "net",
+   "prompt": "Which tool would a technician use to verify which pair is miswired at the end of a newly terminated Ethernet cable?",
+   "choices": [
+    "Loopback plug",
+    "Wi-Fi analyzer",
+    "Cable tester",
+    "Multimeter set to AC voltage"
+   ],
+   "answer": 2,
+   "explanation": "A cable tester checks continuity and pinout for each pair, revealing opens, shorts and crossed pairs."
+  },
+  {
+   "id": "aplus-060",
+   "domain": "net",
+   "prompt": "What is the main function of a Power over Ethernet (PoE) injector?",
+   "choices": [
+    "Increase network bandwidth",
+    "Convert fiber to copper",
+    "Add DC power to an Ethernet cable for a device such as an access point",
+    "Filter electrical noise from the network"
+   ],
+   "answer": 2,
+   "explanation": "A PoE injector supplies power over the data cable when the switch itself does not provide PoE."
+  },
+  {
+   "id": "aplus-061",
+   "domain": "net",
+   "prompt": "Which protocol allows a network monitoring server to poll routers and switches for performance statistics?",
+   "choices": [
+    "SMTP",
+    "SNMP",
+    "SFTP",
+    "SIP"
+   ],
+   "answer": 1,
+   "explanation": "SNMP (UDP 161, traps on 162) is used to query and monitor network devices."
+  },
+  {
+   "id": "aplus-062",
+   "domain": "net",
+   "prompt": "Which IPv6 address is the loopback address?",
+   "choices": [
+    "fe80::1",
+    "ff02::1",
+    "::1",
+    "2001:db8::1"
+   ],
+   "answer": 2,
+   "explanation": "::1 is the IPv6 loopback; fe80::/10 is link-local and ff02::1 is the all-nodes multicast group."
+  },
+  {
+   "id": "aplus-063",
+   "domain": "net",
+   "prompt": "A home user wants to extend Wi-Fi coverage to every room with multiple units that act as a single network with one SSID. Which solution fits BEST?",
+   "choices": [
+    "A second router with a different SSID",
+    "A Wi-Fi analyzer",
+    "A PoE injector",
+    "A mesh Wi-Fi system"
+   ],
+   "answer": 3,
+   "explanation": "Mesh systems use several nodes that coordinate to provide one seamless SSID across the home."
+  },
+  {
+   "id": "aplus-064",
+   "domain": "net",
+   "prompt": "Which connector is commonly used to terminate coaxial cable for cable-modem internet service?",
+   "choices": [
+    "RJ45",
+    "LC",
+    "RJ11",
+    "F-type"
+   ],
+   "answer": 3,
+   "explanation": "Cable internet uses RG-6 coax terminated with F-type connectors; LC is a fiber connector."
+  },
+  {
+   "id": "aplus-065",
+   "domain": "net",
+   "prompt": "Which protocol uses UDP port 69 and is often used to transfer firmware images to network devices without authentication?",
+   "choices": [
+    "TFTP",
+    "FTP",
+    "SFTP",
+    "LDAP"
+   ],
+   "answer": 0,
+   "explanation": "TFTP is a simple, unauthenticated file-transfer protocol on UDP 69; SFTP runs over SSH on port 22."
+  },
+  {
+   "id": "aplus-066",
+   "domain": "net",
+   "prompt": "An office needs a device that inspects traffic and blocks connections based on rules about ports, protocols and applications. Which device should be installed?",
+   "choices": [
+    "Unmanaged switch",
+    "Patch panel",
+    "Repeater",
+    "Firewall"
+   ],
+   "answer": 3,
+   "explanation": "Firewalls filter traffic based on defined rules; switches and patch panels do not enforce security policy."
+  },
+  {
+   "id": "aplus-067",
+   "domain": "hw",
+   "prompt": "Which RAID level stripes data with distributed parity and requires at least three drives?",
+   "choices": [
+    "RAID 0",
+    "RAID 1",
+    "RAID 10",
+    "RAID 5"
+   ],
+   "answer": 3,
+   "explanation": "RAID 5 stripes data and parity across three or more disks and survives one drive failure; RAID 0 has no redundancy."
+  },
+  {
+   "id": "aplus-068",
+   "domain": "hw",
+   "prompt": "Which RAID level combines mirroring and striping and needs a minimum of four drives?",
+   "choices": [
+    "RAID 5",
+    "RAID 6",
+    "RAID 10",
+    "RAID 0"
+   ],
+   "answer": 2,
+   "explanation": "RAID 10 stripes across mirrored pairs, giving both performance and redundancy with at least four disks."
+  },
+  {
+   "id": "aplus-069",
+   "domain": "hw",
+   "prompt": "A desktop power supply has a 24-pin connector. What does it connect to?",
+   "choices": [
+    "The GPU's auxiliary power",
+    "SATA hard drives",
+    "The motherboard's main power input",
+    "The CPU's 8-pin EPS header"
+   ],
+   "answer": 2,
+   "explanation": "The 24-pin ATX connector is the main motherboard power cable; CPUs use separate 4/8-pin EPS connectors."
+  },
+  {
+   "id": "aplus-070",
+   "domain": "hw",
+   "prompt": "A user needs to connect a modern graphics card that requires a 16-pin power connector. Which connector standard is this?",
+   "choices": [
+    "12VHPWR / 12V-2x6",
+    "Molex",
+    "Berg",
+    "6-pin PCIe only"
+   ],
+   "answer": 0,
+   "explanation": "High-end GPUs use the 16-pin 12VHPWR (revised as 12V-2x6) connector, which can deliver up to 600 W."
+  },
+  {
+   "id": "aplus-071",
+   "domain": "hw",
+   "prompt": "Which expansion slot is used by most modern discrete graphics cards?",
+   "choices": [
+    "PCIe x16",
+    "PCI",
+    "AGP",
+    "PCIe x1"
+   ],
+   "answer": 0,
+   "explanation": "Current GPUs use PCIe x16 slots for maximum bandwidth; AGP and PCI are legacy."
+  },
+  {
+   "id": "aplus-072",
+   "domain": "hw",
+   "prompt": "A server administrator wants memory that can detect and correct single-bit errors. Which type should be purchased?",
+   "choices": [
+    "Non-parity DDR5 desktop RAM",
+    "SO-DIMM",
+    "Virtual RAM",
+    "ECC RAM"
+   ],
+   "answer": 3,
+   "explanation": "Error-correcting code memory detects and fixes single-bit errors, which is important for servers."
+  },
+  {
+   "id": "aplus-073",
+   "domain": "hw",
+   "prompt": "A motherboard has four DIMM slots color-coded in pairs. Why should two identical modules be installed in matching-color slots?",
+   "choices": [
+    "To enable dual-channel memory operation",
+    "To enable ECC",
+    "To allow hot-swapping",
+    "To activate the integrated GPU"
+   ],
+   "answer": 0,
+   "explanation": "Installing matched modules in the paired slots lets the memory controller run in dual-channel mode for more bandwidth."
+  },
+  {
+   "id": "aplus-074",
+   "domain": "hw",
+   "prompt": "Which storage interface is used by an M.2 SSD that reaches speeds above 3,000 MB/s?",
+   "choices": [
+    "SATA III",
+    "NVMe over PCIe",
+    "eSATA",
+    "SAS-1"
+   ],
+   "answer": 1,
+   "explanation": "NVMe drives use PCIe lanes and greatly exceed SATA III's practical ~550 MB/s limit."
+  },
+  {
+   "id": "aplus-075",
+   "domain": "hw",
+   "prompt": "Which hard drive characteristic MOST affects the performance of a mechanical drive?",
+   "choices": [
+    "Form factor",
+    "Cache color",
+    "Number of SATA ports on the motherboard",
+    "Spindle speed (RPM)"
+   ],
+   "answer": 3,
+   "explanation": "Higher RPM (e.g., 7,200 vs 5,400) reduces rotational latency and improves throughput on HDDs."
+  },
+  {
+   "id": "aplus-076",
+   "domain": "hw",
+   "prompt": "A technician must build a workstation for 3D rendering. Which component upgrade will MOST improve rendering in GPU-accelerated software?",
+   "choices": [
+    "A larger power button",
+    "A high-end discrete graphics card with more VRAM",
+    "A faster optical drive",
+    "An extra network card"
+   ],
+   "answer": 1,
+   "explanation": "GPU-accelerated renderers depend on GPU cores and VRAM, so a stronger graphics card gives the biggest gain."
+  },
+  {
+   "id": "aplus-077",
+   "domain": "hw",
+   "prompt": "Which firmware security feature verifies that boot loaders are signed by trusted keys before the OS loads?",
+   "choices": [
+    "Secure Boot",
+    "Fast Boot",
+    "Wake-on-LAN",
+    "PXE boot"
+   ],
+   "answer": 0,
+   "explanation": "Secure Boot in UEFI checks digital signatures on boot components to block rootkits and unsigned loaders."
+  },
+  {
+   "id": "aplus-078",
+   "domain": "hw",
+   "prompt": "Windows 11 requires a hardware chip that stores encryption keys and supports BitLocker. What is it?",
+   "choices": [
+    "HSM card",
+    "TPM 2.0",
+    "CMOS battery",
+    "BIOS ROM"
+   ],
+   "answer": 1,
+   "explanation": "Windows 11 requires TPM 2.0, a secure cryptoprocessor that stores keys and measurements used by BitLocker and Secure Boot."
+  },
+  {
+   "id": "aplus-079",
+   "domain": "hw",
+   "prompt": "A PC's clock resets to a default date every time it is unplugged. Which component should be replaced?",
+   "choices": [
+    "Power supply",
+    "RAM module",
+    "CMOS battery",
+    "System fan"
+   ],
+   "answer": 2,
+   "explanation": "The CMOS (CR2032) battery keeps the real-time clock and firmware settings powered when the system is unplugged."
+  },
+  {
+   "id": "aplus-080",
+   "domain": "hw",
+   "prompt": "Which printer type uses heated elements to darken special coated paper, as often seen in receipt printers?",
+   "choices": [
+    "Laser",
+    "Direct thermal",
+    "Inkjet",
+    "Impact dot-matrix"
+   ],
+   "answer": 1,
+   "explanation": "Direct thermal printers apply heat to heat-sensitive paper; no ink or toner is used."
+  },
+  {
+   "id": "aplus-081",
+   "domain": "hw",
+   "prompt": "In a laser printer, which step uses heat and pressure to bond toner to paper?",
+   "choices": [
+    "Charging",
+    "Fusing",
+    "Exposing",
+    "Developing"
+   ],
+   "answer": 1,
+   "explanation": "The fuser assembly melts toner onto the paper with heated rollers; exposing is when the laser writes the image to the drum."
+  },
+  {
+   "id": "aplus-082",
+   "domain": "hw",
+   "prompt": "A law office needs to print multi-part carbonless forms. Which printer type is required?",
+   "choices": [
+    "Laser",
+    "Thermal",
+    "Impact (dot-matrix)",
+    "Inkjet"
+   ],
+   "answer": 2,
+   "explanation": "Only impact printers physically strike the page, transferring the image through every layer of multi-part forms."
+  },
+  {
+   "id": "aplus-083",
+   "domain": "hw",
+   "prompt": "A technician is replacing the printhead in an inkjet printer and wants to prevent streaky output. What should be done after installation?",
+   "choices": [
+    "Replace the fuser",
+    "Clean the corona wire",
+    "Run the printhead alignment and cleaning utility",
+    "Reset the network settings"
+   ],
+   "answer": 2,
+   "explanation": "Inkjet printers need head alignment and cleaning after maintenance; fusers and corona wires are laser components."
+  },
+  {
+   "id": "aplus-084",
+   "domain": "hw",
+   "prompt": "Which 3D printer component deposits melted filament layer by layer?",
+   "choices": [
+    "Extruder nozzle (hot end)",
+    "Fuser",
+    "Imaging drum",
+    "Tractor feed"
+   ],
+   "answer": 0,
+   "explanation": "In FDM printers, the hot end melts filament and the nozzle lays it down in layers on the build plate."
+  },
+  {
+   "id": "aplus-085",
+   "domain": "hw",
+   "prompt": "Which display panel type offers the best color accuracy and viewing angles among common LCD types?",
+   "choices": [
+    "TN",
+    "IPS",
+    "VA",
+    "CCFL"
+   ],
+   "answer": 1,
+   "explanation": "IPS panels are known for accurate color and wide viewing angles; TN panels are faster but have poor angles."
+  },
+  {
+   "id": "aplus-086",
+   "domain": "hw",
+   "prompt": "A designer wants a monitor with true blacks because each pixel produces its own light. Which display technology should they choose?",
+   "choices": [
+    "TN LCD",
+    "IPS LCD with edge lighting",
+    "CRT",
+    "OLED"
+   ],
+   "answer": 3,
+   "explanation": "OLED pixels are self-emissive and can turn off completely, giving true blacks without a backlight."
+  },
+  {
+   "id": "aplus-087",
+   "domain": "hw",
+   "prompt": "Which connector carries both video and USB data and can also deliver power to a laptop?",
+   "choices": [
+    "VGA",
+    "DVI-D",
+    "USB-C with DisplayPort Alt Mode",
+    "HDMI 1.4"
+   ],
+   "answer": 2,
+   "explanation": "USB-C can carry DisplayPort video, USB data and USB Power Delivery on a single cable."
+  },
+  {
+   "id": "aplus-088",
+   "domain": "hw",
+   "prompt": "A user wants a backup storage device that several home computers can access over the network. Which device should be recommended?",
+   "choices": [
+    "NAS",
+    "External optical drive",
+    "USB flash drive",
+    "SAN switch"
+   ],
+   "answer": 0,
+   "explanation": "A network-attached storage device shares files over the LAN to multiple clients."
+  },
+  {
+   "id": "aplus-089",
+   "domain": "hw",
+   "prompt": "A desktop with a 450 W power supply randomly shuts down under gaming load after a GPU upgrade. What is the MOST likely cause?",
+   "choices": [
+    "The power supply cannot provide enough wattage for the new GPU",
+    "The CMOS battery is dead",
+    "The monitor cable is loose",
+    "The keyboard driver is outdated"
+   ],
+   "answer": 0,
+   "explanation": "A higher-draw GPU can exceed the PSU's capacity, causing shutdowns under load; a higher-rated PSU is needed."
+  },
+  {
+   "id": "aplus-090",
+   "domain": "hw",
+   "prompt": "Which type of storage device has no moving parts and uses NAND flash?",
+   "choices": [
+    "SSD",
+    "HDD",
+    "Tape drive",
+    "Optical drive"
+   ],
+   "answer": 0,
+   "explanation": "Solid-state drives store data in NAND flash with no spinning platters or heads."
+  },
+  {
+   "id": "aplus-091",
+   "domain": "hw",
+   "prompt": "Which cooling solution circulates liquid through a pump and radiator to remove CPU heat?",
+   "choices": [
+    "Passive heat sink",
+    "Case fan only",
+    "All-in-one liquid cooler",
+    "Thermal pad"
+   ],
+   "answer": 2,
+   "explanation": "AIO liquid coolers pump coolant from a CPU block to a radiator where fans dissipate the heat."
+  },
+  {
+   "id": "aplus-092",
+   "domain": "hw",
+   "prompt": "Which BIOS/UEFI setting must be enabled for a hypervisor to run 64-bit virtual machines efficiently on an Intel CPU?",
+   "choices": [
+    "Hyper-Threading only",
+    "XMP",
+    "C-states",
+    "Intel VT-x"
+   ],
+   "answer": 3,
+   "explanation": "Hardware virtualization extensions (VT-x on Intel, AMD-V on AMD) are needed by hypervisors and are often disabled by default."
+  },
+  {
+   "id": "aplus-093",
+   "domain": "virt",
+   "prompt": "A company uses a web-based email and office suite that the provider fully manages. Which cloud service model is this?",
+   "choices": [
+    "IaaS",
+    "SaaS",
+    "PaaS",
+    "On-premises"
+   ],
+   "answer": 1,
+   "explanation": "Software as a Service delivers complete applications; the customer only manages users and data."
+  },
+  {
+   "id": "aplus-094",
+   "domain": "virt",
+   "prompt": "Developers want to deploy code without managing servers or operating systems, while the provider supplies the runtime. Which model fits?",
+   "choices": [
+    "PaaS",
+    "SaaS",
+    "IaaS",
+    "DaaS"
+   ],
+   "answer": 0,
+   "explanation": "Platform as a Service provides the runtime and middleware so developers just deploy their applications."
+  },
+  {
+   "id": "aplus-095",
+   "domain": "virt",
+   "prompt": "A business keeps sensitive workloads in its own data center but bursts to a public cloud during busy seasons. Which deployment model is this?",
+   "choices": [
+    "Private cloud",
+    "Community cloud",
+    "Hybrid cloud",
+    "Public cloud only"
+   ],
+   "answer": 2,
+   "explanation": "A hybrid cloud combines private infrastructure with public cloud resources that work together."
+  },
+  {
+   "id": "aplus-096",
+   "domain": "virt",
+   "prompt": "Which cloud characteristic allows resources to scale up and down automatically to match demand?",
+   "choices": [
+    "Metered utilization only",
+    "Shared tenancy",
+    "Rapid elasticity",
+    "High availability"
+   ],
+   "answer": 2,
+   "explanation": "Elasticity lets cloud resources grow or shrink automatically as workload changes."
+  },
+  {
+   "id": "aplus-097",
+   "domain": "virt",
+   "prompt": "Several hospitals share a cloud built to meet the same healthcare compliance requirements. Which deployment model is this?",
+   "choices": [
+    "Public cloud",
+    "Hybrid cloud",
+    "Community cloud",
+    "Private cloud for a single tenant"
+   ],
+   "answer": 2,
+   "explanation": "A community cloud is shared by organizations with common requirements such as regulatory compliance."
+  },
+  {
+   "id": "aplus-098",
+   "domain": "virt",
+   "prompt": "Which type of hypervisor runs as an application on top of an existing desktop OS?",
+   "choices": [
+    "Type 1",
+    "Bare-metal",
+    "Microkernel",
+    "Type 2"
+   ],
+   "answer": 3,
+   "explanation": "Type 2 hypervisors such as VirtualBox or VMware Workstation run on a host operating system."
+  },
+  {
+   "id": "aplus-099",
+   "domain": "virt",
+   "prompt": "A technician wants to test malware behavior safely and then revert the system to a clean state. Which VM feature helps MOST?",
+   "choices": [
+    "Snapshots",
+    "Thin provisioning",
+    "Live migration",
+    "Memory ballooning"
+   ],
+   "answer": 0,
+   "explanation": "Snapshots capture the VM's state so it can be rolled back after testing."
+  },
+  {
+   "id": "aplus-100",
+   "domain": "virt",
+   "prompt": "Which technology packages an application with its dependencies and shares the host OS kernel instead of running a full guest OS?",
+   "choices": [
+    "Containers",
+    "Type 1 hypervisors",
+    "Virtual desktop infrastructure",
+    "Dual booting"
+   ],
+   "answer": 0,
+   "explanation": "Containers such as Docker isolate applications while sharing the host kernel, making them lighter than VMs."
+  },
+  {
+   "id": "aplus-101",
+   "domain": "virt",
+   "prompt": "Employees log in from any device to a full Windows desktop that runs in the company's data center. What is this called?",
+   "choices": [
+    "SaaS email",
+    "Thin provisioning",
+    "VDI",
+    "Sandboxing"
+   ],
+   "answer": 2,
+   "explanation": "Virtual desktop infrastructure hosts desktops centrally and streams them to client devices."
+  },
+  {
+   "id": "aplus-102",
+   "domain": "virt",
+   "prompt": "A VM needs to communicate with the host only, without reaching the physical network. Which virtual network mode should be used?",
+   "choices": [
+    "Bridged",
+    "NAT",
+    "External switch",
+    "Host-only"
+   ],
+   "answer": 3,
+   "explanation": "Host-only networking creates a private network between the host and its VMs with no outside access."
+  },
+  {
+   "id": "aplus-103",
+   "domain": "virt",
+   "prompt": "A VM must appear on the physical LAN with its own IP address from the office DHCP server. Which network mode should be configured?",
+   "choices": [
+    "Host-only",
+    "Bridged",
+    "Internal",
+    "Isolated"
+   ],
+   "answer": 1,
+   "explanation": "Bridged mode connects the VM's virtual NIC directly to the physical network as a peer device."
+  },
+  {
+   "id": "aplus-104",
+   "domain": "virt",
+   "prompt": "Which cloud feature bills customers only for the compute time and storage they actually consume?",
+   "choices": [
+    "Rapid elasticity",
+    "Metered utilization",
+    "Resource pooling",
+    "Multitenancy"
+   ],
+   "answer": 1,
+   "explanation": "Metered (measured) service tracks usage so customers pay for what they consume."
+  },
+  {
+   "id": "aplus-105",
+   "domain": "hwts",
+   "prompt": "A PC makes a loud clicking noise and Windows reports disk read errors. What should the technician do FIRST?",
+   "choices": [
+    "Back up the user's data immediately",
+    "Defragment the drive",
+    "Run a full format",
+    "Update the GPU driver"
+   ],
+   "answer": 0,
+   "explanation": "Clicking indicates a failing mechanical drive; preserving data comes before any repair or replacement."
+  },
+  {
+   "id": "aplus-106",
+   "domain": "hwts",
+   "prompt": "A computer shows a 'bootable device not found' error after a new drive was installed. What should be checked FIRST?",
+   "choices": [
+    "The boot order in BIOS/UEFI",
+    "The monitor cable",
+    "The RAM timings",
+    "The network adapter driver"
+   ],
+   "answer": 0,
+   "explanation": "Adding a drive can change boot priority; confirming the boot order points to the OS drive is the quickest fix."
+  },
+  {
+   "id": "aplus-107",
+   "domain": "hwts",
+   "prompt": "A desktop powers on for a second and then shuts off with no POST. What is the MOST likely cause?",
+   "choices": [
+    "A corrupt user profile",
+    "An expired antivirus license",
+    "A misconfigured DNS server",
+    "A short or failing power supply"
+   ],
+   "answer": 3,
+   "explanation": "Instant power-off before POST often points to PSU failure or a short such as a misplaced standoff."
+  },
+  {
+   "id": "aplus-108",
+   "domain": "hwts",
+   "prompt": "A laptop shuts down without warning after 20 minutes of heavy use, and the fan sounds loud. What should the technician check?",
+   "choices": [
+    "Dust buildup and cooling performance",
+    "Screen resolution",
+    "Wi-Fi driver version",
+    "Keyboard backlight settings"
+   ],
+   "answer": 0,
+   "explanation": "Overheating from clogged vents or a failing fan causes thermal shutdowns under load."
+  },
+  {
+   "id": "aplus-109",
+   "domain": "hwts",
+   "prompt": "A new RAM module was installed and the PC now beeps continuously and does not display anything. What should be done FIRST?",
+   "choices": [
+    "Reseat the RAM and verify compatibility",
+    "Replace the CPU",
+    "Flash the GPU firmware",
+    "Reinstall Windows"
+   ],
+   "answer": 0,
+   "explanation": "Beep codes after a memory upgrade typically mean the module is not seated or is incompatible."
+  },
+  {
+   "id": "aplus-110",
+   "domain": "hwts",
+   "prompt": "Laser printer output smears and toner rubs off with a finger. Which component is MOST likely faulty?",
+   "choices": [
+    "Pickup roller",
+    "Fuser",
+    "Transfer belt",
+    "Laser scanner"
+   ],
+   "answer": 1,
+   "explanation": "If toner is not fused to the paper it wipes off, which indicates a failing fuser assembly."
+  },
+  {
+   "id": "aplus-111",
+   "domain": "hwts",
+   "prompt": "A laser printer frequently pulls several sheets at once. Which part should be cleaned or replaced?",
+   "choices": [
+    "Fuser",
+    "Toner cartridge",
+    "Duplexing assembly",
+    "Separation pad"
+   ],
+   "answer": 3,
+   "explanation": "The separation pad ensures only one sheet feeds at a time; a worn pad causes multiple-sheet feeds."
+  },
+  {
+   "id": "aplus-112",
+   "domain": "hwts",
+   "prompt": "An inkjet printer prints pages with missing horizontal lines in the text. What should the technician do FIRST?",
+   "choices": [
+    "Run the nozzle check and head-cleaning utility",
+    "Replace the fuser",
+    "Replace the logic board",
+    "Change the paper size"
+   ],
+   "answer": 0,
+   "explanation": "Missing lines usually mean clogged nozzles, which the built-in cleaning cycle can clear."
+  },
+  {
+   "id": "aplus-113",
+   "domain": "hwts",
+   "prompt": "Laser printer pages come out completely blank. What is a common cause?",
+   "choices": [
+    "The fuser is too hot",
+    "The paper tray is overfilled",
+    "The duplexer is enabled",
+    "The toner cartridge's sealing tape was not removed"
+   ],
+   "answer": 3,
+   "explanation": "A new cartridge with its seal still in place cannot deliver toner, producing blank pages."
+  },
+  {
+   "id": "aplus-114",
+   "domain": "hwts",
+   "prompt": "Users report that an entire floor lost network access at the same time. What is the MOST likely point of failure?",
+   "choices": [
+    "The switch serving that floor",
+    "One user's NIC",
+    "A single user's browser cache",
+    "A printer driver"
+   ],
+   "answer": 0,
+   "explanation": "A simultaneous outage for many users points to shared infrastructure, such as the floor's switch."
+  },
+  {
+   "id": "aplus-115",
+   "domain": "hwts",
+   "prompt": "A user's PC has intermittent network drops. The technician notices the cable runs across the floor next to a large motor. What is the MOST likely cause?",
+   "choices": [
+    "An incorrect DNS server",
+    "Electromagnetic interference on the cable",
+    "Duplicate antivirus software",
+    "An expired DHCP scope"
+   ],
+   "answer": 1,
+   "explanation": "Unshielded twisted pair near motors or power equipment can pick up EMI, causing errors and drops."
+  },
+  {
+   "id": "aplus-116",
+   "domain": "hwts",
+   "prompt": "A wireless laptop connects to Wi-Fi but speeds are very slow in a crowded apartment building. What is the BEST step?",
+   "choices": [
+    "Replace the laptop's RAM",
+    "Disable the firewall",
+    "Use a Wi-Fi analyzer and move to a less congested channel or 5 GHz",
+    "Assign an APIPA address"
+   ],
+   "answer": 2,
+   "explanation": "Channel congestion from neighboring networks degrades throughput; changing channel or band helps."
+  },
+  {
+   "id": "aplus-117",
+   "domain": "hwts",
+   "prompt": "A user cannot connect to the network and the NIC link lights are off. What should be checked FIRST?",
+   "choices": [
+    "The DNS suffix",
+    "The proxy settings",
+    "The physical cable connection",
+    "The hosts file"
+   ],
+   "answer": 2,
+   "explanation": "No link lights means no physical layer connection; check the cable and port before anything else."
+  },
+  {
+   "id": "aplus-118",
+   "domain": "hwts",
+   "prompt": "Two PCs on the network show a 'duplicate IP address' warning. What is the MOST likely cause?",
+   "choices": [
+    "A bad Ethernet cable",
+    "A failing hard drive",
+    "A static IP that overlaps the DHCP scope",
+    "An outdated BIOS"
+   ],
+   "answer": 2,
+   "explanation": "Manually assigned addresses inside the DHCP range can conflict with leased addresses."
+  },
+  {
+   "id": "aplus-119",
+   "domain": "hwts",
+   "prompt": "A monitor displays an image with a strong color tint and missing colors. What should the technician check FIRST?",
+   "choices": [
+    "The video cable and its connectors for bent pins or looseness",
+    "The hard drive SMART status",
+    "The RAM speed",
+    "The power supply wattage"
+   ],
+   "answer": 0,
+   "explanation": "Missing colors often come from a damaged or loose video cable, especially VGA with bent pins."
+  },
+  {
+   "id": "aplus-120",
+   "domain": "hwts",
+   "prompt": "A projector image shuts off after a few minutes and the overheat light is on. What should be done?",
+   "choices": [
+    "Replace the HDMI cable",
+    "Lower the PC's resolution",
+    "Reinstall the display driver",
+    "Clean the air filter and vents"
+   ],
+   "answer": 3,
+   "explanation": "Clogged projector filters block airflow and trigger thermal shutdown to protect the lamp."
+  },
+  {
+   "id": "aplus-121",
+   "domain": "hwts",
+   "prompt": "An LCD monitor has a single pixel that is always lit red. What is this called?",
+   "choices": [
+    "A dead pixel",
+    "Screen burn-in",
+    "A stuck pixel",
+    "Ghosting"
+   ],
+   "answer": 2,
+   "explanation": "A stuck pixel remains on in one color; a dead pixel stays black."
+  },
+  {
+   "id": "aplus-122",
+   "domain": "hwts",
+   "prompt": "A RAID 5 array reports one failed disk but the volume is still accessible. What should the technician do?",
+   "choices": [
+    "Replace the failed drive and let the array rebuild",
+    "Delete and recreate the array",
+    "Convert the array to RAID 0",
+    "Run chkdsk /f on every disk individually"
+   ],
+   "answer": 0,
+   "explanation": "RAID 5 tolerates one failure; replacing the bad drive and rebuilding restores redundancy."
+  },
+  {
+   "id": "aplus-123",
+   "domain": "hwts",
+   "prompt": "A PC fails to POST and the technician smells burning plastic near the motherboard. What should be done FIRST?",
+   "choices": [
+    "Run memory diagnostics",
+    "Update the BIOS",
+    "Reseat the GPU while running",
+    "Power off and unplug the system immediately"
+   ],
+   "answer": 3,
+   "explanation": "A burning smell indicates a failing component; removing power prevents further damage or fire."
+  },
+  {
+   "id": "aplus-124",
+   "domain": "hwts",
+   "prompt": "A user's laptop battery will only hold a charge for 15 minutes and is several years old. What is the BEST solution?",
+   "choices": [
+    "Replace the AC adapter",
+    "Replace the battery",
+    "Reinstall the OS",
+    "Update the touchpad driver"
+   ],
+   "answer": 1,
+   "explanation": "Lithium-ion batteries lose capacity with age and charge cycles; replacement restores runtime."
+  },
+  {
+   "id": "aplus-125",
+   "domain": "hwts",
+   "prompt": "A desktop's system clock drifts and BIOS settings revert to defaults after power loss. What should the technician replace?",
+   "choices": [
+    "The SSD",
+    "The power supply",
+    "The network card",
+    "The motherboard CMOS battery"
+   ],
+   "answer": 3,
+   "explanation": "A depleted CMOS battery can no longer preserve firmware settings and the clock."
+  },
+  {
+   "id": "aplus-126",
+   "domain": "hwts",
+   "prompt": "A user has a slow internet connection only on their desktop, which shows a link speed of 100 Mbps on a gigabit network. What is the MOST likely cause?",
+   "choices": [
+    "A DNS misconfiguration",
+    "A damaged cable or one with a broken pair",
+    "A full hard drive",
+    "An incorrect time zone"
+   ],
+   "answer": 1,
+   "explanation": "Gigabit Ethernet needs all four pairs; a damaged pair causes the link to fall back to 100 Mbps."
+  },
+  {
+   "id": "aplus-127",
+   "domain": "hwts",
+   "prompt": "A technician suspects a wall jack is not connected to the correct switch port. Which tool should be used to trace the cable?",
+   "choices": [
+    "Toner probe",
+    "Loopback plug",
+    "Crimper",
+    "Punchdown tool"
+   ],
+   "answer": 0,
+   "explanation": "A tone generator and probe identify which cable at the patch panel belongs to the wall jack."
+  },
+  {
+   "id": "aplus-128",
+   "domain": "hwts",
+   "prompt": "After a GPU driver update, a PC displays visual artifacts and colored blocks in games. What should be tried FIRST?",
+   "choices": [
+    "Replace the power supply",
+    "Reinstall the operating system",
+    "Roll back the graphics driver",
+    "Replace the monitor"
+   ],
+   "answer": 2,
+   "explanation": "If artifacts appear immediately after a driver change, rolling back the driver is the least invasive test."
+  },
+  {
+   "id": "aplus-129",
+   "domain": "hwts",
+   "prompt": "A computer is running slowly and SMART reports a high count of reallocated sectors. What does this indicate?",
+   "choices": [
+    "The drive needs to be defragmented",
+    "The drive is failing and should be replaced soon",
+    "The RAM is faulty",
+    "The drive is too full"
+   ],
+   "answer": 1,
+   "explanation": "Rising reallocated sector counts are a key SMART warning of imminent drive failure."
+  },
+  {
+   "id": "aplus-130",
+   "domain": "swts",
+   "prompt": "A Windows PC shows a blue screen referencing a specific driver file after a new webcam was installed. What should the technician do FIRST?",
+   "choices": [
+    "Replace the motherboard",
+    "Reformat the hard drive",
+    "Boot to Safe Mode and remove or roll back the webcam driver",
+    "Disable Windows Update permanently"
+   ],
+   "answer": 2,
+   "explanation": "A BSOD that names a newly added driver points to that driver; Safe Mode allows its removal."
+  },
+  {
+   "id": "aplus-131",
+   "domain": "swts",
+   "prompt": "An application crashes every time it starts after a recent update. Which Windows tool shows the error details?",
+   "choices": [
+    "Disk Cleanup",
+    "Device Manager",
+    "Character Map",
+    "Event Viewer"
+   ],
+   "answer": 3,
+   "explanation": "Event Viewer's Application log records crash events, faulting modules and error codes."
+  },
+  {
+   "id": "aplus-132",
+   "domain": "swts",
+   "prompt": "A user's PC takes several minutes to reach a usable desktop after login. What should the technician check FIRST?",
+   "choices": [
+    "The BIOS version",
+    "Startup apps in Task Manager",
+    "The monitor refresh rate",
+    "The DNS server address"
+   ],
+   "answer": 1,
+   "explanation": "Many startup programs slow logon; disabling unneeded ones in Task Manager's Startup tab is a quick fix."
+  },
+  {
+   "id": "aplus-133",
+   "domain": "swts",
+   "prompt": "A user receives a certificate warning on every HTTPS site. Other users on the same network are fine. What is the MOST likely cause?",
+   "choices": [
+    "The website certificates have all expired",
+    "The switch port is faulty",
+    "The DNS server is down",
+    "The PC's system date and time are incorrect"
+   ],
+   "answer": 3,
+   "explanation": "An incorrect system clock makes valid certificates appear expired or not yet valid."
+  },
+  {
+   "id": "aplus-134",
+   "domain": "swts",
+   "prompt": "A user's files have been renamed with a strange extension and a note demands payment. What should the technician do FIRST?",
+   "choices": [
+    "Pay the ransom",
+    "Restart the PC repeatedly",
+    "Delete the ransom note",
+    "Disconnect the PC from the network"
+   ],
+   "answer": 3,
+   "explanation": "Isolating the infected system prevents ransomware from spreading to network shares and other hosts."
+  },
+  {
+   "id": "aplus-135",
+   "domain": "swts",
+   "prompt": "In the CompTIA malware removal process, a technician has remediated the system, scheduled scans and run updates. What is the NEXT step?",
+   "choices": [
+    "Enable System Restore and create a restore point",
+    "Educate the end user",
+    "Quarantine the infected system",
+    "Investigate and verify malware symptoms"
+   ],
+   "answer": 0,
+   "explanation": "After scans and updates, System Restore is re-enabled and a clean restore point created; educating the user is the final step."
+  },
+  {
+   "id": "aplus-136",
+   "domain": "swts",
+   "prompt": "During malware removal, why should System Restore be disabled in Windows?",
+   "choices": [
+    "To free disk space for scans",
+    "To enable Safe Mode",
+    "To speed up antivirus updates",
+    "To prevent infected restore points from reintroducing the malware"
+   ],
+   "answer": 3,
+   "explanation": "Restore points may contain infected files; disabling it removes them so the malware cannot return."
+  },
+  {
+   "id": "aplus-137",
+   "domain": "swts",
+   "prompt": "A phone app closes immediately every time it is opened. What should be tried FIRST?",
+   "choices": [
+    "Factory reset the phone",
+    "Replace the battery",
+    "Force stop the app and clear its cache",
+    "Remove the SIM card"
+   ],
+   "answer": 2,
+   "explanation": "Clearing the cache or force-stopping resolves many app crashes without data loss."
+  },
+  {
+   "id": "aplus-138",
+   "domain": "swts",
+   "prompt": "A user's phone has unusually high data usage and new apps appeared that the user did not install. What is the MOST likely cause?",
+   "choices": [
+    "A faulty battery",
+    "Malware on the device",
+    "A cracked screen",
+    "A weak Wi-Fi signal"
+   ],
+   "answer": 1,
+   "explanation": "Unknown apps and unexplained data use are common signs of a compromised mobile device."
+  },
+  {
+   "id": "aplus-139",
+   "domain": "swts",
+   "prompt": "A Windows PC cannot boot and displays 'BOOTMGR is missing'. Which tool should be used to repair it?",
+   "choices": [
+    "Windows Recovery Environment with bootrec commands",
+    "Disk Defragmenter",
+    "Windows Firewall",
+    "Performance Monitor"
+   ],
+   "answer": 0,
+   "explanation": "WinRE's Startup Repair or bootrec /rebuildbcd can repair a damaged boot configuration."
+  },
+  {
+   "id": "aplus-140",
+   "domain": "swts",
+   "prompt": "A user's Windows profile loads with a temporary profile and their desktop files are missing. What is the MOST likely cause?",
+   "choices": [
+    "The monitor is defective",
+    "The keyboard layout changed",
+    "The printer spooler is stopped",
+    "The user profile is corrupt"
+   ],
+   "answer": 3,
+   "explanation": "Windows loads a temporary profile when it cannot read the user's profile, often due to corruption."
+  },
+  {
+   "id": "aplus-141",
+   "domain": "swts",
+   "prompt": "Documents will not print and the print queue shows jobs stuck. What should the technician do FIRST?",
+   "choices": [
+    "Restart the Print Spooler service",
+    "Replace the printer",
+    "Reinstall Windows",
+    "Change the default browser"
+   ],
+   "answer": 0,
+   "explanation": "Restarting the spooler clears stuck jobs and often restores printing."
+  },
+  {
+   "id": "aplus-142",
+   "domain": "swts",
+   "prompt": "A user reports that their browser shows a security warning for a well-known bank site, and the address bar shows a slightly misspelled domain. What is happening?",
+   "choices": [
+    "The user has reached a spoofed site, likely through phishing or typosquatting",
+    "The bank's server is overloaded",
+    "The browser cache is full",
+    "The PC needs a new NIC"
+   ],
+   "answer": 0,
+   "explanation": "Misspelled domains mimicking real sites are typosquatting or phishing pages designed to steal credentials."
+  },
+  {
+   "id": "aplus-143",
+   "domain": "swts",
+   "prompt": "A PC is very slow and Task Manager shows 100% disk usage from a single unknown process. What should the technician do?",
+   "choices": [
+    "Increase the screen brightness",
+    "Research the process and scan the system for malware",
+    "Replace the power cable",
+    "Disable the network adapter permanently"
+   ],
+   "answer": 1,
+   "explanation": "An unknown process consuming resources may be malicious; identifying it and scanning is the right approach."
+  },
+  {
+   "id": "aplus-144",
+   "domain": "swts",
+   "prompt": "After installing a new application, Windows becomes unstable. The user did not create a backup. What is the BEST quick recovery option?",
+   "choices": [
+    "Reformat the drive",
+    "Replace the RAM",
+    "Reset the BIOS",
+    "Use System Restore to return to a restore point from before the install"
+   ],
+   "answer": 3,
+   "explanation": "System Restore reverts system files and settings to an earlier point without affecting personal files."
+  },
+  {
+   "id": "aplus-145",
+   "domain": "swts",
+   "prompt": "A user's Windows PC shows 'Your PC ran into a problem' repeatedly during boot. Which option should be tried before reinstalling the OS?",
+   "choices": [
+    "Startup Repair from the Windows Recovery Environment",
+    "Replacing the monitor",
+    "Changing the user password",
+    "Disabling the firewall"
+   ],
+   "answer": 0,
+   "explanation": "Startup Repair automatically fixes many boot problems and is less disruptive than a reinstall."
+  },
+  {
+   "id": "aplus-146",
+   "domain": "swts",
+   "prompt": "An application displays 'missing DLL' errors when launched. What is the BEST fix?",
+   "choices": [
+    "Repair or reinstall the application",
+    "Replace the hard drive",
+    "Run Disk Cleanup",
+    "Change the screen resolution"
+   ],
+   "answer": 0,
+   "explanation": "A repair or reinstall restores the application's required DLL files."
+  },
+  {
+   "id": "aplus-147",
+   "domain": "swts",
+   "prompt": "A user's phone will not connect to corporate email after a password change. What should be done?",
+   "choices": [
+    "Update the saved password in the phone's mail account",
+    "Replace the SIM card",
+    "Factory reset the phone",
+    "Turn off Bluetooth"
+   ],
+   "answer": 0,
+   "explanation": "The device keeps trying the old password; updating it in the account settings resolves the issue."
+  },
+  {
+   "id": "aplus-148",
+   "domain": "swts",
+   "prompt": "A browser runs slowly and displays unwanted toolbars. What should the technician do FIRST?",
+   "choices": [
+    "Replace the computer",
+    "Remove unwanted extensions and reset browser settings",
+    "Delete the user account",
+    "Change the IP address"
+   ],
+   "answer": 1,
+   "explanation": "Malicious or unnecessary extensions are a frequent cause of slow, cluttered browsers."
+  },
+  {
+   "id": "aplus-149",
+   "domain": "swts",
+   "prompt": "Windows Update fails repeatedly with the same error code. What is a good next step?",
+   "choices": [
+    "Disable the antivirus permanently",
+    "Replace the hard drive",
+    "Run the Windows Update troubleshooter",
+    "Remove the network cable"
+   ],
+   "answer": 2,
+   "explanation": "The troubleshooter resets update components and fixes many common update failures."
+  },
+  {
+   "id": "aplus-150",
+   "domain": "swts",
+   "prompt": "A user reports their phone screen does not respond to touch after an OS update, though it worked before. What should be tried FIRST?",
+   "choices": [
+    "Restart the phone",
+    "Replace the digitizer",
+    "Replace the battery",
+    "Restore from a backup"
+   ],
+   "answer": 0,
+   "explanation": "A soft reboot resolves many post-update glitches and is the least invasive step."
+  },
+  {
+   "id": "aplus-151",
+   "domain": "swts",
+   "prompt": "A desktop app runs very slowly and Resource Monitor shows memory usage near 100%. What is the BEST long-term fix?",
+   "choices": [
+    "Add more RAM or close unneeded programs",
+    "Replace the monitor",
+    "Install a faster optical drive",
+    "Change the wallpaper"
+   ],
+   "answer": 0,
+   "explanation": "Memory exhaustion forces heavy paging; more RAM or fewer running programs improves performance."
+  },
+  {
+   "id": "aplus-152",
+   "domain": "os",
+   "prompt": "Which Windows command displays the IP address, subnet mask and default gateway of all adapters?",
+   "choices": [
+    "netstat -an",
+    "tracert",
+    "nslookup",
+    "ipconfig /all"
+   ],
+   "answer": 3,
+   "explanation": "ipconfig /all shows full adapter configuration, including DNS servers and MAC addresses."
+  },
+  {
+   "id": "aplus-153",
+   "domain": "os",
+   "prompt": "Which Windows command shows the path packets take to a destination, hop by hop?",
+   "choices": [
+    "ping",
+    "tracert",
+    "arp -a",
+    "hostname"
+   ],
+   "answer": 1,
+   "explanation": "tracert lists each router hop and its latency on the way to the destination."
+  },
+  {
+   "id": "aplus-154",
+   "domain": "os",
+   "prompt": "Which Windows command queries DNS servers to troubleshoot name resolution?",
+   "choices": [
+    "netstat",
+    "gpupdate",
+    "chkdsk",
+    "nslookup"
+   ],
+   "answer": 3,
+   "explanation": "nslookup sends DNS queries and shows which server answered and what records were returned."
+  },
+  {
+   "id": "aplus-155",
+   "domain": "os",
+   "prompt": "Which command forces an immediate refresh of Group Policy on a Windows client?",
+   "choices": [
+    "gpresult /r",
+    "sfc /scannow",
+    "net use",
+    "gpupdate /force"
+   ],
+   "answer": 3,
+   "explanation": "gpupdate /force reapplies all policy settings; gpresult only reports which policies applied."
+  },
+  {
+   "id": "aplus-156",
+   "domain": "os",
+   "prompt": "Which command shows which Group Policy objects were applied to the current user and computer?",
+   "choices": [
+    "gpupdate /force",
+    "whoami /priv",
+    "gpresult /r",
+    "diskpart"
+   ],
+   "answer": 2,
+   "explanation": "gpresult /r summarizes the resultant set of policy for the user and computer."
+  },
+  {
+   "id": "aplus-157",
+   "domain": "os",
+   "prompt": "Which Windows command-line tool can create, delete and format partitions?",
+   "choices": [
+    "chkdsk",
+    "diskpart",
+    "robocopy",
+    "defrag"
+   ],
+   "answer": 1,
+   "explanation": "diskpart manages disks, partitions and volumes from the command line."
+  },
+  {
+   "id": "aplus-158",
+   "domain": "os",
+   "prompt": "Which command scans a volume for file system errors and bad sectors?",
+   "choices": [
+    "sfc /scannow",
+    "chkdsk /r",
+    "dism /online",
+    "defrag /x"
+   ],
+   "answer": 1,
+   "explanation": "chkdsk /r locates bad sectors and recovers readable information; sfc checks system files instead."
+  },
+  {
+   "id": "aplus-159",
+   "domain": "os",
+   "prompt": "Which command repairs the Windows component store when sfc cannot fix corrupted files?",
+   "choices": [
+    "chkdsk /f",
+    "bootrec /fixmbr",
+    "DISM /Online /Cleanup-Image /RestoreHealth",
+    "gpupdate /force"
+   ],
+   "answer": 2,
+   "explanation": "DISM repairs the component store that sfc relies on to replace damaged system files."
+  },
+  {
+   "id": "aplus-160",
+   "domain": "os",
+   "prompt": "Which command maps a network share to drive letter Z: in Windows?",
+   "choices": [
+    "map Z: server/share",
+    "mount -t smb Z:",
+    "netstat Z:",
+    "net use Z: \\\\server\\share"
+   ],
+   "answer": 3,
+   "explanation": "net use connects a drive letter to a UNC path on a file server."
+  },
+  {
+   "id": "aplus-161",
+   "domain": "os",
+   "prompt": "Which robust Windows command copies large directory trees and can resume interrupted transfers?",
+   "choices": [
+    "copy",
+    "move",
+    "type",
+    "robocopy"
+   ],
+   "answer": 3,
+   "explanation": "robocopy (Robust File Copy) supports mirroring, retries and restartable mode for large copies."
+  },
+  {
+   "id": "aplus-162",
+   "domain": "os",
+   "prompt": "Which Windows edition is required to join a computer to an Active Directory domain?",
+   "choices": [
+    "Windows 11 Home",
+    "Windows 11 Pro",
+    "Windows 11 Home in S mode",
+    "Windows 10 Home"
+   ],
+   "answer": 1,
+   "explanation": "Home editions cannot join domains; Pro, Enterprise and Education can."
+  },
+  {
+   "id": "aplus-163",
+   "domain": "os",
+   "prompt": "Which Windows feature, unavailable in Home editions, encrypts entire drives?",
+   "choices": [
+    "BitLocker",
+    "Storage Sense",
+    "Windows Hello",
+    "Windows Defender Firewall"
+   ],
+   "answer": 0,
+   "explanation": "BitLocker full-volume encryption is included with Pro, Enterprise and Education editions."
+  },
+  {
+   "id": "aplus-164",
+   "domain": "os",
+   "prompt": "Which Control Panel or Settings tool lets a user change which app opens .pdf files?",
+   "choices": [
+    "Device Manager",
+    "Disk Management",
+    "Default apps",
+    "Ease of Access"
+   ],
+   "answer": 2,
+   "explanation": "Default apps settings associate file types and protocols with specific applications."
+  },
+  {
+   "id": "aplus-165",
+   "domain": "os",
+   "prompt": "Which Windows utility shows real-time CPU, memory, disk and network usage per process, including which files a process is using?",
+   "choices": [
+    "Event Viewer",
+    "Registry Editor",
+    "Disk Cleanup",
+    "Resource Monitor"
+   ],
+   "answer": 3,
+   "explanation": "Resource Monitor provides detailed per-process resource usage, including open file handles and network connections."
+  },
+  {
+   "id": "aplus-166",
+   "domain": "os",
+   "prompt": "Which Windows tool lets a technician configure services to start automatically, manually or be disabled?",
+   "choices": [
+    "services.msc",
+    "devmgmt.msc",
+    "diskmgmt.msc",
+    "eventvwr.msc"
+   ],
+   "answer": 0,
+   "explanation": "The Services console sets startup type and lets you start, stop or restart services."
+  },
+  {
+   "id": "aplus-167",
+   "domain": "os",
+   "prompt": "Which Microsoft Management Console snap-in is used to create local users and groups on Windows Pro?",
+   "choices": [
+    "perfmon.msc",
+    "taskschd.msc",
+    "lusrmgr.msc",
+    "certmgr.msc"
+   ],
+   "answer": 2,
+   "explanation": "Local Users and Groups (lusrmgr.msc) manages local accounts and group memberships."
+  },
+  {
+   "id": "aplus-168",
+   "domain": "os",
+   "prompt": "Which tool runs a program automatically at a set time each day in Windows?",
+   "choices": [
+    "Task Manager",
+    "System Information",
+    "Performance Monitor",
+    "Task Scheduler"
+   ],
+   "answer": 3,
+   "explanation": "Task Scheduler triggers programs or scripts based on time or events."
+  },
+  {
+   "id": "aplus-169",
+   "domain": "os",
+   "prompt": "Which Windows file system supports file permissions, encryption and large volumes?",
+   "choices": [
+    "FAT32",
+    "NTFS",
+    "exFAT",
+    "CDFS"
+   ],
+   "answer": 1,
+   "explanation": "NTFS supports ACL permissions, EFS encryption, compression and very large volumes."
+  },
+  {
+   "id": "aplus-170",
+   "domain": "os",
+   "prompt": "A user needs a USB drive to work with both Windows and macOS and store files larger than 4 GB. Which file system should be used?",
+   "choices": [
+    "FAT32",
+    "NTFS",
+    "exFAT",
+    "ext4"
+   ],
+   "answer": 2,
+   "explanation": "exFAT is supported by both platforms and has no 4 GB file size limit like FAT32."
+  },
+  {
+   "id": "aplus-171",
+   "domain": "os",
+   "prompt": "Which is the default file system for most modern Linux distributions?",
+   "choices": [
+    "ext4",
+    "APFS",
+    "NTFS",
+    "HFS+"
+   ],
+   "answer": 0,
+   "explanation": "ext4 is the standard journaling file system for many Linux distributions."
+  },
+  {
+   "id": "aplus-172",
+   "domain": "os",
+   "prompt": "Which Linux command runs a single command with administrative privileges?",
+   "choices": [
+    "whoami",
+    "sudo",
+    "chown",
+    "passwd"
+   ],
+   "answer": 1,
+   "explanation": "sudo executes one command as root (or another user) according to sudoers policy."
+  },
+  {
+   "id": "aplus-173",
+   "domain": "os",
+   "prompt": "Which Linux command changes the owner of a file?",
+   "choices": [
+    "chmod",
+    "chgrp",
+    "ls -l",
+    "chown"
+   ],
+   "answer": 3,
+   "explanation": "chown changes file ownership; chmod changes permissions."
+  },
+  {
+   "id": "aplus-174",
+   "domain": "os",
+   "prompt": "Which Linux command searches inside files for lines matching a pattern?",
+   "choices": [
+    "find",
+    "grep",
+    "cat",
+    "pwd"
+   ],
+   "answer": 1,
+   "explanation": "grep searches file contents for text patterns; find locates files by name or attributes."
+  },
+  {
+   "id": "aplus-175",
+   "domain": "os",
+   "prompt": "Which Linux command displays running processes and their resource usage in real time?",
+   "choices": [
+    "ls",
+    "df",
+    "top",
+    "cp"
+   ],
+   "answer": 2,
+   "explanation": "top continuously updates a list of processes with CPU and memory usage."
+  },
+  {
+   "id": "aplus-176",
+   "domain": "os",
+   "prompt": "Which Linux command shows how much free space each mounted file system has?",
+   "choices": [
+    "du -s",
+    "df -h",
+    "free",
+    "fsck"
+   ],
+   "answer": 1,
+   "explanation": "df -h reports disk free space in human-readable units; free shows memory."
+  },
+  {
+   "id": "aplus-177",
+   "domain": "os",
+   "prompt": "Which package manager command installs software on Debian- and Ubuntu-based systems?",
+   "choices": [
+    "dnf install",
+    "brew install",
+    "rpm -e",
+    "apt install"
+   ],
+   "answer": 3,
+   "explanation": "apt is the package manager for Debian-based distributions."
+  },
+  {
+   "id": "aplus-178",
+   "domain": "os",
+   "prompt": "Which macOS feature provides automatic, incremental backups to an external drive?",
+   "choices": [
+    "Spotlight",
+    "Mission Control",
+    "Time Machine",
+    "Keychain"
+   ],
+   "answer": 2,
+   "explanation": "Time Machine performs hourly incremental backups to an external or network disk."
+  },
+  {
+   "id": "aplus-179",
+   "domain": "os",
+   "prompt": "Which macOS utility securely stores passwords, certificates and Wi-Fi keys?",
+   "choices": [
+    "Finder",
+    "Disk Utility",
+    "Activity Monitor",
+    "Keychain Access"
+   ],
+   "answer": 3,
+   "explanation": "Keychain stores credentials and certificates encrypted for the user."
+  },
+  {
+   "id": "aplus-180",
+   "domain": "os",
+   "prompt": "On a Mac, which tool can be used to repair disk errors with the First Aid feature?",
+   "choices": [
+    "Disk Utility",
+    "Activity Monitor",
+    "Boot Camp",
+    "Mission Control"
+   ],
+   "answer": 0,
+   "explanation": "Disk Utility's First Aid checks and repairs file system errors on macOS volumes."
+  },
+  {
+   "id": "aplus-181",
+   "domain": "os",
+   "prompt": "Which macOS feature quickly searches for files, apps and settings?",
+   "choices": [
+    "Dock",
+    "Gatekeeper",
+    "FileVault",
+    "Spotlight"
+   ],
+   "answer": 3,
+   "explanation": "Spotlight indexes the system and provides fast search with Command+Space."
+  },
+  {
+   "id": "aplus-182",
+   "domain": "os",
+   "prompt": "A company plans a deployment where Windows is installed from the network on many PCs at once. Which boot method should be enabled on the PCs?",
+   "choices": [
+    "USB legacy boot",
+    "Optical boot",
+    "Fast Startup",
+    "PXE network boot"
+   ],
+   "answer": 3,
+   "explanation": "Preboot Execution Environment lets PCs boot from the network to receive an OS image."
+  },
+  {
+   "id": "aplus-183",
+   "domain": "os",
+   "prompt": "A user wants to keep their files and apps while upgrading from Windows 10 to Windows 11. Which installation type should be used?",
+   "choices": [
+    "In-place upgrade",
+    "Clean install",
+    "Image deployment with disk wipe",
+    "Repair install of Windows 10"
+   ],
+   "answer": 0,
+   "explanation": "An in-place upgrade preserves user data, settings and applications."
+  },
+  {
+   "id": "aplus-184",
+   "domain": "sec",
+   "prompt": "An attacker follows an employee through a secure door without badging in. What is this called?",
+   "choices": [
+    "Shoulder surfing",
+    "Dumpster diving",
+    "Tailgating",
+    "Vishing"
+   ],
+   "answer": 2,
+   "explanation": "Tailgating (piggybacking) is gaining physical access by following an authorized person."
+  },
+  {
+   "id": "aplus-185",
+   "domain": "sec",
+   "prompt": "Someone watches a user type their PIN at an ATM. What type of attack is this?",
+   "choices": [
+    "Tailgating",
+    "Whaling",
+    "Shoulder surfing",
+    "Smishing"
+   ],
+   "answer": 2,
+   "explanation": "Shoulder surfing is observing someone's screen or keypad to capture sensitive information."
+  },
+  {
+   "id": "aplus-186",
+   "domain": "sec",
+   "prompt": "A user receives a text message with a link claiming their package is delayed and requesting payment details. What is this?",
+   "choices": [
+    "Vishing",
+    "Smishing",
+    "Pharming",
+    "Spear phishing via email"
+   ],
+   "answer": 1,
+   "explanation": "Smishing is phishing via SMS text messages."
+  },
+  {
+   "id": "aplus-187",
+   "domain": "sec",
+   "prompt": "A caller pretends to be from the help desk and asks a user for their password. What type of attack is this?",
+   "choices": [
+    "Smishing",
+    "Evil twin",
+    "Vishing",
+    "Brute force"
+   ],
+   "answer": 2,
+   "explanation": "Vishing is voice phishing, using phone calls to trick users into revealing information."
+  },
+  {
+   "id": "aplus-188",
+   "domain": "sec",
+   "prompt": "An attacker sets up a wireless access point with the same SSID as a coffee shop's network to capture traffic. What is this called?",
+   "choices": [
+    "Rogue DHCP server",
+    "War driving",
+    "Bluejacking",
+    "Evil twin"
+   ],
+   "answer": 3,
+   "explanation": "An evil twin impersonates a legitimate SSID to lure users and intercept their traffic."
+  },
+  {
+   "id": "aplus-189",
+   "domain": "sec",
+   "prompt": "Which type of malware disguises itself as a legitimate program to trick users into installing it?",
+   "choices": [
+    "Worm",
+    "Rootkit",
+    "Keylogger",
+    "Trojan"
+   ],
+   "answer": 3,
+   "explanation": "A Trojan appears useful but carries a malicious payload; worms spread on their own."
+  },
+  {
+   "id": "aplus-190",
+   "domain": "sec",
+   "prompt": "Which type of malware spreads automatically across networks without user interaction?",
+   "choices": [
+    "Trojan",
+    "Spyware",
+    "Adware",
+    "Worm"
+   ],
+   "answer": 3,
+   "explanation": "Worms self-replicate by exploiting vulnerabilities, spreading without user action."
+  },
+  {
+   "id": "aplus-191",
+   "domain": "sec",
+   "prompt": "Which type of malware hides deep in the OS or firmware to conceal its presence from security tools?",
+   "choices": [
+    "Adware",
+    "Ransomware",
+    "Rootkit",
+    "Spyware"
+   ],
+   "answer": 2,
+   "explanation": "Rootkits gain privileged access and hide processes and files from detection."
+  },
+  {
+   "id": "aplus-192",
+   "domain": "sec",
+   "prompt": "Which principle states users should have only the access they need to perform their jobs?",
+   "choices": [
+    "Separation of duties",
+    "Defense in depth",
+    "Implicit trust",
+    "Least privilege"
+   ],
+   "answer": 3,
+   "explanation": "Least privilege limits accounts to the minimum permissions necessary."
+  },
+  {
+   "id": "aplus-193",
+   "domain": "sec",
+   "prompt": "Which Windows feature prompts users for approval before a program makes system-level changes?",
+   "choices": [
+    "BitLocker",
+    "User Account Control (UAC)",
+    "Windows Hello",
+    "SmartScreen"
+   ],
+   "answer": 1,
+   "explanation": "UAC asks for consent or admin credentials before elevated actions run."
+  },
+  {
+   "id": "aplus-194",
+   "domain": "sec",
+   "prompt": "Which Windows feature warns users before running unrecognized downloaded apps and blocks known malicious sites?",
+   "choices": [
+    "BitLocker To Go",
+    "Microsoft Defender SmartScreen",
+    "Credential Manager",
+    "Windows Sandbox"
+   ],
+   "answer": 1,
+   "explanation": "SmartScreen checks reputation of downloads and websites to block known threats."
+  },
+  {
+   "id": "aplus-195",
+   "domain": "sec",
+   "prompt": "Which wireless authentication method uses a RADIUS server to authenticate each user with individual credentials?",
+   "choices": [
+    "WPA2-Personal",
+    "WPA3-Enterprise (802.1X)",
+    "WEP",
+    "Open with MAC filtering"
+   ],
+   "answer": 1,
+   "explanation": "Enterprise mode uses 802.1X and RADIUS for per-user authentication rather than a shared key."
+  },
+  {
+   "id": "aplus-196",
+   "domain": "sec",
+   "prompt": "Which protocol is used by authentication servers to centralize AAA for network access, such as Wi-Fi and VPN?",
+   "choices": [
+    "SMTP",
+    "SNMP",
+    "NTP",
+    "RADIUS"
+   ],
+   "answer": 3,
+   "explanation": "RADIUS provides centralized authentication, authorization and accounting for network access."
+  },
+  {
+   "id": "aplus-197",
+   "domain": "sec",
+   "prompt": "A user's account becomes locked after five incorrect password attempts. Which security control is this?",
+   "choices": [
+    "Password expiration",
+    "Account lockout policy",
+    "Screen saver lock",
+    "Time-of-day restriction"
+   ],
+   "answer": 1,
+   "explanation": "Lockout policies stop brute-force attacks by locking an account after repeated failed attempts."
+  },
+  {
+   "id": "aplus-198",
+   "domain": "sec",
+   "prompt": "Which type of attack tries every possible password combination until one works?",
+   "choices": [
+    "Dictionary attack",
+    "Brute force",
+    "Phishing",
+    "SQL injection"
+   ],
+   "answer": 1,
+   "explanation": "Brute-force attacks systematically try all combinations; dictionary attacks use word lists."
+  },
+  {
+   "id": "aplus-199",
+   "domain": "sec",
+   "prompt": "An attacker inserts malicious SQL statements into a website's login form. What type of attack is this?",
+   "choices": [
+    "SQL injection",
+    "Cross-site scripting",
+    "On-path attack",
+    "DDoS"
+   ],
+   "answer": 0,
+   "explanation": "SQL injection manipulates database queries through unsanitized input fields."
+  },
+  {
+   "id": "aplus-200",
+   "domain": "sec",
+   "prompt": "Which attack intercepts communication between two parties so the attacker can read or alter traffic?",
+   "choices": [
+    "Denial of service",
+    "Tailgating",
+    "On-path (man-in-the-middle) attack",
+    "Zero-day exploit"
+   ],
+   "answer": 2,
+   "explanation": "In an on-path attack the attacker sits between victims, eavesdropping on or modifying traffic."
+  },
+  {
+   "id": "aplus-201",
+   "domain": "sec",
+   "prompt": "A vulnerability is being actively exploited before the vendor has released a patch. What is this called?",
+   "choices": [
+    "Legacy exploit",
+    "Brute force",
+    "Insider threat",
+    "Zero-day"
+   ],
+   "answer": 3,
+   "explanation": "A zero-day is a flaw exploited before a fix is available."
+  },
+  {
+   "id": "aplus-202",
+   "domain": "sec",
+   "prompt": "Which method makes data on a hard drive unrecoverable before disposal by physically destroying it?",
+   "choices": [
+    "Quick format",
+    "Shredding or drilling the drive",
+    "Deleting the partitions",
+    "Emptying the Recycle Bin"
+   ],
+   "answer": 1,
+   "explanation": "Physical destruction guarantees data cannot be recovered; formatting leaves recoverable data."
+  },
+  {
+   "id": "aplus-203",
+   "domain": "sec",
+   "prompt": "Which method erases a magnetic hard drive by exposing it to a strong magnetic field?",
+   "choices": [
+    "Degaussing",
+    "Quick formatting",
+    "Encryption",
+    "Pulverizing"
+   ],
+   "answer": 0,
+   "explanation": "Degaussing scrambles magnetic domains, rendering HDD data unreadable; it does not work on SSDs."
+  },
+  {
+   "id": "aplus-204",
+   "domain": "sec",
+   "prompt": "A company wants staff to badge in and also have their palm scanned before entering the server room. Which concept is this?",
+   "choices": [
+    "Single sign-on",
+    "Least privilege",
+    "Federation",
+    "Multifactor physical access control"
+   ],
+   "answer": 3,
+   "explanation": "Combining something you have (badge) with something you are (biometrics) is multifactor authentication."
+  },
+  {
+   "id": "aplus-205",
+   "domain": "sec",
+   "prompt": "Which physical security control uses two sets of doors so only one person can pass at a time?",
+   "choices": [
+    "Bollard",
+    "Motion sensor",
+    "Access control vestibule (mantrap)",
+    "Fence"
+   ],
+   "answer": 2,
+   "explanation": "An access control vestibule traps a person between two doors to prevent tailgating."
+  },
+  {
+   "id": "aplus-206",
+   "domain": "sec",
+   "prompt": "Which feature allows users to log in once and access multiple applications without re-entering credentials?",
+   "choices": [
+    "Multifactor authentication",
+    "Account lockout",
+    "Single sign-on (SSO)",
+    "Password history"
+   ],
+   "answer": 2,
+   "explanation": "SSO authenticates the user once and grants access to multiple connected services."
+  },
+  {
+   "id": "aplus-207",
+   "domain": "sec",
+   "prompt": "Which Windows NTFS permission is required for a user to modify a file's contents but not change its permissions?",
+   "choices": [
+    "Full control",
+    "Modify",
+    "Read",
+    "List folder contents"
+   ],
+   "answer": 1,
+   "explanation": "Modify allows reading, writing and deleting; Full control additionally allows changing permissions and ownership."
+  },
+  {
+   "id": "aplus-208",
+   "domain": "sec",
+   "prompt": "A file with Read share permission and Full control NTFS permission is accessed over the network. What is the effective permission?",
+   "choices": [
+    "Full control",
+    "Read",
+    "Modify",
+    "No access"
+   ],
+   "answer": 1,
+   "explanation": "When share and NTFS permissions combine over the network, the most restrictive permission applies."
+  },
+  {
+   "id": "aplus-209",
+   "domain": "sec",
+   "prompt": "Which home router setting should be changed FIRST when setting up a new device?",
+   "choices": [
+    "The DHCP lease time",
+    "The default administrator password",
+    "The router's LED brightness",
+    "The channel width"
+   ],
+   "answer": 1,
+   "explanation": "Default credentials are publicly known; changing them prevents unauthorized administration."
+  },
+  {
+   "id": "aplus-210",
+   "domain": "sec",
+   "prompt": "A security policy requires that data on lost laptops cannot be read. Which control BEST meets this requirement?",
+   "choices": [
+    "Full-disk encryption",
+    "Screen saver password",
+    "Antivirus software",
+    "Cable lock"
+   ],
+   "answer": 0,
+   "explanation": "Full-disk encryption protects data at rest even if the drive is removed from a lost device."
+  },
+  {
+   "id": "aplus-211",
+   "domain": "sec",
+   "prompt": "Which feature in Windows Defender Firewall allows a specific application to communicate through the firewall?",
+   "choices": [
+    "A port-forwarding rule on the PC",
+    "An application allow rule (exception)",
+    "A DHCP reservation",
+    "A DNS sinkhole"
+   ],
+   "answer": 1,
+   "explanation": "Allow rules (exceptions) permit traffic for specific programs or ports while keeping the firewall enabled."
+  },
+  {
+   "id": "aplus-212",
+   "domain": "ops",
+   "prompt": "After implementing a fix, what is the NEXT step in the CompTIA troubleshooting methodology?",
+   "choices": [
+    "Establish a theory of probable cause",
+    "Document findings and close the ticket",
+    "Identify the problem",
+    "Verify full system functionality and, if applicable, implement preventive measures"
+   ],
+   "answer": 3,
+   "explanation": "After implementing the solution, verify full functionality and add preventive measures; documentation comes last."
+  },
+  {
+   "id": "aplus-213",
+   "domain": "ops",
+   "prompt": "In the CompTIA troubleshooting methodology, what should a technician do if a theory is NOT confirmed?",
+   "choices": [
+    "Establish a new theory or escalate",
+    "Implement the solution anyway",
+    "Document and close the ticket",
+    "Reimage the system immediately"
+   ],
+   "answer": 0,
+   "explanation": "If testing does not confirm the theory, the technician forms a new theory or escalates."
+  },
+  {
+   "id": "aplus-214",
+   "domain": "ops",
+   "prompt": "Which document describes the planned change, its risk, rollback plan and approval before a major system update?",
+   "choices": [
+    "Acceptable use policy",
+    "Safety data sheet",
+    "Incident report",
+    "Change request"
+   ],
+   "answer": 3,
+   "explanation": "A change request documents purpose, scope, risk analysis and backout plan for change-board approval."
+  },
+  {
+   "id": "aplus-215",
+   "domain": "ops",
+   "prompt": "In change management, what is the purpose of a backout plan?",
+   "choices": [
+    "To list users affected by the change",
+    "To restore the original state if the change fails",
+    "To assign the change to a technician",
+    "To document equipment disposal"
+   ],
+   "answer": 1,
+   "explanation": "A backout (rollback) plan defines how to undo the change if problems occur."
+  },
+  {
+   "id": "aplus-216",
+   "domain": "ops",
+   "prompt": "Which backup strategy keeps three copies of data on two different media with one copy offsite?",
+   "choices": [
+    "Grandfather-father-son",
+    "3-2-1 backup rule",
+    "Synthetic full",
+    "Incremental forever"
+   ],
+   "answer": 1,
+   "explanation": "The 3-2-1 rule protects data from local disasters and single-media failures."
+  },
+  {
+   "id": "aplus-217",
+   "domain": "ops",
+   "prompt": "A nightly job backs up only what changed since the previous night's job, whether that job was full or partial. Which backup type is this?",
+   "choices": [
+    "Full",
+    "Differential",
+    "Synthetic full",
+    "Incremental"
+   ],
+   "answer": 3,
+   "explanation": "Incremental backups capture changes since the last backup, making them fast but requiring every increment to restore."
+  },
+  {
+   "id": "aplus-218",
+   "domain": "ops",
+   "prompt": "Which device protects a server from short power outages and allows a graceful shutdown?",
+   "choices": [
+    "Surge suppressor",
+    "Power strip",
+    "UPS",
+    "Line conditioner"
+   ],
+   "answer": 2,
+   "explanation": "An uninterruptible power supply provides battery power during outages so systems can shut down safely."
+  },
+  {
+   "id": "aplus-219",
+   "domain": "ops",
+   "prompt": "What is the proper way to dispose of old lithium-ion laptop batteries?",
+   "choices": [
+    "Throw them in regular trash",
+    "Recycle them according to local regulations",
+    "Burn them to discharge",
+    "Store them indefinitely in a desk drawer"
+   ],
+   "answer": 1,
+   "explanation": "Batteries contain hazardous materials and must be recycled per environmental regulations."
+  },
+  {
+   "id": "aplus-220",
+   "domain": "ops",
+   "prompt": "When lifting a heavy server, what is the correct technique?",
+   "choices": [
+    "Lift with the legs while keeping the back straight",
+    "Bend at the waist and lift quickly",
+    "Twist the torso while lifting",
+    "Lift with arms extended away from the body"
+   ],
+   "answer": 0,
+   "explanation": "Proper lifting uses the legs, keeps the load close and the back straight to avoid injury."
+  },
+  {
+   "id": "aplus-221",
+   "domain": "ops",
+   "prompt": "A technician finds illegal content on a user's PC during a repair. What should the technician do FIRST?",
+   "choices": [
+    "Stop work, preserve the evidence and report it per company policy",
+    "Delete the content",
+    "Copy the files to a USB drive for later review",
+    "Ignore it and finish the repair"
+   ],
+   "answer": 0,
+   "explanation": "Incident response requires preserving evidence and following the chain of custody by reporting through proper channels."
+  },
+  {
+   "id": "aplus-222",
+   "domain": "ops",
+   "prompt": "Which document tracks who has handled evidence from collection to court?",
+   "choices": [
+    "Service level agreement",
+    "Asset tag log",
+    "Chain of custody",
+    "Network diagram"
+   ],
+   "answer": 2,
+   "explanation": "Chain of custody records each person who handled evidence, protecting its integrity."
+  },
+  {
+   "id": "aplus-223",
+   "domain": "ops",
+   "prompt": "Which agreement defines guaranteed response and resolution times between a provider and customer?",
+   "choices": [
+    "SLA",
+    "NDA",
+    "AUP",
+    "MSDS"
+   ],
+   "answer": 0,
+   "explanation": "A service-level agreement specifies performance commitments such as uptime and response times."
+  },
+  {
+   "id": "aplus-224",
+   "domain": "ops",
+   "prompt": "Which policy outlines what employees may and may not do with company computers and networks?",
+   "choices": [
+    "Change management policy",
+    "Data retention schedule",
+    "Acceptable use policy",
+    "Disaster recovery plan"
+   ],
+   "answer": 2,
+   "explanation": "An AUP defines permitted use of organizational IT resources."
+  },
+  {
+   "id": "aplus-225",
+   "domain": "ops",
+   "prompt": "A customer is upset about a delayed repair. What should the technician do?",
+   "choices": [
+    "Tell the customer they are wrong",
+    "Listen actively, avoid arguing and explain the next steps",
+    "Hang up and call back later",
+    "Blame another department"
+   ],
+   "answer": 1,
+   "explanation": "Professional communication means listening, staying calm and setting clear expectations."
+  },
+  {
+   "id": "aplus-226",
+   "domain": "ops",
+   "prompt": "A technician is working at a customer's desk and their personal phone rings. What should they do?",
+   "choices": [
+    "Let it go to voicemail unless it is an emergency",
+    "Answer and talk while working",
+    "Text back during the repair",
+    "Ask the customer to wait while they take the call"
+   ],
+   "answer": 0,
+   "explanation": "Avoiding personal interruptions shows respect for the customer's time."
+  },
+  {
+   "id": "aplus-227",
+   "domain": "ops",
+   "prompt": "Which type of data includes names, Social Security numbers and home addresses and must be protected?",
+   "choices": [
+    "Public data",
+    "PII",
+    "Open-source data",
+    "Telemetry"
+   ],
+   "answer": 1,
+   "explanation": "Personally identifiable information can identify individuals and is protected by privacy laws."
+  },
+  {
+   "id": "aplus-228",
+   "domain": "ops",
+   "prompt": "Which scripting file extension is used for Windows PowerShell scripts?",
+   "choices": [
+    ".ps1",
+    ".sh",
+    ".bat",
+    ".py"
+   ],
+   "answer": 0,
+   "explanation": "PowerShell scripts use the .ps1 extension; .sh is a Linux shell script and .bat is a batch file."
+  },
+  {
+   "id": "aplus-229",
+   "domain": "ops",
+   "prompt": "Which remote access tool lets a help desk technician view and control a user's Windows session with the user's permission?",
+   "choices": [
+    "Remote Assistance or Quick Assist",
+    "Telnet",
+    "FTP",
+    "SNMP"
+   ],
+   "answer": 0,
+   "explanation": "Quick Assist and Remote Assistance let a technician share control of the user's screen after the user grants permission."
+  }
+ ]
+}

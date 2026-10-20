@@ -1,0 +1,2980 @@
+{
+ "id": "az900",
+ "order": 6,
+ "name": "Microsoft Azure Fundamentals",
+ "shortName": "AZ-900",
+ "vendor": "Microsoft",
+ "examCode": "AZ-900",
+ "symbol": "square.stack.3d.up.fill",
+ "colorHex": "6366F1",
+ "passingPercent": 70,
+ "summary": "Cloud concepts, Azure architecture and services, management and governance.",
+ "domains": [
+  {
+   "id": "concepts",
+   "name": "Cloud Concepts",
+   "summary": "Cloud computing fundamentals.",
+   "topics": [
+    "What cloud computing is",
+    "Shared responsibility model",
+    "Public, private and hybrid cloud",
+    "Consumption-based pricing",
+    "Benefits: high availability, scalability, reliability, security, manageability",
+    "IaaS, PaaS and SaaS"
+   ]
+  },
+  {
+   "id": "arch",
+   "name": "Azure Architecture & Services",
+   "summary": "Core Azure architecture and services.",
+   "topics": [
+    "Regions, availability zones and region pairs",
+    "Resource groups, subscriptions and management groups",
+    "Compute: VMs, containers, Functions, App Service",
+    "Networking: VNets, VPN Gateway, ExpressRoute, DNS",
+    "Storage: tiers, redundancy, migration tools",
+    "Identity: Microsoft Entra ID, MFA, Conditional Access",
+    "Security: RBAC, Zero Trust, defence in depth, Defender for Cloud"
+   ]
+  },
+  {
+   "id": "gov",
+   "name": "Azure Management & Governance",
+   "summary": "Manage costs, governance and resources in Azure.",
+   "topics": [
+    "Cost management, pricing and TCO calculators",
+    "Tags",
+    "Microsoft Purview, Azure Policy and resource locks",
+    "Managing resources: portal, CLI, PowerShell, Arc, ARM templates",
+    "Monitoring: Advisor, Service Health, Azure Monitor"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "az900-001",
+   "domain": "concepts",
+   "prompt": "A company wants to stop buying hardware every few years and instead pay monthly for the compute it consumes. Which financial shift does this describe?",
+   "choices": [
+    "Moving from OpEx to CapEx",
+    "Moving from a consumption model to a reserved-only model",
+    "Moving from depreciation to amortization of servers",
+    "Moving from capital expenditure (CapEx) to operational expenditure (OpEx)"
+   ],
+   "answer": 3,
+   "explanation": "Cloud services are typically billed as ongoing operating costs instead of large up-front capital purchases."
+  },
+  {
+   "id": "az900-002",
+   "domain": "concepts",
+   "prompt": "Which statement best describes the consumption-based model used by Azure?",
+   "choices": [
+    "You pay only for the number of users in your directory",
+    "You must purchase hardware before deploying services",
+    "You pay only for the resources you use, with no up-front cost for most services",
+    "You pay a fixed annual fee regardless of usage"
+   ],
+   "answer": 2,
+   "explanation": "Consumption-based pricing means you are billed for what you actually use, with no up-front infrastructure purchase."
+  },
+  {
+   "id": "az900-003",
+   "domain": "concepts",
+   "prompt": "An online ticket seller sees huge demand for a few hours when popular concerts go on sale. Which cloud characteristic lets resources grow and shrink automatically to match this demand?",
+   "choices": [
+    "Elasticity",
+    "Governance",
+    "Predictability",
+    "Fault domains"
+   ],
+   "answer": 0,
+   "explanation": "Elasticity is the ability to automatically add or remove resources as demand changes."
+  },
+  {
+   "id": "az900-004",
+   "domain": "concepts",
+   "prompt": "What is the difference between vertical and horizontal scaling?",
+   "choices": [
+    "They are two names for the same thing",
+    "Vertical scaling adds CPU or memory to an existing resource; horizontal scaling adds or removes resource instances",
+    "Vertical scaling adds instances; horizontal scaling adds CPU or memory",
+    "Vertical scaling only applies to storage; horizontal scaling only applies to networking"
+   ],
+   "answer": 1,
+   "explanation": "Scaling up/down (vertical) changes the size of a resource, while scaling out/in (horizontal) changes the number of instances."
+  },
+  {
+   "id": "az900-005",
+   "domain": "concepts",
+   "prompt": "A team increases the number of virtual machines behind a load balancer from 3 to 6 during peak hours. What type of scaling is this?",
+   "choices": [
+    "Horizontal scaling (scaling out)",
+    "Geographic failover",
+    "Vertical scaling (scaling up)",
+    "Diagonal scaling"
+   ],
+   "answer": 0,
+   "explanation": "Adding more instances of a resource is horizontal scaling, also called scaling out."
+  },
+  {
+   "id": "az900-006",
+   "domain": "concepts",
+   "prompt": "A database server is resized from 4 vCPUs to 16 vCPUs to handle more queries. What type of scaling is this?",
+   "choices": [
+    "Horizontal scaling (scaling out)",
+    "Vertical scaling (scaling up)",
+    "Load balancing",
+    "Elastic pooling"
+   ],
+   "answer": 1,
+   "explanation": "Increasing the capacity of a single resource is vertical scaling."
+  },
+  {
+   "id": "az900-007",
+   "domain": "concepts",
+   "prompt": "Which cloud deployment model is owned and operated by a cloud provider and shared by many organizations over the internet?",
+   "choices": [
+    "Private cloud",
+    "Hybrid cloud",
+    "Public cloud",
+    "On-premises data center"
+   ],
+   "answer": 2,
+   "explanation": "A public cloud is built, controlled and maintained by a provider and offers services to multiple customers."
+  },
+  {
+   "id": "az900-008",
+   "domain": "concepts",
+   "prompt": "Which cloud deployment model gives an organization complete control over its resources and security but requires it to buy and maintain the hardware?",
+   "choices": [
+    "Software as a service",
+    "Private cloud",
+    "Public cloud",
+    "Serverless computing"
+   ],
+   "answer": 1,
+   "explanation": "A private cloud is used by a single organization, giving full control but also full responsibility for hardware and maintenance."
+  },
+  {
+   "id": "az900-009",
+   "domain": "concepts",
+   "prompt": "A bank keeps sensitive workloads in its own data center but uses Azure for burst capacity and new web apps, with the two environments connected. Which deployment model is this?",
+   "choices": [
+    "Hybrid cloud",
+    "Community cloud",
+    "Private cloud only",
+    "Public cloud only"
+   ],
+   "answer": 0,
+   "explanation": "Hybrid cloud combines public and private environments and allows data and applications to move between them."
+  },
+  {
+   "id": "az900-010",
+   "domain": "concepts",
+   "prompt": "An organization uses Azure for some workloads and another cloud provider for others. What is this approach called?",
+   "choices": [
+    "Edge-only computing",
+    "Multi-cloud",
+    "Private cloud",
+    "Hybrid cloud"
+   ],
+   "answer": 1,
+   "explanation": "Using services from more than one public cloud provider is a multi-cloud approach."
+  },
+  {
+   "id": "az900-011",
+   "domain": "concepts",
+   "prompt": "Which Azure service lets you manage servers, Kubernetes clusters and databases running on-premises or in other clouds as if they were Azure resources?",
+   "choices": [
+    "Azure Arc",
+    "Azure VMware Solution",
+    "Azure Migrate",
+    "Azure Data Box"
+   ],
+   "answer": 0,
+   "explanation": "Azure Arc extends Azure management and governance to resources outside Azure, supporting hybrid and multi-cloud scenarios."
+  },
+  {
+   "id": "az900-012",
+   "domain": "concepts",
+   "prompt": "A company wants to run its existing VMware workloads in Azure without re-platforming them. Which service is designed for this?",
+   "choices": [
+    "Azure Functions",
+    "Azure Arc",
+    "Azure VMware Solution",
+    "Azure Container Instances"
+   ],
+   "answer": 2,
+   "explanation": "Azure VMware Solution runs VMware environments natively on dedicated Azure infrastructure."
+  },
+  {
+   "id": "az900-013",
+   "domain": "concepts",
+   "prompt": "In the infrastructure as a service (IaaS) model, which of the following is the customer responsible for?",
+   "choices": [
+    "Datacenter power and cooling",
+    "The operating system and installed applications",
+    "The physical network cabling",
+    "The physical hosts in the datacenter"
+   ],
+   "answer": 1,
+   "explanation": "With IaaS the provider manages the physical infrastructure, while the customer manages the OS, middleware, apps and data."
+  },
+  {
+   "id": "az900-014",
+   "domain": "concepts",
+   "prompt": "Under the shared responsibility model, which item is ALWAYS the customer's responsibility regardless of the service type?",
+   "choices": [
+    "Patching the hypervisor",
+    "The data they store and the accounts and identities they use",
+    "The physical security of the datacenter",
+    "Replacing failed hard drives"
+   ],
+   "answer": 1,
+   "explanation": "Customers always remain responsible for their information and data, devices, and accounts and identities."
+  },
+  {
+   "id": "az900-015",
+   "domain": "concepts",
+   "prompt": "Under the shared responsibility model, which item is ALWAYS the cloud provider's responsibility?",
+   "choices": [
+    "Classifying the customer's data",
+    "Securing end-user devices",
+    "The physical datacenter, physical network and physical hosts",
+    "Configuring user permissions"
+   ],
+   "answer": 2,
+   "explanation": "The physical infrastructure is always managed by the cloud provider in IaaS, PaaS and SaaS."
+  },
+  {
+   "id": "az900-016",
+   "domain": "concepts",
+   "prompt": "Which service model gives the customer the MOST control over the computing environment?",
+   "choices": [
+    "Function as a service only",
+    "Platform as a service (PaaS)",
+    "Infrastructure as a service (IaaS)",
+    "Software as a service (SaaS)"
+   ],
+   "answer": 2,
+   "explanation": "IaaS provides the most control because the customer manages the operating system and everything above it."
+  },
+  {
+   "id": "az900-017",
+   "domain": "concepts",
+   "prompt": "Which service model places the MOST responsibility on the cloud provider?",
+   "choices": [
+    "On-premises hosting",
+    "Infrastructure as a service (IaaS)",
+    "Software as a service (SaaS)",
+    "Platform as a service (PaaS)"
+   ],
+   "answer": 2,
+   "explanation": "With SaaS the provider manages nearly everything; the customer mainly manages data, users and access."
+  },
+  {
+   "id": "az900-018",
+   "domain": "concepts",
+   "prompt": "A developer wants to deploy a web application without managing operating system updates or the underlying servers. Which service model fits best?",
+   "choices": [
+    "On-premises virtualization",
+    "Infrastructure as a service (IaaS)",
+    "Colocation hosting",
+    "Platform as a service (PaaS)"
+   ],
+   "answer": 3,
+   "explanation": "PaaS provides a managed environment for building and running apps, so the provider handles the OS and infrastructure."
+  },
+  {
+   "id": "az900-019",
+   "domain": "concepts",
+   "prompt": "A company subscribes to Microsoft 365 for email and office productivity. Which cloud service model is this?",
+   "choices": [
+    "Software as a service (SaaS)",
+    "Private cloud",
+    "Platform as a service (PaaS)",
+    "Infrastructure as a service (IaaS)"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft 365 is a complete application delivered over the internet, which is SaaS."
+  },
+  {
+   "id": "az900-020",
+   "domain": "concepts",
+   "prompt": "A team migrates an on-premises server to Azure Virtual Machines with minimal changes, a 'lift-and-shift'. Which service model are they using?",
+   "choices": [
+    "Serverless",
+    "Platform as a service (PaaS)",
+    "Software as a service (SaaS)",
+    "Infrastructure as a service (IaaS)"
+   ],
+   "answer": 3,
+   "explanation": "Azure Virtual Machines are IaaS, which suits lift-and-shift migrations where the OS is managed by the customer."
+  },
+  {
+   "id": "az900-021",
+   "domain": "concepts",
+   "prompt": "Which statement best describes serverless computing?",
+   "choices": [
+    "The provider manages the servers and you are typically billed only when your code runs",
+    "No servers are used anywhere to run the code",
+    "You must provision and patch dedicated servers",
+    "It is only available in private clouds"
+   ],
+   "answer": 0,
+   "explanation": "Serverless abstracts the servers away; the provider manages infrastructure and scales automatically, often charging per execution."
+  },
+  {
+   "id": "az900-022",
+   "domain": "concepts",
+   "prompt": "Azure Functions is an example of which kind of compute?",
+   "choices": [
+    "Infrastructure as a service virtual machines",
+    "A physical dedicated host",
+    "A SaaS productivity suite",
+    "Serverless (event-driven) compute"
+   ],
+   "answer": 3,
+   "explanation": "Azure Functions runs code in response to events without the need to manage servers."
+  },
+  {
+   "id": "az900-023",
+   "domain": "concepts",
+   "prompt": "What does high availability focus on in the cloud?",
+   "choices": [
+    "Keeping a service running and accessible with minimal downtime",
+    "Encrypting data at rest",
+    "Reducing the cost of storage",
+    "Granting users least-privilege access"
+   ],
+   "answer": 0,
+   "explanation": "High availability is about maximizing uptime, often expressed through SLAs such as 99.9% or 99.99%."
+  },
+  {
+   "id": "az900-024",
+   "domain": "concepts",
+   "prompt": "A service has an SLA of 99.99%. Approximately how much downtime does this allow per month?",
+   "choices": [
+    "About 4 minutes",
+    "About 43 minutes",
+    "About 1 day",
+    "About 7 hours"
+   ],
+   "answer": 0,
+   "explanation": "99.99% availability allows roughly 4.3 minutes of downtime in a 30-day month; 99.9% allows about 43 minutes."
+  },
+  {
+   "id": "az900-025",
+   "domain": "concepts",
+   "prompt": "Which SLA percentage allows the LEAST downtime?",
+   "choices": [
+    "99.95%",
+    "99.999%",
+    "99.9%",
+    "99.99%"
+   ],
+   "answer": 1,
+   "explanation": "Each additional nine reduces allowed downtime; 99.999% allows only about 26 seconds per month."
+  },
+  {
+   "id": "az900-026",
+   "domain": "concepts",
+   "prompt": "What does reliability mean in the context of cloud design?",
+   "choices": [
+    "The ability to sign in with a single identity",
+    "The ability to apply tags to resources",
+    "The ability of a system to recover from failures and continue to function",
+    "The ability to predict monthly costs"
+   ],
+   "answer": 2,
+   "explanation": "Reliability is the ability to recover from failures and keep functioning, aided by Azure's decentralized global design."
+  },
+  {
+   "id": "az900-027",
+   "domain": "concepts",
+   "prompt": "Which two areas does the cloud benefit of 'predictability' cover?",
+   "choices": [
+    "Networking and DNS",
+    "Compliance and auditing",
+    "Performance and cost",
+    "Security and identity"
+   ],
+   "answer": 2,
+   "explanation": "Predictability in the cloud focuses on predicting performance (e.g., via autoscaling) and cost (e.g., via pricing tools)."
+  },
+  {
+   "id": "az900-028",
+   "domain": "concepts",
+   "prompt": "Which cloud benefit lets an organization deploy resources using templates, scripts or the portal, and get alerts and metrics on them?",
+   "choices": [
+    "Manageability",
+    "Economies of scale",
+    "Data sovereignty",
+    "Elasticity"
+   ],
+   "answer": 0,
+   "explanation": "Manageability includes management of the cloud (metrics, autoscaling, alerts) and management in the cloud (portal, CLI, APIs, templates)."
+  },
+  {
+   "id": "az900-029",
+   "domain": "concepts",
+   "prompt": "Why can large cloud providers often offer lower prices than an individual company could achieve on its own?",
+   "choices": [
+    "They only use refurbished hardware",
+    "They require long-term contracts for all services",
+    "Economies of scale from operating at massive volume",
+    "Customers pay for datacenter maintenance directly"
+   ],
+   "answer": 2,
+   "explanation": "Operating at huge scale lowers per-unit costs for providers, which can be passed on to customers."
+  },
+  {
+   "id": "az900-030",
+   "domain": "concepts",
+   "prompt": "Which of the following is an example of an operational expenditure (OpEx)?",
+   "choices": [
+    "Buying a new server rack",
+    "Building a new datacenter",
+    "Paying a monthly bill for virtual machines used",
+    "Purchasing networking switches outright"
+   ],
+   "answer": 2,
+   "explanation": "OpEx is spending on services or products as they are consumed and is typically deducted in the same period."
+  },
+  {
+   "id": "az900-031",
+   "domain": "concepts",
+   "prompt": "Which of the following is a characteristic of capital expenditure (CapEx)?",
+   "choices": [
+    "Spending that can be reduced instantly when demand drops",
+    "Paying only when code executes",
+    "Up-front spending on physical infrastructure that is depreciated over time",
+    "Billing based on per-second usage"
+   ],
+   "answer": 2,
+   "explanation": "CapEx is up-front investment in physical assets whose value is depreciated over their useful life."
+  },
+  {
+   "id": "az900-032",
+   "domain": "concepts",
+   "prompt": "A company must prove that its cloud environment meets industry regulations such as ISO 27001. Which cloud benefit helps with this?",
+   "choices": [
+    "Pay-as-you-go pricing",
+    "Security and governance features, including compliance offerings and policies",
+    "Elasticity",
+    "Horizontal scaling"
+   ],
+   "answer": 1,
+   "explanation": "The cloud provides governance tools and compliance certifications that help organizations meet regulatory requirements."
+  },
+  {
+   "id": "az900-033",
+   "domain": "concepts",
+   "prompt": "What is a key security advantage of PaaS and SaaS compared to IaaS?",
+   "choices": [
+    "No identity management is required",
+    "The customer is responsible for physical security",
+    "The provider automatically handles OS patching and maintenance",
+    "The customer gets full control over the hypervisor"
+   ],
+   "answer": 2,
+   "explanation": "With PaaS and SaaS, patches and maintenance of the platform are handled by the provider, reducing the customer's burden."
+  },
+  {
+   "id": "az900-034",
+   "domain": "concepts",
+   "prompt": "Which statement about cloud computing is TRUE?",
+   "choices": [
+    "It is available only to large enterprises",
+    "It cannot be used for databases",
+    "It delivers computing services such as servers, storage and networking over the internet",
+    "It requires customers to own the physical servers"
+   ],
+   "answer": 2,
+   "explanation": "Cloud computing is the delivery of computing services over the internet, enabling faster innovation and flexible resources."
+  },
+  {
+   "id": "az900-035",
+   "domain": "concepts",
+   "prompt": "A startup wants to experiment with a new idea and shut it down within a week if it fails, without long-term costs. Which cloud benefit makes this practical?",
+   "choices": [
+    "Fixed hardware procurement cycles",
+    "Mandatory multi-year reservations",
+    "Requirement to build a private datacenter",
+    "Agility through on-demand provisioning and pay-as-you-go pricing"
+   ],
+   "answer": 3,
+   "explanation": "Resources can be deployed and removed quickly, and you stop paying when you delete them."
+  },
+  {
+   "id": "az900-036",
+   "domain": "concepts",
+   "prompt": "In which service model is the customer responsible for managing the application code and data, but NOT the operating system?",
+   "choices": [
+    "Infrastructure as a service (IaaS)",
+    "Platform as a service (PaaS)",
+    "On-premises",
+    "Colocation"
+   ],
+   "answer": 1,
+   "explanation": "In PaaS the provider manages the OS and runtime, while the customer manages apps and data."
+  },
+  {
+   "id": "az900-037",
+   "domain": "concepts",
+   "prompt": "In a SaaS model, which responsibility typically remains with the customer?",
+   "choices": [
+    "Managing the database engine",
+    "Patching the application",
+    "Maintaining the application servers",
+    "Managing user accounts, access and the data they put into the service"
+   ],
+   "answer": 3,
+   "explanation": "Even with SaaS, customers are responsible for their data, identities and access configuration."
+  },
+  {
+   "id": "az900-038",
+   "domain": "concepts",
+   "prompt": "Which deployment model allows an organization to keep regulated data on-premises while using the public cloud for less sensitive workloads?",
+   "choices": [
+    "Public cloud",
+    "SaaS",
+    "Hybrid cloud",
+    "Serverless"
+   ],
+   "answer": 2,
+   "explanation": "A hybrid cloud lets organizations decide where each workload runs to meet regulatory or security needs."
+  },
+  {
+   "id": "az900-039",
+   "domain": "concepts",
+   "prompt": "What does the term 'fault tolerance' describe?",
+   "choices": [
+    "A system's ability to keep operating even when one or more components fail",
+    "Restricting resources to approved locations",
+    "Encrypting traffic between regions",
+    "Lowering costs by using reserved instances"
+   ],
+   "answer": 0,
+   "explanation": "A fault-tolerant system continues working when components fail, usually through redundancy."
+  },
+  {
+   "id": "az900-040",
+   "domain": "concepts",
+   "prompt": "What is disaster recovery primarily concerned with?",
+   "choices": [
+    "Restoring services and data after a major outage or catastrophic event",
+    "Scaling a website during normal peak hours",
+    "Reducing the latency for users",
+    "Tracking cost by department"
+   ],
+   "answer": 0,
+   "explanation": "Disaster recovery is about recovering from major events, often using backups and replication to other regions."
+  },
+  {
+   "id": "az900-041",
+   "domain": "concepts",
+   "prompt": "A company is evaluating Azure versus on-premises hosting. Which of these is a cost the company no longer pays directly when moving to a public cloud?",
+   "choices": [
+    "Charges for data transferred out of Azure",
+    "Fees for compute usage",
+    "Licensing fees for every SaaS seat",
+    "Datacenter electricity, cooling and physical security"
+   ],
+   "answer": 3,
+   "explanation": "In the public cloud, the provider bears the cost of facilities such as power, cooling and physical security."
+  },
+  {
+   "id": "az900-042",
+   "domain": "concepts",
+   "prompt": "Which benefit of the cloud refers to the ability to deploy applications in regions around the world close to customers?",
+   "choices": [
+    "Global reach",
+    "Single sign-on",
+    "Vertical scaling",
+    "Data classification"
+   ],
+   "answer": 0,
+   "explanation": "Cloud providers operate datacenters worldwide, allowing apps to be deployed near users for lower latency."
+  },
+  {
+   "id": "az900-043",
+   "domain": "concepts",
+   "prompt": "Which of the following is an example of a public cloud characteristic?",
+   "choices": [
+    "Only one organization can use the hardware",
+    "No capital expenditure is needed to scale up",
+    "The organization owns all the hardware",
+    "Hardware must be purchased before use"
+   ],
+   "answer": 1,
+   "explanation": "Public cloud resources can be scaled without buying hardware; you pay for what you use."
+  },
+  {
+   "id": "az900-044",
+   "domain": "concepts",
+   "prompt": "Which of the following is a disadvantage of a private cloud compared to a public cloud?",
+   "choices": [
+    "Less control over security settings",
+    "Higher up-front costs for hardware and ongoing maintenance",
+    "No ability to customize hardware",
+    "It is shared with other organizations"
+   ],
+   "answer": 1,
+   "explanation": "Private clouds require purchasing and maintaining hardware, which increases cost and management effort."
+  },
+  {
+   "id": "az900-045",
+   "domain": "concepts",
+   "prompt": "Under the shared responsibility model, who is responsible for patching the guest operating system on an Azure virtual machine?",
+   "choices": [
+    "The customer",
+    "The hardware manufacturer",
+    "The Internet service provider",
+    "Microsoft"
+   ],
+   "answer": 0,
+   "explanation": "Azure VMs are IaaS, so the customer is responsible for maintaining and patching the guest OS."
+  },
+  {
+   "id": "az900-046",
+   "domain": "concepts",
+   "prompt": "Under the shared responsibility model, who is responsible for the operating system of Azure App Service web apps?",
+   "choices": [
+    "The customer",
+    "An Azure Marketplace publisher",
+    "Microsoft",
+    "The app's end users"
+   ],
+   "answer": 2,
+   "explanation": "Azure App Service is PaaS, so Microsoft manages the underlying OS and platform."
+  },
+  {
+   "id": "az900-047",
+   "domain": "concepts",
+   "prompt": "Which responsibility varies by service model and may be shared between the customer and Microsoft?",
+   "choices": [
+    "Identity and directory infrastructure",
+    "The physical datacenter",
+    "Physical hosts",
+    "The customer's data"
+   ],
+   "answer": 0,
+   "explanation": "Identity and directory infrastructure, applications, network controls and the OS are responsibilities that vary by service type."
+  },
+  {
+   "id": "az900-048",
+   "domain": "concepts",
+   "prompt": "Which cloud characteristic means an organization can obtain more resources whenever needed without contacting the provider?",
+   "choices": [
+    "On-demand self-service",
+    "Reserved capacity",
+    "Data residency",
+    "Hardware leasing"
+   ],
+   "answer": 0,
+   "explanation": "On-demand self-service lets customers provision resources themselves, typically through a portal or API, without human interaction."
+  },
+  {
+   "id": "az900-049",
+   "domain": "concepts",
+   "prompt": "Which is the BEST description of the consumption-based model's benefit for unpredictable workloads?",
+   "choices": [
+    "You get a fixed monthly price no matter how much you use",
+    "You avoid paying for idle capacity you provisioned for peak demand",
+    "You are charged only once per year",
+    "You must forecast peak demand years in advance"
+   ],
+   "answer": 1,
+   "explanation": "With consumption pricing, costs track usage, so you don't pay for unused capacity sized for peaks."
+  },
+  {
+   "id": "az900-050",
+   "domain": "concepts",
+   "prompt": "What is the main purpose of an Azure service-level agreement (SLA)?",
+   "choices": [
+    "To list the prices of all Azure services",
+    "To describe Microsoft's commitments for uptime and connectivity and any service credits if they are not met",
+    "To specify the regions where data is stored",
+    "To define user permissions in a subscription"
+   ],
+   "answer": 1,
+   "explanation": "An SLA documents uptime and connectivity commitments and the service credits offered if they are not met."
+  },
+  {
+   "id": "az900-051",
+   "domain": "concepts",
+   "prompt": "A company runs two VMs across two availability zones. Compared to a single VM, what typically happens to the SLA?",
+   "choices": [
+    "SLAs do not apply to virtual machines",
+    "The SLA becomes 100%",
+    "The composite deployment qualifies for a higher SLA",
+    "The SLA is always lower"
+   ],
+   "answer": 2,
+   "explanation": "Deploying across multiple availability zones increases redundancy and qualifies VMs for a higher SLA than a single instance."
+  },
+  {
+   "id": "az900-052",
+   "domain": "concepts",
+   "prompt": "If an application depends on two services that each have a 99.9% SLA, what is the approximate composite SLA?",
+   "choices": [
+    "99.99%",
+    "100%",
+    "99.9%",
+    "About 99.8%"
+   ],
+   "answer": 3,
+   "explanation": "Composite SLA is the product of the SLAs: 0.999 x 0.999 is about 0.998, or 99.8%."
+  },
+  {
+   "id": "az900-053",
+   "domain": "concepts",
+   "prompt": "Which statement about SLAs for free or preview Azure services is generally TRUE?",
+   "choices": [
+    "They always have a 99.999% SLA",
+    "They guarantee unlimited service credits",
+    "Free tiers and preview services typically do not carry a financially backed SLA",
+    "They have higher SLAs than paid services"
+   ],
+   "answer": 2,
+   "explanation": "Preview features and free tiers are usually excluded from SLAs."
+  },
+  {
+   "id": "az900-054",
+   "domain": "concepts",
+   "prompt": "Which cloud service model is BEST suited for a company that wants to host a custom application but avoid managing middleware and runtime?",
+   "choices": [
+    "Platform as a service (PaaS)",
+    "Infrastructure as a service (IaaS)",
+    "On-premises physical servers",
+    "Software as a service (SaaS)"
+   ],
+   "answer": 0,
+   "explanation": "PaaS manages the OS, middleware and runtime, so developers focus on code and data."
+  },
+  {
+   "id": "az900-055",
+   "domain": "concepts",
+   "prompt": "An organization wants employees to use a cloud-hosted CRM application without writing any code or managing infrastructure. Which model fits?",
+   "choices": [
+    "Infrastructure as a service (IaaS)",
+    "Software as a service (SaaS)",
+    "Platform as a service (PaaS)",
+    "Hybrid cloud"
+   ],
+   "answer": 1,
+   "explanation": "SaaS delivers a ready-to-use application; the customer only configures and uses it."
+  },
+  {
+   "id": "az900-056",
+   "domain": "concepts",
+   "prompt": "Which statement about the public cloud is FALSE?",
+   "choices": [
+    "Resources are available on demand",
+    "Many organizations share the provider's infrastructure",
+    "Customers pay for what they use",
+    "Customers must replace failed hardware themselves"
+   ],
+   "answer": 3,
+   "explanation": "In the public cloud, the provider, not the customer, maintains and replaces physical hardware."
+  },
+  {
+   "id": "az900-057",
+   "domain": "concepts",
+   "prompt": "A retailer needs its website to stay online even if an entire datacenter loses power. Which design approach helps most?",
+   "choices": [
+    "Deploying the app across multiple availability zones",
+    "Using a larger single virtual machine",
+    "Adding more tags to resources",
+    "Using a single locally redundant storage account"
+   ],
+   "answer": 0,
+   "explanation": "Availability zones are physically separate datacenters, so spreading across them protects against a single datacenter failure."
+  },
+  {
+   "id": "az900-058",
+   "domain": "concepts",
+   "prompt": "What does 'agility' mean as a benefit of cloud computing?",
+   "choices": [
+    "Costs are fixed for the life of the contract",
+    "Resources can be deployed and configured quickly as requirements change",
+    "Data never leaves the customer's premises",
+    "Applications cannot fail"
+   ],
+   "answer": 1,
+   "explanation": "Cloud agility lets teams provision and change resources in minutes rather than weeks."
+  },
+  {
+   "id": "az900-059",
+   "domain": "concepts",
+   "prompt": "Which Azure capability supports predictable performance by automatically adding instances when CPU usage is high?",
+   "choices": [
+    "Resource locks",
+    "Tags",
+    "Autoscaling",
+    "Management groups"
+   ],
+   "answer": 2,
+   "explanation": "Autoscale adjusts capacity based on metrics, helping keep performance predictable under changing load."
+  },
+  {
+   "id": "az900-060",
+   "domain": "concepts",
+   "prompt": "Which statement correctly describes the serverless billing model in Azure Functions on a Consumption plan?",
+   "choices": [
+    "You are charged only for storage used by the code",
+    "You pay for a dedicated VM 24/7",
+    "You pay a fixed fee per developer",
+    "You are charged based on executions and resource consumption while the code runs"
+   ],
+   "answer": 3,
+   "explanation": "On the Consumption plan, Functions bills per execution and execution time/memory, scaling to zero when idle."
+  },
+  {
+   "id": "az900-061",
+   "domain": "concepts",
+   "prompt": "Which is an example of 'management in the cloud' rather than 'management of the cloud'?",
+   "choices": [
+    "Autoscaling a resource based on demand",
+    "Using the Azure portal, CLI or APIs to deploy and configure resources",
+    "Monitoring resource health and triggering alerts",
+    "Automatically replacing a failed instance"
+   ],
+   "answer": 1,
+   "explanation": "Management in the cloud covers how you manage resources, such as through the portal, CLI, APIs or templates."
+  },
+  {
+   "id": "az900-062",
+   "domain": "concepts",
+   "prompt": "Which cloud model most commonly requires the organization to handle all hardware upgrades and capacity planning?",
+   "choices": [
+    "Public cloud",
+    "SaaS",
+    "Serverless",
+    "Private cloud"
+   ],
+   "answer": 3,
+   "explanation": "In a private cloud the organization owns the hardware and must plan, buy and upgrade capacity itself."
+  },
+  {
+   "id": "az900-063",
+   "domain": "arch",
+   "prompt": "What is an Azure region?",
+   "choices": [
+    "A single server rack in a datacenter",
+    "A logical container for resources",
+    "A billing boundary for an organization",
+    "A geographical area containing one or more datacenters networked together with low latency"
+   ],
+   "answer": 3,
+   "explanation": "A region is a geographic area with at least one, and usually several, nearby datacenters connected by a low-latency network."
+  },
+  {
+   "id": "az900-064",
+   "domain": "arch",
+   "prompt": "What are Azure availability zones?",
+   "choices": [
+    "Pairs of regions in different countries",
+    "Physically separate datacenter locations within a region, each with independent power, cooling and networking",
+    "Edge locations used for content caching",
+    "Logical groups of VMs in one rack"
+   ],
+   "answer": 1,
+   "explanation": "Availability zones are unique physical locations within a region that protect against datacenter-level failures."
+  },
+  {
+   "id": "az900-065",
+   "domain": "arch",
+   "prompt": "What is the minimum number of availability zones in a region that supports them?",
+   "choices": [
+    "Three",
+    "Two",
+    "Five",
+    "One"
+   ],
+   "answer": 0,
+   "explanation": "Zone-enabled regions have a minimum of three separate availability zones."
+  },
+  {
+   "id": "az900-066",
+   "domain": "arch",
+   "prompt": "Which statement about Azure region pairs is TRUE?",
+   "choices": [
+    "Region pairs are used only for billing",
+    "Every region is paired with every other region",
+    "Paired regions are typically at least 300 miles apart and updates are rolled out to one region of a pair at a time",
+    "Paired regions are always in the same datacenter"
+   ],
+   "answer": 2,
+   "explanation": "Region pairs are separated geographically and Microsoft sequences planned updates so only one region in a pair is updated at a time."
+  },
+  {
+   "id": "az900-067",
+   "domain": "arch",
+   "prompt": "During a broad outage affecting multiple regions, what benefit do region pairs provide?",
+   "choices": [
+    "Data is automatically deleted from both regions",
+    "Region pairs prevent all outages",
+    "Microsoft prioritizes recovery of one region in each pair",
+    "Both regions in a pair are always restored first"
+   ],
+   "answer": 2,
+   "explanation": "In a widespread outage, recovery of at least one region from each pair is prioritized."
+  },
+  {
+   "id": "az900-068",
+   "domain": "arch",
+   "prompt": "What are Azure sovereign regions?",
+   "choices": [
+    "Regions that have no availability zones",
+    "Regions used exclusively for backup",
+    "Instances of Azure isolated from the main Azure cloud for compliance or legal reasons, such as Azure Government",
+    "Regions available only to Microsoft employees"
+   ],
+   "answer": 2,
+   "explanation": "Sovereign regions such as Azure Government (US) and Azure operated by 21Vianet (China) are isolated for legal and compliance needs."
+  },
+  {
+   "id": "az900-069",
+   "domain": "arch",
+   "prompt": "Which Azure offering is designed for US government agencies and their partners?",
+   "choices": [
+    "Azure Stack Edge",
+    "Azure Government",
+    "Azure Arc",
+    "Azure operated by 21Vianet"
+   ],
+   "answer": 1,
+   "explanation": "Azure Government is a sovereign cloud physically isolated for US federal, state and local government use."
+  },
+  {
+   "id": "az900-070",
+   "domain": "arch",
+   "prompt": "Which statement correctly describes the relationship between Azure resource groups and resources?",
+   "choices": [
+    "A resource can belong to several resource groups at once",
+    "Each resource exists in exactly one resource group at a time",
+    "Resource groups can be nested inside other resource groups",
+    "Resources can exist without any resource group"
+   ],
+   "answer": 1,
+   "explanation": "Every resource must be in one, and only one, resource group, and resource groups cannot be nested."
+  },
+  {
+   "id": "az900-071",
+   "domain": "arch",
+   "prompt": "What happens when you delete a resource group?",
+   "choices": [
+    "All resources inside the resource group are also deleted",
+    "Resources are moved to the subscription root",
+    "Only the empty resource group is removed and resources move to another group",
+    "Nothing happens until each resource is deleted individually"
+   ],
+   "answer": 0,
+   "explanation": "Deleting a resource group deletes everything in it, which makes groups handy for managing lifecycles together."
+  },
+  {
+   "id": "az900-072",
+   "domain": "arch",
+   "prompt": "Which statement about resource groups is TRUE?",
+   "choices": [
+    "A resource group can span multiple subscriptions",
+    "All resources in a group must be in the same region",
+    "Resource groups can be nested",
+    "A resource group can contain resources from different regions"
+   ],
+   "answer": 3,
+   "explanation": "A resource group has a location for its metadata, but the resources inside it can be in any region."
+  },
+  {
+   "id": "az900-073",
+   "domain": "arch",
+   "prompt": "Which hierarchy correctly orders Azure scopes from broadest to narrowest?",
+   "choices": [
+    "Resource groups > subscriptions > management groups > resources",
+    "Resources > resource groups > subscriptions > management groups",
+    "Subscriptions > management groups > resources > resource groups",
+    "Management groups > subscriptions > resource groups > resources"
+   ],
+   "answer": 3,
+   "explanation": "Management groups contain subscriptions, which contain resource groups, which contain resources."
+  },
+  {
+   "id": "az900-074",
+   "domain": "arch",
+   "prompt": "What are Azure subscriptions used for?",
+   "choices": [
+    "They replace resource groups",
+    "They store files for users",
+    "They act as a billing and access-management boundary for Azure resources",
+    "They provide DNS name resolution"
+   ],
+   "answer": 2,
+   "explanation": "Subscriptions provide authenticated, authorized access to Azure and are a unit of billing and management."
+  },
+  {
+   "id": "az900-075",
+   "domain": "arch",
+   "prompt": "A company wants separate invoices for its Development and Production environments. What is the simplest approach?",
+   "choices": [
+    "Use two virtual networks",
+    "Create two availability zones",
+    "Put both in one resource group with different tags only",
+    "Create separate subscriptions for each environment"
+   ],
+   "answer": 3,
+   "explanation": "Subscriptions are billing boundaries, so separate subscriptions produce separate billing and access control."
+  },
+  {
+   "id": "az900-076",
+   "domain": "arch",
+   "prompt": "What is the purpose of Azure management groups?",
+   "choices": [
+    "To route traffic between virtual networks",
+    "To organize multiple subscriptions and apply governance such as policies and access to them",
+    "To store backups of resources",
+    "To group virtual machines for load balancing"
+   ],
+   "answer": 1,
+   "explanation": "Management groups let you manage access, policy and compliance across many subscriptions at once."
+  },
+  {
+   "id": "az900-077",
+   "domain": "arch",
+   "prompt": "Which statement about management groups is TRUE?",
+   "choices": [
+    "Management groups can be nested to create a hierarchy",
+    "Management groups cannot have policies assigned",
+    "A subscription can belong to multiple management groups",
+    "Management groups can contain individual VMs directly"
+   ],
+   "answer": 0,
+   "explanation": "Management groups support a nested hierarchy (up to six levels below the root), and each subscription has a single parent."
+  },
+  {
+   "id": "az900-078",
+   "domain": "arch",
+   "prompt": "Which Azure compute service provides the most control over the operating system and installed software?",
+   "choices": [
+    "Azure Logic Apps",
+    "Azure App Service",
+    "Azure Functions",
+    "Azure Virtual Machines"
+   ],
+   "answer": 3,
+   "explanation": "VMs are IaaS and give full control over the OS, configuration and installed software."
+  },
+  {
+   "id": "az900-079",
+   "domain": "arch",
+   "prompt": "A company needs a group of identical, load-balanced VMs that automatically increase in number as demand grows. Which service should it use?",
+   "choices": [
+    "Azure Container Instances",
+    "Azure Virtual Desktop",
+    "Virtual Machine Scale Sets",
+    "Availability sets"
+   ],
+   "answer": 2,
+   "explanation": "Scale sets create and manage a group of identical, load-balanced VMs that can autoscale."
+  },
+  {
+   "id": "az900-080",
+   "domain": "arch",
+   "prompt": "What do availability sets use to protect VMs within a datacenter?",
+   "choices": [
+    "Fault domains and update domains",
+    "Tags and locks",
+    "Region pairs and sovereign regions",
+    "Management groups and subscriptions"
+   ],
+   "answer": 0,
+   "explanation": "Availability sets spread VMs across fault domains (separate power/network) and update domains (staggered maintenance)."
+  },
+  {
+   "id": "az900-081",
+   "domain": "arch",
+   "prompt": "In an availability set, what is the purpose of update domains?",
+   "choices": [
+    "To control who can update a VM",
+    "To ensure only a group of VMs is rebooted at a time during planned maintenance",
+    "To store VM updates in a storage account",
+    "To separate VMs across different regions"
+   ],
+   "answer": 1,
+   "explanation": "Update domains group VMs that can be rebooted together, so not all VMs go down during maintenance."
+  },
+  {
+   "id": "az900-082",
+   "domain": "arch",
+   "prompt": "In an availability set, what is the purpose of fault domains?",
+   "choices": [
+    "To assign VMs to different users",
+    "To schedule OS patching",
+    "To group VMs that share a common power source and network switch so a hardware failure affects only some VMs",
+    "To separate VMs into different subscriptions"
+   ],
+   "answer": 2,
+   "explanation": "Fault domains spread VMs across separate racks with independent power and networking."
+  },
+  {
+   "id": "az900-083",
+   "domain": "arch",
+   "prompt": "A company wants employees to access a full Windows desktop and apps from any device, hosted in Azure. Which service fits best?",
+   "choices": [
+    "Azure App Service",
+    "Azure Virtual Desktop",
+    "Azure Bastion",
+    "Azure Container Instances"
+   ],
+   "answer": 1,
+   "explanation": "Azure Virtual Desktop provides virtualized Windows desktops and apps hosted in Azure."
+  },
+  {
+   "id": "az900-084",
+   "domain": "arch",
+   "prompt": "Which Azure Virtual Desktop feature lets multiple users sign in to the same session host at the same time?",
+   "choices": [
+    "Windows multi-session support",
+    "Region pairs",
+    "Availability sets",
+    "Azure DNS private zones"
+   ],
+   "answer": 0,
+   "explanation": "Azure Virtual Desktop supports Windows 10/11 Enterprise multi-session, allowing many concurrent users per VM."
+  },
+  {
+   "id": "az900-085",
+   "domain": "arch",
+   "prompt": "A developer wants to run a single container quickly without managing VMs or an orchestrator. Which service is the BEST fit?",
+   "choices": [
+    "Azure Virtual Desktop",
+    "Azure Container Instances",
+    "Azure Virtual Machine Scale Sets",
+    "Azure Kubernetes Service"
+   ],
+   "answer": 1,
+   "explanation": "Azure Container Instances is the fastest, simplest way to run a container in Azure as a PaaS offering."
+  },
+  {
+   "id": "az900-086",
+   "domain": "arch",
+   "prompt": "Which service should a company use to orchestrate many containers with automated scaling, rolling updates and self-healing?",
+   "choices": [
+    "Azure Files",
+    "Azure Functions",
+    "Azure Kubernetes Service (AKS)",
+    "Azure Container Instances"
+   ],
+   "answer": 2,
+   "explanation": "AKS is a managed Kubernetes service for orchestrating containerized applications at scale."
+  },
+  {
+   "id": "az900-087",
+   "domain": "arch",
+   "prompt": "Compared with virtual machines, what is a key advantage of containers?",
+   "choices": [
+    "Each container includes its own full guest OS",
+    "They are lightweight and start quickly because they share the host OS kernel",
+    "They require dedicated physical hardware",
+    "They cannot be moved between environments"
+   ],
+   "answer": 1,
+   "explanation": "Containers package an app with its dependencies but share the host kernel, so they are smaller and start faster than VMs."
+  },
+  {
+   "id": "az900-088",
+   "domain": "arch",
+   "prompt": "Which service is BEST for running a small piece of code whenever a message arrives in a queue, without managing servers?",
+   "choices": [
+    "Azure ExpressRoute",
+    "Azure Virtual Machines",
+    "Azure Virtual Desktop",
+    "Azure Functions"
+   ],
+   "answer": 3,
+   "explanation": "Azure Functions is event-driven serverless compute that can trigger on queue messages, timers, HTTP requests and more."
+  },
+  {
+   "id": "az900-089",
+   "domain": "arch",
+   "prompt": "What is the difference between stateless and stateful (Durable) Azure Functions?",
+   "choices": [
+    "Stateless functions cost more",
+    "There is no difference",
+    "Stateful functions cannot be triggered by HTTP",
+    "Stateless functions start fresh each run; Durable Functions keep context across steps of a workflow"
+   ],
+   "answer": 3,
+   "explanation": "By default functions are stateless; the Durable Functions extension lets them maintain state across executions."
+  },
+  {
+   "id": "az900-090",
+   "domain": "arch",
+   "prompt": "Which Azure service provides a fully managed platform for hosting web apps, REST APIs and mobile back ends?",
+   "choices": [
+    "Azure Data Box",
+    "Azure App Service",
+    "Azure Virtual Machines",
+    "Azure Bastion"
+   ],
+   "answer": 1,
+   "explanation": "App Service is a PaaS offering for hosting web apps, APIs and mobile back ends in many languages."
+  },
+  {
+   "id": "az900-091",
+   "domain": "arch",
+   "prompt": "What is an Azure Virtual Network (VNet) used for?",
+   "choices": [
+    "To let Azure resources communicate securely with each other, the internet and on-premises networks",
+    "To manage user identities",
+    "To track cloud spending",
+    "To store blobs and files"
+   ],
+   "answer": 0,
+   "explanation": "VNets provide isolation and segmentation and enable communication among Azure resources, the internet and on-premises networks."
+  },
+  {
+   "id": "az900-092",
+   "domain": "arch",
+   "prompt": "What is the purpose of subnets in an Azure virtual network?",
+   "choices": [
+    "To store VM disks",
+    "To connect two regions together",
+    "To assign billing to departments",
+    "To segment a VNet's address space into smaller ranges for organizing and securing resources"
+   ],
+   "answer": 3,
+   "explanation": "Subnets divide a VNet into segments so you can group resources and apply security rules."
+  },
+  {
+   "id": "az900-093",
+   "domain": "arch",
+   "prompt": "Two virtual networks in different Azure regions need to communicate privately using Microsoft's backbone. Which feature should be used?",
+   "choices": [
+    "Global virtual network peering",
+    "Azure Content Delivery Network",
+    "Azure DNS public zones",
+    "A public IP address on every VM"
+   ],
+   "answer": 0,
+   "explanation": "VNet peering connects VNets, and global peering connects VNets across regions over the Microsoft backbone network."
+  },
+  {
+   "id": "az900-094",
+   "domain": "arch",
+   "prompt": "When two VNets are peered, how does traffic between them travel?",
+   "choices": [
+    "Through Azure Front Door",
+    "Through an ExpressRoute circuit only",
+    "Over the public internet unencrypted",
+    "Over the Microsoft backbone network, not the public internet"
+   ],
+   "answer": 3,
+   "explanation": "Peered VNet traffic stays private on Microsoft's backbone infrastructure."
+  },
+  {
+   "id": "az900-095",
+   "domain": "arch",
+   "prompt": "Which resource can you use to filter inbound and outbound traffic to Azure resources in a subnet based on IP address, port and protocol?",
+   "choices": [
+    "Resource lock",
+    "Azure Monitor alert",
+    "Network security group (NSG)",
+    "Azure DNS"
+   ],
+   "answer": 2,
+   "explanation": "NSGs contain security rules that allow or deny traffic based on source, destination, port and protocol."
+  },
+  {
+   "id": "az900-096",
+   "domain": "arch",
+   "prompt": "A company needs an encrypted connection from its on-premises network to Azure over the public internet. Which service should it use?",
+   "choices": [
+    "Azure DNS",
+    "Azure ExpressRoute",
+    "Global VNet peering",
+    "Azure VPN Gateway with a site-to-site VPN"
+   ],
+   "answer": 3,
+   "explanation": "VPN Gateway creates encrypted IPsec/IKE tunnels over the internet between on-premises and Azure."
+  },
+  {
+   "id": "az900-097",
+   "domain": "arch",
+   "prompt": "Which VPN type connects an individual remote computer to an Azure virtual network?",
+   "choices": [
+    "Site-to-site VPN",
+    "VNet peering",
+    "ExpressRoute Direct",
+    "Point-to-site VPN"
+   ],
+   "answer": 3,
+   "explanation": "Point-to-site VPN connects individual devices to a VNet."
+  },
+  {
+   "id": "az900-098",
+   "domain": "arch",
+   "prompt": "A company needs a private, dedicated connection to Azure that does NOT travel over the public internet, with predictable latency. Which service fits?",
+   "choices": [
+    "Azure Bastion",
+    "Azure VPN Gateway site-to-site",
+    "Azure ExpressRoute",
+    "Azure Front Door"
+   ],
+   "answer": 2,
+   "explanation": "ExpressRoute provides private connections via a connectivity provider and does not traverse the public internet."
+  },
+  {
+   "id": "az900-099",
+   "domain": "arch",
+   "prompt": "Which statement about ExpressRoute is TRUE?",
+   "choices": [
+    "It always routes traffic over the public internet",
+    "It can connect on-premises networks to Microsoft cloud services such as Azure and Microsoft 365",
+    "It is used only to connect two Azure VNets",
+    "It requires no connectivity provider"
+   ],
+   "answer": 1,
+   "explanation": "ExpressRoute extends on-premises networks into the Microsoft cloud, including Azure and Microsoft 365."
+  },
+  {
+   "id": "az900-100",
+   "domain": "arch",
+   "prompt": "What does Azure DNS provide?",
+   "choices": [
+    "VPN connectivity",
+    "Domain name purchasing only",
+    "Hosting of DNS domains using Microsoft's global infrastructure for name resolution",
+    "Encryption of storage accounts"
+   ],
+   "answer": 2,
+   "explanation": "Azure DNS hosts DNS zones and resolves names using Azure's global network of name servers."
+  },
+  {
+   "id": "az900-101",
+   "domain": "arch",
+   "prompt": "Which capability lets an Azure virtual network resolve custom domain names for resources inside it without exposing them publicly?",
+   "choices": [
+    "Azure CDN",
+    "Point-to-site VPN",
+    "Azure DNS private zones",
+    "Azure DNS public zones"
+   ],
+   "answer": 2,
+   "explanation": "Private DNS zones provide name resolution within VNets without exposing records to the internet."
+  },
+  {
+   "id": "az900-102",
+   "domain": "arch",
+   "prompt": "What is a private endpoint in Azure?",
+   "choices": [
+    "A network interface with a private IP from your VNet that connects privately to a PaaS service",
+    "A URL for downloading the Azure CLI",
+    "A public IP address assigned to a VM",
+    "A firewall rule in a network security group"
+   ],
+   "answer": 0,
+   "explanation": "Private endpoints use a private IP in your VNet, bringing a service such as Azure Storage into your network via Private Link."
+  },
+  {
+   "id": "az900-103",
+   "domain": "arch",
+   "prompt": "Which service allows access to Azure PaaS services over a private endpoint in your virtual network?",
+   "choices": [
+    "Azure Policy",
+    "Azure Traffic Manager",
+    "Azure Private Link",
+    "Azure Content Delivery Network"
+   ],
+   "answer": 2,
+   "explanation": "Azure Private Link enables private access to Azure services over a private endpoint so traffic stays off the public internet."
+  },
+  {
+   "id": "az900-104",
+   "domain": "arch",
+   "prompt": "What is the main difference between a public endpoint and a private endpoint for an Azure service?",
+   "choices": [
+    "A public endpoint is reachable via a public IP address; a private endpoint uses a private IP inside your VNet",
+    "Public endpoints are always encrypted and private ones are not",
+    "There is no difference in how they are reached",
+    "Private endpoints can only be used by Microsoft"
+   ],
+   "answer": 0,
+   "explanation": "Public endpoints are internet-reachable, while private endpoints place the service on a private IP in your VNet."
+  },
+  {
+   "id": "az900-105",
+   "domain": "arch",
+   "prompt": "An administrator needs secure RDP/SSH access to Azure VMs without assigning public IP addresses to them. Which service should be used?",
+   "choices": [
+    "Azure Container Instances",
+    "Azure Bastion",
+    "Azure DNS",
+    "Azure Arc"
+   ],
+   "answer": 1,
+   "explanation": "Azure Bastion provides browser-based RDP/SSH over TLS directly from the portal, without exposing VMs via public IPs."
+  },
+  {
+   "id": "az900-106",
+   "domain": "arch",
+   "prompt": "Which Azure Storage service is optimized for storing massive amounts of unstructured data such as images, videos and backups?",
+   "choices": [
+    "Azure Disk Storage",
+    "Azure Table Storage",
+    "Azure Queue Storage",
+    "Azure Blob Storage"
+   ],
+   "answer": 3,
+   "explanation": "Blob Storage is object storage for unstructured data such as text, images, video and backups."
+  },
+  {
+   "id": "az900-107",
+   "domain": "arch",
+   "prompt": "Which Azure Storage service provides fully managed file shares accessible via SMB or NFS?",
+   "choices": [
+    "Azure Blob Storage",
+    "Azure Files",
+    "Azure Table Storage",
+    "Azure Queue Storage"
+   ],
+   "answer": 1,
+   "explanation": "Azure Files offers managed file shares accessible using SMB and NFS protocols."
+  },
+  {
+   "id": "az900-108",
+   "domain": "arch",
+   "prompt": "Which Azure Storage service is used to store messages for asynchronous communication between application components?",
+   "choices": [
+    "Azure Files",
+    "Azure Queue Storage",
+    "Azure Table Storage",
+    "Azure Disk Storage"
+   ],
+   "answer": 1,
+   "explanation": "Queue Storage stores large numbers of messages that can be processed asynchronously."
+  },
+  {
+   "id": "az900-109",
+   "domain": "arch",
+   "prompt": "Which Azure Storage service stores structured, non-relational (NoSQL) key/attribute data?",
+   "choices": [
+    "Azure Table Storage",
+    "Azure Queue Storage",
+    "Azure Blob Storage",
+    "Azure Files"
+   ],
+   "answer": 0,
+   "explanation": "Table Storage stores schemaless structured NoSQL data in key/attribute form."
+  },
+  {
+   "id": "az900-110",
+   "domain": "arch",
+   "prompt": "What type of storage do Azure Virtual Machines use for their operating system and data volumes?",
+   "choices": [
+    "Azure Table Storage",
+    "Azure managed disks",
+    "Azure DNS",
+    "Azure Queue Storage"
+   ],
+   "answer": 1,
+   "explanation": "Azure Disk Storage provides block-level managed disks for VMs."
+  },
+  {
+   "id": "az900-111",
+   "domain": "arch",
+   "prompt": "Which Blob Storage access tier is best for data that is accessed frequently?",
+   "choices": [
+    "Hot",
+    "Archive",
+    "Cold",
+    "Cool"
+   ],
+   "answer": 0,
+   "explanation": "The Hot tier has the highest storage cost but the lowest access cost, suited to frequently accessed data."
+  },
+  {
+   "id": "az900-112",
+   "domain": "arch",
+   "prompt": "Which Blob Storage access tier has the lowest storage cost but requires rehydration that can take hours before data can be read?",
+   "choices": [
+    "Cool",
+    "Archive",
+    "Cold",
+    "Hot"
+   ],
+   "answer": 1,
+   "explanation": "Archive is offline storage with the cheapest storage cost; blobs must be rehydrated before they can be read."
+  },
+  {
+   "id": "az900-113",
+   "domain": "arch",
+   "prompt": "Data must be kept for compliance but is accessed only a few times a year and must be readable immediately when needed. Which tier is the most cost-effective choice among these?",
+   "choices": [
+    "Cold",
+    "Premium",
+    "Hot",
+    "Archive"
+   ],
+   "answer": 0,
+   "explanation": "Cold is an online tier for rarely accessed data (stored at least 90 days) that remains immediately readable, unlike Archive."
+  },
+  {
+   "id": "az900-114",
+   "domain": "arch",
+   "prompt": "What is the recommended minimum storage duration for data in the Cool tier to avoid an early deletion charge?",
+   "choices": [
+    "7 days",
+    "180 days",
+    "30 days",
+    "90 days"
+   ],
+   "answer": 2,
+   "explanation": "Cool tier has a 30-day minimum, Cold 90 days and Archive 180 days."
+  },
+  {
+   "id": "az900-115",
+   "domain": "arch",
+   "prompt": "Which redundancy option stores three copies of data within a single datacenter in the primary region?",
+   "choices": [
+    "Locally redundant storage (LRS)",
+    "Zone-redundant storage (ZRS)",
+    "Geo-zone-redundant storage (GZRS)",
+    "Geo-redundant storage (GRS)"
+   ],
+   "answer": 0,
+   "explanation": "LRS replicates data three times within one datacenter and is the lowest-cost option."
+  },
+  {
+   "id": "az900-116",
+   "domain": "arch",
+   "prompt": "Which redundancy option replicates data synchronously across three availability zones in the primary region?",
+   "choices": [
+    "Locally redundant storage (LRS)",
+    "Geo-redundant storage (GRS)",
+    "Read-access geo-redundant storage (RA-GRS)",
+    "Zone-redundant storage (ZRS)"
+   ],
+   "answer": 3,
+   "explanation": "ZRS keeps copies in three separate availability zones within the primary region."
+  },
+  {
+   "id": "az900-117",
+   "domain": "arch",
+   "prompt": "Which redundancy option copies data to a secondary region and uses LRS in BOTH the primary and secondary regions?",
+   "choices": [
+    "Locally redundant storage (LRS)",
+    "Geo-zone-redundant storage (GZRS)",
+    "Zone-redundant storage (ZRS)",
+    "Geo-redundant storage (GRS)"
+   ],
+   "answer": 3,
+   "explanation": "GRS uses LRS in the primary region and asynchronously replicates to LRS in the secondary region."
+  },
+  {
+   "id": "az900-118",
+   "domain": "arch",
+   "prompt": "Which redundancy option combines zone redundancy in the primary region with replication to a secondary region?",
+   "choices": [
+    "Geo-zone-redundant storage (GZRS)",
+    "Zone-redundant storage (ZRS)",
+    "Geo-redundant storage (GRS)",
+    "Locally redundant storage (LRS)"
+   ],
+   "answer": 0,
+   "explanation": "GZRS uses ZRS in the primary region and replicates asynchronously to a secondary region."
+  },
+  {
+   "id": "az900-119",
+   "domain": "arch",
+   "prompt": "An application must be able to READ data from the secondary region even when the primary region is available. Which option enables this?",
+   "choices": [
+    "Geo-redundant storage (GRS)",
+    "Zone-redundant storage (ZRS)",
+    "Locally redundant storage (LRS)",
+    "Read-access geo-redundant storage (RA-GRS)"
+   ],
+   "answer": 3,
+   "explanation": "With GRS/GZRS the secondary is readable only after failover; RA-GRS and RA-GZRS allow reads from the secondary at any time."
+  },
+  {
+   "id": "az900-120",
+   "domain": "arch",
+   "prompt": "Which storage redundancy option offers the LOWEST cost but the least durability?",
+   "choices": [
+    "Geo-redundant storage (GRS)",
+    "Zone-redundant storage (ZRS)",
+    "Locally redundant storage (LRS)",
+    "Read-access geo-zone-redundant storage (RA-GZRS)"
+   ],
+   "answer": 2,
+   "explanation": "LRS is the cheapest because all copies are in one datacenter, so it doesn't protect against datacenter or regional failures."
+  },
+  {
+   "id": "az900-121",
+   "domain": "arch",
+   "prompt": "Which command-line utility is used to copy blobs or files to or from a storage account?",
+   "choices": [
+    "Azure Migrate",
+    "Azure Storage Explorer",
+    "Azure Advisor",
+    "AzCopy"
+   ],
+   "answer": 3,
+   "explanation": "AzCopy is a command-line tool for copying data to, from and between storage accounts."
+  },
+  {
+   "id": "az900-122",
+   "domain": "arch",
+   "prompt": "Which tool provides a graphical user interface for managing files and blobs in Azure Storage from Windows, macOS or Linux?",
+   "choices": [
+    "Azure Storage Explorer",
+    "AzCopy",
+    "Azure File Sync",
+    "Azure Data Box"
+   ],
+   "answer": 0,
+   "explanation": "Storage Explorer is a standalone GUI app for managing storage account data across platforms."
+  },
+  {
+   "id": "az900-123",
+   "domain": "arch",
+   "prompt": "A company wants to keep using its Windows file servers on-premises while centralizing file shares in Azure Files with local caching. Which service fits?",
+   "choices": [
+    "AzCopy",
+    "Azure Migrate",
+    "Azure File Sync",
+    "Azure Data Box"
+   ],
+   "answer": 2,
+   "explanation": "Azure File Sync turns Windows Server into a cache of Azure file shares and can tier cold files to the cloud."
+  },
+  {
+   "id": "az900-124",
+   "domain": "arch",
+   "prompt": "Which service provides a central hub to discover, assess and migrate on-premises servers, databases and web apps to Azure?",
+   "choices": [
+    "Azure Arc",
+    "Azure Data Box",
+    "Azure Storage Explorer",
+    "Azure Migrate"
+   ],
+   "answer": 3,
+   "explanation": "Azure Migrate offers tools for discovery, assessment and migration of on-premises workloads."
+  },
+  {
+   "id": "az900-125",
+   "domain": "arch",
+   "prompt": "A company needs to transfer 60 TB of data to Azure but has very limited bandwidth. Which service is BEST?",
+   "choices": [
+    "Azure Data Box",
+    "Azure File Sync",
+    "AzCopy over the internet",
+    "Azure Storage Explorer"
+   ],
+   "answer": 0,
+   "explanation": "Azure Data Box is a physical, ruggedized device shipped to you for moving large amounts of data offline."
+  },
+  {
+   "id": "az900-126",
+   "domain": "arch",
+   "prompt": "Besides importing data into Azure, what else can Azure Data Box be used for?",
+   "choices": [
+    "Hosting a website",
+    "Managing user identities",
+    "Exporting large amounts of data from Azure to on-premises, such as for disaster recovery",
+    "Running containers at the edge"
+   ],
+   "answer": 2,
+   "explanation": "Data Box supports both import to and export from Azure for large data sets."
+  },
+  {
+   "id": "az900-127",
+   "domain": "arch",
+   "prompt": "What is a storage account in Azure?",
+   "choices": [
+    "A billing account for subscriptions",
+    "A virtual network for storage traffic",
+    "A unique namespace that holds your Azure Storage data objects such as blobs, files, queues and tables",
+    "A user account for Microsoft Entra ID"
+   ],
+   "answer": 2,
+   "explanation": "A storage account provides a globally unique namespace for your storage data that is accessible over HTTP/HTTPS."
+  },
+  {
+   "id": "az900-128",
+   "domain": "arch",
+   "prompt": "Which requirement applies to Azure storage account names?",
+   "choices": [
+    "They can include uppercase letters and spaces",
+    "They must be globally unique across Azure",
+    "They must be unique only within a subscription",
+    "They must match the resource group name"
+   ],
+   "answer": 1,
+   "explanation": "Storage account names must be globally unique, 3-24 characters, and use only lowercase letters and numbers."
+  },
+  {
+   "id": "az900-129",
+   "domain": "arch",
+   "prompt": "What is Microsoft Entra ID?",
+   "choices": [
+    "A virtual network gateway",
+    "A cost analysis tool",
+    "A storage redundancy option",
+    "Microsoft's cloud-based identity and access management service"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Entra ID (formerly Azure Active Directory) manages identities, authentication and access to resources."
+  },
+  {
+   "id": "az900-130",
+   "domain": "arch",
+   "prompt": "Which Microsoft Entra feature lets users sign in once and access many applications without signing in again?",
+   "choices": [
+    "Azure Policy",
+    "Resource locks",
+    "Network security groups",
+    "Single sign-on (SSO)"
+   ],
+   "answer": 3,
+   "explanation": "SSO allows one set of credentials to access multiple applications."
+  },
+  {
+   "id": "az900-131",
+   "domain": "arch",
+   "prompt": "What does multifactor authentication (MFA) require?",
+   "choices": [
+    "A single strong password",
+    "Signing in from two devices simultaneously",
+    "A password that changes daily",
+    "Two or more forms of verification, such as something you know, have or are"
+   ],
+   "answer": 3,
+   "explanation": "MFA requires multiple factors, such as a password plus a phone notification or biometric."
+  },
+  {
+   "id": "az900-132",
+   "domain": "arch",
+   "prompt": "Which is an example of a passwordless authentication method supported by Microsoft Entra ID?",
+   "choices": [
+    "Security questions",
+    "A shared service account password",
+    "Windows Hello for Business",
+    "A long complex password"
+   ],
+   "answer": 2,
+   "explanation": "Windows Hello for Business, Microsoft Authenticator and FIDO2 security keys are passwordless methods."
+  },
+  {
+   "id": "az900-133",
+   "domain": "arch",
+   "prompt": "A company wants partners from another organization to access its SharePoint site using the partners' own credentials. Which feature fits?",
+   "choices": [
+    "Microsoft Entra Domain Services",
+    "Microsoft Entra B2B collaboration",
+    "Azure Bastion",
+    "Microsoft Entra External ID for customers (B2C)"
+   ],
+   "answer": 1,
+   "explanation": "B2B collaboration lets external users sign in with their own identities to access your apps and resources as guests."
+  },
+  {
+   "id": "az900-134",
+   "domain": "arch",
+   "prompt": "A retailer wants customers to sign up for its mobile app using social accounts such as Google or Facebook. Which identity solution fits?",
+   "choices": [
+    "Customer identity and access management (B2C) via Microsoft Entra External ID",
+    "Network security groups",
+    "Microsoft Entra B2B collaboration",
+    "Azure RBAC"
+   ],
+   "answer": 0,
+   "explanation": "B2C-style customer identity lets consumers sign up and sign in to your apps with local or social accounts."
+  },
+  {
+   "id": "az900-135",
+   "domain": "arch",
+   "prompt": "Which Microsoft Entra feature evaluates signals such as user, location and device to decide whether to allow access, require MFA or block?",
+   "choices": [
+    "Resource locks",
+    "Azure Policy",
+    "Azure Advisor",
+    "Conditional Access"
+   ],
+   "answer": 3,
+   "explanation": "Conditional Access uses if-then policies based on identity signals to enforce access decisions."
+  },
+  {
+   "id": "az900-136",
+   "domain": "arch",
+   "prompt": "Which service provides managed domain services such as domain join, group policy and Kerberos authentication without deploying domain controllers?",
+   "choices": [
+    "Microsoft Entra Domain Services",
+    "Microsoft Entra Connect",
+    "Azure DNS",
+    "Azure Arc"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Entra Domain Services provides managed AD DS-compatible features for legacy apps."
+  },
+  {
+   "id": "az900-137",
+   "domain": "arch",
+   "prompt": "Which tool synchronizes on-premises Active Directory identities with Microsoft Entra ID?",
+   "choices": [
+    "AzCopy",
+    "Azure File Sync",
+    "Azure Migrate",
+    "Microsoft Entra Connect"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Entra Connect (and Cloud Sync) synchronizes users and groups from on-premises AD to Entra ID."
+  },
+  {
+   "id": "az900-138",
+   "domain": "arch",
+   "prompt": "What does Azure role-based access control (RBAC) allow you to do?",
+   "choices": [
+    "Encrypt storage accounts",
+    "Prevent resources from being deleted regardless of permissions",
+    "Restrict which regions resources can be deployed to",
+    "Grant users only the permissions they need at a specific scope"
+   ],
+   "answer": 3,
+   "explanation": "Azure RBAC assigns roles to security principals at scopes such as management group, subscription, resource group or resource."
+  },
+  {
+   "id": "az900-139",
+   "domain": "arch",
+   "prompt": "A role is assigned to a user at the subscription scope. Which resources does the user's access apply to?",
+   "choices": [
+    "Only resources in the same region as the user",
+    "Only resources created after the assignment",
+    "Only the subscription's billing data",
+    "All resource groups and resources within that subscription"
+   ],
+   "answer": 3,
+   "explanation": "RBAC assignments are inherited by child scopes, so a subscription assignment applies to everything beneath it."
+  },
+  {
+   "id": "az900-140",
+   "domain": "arch",
+   "prompt": "Which built-in Azure RBAC role can manage all resources but CANNOT grant access to others?",
+   "choices": [
+    "User Access Administrator",
+    "Contributor",
+    "Reader",
+    "Owner"
+   ],
+   "answer": 1,
+   "explanation": "Contributor can create and manage resources but cannot assign roles; Owner can do both."
+  },
+  {
+   "id": "az900-141",
+   "domain": "arch",
+   "prompt": "Which principle is central to the Zero Trust security model?",
+   "choices": [
+    "Trust everything inside the corporate network",
+    "Grant broad admin rights to reduce help desk calls",
+    "Never trust, always verify, and assume breach",
+    "Allow all traffic from known IP ranges"
+   ],
+   "answer": 2,
+   "explanation": "Zero Trust verifies explicitly, uses least-privilege access and assumes breach, rather than trusting the network perimeter."
+  },
+  {
+   "id": "az900-142",
+   "domain": "arch",
+   "prompt": "What is defense in depth?",
+   "choices": [
+    "Encrypting only the most sensitive data",
+    "A layered approach to security so that if one layer is breached, other layers still protect the data",
+    "Relying entirely on the cloud provider for security",
+    "Using a single very strong firewall"
+   ],
+   "answer": 1,
+   "explanation": "Defense in depth uses multiple layers, such as physical, identity, perimeter, network, compute, application and data."
+  },
+  {
+   "id": "az900-143",
+   "domain": "arch",
+   "prompt": "In the defense-in-depth model, which layer is at the CENTER, being the asset ultimately protected?",
+   "choices": [
+    "Physical security",
+    "Perimeter",
+    "Data",
+    "Network"
+   ],
+   "answer": 2,
+   "explanation": "Data is the innermost layer; the other layers exist to protect it."
+  },
+  {
+   "id": "az900-144",
+   "domain": "arch",
+   "prompt": "Which defense-in-depth layer focuses on controlling access to infrastructure and change control, for example with SSO and MFA?",
+   "choices": [
+    "Identity and access",
+    "Compute",
+    "Application",
+    "Physical security"
+   ],
+   "answer": 0,
+   "explanation": "The identity and access layer ensures identities are secure and access is granted only as needed."
+  },
+  {
+   "id": "az900-145",
+   "domain": "arch",
+   "prompt": "Which service provides distributed denial-of-service (DDoS) mitigation for Azure resources at the perimeter layer?",
+   "choices": [
+    "Azure DDoS Protection",
+    "Azure Policy",
+    "Microsoft Entra Connect",
+    "Azure Key Vault"
+   ],
+   "answer": 0,
+   "explanation": "Azure DDoS Protection helps protect resources from DDoS attacks at the perimeter."
+  },
+  {
+   "id": "az900-146",
+   "domain": "arch",
+   "prompt": "Which service securely stores and manages secrets, encryption keys and certificates?",
+   "choices": [
+    "Microsoft Purview",
+    "Azure Files",
+    "Azure Key Vault",
+    "Azure Advisor"
+   ],
+   "answer": 2,
+   "explanation": "Key Vault centralizes storage of secrets, keys and certificates with access policies and auditing."
+  },
+  {
+   "id": "az900-147",
+   "domain": "arch",
+   "prompt": "What is Microsoft Defender for Cloud?",
+   "choices": [
+    "A service that issues TLS certificates",
+    "A tool for estimating costs",
+    "A cloud security posture management and workload protection tool for Azure, hybrid and multi-cloud resources",
+    "A backup service for VMs"
+   ],
+   "answer": 2,
+   "explanation": "Defender for Cloud assesses security posture, gives a secure score and recommendations, and protects workloads across environments."
+  },
+  {
+   "id": "az900-148",
+   "domain": "gov",
+   "prompt": "Which factor typically affects the cost of an Azure virtual machine?",
+   "choices": [
+    "The VM size, region and how long it runs",
+    "The name of the resource group",
+    "The number of tags applied",
+    "The number of resource locks"
+   ],
+   "answer": 0,
+   "explanation": "Resource type and size, consumption and location (region) are key factors in Azure costs."
+  },
+  {
+   "id": "az900-149",
+   "domain": "gov",
+   "prompt": "Why might the same Azure service cost different amounts in two regions?",
+   "choices": [
+    "Prices can vary by region due to local costs such as power, taxes and demand",
+    "Region pricing depends on the number of users in your tenant",
+    "Prices are always identical worldwide",
+    "Only sovereign regions charge for services"
+   ],
+   "answer": 0,
+   "explanation": "Azure pricing differs by region, so location is a cost factor."
+  },
+  {
+   "id": "az900-150",
+   "domain": "gov",
+   "prompt": "Which type of network traffic is generally NOT charged in Azure?",
+   "choices": [
+    "Inbound data transfer into Azure datacenters",
+    "Outbound data transfer through a VPN gateway",
+    "Data transfer between regions",
+    "Outbound data transfer from Azure to the internet"
+   ],
+   "answer": 0,
+   "explanation": "Ingress (data into Azure) is generally free, while egress and inter-region transfer usually incur charges."
+  },
+  {
+   "id": "az900-151",
+   "domain": "gov",
+   "prompt": "A company runs VMs 24/7 for a stable workload for the next three years. Which option can significantly reduce cost?",
+   "choices": [
+    "Moving to the Archive storage tier",
+    "Using a resource lock",
+    "Adding more tags",
+    "Azure Reservations"
+   ],
+   "answer": 3,
+   "explanation": "Reserved instances give a discount in exchange for a one- or three-year commitment."
+  },
+  {
+   "id": "az900-152",
+   "domain": "gov",
+   "prompt": "A company with existing Windows Server and SQL Server licenses with Software Assurance wants to reduce VM costs in Azure. What should it use?",
+   "choices": [
+    "Azure Spot Virtual Machines",
+    "Azure Hybrid Benefit",
+    "Azure Reservations for storage",
+    "Azure Arc"
+   ],
+   "answer": 1,
+   "explanation": "Azure Hybrid Benefit lets you reuse eligible on-premises licenses in Azure to lower costs."
+  },
+  {
+   "id": "az900-153",
+   "domain": "gov",
+   "prompt": "Which option offers deep discounts for VMs running interruptible workloads, such as batch jobs, but can be evicted when Azure needs capacity?",
+   "choices": [
+    "Azure Reservations",
+    "Azure Dedicated Host",
+    "Azure Spot Virtual Machines",
+    "Availability sets"
+   ],
+   "answer": 2,
+   "explanation": "Spot VMs use unused capacity at a discount but can be evicted at any time."
+  },
+  {
+   "id": "az900-154",
+   "domain": "gov",
+   "prompt": "Which tool estimates the monthly cost of Azure services you plan to deploy?",
+   "choices": [
+    "Azure Pricing calculator",
+    "TCO calculator",
+    "Azure Advisor",
+    "Azure Service Health"
+   ],
+   "answer": 0,
+   "explanation": "The Pricing calculator estimates the cost of provisioning specific Azure resources."
+  },
+  {
+   "id": "az900-155",
+   "domain": "gov",
+   "prompt": "Which tool compares the cost of running workloads on-premises with the cost of running them in Azure over time?",
+   "choices": [
+    "Total Cost of Ownership (TCO) calculator",
+    "Azure Pricing calculator",
+    "Azure Monitor",
+    "Microsoft Cost Management"
+   ],
+   "answer": 0,
+   "explanation": "The TCO calculator compares on-premises infrastructure costs, such as servers, power and labor, with Azure."
+  },
+  {
+   "id": "az900-156",
+   "domain": "gov",
+   "prompt": "When using the TCO calculator, which of the following would you typically enter?",
+   "choices": [
+    "Your Microsoft Entra ID tenant name",
+    "Details about current on-premises servers, databases, storage and networking",
+    "Your Azure subscription ID",
+    "The resource locks you plan to use"
+   ],
+   "answer": 1,
+   "explanation": "The TCO calculator takes on-premises workload details and assumptions such as power and IT labor costs."
+  },
+  {
+   "id": "az900-157",
+   "domain": "gov",
+   "prompt": "Which service helps you analyze Azure spending, set budgets and receive alerts when costs exceed thresholds?",
+   "choices": [
+    "Azure Advisor",
+    "Azure Service Health",
+    "Microsoft Cost Management",
+    "Azure Policy"
+   ],
+   "answer": 2,
+   "explanation": "Cost Management provides cost analysis, budgets and alerts for Azure spending."
+  },
+  {
+   "id": "az900-158",
+   "domain": "gov",
+   "prompt": "A finance team wants an email when monthly spending in a subscription reaches 80% of a defined amount. What should be configured?",
+   "choices": [
+    "A resource lock",
+    "An Azure Policy deny effect",
+    "A Service Health alert",
+    "A budget with an alert in Cost Management"
+   ],
+   "answer": 3,
+   "explanation": "Budgets in Cost Management can trigger alerts at defined spending thresholds."
+  },
+  {
+   "id": "az900-159",
+   "domain": "gov",
+   "prompt": "Which type of Cost Management alert notifies you when Azure credits for an Enterprise Agreement are being consumed?",
+   "choices": [
+    "Service Health alerts",
+    "Credit alerts",
+    "Budget alerts only",
+    "Activity log alerts"
+   ],
+   "answer": 1,
+   "explanation": "Cost Management offers budget alerts, credit alerts and department spending quota alerts."
+  },
+  {
+   "id": "az900-160",
+   "domain": "gov",
+   "prompt": "What are tags in Azure?",
+   "choices": [
+    "Locks that prevent resource deletion",
+    "Security rules that block network traffic",
+    "Roles that grant permissions",
+    "Name/value pairs applied to resources to organize them, for example by cost center or environment"
+   ],
+   "answer": 3,
+   "explanation": "Tags are metadata name/value pairs used for organization, cost reporting and automation."
+  },
+  {
+   "id": "az900-161",
+   "domain": "gov",
+   "prompt": "A company wants to see Azure costs broken down by department. What is a straightforward way to enable this?",
+   "choices": [
+    "Use a single availability zone per department",
+    "Apply a tag such as CostCenter to resources and group costs by that tag",
+    "Put all resources in one resource group",
+    "Create a resource lock per department"
+   ],
+   "answer": 1,
+   "explanation": "Tags let you filter and group cost reports by values such as department or cost center."
+  },
+  {
+   "id": "az900-162",
+   "domain": "gov",
+   "prompt": "Are tags on a resource group automatically inherited by the resources inside it?",
+   "choices": [
+    "Only for virtual machines",
+    "No, tags are not inherited by default, though Azure Policy can enforce or copy them",
+    "Only in sovereign regions",
+    "Yes, always"
+   ],
+   "answer": 1,
+   "explanation": "Resources do not inherit tags from their resource group or subscription by default; policies can apply them."
+  },
+  {
+   "id": "az900-163",
+   "domain": "gov",
+   "prompt": "How can an organization require that every new resource has an Environment tag?",
+   "choices": [
+    "Apply a ReadOnly lock",
+    "Use the TCO calculator",
+    "Create a Service Health alert",
+    "Assign an Azure Policy that requires the tag"
+   ],
+   "answer": 3,
+   "explanation": "Azure Policy can require tags or add them automatically during deployment."
+  },
+  {
+   "id": "az900-164",
+   "domain": "gov",
+   "prompt": "What is the purpose of Azure Policy?",
+   "choices": [
+    "To create, assign and enforce rules so that resources stay compliant with corporate standards",
+    "To estimate future costs",
+    "To back up virtual machines",
+    "To grant users permissions to resources"
+   ],
+   "answer": 0,
+   "explanation": "Azure Policy evaluates resources against rules and can deny, audit or modify non-compliant resources."
+  },
+  {
+   "id": "az900-165",
+   "domain": "gov",
+   "prompt": "A company must ensure that resources are deployed only in West Europe and North Europe. What should it use?",
+   "choices": [
+    "Azure Policy with an allowed locations definition",
+    "A CanNotDelete lock",
+    "Azure RBAC Reader role",
+    "Microsoft Cost Management"
+   ],
+   "answer": 0,
+   "explanation": "The built-in Allowed locations policy restricts which regions resources can be deployed to."
+  },
+  {
+   "id": "az900-166",
+   "domain": "gov",
+   "prompt": "What is an Azure Policy initiative?",
+   "choices": [
+    "A single role assignment",
+    "A list of resource locks",
+    "A billing report",
+    "A group of related policy definitions managed together toward a goal"
+   ],
+   "answer": 3,
+   "explanation": "Initiatives bundle policy definitions, such as those needed for a compliance standard, for easier assignment."
+  },
+  {
+   "id": "az900-167",
+   "domain": "gov",
+   "prompt": "How does Azure Policy differ from Azure RBAC?",
+   "choices": [
+    "RBAC is used only for billing",
+    "Policy grants user permissions",
+    "They are the same service",
+    "Policy controls which resource properties are allowed; RBAC controls which actions users can perform"
+   ],
+   "answer": 3,
+   "explanation": "RBAC focuses on user actions at a scope, while Policy focuses on resource properties and compliance."
+  },
+  {
+   "id": "az900-168",
+   "domain": "gov",
+   "prompt": "If an Azure Policy is assigned at a management group, which resources does it apply to?",
+   "choices": [
+    "Only resources in the same region",
+    "Only the management group object itself",
+    "Only resources created by the policy author",
+    "All subscriptions, resource groups and resources under that management group"
+   ],
+   "answer": 3,
+   "explanation": "Policy assignments are inherited by all child scopes."
+  },
+  {
+   "id": "az900-169",
+   "domain": "gov",
+   "prompt": "Which Azure Policy capability can automatically fix existing non-compliant resources?",
+   "choices": [
+    "Deployment slots",
+    "Resource locks",
+    "Remediation tasks",
+    "Cost alerts"
+   ],
+   "answer": 2,
+   "explanation": "Remediation tasks can bring existing resources into compliance for policies with deployIfNotExists or modify effects."
+  },
+  {
+   "id": "az900-170",
+   "domain": "gov",
+   "prompt": "What do resource locks protect against?",
+   "choices": [
+    "Unauthorized sign-ins",
+    "Network attacks",
+    "High costs",
+    "Accidental deletion or modification of resources"
+   ],
+   "answer": 3,
+   "explanation": "Locks prevent resources from being accidentally deleted or changed, even by users with permissions."
+  },
+  {
+   "id": "az900-171",
+   "domain": "gov",
+   "prompt": "Which lock type allows users to read and modify a resource but not delete it?",
+   "choices": [
+    "ReadOnly",
+    "CanNotDelete (Delete)",
+    "Deny",
+    "Archive"
+   ],
+   "answer": 1,
+   "explanation": "A CanNotDelete lock lets authorized users modify a resource but prevents deletion."
+  },
+  {
+   "id": "az900-172",
+   "domain": "gov",
+   "prompt": "Which lock type prevents both deleting and modifying a resource?",
+   "choices": [
+    "CanNotDelete",
+    "Audit",
+    "Delete",
+    "ReadOnly"
+   ],
+   "answer": 3,
+   "explanation": "A ReadOnly lock is like granting everyone Reader permission on the resource."
+  },
+  {
+   "id": "az900-173",
+   "domain": "gov",
+   "prompt": "An administrator with the Owner role tries to delete a resource with a CanNotDelete lock. What happens?",
+   "choices": [
+    "The resource moves to another resource group",
+    "The lock is removed automatically",
+    "The deletion fails until the lock is removed",
+    "The resource is deleted because Owners bypass locks"
+   ],
+   "answer": 2,
+   "explanation": "Locks apply to everyone, including Owners; the lock must be removed first."
+  },
+  {
+   "id": "az900-174",
+   "domain": "gov",
+   "prompt": "A lock is applied to a resource group. What is the effect on resources in the group?",
+   "choices": [
+    "Only the resource group is locked, not its resources",
+    "The lock is ignored for VMs",
+    "The resources inherit the lock",
+    "Resources are moved out of the group"
+   ],
+   "answer": 2,
+   "explanation": "Locks applied at a parent scope are inherited by all resources at that scope."
+  },
+  {
+   "id": "az900-175",
+   "domain": "gov",
+   "prompt": "What is Microsoft Purview?",
+   "choices": [
+    "A cost estimation tool",
+    "A tool for deploying VMs",
+    "A virtual network service",
+    "A family of data governance, risk and compliance solutions for discovering, classifying and protecting data"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Purview helps organizations govern, protect and manage data across on-premises, multi-cloud and SaaS environments."
+  },
+  {
+   "id": "az900-176",
+   "domain": "gov",
+   "prompt": "A company wants a unified map of its data across on-premises, Azure and other clouds, with automated data classification and lineage. Which service fits?",
+   "choices": [
+    "Azure Policy",
+    "Microsoft Purview",
+    "Azure Monitor",
+    "Azure Advisor"
+   ],
+   "answer": 1,
+   "explanation": "Purview's data governance capabilities create a map of data with discovery, classification and lineage."
+  },
+  {
+   "id": "az900-177",
+   "domain": "gov",
+   "prompt": "Which portal provides access to Microsoft's audit reports, compliance documentation and trust information?",
+   "choices": [
+    "Azure portal",
+    "Service Trust Portal",
+    "Azure Service Health",
+    "Microsoft Defender portal"
+   ],
+   "answer": 1,
+   "explanation": "The Service Trust Portal provides reports and documents about Microsoft's security, privacy and compliance practices."
+  },
+  {
+   "id": "az900-178",
+   "domain": "gov",
+   "prompt": "What is the Azure portal?",
+   "choices": [
+    "A DNS service",
+    "A command-line tool installed only on Linux",
+    "A web-based, unified console for building, managing and monitoring Azure resources",
+    "A physical datacenter"
+   ],
+   "answer": 2,
+   "explanation": "The Azure portal is a browser-based interface for managing Azure resources."
+  },
+  {
+   "id": "az900-179",
+   "domain": "gov",
+   "prompt": "What is Azure Cloud Shell?",
+   "choices": [
+    "A tool that only works on Windows",
+    "A storage tier",
+    "A browser-based shell that provides Azure CLI and Azure PowerShell without local installation",
+    "A VM that you must create first"
+   ],
+   "answer": 2,
+   "explanation": "Cloud Shell is an authenticated, browser-accessible shell supporting Bash and PowerShell."
+  },
+  {
+   "id": "az900-180",
+   "domain": "gov",
+   "prompt": "Which two shell experiences does Azure Cloud Shell offer?",
+   "choices": [
+    "Python and Ruby",
+    "Zsh and Fish",
+    "CMD and Terminal only",
+    "Bash and PowerShell"
+   ],
+   "answer": 3,
+   "explanation": "Cloud Shell supports both Bash (with Azure CLI) and PowerShell (with Azure PowerShell)."
+  },
+  {
+   "id": "az900-181",
+   "domain": "gov",
+   "prompt": "Which tool is a set of cmdlets for managing Azure resources from PowerShell?",
+   "choices": [
+    "Azure PowerShell",
+    "Azure CLI",
+    "Azure Storage Explorer",
+    "AzCopy"
+   ],
+   "answer": 0,
+   "explanation": "Azure PowerShell provides cmdlets that call the Azure REST API to manage resources."
+  },
+  {
+   "id": "az900-182",
+   "domain": "gov",
+   "prompt": "Which cross-platform command-line tool uses commands such as 'az vm create' to manage Azure?",
+   "choices": [
+    "Azure Arc",
+    "Azure CLI",
+    "Bicep",
+    "Azure PowerShell"
+   ],
+   "answer": 1,
+   "explanation": "The Azure CLI uses Bash-style commands that begin with 'az'."
+  },
+  {
+   "id": "az900-183",
+   "domain": "gov",
+   "prompt": "What is Azure Resource Manager (ARM)?",
+   "choices": [
+    "A monitoring dashboard",
+    "A billing tool",
+    "An identity provider",
+    "The deployment and management service that processes all requests to create, update and delete Azure resources"
+   ],
+   "answer": 3,
+   "explanation": "ARM is the management layer; all tools such as the portal, CLI and PowerShell send requests through it."
+  },
+  {
+   "id": "az900-184",
+   "domain": "gov",
+   "prompt": "Why do requests from the portal, Azure CLI and Azure PowerShell produce consistent results?",
+   "choices": [
+    "They run in the same browser",
+    "They each use a separate API",
+    "They use the same storage account",
+    "They all go through Azure Resource Manager"
+   ],
+   "answer": 3,
+   "explanation": "ARM provides a consistent management layer for all tools and SDKs."
+  },
+  {
+   "id": "az900-185",
+   "domain": "gov",
+   "prompt": "What is infrastructure as code (IaC)?",
+   "choices": [
+    "Writing application code that runs in containers",
+    "Encrypting infrastructure",
+    "Using physical hardware labels",
+    "Managing and provisioning infrastructure through declarative files instead of manual processes"
+   ],
+   "answer": 3,
+   "explanation": "IaC defines infrastructure in code files, enabling repeatable, consistent deployments."
+  },
+  {
+   "id": "az900-186",
+   "domain": "gov",
+   "prompt": "Which two formats can be used to write Azure Resource Manager templates?",
+   "choices": [
+    "XML and YAML",
+    "JSON and Bicep",
+    "HTML and CSS",
+    "CSV and Markdown"
+   ],
+   "answer": 1,
+   "explanation": "ARM templates are written in JSON, and Bicep is a domain-specific language that compiles to ARM JSON."
+  },
+  {
+   "id": "az900-187",
+   "domain": "gov",
+   "prompt": "What is a benefit of the declarative syntax used by ARM templates and Bicep?",
+   "choices": [
+    "Templates can deploy only one resource",
+    "You must write every step in order",
+    "Templates cannot be reused",
+    "You describe what you want to deploy without writing the sequence of commands to create it"
+   ],
+   "answer": 3,
+   "explanation": "Declarative templates state the desired result, and ARM figures out how to deploy it."
+  },
+  {
+   "id": "az900-188",
+   "domain": "gov",
+   "prompt": "What happens if you deploy the same ARM template multiple times to the same environment?",
+   "choices": [
+    "The deployment always fails the second time",
+    "Duplicate resources are always created",
+    "You get the same resources in the same state, because deployments are idempotent",
+    "All existing resources are deleted"
+   ],
+   "answer": 2,
+   "explanation": "ARM template deployments are idempotent, producing consistent results on repeated runs."
+  },
+  {
+   "id": "az900-189",
+   "domain": "gov",
+   "prompt": "Which language is a newer, more concise alternative to JSON for authoring ARM templates?",
+   "choices": [
+    "PowerShell DSC",
+    "Kusto Query Language",
+    "Python",
+    "Bicep"
+   ],
+   "answer": 3,
+   "explanation": "Bicep is a declarative language that offers simpler syntax and transpiles to ARM JSON."
+  },
+  {
+   "id": "az900-190",
+   "domain": "gov",
+   "prompt": "Which statement about Azure Arc is TRUE?",
+   "choices": [
+    "It replaces Microsoft Entra ID",
+    "It is a type of storage redundancy",
+    "It migrates data on physical disks",
+    "It lets you manage non-Azure servers using Azure tools such as Azure Policy and RBAC"
+   ],
+   "answer": 3,
+   "explanation": "Azure Arc projects external resources into Azure Resource Manager so you can govern them consistently."
+  },
+  {
+   "id": "az900-191",
+   "domain": "gov",
+   "prompt": "A company wants to apply Azure Policy to Linux servers running in another cloud provider. Which service enables this?",
+   "choices": [
+    "Azure Migrate",
+    "Azure Bastion",
+    "Azure Arc",
+    "Azure Data Box"
+   ],
+   "answer": 2,
+   "explanation": "Arc-enabled servers can be governed by Azure Policy just like Azure VMs."
+  },
+  {
+   "id": "az900-192",
+   "domain": "gov",
+   "prompt": "Which types of resources can Azure Arc manage outside Azure?",
+   "choices": [
+    "Servers, Kubernetes clusters, Azure data services and SQL Server",
+    "Only DNS zones",
+    "Only Microsoft 365 mailboxes",
+    "Only storage accounts"
+   ],
+   "answer": 0,
+   "explanation": "Azure Arc supports servers, Kubernetes, Azure data services, SQL Server and VMs running on-premises or in other clouds."
+  },
+  {
+   "id": "az900-193",
+   "domain": "gov",
+   "prompt": "What does Azure Advisor do?",
+   "choices": [
+    "It encrypts storage accounts",
+    "It analyzes your deployed resources and gives personalized recommendations to optimize them",
+    "It manages user identities",
+    "It deploys resources from templates"
+   ],
+   "answer": 1,
+   "explanation": "Advisor evaluates resources and recommends improvements for reliability, security, performance, cost and operational excellence."
+  },
+  {
+   "id": "az900-194",
+   "domain": "gov",
+   "prompt": "Which categories does Azure Advisor provide recommendations in?",
+   "choices": [
+    "Billing, identity, DNS and storage",
+    "Tags, locks and policies only",
+    "Reliability, security, performance, operational excellence and cost",
+    "Regions, zones and pairs"
+   ],
+   "answer": 2,
+   "explanation": "Advisor organizes recommendations into these five categories."
+  },
+  {
+   "id": "az900-195",
+   "domain": "gov",
+   "prompt": "An administrator wants a recommendation on which underused VMs could be resized or shut down to save money. Which tool provides this?",
+   "choices": [
+    "Azure DNS",
+    "Azure Service Health",
+    "Azure Advisor",
+    "Azure Policy"
+   ],
+   "answer": 2,
+   "explanation": "Advisor's cost recommendations identify underused resources such as idle VMs."
+  },
+  {
+   "id": "az900-196",
+   "domain": "gov",
+   "prompt": "Which service provides a personalized view of Azure service issues, planned maintenance and health advisories that affect YOUR resources?",
+   "choices": [
+    "Azure Advisor",
+    "Azure Service Health",
+    "Azure status page",
+    "Microsoft Purview"
+   ],
+   "answer": 1,
+   "explanation": "Service Health focuses on the Azure services and regions you use and can send alerts."
+  },
+  {
+   "id": "az900-197",
+   "domain": "gov",
+   "prompt": "What is the difference between Azure status and Azure Service Health?",
+   "choices": [
+    "Azure status shows global service health for everyone; Service Health shows issues specific to your services and regions",
+    "Azure status is only available to Owners",
+    "Service Health is used only for billing",
+    "They are identical"
+   ],
+   "answer": 0,
+   "explanation": "Azure status is a broad global view, while Service Health is personalized for your subscriptions."
+  },
+  {
+   "id": "az900-198",
+   "domain": "gov",
+   "prompt": "Which component of Azure Service Health shows the health of your individual resources, such as whether a specific VM is available?",
+   "choices": [
+    "Log Analytics",
+    "Resource Health",
+    "Azure Advisor",
+    "Azure status"
+   ],
+   "answer": 1,
+   "explanation": "Resource Health reports the current and past health of individual resources."
+  },
+  {
+   "id": "az900-199",
+   "domain": "gov",
+   "prompt": "Which service collects and analyzes metrics and logs from Azure and on-premises environments to help you understand performance?",
+   "choices": [
+    "Microsoft Cost Management",
+    "Azure Policy",
+    "Azure Monitor",
+    "Azure Migrate"
+   ],
+   "answer": 2,
+   "explanation": "Azure Monitor is a comprehensive platform for collecting, analyzing and acting on telemetry."
+  },
+  {
+   "id": "az900-200",
+   "domain": "gov",
+   "prompt": "Which tool in the Azure portal lets you write and run queries against log data collected by Azure Monitor?",
+   "choices": [
+    "Pricing calculator",
+    "Azure Advisor",
+    "Service Trust Portal",
+    "Log Analytics"
+   ],
+   "answer": 3,
+   "explanation": "Log Analytics lets you edit and run Kusto (KQL) queries on Azure Monitor Logs."
+  },
+  {
+   "id": "az900-201",
+   "domain": "gov",
+   "prompt": "Which query language is used in Log Analytics?",
+   "choices": [
+    "Kusto Query Language (KQL)",
+    "GraphQL",
+    "T-SQL only",
+    "Bicep"
+   ],
+   "answer": 0,
+   "explanation": "Log Analytics queries use KQL."
+  },
+  {
+   "id": "az900-202",
+   "domain": "gov",
+   "prompt": "Which Azure Monitor feature monitors the performance and usage of live web applications, such as request rates, response times and failures?",
+   "choices": [
+    "Application Insights",
+    "Azure Service Health",
+    "Microsoft Purview",
+    "Azure Advisor"
+   ],
+   "answer": 0,
+   "explanation": "Application Insights is an Azure Monitor feature for application performance monitoring."
+  },
+  {
+   "id": "az900-203",
+   "domain": "gov",
+   "prompt": "Application Insights can monitor web applications hosted where?",
+   "choices": [
+    "Only in Azure Virtual Desktop",
+    "In Azure, on-premises or in another cloud",
+    "Only in sovereign regions",
+    "Only in Azure App Service"
+   ],
+   "answer": 1,
+   "explanation": "Application Insights works for apps hosted anywhere, as long as they are instrumented."
+  },
+  {
+   "id": "az900-204",
+   "domain": "gov",
+   "prompt": "An operations team wants to be notified when a VM's CPU exceeds 90% for 10 minutes. What should they configure?",
+   "choices": [
+    "An Azure Monitor alert rule",
+    "A TCO calculator estimate",
+    "An Azure Policy initiative",
+    "A resource lock"
+   ],
+   "answer": 0,
+   "explanation": "Azure Monitor alerts notify you when metric or log conditions are met."
+  },
+  {
+   "id": "az900-205",
+   "domain": "gov",
+   "prompt": "What can Azure Monitor alerts do besides sending an email?",
+   "choices": [
+    "Delete the subscription",
+    "Change the storage redundancy automatically",
+    "Trigger automated actions through action groups, such as running a Logic App or Function",
+    "Create new management groups"
+   ],
+   "answer": 2,
+   "explanation": "Action groups define notifications and automated actions like webhooks, Functions or Logic Apps."
+  },
+  {
+   "id": "az900-206",
+   "domain": "gov",
+   "prompt": "Which log in Azure records subscription-level events, such as who created or deleted a resource and when?",
+   "choices": [
+    "Activity log",
+    "Application Insights trace log",
+    "Storage queue",
+    "DNS zone file"
+   ],
+   "answer": 0,
+   "explanation": "The Azure activity log records control-plane operations performed on resources."
+  },
+  {
+   "id": "az900-207",
+   "domain": "gov",
+   "prompt": "Which statement about Azure Policy compliance is TRUE?",
+   "choices": [
+    "Azure Policy shows a compliance dashboard indicating which resources are non-compliant",
+    "It only applies to storage accounts",
+    "It requires the TCO calculator",
+    "It can only evaluate resources at creation time and never again"
+   ],
+   "answer": 0,
+   "explanation": "Policy continuously evaluates resources and reports compliance status."
+  },
+  {
+   "id": "az900-208",
+   "domain": "gov",
+   "prompt": "Which Azure Policy effect blocks a resource from being created if it does not meet the rule?",
+   "choices": [
+    "Append",
+    "Disabled",
+    "Audit",
+    "Deny"
+   ],
+   "answer": 3,
+   "explanation": "The Deny effect prevents a non-compliant resource request from succeeding."
+  },
+  {
+   "id": "az900-209",
+   "domain": "gov",
+   "prompt": "Which Azure Policy effect creates a warning in the activity log for non-compliant resources but does NOT block them?",
+   "choices": [
+    "Audit",
+    "DeployIfNotExists",
+    "Modify",
+    "Deny"
+   ],
+   "answer": 0,
+   "explanation": "Audit flags non-compliance without preventing deployment."
+  },
+  {
+   "id": "az900-210",
+   "domain": "gov",
+   "prompt": "What is a valid way to reduce Azure storage costs for blobs that are rarely accessed over time?",
+   "choices": [
+    "Use lifecycle management rules to move blobs to cooler tiers automatically",
+    "Switch from LRS to RA-GZRS",
+    "Add more tags to the blobs",
+    "Apply a ReadOnly lock to the account"
+   ],
+   "answer": 0,
+   "explanation": "Lifecycle management policies can transition blobs to Cool, Cold or Archive tiers based on age."
+  },
+  {
+   "id": "az900-211",
+   "domain": "gov",
+   "prompt": "Which action is MOST likely to reduce costs for development VMs that are only used during business hours?",
+   "choices": [
+    "Apply GZRS storage to their disks",
+    "Configure auto-shutdown or stop (deallocate) them outside working hours",
+    "Add them to an availability set",
+    "Upgrade them to larger VM sizes"
+   ],
+   "answer": 1,
+   "explanation": "Deallocated VMs stop incurring compute charges, though storage is still billed."
+  },
+  {
+   "id": "az900-212",
+   "domain": "gov",
+   "prompt": "When an Azure VM is stopped (deallocated), what are you still charged for?",
+   "choices": [
+    "Its full hourly compute rate",
+    "Storage for its managed disks",
+    "Compute time for its vCPUs",
+    "Nothing at all"
+   ],
+   "answer": 1,
+   "explanation": "Deallocation stops compute billing, but the attached managed disks still incur storage charges."
+  },
+  {
+   "id": "az900-213",
+   "domain": "gov",
+   "prompt": "Which Azure subscription option is designed to let new users explore Azure with credit for a limited time?",
+   "choices": [
+    "Enterprise Agreement only",
+    "Azure free account",
+    "Azure Government",
+    "Azure Arc"
+   ],
+   "answer": 1,
+   "explanation": "The Azure free account includes credit for the first 30 days plus some services free for a limited time or always free."
+  },
+  {
+   "id": "az900-214",
+   "domain": "gov",
+   "prompt": "What is the Azure Marketplace?",
+   "choices": [
+    "A tool for estimating TCO",
+    "A catalog where customers can find, try and buy solutions and services from Microsoft and partners",
+    "A list of Azure regions",
+    "A Microsoft Entra feature"
+   ],
+   "answer": 1,
+   "explanation": "Azure Marketplace offers thousands of solutions and services that are certified to run on Azure."
+  },
+  {
+   "id": "az900-215",
+   "domain": "gov",
+   "prompt": "Which Azure service lets you enforce that only specific VM SKUs can be deployed in a subscription?",
+   "choices": [
+    "Azure Policy",
+    "Azure Advisor",
+    "Resource locks",
+    "Azure Monitor"
+   ],
+   "answer": 0,
+   "explanation": "A policy such as Allowed virtual machine size SKUs restricts deployable VM sizes."
+  },
+  {
+   "id": "az900-216",
+   "domain": "gov",
+   "prompt": "A company wants to track who changed a network security group rule yesterday. Where should an administrator look first?",
+   "choices": [
+    "The Azure activity log",
+    "Azure Pricing calculator",
+    "Service Trust Portal",
+    "Azure Advisor recommendations"
+   ],
+   "answer": 0,
+   "explanation": "The activity log records write operations on resources, including who performed them."
+  },
+  {
+   "id": "az900-217",
+   "domain": "gov",
+   "prompt": "Which tool lets you organize Azure portal views by pinning tiles and charts into custom layouts?",
+   "choices": [
+    "Bicep",
+    "AzCopy",
+    "Azure portal dashboards",
+    "Azure Cloud Shell"
+   ],
+   "answer": 2,
+   "explanation": "Dashboards in the portal can be customized and shared to show key resource information."
+  },
+  {
+   "id": "az900-218",
+   "domain": "gov",
+   "prompt": "A company wants to deploy identical environments for development, test and production in a consistent, repeatable way. Which approach is BEST?",
+   "choices": [
+    "Create each resource manually in the portal",
+    "Apply resource locks",
+    "Use ARM templates or Bicep files",
+    "Use the TCO calculator"
+   ],
+   "answer": 2,
+   "explanation": "Infrastructure as code templates allow repeatable, consistent deployments."
+  },
+  {
+   "id": "az900-219",
+   "domain": "gov",
+   "prompt": "Where should you look to understand how Microsoft protects data in Azure and meets standards such as GDPR and ISO 27001?",
+   "choices": [
+    "Azure Pricing calculator",
+    "Microsoft Service Trust Portal and compliance documentation",
+    "Azure DNS",
+    "Azure Storage Explorer"
+   ],
+   "answer": 1,
+   "explanation": "The Service Trust Portal publishes audit reports and compliance information."
+  },
+  {
+   "id": "az900-220",
+   "domain": "gov",
+   "prompt": "Which tool in Microsoft Defender for Cloud gives a score showing your overall security posture?",
+   "choices": [
+    "Resource health score",
+    "Secure score",
+    "Advisor score for cost only",
+    "Compliance credit"
+   ],
+   "answer": 1,
+   "explanation": "Secure score measures security posture; higher scores indicate lower risk."
+  },
+  {
+   "id": "az900-221",
+   "domain": "gov",
+   "prompt": "Which statement about Azure Advisor score is TRUE?",
+   "choices": [
+    "It aggregates Advisor recommendations into a score showing how well resources follow best practices",
+    "It is the same as the SLA percentage",
+    "It is calculated from the number of tags",
+    "It measures only network latency"
+   ],
+   "answer": 0,
+   "explanation": "Advisor score helps prioritize recommendations to improve your deployments."
+  },
+  {
+   "id": "az900-222",
+   "domain": "gov",
+   "prompt": "What does the cost analysis feature of Microsoft Cost Management let you do?",
+   "choices": [
+    "Deploy resources from templates",
+    "Explore accumulated and forecasted costs, grouped by attributes such as resource group, service or tag",
+    "Assign RBAC roles to users",
+    "Move resources between regions"
+   ],
+   "answer": 1,
+   "explanation": "Cost analysis visualizes current and forecasted spending and lets you filter and group by many attributes."
+  },
+  {
+   "id": "az900-223",
+   "domain": "gov",
+   "prompt": "Which is a benefit of applying Azure Policy at the management group level instead of each subscription?",
+   "choices": [
+    "It reduces VM compute prices",
+    "It creates region pairs",
+    "It disables RBAC",
+    "Governance is consistent across all subscriptions with a single assignment"
+   ],
+   "answer": 3,
+   "explanation": "Assigning policy high in the hierarchy applies rules consistently to everything beneath."
+  },
+  {
+   "id": "az900-224",
+   "domain": "gov",
+   "prompt": "Which of the following is a feature of the Azure mobile app?",
+   "choices": [
+    "Shipping Data Box devices",
+    "Replacing the Azure portal entirely for all features",
+    "Monitoring resource health and running Cloud Shell commands from a phone",
+    "Deploying physical servers"
+   ],
+   "answer": 2,
+   "explanation": "The Azure mobile app lets you check resource status, get alerts and use Cloud Shell on the go."
+  },
+  {
+   "id": "az900-225",
+   "domain": "gov",
+   "prompt": "Which service provides a way to restrict deletion of a critical production storage account even by administrators, until a deliberate extra step is taken?",
+   "choices": [
+    "Log Analytics",
+    "Azure Advisor",
+    "Tags",
+    "Resource locks"
+   ],
+   "answer": 3,
+   "explanation": "Locks require being removed before the resource can be deleted, adding a safeguard."
+  }
+ ]
+}
