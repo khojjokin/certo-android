@@ -38,7 +38,7 @@ class CertoApp : Application() {
         billing.start()
         store.onSave = { json -> schedulePush(json) }
         createChannel()
-        scope.launch { CertoApi.subscriptionsEnabled()?.let { store.setSubscriptionsEnabled(it) } }
+        scope.launch { CertoApi.subscriptionsEnabled()?.let { store.applySubscriptionsEnabled(it) } }
     }
 
     /** After sign-in: download the account's progress, or upload this device's if the account has none. */

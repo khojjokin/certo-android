@@ -58,7 +58,7 @@ class StudyStore(private val context: Context) {
         prefs.edit().remove("appdata.user.$userId").apply()
     }
 
-    fun setSubscriptionsEnabled(on: Boolean) {
+    fun applySubscriptionsEnabled(on: Boolean) {
         subscriptionsEnabled = on
         prefs.edit().putBoolean("subsEnabled", on).apply()
     }

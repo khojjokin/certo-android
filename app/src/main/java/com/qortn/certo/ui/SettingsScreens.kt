@@ -308,7 +308,7 @@ fun AdminScreen(app: CertoApp, onClose: () -> Unit) {
                         val t = app.auth.token() ?: return@launch
                         runCatching {
                             CertoApi.setSubscriptions(t, on)
-                            app.store.setSubscriptionsEnabled(on)
+                            app.store.applySubscriptionsEnabled(on)
                         }.onFailure { error = it.message }
                     }
                 }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
