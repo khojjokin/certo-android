@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p out/screens
           cp shots.log out/ 2>/dev/null || true
+          cp app/build/test-results/testDebugUnitTest/*.xml out/ 2>/dev/null || true
           find app/src/test/snapshots -name '*.png' -exec cp {} out/screens/ \; 2>/dev/null || true
           cp build.log out/build.log
           cp app/build/outputs/bundle/release/app-release.aab out/certo-unsigned.aab 2>/dev/null || true
