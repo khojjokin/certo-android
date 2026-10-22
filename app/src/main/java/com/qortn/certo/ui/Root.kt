@@ -8,6 +8,10 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
@@ -70,7 +74,7 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
             auth.refreshAdminIfNeeded()
         }
     }
-    SideEffect { store.isPremium = billing.isPremium }
+    SideEffect { store.isPremium = billing.isPremium || auth.hasFreePremium }
 
     LaunchedEffect(store.showPaywall) {
         if (store.showPaywall) { store.showPaywall = false; nav.push(Page.Paywall) }
@@ -83,8 +87,18 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
                     CircularProgressIndicator(Modifier.size(28.dp), color = Brand)
                 }
                 auth.user == null -> WelcomeScreen(app, activity)
+                auth.state.status != "active" && !auth.isAdmin -> GateScreen(app, GateKind.Blocked(auth.state.status, auth.state.statusMessage))
+                auth.state.maintenance != null && !auth.isAdmin -> GateScreen(app, GateKind.Maintenance(auth.state.maintenance!!))
+                AppVersion.isOlder(auth.state.minVersion) && !auth.isAdmin -> GateScreen(app, GateKind.Update)
                 !store.data.onboarded -> OnboardingScreen(store)
-                else -> MainTabs(app, nav)
+                else -> Column(Modifier.fillMaxSize()) {
+                    auth.state.announcement?.let { AnnouncementBanner(it) { auth.dismissAnnouncement() } }
+                    val inset = if (auth.state.announcement != null) Modifier.consumeWindowInsets(WindowInsets.statusBars) else Modifier
+                    Box(Modifier.weight(1f).then(inset)) { MainTabs(app, nav) }
+                }
+            }
+            auth.state.notices.firstOrNull()?.takeIf { auth.user != null }?.let { n ->
+                NoticeDialog(n) { scope.launch { auth.acknowledge(n) } }
             }
 
             val top = nav.top

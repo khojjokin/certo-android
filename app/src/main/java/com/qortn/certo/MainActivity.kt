@@ -1,5 +1,6 @@
 package com.qortn.certo
 
+import kotlinx.coroutines.launch
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -42,6 +43,8 @@ class MainActivity : ComponentActivity() {
         val away = (application as CertoApp).leftAt
         if (away > 0 && System.currentTimeMillis() - away >= AWAY_LIMIT_MS) showSplash = true
         (application as CertoApp).leftAt = 0
+        val app = application as CertoApp
+        app.scope.launch { app.auth.refreshState() }
     }
 
     override fun onStop() {

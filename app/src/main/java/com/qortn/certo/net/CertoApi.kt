@@ -37,8 +37,33 @@ object CertoApi {
         }
     }
 
-    suspend fun registerMember(token: String, provider: String): Boolean =
-        call("me", token, JSONObject().put("provider", provider)).optBoolean("isAdmin", false)
+    /** Registers the member and returns their account state (admin, status, notices, remote settings). */
+    suspend fun registerMember(token: String, provider: String): MemberState {
+        val j = call("me", token, JSONObject().put("provider", provider))
+        val arr = j.optJSONArray("notices")
+        val notices = (0 until (arr?.length() ?: 0)).mapNotNull { i ->
+            val n = arr!!.optJSONObject(i) ?: return@mapNotNull null
+            MemberNotice(n.optInt("id"), n.optString("kind") == "warning", n.optString("title"), n.optString("body"))
+        }
+        fun str(k: String) = if (j.isNull(k)) null else j.optString(k).ifBlank { null }
+        return MemberState(
+            isAdmin = j.optBoolean("isAdmin", false),
+            status = j.optString("status", "active"),
+            statusMessage = str("statusMessage"),
+            premiumUntil = str("premiumUntil")?.let { runCatching { java.time.Instant.parse(it.replace("+00:00", "Z")).toEpochMilli() }.getOrNull() },
+            notices = notices,
+            maintenance = str("maintenance"),
+            announcement = str("announcement"),
+            minVersion = str("minVersion"),
+        )
+    }
+
+    suspend fun acknowledgeNotice(token: String, id: Int) { runCatching { call("ackNotice", token, JSONObject().put("id", id)) } }
+
+    /** Records a Google Play purchase so the admin console can refund it. */
+    suspend fun reportPlayPurchase(token: String, purchaseToken: String, productId: String?, orderId: String?, purchaseTime: Long) {
+        call("playPurchase", token, JSONObject().put("token", purchaseToken).put("productId", productId).put("orderId", orderId).put("purchaseTime", purchaseTime))
+    }
 
     suspend fun deleteMember(token: String) { call("deleteAccount", token) }
 
@@ -68,3 +93,18 @@ object CertoApi {
         }.getOrNull()
     }
 }
+
+
+/** What the server says about the signed-in account. */
+data class MemberState(
+    val isAdmin: Boolean = false,
+    val status: String = "active",
+    val statusMessage: String? = null,
+    val premiumUntil: Long? = null,
+    val notices: List<MemberNotice> = emptyList(),
+    val maintenance: String? = null,
+    val announcement: String? = null,
+    val minVersion: String? = null,
+)
+
+data class MemberNotice(val id: Int, val isWarning: Boolean, val title: String, val body: String)

@@ -49,6 +49,8 @@ class Billing(context: Context) {
 
     /** Obfuscated account id so purchases can be matched to the Certo member. */
     var accountId: String? = null
+    /** Called for each active purchase so it can be recorded on the server (for refunds). */
+    var onPurchase: (suspend (Purchase) -> Unit)? = null
 
     private var details: ProductDetails? = null
 
@@ -143,6 +145,7 @@ class Billing(context: Context) {
                 client.acknowledgePurchase(AcknowledgePurchaseParams.newBuilder().setPurchaseToken(p.purchaseToken).build())
             }
         }
+        for (p in active) runCatching { onPurchase?.invoke(p) }
         isPremium = active.isNotEmpty()
         activePlan = if (active.isEmpty()) null else plans.firstOrNull()?.let { "Premium" } ?: "Premium"
     }

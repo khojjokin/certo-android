@@ -47,6 +47,9 @@ class CertoApp : Application() {
         auth = AuthStore(this)
         store = StudyStore(this)
         billing = Billing(this)
+        billing.onPurchase = { p ->
+            auth.token()?.let { t -> CertoApi.reportPlayPurchase(t, p.purchaseToken, p.products.firstOrNull(), p.orderId, p.purchaseTime) }
+        }
         billing.start()
         store.onSave = { json -> schedulePush(json) }
         createChannel()

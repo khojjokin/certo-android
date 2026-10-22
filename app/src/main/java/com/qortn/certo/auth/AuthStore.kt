@@ -6,6 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.qortn.certo.net.Backend
 import com.qortn.certo.net.CertoApi
+import com.qortn.certo.net.MemberNotice
+import com.qortn.certo.net.MemberState
 
 /** The signed-in Certo user (Clerk) for the rest of the app. */
 class AuthStore(context: Context) {
@@ -19,6 +21,11 @@ class AuthStore(context: Context) {
         private set
     var googleEnabled by mutableStateOf(true)
         private set
+    /** Account state from the Certo server: approval, suspension, warnings and remote settings. */
+    var state by mutableStateOf(MemberState())
+        private set
+
+    val hasFreePremium: Boolean get() = (state.premiumUntil ?: 0L) > System.currentTimeMillis()
 
     suspend fun start() {
         runCatching { clerk.load() }
@@ -35,7 +42,7 @@ class AuthStore(context: Context) {
         val u = clerk.user
         val isNew = u?.id != user?.id
         user = u
-        if (u == null) isAdmin = false
+        if (u == null) { isAdmin = false; state = MemberState() }
         if (isNew && u != null) pendingAdminRefresh = true
     }
 
@@ -44,10 +51,24 @@ class AuthStore(context: Context) {
     suspend fun refreshAdminIfNeeded() {
         if (!pendingAdminRefresh) return
         pendingAdminRefresh = false
+        refreshState()
+    }
+
+    /** Re-reads the account state (on sign-in and whenever the app comes back to the front). */
+    suspend fun refreshState() {
         val u = user ?: return
         val t = token() ?: return
-        isAdmin = runCatching { CertoApi.registerMember(t, u.provider) }.getOrDefault(false)
+        val s = runCatching { CertoApi.registerMember(t, u.provider) }.getOrNull() ?: return
+        state = s
+        isAdmin = s.isAdmin
     }
+
+    suspend fun acknowledge(notice: MemberNotice) {
+        state = state.copy(notices = state.notices.filterNot { it.id == notice.id })
+        token()?.let { CertoApi.acknowledgeNotice(it, notice.id) }
+    }
+
+    fun dismissAnnouncement() { state = state.copy(announcement = null) }
 
     suspend fun token(): String? = runCatching { clerk.token() }.getOrNull()
 
@@ -55,6 +76,7 @@ class AuthStore(context: Context) {
         clerk.signOut()
         user = null
         isAdmin = false
+        state = MemberState()
     }
 
     /** Deletes the user's progress from the database, then the Clerk account itself. */
