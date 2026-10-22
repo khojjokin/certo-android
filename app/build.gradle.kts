@@ -31,7 +31,7 @@ android {
     }
     kotlin { jvmToolchain(17) }
 
-    buildFeatures { compose = true }
+    buildFeatures { compose = true; buildConfig = true }
 
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
 }
@@ -49,6 +49,7 @@ dependencies {
     implementation("androidx.browser:browser:1.8.0")
     implementation("com.android.billingclient:billing-ktx:8.0.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("io.sentry:sentry-android:8.0.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.json:json:20240303")

@@ -36,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
@@ -202,27 +203,54 @@ fun StudyTab(store: StudyStore, nav: Nav) {
         }
         Spacer(Modifier.height(18.dp))
         Text(greeting(), color = P.ink, fontSize = 32.sp, fontWeight = FontWeight.Black)
-        Text("Ready for today's study session?", color = P.inkSoft, fontSize = 15.sp)
+        Text(
+            if (store.todayCount > 0) "${store.todayCount} of ${store.data.dailyGoal} questions done today." else "Ready for today's study session?",
+            color = P.inkSoft, fontSize = 15.sp,
+        )
         Spacer(Modifier.height(16.dp))
 
-        Card(Modifier.fillMaxWidth()) {
-            Column {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Ring(store.readiness(cert).toFloat(), cert.color, 76.dp) {
-                        Text("${(store.readiness(cert) * 100).toInt()}%", color = P.ink, fontWeight = FontWeight.Black, fontSize = 18.sp)
+        val readiness = store.readiness(cert)
+        val (levelText, levelColor) = readinessLevel(readiness)
+        Box(Modifier.fillMaxWidth()) {
+            Card(Modifier.fillMaxWidth()) {
+                Column {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Ring(readiness.toFloat(), cert.color, 76.dp) {
+                            Text("${(readiness * 100).toInt()}%", color = P.ink, fontWeight = FontWeight.Black, fontSize = 18.sp)
+                        }
+                        Spacer(Modifier.width(16.dp))
+                        Column(Modifier.weight(1f)) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text("Exam readiness", color = P.ink, fontWeight = FontWeight.Bold, fontSize = 17.sp)
+                                Spacer(Modifier.width(8.dp))
+                                Text(
+                                    levelText, color = levelColor, fontSize = 11.sp, fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.clip(CircleShape).background(levelColor.copy(alpha = 0.16f)).padding(horizontal = 7.dp, vertical = 2.dp),
+                                )
+                            }
+                            Text("${store.answeredCount(cert)} of ${cert.questions.size} questions answered", color = P.inkSoft, fontSize = 13.sp)
+                            Spacer(Modifier.height(8.dp))
+                            ProgressBar(store.todayCount / store.data.dailyGoal.coerceAtLeast(1).toFloat(), Good, height = 6.dp)
+                            Text("Daily goal: ${minOf(store.todayCount, store.data.dailyGoal)}/${store.data.dailyGoal}", color = P.inkFaint, fontSize = 11.sp, modifier = Modifier.padding(top = 4.dp))
+                        }
                     }
-                    Spacer(Modifier.width(16.dp))
-                    Column(Modifier.weight(1f)) {
-                        Text("Exam readiness", color = P.ink, fontWeight = FontWeight.Bold, fontSize = 17.sp)
-                        Text("${store.answeredCount(cert)} of ${cert.questions.size} questions answered", color = P.inkSoft, fontSize = 13.sp)
-                        Spacer(Modifier.height(8.dp))
-                        ProgressBar(store.todayCount / store.data.dailyGoal.coerceAtLeast(1).toFloat(), Good, height = 6.dp)
-                        Text("Daily goal: ${store.todayCount}/${store.data.dailyGoal}", color = P.inkFaint, fontSize = 11.sp, modifier = Modifier.padding(top = 4.dp))
+                    Spacer(Modifier.height(14.dp))
+                    Row(
+                        Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background(P.ink.copy(alpha = 0.05f)).padding(vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        HeroStat("${(store.accuracy(cert) * 100).toInt()}%", "Accuracy", Icons.Filled.GpsFixed, Modifier.weight(1f))
+                        HeroStat("${store.todayCount}", "Today", Icons.Filled.Bolt, Modifier.weight(1f))
+                        HeroStat("${store.streak}", "Day streak", Icons.Filled.LocalFireDepartment, Modifier.weight(1f))
                     }
+                    Spacer(Modifier.height(14.dp))
+                    PrimaryButton("Continue Studying") { startQuiz(store, nav, QuizMode.Quick10, cert) }
                 }
-                Spacer(Modifier.height(14.dp))
-                PrimaryButton("Continue Studying") { startQuiz(store, nav, QuizMode.Quick10, cert) }
             }
+            Box(
+                Modifier.matchParentSize().clip(RoundedCornerShape(20.dp))
+                    .background(Brush.linearGradient(listOf(cert.color.copy(alpha = 0.16f), Color.Transparent), end = Offset(700f, 500f)))
+            )
         }
 
         if (store.subscriptionsEnabled && !store.hasPremium) {
@@ -245,25 +273,73 @@ fun StudyTab(store: StudyStore, nav: Nav) {
         Spacer(Modifier.height(18.dp))
         SectionTitle("Quiz Modes")
         val qodDone = store.questionOfDayDone(cert)
-        val modes = listOf(QuizMode.QuestionOfDay, QuizMode.Pop, QuizMode.Quick10, QuizMode.Timed, QuizMode.Weakest, QuizMode.Missed, QuizMode.Flagged)
+        val locked = { m: QuizMode -> store.isLocked(m) }
+        Card(Modifier.fillMaxWidth(), padding = 14.dp, onClick = { startQuiz(store, nav, QuizMode.QuestionOfDay, cert) }) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                IconTile(modeIcon(QuizMode.QuestionOfDay), QuizMode.QuestionOfDay.tint)
+                Spacer(Modifier.width(12.dp))
+                Column(Modifier.weight(1f)) {
+                    Text(QuizMode.QuestionOfDay.title, color = P.ink, fontWeight = FontWeight.Bold)
+                    Text(if (qodDone) "Done for today ✓" else QuizMode.QuestionOfDay.subtitle, color = P.inkSoft, fontSize = 13.sp)
+                }
+                if (qodDone) Icon(Icons.Filled.CheckCircle, null, tint = Good)
+                else Box(Modifier.size(9.dp).clip(CircleShape).background(Warn))
+            }
+        }
+        Spacer(Modifier.height(10.dp))
+        val p = store.progress(cert)
+        val missed = p.answers.values.count { !it.correct }
+        val grid = listOf(QuizMode.Pop, QuizMode.Quick10, QuizMode.Timed, QuizMode.Weakest, QuizMode.Missed, QuizMode.Flagged)
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            modes.forEach { m ->
-                val locked = store.isLocked(m)
-                Card(Modifier.fillMaxWidth(), padding = 14.dp, onClick = { startQuiz(store, nav, m, cert) }) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        IconTile(modeIcon(m), m.tint)
-                        Spacer(Modifier.width(12.dp))
-                        Column(Modifier.weight(1f)) {
-                            Text(m.title, color = P.ink, fontWeight = FontWeight.Bold)
-                            Text(if (m == QuizMode.QuestionOfDay && qodDone) "Done for today ✓" else m.subtitle, color = P.inkSoft, fontSize = 13.sp)
+            grid.chunked(2).forEach { pair ->
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    pair.forEach { m ->
+                        val badge = when (m) {
+                            QuizMode.Missed -> missed.takeIf { it > 0 }?.toString()
+                            QuizMode.Flagged -> p.flagged.size.takeIf { it > 0 }?.toString()
+                            else -> null
                         }
-                        Icon(if (locked) Icons.Filled.Lock else Icons.Filled.ChevronRight, null, tint = P.inkFaint)
+                        Card(Modifier.weight(1f).height(128.dp), padding = 14.dp, onClick = { startQuiz(store, nav, m, cert) }) {
+                            Column {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    IconTile(modeIcon(m), m.tint, size = 40.dp)
+                                    Spacer(Modifier.weight(1f))
+                                    if (locked(m)) Icon(Icons.Filled.Lock, null, tint = P.inkFaint, modifier = Modifier.size(16.dp))
+                                    else if (badge != null) Text(
+                                        badge, color = Color.White, fontSize = 11.sp, fontWeight = FontWeight.Bold,
+                                        modifier = Modifier.clip(CircleShape).background(m.tint).padding(horizontal = 8.dp, vertical = 2.dp),
+                                    )
+                                }
+                                Spacer(Modifier.height(10.dp))
+                                Text(m.title, color = P.ink, fontWeight = FontWeight.Bold, fontSize = 15.sp, maxLines = 1)
+                                Text(m.subtitle, color = P.inkSoft, fontSize = 12.sp, maxLines = 2, lineHeight = 15.sp)
+                            }
+                        }
                     }
                 }
             }
         }
         Spacer(Modifier.height(24.dp))
     }
+}
+
+@Composable
+private fun HeroStat(value: String, label: String, icon: androidx.compose.ui.graphics.vector.ImageVector, modifier: Modifier) {
+    Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(icon, null, tint = P.inkSoft, modifier = Modifier.size(14.dp))
+            Spacer(Modifier.width(4.dp))
+            Text(value, color = P.ink, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+        }
+        Text(label, color = P.inkSoft, fontSize = 11.sp)
+    }
+}
+
+fun readinessLevel(r: Double): Pair<String, Color> = when {
+    r < 0.25 -> "Getting started" to Color(0xFF9A9AA5)
+    r < 0.55 -> "Building up" to Warn
+    r < 0.75 -> "On track" to Brand
+    else -> "Exam ready" to Good
 }
 
 @Composable

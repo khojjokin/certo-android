@@ -13,6 +13,7 @@ import com.qortn.certo.auth.AuthStore
 import com.qortn.certo.billing.Billing
 import com.qortn.certo.data.StudyStore
 import com.qortn.certo.net.CertoApi
+import io.sentry.android.core.SentryAndroid
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -34,6 +35,12 @@ class CertoApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        SentryAndroid.init(this) { o ->
+            o.dsn = "https://31493994d54b76c4f8af12f7024127bb@o4512218382467072.ingest.de.sentry.io/4512299365040208"
+            o.tracesSampleRate = 0.2
+            o.isSendDefaultPii = false
+            o.environment = if (BuildConfig.DEBUG) "debug" else "production"
+        }
         auth = AuthStore(this)
         store = StudyStore(this)
         billing = Billing(this)
