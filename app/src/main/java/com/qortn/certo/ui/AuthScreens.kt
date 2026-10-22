@@ -392,20 +392,30 @@ fun Field(
 }
 
 
-/** The password rules as small ticks under the field. Shows which rules are met, never the password. */
-@OptIn(ExperimentalLayoutApi::class)
+/** Four bars that fill and change colour as the password gets stronger. Never shows the password. */
 @Composable
 private fun PasswordRules(password: String) {
-    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.fillMaxWidth()) {
-        PasswordPolicy.rules(password).forEach { r ->
-            val tint = if (r.met) Brand else P.inkFaint
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.clip(RoundedCornerShape(50)).background(tint.copy(alpha = 0.12f)).padding(horizontal = 8.dp, vertical = 4.dp),
-            ) {
-                Icon(if (r.met) Icons.Filled.CheckCircle else Icons.Filled.RadioButtonUnchecked, null, tint = tint, modifier = Modifier.size(12.dp))
-                Spacer(Modifier.size(4.dp))
-                Text(r.label, color = tint, fontSize = 11.sp, fontWeight = FontWeight.SemiBold)
+    val rules = PasswordPolicy.rules(password)
+    val n = rules.count { it.met }
+    val level = if (password.isEmpty()) 0 else when { n <= 2 -> 1; n == 3 -> 2; n == 4 -> 3; else -> 4 }
+    val color = when (level) {
+        1 -> Color(0xFFEF4444); 2 -> Color(0xFFF97316); 3 -> Color(0xFFEAB308); 4 -> Color(0xFF22C55E); else -> P.inkFaint
+    }
+    val label = listOf("", "Weak", "Fair", "Good", "Strong")[level]
+    val hint = if (level in 1..3) when (rules.indexOfFirst { !it.met }) {
+        0 -> "use at least 8 characters"; 1 -> "add a capital letter"; 2 -> "add a lowercase letter"; 3 -> "add a number"; else -> "add a symbol"
+    } else null
+    Column(Modifier.fillMaxWidth().padding(horizontal = 4.dp)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.fillMaxWidth()) {
+            repeat(4) { i ->
+                Box(Modifier.weight(1f).height(5.dp).clip(RoundedCornerShape(50)).background(if (i < level) color else P.inkFaint.copy(alpha = 0.25f)))
+            }
+        }
+        if (level > 0) {
+            Spacer(Modifier.height(6.dp))
+            Row {
+                Text(label, color = color, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                if (hint != null) Text("  · $hint", color = P.inkSoft, fontSize = 12.sp)
             }
         }
     }
