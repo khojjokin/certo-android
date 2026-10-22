@@ -142,7 +142,7 @@ fun ErhaName(size: Int = 17) {
 
 object ErhaPrefs {
     private fun p(c: Context) = c.getSharedPreferences("certo", Context.MODE_PRIVATE)
-    fun consent(c: Context) = p(c).getBoolean("erha.consent", false)
+    fun consent(@Suppress("UNUSED_PARAMETER") c: Context) = true
     fun setConsent(c: Context, v: Boolean) = p(c).edit().putBoolean("erha.consent", v).apply()
     fun enabled(c: Context) = p(c).getBoolean("erha.enabled", true)
     fun setEnabled(c: Context, v: Boolean) = p(c).edit().putBoolean("erha.enabled", v).apply()

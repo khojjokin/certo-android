@@ -176,10 +176,6 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                 Switch(erhaOn, { on -> erhaOn = on; ErhaPrefs.setEnabled(context, on) }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
             })
             if (erhaOn) RowItem(Icons.Filled.AutoAwesome, "Chat with erha") { erhaChat = true }
-            if (ErhaPrefs.consent(context)) RowItem(Icons.Filled.Block, "Stop sharing questions with AI", tint = Bad) {
-                ErhaPrefs.setConsent(context, false)
-                erhaOn = ErhaPrefs.enabled(context)
-            }
         }
 
         Group("Appearance") {
@@ -368,6 +364,9 @@ private val privacy = listOf(
     "Your account" to "When you create an account we store your name, email address and, if you use Google or Apple sign-in, the identifier those services give us. Sign-in is provided by Clerk, which processes this data for us.",
     "Your study progress" to "Your answers, flagged questions, streaks, exam dates and settings are saved to your account so you can pick up on another device. They're stored in our Supabase database in London (EU/UK).",
     "Subscriptions" to "Certo Premium is bought through Google Play on Android (and Apple on iPhone). Google handles payment; we never see your card details. We only receive confirmation that your subscription is active.",
+    "erha, the study helper" to "When you ask erha for a hint or send it a question, the practice question and your message are processed by our AI service provider to write the reply. It doesn't receive your name, email or account details, and it doesn't use your messages to train its models. We keep erha conversations for up to 30 days to prevent misuse, then delete them.",
+    "Support chat" to "Messages you send in live chat are stored with your account so our team can reply. Delete account removes them.",
+    "Crash reports" to "If the app crashes or freezes, a diagnostic report (device model, Android version, and what the app was doing) is sent to our crash-reporting provider, Sentry, so we can fix it.",
     "Notifications" to "Study reminders are scheduled on your device. They're optional and you can turn them off in Settings at any time.",
     "What we don't do" to "No ads. No selling or renting your data. No third-party tracking or advertising analytics.",
     "Keeping and deleting data" to "We keep your data while your account is open. Delete account in Settings removes your account and your study progress from our systems. Copies in backups are removed within 30 days. You can also ask us to delete your account at support@qortyn.com.",
