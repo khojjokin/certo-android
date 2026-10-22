@@ -55,8 +55,53 @@ object CertoApi {
             maintenance = str("maintenance"),
             announcement = str("announcement"),
             minVersion = str("minVersion"),
+            supportUnread = j.optInt("supportUnread", 0),
         )
     }
+
+    // erha (AI study assistant)
+
+    data class ErhaReply(val text: String, val offTopic: Boolean, val remaining: Int?, val id: Int?)
+
+    /** Asks erha. Before the learner answers, the correct answer is never sent, so erha can't give it away. */
+    suspend fun erha(token: String, mode: String, cert: String?, question: com.qortn.certo.data.Question?, picked: Int? = null,
+                     revealAnswer: Boolean = true, messages: List<Pair<String, String>> = emptyList()): ErhaReply {
+        val body = JSONObject().put("mode", mode).put("consent", true)
+        cert?.let { body.put("cert", it) }
+        val msgs = org.json.JSONArray()
+        messages.forEach { (role, content) -> msgs.put(JSONObject().put("role", role).put("content", content)) }
+        body.put("messages", msgs)
+        question?.let { q ->
+            val qd = JSONObject().put("prompt", q.prompt).put("choices", org.json.JSONArray(q.choices))
+            if (revealAnswer || mode == "hint") { qd.put("answer", q.answer); qd.put("explanation", q.explanation) }
+            picked?.let { qd.put("picked", it) }
+            body.put("question", qd)
+        }
+        val j = call("erha", token, body)
+        return ErhaReply(j.optString("reply"), j.optBoolean("offTopic"), if (j.has("remaining")) j.optInt("remaining") else null, if (j.isNull("id")) null else j.optInt("id"))
+    }
+
+    suspend fun rateErha(token: String, id: Int, helpful: Boolean) { runCatching { call("rateErha", token, JSONObject().put("id", id).put("rating", if (helpful) 1 else -1)) } }
+
+    suspend fun reportQuestion(token: String, cert: String, q: com.qortn.certo.data.Question, reason: String, note: String) {
+        call("reportQuestion", token, JSONObject().put("cert", cert).put("questionId", q.id).put("prompt", q.prompt).put("reason", reason).put("note", note))
+    }
+
+    // Live chat with the Certo team
+
+    data class SupportMessage(val id: Int, val at: String, val fromTeam: Boolean, val body: String)
+
+    suspend fun supportMessages(token: String, after: Int?): List<SupportMessage> {
+        val body = JSONObject()
+        after?.let { body.put("after", it) }
+        val arr = call("support.get", token, body).optJSONArray("messages") ?: return emptyList()
+        return (0 until arr.length()).mapNotNull { i ->
+            val m = arr.optJSONObject(i) ?: return@mapNotNull null
+            SupportMessage(m.optInt("id"), m.optString("at"), m.optBoolean("fromTeam"), m.optString("body"))
+        }
+    }
+
+    suspend fun sendSupport(token: String, text: String) { call("support.send", token, JSONObject().put("body", text)) }
 
     suspend fun acknowledgeNotice(token: String, id: Int) { runCatching { call("ackNotice", token, JSONObject().put("id", id)) } }
 
@@ -70,9 +115,12 @@ object CertoApi {
     /** Strength score only (0-4). The password itself never leaves the device. */
     suspend fun reportPasswordStrength(token: String, score: Int) { call("passwordStrength", token, JSONObject().put("score", score)) }
 
-    suspend fun fetchProgress(token: String): JSONObject? {
+    /** The account's saved progress and when it was saved (epoch ms). */
+    suspend fun fetchProgress(token: String): Pair<JSONObject, Long?>? {
         val j = call("getProgress", token)
-        return if (j.has("data") && !j.isNull("data")) j.optJSONObject("data") else null
+        if (!j.has("data") || j.isNull("data")) return null
+        val at = if (j.isNull("updatedAt")) null else runCatching { java.time.OffsetDateTime.parse(j.optString("updatedAt")).toInstant().toEpochMilli() }.getOrNull()
+        return j.optJSONObject("data")?.let { it to at }
     }
 
     suspend fun saveProgress(token: String, data: JSONObject) {
@@ -105,6 +153,7 @@ data class MemberState(
     val maintenance: String? = null,
     val announcement: String? = null,
     val minVersion: String? = null,
+    val supportUnread: Int = 0,
 )
 
 data class MemberNotice(val id: Int, val isWarning: Boolean, val title: String, val body: String)

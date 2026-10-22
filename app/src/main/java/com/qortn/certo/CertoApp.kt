@@ -56,29 +56,50 @@ class CertoApp : Application() {
         scope.launch { CertoApi.subscriptionsEnabled()?.let { store.applySubscriptionsEnabled(it) } }
     }
 
-    /** After sign-in: download the account's progress, or upload this device's if the account has none. */
+    /** The account whose copy has been downloaded on this device; uploads are only allowed for it. */
+    private var readyFor: String? = null
+
+    /** After sign-in and on launch: the newer copy wins, so progress is never overwritten by an older or empty copy. */
     suspend fun pull() {
+        val user = auth.user ?: return
         val token = auth.token() ?: return
         runCatching {
             val remote = CertoApi.fetchProgress(token)
+            if (auth.user?.id != user.id) return
             if (remote != null) {
-                applyingRemote = true
-                store.applyRemote(remote)
-                applyingRemote = false
+                val dirty = store.unsyncedSince
+                if (dirty != null && dirty > (remote.second ?: 0L)) {
+                    CertoApi.saveProgress(token, store.encoded()); store.unsyncedSince = null
+                } else {
+                    applyingRemote = true
+                    store.applyRemote(remote.first)
+                    applyingRemote = false
+                }
             } else {
-                CertoApi.saveProgress(token, store.encoded())
+                CertoApi.saveProgress(token, store.encoded()); store.unsyncedSince = null
             }
+            readyFor = user.id
         }
         applyingRemote = false
     }
 
+    /** Upload straight away (when the app goes to the background). */
+    fun flush() {
+        if (auth.user?.id == null || readyFor != auth.user?.id || store.unsyncedSince == null) return
+        pushJob?.cancel()
+        scope.launch {
+            val token = auth.token() ?: return@launch
+            runCatching { CertoApi.saveProgress(token, store.encoded()); store.unsyncedSince = null }
+        }
+    }
+
     private fun schedulePush(json: JSONObject) {
-        if (applyingRemote || auth.user == null) return
+        if (applyingRemote || auth.user == null || readyFor != auth.user?.id) return
         pushJob?.cancel()
         pushJob = scope.launch {
             delay(2000)
             val token = auth.token() ?: return@launch
-            runCatching { CertoApi.saveProgress(token, json) }
+            runCatching { CertoApi.saveProgress(token, json); store.unsyncedSince = null }
         }
     }
 

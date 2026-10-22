@@ -38,5 +38,6 @@
         </activity>
 
         <receiver android:name=".ReminderReceiver" android:exported="false" />
+        <receiver android:name=".NudgeReceiver" android:exported="false" />
     </application>
 </manifest>

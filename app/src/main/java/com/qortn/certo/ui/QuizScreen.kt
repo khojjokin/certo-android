@@ -47,6 +47,8 @@ import androidx.compose.ui.unit.sp
 import com.qortn.certo.data.QuizMode
 import com.qortn.certo.data.StudyStore
 import kotlinx.coroutines.delay
+import com.qortn.certo.net.CertoApi
+import kotlinx.coroutines.launch
 
 @Composable
 fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywall: () -> Unit) {
@@ -62,6 +64,30 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
     var secondsLeft by remember { mutableIntStateOf(totalLimit ?: mode.perQuestionSeconds ?: 0) }
 
     val q = questions.getOrNull(index)
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val app = context.applicationContext as com.qortn.certo.CertoApp
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
+    val erhaOn = remember { ErhaPrefs.enabled(context) }
+    val hints = remember { mutableStateMapOf<String, String>() }
+    var hintLoading by remember { mutableStateOf(false) }
+    var erhaChat by remember { mutableStateOf<Pair<com.qortn.certo.data.Question, Boolean>?>(null) }
+    var reporting by remember { mutableStateOf<com.qortn.certo.data.Question?>(null) }
+    var needConsent by remember { mutableStateOf(false) }
+    // Hints are for practice; never in the exam simulator or timed pop quiz.
+    val hintsAllowed = erhaOn && mode.instantFeedback && mode.perQuestionSeconds == null && totalLimit == null
+
+    fun askHint() {
+        val cur = q ?: return
+        if (hints[cur.id] != null || hintLoading) return
+        if (!ErhaPrefs.consent(context)) { needConsent = true; return }
+        scope.launch {
+            hintLoading = true
+            val t = app.auth.token()
+            hints[cur.id] = if (t == null) "Please sign in to use erha." else
+                runCatching { CertoApi.erha(t, "hint", cert.id, cur).text }.getOrElse { it.message ?: "erha couldn't answer just now." }
+            hintLoading = false
+        }
+    }
 
     fun next() {
         if (index + 1 >= questions.size) {
@@ -164,6 +190,22 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
                     Text(choice, color = P.ink, fontSize = 16.sp)
                 }
             }
+            val hint = hints[q.id]
+            if (hint != null) ErhaHintCard(hint, false) { erhaChat = q to (chosen != null) }
+            else if (hintLoading) ErhaHintCard(null, true) {}
+            else if (hintsAllowed && chosen == null) {
+                Row(
+                    Modifier.align(Alignment.CenterHorizontally).clip(CircleShape).background(Brand.copy(alpha = 0.1f))
+                        .border(1.dp, Brand.copy(alpha = 0.25f), CircleShape).clickable { askHint() }.padding(horizontal = 14.dp, vertical = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    ErhaAvatar(24.dp, animated = false)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Stuck? Get a hint from ", color = P.ink, fontSize = 14.sp)
+                    ErhaName(15)
+                }
+            }
+            if (hint != null || hintLoading || (hintsAllowed && chosen == null)) Spacer(Modifier.height(12.dp))
             if (mode.instantFeedback && chosen != null) {
                 val right = chosen == q.answer
                 Card(Modifier.fillMaxWidth()) {
@@ -171,6 +213,16 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
                         Text(if (chosen == -1) "Time's up" else if (right) "Correct" else "Not quite", color = if (right) Good else Bad, fontWeight = FontWeight.Bold)
                         Spacer(Modifier.height(4.dp))
                         Text(q.explanation, color = P.inkSoft, fontSize = 14.sp)
+                        Spacer(Modifier.height(10.dp))
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            if (erhaOn) Row(Modifier.clickable { erhaChat = q to true }, verticalAlignment = Alignment.CenterVertically) {
+                                ErhaAvatar(20.dp, animated = false)
+                                Spacer(Modifier.width(6.dp))
+                                Text("Ask erha why", color = Brand, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                            }
+                            Spacer(Modifier.weight(1f))
+                            Text("Report", color = P.inkSoft, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.clickable { reporting = q })
+                        }
                     }
                 }
             }
@@ -181,6 +233,17 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
             enabled = chosen != null || !mode.instantFeedback,
         ) { next() }
         Spacer(Modifier.height(12.dp))
+    }
+
+    erhaChat?.let { (question, answered) ->
+        ErhaChatDialog(cert, question, explain = answered, picked = chosen?.takeIf { it >= 0 }) { erhaChat = null }
+    }
+    reporting?.let { ReportQuestionDialog(cert, it) { reporting = null } }
+    if (needConsent) {
+        androidx.compose.ui.window.Dialog(onDismissRequest = { needConsent = false },
+            properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false)) {
+            ErhaConsent(onAllow = { ErhaPrefs.setConsent(context, true); needConsent = false; askHint() }, onCancel = { needConsent = false })
+        }
     }
 }
 

@@ -41,15 +41,24 @@ class StudyStore(private val context: Context) {
     fun update(transform: (AppData) -> AppData) {
         data = transform(data)
         val json = data.toJson()
-        runCatching { prefs.edit().putString(storageKey, json.toString()).apply() }
+        runCatching {
+            val e = prefs.edit().putString(storageKey, json.toString())
+            if (!prefs.contains("$storageKey.dirtyAt")) e.putLong("$storageKey.dirtyAt", System.currentTimeMillis())
+            e.apply()
+        }
         onSave?.invoke(json)
     }
+
+    /** When this device last changed progress that hasn't been uploaded yet (null = in sync). */
+    var unsyncedSince: Long?
+        get() = if (prefs.contains("$storageKey.dirtyAt")) prefs.getLong("$storageKey.dirtyAt", 0) else null
+        set(v) { runCatching { if (v == null) prefs.edit().remove("$storageKey.dirtyAt").apply() else prefs.edit().putLong("$storageKey.dirtyAt", v).apply() } }
 
     fun applyRemote(remote: JSONObject) {
         val appearance = data.appearance
         val decoded = runCatching { AppData.fromJson(remote) }.getOrNull() ?: return
         data = decoded.copy(appearance = appearance)
-        runCatching { prefs.edit().putString(storageKey, data.toJson().toString()).apply() }
+        runCatching { prefs.edit().putString(storageKey, data.toJson().toString()).remove("$storageKey.dirtyAt").apply() }
     }
 
     fun encoded(): JSONObject = data.toJson()

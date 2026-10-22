@@ -50,6 +50,10 @@ class MainActivity : ComponentActivity() {
     override fun onStop() {
         super.onStop()
         if (!isChangingConfigurations) (application as CertoApp).leftAt = System.currentTimeMillis()
+        if (!isChangingConfigurations) {
+            (application as CertoApp).flush()
+            Nudges.scheduleAll(this)
+        }
     }
 
     override fun onNewIntent(intent: Intent) {

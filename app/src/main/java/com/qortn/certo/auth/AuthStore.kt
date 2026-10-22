@@ -58,7 +58,8 @@ class AuthStore(context: Context) {
     suspend fun refreshState() {
         val u = user ?: return
         val t = token() ?: return
-        val s = runCatching { CertoApi.registerMember(t, u.provider) }.getOrNull() ?: return
+        var s = runCatching { CertoApi.registerMember(t, u.provider) }.getOrNull() ?: return
+        if (s.announcement != null && s.announcement == prefs.getString("dismissedAnnouncement", null)) s = s.copy(announcement = null)
         state = s
         isAdmin = s.isAdmin
     }
@@ -68,7 +69,14 @@ class AuthStore(context: Context) {
         token()?.let { CertoApi.acknowledgeNotice(it, notice.id) }
     }
 
-    fun dismissAnnouncement() { state = state.copy(announcement = null) }
+    fun dismissAnnouncement() {
+        state.announcement?.let { prefs.edit().putString("dismissedAnnouncement", it).apply() }
+        state = state.copy(announcement = null)
+    }
+
+    fun clearSupportUnread() { state = state.copy(supportUnread = 0) }
+
+    private val prefs = context.getSharedPreferences("certo", Context.MODE_PRIVATE)
 
     suspend fun token(): String? = runCatching { clerk.token() }.getOrNull()
 

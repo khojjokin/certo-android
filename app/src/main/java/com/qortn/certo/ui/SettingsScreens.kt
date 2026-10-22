@@ -32,6 +32,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -81,6 +82,10 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
     var confirmReset by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
     var deleting by remember { mutableStateOf(false) }
+    var erhaOn by remember { mutableStateOf(ErhaPrefs.enabled(context)) }
+    var erhaChat by remember { mutableStateOf(false) }
+    var liveChat by remember { mutableStateOf(false) }
+    val nudges = remember { mutableStateMapOf<String, Boolean>().apply { listOf("streak", "facts", "comeback").forEach { put(it, com.qortn.certo.Nudges.enabled(context, it)) } } }
     val user = auth.user ?: return
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp)) {
@@ -148,6 +153,35 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
             }
         }
 
+        Group("Notifications") {
+            listOf(
+                Triple("streak", Icons.Filled.LocalFireDepartment, "Streak alerts"),
+                Triple("facts", Icons.Filled.Lightbulb, "Daily learning fact"),
+                Triple("comeback", Icons.Filled.Schedule, "Come-back reminders"),
+            ).forEach { (key, icon, label) ->
+                RowItem(icon, label, trailing = {
+                    Switch(nudges[key] == true, { on ->
+                        nudges[key] = on
+                        if (on && android.os.Build.VERSION.SDK_INT >= 33) {
+                            (context as? android.app.Activity)?.requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 8)
+                        }
+                        com.qortn.certo.Nudges.setEnabled(context, key, on)
+                    }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
+                })
+            }
+        }
+
+        Group("AI study helper") {
+            RowItem(Icons.Filled.SmartToy, "erha hints & answers", trailing = {
+                Switch(erhaOn, { on -> erhaOn = on; ErhaPrefs.setEnabled(context, on) }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
+            })
+            if (erhaOn) RowItem(Icons.Filled.AutoAwesome, "Chat with erha") { erhaChat = true }
+            if (ErhaPrefs.consent(context)) RowItem(Icons.Filled.Block, "Stop sharing questions with AI", tint = Bad) {
+                ErhaPrefs.setConsent(context, false)
+                erhaOn = ErhaPrefs.enabled(context)
+            }
+        }
+
         Group("Appearance") {
             Row(Modifier.fillMaxWidth().padding(8.dp).clip(CircleShape).background(P.cardRaised).padding(3.dp)) {
                 Appearance.entries.forEach { a ->
@@ -167,6 +201,10 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
         Group("Support & Legal") {
             RowItem(Icons.Filled.PrivacyTip, "Privacy Policy") { nav.push(Page.Legal(false)) }
             RowItem(Icons.Filled.Description, "Terms of Use") { nav.push(Page.Legal(true)) }
+            RowItem(Icons.Filled.Forum, "Live chat with the Certo team", trailing = {
+                if (auth.state.supportUnread > 0) Text("${auth.state.supportUnread}", color = Color.White, fontSize = 12.sp, fontWeight = FontWeight.Bold,
+                    modifier = Modifier.clip(CircleShape).background(Bad).padding(horizontal = 7.dp, vertical = 2.dp))
+            }) { liveChat = true }
             RowItem(Icons.Filled.Email, "Contact support") {
                 runCatching { context.startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:support@qortyn.com?subject=Certo%20support"))) }
             }
@@ -188,11 +226,14 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
 
         Spacer(Modifier.height(18.dp))
         Group {
-            RowItem(Icons.Filled.Info, "Version", value = "1.2")
+            RowItem(Icons.Filled.Info, "Version", value = com.qortn.certo.BuildConfig.VERSION_NAME.split(".").take(2).joinToString("."))
             RowItem(Icons.Filled.AutoAwesome, "Made by", value = "Qortn")
         }
         Spacer(Modifier.height(30.dp))
     }
+
+    if (erhaChat) ErhaChatDialog(store.currentCert) { erhaChat = false }
+    if (liveChat) SupportChatDialog { liveChat = false }
 
     if (confirmDelete) {
         AlertDialog(
@@ -337,7 +378,7 @@ private val privacy = listOf(
 private val terms = listOf(
     "Using Certo" to "Qortn gives you a personal, non-transferable licence to use Certo on devices you own or control, under these terms and the Google Play Terms of Service.",
     "Your account" to "Keep your sign-in details safe. You're responsible for activity on your account. You can delete it at any time in Settings.",
-    "Certo Premium" to "Certo Premium is an auto-renewing subscription: £4.99 per month or £59.99 per year (or the local price shown in Google Play). Payment is charged to your Google account when you confirm. It renews automatically until you cancel. Manage or cancel in Google Play › Payments & subscriptions.",
+    "Certo Premium" to "Certo Premium is an auto-renewing subscription: a monthly or yearly plan at the price shown in Google Play for your country. Payment is charged to your Google account when you confirm. It renews automatically until you cancel. Manage or cancel in Google Play › Payments & subscriptions.",
     "Study content" to "Certo is an independent study tool. It isn't affiliated with or endorsed by CompTIA, Cisco, Microsoft, Amazon Web Services, PeopleCert/AXELOS, ISC2 or any certification body, and all trademarks belong to their owners. Questions are written by us for practice; we can't guarantee you'll pass an exam.",
     "Fair use" to "Don't copy, resell or redistribute Certo's question banks, try to break or reverse-engineer the app, or use it to harm others.",
     "Liability" to "Certo is provided as is. To the extent the law allows, Qortn isn't liable for indirect losses, such as exam fees or lost opportunities. Nothing here limits rights you have under UK consumer law.",

@@ -270,6 +270,14 @@ fun StudyTab(store: StudyStore, nav: Nav) {
             }
         }
 
+        val erhaContext = androidx.compose.ui.platform.LocalContext.current
+        var erhaOpen by remember { mutableStateOf(false) }
+        if (ErhaPrefs.enabled(erhaContext)) {
+            Spacer(Modifier.height(12.dp))
+            ErhaPromoCard(cert) { erhaOpen = true }
+        }
+        if (erhaOpen) ErhaChatDialog(cert) { erhaOpen = false }
+
         Spacer(Modifier.height(18.dp))
         SectionTitle("Quiz Modes")
         val qodDone = store.questionOfDayDone(cert)
