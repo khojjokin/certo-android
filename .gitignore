@@ -5,3 +5,25 @@ local.properties
 *.keystore
 .idea/
 *.iml
+
+# Keys and secrets — never commit
+*.jks
+*.keystore
+*.p8
+*.p12
+*.pem
+*.mobileprovision
+*.cer
+*.key
+AuthKey_*.p8
+.env
+.env.*
+*password*.txt
+*secret*
+keystore.properties
+signing.properties
+google-services.json
+GoogleService-Info.plist
+supabase/.temp/
+Certo-Android-Keys/
+certo-keys/
