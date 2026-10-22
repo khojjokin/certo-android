@@ -42,6 +42,9 @@ object CertoApi {
 
     suspend fun deleteMember(token: String) { call("deleteAccount", token) }
 
+    /** Strength score only (0-4). The password itself never leaves the device. */
+    suspend fun reportPasswordStrength(token: String, score: Int) { call("passwordStrength", token, JSONObject().put("score", score)) }
+
     suspend fun fetchProgress(token: String): JSONObject? {
         val j = call("getProgress", token)
         return if (j.has("data") && !j.isNull("data")) j.optJSONObject("data") else null

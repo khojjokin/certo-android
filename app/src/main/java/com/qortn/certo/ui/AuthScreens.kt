@@ -31,8 +31,6 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -45,6 +43,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.RadioButtonUnchecked
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import com.qortn.certo.data.PasswordPolicy
+import com.qortn.certo.net.CertoApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -137,9 +141,22 @@ private fun AuthScreen(app: CertoApp, activity: Activity, signUp: Boolean, onClo
 
     val id = email.trim().lowercase()
     val emailValid = id.contains("@") && id.substringAfter("@").contains(".")
-    val canSubmit = if (signUp) emailValid && password.length >= 8 && first.isNotBlank() else id.length >= 3 && password.isNotEmpty()
+    val canSubmit = if (signUp) emailValid && PasswordPolicy.isValid(password) && first.isNotBlank() else id.length >= 3 && password.isNotEmpty()
 
-    fun finish() { scope.launch { runCatching { clerk.load() }; app.auth.refresh() } }
+    fun finish() {
+        // Only a 0-4 strength score leaves the device, never the password itself.
+        val score = when {
+            newPassword.isNotEmpty() -> PasswordPolicy.score(newPassword)
+            signUp && password.isNotEmpty() -> PasswordPolicy.score(password)
+            else -> null
+        }
+        password = ""; newPassword = ""
+        scope.launch {
+            runCatching { clerk.load() }
+            app.auth.refresh()
+            if (score != null) app.auth.token()?.let { t -> runCatching { CertoApi.reportPasswordStrength(t, score) } }
+        }
+    }
 
     fun run(work: suspend () -> Unit) {
         if (busy) return
@@ -210,7 +227,8 @@ private fun AuthScreen(app: CertoApp, activity: Activity, signUp: Boolean, onClo
                 }
                 Field(email, { email = it }, if (signUp) "Email address" else "Email or username", Icons.Filled.Email, keyboard = KeyboardType.Email)
                 Spacer(Modifier.height(10.dp))
-                Field(password, { password = it }, if (signUp) "Password (8+ characters)" else "Password", Icons.Filled.Lock, secure = true)
+                Field(password, { password = it }, "Password", Icons.Filled.Lock, secure = true)
+                if (signUp) { Spacer(Modifier.height(8.dp)); PasswordRules(password) }
                 if (!signUp) {
                     Text("Forgot password?", color = Brand, fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
                         modifier = Modifier.align(Alignment.End).padding(top = 10.dp).clickable {
@@ -298,11 +316,12 @@ private fun AuthScreen(app: CertoApp, activity: Activity, signUp: Boolean, onClo
                 })
             }
             Step.ResetPassword -> {
-                Title("Choose a new password", "Use at least 8 characters.")
+                Title("Choose a new password", "Mix upper and lower case, a number and a symbol.")
                 Field(newPassword, { newPassword = it }, "New password", Icons.Filled.Lock, secure = true)
+                Spacer(Modifier.height(8.dp)); PasswordRules(newPassword)
                 Spacer(Modifier.height(16.dp))
                 error?.let { ErrorBanner(it); Spacer(Modifier.height(12.dp)) }
-                PrimaryButton("Save and sign in", enabled = newPassword.length >= 8, busy = busy) {
+                PrimaryButton("Save and sign in", enabled = PasswordPolicy.isValid(newPassword), busy = busy) {
                     val aid = attemptId ?: return@PrimaryButton
                     run {
                         val r = clerk.resetPassword(aid, newPassword)
@@ -355,19 +374,14 @@ fun Field(
     secure: Boolean = false,
     keyboard: KeyboardType = KeyboardType.Text,
 ) {
-    var reveal by remember { mutableStateOf(false) }
     TextField(
         value = value,
         onValueChange = onChange,
         modifier = modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).border(1.dp, P.stroke, RoundedCornerShape(16.dp)),
         placeholder = { Text(placeholder, color = P.inkFaint) },
         leadingIcon = icon?.let { { Icon(it, null, tint = P.inkSoft) } },
-        trailingIcon = if (secure) { {
-            Icon(if (reveal) Icons.Filled.VisibilityOff else Icons.Filled.Visibility, null, tint = P.inkSoft,
-                modifier = Modifier.clickable { reveal = !reveal })
-        } } else null,
         singleLine = true,
-        visualTransformation = if (secure && !reveal) PasswordVisualTransformation() else VisualTransformation.None,
+        visualTransformation = if (secure) PasswordVisualTransformation() else VisualTransformation.None,
         keyboardOptions = KeyboardOptions(keyboardType = if (secure) KeyboardType.Password else keyboard),
         colors = TextFieldDefaults.colors(
             focusedContainerColor = P.card, unfocusedContainerColor = P.card,
@@ -375,4 +389,24 @@ fun Field(
             focusedTextColor = P.ink, unfocusedTextColor = P.ink, cursorColor = Brand,
         ),
     )
+}
+
+
+/** The password rules as small ticks under the field. Shows which rules are met, never the password. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun PasswordRules(password: String) {
+    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.fillMaxWidth()) {
+        PasswordPolicy.rules(password).forEach { r ->
+            val tint = if (r.met) Brand else P.inkFaint
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.clip(RoundedCornerShape(50)).background(tint.copy(alpha = 0.12f)).padding(horizontal = 8.dp, vertical = 4.dp),
+            ) {
+                Icon(if (r.met) Icons.Filled.CheckCircle else Icons.Filled.RadioButtonUnchecked, null, tint = tint, modifier = Modifier.size(12.dp))
+                Spacer(Modifier.size(4.dp))
+                Text(r.label, color = tint, fontSize = 11.sp, fontWeight = FontWeight.SemiBold)
+            }
+        }
+    }
 }

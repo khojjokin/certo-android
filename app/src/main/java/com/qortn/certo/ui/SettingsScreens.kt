@@ -171,7 +171,10 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                 runCatching { context.startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:support@qortyn.com?subject=Certo%20support"))) }
             }
             RowItem(Icons.Filled.Star, "Rate Certo") {
-                runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.qortn.certo"))) }
+                val market = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.qortn.certo&showAllReviews=true")).setPackage("com.android.vending")
+                runCatching { context.startActivity(market) }.onFailure {
+                    runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.qortn.certo"))) }
+                }
             }
         }
 

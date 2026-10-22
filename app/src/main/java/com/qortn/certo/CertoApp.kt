@@ -40,6 +40,9 @@ class CertoApp : Application() {
             o.tracesSampleRate = 0.2
             o.isSendDefaultPii = false
             o.environment = if (BuildConfig.DEBUG) "debug" else "production"
+            o.isAnrEnabled = true                 // app freezes ("not responding")
+            o.isAttachThreads = true
+            o.isEnableUserInteractionBreadcrumbs = true
         }
         auth = AuthStore(this)
         store = StudyStore(this)
@@ -97,6 +100,21 @@ class CertoApp : Application() {
             if (timeInMillis <= System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR, 1)
         }
         am.setInexactRepeating(AlarmManager.RTC_WAKEUP, cal.timeInMillis, AlarmManager.INTERVAL_DAY, pi)
+    }
+
+    private var memoryReported = false
+
+    /** Reports critical low memory to Sentry (once per launch) so leaks show up in the admin console. */
+    override fun onTrimMemory(level: Int) {
+        super.onTrimMemory(level)
+        @Suppress("DEPRECATION")
+        if (level >= TRIM_MEMORY_RUNNING_CRITICAL && level < TRIM_MEMORY_UI_HIDDEN && !memoryReported) {
+            memoryReported = true
+            val rt = Runtime.getRuntime()
+            val usedMb = (rt.totalMemory() - rt.freeMemory()) / 1_048_576
+            io.sentry.Sentry.captureMessage("Low memory warning", io.sentry.SentryLevel.WARNING)
+            io.sentry.Sentry.configureScope { it.setExtra("heap_used_mb", usedMb.toString()) }
+        }
     }
 
     companion object {
