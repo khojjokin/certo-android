@@ -204,7 +204,7 @@ fun StudyTab(store: StudyStore, nav: Nav) {
         Spacer(Modifier.height(18.dp))
         Text(greeting(), color = P.ink, fontSize = 32.sp, fontWeight = FontWeight.Black)
         Text(
-            if (store.todayCount > 0) "${store.todayCount} of ${store.data.dailyGoal} questions done today." else "Ready for today's study session?",
+            when { store.todayCount >= store.data.dailyGoal -> "Daily goal done: ${store.todayCount} questions today. 🎉"; store.todayCount > 0 -> "${store.todayCount} of ${store.data.dailyGoal} questions done today."; else -> "Ready for today's study session?" },
             color = P.inkSoft, fontSize = 15.sp,
         )
         Spacer(Modifier.height(16.dp))
@@ -299,7 +299,7 @@ fun StudyTab(store: StudyStore, nav: Nav) {
                             QuizMode.Flagged -> p.flagged.size.takeIf { it > 0 }?.toString()
                             else -> null
                         }
-                        Card(Modifier.weight(1f).height(128.dp), padding = 14.dp, onClick = { startQuiz(store, nav, m, cert) }) {
+                        Card(Modifier.weight(1f).height(148.dp), padding = 14.dp, onClick = { startQuiz(store, nav, m, cert) }) {
                             Column {
                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                     IconTile(modeIcon(m), m.tint, size = 40.dp)
