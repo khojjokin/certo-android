@@ -130,44 +130,21 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                 val next = listOf(5, 10, 20, 30, 50).let { l -> l[(l.indexOf(store.data.dailyGoal) + 1) % l.size] }
                 store.update { it.copy(dailyGoal = next) }
             }
-            RowItem(Icons.Filled.Notifications, "Daily reminder", trailing = {
-                Switch(store.data.remindersOn, { on ->
+            RowItem(Icons.Filled.Notifications, "Notifications", trailing = {
+                Switch(store.data.remindersOn || nudges.values.any { it }, { on ->
                     store.update { it.copy(remindersOn = on) }
+                    listOf("streak", "facts", "comeback").forEach { k -> nudges[k] = on; com.qortn.certo.Nudges.setEnabled(context, k, on) }
                     if (on && android.os.Build.VERSION.SDK_INT >= 33) {
                         (context as? android.app.Activity)?.requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 7)
                     }
                     app.applyReminder()
                 }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
             })
-            if (store.data.remindersOn) {
-                RowItem(Icons.Filled.Schedule, "Reminder time", value = "%02d:%02d".format(store.data.reminderHour, store.data.reminderMinute)) {
-                    store.update { it.copy(reminderHour = (it.reminderHour + 1) % 24) }
-                    app.applyReminder()
-                }
-            }
             RowItem(Icons.Filled.Vibration, "Haptics", trailing = {
                 Switch(store.data.haptics, { on -> store.update { it.copy(haptics = on) } }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
             })
             store.currentCert?.let { c ->
                 RowItem(Icons.Filled.RestartAlt, "Reset ${c.shortName} progress", tint = Bad) { confirmReset = true }
-            }
-        }
-
-        Group("Notifications") {
-            listOf(
-                Triple("streak", Icons.Filled.LocalFireDepartment, "Streak alerts"),
-                Triple("facts", Icons.Filled.Lightbulb, "Daily learning fact"),
-                Triple("comeback", Icons.Filled.Schedule, "Come-back reminders"),
-            ).forEach { (key, icon, label) ->
-                RowItem(icon, label, trailing = {
-                    Switch(nudges[key] == true, { on ->
-                        nudges[key] = on
-                        if (on && android.os.Build.VERSION.SDK_INT >= 33) {
-                            (context as? android.app.Activity)?.requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 8)
-                        }
-                        com.qortn.certo.Nudges.setEnabled(context, key, on)
-                    }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
-                })
             }
         }
 
