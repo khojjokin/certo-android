@@ -5592,6 +5592,656 @@
    ],
    "answer": 2,
    "explanation": "A fingerprint or palm print stays with the person, so unlike a badge it cannot simply be passed to another individual. Biometrics still have error rates and should still be logged."
+  },
+  {
+   "id": "isc2cc-426",
+   "domain": "principles",
+   "prompt": "A retailer collected customers' addresses only to ship orders, then starts using them for a marketing campaign without telling customers. Which privacy principle is MOST directly violated?",
+   "choices": [
+    "Purpose limitation",
+    "Data minimization",
+    "Non-repudiation",
+    "Availability"
+   ],
+   "answer": 0,
+   "explanation": "Purpose limitation means personal data is used only for the purposes it was collected for, unless the person agrees otherwise. Data minimization limits how much is collected."
+  },
+  {
+   "id": "isc2cc-427",
+   "domain": "principles",
+   "prompt": "A research team permanently removes all identifiers from a dataset so that individuals can never be re-identified, even by the team. Which technique is this?",
+   "choices": [
+    "Encryption",
+    "Anonymization",
+    "Pseudonymization",
+    "Tokenization"
+   ],
+   "answer": 1,
+   "explanation": "Anonymization irreversibly removes the link to individuals. Pseudonymization replaces identifiers with values that can be re-linked using separately held information."
+  },
+  {
+   "id": "isc2cc-428",
+   "domain": "principles",
+   "prompt": "Before any safeguards are put in place, an analyst rates the risk of a public web server being defaced as high. What is this level of risk called?",
+   "choices": [
+    "Residual risk",
+    "Accepted risk",
+    "Inherent risk",
+    "Risk tolerance"
+   ],
+   "answer": 2,
+   "explanation": "Inherent risk is the level of risk before controls are applied. Residual risk is what remains after controls."
+  },
+  {
+   "id": "isc2cc-429",
+   "domain": "principles",
+   "prompt": "In quantitative risk analysis, what does the exposure factor (EF) represent?",
+   "choices": [
+    "The number of times a threat occurs per year",
+    "The total yearly cost of all incidents",
+    "The dollar value of the asset",
+    "Percentage of asset value lost per incident"
+   ],
+   "answer": 3,
+   "explanation": "EF is the portion of asset value lost in a single event. Asset value multiplied by EF gives the single loss expectancy."
+  },
+  {
+   "id": "isc2cc-430",
+   "domain": "principles",
+   "prompt": "A piece of code is written specifically to take advantage of a known flaw in a web server to gain access. What is this code called?",
+   "choices": [
+    "An exploit",
+    "A safeguard",
+    "A threat actor",
+    "A vulnerability"
+   ],
+   "answer": 0,
+   "explanation": "An exploit is the method or code that takes advantage of a vulnerability. The vulnerability is the weakness itself."
+  },
+  {
+   "id": "isc2cc-431",
+   "domain": "principles",
+   "prompt": "Which U.S. law requires financial institutions to explain their information-sharing practices and protect customers' nonpublic personal financial information?",
+   "choices": [
+    "FERPA",
+    "Gramm-Leach-Bliley Act (GLBA)",
+    "Sarbanes-Oxley Act (SOX)",
+    "Health Insurance Portability and Accountability Act (HIPAA)"
+   ],
+   "answer": 1,
+   "explanation": "GLBA covers financial institutions and customer financial data. HIPAA covers health information, and SOX covers financial reporting controls."
+  },
+  {
+   "id": "isc2cc-432",
+   "domain": "principles",
+   "prompt": "Which organization develops the 802 family of networking standards, including 802.11 Wi-Fi and 802.3 Ethernet?",
+   "choices": [
+    "NIST",
+    "ISO",
+    "IEEE",
+    "IETF"
+   ],
+   "answer": 2,
+   "explanation": "The Institute of Electrical and Electronics Engineers publishes the 802 standards. The IETF develops internet protocols through RFCs."
+  },
+  {
+   "id": "isc2cc-433",
+   "domain": "principles",
+   "prompt": "Each entry in a company's risk register lists the person responsible for monitoring that risk and making sure its treatment is carried out. What is this person called?",
+   "choices": [
+    "Risk auditor",
+    "Threat actor",
+    "Data custodian",
+    "Risk owner"
+   ],
+   "answer": 3,
+   "explanation": "A risk owner is accountable for managing a specific risk and its treatment plan. A data custodian implements controls on data."
+  },
+  {
+   "id": "isc2cc-434",
+   "domain": "principles",
+   "prompt": "An employee accidentally emails a spreadsheet of customers' Social Security numbers to the wrong outside recipient. Which part of the CIA triad is MOST affected?",
+   "choices": [
+    "Confidentiality",
+    "Non-repudiation",
+    "Availability",
+    "Integrity"
+   ],
+   "answer": 0,
+   "explanation": "Sensitive data was disclosed to an unauthorized party, which is a loss of confidentiality. The data itself was not altered or made unavailable."
+  },
+  {
+   "id": "isc2cc-435",
+   "domain": "principles",
+   "prompt": "What is the PRIMARY purpose of an organization's information security program?",
+   "choices": [
+    "To make every system impossible to attack",
+    "To support business goals by managing risk",
+    "To replace the need for management oversight",
+    "To eliminate all possible risk"
+   ],
+   "answer": 1,
+   "explanation": "Security exists to support the organization's mission by managing risk to an acceptable level. Eliminating all risk is not achievable or cost-effective."
+  },
+  {
+   "id": "isc2cc-436",
+   "domain": "principles",
+   "prompt": "An employee with no malicious intent clicks a phishing link and lets an attacker into the network. How is this employee BEST categorized?",
+   "choices": [
+    "A nation-state actor",
+    "A hacktivist",
+    "An unintentional insider threat",
+    "A malicious insider"
+   ],
+   "answer": 2,
+   "explanation": "Insiders can cause harm through carelessness or mistakes as well as malice. Training and technical controls help reduce unintentional insider risk."
+  },
+  {
+   "id": "isc2cc-437",
+   "domain": "principles",
+   "prompt": "An attacker with little technical skill downloads a ready-made attack tool and runs it against random websites. Which type of threat actor is this?",
+   "choices": [
+    "Nation-state actor",
+    "Organized crime group",
+    "Advanced persistent threat",
+    "Script kiddie"
+   ],
+   "answer": 3,
+   "explanation": "Script kiddies rely on tools created by others and lack deep skills. Nation-state and APT actors are highly skilled and well resourced."
+  },
+  {
+   "id": "isc2cc-438",
+   "domain": "principles",
+   "prompt": "A criminal group runs ransomware campaigns and sells stolen card numbers. What is its MOST likely motivation?",
+   "choices": [
+    "Financial gain",
+    "Political protest",
+    "Curiosity",
+    "National espionage"
+   ],
+   "answer": 0,
+   "explanation": "Organized crime groups are primarily motivated by money. Hacktivists act for political or social causes, and nation-states often seek espionage."
+  },
+  {
+   "id": "isc2cc-439",
+   "domain": "network",
+   "prompt": "A firewall must allow clients to obtain IP addresses from a DHCP server. Which ports are used?",
+   "choices": [
+    "TCP 20 and 21",
+    "UDP 67 and 68",
+    "TCP 80 and 443",
+    "UDP 161 and 162"
+   ],
+   "answer": 1,
+   "explanation": "DHCP servers listen on UDP 67 and clients use UDP 68. SNMP uses 161 and 162, and FTP uses 20 and 21."
+  },
+  {
+   "id": "isc2cc-440",
+   "domain": "network",
+   "prompt": "How many layers does the TCP/IP model, as commonly taught, contain?",
+   "choices": [
+    "Six",
+    "Three",
+    "Four",
+    "Seven"
+   ],
+   "answer": 2,
+   "explanation": "The TCP/IP model has four layers: network access (link), internet, transport and application. The OSI model has seven."
+  },
+  {
+   "id": "isc2cc-441",
+   "domain": "network",
+   "prompt": "An attacker sends packets with a forged source IP address so they appear to come from a trusted internal host. What is this called?",
+   "choices": [
+    "SQL injection",
+    "MAC flooding",
+    "Shoulder surfing",
+    "IP spoofing"
+   ],
+   "answer": 3,
+   "explanation": "IP spoofing falsifies the source address to impersonate another system or hide the attacker's identity."
+  },
+  {
+   "id": "isc2cc-442",
+   "domain": "network",
+   "prompt": "A startup rents computing resources from a provider whose infrastructure is shared and available to any paying customer. Which cloud deployment model is this?",
+   "choices": [
+    "Public cloud",
+    "Private cloud",
+    "Hybrid cloud",
+    "Community cloud"
+   ],
+   "answer": 0,
+   "explanation": "A public cloud is offered to the general public over the internet. A private cloud serves a single organization."
+  },
+  {
+   "id": "isc2cc-443",
+   "domain": "network",
+   "prompt": "A company uses a web-based email service where the provider manages the application, servers and storage, and the company only manages users and data. Which cloud service model is this?",
+   "choices": [
+    "Infrastructure as a Service (IaaS)",
+    "Software as a Service (SaaS)",
+    "Platform as a Service (PaaS)",
+    "On-premises hosting"
+   ],
+   "answer": 1,
+   "explanation": "In SaaS, the provider delivers a complete application. In IaaS and PaaS, the customer manages more of the stack."
+  },
+  {
+   "id": "isc2cc-444",
+   "domain": "network",
+   "prompt": "A company applies security policies to individual workloads so that even servers in the same subnet can communicate only as explicitly allowed. What is this approach called?",
+   "choices": [
+    "Network address translation",
+    "Port forwarding",
+    "Microsegmentation",
+    "Air gapping"
+   ],
+   "answer": 2,
+   "explanation": "Microsegmentation enforces fine-grained policies between individual workloads, limiting lateral movement inside the network."
+  },
+  {
+   "id": "isc2cc-445",
+   "domain": "network",
+   "prompt": "A data center needs fire suppression that will not cause water damage to servers. Which system is MOST appropriate?",
+   "choices": [
+    "A dry chemical powder system",
+    "Portable water extinguishers only",
+    "A wet-pipe water sprinkler system",
+    "A clean agent (gaseous) suppression system"
+   ],
+   "answer": 3,
+   "explanation": "Clean agent systems put out fires without leaving residue or water, protecting electronic equipment. Water and powder can damage hardware."
+  },
+  {
+   "id": "isc2cc-446",
+   "domain": "network",
+   "prompt": "Why must humidity in a data center be kept within a moderate range?",
+   "choices": [
+    "Too dry causes static; too humid causes condensation",
+    "Humidity matters only for tape storage media",
+    "High humidity improves cooling, so it should be maximized",
+    "Too dry causes condensation; too humid causes static"
+   ],
+   "answer": 0,
+   "explanation": "Air that is too dry encourages electrostatic discharge, while air that is too humid can lead to condensation and corrosion."
+  },
+  {
+   "id": "isc2cc-447",
+   "domain": "network",
+   "prompt": "A data center's UPS batteries last about 15 minutes. Which addition is needed to keep systems running during a power outage lasting several hours?",
+   "choices": [
+    "A surge protector",
+    "A backup generator",
+    "A second network switch",
+    "Additional cooling fans"
+   ],
+   "answer": 1,
+   "explanation": "A UPS bridges short gaps, while a generator supplies power for extended outages once it starts."
+  },
+  {
+   "id": "isc2cc-448",
+   "domain": "network",
+   "prompt": "In a data center, server racks are arranged so that equipment intakes face one aisle and exhausts face the next. What is the purpose of this layout?",
+   "choices": [
+    "To reduce the number of power circuits needed per row",
+    "To shorten network cable runs between racks",
+    "To keep hot exhaust from mixing with intake air",
+    "To keep visitors physically away from servers"
+   ],
+   "answer": 2,
+   "explanation": "Hot aisle/cold aisle layouts prevent hot exhaust from mixing with cool intake air, improving cooling efficiency."
+  },
+  {
+   "id": "isc2cc-449",
+   "domain": "network",
+   "prompt": "Which protocol does the ping utility use to test whether a host is reachable?",
+   "choices": [
+    "DHCP",
+    "ARP",
+    "SMTP",
+    "ICMP"
+   ],
+   "answer": 3,
+   "explanation": "Ping sends ICMP echo requests and waits for echo replies. ARP resolves IP addresses to MAC addresses."
+  },
+  {
+   "id": "isc2cc-450",
+   "domain": "network",
+   "prompt": "What is a key advantage of IPv6 over IPv4?",
+   "choices": [
+    "A far larger 128-bit address space",
+    "It no longer needs any security controls",
+    "It uses shorter 32-bit addresses",
+    "It removes the need for routers"
+   ],
+   "answer": 0,
+   "explanation": "IPv6 uses 128-bit addresses, providing far more addresses than IPv4's 32-bit space and reducing the need for NAT."
+  },
+  {
+   "id": "isc2cc-451",
+   "domain": "access",
+   "prompt": "A server room door opens only when a person enters a programmable numeric code on a keypad. What type of lock is this?",
+   "choices": [
+    "Warded lock",
+    "Cipher lock",
+    "Deadbolt lock",
+    "Biometric lock"
+   ],
+   "answer": 1,
+   "explanation": "A cipher lock uses a programmable keypad code. The code can be changed when staff leave, unlike a key-based lock."
+  },
+  {
+   "id": "isc2cc-452",
+   "domain": "access",
+   "prompt": "Users keep changing their password and then immediately changing it back to the old one. Which setting prevents this?",
+   "choices": [
+    "An account lockout after three failed attempts",
+    "Session timeout",
+    "Password history plus a minimum password age",
+    "Single sign-on"
+   ],
+   "answer": 2,
+   "explanation": "Password history blocks reuse of recent passwords, and a minimum age stops users from cycling through changes quickly to get the old one back."
+  },
+  {
+   "id": "isc2cc-453",
+   "domain": "access",
+   "prompt": "A system identifies users by the unique rhythm and timing of how they type. Which type of biometric is this?",
+   "choices": [
+    "Knowledge-based factor",
+    "Possession-based factor",
+    "Physiological biometric",
+    "Behavioral biometric"
+   ],
+   "answer": 3,
+   "explanation": "Keystroke dynamics measure behavior. Physiological biometrics, such as fingerprints or iris patterns, measure physical traits."
+  },
+  {
+   "id": "isc2cc-454",
+   "domain": "access",
+   "prompt": "A security team builds a table that lists every user down one side, every resource across the top, and the permissions in each cell. What is this called?",
+   "choices": [
+    "An access control matrix",
+    "A network topology",
+    "A risk register",
+    "A data flow diagram"
+   ],
+   "answer": 0,
+   "explanation": "An access control matrix maps subjects to objects with their permissions. Each column corresponds to an object's access control list."
+  },
+  {
+   "id": "isc2cc-455",
+   "domain": "access",
+   "prompt": "A contractor is hired for a three-month project. Which account setting BEST makes sure their access does not outlast the engagement?",
+   "choices": [
+    "A shared contractor login",
+    "An account expiration date",
+    "Disabling the account lockout",
+    "A longer password requirement"
+   ],
+   "answer": 1,
+   "explanation": "Setting an expiration date ensures the account is disabled automatically if offboarding is missed."
+  },
+  {
+   "id": "isc2cc-456",
+   "domain": "access",
+   "prompt": "A company designs its campus with clear sight lines, good lighting and landscaping that naturally guides visitors to a single main entrance. Which approach is this?",
+   "choices": [
+    "Mandatory access control",
+    "Defense in depth through network segmentation",
+    "Crime Prevention Through Environmental Design (CPTED)",
+    "Separation of duties"
+   ],
+   "answer": 2,
+   "explanation": "CPTED uses the physical environment, such as visibility, lighting and natural access control, to discourage crime."
+  },
+  {
+   "id": "isc2cc-457",
+   "domain": "access",
+   "prompt": "Equipment has gone missing from a server room. Which source BEST shows who entered the room and when?",
+   "choices": [
+    "The firewall rule base",
+    "The DHCP lease table",
+    "The antivirus quarantine list",
+    "The badge access system logs"
+   ],
+   "answer": 3,
+   "explanation": "Electronic badge systems record each entry with the badge holder and a timestamp, supporting investigations."
+  },
+  {
+   "id": "isc2cc-458",
+   "domain": "access",
+   "prompt": "Emergency exit doors in a secure building must let people out freely during a fire. Which control BEST discourages employees from using them for normal entry and exit?",
+   "choices": [
+    "An audible alarm on the door",
+    "Removing the exit signs",
+    "A keypad code required to exit",
+    "Chaining the doors shut after hours"
+   ],
+   "answer": 0,
+   "explanation": "Alarmed emergency exits allow safe egress while deterring routine misuse. Locking or chaining exits endangers life safety."
+  },
+  {
+   "id": "isc2cc-459",
+   "domain": "access",
+   "prompt": "Before a new employee can use a fingerprint reader, the system scans their finger several times to create a stored template. What is this process called?",
+   "choices": [
+    "Authorization",
+    "Enrollment",
+    "Recertification",
+    "Provisioning of a token"
+   ],
+   "answer": 1,
+   "explanation": "Enrollment captures and stores the biometric template that later scans are compared against."
+  },
+  {
+   "id": "isc2cc-460",
+   "domain": "access",
+   "prompt": "An employee is terminated this morning. Besides disabling their network accounts, which physical access step should be taken right away?",
+   "choices": [
+    "Replace the lobby turnstiles",
+    "Change the Wi-Fi password next month",
+    "Deactivate and collect their badge",
+    "Reset the visitor sign-in log"
+   ],
+   "answer": 2,
+   "explanation": "Badges should be deactivated and retrieved at termination so the former employee cannot enter the facility."
+  },
+  {
+   "id": "isc2cc-461",
+   "domain": "access",
+   "prompt": "A master key that opens several office doors has been lost and cannot be found. What is the BEST response?",
+   "choices": [
+    "Post a notice asking for its return",
+    "Install brighter lighting",
+    "Issue the same key to more people",
+    "Rekey or replace the affected locks"
+   ],
+   "answer": 3,
+   "explanation": "A lost master key means anyone who finds it can enter, so the locks must be rekeyed or replaced to restore control."
+  },
+  {
+   "id": "isc2cc-462",
+   "domain": "ops",
+   "prompt": "After classifying a report as Confidential, an employee adds a header and footer stating 'Confidential' on every page. Which data handling step is this?",
+   "choices": [
+    "Labeling",
+    "Archiving",
+    "Destruction",
+    "Retention"
+   ],
+   "answer": 0,
+   "explanation": "Labeling marks data with its classification so people handle it correctly. Classification decides the level, and labeling communicates it."
+  },
+  {
+   "id": "isc2cc-463",
+   "domain": "ops",
+   "prompt": "A website uses HTTPS so that login credentials cannot be read while traveling across the internet. Which data state is being protected?",
+   "choices": [
+    "Data in use",
+    "Data in transit",
+    "Data in storage",
+    "Data at rest"
+   ],
+   "answer": 1,
+   "explanation": "HTTPS (TLS) encrypts data as it moves across networks. Full-disk encryption protects data at rest."
+  },
+  {
+   "id": "isc2cc-464",
+   "domain": "ops",
+   "prompt": "Under NIST SP 800-88, which sanitization level protects against even laboratory recovery techniques, using methods such as degaussing or secure erase commands?",
+   "choices": [
+    "Archive",
+    "Label",
+    "Purge",
+    "Clear"
+   ],
+   "answer": 2,
+   "explanation": "Purging defeats laboratory-level recovery attempts. Clearing protects only against simple, non-invasive recovery with standard tools."
+  },
+  {
+   "id": "isc2cc-465",
+   "domain": "ops",
+   "prompt": "Old project records are no longer used day to day but must be kept for seven years for legal reasons. What should be done with them?",
+   "choices": [
+    "Post them to the company intranet",
+    "Delete them now to free up storage space",
+    "Keep copies on every user's laptop",
+    "Move them to secure archival storage"
+   ],
+   "answer": 3,
+   "explanation": "Archiving keeps inactive data protected and retrievable for the retention period, after which it is securely destroyed."
+  },
+  {
+   "id": "isc2cc-466",
+   "domain": "ops",
+   "prompt": "Ten users each need a key pair to exchange encrypted messages using asymmetric cryptography. How many keys are required in total?",
+   "choices": [
+    "20",
+    "100",
+    "45",
+    "10"
+   ],
+   "answer": 0,
+   "explanation": "Each user needs one public and one private key, so 10 x 2 = 20. The symmetric equivalent would need 45 shared keys."
+  },
+  {
+   "id": "isc2cc-467",
+   "domain": "ops",
+   "prompt": "A spreadsheet of salaries is open and being edited in a computer's memory. Which data state is this?",
+   "choices": [
+    "Data in transit",
+    "Data in use",
+    "Archived data",
+    "Data at rest"
+   ],
+   "answer": 1,
+   "explanation": "Data actively being processed in memory or by the CPU is in use. Stored files are at rest, and data on the network is in transit."
+  },
+  {
+   "id": "isc2cc-468",
+   "domain": "ops",
+   "prompt": "An organization wants to reduce the risk of malware from unknown flash drives and data leaving on personal USB devices. Which policy addresses this?",
+   "choices": [
+    "A privacy policy",
+    "A password policy",
+    "A removable media policy",
+    "A clean desk policy"
+   ],
+   "answer": 2,
+   "explanation": "A removable media policy controls whether and how USB drives and similar devices can be used, often backed by technical controls."
+  },
+  {
+   "id": "isc2cc-469",
+   "domain": "ops",
+   "prompt": "A caller offers an employee a free gift card in exchange for 'confirming' their network login details for a survey. Which social engineering technique is this?",
+   "choices": [
+    "Shoulder surfing",
+    "Dumpster diving",
+    "Tailgating",
+    "Quid pro quo"
+   ],
+   "answer": 3,
+   "explanation": "Quid pro quo offers something in return for information or access. Tailgating and shoulder surfing are physical techniques."
+  },
+  {
+   "id": "isc2cc-470",
+   "domain": "ops",
+   "prompt": "An audit discovers a department using an unapproved cloud file-sharing app that IT does not know about or manage. What is this called?",
+   "choices": [
+    "Shadow IT",
+    "Configuration baseline",
+    "Data custodian",
+    "Change advisory board"
+   ],
+   "answer": 0,
+   "explanation": "Shadow IT is technology used without IT's approval or oversight, which creates unmanaged security and compliance risk."
+  },
+  {
+   "id": "isc2cc-471",
+   "domain": "bcdr",
+   "prompt": "Several security alerts arrive at once, and the response team assesses each one to decide which should be handled first based on severity and impact. What is this process called?",
+   "choices": [
+    "Lessons learned",
+    "Triage",
+    "Recovery",
+    "Eradication"
+   ],
+   "answer": 1,
+   "explanation": "Triage prioritizes incidents so the most serious ones receive attention first. Eradication removes the cause after containment."
+  },
+  {
+   "id": "isc2cc-472",
+   "domain": "bcdr",
+   "prompt": "An organization runs nightly backups but has never restored from them. What is the BEST way to confirm the backups can actually be used in a disaster?",
+   "choices": [
+    "Increase the backup frequency",
+    "Buy larger backup drives",
+    "Perform regular test restores",
+    "Encrypt the backup files"
+   ],
+   "answer": 2,
+   "explanation": "Only a test restore proves that backups are complete and recoverable. More frequent or encrypted backups do not confirm restorability."
+  },
+  {
+   "id": "isc2cc-473",
+   "domain": "bcdr",
+   "prompt": "Team members individually review copies of the disaster recovery plan to confirm that contact lists and procedures are accurate, without meeting or touching any systems. Which test is this?",
+   "choices": [
+    "Full interruption test",
+    "Simulation test",
+    "Parallel test",
+    "Checklist (read-through) test"
+   ],
+   "answer": 3,
+   "explanation": "A checklist test is the least disruptive DR test, in which participants review the plan for accuracy and completeness."
+  },
+  {
+   "id": "isc2cc-474",
+   "domain": "bcdr",
+   "prompt": "Antivirus software alerts that malware was detected on a workstation right now. In incident response terms, what is this alert?",
+   "choices": [
+    "An indicator",
+    "A lessons-learned item",
+    "A precursor",
+    "A recovery objective"
+   ],
+   "answer": 0,
+   "explanation": "An indicator is a sign that an incident may have occurred or is occurring. A precursor suggests an incident may happen in the future."
+  },
+  {
+   "id": "isc2cc-475",
+   "domain": "bcdr",
+   "prompt": "An organization wants the fastest, simplest restore process after a failure and is willing to use more storage space. Which backup approach should it favor?",
+   "choices": [
+    "Incremental backups only",
+    "Frequent full backups",
+    "Monthly differential backups",
+    "No backups, relying on RAID"
+   ],
+   "answer": 1,
+   "explanation": "A full backup restores from a single set, so recovery is fastest. Incremental backups save space but need the full backup plus every incremental."
   }
  ]
 }

@@ -5609,6 +5609,656 @@
    ],
    "answer": 2,
    "explanation": "netstat -an lists active connections and listening ports with numeric addresses."
+  },
+  {
+   "id": "netplus-427",
+   "domain": "concepts",
+   "prompt": "An engineer is addressing a point-to-point WAN link and wants exactly two usable host addresses using traditional subnetting. Which subnet mask should be used?",
+   "choices": [
+    "255.255.255.252",
+    "255.255.255.240",
+    "255.255.255.248",
+    "255.255.255.254"
+   ],
+   "answer": 0,
+   "explanation": "A /30 (255.255.255.252) leaves two usable hosts. A /29 gives six, and a /31 has no traditional network or broadcast address."
+  },
+  {
+   "id": "netplus-428",
+   "domain": "concepts",
+   "prompt": "Host A is 192.168.1.60/26 and host B is 192.168.1.70/26. Can they communicate without a router?",
+   "choices": [
+    "Yes, both share the 192.168.1.0 network",
+    "No, they are in different /26 subnets",
+    "No, because .70 is a broadcast address",
+    "Yes, because /26 includes 128 addresses"
+   ],
+   "answer": 1,
+   "explanation": "A /26 splits the last octet into blocks of 64, so .60 and .70 fall in different subnets and need a router between them."
+  },
+  {
+   "id": "netplus-429",
+   "domain": "concepts",
+   "prompt": "An administrator divides 192.168.50.0/24 into /27 subnets. How many subnets are created?",
+   "choices": [
+    "16",
+    "4",
+    "8",
+    "32"
+   ],
+   "answer": 2,
+   "explanation": "Moving from /24 to /27 borrows three bits, and 2^3 = 8 subnets, each with 30 usable hosts."
+  },
+  {
+   "id": "netplus-430",
+   "domain": "concepts",
+   "prompt": "Mail clients must submit outgoing mail to the company server using STARTTLS encryption on the standard submission port. Which port should be opened?",
+   "choices": [
+    "TCP 993",
+    "TCP 25",
+    "TCP 143",
+    "TCP 587"
+   ],
+   "answer": 3,
+   "explanation": "TCP 587 is the mail submission port used with STARTTLS. Port 25 is server-to-server relay, and 993 and 143 are IMAP ports."
+  },
+  {
+   "id": "netplus-431",
+   "domain": "concepts",
+   "prompt": "Which IPsec protocol provides data integrity and origin authentication but does NOT encrypt the payload?",
+   "choices": [
+    "Authentication Header (AH)",
+    "Generic Routing Encapsulation (GRE)",
+    "Internet Key Exchange (IKE)",
+    "Encapsulating Security Payload (ESP)"
+   ],
+   "answer": 0,
+   "explanation": "AH (IP protocol 51) authenticates and protects integrity without confidentiality. ESP is the IPsec protocol that encrypts."
+  },
+  {
+   "id": "netplus-432",
+   "domain": "concepts",
+   "prompt": "A provider replaces dedicated firewall and router appliances with software instances running as virtual machines on standard servers. What is this called?",
+   "choices": [
+    "Infrastructure as a service (IaaS)",
+    "Network functions virtualization (NFV)",
+    "Software-defined WAN (SD-WAN)",
+    "Virtual extensible LAN (VXLAN)"
+   ],
+   "answer": 1,
+   "explanation": "NFV implements network services such as routing, firewalling and load balancing in software on commodity hardware instead of purpose-built appliances."
+  },
+  {
+   "id": "netplus-433",
+   "domain": "concepts",
+   "prompt": "In a three-tier campus design, which layer aggregates the access switches and applies routing and policy between them and the core?",
+   "choices": [
+    "Access",
+    "Edge",
+    "Distribution",
+    "Core"
+   ],
+   "answer": 2,
+   "explanation": "The distribution layer aggregates access-layer switches and enforces policy such as ACLs and inter-VLAN routing before traffic reaches the core."
+  },
+  {
+   "id": "netplus-434",
+   "domain": "concepts",
+   "prompt": "Two IPv6-only branch networks must communicate across a provider core that supports only IPv4. Which transition method fits BEST?",
+   "choices": [
+    "Link-local addressing only",
+    "Dual stack on every host",
+    "NAT64 at each branch",
+    "Tunneling IPv6 inside IPv4"
+   ],
+   "answer": 3,
+   "explanation": "Tunneling encapsulates IPv6 packets in IPv4 so they can cross an IPv4-only network. NAT64 translates between IPv6 and IPv4 hosts instead."
+  },
+  {
+   "id": "netplus-435",
+   "domain": "concepts",
+   "prompt": "Two top-of-rack switches 3 meters apart need an inexpensive 10 Gbps link using their SFP+ ports. Which option is BEST?",
+   "choices": [
+    "A direct attach copper (twinax) cable",
+    "Single-mode fiber with LR optics",
+    "A Cat 5e patch cable with RJ45 ends",
+    "A coaxial cable with F-type connectors"
+   ],
+   "answer": 0,
+   "explanation": "DAC twinax cables have SFP+ ends built in and are a low-cost, low-latency choice for short in-rack links. LR optics are meant for long distances."
+  },
+  {
+   "id": "netplus-436",
+   "domain": "concepts",
+   "prompt": "What is the protocol data unit called at the Network layer of the OSI model?",
+   "choices": [
+    "Bit",
+    "Packet",
+    "Segment",
+    "Frame"
+   ],
+   "answer": 1,
+   "explanation": "Layer 3 data is a packet. Frames are Layer 2, segments are Layer 4 (TCP) and bits are Layer 1."
+  },
+  {
+   "id": "netplus-437",
+   "domain": "concepts",
+   "prompt": "A company wants a cloud-delivered service that combines SD-WAN with security functions such as secure web gateway, CASB and zero trust network access. Which architecture is this?",
+   "choices": [
+    "Screened subnet design",
+    "Network functions virtualization (NFV)",
+    "Secure Access Service Edge (SASE)",
+    "Spine-and-leaf fabric"
+   ],
+   "answer": 2,
+   "explanation": "SASE converges WAN connectivity and cloud-delivered security services so users get consistent protection wherever they connect."
+  },
+  {
+   "id": "netplus-438",
+   "domain": "concepts",
+   "prompt": "Two sites connected by an IPsec VPN must also run OSPF, which uses multicast, across the tunnel. Which approach is commonly used?",
+   "choices": [
+    "A split-tunnel client VPN",
+    "802.1Q trunking over the WAN",
+    "PAT on both routers",
+    "GRE over IPsec"
+   ],
+   "answer": 3,
+   "explanation": "GRE can carry multicast and routing protocol traffic, and IPsec then encrypts the GRE tunnel, combining routing support with confidentiality."
+  },
+  {
+   "id": "netplus-439",
+   "domain": "impl",
+   "prompt": "Which Wi-Fi standard, also called Wi-Fi 4, can operate in both the 2.4 GHz and 5 GHz bands?",
+   "choices": [
+    "802.11n",
+    "802.11g",
+    "802.11a",
+    "802.11ac"
+   ],
+   "answer": 0,
+   "explanation": "802.11n (Wi-Fi 4) supports both bands. 802.11ac is 5 GHz only, 802.11g is 2.4 GHz only and 802.11a is 5 GHz only."
+  },
+  {
+   "id": "netplus-440",
+   "domain": "impl",
+   "prompt": "A small office of ten users has no RADIUS server but wants the strongest practical Wi-Fi security. All devices are current. What should be configured?",
+   "choices": [
+    "WPA2-Enterprise with 802.1X",
+    "WPA3-Personal using SAE",
+    "An open network with MAC filtering",
+    "WEP with a 128-bit key"
+   ],
+   "answer": 1,
+   "explanation": "WPA3-Personal uses SAE with a shared passphrase and needs no authentication server. Enterprise mode requires RADIUS, and WEP is broken."
+  },
+  {
+   "id": "netplus-441",
+   "domain": "impl",
+   "prompt": "A small shop has a single access point that is configured and managed on its own through its web interface, with no controller. What type of AP is this?",
+   "choices": [
+    "Lightweight",
+    "Mesh",
+    "Autonomous",
+    "Cloud-managed controller"
+   ],
+   "answer": 2,
+   "explanation": "An autonomous (standalone) AP holds its own configuration. Lightweight APs depend on a wireless LAN controller."
+  },
+  {
+   "id": "netplus-442",
+   "domain": "impl",
+   "prompt": "A hotel wants guest wireless devices on the same SSID to reach the internet but not see or attack each other. Which setting should be enabled?",
+   "choices": [
+    "A wider channel width",
+    "Band steering",
+    "SSID broadcast suppression",
+    "Client isolation on the AP"
+   ],
+   "answer": 3,
+   "explanation": "Client (AP) isolation blocks traffic between wireless clients on the same network while still allowing access to the gateway."
+  },
+  {
+   "id": "netplus-443",
+   "domain": "impl",
+   "prompt": "Where in a campus building would you expect to find the core switches and the connection to the telecom provider's demarcation point?",
+   "choices": [
+    "The main distribution frame (MDF)",
+    "An intermediate distribution frame (IDF)",
+    "A user's patch cord at the wall jack",
+    "A wireless access point closet"
+   ],
+   "answer": 0,
+   "explanation": "The MDF is the main wiring room that houses core equipment and links to the demarc. IDFs serve individual floors or areas."
+  },
+  {
+   "id": "netplus-444",
+   "domain": "impl",
+   "prompt": "Which twisted-pair cable category supports 25GBASE-T and 40GBASE-T, but only up to about 30 meters, for data center server links?",
+   "choices": [
+    "Cat 6a",
+    "Cat 8",
+    "Cat 6",
+    "Cat 5e"
+   ],
+   "answer": 1,
+   "explanation": "Cat 8 is designed for 25/40 Gbps over short runs of up to 30 m. Cat 6a supports 10GBASE-T to 100 m."
+  },
+  {
+   "id": "netplus-445",
+   "domain": "impl",
+   "prompt": "An engineer summarizes many branch subnets into a single advertised route. What is the MAIN benefit?",
+   "choices": [
+    "Faster frame switching at Layer 2",
+    "Encryption of every routing protocol update",
+    "Smaller, more stable routing tables",
+    "More usable hosts in each subnet"
+   ],
+   "answer": 2,
+   "explanation": "Summarization reduces routing table size and hides individual subnet flaps from the rest of the network, improving stability."
+  },
+  {
+   "id": "netplus-446",
+   "domain": "impl",
+   "prompt": "A branch office has a single router with one link to headquarters and no other paths. What is the simplest routing configuration for it?",
+   "choices": [
+    "Full BGP peering with headquarters",
+    "Multi-area OSPF with an ABR",
+    "Route redistribution between two protocols",
+    "A static default route to headquarters"
+   ],
+   "answer": 3,
+   "explanation": "A stub network with only one exit needs just a default route. Dynamic protocols add complexity without benefit when there is only one path."
+  },
+  {
+   "id": "netplus-447",
+   "domain": "impl",
+   "prompt": "A new pan-tilt-zoom camera with heaters needs about 60 W from its switch port. Which PoE standard is required?",
+   "choices": [
+    "802.3bt",
+    "802.3ad",
+    "802.3af",
+    "802.3at"
+   ],
+   "answer": 0,
+   "explanation": "802.3bt (PoE++) provides 60 W or more per port. 802.3at supplies 30 W, 802.3af 15.4 W, and 802.3ad is link aggregation."
+  },
+  {
+   "id": "netplus-448",
+   "domain": "impl",
+   "prompt": "A large warehouse needs the widest coverage per AP for low-bandwidth handheld scanners, and signals must pass through shelving and walls. Which band is BEST?",
+   "choices": [
+    "5 GHz",
+    "2.4 GHz",
+    "6 GHz",
+    "60 GHz"
+   ],
+   "answer": 1,
+   "explanation": "Lower frequencies travel farther and penetrate obstacles better, so 2.4 GHz gives the largest coverage area, at the cost of fewer channels and lower speeds."
+  },
+  {
+   "id": "netplus-449",
+   "domain": "ops",
+   "prompt": "A technician runs nslookup and the result is labeled 'Non-authoritative answer'. What does this mean?",
+   "choices": [
+    "The DNS record is invalid or forged",
+    "The zone has no SOA record",
+    "The answer came from a resolver's cache",
+    "The query failed and the server returned a guess"
+   ],
+   "answer": 2,
+   "explanation": "A non-authoritative answer is returned by a resolver from its cache rather than directly from the zone's authoritative name server."
+  },
+  {
+   "id": "netplus-450",
+   "domain": "ops",
+   "prompt": "A branch DNS server holds a read-only copy of a zone that it receives from the primary server through zone transfers. What type of zone is this?",
+   "choices": [
+    "Stub resolver",
+    "Reverse lookup zone",
+    "Primary zone",
+    "Secondary zone"
+   ],
+   "answer": 3,
+   "explanation": "A secondary zone is a read-only replica updated by zone transfers from the primary, providing redundancy and local resolution."
+  },
+  {
+   "id": "netplus-451",
+   "domain": "ops",
+   "prompt": "A client's configured DNS server accepts its query and then queries root, TLD and authoritative servers on the client's behalf. What role is this server playing?",
+   "choices": [
+    "Recursive resolver",
+    "Root hint server",
+    "Authoritative name server",
+    "Zone transfer master"
+   ],
+   "answer": 0,
+   "explanation": "A recursive resolver does the full lookup for the client and caches the result. Authoritative servers only answer for their own zones."
+  },
+  {
+   "id": "netplus-452",
+   "domain": "ops",
+   "prompt": "Which protocol adds cryptographic authentication to NTP so clients can verify that time responses were not spoofed?",
+   "choices": [
+    "SNMPv3",
+    "Network Time Security (NTS)",
+    "DNSSEC",
+    "Precision Time Protocol (PTP)"
+   ],
+   "answer": 1,
+   "explanation": "NTS uses TLS-based key establishment to authenticate NTP packets. PTP provides higher precision but is a separate protocol."
+  },
+  {
+   "id": "netplus-453",
+   "domain": "ops",
+   "prompt": "A busy airport cafe's guest Wi-Fi runs out of DHCP addresses every afternoon, even though most visitors stay under an hour. What is the BEST change?",
+   "choices": [
+    "Add DHCP reservations for guests",
+    "Disable DHCP and use static IPs",
+    "Shorten the DHCP lease time",
+    "Lengthen the DHCP lease time"
+   ],
+   "answer": 2,
+   "explanation": "Short leases return addresses from departed clients to the pool quickly. Long leases keep addresses tied to devices that have already left."
+  },
+  {
+   "id": "netplus-454",
+   "domain": "ops",
+   "prompt": "An SLA promises 99.999 percent availability. Approximately how much downtime does this allow per year?",
+   "choices": [
+    "About 9 hours",
+    "About 1 minute",
+    "About 53 minutes",
+    "About 5 minutes"
+   ],
+   "answer": 3,
+   "explanation": "Five nines allows roughly 5.26 minutes of downtime per year. 99.99 percent allows about 53 minutes."
+  },
+  {
+   "id": "netplus-455",
+   "domain": "ops",
+   "prompt": "Network devices are compared against an approved, standardized configuration so that any unauthorized change can be detected. What is this reference called?",
+   "choices": [
+    "A baseline (golden) configuration",
+    "A rack diagram",
+    "A performance baseline",
+    "A running configuration"
+   ],
+   "answer": 0,
+   "explanation": "A golden or baseline configuration is the approved template devices should match; deviations indicate drift or unauthorized changes."
+  },
+  {
+   "id": "netplus-456",
+   "domain": "ops",
+   "prompt": "Which DNS record holds a zone's primary name server, the administrator's contact, the serial number and refresh timers?",
+   "choices": [
+    "TXT",
+    "SOA",
+    "SRV",
+    "NS"
+   ],
+   "answer": 1,
+   "explanation": "The Start of Authority record defines zone-wide settings including the serial number secondaries use to decide when to transfer."
+  },
+  {
+   "id": "netplus-457",
+   "domain": "ops",
+   "prompt": "A security team must capture every frame on a busy 10 Gbps link, including errored frames, without the switch dropping copies under load. What should be used?",
+   "choices": [
+    "SNMP polling",
+    "Port mirroring (SPAN)",
+    "A passive network tap",
+    "NetFlow export"
+   ],
+   "answer": 2,
+   "explanation": "A tap copies the physical signal so nothing is dropped. SPAN can drop frames when oversubscribed and usually omits errored frames."
+  },
+  {
+   "id": "netplus-458",
+   "domain": "sec",
+   "prompt": "Employees often work on laptops in airports, and a consultant warns that people nearby could read sensitive data on their screens. Which control BEST addresses this?",
+   "choices": [
+    "Full-disk encryption",
+    "Port security",
+    "A host-based firewall",
+    "Privacy screen filters"
+   ],
+   "answer": 3,
+   "explanation": "Shoulder surfing is a visual threat, and privacy filters narrow the viewing angle. Disk encryption protects data at rest, not a visible screen."
+  },
+  {
+   "id": "netplus-459",
+   "domain": "sec",
+   "prompt": "A regulation requires that personal data about a country's citizens be stored only on servers located in that country. Which concept does this describe?",
+   "choices": [
+    "Data locality",
+    "Data in transit",
+    "Data masking",
+    "Data deduplication"
+   ],
+   "answer": 0,
+   "explanation": "Data locality (or sovereignty) requirements dictate the geographic location where data must be stored and processed."
+  },
+  {
+   "id": "netplus-460",
+   "domain": "sec",
+   "prompt": "A company wants corporate tablets to access the inventory app only while they are physically inside the warehouse. Which control fits BEST?",
+   "choices": [
+    "Port security",
+    "Geofencing",
+    "MAC filtering",
+    "Time-based authentication"
+   ],
+   "answer": 1,
+   "explanation": "Geofencing uses device location to allow or deny access within a defined geographic boundary."
+  },
+  {
+   "id": "netplus-461",
+   "domain": "sec",
+   "prompt": "Contractors should be able to sign in to the network only between 8 a.m. and 6 p.m. on weekdays. Which control should be applied?",
+   "choices": [
+    "Geofencing based on GPS location",
+    "Role-based access control",
+    "Time-of-day login restrictions",
+    "Multifactor authentication"
+   ],
+   "answer": 2,
+   "explanation": "Time-of-day restrictions limit when accounts can authenticate, reducing exposure outside normal working hours."
+  },
+  {
+   "id": "netplus-462",
+   "domain": "sec",
+   "prompt": "Backup files on a NAS are encrypted so that a stolen disk cannot be read. Which data state is being protected?",
+   "choices": [
+    "Data in use",
+    "Data in motion",
+    "Data in transit",
+    "Data at rest"
+   ],
+   "answer": 3,
+   "explanation": "Data at rest is stored data, such as files on disks or backups. Data in transit is protected by protocols such as TLS or IPsec."
+  },
+  {
+   "id": "netplus-463",
+   "domain": "sec",
+   "prompt": "A site-to-site IPsec VPN must hide the internal source and destination addresses of packets crossing the internet. Which IPsec mode provides this?",
+   "choices": [
+    "Tunnel mode",
+    "Main mode",
+    "Aggressive mode",
+    "Transport mode"
+   ],
+   "answer": 0,
+   "explanation": "Tunnel mode encrypts the entire original packet, including its IP header, and adds a new outer header. Main and aggressive modes are IKE phase 1 exchanges."
+  },
+  {
+   "id": "netplus-464",
+   "domain": "sec",
+   "prompt": "While hardening a new switch, an administrator notices HTTP, Telnet and an unused discovery service are running. What should be done?",
+   "choices": [
+    "Enable SNMPv1 for monitoring",
+    "Disable the services that are not needed",
+    "Leave them enabled to aid troubleshooting",
+    "Change the native VLAN to 1"
+   ],
+   "answer": 1,
+   "explanation": "Disabling unneeded services reduces the attack surface. Insecure management protocols should be replaced with HTTPS and SSH."
+  },
+  {
+   "id": "netplus-465",
+   "domain": "ts",
+   "prompt": "A 5 GHz AP on a DFS channel suddenly changes channels and clients briefly disconnect. The AP log mentions radar detection. What is happening?",
+   "choices": [
+    "Band steering is forcing clients to 2.4 GHz",
+    "A rogue AP is jamming the channel",
+    "DFS is moving the AP off a radar channel",
+    "The AP's PoE budget has been exceeded"
+   ],
+   "answer": 2,
+   "explanation": "On DFS channels, an AP must vacate the channel when it detects radar, which interrupts clients. Using non-DFS channels avoids this."
+  },
+  {
+   "id": "netplus-466",
+   "domain": "ts",
+   "prompt": "A host is set to 192.168.1.50 with mask 255.255.0.0 and gateway 192.168.1.1. It cannot reach 192.168.2.10, which is on another routed subnet with a /24 mask. What is the MOST likely cause?",
+   "choices": [
+    "The host has an APIPA address",
+    "The default gateway is on a different subnet",
+    "DNS cannot resolve the target",
+    "The /16 mask makes the target appear local"
+   ],
+   "answer": 3,
+   "explanation": "With a /16 mask the host thinks 192.168.2.10 is local and ARPs for it directly instead of sending traffic to the gateway."
+  },
+  {
+   "id": "netplus-467",
+   "domain": "ts",
+   "prompt": "After a technician neatly coiled and tightly zip-tied fiber patch cables in a rack, several links show high loss. What is the MOST likely cause?",
+   "choices": [
+    "The fiber bend radius was exceeded",
+    "The transceivers were mismatched",
+    "The cables picked up EMI",
+    "A duplex mismatch occurred"
+   ],
+   "answer": 0,
+   "explanation": "Tight bends let light escape the core and cause macrobend loss. Fiber is immune to EMI, and nothing changed with the transceivers."
+  },
+  {
+   "id": "netplus-468",
+   "domain": "ts",
+   "prompt": "A switch port shows CRC errors. The technician replaces the cable and connects a known-good laptop, but errors keep rising on the same port. What is the MOST likely cause?",
+   "choices": [
+    "An incorrect VLAN assignment",
+    "A faulty switch port",
+    "A DHCP scope problem",
+    "A faulty laptop NIC"
+   ],
+   "answer": 1,
+   "explanation": "The errors persist after changing both the cable and the end device, isolating the problem to the switch port or its hardware."
+  },
+  {
+   "id": "netplus-469",
+   "domain": "ts",
+   "prompt": "A technician adds a second uplink between two switches for redundancy and notices one end of the new link is in the blocking state. What should be done?",
+   "choices": [
+    "Disable spanning tree on both switches immediately",
+    "Enable PortFast on both ends of the uplink",
+    "Nothing; STP is blocking it to prevent a loop",
+    "Replace the cable on the blocking port"
+   ],
+   "answer": 2,
+   "explanation": "Spanning tree blocks redundant links to prevent loops and will unblock them if the primary path fails. Disabling STP would risk a broadcast storm."
+  },
+  {
+   "id": "netplus-470",
+   "domain": "ts",
+   "prompt": "Two switches are connected by two links configured for LACP, but the port channel never forms. Both sides are set to passive mode. What is the fix?",
+   "choices": [
+    "Change the links to different VLANs",
+    "Set both sides to on mode with PAgP",
+    "Enable PortFast on both ports",
+    "Set at least one side to active mode"
+   ],
+   "answer": 3,
+   "explanation": "Passive ports only respond to LACP negotiation, so two passive ends never start it. At least one side must be active."
+  },
+  {
+   "id": "netplus-471",
+   "domain": "ts",
+   "prompt": "A technician needs to quickly find a break or tight bend in a short fiber patch cable by shining visible red light through it. Which tool should be used?",
+   "choices": [
+    "Visual fault locator",
+    "Cable certifier",
+    "Toner probe",
+    "Optical time-domain reflectometer"
+   ],
+   "answer": 0,
+   "explanation": "A VFL injects visible laser light that leaks out at breaks and sharp bends, making them easy to spot on short runs. An OTDR is used for long runs."
+  },
+  {
+   "id": "netplus-472",
+   "domain": "ts",
+   "prompt": "An administrator on an Ubuntu server needs to see which gateway the host uses for its default route. Which command shows this?",
+   "choices": [
+    "show ip route",
+    "ip route",
+    "route print",
+    "ipconfig /all"
+   ],
+   "answer": 1,
+   "explanation": "ip route lists the kernel routing table on Linux. route print is the Windows command and show ip route is used on network devices."
+  },
+  {
+   "id": "netplus-473",
+   "domain": "ts",
+   "prompt": "A client can ping a web server, but connections to TCP 443 are immediately refused with a TCP reset. What is the MOST likely cause?",
+   "choices": [
+    "The DNS record points to the wrong host",
+    "A routing loop exists between the two hosts",
+    "The service is not listening on that port",
+    "The client has the wrong subnet mask"
+   ],
+   "answer": 2,
+   "explanation": "A reset in reply to a SYN means the host is reachable but nothing is listening on that port. A silent drop would suggest a firewall."
+  },
+  {
+   "id": "netplus-474",
+   "domain": "ts",
+   "prompt": "A new AP with a directional patch antenna was mounted on a wall in an open office, and users on the far side of the room get a weak signal. What is the MOST likely problem?",
+   "choices": [
+    "The SSID is set to hidden",
+    "The DHCP lease time is too long",
+    "The AP is using WPA3 instead of WPA2 encryption",
+    "The antenna is aimed away from users"
+   ],
+   "answer": 3,
+   "explanation": "Directional antennas focus energy in one direction, so improper orientation leaves areas with poor coverage. An omnidirectional antenna may suit an open office better."
+  },
+  {
+   "id": "netplus-475",
+   "domain": "ts",
+   "prompt": "A switch repeatedly logs that the same MAC address is flapping between two ports. What does this MOST likely indicate?",
+   "choices": [
+    "A Layer 2 loop in the network",
+    "A failing power supply",
+    "An expired TLS certificate",
+    "A DNS cache problem"
+   ],
+   "answer": 0,
+   "explanation": "MAC flapping occurs when frames from one host arrive on different ports, which is a common sign of a switching loop."
+  },
+  {
+   "id": "netplus-476",
+   "domain": "ts",
+   "prompt": "After a DHCP scope was edited, newly connecting clients can reach local hosts but not the internet, while clients with older leases work fine. What should be checked FIRST?",
+   "choices": [
+    "The DNS server's SOA serial number",
+    "The scope's default gateway option",
+    "The AP's channel width",
+    "The switch's spanning tree priority"
+   ],
+   "answer": 1,
+   "explanation": "Only new leases are affected, pointing to the scope change; a wrong option 3 gives clients an incorrect default gateway."
   }
  ]
 }

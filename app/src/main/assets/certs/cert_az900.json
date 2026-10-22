@@ -5575,6 +5575,656 @@
    ],
    "answer": 3,
    "explanation": "Cloud Shell can mount an Azure Files share so files persist between sessions."
+  },
+  {
+   "id": "az900-426",
+   "domain": "arch",
+   "prompt": "In Azure App Service, what determines the region, the number of VM instances and the size of the compute resources that web apps run on?",
+   "choices": [
+    "The App Service plan",
+    "The storage account",
+    "The deployment slot",
+    "The resource group"
+   ],
+   "answer": 0,
+   "explanation": "An App Service plan defines the set of compute resources (region, instance count, size and pricing tier) that one or more apps run on. Deployment slots are just separate instances of an app for staging."
+  },
+  {
+   "id": "az900-427",
+   "domain": "arch",
+   "prompt": "A company wants users to sign in without a password by approving a notification on their phone and entering a matching number shown on screen. Which passwordless method fits?",
+   "choices": [
+    "Self-service password reset",
+    "Microsoft Authenticator app",
+    "Windows Hello for Business",
+    "SMS one-time passcode"
+   ],
+   "answer": 1,
+   "explanation": "The Microsoft Authenticator app supports passwordless phone sign-in with number matching. Windows Hello for Business uses biometrics or a PIN tied to a specific PC, and SMS codes are not passwordless."
+  },
+  {
+   "id": "az900-428",
+   "domain": "arch",
+   "prompt": "Factory workers share computers and are not allowed to carry phones on the production floor. Which passwordless sign-in method is MOST appropriate?",
+   "choices": [
+    "Microsoft Authenticator phone sign-in",
+    "SMS-based verification codes",
+    "FIDO2 security keys",
+    "Voice call verification"
+   ],
+   "answer": 2,
+   "explanation": "FIDO2 security keys are portable hardware authenticators that work on shared devices without needing a phone. The other options all depend on a mobile phone."
+  },
+  {
+   "id": "az900-429",
+   "domain": "arch",
+   "prompt": "A company wants employees to access corporate email only from devices that are marked as compliant in its device management system. What should it configure?",
+   "choices": [
+    "An Azure Policy assignment with the Deny effect on mailboxes",
+    "A network security group rule on the email server subnet",
+    "A resource lock on the mailbox resources",
+    "A Conditional Access policy that requires a compliant device"
+   ],
+   "answer": 3,
+   "explanation": "Conditional Access can use device state as a signal and grant access only when the device is marked compliant. Azure Policy and resource locks govern Azure resources, not user sign-ins."
+  },
+  {
+   "id": "az900-430",
+   "domain": "arch",
+   "prompt": "None of the built-in Azure RBAC roles match the exact set of permissions a team needs. What should an administrator do?",
+   "choices": [
+    "Create an Azure custom role with only the required actions",
+    "Assign the Owner role and ask the team to be careful",
+    "Apply a ReadOnly resource lock to the subscription",
+    "Create a new Microsoft Entra tenant for the team"
+   ],
+   "answer": 0,
+   "explanation": "When built-in roles are too broad or too narrow, you can create custom roles that list exactly the allowed actions, supporting least privilege."
+  },
+  {
+   "id": "az900-431",
+   "domain": "arch",
+   "prompt": "Using just-in-time and just-enough access, and risk-based adaptive policies, to limit what users can do supports which Zero Trust principle?",
+   "choices": [
+    "Verify explicitly",
+    "Use least privilege access",
+    "Assume breach",
+    "Defense in depth"
+   ],
+   "answer": 1,
+   "explanation": "Zero Trust's 'use least privilege access' principle limits user access with JIT/JEA and risk-based adaptive policies. 'Verify explicitly' is about always authenticating and authorizing using all available signals."
+  },
+  {
+   "id": "az900-432",
+   "domain": "arch",
+   "prompt": "Which security standard does Microsoft Defender for Cloud assess resources against by default to generate its security recommendations?",
+   "choices": [
+    "NIST SP 800-53 only",
+    "PCI DSS v4",
+    "Microsoft cloud security benchmark",
+    "ISO/IEC 27001 controls only"
+   ],
+   "answer": 2,
+   "explanation": "The Microsoft cloud security benchmark is the default standard in Defender for Cloud; other regulatory standards such as PCI DSS or NIST can be added to the compliance dashboard."
+  },
+  {
+   "id": "az900-433",
+   "domain": "arch",
+   "prompt": "An administrator tries to peer two virtual networks that both use the 10.0.0.0/16 address space. What will happen?",
+   "choices": [
+    "Peering succeeds but only for traffic on port 443",
+    "Peering succeeds and Azure translates the overlapping addresses automatically",
+    "Peering succeeds only after a VPN gateway is deployed into each virtual network",
+    "Peering fails, because peered networks cannot have overlapping address spaces"
+   ],
+   "answer": 3,
+   "explanation": "Virtual network peering requires non-overlapping IP address spaces. Readdressing one network is needed before the peering can be created."
+  },
+  {
+   "id": "az900-434",
+   "domain": "arch",
+   "prompt": "A large enterprise wants to connect directly to Microsoft's global network at a peering location at 10 or 100 Gbps, without going through a connectivity provider. Which option fits?",
+   "choices": [
+    "ExpressRoute Direct",
+    "Global virtual network peering",
+    "Site-to-site VPN over the internet",
+    "Point-to-site VPN"
+   ],
+   "answer": 0,
+   "explanation": "ExpressRoute Direct provides dual 10 Gbps or 100 Gbps physical ports directly into Microsoft's network at peering locations. Standard ExpressRoute circuits are usually provisioned through a connectivity provider."
+  },
+  {
+   "id": "az900-435",
+   "domain": "arch",
+   "prompt": "How are network security group (NSG) rules evaluated for a packet?",
+   "choices": [
+    "Deny rules are always evaluated after every allow rule has been checked",
+    "By priority, lowest number first, stopping at the first matching rule",
+    "All matching rules are combined and the most permissive rule always wins",
+    "In alphabetical order of rule name"
+   ],
+   "answer": 1,
+   "explanation": "NSG rules are processed by priority number, with lower numbers first. Once traffic matches a rule, processing stops, so later rules are not evaluated."
+  },
+  {
+   "id": "az900-436",
+   "domain": "arch",
+   "prompt": "An application needs zone redundancy in the primary region, replication to a secondary region and the ability to read from the secondary region at any time. Which redundancy option fits?",
+   "choices": [
+    "Locally redundant storage (LRS)",
+    "Zone-redundant storage (ZRS) in the primary region",
+    "Read-access geo-zone-redundant storage (RA-GZRS)",
+    "Geo-redundant storage (GRS)"
+   ],
+   "answer": 2,
+   "explanation": "RA-GZRS combines ZRS in the primary region with geo-replication and read access to the secondary region. GRS without read access only allows reads after a failover."
+  },
+  {
+   "id": "az900-437",
+   "domain": "arch",
+   "prompt": "Financial records in Blob Storage must not be modified or deleted by anyone for seven years to meet a regulatory requirement. Which feature should be used?",
+   "choices": [
+    "Blob soft delete",
+    "The Cool access tier",
+    "Geo-redundant storage with read access enabled",
+    "Immutable storage with time-based retention"
+   ],
+   "answer": 3,
+   "explanation": "Immutable storage puts blobs in a write-once, read-many (WORM) state for the retention period. Soft delete only allows recovery for a limited time and does not prevent deletion."
+  },
+  {
+   "id": "az900-438",
+   "domain": "arch",
+   "prompt": "A user accidentally deleted several blobs yesterday. Which feature, if enabled beforehand, lets the administrator recover them within a configured retention period?",
+   "choices": [
+    "Blob soft delete",
+    "Archive access tier",
+    "Read-access geo-redundant storage",
+    "AzCopy sync"
+   ],
+   "answer": 0,
+   "explanation": "Blob soft delete keeps deleted blobs for a set retention period so they can be restored. Geo-replication copies deletions to the secondary region as well."
+  },
+  {
+   "id": "az900-439",
+   "domain": "arch",
+   "prompt": "A partner needs read access to one blob for the next 24 hours without being given the storage account keys. What is the MOST appropriate solution?",
+   "choices": [
+    "Give the partner the storage account access key",
+    "Generate a shared access signature (SAS) that expires in 24 hours",
+    "Assign the partner the Owner role on the subscription",
+    "Make the container public for one day and then make it private again"
+   ],
+   "answer": 1,
+   "explanation": "A SAS grants limited, time-bound permissions to specific storage resources without exposing account keys. Account keys and the Owner role grant far more access than needed."
+  },
+  {
+   "id": "az900-440",
+   "domain": "arch",
+   "prompt": "Which hybrid identity sign-in method validates users' passwords directly against on-premises Active Directory at sign-in time, using an agent, without storing password hashes in the cloud?",
+   "choices": [
+    "Self-service password reset",
+    "Microsoft Entra B2B collaboration",
+    "Pass-through authentication",
+    "Password hash synchronization"
+   ],
+   "answer": 2,
+   "explanation": "Pass-through authentication uses on-premises agents to validate passwords against Active Directory in real time. Password hash synchronization stores a hash of the password hash in Microsoft Entra ID."
+  },
+  {
+   "id": "az900-441",
+   "domain": "arch",
+   "prompt": "Managers must periodically confirm that their team members still need membership in groups that grant access to sensitive apps. Which Microsoft Entra feature supports this?",
+   "choices": [
+    "Security defaults",
+    "Microsoft Entra Connect",
+    "Azure resource locks",
+    "Access reviews"
+   ],
+   "answer": 3,
+   "explanation": "Access reviews let reviewers regularly attest whether users still need group memberships, application access or role assignments, and remove access that is no longer needed."
+  },
+  {
+   "id": "az900-442",
+   "domain": "arch",
+   "prompt": "Which statement about Microsoft Entra roles and Azure RBAC roles is TRUE?",
+   "choices": [
+    "Entra roles manage directory objects; Azure roles manage Azure resources",
+    "Azure RBAC roles are the only way to manage users and licenses in Entra ID",
+    "They are the same roles shown in two places in the portal",
+    "Entra roles can only be assigned at the resource group scope"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Entra roles (such as Global Administrator or User Administrator) control directory objects, while Azure RBAC roles (such as Owner or Contributor) control Azure resources at management group, subscription, resource group or resource scope."
+  },
+  {
+   "id": "az900-443",
+   "domain": "arch",
+   "prompt": "What is an Azure geography?",
+   "choices": [
+    "A single datacenter with its own independent power, cooling and network",
+    "A market with one or more regions that keeps data residency boundaries",
+    "A billing boundary for a set of resource groups",
+    "A group of availability zones within one region"
+   ],
+   "answer": 1,
+   "explanation": "Geographies such as 'Europe' or 'Japan' contain one or more regions and help customers meet data residency, sovereignty and compliance requirements."
+  },
+  {
+   "id": "az900-444",
+   "domain": "arch",
+   "prompt": "An IoT analytics application writes very large numbers of small objects to Blob Storage and needs consistently low latency for these operations. Which storage account type is the BEST fit?",
+   "choices": [
+    "Standard general-purpose v2 with the Cool tier",
+    "Premium page blobs",
+    "Premium block blobs",
+    "Standard general-purpose v2 with the Archive tier"
+   ],
+   "answer": 2,
+   "explanation": "Premium block blob storage accounts use SSDs and are designed for high transaction rates and low, consistent latency with block blobs. Page blobs are for random read/write workloads like VM disks."
+  },
+  {
+   "id": "az900-445",
+   "domain": "gov",
+   "prompt": "Which Microsoft Cost Management feature can notify a team when spending in a subscription suddenly deviates from its usual pattern, even if no budget has been exceeded?",
+   "choices": [
+    "Resource locks",
+    "Azure Policy compliance reports",
+    "Service Health alerts",
+    "Anomaly alerts"
+   ],
+   "answer": 3,
+   "explanation": "Cost Management can detect cost anomalies based on historical usage and send anomaly alerts. Budget alerts only fire at fixed thresholds you define."
+  },
+  {
+   "id": "az900-446",
+   "domain": "gov",
+   "prompt": "A company wants documents labeled 'Confidential' to stay encrypted and access-restricted wherever they are shared, including outside the organization. Which Microsoft Purview capability fits?",
+   "choices": [
+    "Sensitivity labels",
+    "Azure Policy initiatives",
+    "Azure resource locks",
+    "Azure resource tags"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Purview sensitivity labels classify content and can apply protection such as encryption that travels with the file. Tags and locks apply only to Azure resources, not documents."
+  },
+  {
+   "id": "az900-447",
+   "domain": "gov",
+   "prompt": "An ARM template is deployed to a resource group in complete mode. What happens to existing resources in the group that are NOT defined in the template?",
+   "choices": [
+    "They are locked with a ReadOnly lock",
+    "They are deleted",
+    "They are moved to a new resource group",
+    "They are left unchanged"
+   ],
+   "answer": 1,
+   "explanation": "Complete mode makes the resource group match the template, deleting resources not in it. The default incremental mode leaves such resources unchanged."
+  },
+  {
+   "id": "az900-448",
+   "domain": "gov",
+   "prompt": "An operations team wants to be notified whenever anyone deletes a virtual machine in a production subscription. Which type of Azure Monitor alert fits BEST?",
+   "choices": [
+    "A metric alert on VM CPU percentage",
+    "A Cost Management budget alert",
+    "An activity log alert on the VM delete operation",
+    "An Application Insights availability test on the VM's public endpoint"
+   ],
+   "answer": 2,
+   "explanation": "Deleting a VM is a control-plane operation recorded in the activity log, so an activity log alert can fire on that event. Metric alerts track numeric performance values."
+  },
+  {
+   "id": "az900-449",
+   "domain": "gov",
+   "prompt": "After a service outage last month, an administrator wants to read the post-incident review Microsoft published for issues that affected the subscription. Where should they look?",
+   "choices": [
+    "Azure Advisor score",
+    "Azure Policy compliance view",
+    "Microsoft Cost Management cost analysis",
+    "Health history in Azure Service Health"
+   ],
+   "answer": 3,
+   "explanation": "Azure Service Health keeps a health history of past service issues affecting your subscriptions, including downloadable post-incident reviews."
+  },
+  {
+   "id": "az900-450",
+   "domain": "gov",
+   "prompt": "An administrator needs to quickly query and inventory resources across dozens of subscriptions, for example listing all VMs without a backup tag. Which service is designed for this?",
+   "choices": [
+    "Azure Resource Graph",
+    "Azure Advisor",
+    "Microsoft Purview Compliance Manager",
+    "Azure Service Health"
+   ],
+   "answer": 0,
+   "explanation": "Azure Resource Graph lets you run fast, KQL-based queries over resource properties at scale across subscriptions and management groups."
+  },
+  {
+   "id": "az900-451",
+   "domain": "gov",
+   "prompt": "A company buys an Azure Reservation for VMs and sets its scope to Shared. How is the discount applied?",
+   "choices": [
+    "Only to VMs in the resource group where it was bought",
+    "Automatically to matching resources in eligible subscriptions",
+    "Only after each VM is manually linked to the reservation by an administrator",
+    "Only to the single VM chosen at purchase time"
+   ],
+   "answer": 1,
+   "explanation": "With a shared scope, the reservation discount applies automatically to matching resources across eligible subscriptions in the billing account or context; no manual assignment to individual VMs is needed."
+  },
+  {
+   "id": "az900-452",
+   "domain": "gov",
+   "prompt": "A company runs the same VM size in the same region 24/7 and expects no changes for three years. Compared with an Azure savings plan for compute, why might Azure Reservations be preferred?",
+   "choices": [
+    "Reservations can be cancelled for a full refund at any time",
+    "Reservations also cover all Azure Marketplace software licenses automatically, at no cost",
+    "Reservations usually give a deeper discount for steady use of specific resources",
+    "Reservations are the only option that supports a three-year term"
+   ],
+   "answer": 2,
+   "explanation": "Savings plans trade some discount for flexibility across sizes and regions, while reservations usually give the highest savings when usage of a specific resource type and region is steady."
+  },
+  {
+   "id": "az900-453",
+   "domain": "gov",
+   "prompt": "Two VMs have the same size and region, but one runs Windows Server and the other Linux. Why is the Windows VM typically more expensive on pay-as-you-go pricing?",
+   "choices": [
+    "Windows VMs are placed in more availability zones",
+    "Windows VMs always use premium storage",
+    "Linux VMs are not billed for compute time",
+    "Its price includes the Windows Server license"
+   ],
+   "answer": 3,
+   "explanation": "Windows VM pricing includes the operating system license unless Azure Hybrid Benefit is applied with eligible existing licenses."
+  },
+  {
+   "id": "az900-454",
+   "domain": "gov",
+   "prompt": "A developer wants a visual diagram showing the components of a distributed web application and the dependencies, failures and latency between them. Which Application Insights feature fits?",
+   "choices": [
+    "Application map",
+    "Availability tests",
+    "Activity log",
+    "Resource Health"
+   ],
+   "answer": 0,
+   "explanation": "Application map in Application Insights shows the components of an application and the calls between them, highlighting performance bottlenecks and failure hotspots."
+  },
+  {
+   "id": "az900-455",
+   "domain": "gov",
+   "prompt": "Where do the security recommendations shown in Azure Advisor come from?",
+   "choices": [
+    "Microsoft Cost Management",
+    "Microsoft Defender for Cloud",
+    "Azure Resource Graph",
+    "Azure Service Health"
+   ],
+   "answer": 1,
+   "explanation": "Advisor's security category surfaces recommendations from Microsoft Defender for Cloud, giving a single place to view recommendations across all categories."
+  },
+  {
+   "id": "az900-456",
+   "domain": "gov",
+   "prompt": "What is installed on an on-premises Windows or Linux server so it can be onboarded as an Azure Arc-enabled server?",
+   "choices": [
+    "The AzCopy command-line tool",
+    "The Azure Storage Explorer client",
+    "The Azure Connected Machine agent",
+    "The Microsoft Entra Connect agent"
+   ],
+   "answer": 2,
+   "explanation": "The Azure Connected Machine agent connects a server to Azure Arc, after which it appears as an Azure resource that can be governed with Azure Policy, RBAC and tags."
+  },
+  {
+   "id": "az900-457",
+   "domain": "gov",
+   "prompt": "A new Azure Policy assignment with the Deny effect blocks VMs without a required tag. What happens to existing VMs that were created earlier without the tag?",
+   "choices": [
+    "They are deleted automatically",
+    "They are moved to a quarantine resource group",
+    "They are stopped until the tag is added",
+    "They keep running and are reported as non-compliant"
+   ],
+   "answer": 3,
+   "explanation": "The Deny effect prevents new non-compliant creates and updates; existing resources are not deleted or stopped but show as non-compliant in the compliance results."
+  },
+  {
+   "id": "az900-458",
+   "domain": "gov",
+   "prompt": "Which section of an ARM template returns values, such as a newly created resource's endpoint, after deployment finishes?",
+   "choices": [
+    "Outputs",
+    "Resources",
+    "Variables",
+    "Parameters"
+   ],
+   "answer": 0,
+   "explanation": "The outputs section returns values from a deployment. Parameters supply values at deployment time, and variables hold values reused within the template."
+  },
+  {
+   "id": "az900-459",
+   "domain": "gov",
+   "prompt": "Which Azure CLI command creates a new resource group?",
+   "choices": [
+    "az rg add",
+    "az group create",
+    "az resource new",
+    "New-AzResourceGroup"
+   ],
+   "answer": 1,
+   "explanation": "In the Azure CLI, 'az group create' with a name and location creates a resource group. New-AzResourceGroup is the Azure PowerShell equivalent."
+  },
+  {
+   "id": "az900-460",
+   "domain": "gov",
+   "prompt": "A company wants to know whether buying Azure Reservations would save money based on its actual VM usage over recent weeks. Which free tool provides personalized reservation recommendations?",
+   "choices": [
+    "Azure Policy",
+    "Azure Service Health",
+    "Azure Advisor",
+    "Azure Resource Manager"
+   ],
+   "answer": 2,
+   "explanation": "Azure Advisor's cost recommendations include reservation purchase suggestions based on your usage history, along with rightsizing and shutdown recommendations."
+  },
+  {
+   "id": "az900-461",
+   "domain": "gov",
+   "prompt": "An administrator needs a single assignment that checks a set of related rules, such as required tags and allowed locations, across many subscriptions under a management group. What is the MOST efficient approach?",
+   "choices": [
+    "Create a custom RBAC role for each rule",
+    "Create a resource lock on each subscription",
+    "Assign each policy definition separately to every resource group in each subscription",
+    "Assign an initiative of the policies at the management group"
+   ],
+   "answer": 3,
+   "explanation": "An initiative groups related policy definitions so they are assigned and tracked together, and assigning it at a management group applies it to every subscription below."
+  },
+  {
+   "id": "az900-462",
+   "domain": "concepts",
+   "prompt": "A company runs all of its servers in its own on-premises datacenter. Who is responsible for the physical security of that datacenter?",
+   "choices": [
+    "The company itself",
+    "The company's internet service provider",
+    "Microsoft",
+    "Responsibility is shared equally with Microsoft"
+   ],
+   "answer": 0,
+   "explanation": "In an on-premises datacenter the organization owns every layer, including physical security. Moving to the cloud shifts physical security to the provider."
+  },
+  {
+   "id": "az900-463",
+   "domain": "concepts",
+   "prompt": "Under the shared responsibility model, who is responsible for network controls in a SaaS offering such as Microsoft 365?",
+   "choices": [
+    "The customer",
+    "Microsoft",
+    "Shared equally between customer and Microsoft",
+    "The customer's internet service provider"
+   ],
+   "answer": 1,
+   "explanation": "For SaaS, the provider manages network controls along with the application, OS and infrastructure. Network controls are the customer's in IaaS and shared in PaaS."
+  },
+  {
+   "id": "az900-464",
+   "domain": "concepts",
+   "prompt": "A business states that it can afford to lose at most 15 minutes of data after a disaster. Which metric does this define?",
+   "choices": [
+    "Recovery time objective (RTO)",
+    "Service-level agreement (SLA)",
+    "Recovery point objective (RPO)",
+    "Mean time between failures (MTBF)"
+   ],
+   "answer": 2,
+   "explanation": "RPO is the maximum acceptable data loss measured in time. RTO is the maximum acceptable time to restore service."
+  },
+  {
+   "id": "az900-465",
+   "domain": "concepts",
+   "prompt": "Management requires that the order system be running again within two hours of any major outage. Which metric does this describe?",
+   "choices": [
+    "Composite SLA",
+    "Recovery point objective (RPO)",
+    "Mean time to detect (MTTD)",
+    "Recovery time objective (RTO)"
+   ],
+   "answer": 3,
+   "explanation": "RTO is the target maximum time allowed to restore a service after an interruption. RPO concerns how much data can be lost."
+  },
+  {
+   "id": "az900-466",
+   "domain": "concepts",
+   "prompt": "A government agency must keep certain citizen data inside its own country, where no Azure region exists, but wants to use Azure for its public website. Which deployment model fits BEST?",
+   "choices": [
+    "Hybrid cloud",
+    "Public cloud only",
+    "Serverless only",
+    "Multi-cloud with two public providers"
+   ],
+   "answer": 0,
+   "explanation": "A hybrid model keeps regulated data in the agency's own datacenter while using Azure for workloads without residency restrictions."
+  },
+  {
+   "id": "az900-467",
+   "domain": "concepts",
+   "prompt": "A service has a monthly SLA of 99.95%. Approximately how much downtime does this allow in a 30-day month?",
+   "choices": [
+    "About 7 hours",
+    "About 22 minutes",
+    "About 44 minutes",
+    "About 4 minutes"
+   ],
+   "answer": 1,
+   "explanation": "A 30-day month has 43,200 minutes; 0.05% of that is about 21.6 minutes. About 4 minutes corresponds to 99.99%, and about 44 minutes to 99.9%."
+  },
+  {
+   "id": "az900-468",
+   "domain": "concepts",
+   "prompt": "In the Microsoft Cloud Adoption Framework for Azure, which methodology focuses on preparing the cloud environment, such as building landing zones, before workloads are migrated?",
+   "choices": [
+    "Strategy",
+    "Manage",
+    "Ready",
+    "Adopt"
+   ],
+   "answer": 2,
+   "explanation": "The Ready methodology prepares the environment for adoption, typically by deploying Azure landing zones. Adopt covers migrating and innovating, and Manage covers ongoing operations."
+  },
+  {
+   "id": "az900-469",
+   "domain": "concepts",
+   "prompt": "What is an Azure landing zone?",
+   "choices": [
+    "A peering location where ExpressRoute circuits from providers terminate",
+    "A region reserved for disaster recovery failover",
+    "A single virtual machine used to test new applications",
+    "A prepared environment with identity, networking and governance in place"
+   ],
+   "answer": 3,
+   "explanation": "An Azure landing zone is a scalable, well-governed foundation, including subscription organization, identity, networking and policies, prepared before workloads are deployed."
+  },
+  {
+   "id": "az900-470",
+   "domain": "concepts",
+   "prompt": "A team load-tests its application and configures autoscaling so it meets changing demand without overprovisioning. Which Azure Well-Architected Framework pillar is it addressing?",
+   "choices": [
+    "Performance Efficiency",
+    "Security",
+    "Reliability",
+    "Operational Excellence"
+   ],
+   "answer": 0,
+   "explanation": "Performance Efficiency is about a workload's ability to scale and meet demand efficiently. Reliability focuses on resilience and recovery from failures."
+  },
+  {
+   "id": "az900-471",
+   "domain": "concepts",
+   "prompt": "Why is the cloud often a more cost-effective option for disaster recovery than building a second on-premises datacenter?",
+   "choices": [
+    "Disaster recovery is included free of charge with every Azure subscription",
+    "No idle second site to buy; you pay mostly for replication until failover",
+    "Data never needs to be copied when using the cloud",
+    "Cloud providers guarantee that disasters will never affect any region at all"
+   ],
+   "answer": 1,
+   "explanation": "Using another Azure region for DR removes the cost of a second physical site; services such as Azure Site Recovery replicate data and you scale up compute only when failing over."
+  },
+  {
+   "id": "az900-472",
+   "domain": "concepts",
+   "prompt": "A company needs a higher SLA for a single Azure VM but cannot add more instances. Which change can raise the VM's single-instance SLA?",
+   "choices": [
+    "Moving the VM to a different resource group",
+    "Applying a CanNotDelete lock to the VM",
+    "Using Premium SSD or Ultra Disk for all of its disks",
+    "Adding tags that mark the VM as a critical production workload"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft's single-instance VM SLA depends on disk type, with the highest single-VM SLA requiring Premium SSD or Ultra Disk for all OS and data disks. Resource groups, locks and tags do not affect availability."
+  },
+  {
+   "id": "az900-473",
+   "domain": "concepts",
+   "prompt": "A defense agency needs to run a subset of Azure services in its own datacenter, including in locations that may be disconnected from the internet. Which offering is designed for this?",
+   "choices": [
+    "Azure Traffic Manager",
+    "Azure Front Door",
+    "Azure Virtual Desktop",
+    "Azure Stack Hub"
+   ],
+   "answer": 3,
+   "explanation": "Azure Stack Hub extends Azure services into an organization's own datacenter and can operate in disconnected scenarios, supporting hybrid cloud requirements."
+  },
+  {
+   "id": "az900-474",
+   "domain": "concepts",
+   "prompt": "A team rightsizes underused VMs and shuts down development resources at night to avoid waste. Which Azure Well-Architected Framework pillar does this support?",
+   "choices": [
+    "Cost Optimization",
+    "Security",
+    "Reliability",
+    "Performance Efficiency"
+   ],
+   "answer": 0,
+   "explanation": "Cost Optimization focuses on avoiding unnecessary expense, for example by rightsizing resources and turning off what is not being used."
+  },
+  {
+   "id": "az900-475",
+   "domain": "concepts",
+   "prompt": "A team uses automated, repeatable deployment pipelines and monitoring so it can release changes safely and detect problems quickly. Which Azure Well-Architected Framework pillar does this support?",
+   "choices": [
+    "Security",
+    "Operational Excellence",
+    "Cost Optimization",
+    "Performance Efficiency"
+   ],
+   "answer": 1,
+   "explanation": "Operational Excellence covers the operations processes that keep a workload running in production, such as DevOps practices, automated deployments and monitoring."
   }
  ]
 }

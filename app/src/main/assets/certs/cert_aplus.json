@@ -5730,6 +5730,656 @@
    ],
    "answer": 3,
    "explanation": "AI hallucinations are plausible-sounding but incorrect outputs, so AI answers should be verified before use."
+  },
+  {
+   "id": "aplus-430",
+   "domain": "hw",
+   "prompt": "A file server must keep running even if any two of its drives fail at the same time. Which RAID level should be configured?",
+   "choices": [
+    "RAID 6",
+    "RAID 0",
+    "RAID 1",
+    "RAID 5"
+   ],
+   "answer": 0,
+   "explanation": "RAID 6 uses dual distributed parity, needs at least four drives and tolerates two simultaneous drive failures. RAID 5 survives only one."
+  },
+  {
+   "id": "aplus-431",
+   "domain": "hw",
+   "prompt": "A technician connects a SATA SSD to a SATA III port. What is the maximum theoretical interface speed of that connection?",
+   "choices": [
+    "12 Gbps",
+    "6 Gbps",
+    "3 Gbps",
+    "1.5 Gbps"
+   ],
+   "answer": 1,
+   "explanation": "SATA III (SATA 6Gb/s) has a maximum interface rate of 6 Gbps; 1.5 and 3 Gbps are SATA I and II."
+  },
+  {
+   "id": "aplus-432",
+   "domain": "hw",
+   "prompt": "In the laser printing process, which step places a uniform negative charge on the imaging drum before the image is written?",
+   "choices": [
+    "Transferring",
+    "Exposing",
+    "Charging",
+    "Cleaning"
+   ],
+   "answer": 2,
+   "explanation": "During charging, the primary charge roller or corona wire applies a uniform negative charge to the drum so the laser can then discharge the image areas."
+  },
+  {
+   "id": "aplus-433",
+   "domain": "hw",
+   "prompt": "An administrator wants to use one keyboard, mouse and monitor to control two desktop computers on the same desk. Which device should be installed?",
+   "choices": [
+    "Docking station",
+    "Display splitter",
+    "USB hub",
+    "KVM switch"
+   ],
+   "answer": 3,
+   "explanation": "A KVM (keyboard, video, mouse) switch lets one set of peripherals control multiple computers by switching between them."
+  },
+  {
+   "id": "aplus-434",
+   "domain": "hw",
+   "prompt": "Which CPU architecture is used in most smartphones and in Apple silicon Macs, chosen largely for its power efficiency?",
+   "choices": [
+    "ARM",
+    "x86 (32-bit)",
+    "x86-64",
+    "IA-64"
+   ],
+   "answer": 0,
+   "explanation": "ARM is a RISC architecture known for low power use and is used in most mobile devices and Apple silicon. x86-64 dominates traditional PCs."
+  },
+  {
+   "id": "aplus-435",
+   "domain": "hw",
+   "prompt": "Confidential HR printouts are often left sitting in a shared printer's output tray. Which printer feature BEST prevents this?",
+   "choices": [
+    "Duplex printing set as the default for all users",
+    "Secured print requiring a PIN or badge to release jobs",
+    "A larger output tray fitted with a locking privacy cover",
+    "Printing to a file and emailing it instead"
+   ],
+   "answer": 1,
+   "explanation": "Secured print (print release) holds the job until the user authenticates at the device, so documents are not left unattended."
+  },
+  {
+   "id": "aplus-436",
+   "domain": "hwts",
+   "prompt": "A laser printer no longer feeds paper; the sheets stay in the tray and the rubber rollers look shiny and smooth. Which part should be replaced?",
+   "choices": [
+    "Toner cartridge",
+    "Fuser assembly",
+    "Pickup rollers",
+    "Transfer belt"
+   ],
+   "answer": 2,
+   "explanation": "Worn, glazed pickup rollers lose grip and fail to pull paper from the tray. The separation pad problem is the opposite, pulling several sheets."
+  },
+  {
+   "id": "aplus-437",
+   "domain": "hwts",
+   "prompt": "After a CMOS reset, a Windows PC fails to boot with an INACCESSIBLE_BOOT_DEVICE error. Nothing else changed. What is the MOST likely cause?",
+   "choices": [
+    "The CMOS battery is now completely drained",
+    "Secure Boot keys were erased and must be re-enrolled",
+    "The boot drive failed during the CMOS reset",
+    "The SATA mode (AHCI/RAID) no longer matches the original"
+   ],
+   "answer": 3,
+   "explanation": "Resetting UEFI settings can revert the SATA controller mode (for example between RAID/Intel RST and AHCI), and Windows then cannot load the right storage driver. Restoring the original mode fixes it."
+  },
+  {
+   "id": "aplus-438",
+   "domain": "hwts",
+   "prompt": "VoIP users report choppy audio because packets arrive with uneven delays between them. Which network issue does this describe?",
+   "choices": [
+    "Jitter",
+    "Attenuation",
+    "Port flapping",
+    "Duplex mismatch"
+   ],
+   "answer": 0,
+   "explanation": "Jitter is variation in packet delay, which disrupts real-time traffic like voice and video. Attenuation is signal loss over distance."
+  },
+  {
+   "id": "aplus-439",
+   "domain": "hwts",
+   "prompt": "Text on a new LCD monitor looks blurry and slightly stretched, although the cable and drivers are fine. What should the technician do FIRST?",
+   "choices": [
+    "Replace the video cable with a shielded one",
+    "Set the monitor's native resolution",
+    "Degauss the monitor from its menu",
+    "Lower the refresh rate to reduce flicker"
+   ],
+   "answer": 1,
+   "explanation": "LCDs look sharp only at their native resolution; other resolutions are scaled and appear fuzzy. Degaussing applies to old CRTs."
+  },
+  {
+   "id": "aplus-440",
+   "domain": "hwts",
+   "prompt": "A technician wants to check whether a desktop power supply is outputting correct voltages on its connectors without installing it in another PC. Which tool should be used?",
+   "choices": [
+    "Loopback plug",
+    "Cable tester",
+    "Power supply tester",
+    "Toner probe"
+   ],
+   "answer": 2,
+   "explanation": "A power supply tester plugs into the PSU's connectors and shows whether each rail is within specification. A multimeter can also measure voltages."
+  },
+  {
+   "id": "aplus-441",
+   "domain": "hwts",
+   "prompt": "A laptop is connected to a conference room projector by HDMI, but only the laptop screen shows an image. What should the technician try FIRST?",
+   "choices": [
+    "Replace the HDMI cable with a new one",
+    "Update the laptop's BIOS and chipset",
+    "Replace the projector lamp",
+    "Press Windows+P and choose Duplicate"
+   ],
+   "answer": 3,
+   "explanation": "Windows+P switches the projection mode; if it is set to PC screen only, the external display receives no image. Check the simple setting before replacing hardware."
+  },
+  {
+   "id": "aplus-442",
+   "domain": "mobile",
+   "prompt": "During phone calls, a user's smartphone screen stays on and their cheek keeps pressing the mute button. A new thick screen protector was just applied. What is the MOST likely cause?",
+   "choices": [
+    "The proximity sensor is blocked",
+    "The accelerometer has failed",
+    "The ambient light sensor has been disabled",
+    "The digitizer needs calibration"
+   ],
+   "answer": 0,
+   "explanation": "The proximity sensor turns the screen off when the phone is held to the ear; covering it with a screen protector stops this from working."
+  },
+  {
+   "id": "aplus-443",
+   "domain": "mobile",
+   "prompt": "On a laptop, pressing F5 changes the screen brightness instead of refreshing the web page. What is the MOST likely reason?",
+   "choices": [
+    "The browser does not support F5",
+    "Fn lock is reversing the function keys",
+    "Sticky Keys is enabled",
+    "The keyboard driver is corrupt or outdated"
+   ],
+   "answer": 1,
+   "explanation": "Many laptops let the top row act as media keys by default; toggling Fn lock (or the BIOS function key setting) restores standard F1-F12 behavior."
+  },
+  {
+   "id": "aplus-444",
+   "domain": "mobile",
+   "prompt": "A laptop that worked on Wi-Fi before a flight now shows no wireless networks at all. Device Manager shows the wireless card working with no errors. What should be checked FIRST?",
+   "choices": [
+    "Whether the display's antenna leads are disconnected",
+    "Whether the router's SSID is hidden",
+    "Whether airplane mode or the wireless toggle is on",
+    "Whether the WLAN card needs replacing"
+   ],
+   "answer": 2,
+   "explanation": "Airplane mode or a hardware wireless switch disables the radio while the device still appears healthy. It is the quickest, most likely cause after travel."
+  },
+  {
+   "id": "aplus-445",
+   "domain": "net",
+   "prompt": "A technician needs to securely transfer files to a Linux server using SFTP. Which port must be allowed through the firewall?",
+   "choices": [
+    "TCP 21",
+    "TCP 990",
+    "UDP 69",
+    "TCP 22"
+   ],
+   "answer": 3,
+   "explanation": "SFTP runs over SSH, which uses TCP port 22. Port 21 is plain FTP control and UDP 69 is TFTP."
+  },
+  {
+   "id": "aplus-446",
+   "domain": "net",
+   "prompt": "Which ports are associated with NetBIOS over TCP/IP, used by older Windows name resolution and file sharing?",
+   "choices": [
+    "137-139",
+    "161-162",
+    "135",
+    "445"
+   ],
+   "answer": 0,
+   "explanation": "NetBIOS uses ports 137 to 139 for name, datagram and session services. Modern SMB runs directly over TCP 445."
+  },
+  {
+   "id": "aplus-447",
+   "domain": "net",
+   "prompt": "A remote cabin uses a traditional geostationary satellite internet service. Which problem are users MOST likely to notice compared with fiber?",
+   "choices": [
+    "Frequent duplicate IP address conflicts",
+    "High latency for video calls and gaming",
+    "Speeds limited to dial-up modem rates",
+    "Inability to obtain an address from DHCP"
+   ],
+   "answer": 1,
+   "explanation": "Signals travel to a satellite about 36,000 km up and back, adding substantial latency that hurts real-time applications."
+  },
+  {
+   "id": "aplus-448",
+   "domain": "net",
+   "prompt": "A data center wants servers to access shared block-level storage over a dedicated high-speed network. Which network type is this?",
+   "choices": [
+    "WAN",
+    "WLAN",
+    "SAN",
+    "PAN"
+   ],
+   "answer": 2,
+   "explanation": "A storage area network (SAN) provides block-level access to storage over a dedicated network. A NAS provides file-level shares."
+  },
+  {
+   "id": "aplus-449",
+   "domain": "net",
+   "prompt": "A technician is making custom-length patch cables and needs to attach RJ45 connectors to the cable ends. Which tool is required?",
+   "choices": [
+    "Toner probe",
+    "Punchdown tool",
+    "Loopback plug",
+    "Crimper"
+   ],
+   "answer": 3,
+   "explanation": "A crimper presses the RJ45 connector's pins onto the wires. A punchdown tool terminates wires into patch panels and keystone jacks."
+  },
+  {
+   "id": "aplus-450",
+   "domain": "net",
+   "prompt": "A company moves to a new hosted email provider, and outside senders' messages must be delivered to it. Which DNS record must be updated?",
+   "choices": [
+    "MX",
+    "CNAME",
+    "PTR",
+    "AAAA"
+   ],
+   "answer": 0,
+   "explanation": "MX (mail exchanger) records tell other mail servers where to deliver email for the domain. PTR records are used for reverse lookups."
+  },
+  {
+   "id": "aplus-451",
+   "domain": "os",
+   "prompt": "A Linux administrator needs to locate a file named backup.conf somewhere under /etc. Which command should be used?",
+   "choices": [
+    "locate -r /etc backup.conf",
+    "find /etc -name backup.conf",
+    "grep backup.conf /etc",
+    "ls backup.conf /etc"
+   ],
+   "answer": 1,
+   "explanation": "find searches a directory tree for files matching criteria such as name. grep searches inside file contents."
+  },
+  {
+   "id": "aplus-452",
+   "domain": "os",
+   "prompt": "A Linux user wants a one-time snapshot list of all running processes, including those of other users. Which command should be used?",
+   "choices": [
+    "chmod -R",
+    "df -h",
+    "ps aux",
+    "pwd"
+   ],
+   "answer": 2,
+   "explanation": "ps reports currently running processes, and aux shows all users' processes with details. top shows a continuously updating view."
+  },
+  {
+   "id": "aplus-453",
+   "domain": "os",
+   "prompt": "A technician needs to install a package on a Fedora or Red Hat Enterprise Linux system. Which package manager command should be used?",
+   "choices": [
+    "apt install",
+    "winget install",
+    "brew install",
+    "dnf install"
+   ],
+   "answer": 3,
+   "explanation": "dnf is the package manager for Fedora and modern RHEL-based distributions. apt is used on Debian and Ubuntu."
+  },
+  {
+   "id": "aplus-454",
+   "domain": "os",
+   "prompt": "From an elevated command prompt, a technician needs to create a local Windows user account named jsmith. Which command does this?",
+   "choices": [
+    "net user jsmith * /add",
+    "useradd jsmith",
+    "gpupdate /user jsmith",
+    "net use jsmith /add"
+   ],
+   "answer": 0,
+   "explanation": "net user with /add creates a local account, and the asterisk prompts for the password. net use maps network drives."
+  },
+  {
+   "id": "aplus-455",
+   "domain": "os",
+   "prompt": "A company requires that the startup disk of every MacBook be fully encrypted. Which built-in macOS feature should be enabled?",
+   "choices": [
+    "Time Machine",
+    "FileVault",
+    "Gatekeeper",
+    "Keychain Access"
+   ],
+   "answer": 1,
+   "explanation": "FileVault provides full-disk encryption on macOS. Gatekeeper controls which apps may run, and Time Machine handles backups."
+  },
+  {
+   "id": "aplus-456",
+   "domain": "os",
+   "prompt": "A user wants to connect to their home desktop with Remote Desktop from work, but the desktop runs Windows 11 Home. What is the BEST solution?",
+   "choices": [
+    "Install the Remote Desktop app on the work PC",
+    "Enable Remote Assistance and use RDP",
+    "Upgrade the desktop to Windows 11 Pro",
+    "Open TCP 3389 on the home router"
+   ],
+   "answer": 2,
+   "explanation": "Windows Home can act as an RDP client but not as a Remote Desktop host. Opening ports will not help without the host feature, which Pro provides."
+  },
+  {
+   "id": "aplus-457",
+   "domain": "os",
+   "prompt": "After a password change, a Windows PC keeps failing to reconnect a mapped drive because it uses an old saved password. Which tool should be used to remove the cached entry?",
+   "choices": [
+    "Device Manager",
+    "System Configuration",
+    "Local Security Policy",
+    "Credential Manager"
+   ],
+   "answer": 3,
+   "explanation": "Credential Manager stores saved Windows and web credentials and lets a technician edit or remove stale entries."
+  },
+  {
+   "id": "aplus-458",
+   "domain": "os",
+   "prompt": "A small tablet PC with only a 32 GB internal drive fails the Windows 11 compatibility check. Which requirement is it missing?",
+   "choices": [
+    "At least 64 GB of storage",
+    "At least 128 GB of storage",
+    "An NVMe-based drive",
+    "At least 256 GB of SSD storage"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft lists 64 GB or larger storage as a minimum requirement for Windows 11, along with 4 GB RAM and TPM 2.0."
+  },
+  {
+   "id": "aplus-459",
+   "domain": "sec",
+   "prompt": "After a laptop's motherboard was replaced, Windows asks for a BitLocker recovery key at startup. What should the technician do?",
+   "choices": [
+    "Clear the CMOS so the new TPM can import the old keys",
+    "Enter the recovery key from the user's backup location",
+    "Boot into Safe Mode, which bypasses BitLocker entirely",
+    "Reinstall Windows to remove BitLocker from the drive"
+   ],
+   "answer": 1,
+   "explanation": "The new TPM does not hold the old keys, so BitLocker requires the 48-digit recovery key, typically stored in the Microsoft account, AD or Entra ID."
+  },
+  {
+   "id": "aplus-460",
+   "domain": "sec",
+   "prompt": "A company hires a vendor to destroy old hard drives off-site. What should the company obtain to prove the drives were properly destroyed?",
+   "choices": [
+    "A service level agreement",
+    "A copy of the vendor's acceptable use policy",
+    "A certificate of destruction",
+    "A chain of custody form signed by IT only"
+   ],
+   "answer": 2,
+   "explanation": "A certificate of destruction documents that the media were destroyed and when, providing proof for audits and compliance."
+  },
+  {
+   "id": "aplus-461",
+   "domain": "sec",
+   "prompt": "Old office PCs will be donated to a school, and their hard drives must remain usable but contain no recoverable data. What is the BEST method?",
+   "choices": [
+    "Perform a standard quick format of each drive",
+    "Degauss the drives with a strong magnet",
+    "Drill through the platters of each drive",
+    "Overwrite them with a secure wiping utility"
+   ],
+   "answer": 3,
+   "explanation": "Secure wiping overwrites data so it cannot be recovered while leaving the drive usable. Degaussing and drilling make the drive unusable, and a quick format leaves data recoverable."
+  },
+  {
+   "id": "aplus-462",
+   "domain": "sec",
+   "prompt": "A department still uses a PC running an operating system that the vendor no longer supports with security updates. What is the MAIN risk?",
+   "choices": [
+    "New vulnerabilities will never be patched",
+    "The PC will stop booting after the end date",
+    "Its software licenses become invalid",
+    "The PC cannot join a network"
+   ],
+   "answer": 0,
+   "explanation": "End-of-life operating systems no longer receive patches, so newly discovered vulnerabilities remain exploitable."
+  },
+  {
+   "id": "aplus-463",
+   "domain": "sec",
+   "prompt": "A company is choosing a second factor for staff logins. Which option is MOST vulnerable to SIM-swapping attacks?",
+   "choices": [
+    "A fingerprint reader",
+    "One-time codes sent by SMS text message",
+    "Codes from an authenticator app",
+    "A hardware security key"
+   ],
+   "answer": 1,
+   "explanation": "SMS codes go to whoever controls the phone number, so an attacker who ports the number can receive them. Authenticator apps and hardware keys are tied to the device."
+  },
+  {
+   "id": "aplus-464",
+   "domain": "sec",
+   "prompt": "An administrator wants users' Documents folders to be stored on a file server automatically so they are backed up and follow users to any domain PC. Which Active Directory feature should be used?",
+   "choices": [
+    "Login script drive mapping",
+    "Roaming Wi-Fi profile",
+    "Folder redirection",
+    "Security group nesting"
+   ],
+   "answer": 2,
+   "explanation": "Folder redirection, set through Group Policy, points folders like Documents to a network location so the data lives on the server."
+  },
+  {
+   "id": "aplus-465",
+   "domain": "sec",
+   "prompt": "An administrator wants to apply a Group Policy only to computers in the Sales department. How should the computer accounts be organized in Active Directory?",
+   "choices": [
+    "Give each one a Sales prefix in its hostname",
+    "Add the computers to the Domain Admins group",
+    "Move them into a separate workgroup",
+    "Place them in a Sales OU and link the GPO to it"
+   ],
+   "answer": 3,
+   "explanation": "GPOs are linked to sites, domains and OUs, so placing the computers in their own OU lets the policy target only them."
+  },
+  {
+   "id": "aplus-466",
+   "domain": "swts",
+   "prompt": "A user sees advertising pop-ups in the Windows notification area even when the browser is closed. They started after the user clicked Allow on a website prompt. What should the technician do FIRST?",
+   "choices": [
+    "Revoke the site's notification permission",
+    "Reinstall Windows and restore the user's files",
+    "Rebuild the user's profile from scratch",
+    "Disable Windows Defender Firewall"
+   ],
+   "answer": 0,
+   "explanation": "Websites granted notification permission can push desktop alerts. Revoking the permission stops them without invasive steps."
+  },
+  {
+   "id": "aplus-467",
+   "domain": "swts",
+   "prompt": "In CompTIA's malware removal procedure, which step comes immediately after disabling System Restore?",
+   "choices": [
+    "Educate the end user",
+    "Remediate the infected system",
+    "Quarantine the infected system",
+    "Enable System Restore and create a restore point"
+   ],
+   "answer": 1,
+   "explanation": "The order is investigate, quarantine, disable System Restore, remediate, schedule scans and update, re-enable System Restore, then educate the user."
+  },
+  {
+   "id": "aplus-468",
+   "domain": "swts",
+   "prompt": "A technician wants a single timeline showing application crashes, Windows updates and other events on a PC over the past few weeks, with a stability score. Which tool should be used?",
+   "choices": [
+    "Disk Cleanup",
+    "System Information",
+    "Reliability Monitor",
+    "Resource Monitor"
+   ],
+   "answer": 2,
+   "explanation": "Reliability Monitor plots a stability index over time and lists failures, warnings and software installs by day."
+  },
+  {
+   "id": "aplus-469",
+   "domain": "swts",
+   "prompt": "After malware was removed from a PC, its browsers cannot load any websites, while other PCs on the network work. What should the technician check NEXT?",
+   "choices": [
+    "Whether the switch port is disabled",
+    "Whether the monitor driver is current",
+    "Whether the DHCP server has stopped responding",
+    "Whether the proxy settings were changed"
+   ],
+   "answer": 3,
+   "explanation": "Malware often sets a rogue proxy; once the malware is gone the proxy no longer works, so traffic fails until the setting is removed."
+  },
+  {
+   "id": "aplus-470",
+   "domain": "swts",
+   "prompt": "On a new laptop with a 4K screen, Windows text and icons are too small for the user to read. What is the BEST fix?",
+   "choices": [
+    "Increase the display scaling percentage",
+    "Lower the resolution to 800x600 pixels",
+    "Change the refresh rate to 30 Hz",
+    "Install the generic Microsoft display driver"
+   ],
+   "answer": 0,
+   "explanation": "Display scaling enlarges text and interface elements while keeping the native resolution, so the screen stays sharp."
+  },
+  {
+   "id": "aplus-471",
+   "domain": "swts",
+   "prompt": "Every user on one PC lost the ability to print right after last night's Windows cumulative update. Other PCs that skipped the update work. What is the BEST quick fix?",
+   "choices": [
+    "Replace the printer with a newer model",
+    "Uninstall that update and pause updates",
+    "Delete and recreate all user profiles",
+    "Reset the PC and remove everything"
+   ],
+   "answer": 1,
+   "explanation": "When a problem starts right after a specific update, uninstalling it from Settings and pausing updates restores function until a fixed update is released."
+  },
+  {
+   "id": "aplus-472",
+   "domain": "ops",
+   "prompt": "A technician needs to clean up toner that spilled inside a laser printer. What should be used?",
+   "choices": [
+    "A can of compressed air only",
+    "Compressed air and a damp paper towel",
+    "A vacuum designed for toner",
+    "A standard household vacuum"
+   ],
+   "answer": 2,
+   "explanation": "Toner particles are so fine they pass through ordinary vacuum filters and can melt or ignite in the motor, so a dedicated toner vacuum is used."
+  },
+  {
+   "id": "aplus-473",
+   "domain": "ops",
+   "prompt": "A retail store processes customer credit card payments on its point-of-sale systems. Which standard defines how that card data must be protected?",
+   "choices": [
+    "HIPAA",
+    "GDPR",
+    "FERPA",
+    "PCI DSS"
+   ],
+   "answer": 3,
+   "explanation": "The Payment Card Industry Data Security Standard governs organizations that store, process or transmit cardholder data. HIPAA covers health information."
+  },
+  {
+   "id": "aplus-474",
+   "domain": "ops",
+   "prompt": "A help desk needs a cross-platform tool to view and control the graphical desktops of Linux and macOS systems remotely. Which protocol is commonly used?",
+   "choices": [
+    "VNC",
+    "Telnet",
+    "SNMP",
+    "SFTP"
+   ],
+   "answer": 0,
+   "explanation": "Virtual Network Computing (VNC) provides remote graphical desktop control across many operating systems. Telnet and SFTP provide only text sessions or file transfer."
+  },
+  {
+   "id": "aplus-475",
+   "domain": "ops",
+   "prompt": "Which file extension is typically used for a Linux Bash shell script?",
+   "choices": [
+    ".bat",
+    ".sh",
+    ".ps1",
+    ".vbs"
+   ],
+   "answer": 1,
+   "explanation": ".sh is the conventional extension for shell scripts. .ps1 is PowerShell, .bat is Windows batch and .vbs is VBScript."
+  },
+  {
+   "id": "aplus-476",
+   "domain": "ops",
+   "prompt": "A help desk wants every technician to install the company's accounting software using the same approved steps. Which document should be created?",
+   "choices": [
+    "An end-user license agreement",
+    "An acceptable use policy",
+    "A standard operating procedure",
+    "A service level agreement"
+   ],
+   "answer": 2,
+   "explanation": "An SOP documents step-by-step instructions for a routine task so it is performed consistently."
+  },
+  {
+   "id": "aplus-477",
+   "domain": "virt",
+   "prompt": "Instead of installing a large application on every PC, a company wants it to run on a central server and be delivered to users' desktops as if it were local. Which approach is this?",
+   "choices": [
+    "Container orchestration",
+    "Type 2 hypervisor",
+    "Dual booting",
+    "Application virtualization"
+   ],
+   "answer": 3,
+   "explanation": "Application virtualization or streaming runs or delivers individual apps from a central host without a full local installation or full virtual desktop."
+  },
+  {
+   "id": "aplus-478",
+   "domain": "virt",
+   "prompt": "A user edits documents offline on a laptop, and the changes automatically appear on their phone and desktop after reconnecting. Which cloud feature provides this?",
+   "choices": [
+    "File synchronization",
+    "Metered utilization",
+    "Rapid elasticity",
+    "Multitenancy"
+   ],
+   "answer": 0,
+   "explanation": "File synchronization services such as OneDrive keep local copies on each device and sync changes through the cloud."
+  },
+  {
+   "id": "aplus-479",
+   "domain": "virt",
+   "prompt": "A user with Windows 11 Home wants to enable the built-in Hyper-V feature to run virtual machines. What is required?",
+   "choices": [
+    "Install the latest GPU driver",
+    "Upgrade to Windows 11 Pro or Enterprise",
+    "Enable Windows Sandbox first",
+    "Convert the disk from GPT to MBR"
+   ],
+   "answer": 1,
+   "explanation": "Hyper-V is not included in Windows Home editions; it requires Pro, Enterprise or Education plus hardware virtualization support."
   }
  ]
 }

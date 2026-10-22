@@ -5520,6 +5520,656 @@
    ],
    "answer": 0,
    "explanation": "Horizontal scaling at the web tier, read scaling at the database, and caching hot data together let each layer scale independently."
+  },
+  {
+   "id": "saa-421",
+   "domain": "secure",
+   "prompt": "An application in VPC A must connect to a database in VPC B in the same Region over an existing VPC peering connection. The database must accept traffic only from the application instances, whose IP addresses change frequently. What should a solutions architect do?",
+   "choices": [
+    "Reference the peer VPC's application security group in the database security group",
+    "Add each application instance's current private IP address to the database security group",
+    "Allow the entire CIDR range of VPC A in the database subnet's network ACL only",
+    "Route the traffic through a NAT gateway and allow the NAT gateway's Elastic IP"
+   ],
+   "answer": 0,
+   "explanation": "For VPC peering connections in the same Region, a security group rule can reference a security group in the peer VPC, so access follows the instances regardless of IP changes. Allowing the whole CIDR is broader than required."
+  },
+  {
+   "id": "saa-422",
+   "domain": "secure",
+   "prompt": "A user in Account A must copy objects from a bucket in Account B into a bucket in Account A in a single operation, using permissions from both accounts at once. Which approach meets this requirement?",
+   "choices": [
+    "Make the Account B bucket public for the duration of the copy",
+    "Grant the user access in a bucket policy on the Account B bucket",
+    "Create IAM users for the person in both accounts and switch between them",
+    "Have the user assume a role in Account B for the entire copy operation"
+   ],
+   "answer": 1,
+   "explanation": "With a resource-based policy, the principal keeps its own identity-based permissions while also being granted access to the other account's resource. Assuming a role replaces the user's original permissions with the role's permissions."
+  },
+  {
+   "id": "saa-423",
+   "domain": "secure",
+   "prompt": "An IAM role has the AdministratorAccess managed policy attached, and a permissions boundary that allows only Amazon S3 and Amazon DynamoDB actions. Which actions can the role perform?",
+   "choices": [
+    "No actions, because the two policies conflict",
+    "All actions, because AdministratorAccess overrides the boundary",
+    "Only S3 and DynamoDB actions allowed by both policies",
+    "Only IAM actions, because boundaries restrict only the other AWS services"
+   ],
+   "answer": 2,
+   "explanation": "Effective permissions are the intersection of the identity-based policy and the permissions boundary. The boundary does not grant permissions but limits the maximum the identity policy can grant."
+  },
+  {
+   "id": "saa-424",
+   "domain": "secure",
+   "prompt": "An S3 bucket must be accessible only to requests that originate from the company's corporate office public IP address range over the internet. Which bucket policy condition key should be used?",
+   "choices": [
+    "aws:SourceVpce",
+    "aws:SecureTransport",
+    "aws:PrincipalOrgID",
+    "aws:SourceIp"
+   ],
+   "answer": 3,
+   "explanation": "aws:SourceIp matches the requester's public IP address range. aws:SourceVpce applies to requests that arrive through a specific VPC endpoint, which carry private source addresses instead."
+  },
+  {
+   "id": "saa-425",
+   "domain": "secure",
+   "prompt": "A customer managed KMS key must be usable for decryption only when requests come through Amazon S3, not when principals call AWS KMS directly. Which key policy condition key enforces this?",
+   "choices": [
+    "kms:ViaService",
+    "kms:EncryptionAlgorithm",
+    "kms:GrantIsForAWSResource",
+    "aws:SourceIp"
+   ],
+   "answer": 0,
+   "explanation": "The kms:ViaService condition limits use of a KMS key to requests made on the principal's behalf by specified AWS services, such as s3.us-east-1.amazonaws.com."
+  },
+  {
+   "id": "saa-426",
+   "domain": "secure",
+   "prompt": "A Lambda function is attached to private subnets in a VPC so it can reach an RDS database. It must also call a third-party API on the internet. What should a solutions architect configure?",
+   "choices": [
+    "Assign an Elastic IP address directly to the Lambda function",
+    "Route internet-bound traffic through a NAT gateway in a public subnet",
+    "Move the function into a public subnet that has a route to an internet gateway",
+    "Create an interface VPC endpoint for the third-party API's domain"
+   ],
+   "answer": 1,
+   "explanation": "Lambda network interfaces in a VPC never receive public IP addresses, even in public subnets, so internet access requires a NAT gateway. Interface endpoints work only for AWS and PrivateLink services."
+  },
+  {
+   "id": "saa-427",
+   "domain": "secure",
+   "prompt": "Administrators must SSH into EC2 instances in private subnets that have no public IP addresses, without deploying bastion hosts or installing extra agents, using standard SSH clients. Which feature should be used?",
+   "choices": [
+    "A Gateway Load Balancer in front of the instances",
+    "A NAT gateway for inbound SSH connections",
+    "An EC2 Instance Connect Endpoint in the VPC",
+    "An internet gateway with a public subnet route"
+   ],
+   "answer": 2,
+   "explanation": "EC2 Instance Connect Endpoint provides private SSH and RDP connectivity to instances without public IPs or bastion hosts, controlled by IAM and security groups. A NAT gateway only supports outbound connections."
+  },
+  {
+   "id": "saa-428",
+   "domain": "secure",
+   "prompt": "A company is adding HTTPS to an Application Load Balancer in eu-west-1 using AWS Certificate Manager. In which Region must the certificate be requested or imported?",
+   "choices": [
+    "Any Region, because ACM certificates are global",
+    "The Region of the company's Route 53 hosted zone",
+    "us-east-1, regardless of the load balancer's Region",
+    "eu-west-1, the same Region as the load balancer"
+   ],
+   "answer": 3,
+   "explanation": "ACM certificates are regional resources and must be in the same Region as the ALB that uses them. Only CloudFront requires certificates from us-east-1."
+  },
+  {
+   "id": "saa-429",
+   "domain": "secure",
+   "prompt": "A media company must stop viewers in two countries from accessing content served through its CloudFront distribution, with the LEAST additional cost and configuration. What should it use?",
+   "choices": [
+    "CloudFront geographic restrictions",
+    "An AWS WAF web ACL with a rate-based rule",
+    "Route 53 geolocation routing to a null record",
+    "Security group rules on the origin servers"
+   ],
+   "answer": 0,
+   "explanation": "CloudFront's built-in geographic restrictions allow or block countries at no extra charge. AWS WAF geo match rules also work but add WAF charges and configuration, and origin security groups cannot see viewer countries."
+  },
+  {
+   "id": "saa-430",
+   "domain": "secure",
+   "prompt": "A mobile game lets players browse a public leaderboard stored in Amazon S3 without signing in, and grants more access after sign-in. Which solution provides temporary, limited AWS credentials to guest players?",
+   "choices": [
+    "An Amazon Cognito user pool with no identity pool configured at all",
+    "A Cognito identity pool that allows unauthenticated identities",
+    "Long-term IAM access keys embedded securely in the game client code",
+    "A public S3 bucket policy that allows all actions"
+   ],
+   "answer": 1,
+   "explanation": "Cognito identity pools can issue temporary credentials to unauthenticated (guest) identities through a separate, tightly scoped IAM role. User pools handle sign-in but do not issue AWS credentials on their own."
+  },
+  {
+   "id": "saa-431",
+   "domain": "secure",
+   "prompt": "A security team wants to prevent anyone in an account from making Amazon EBS snapshots publicly accessible in a Region. What is the simplest control?",
+   "choices": [
+    "Enable S3 Block Public Access for the account",
+    "Attach a permissions boundary to every IAM user and role",
+    "Enable block public access for EBS snapshots",
+    "Enable EBS encryption by default"
+   ],
+   "answer": 2,
+   "explanation": "Block public access for EBS snapshots is an account-level, per-Region setting that prevents public sharing of snapshots. S3 Block Public Access applies only to S3 buckets and objects."
+  },
+  {
+   "id": "saa-432",
+   "domain": "secure",
+   "prompt": "Instances in private subnets read and write an Amazon DynamoDB table. Traffic must not traverse the internet, and the company wants the lowest-cost solution. What should a solutions architect configure?",
+   "choices": [
+    "An internet gateway with restrictive security groups and network ACLs",
+    "An AWS Site-to-Site VPN connection to DynamoDB",
+    "A NAT gateway in each Availability Zone",
+    "A DynamoDB gateway VPC endpoint in the route tables"
+   ],
+   "answer": 3,
+   "explanation": "DynamoDB, like S3, supports gateway VPC endpoints, which have no hourly or data processing charges and keep traffic on the AWS network. NAT gateways send traffic toward public endpoints and add charges."
+  },
+  {
+   "id": "saa-433",
+   "domain": "secure",
+   "prompt": "A security team wants to be alerted automatically when an account shows an unusual spike in the rate of write API calls or API errors compared with its normal baseline. Which feature should be enabled?",
+   "choices": [
+    "CloudTrail Insights on the trail",
+    "AWS Config conformance packs",
+    "VPC Flow Logs for every subnet in the account",
+    "S3 server access logging"
+   ],
+   "answer": 0,
+   "explanation": "CloudTrail Insights analyzes management events to detect unusual API call rates and error rates and records Insights events when activity deviates from the baseline."
+  },
+  {
+   "id": "saa-434",
+   "domain": "secure",
+   "prompt": "A compliance standard requires that objects in Amazon S3 be protected with two independent layers of server-side encryption. Which option meets this requirement with the LEAST effort?",
+   "choices": [
+    "Server-side encryption with Amazon S3 managed keys (SSE-S3) only",
+    "Dual-layer server-side encryption with AWS KMS keys (DSSE-KMS)",
+    "S3 Object Lock in governance mode",
+    "Server-side encryption with customer-provided keys (SSE-C)"
+   ],
+   "answer": 1,
+   "explanation": "DSSE-KMS applies two layers of encryption to objects on the server side using KMS keys, designed for standards that require multilayer encryption. Object Lock controls deletion, not encryption."
+  },
+  {
+   "id": "saa-435",
+   "domain": "secure",
+   "prompt": "An application in Account B must read a secret stored in AWS Secrets Manager in Account A. The secret is currently encrypted with the AWS managed key aws/secretsmanager. What must be done to allow cross-account access?",
+   "choices": [
+    "Only add Account B to the secret's resource policy and leave the key unchanged",
+    "Enable automatic rotation on the secret",
+    "Use a customer managed KMS key, and allow Account B in its key policy and the secret policy",
+    "Copy the AWS managed key to Account B and use it there for decryption"
+   ],
+   "answer": 2,
+   "explanation": "Cross-account access to a secret requires a resource policy on the secret and a customer managed KMS key whose key policy allows the other account. The key policy of an AWS managed key cannot be changed."
+  },
+  {
+   "id": "saa-436",
+   "domain": "resilient",
+   "prompt": "A Network Load Balancer spans two Availability Zones, but one AZ has many more registered targets than the other, and targets in the smaller AZ are overloaded. What should a solutions architect do?",
+   "choices": [
+    "Enable sticky sessions on the listener",
+    "Replace the NLB with a Classic Load Balancer",
+    "Increase the target group deregistration delay for all of the targets",
+    "Enable cross-zone load balancing on the Network Load Balancer"
+   ],
+   "answer": 3,
+   "explanation": "Cross-zone load balancing is off by default for NLBs, so each load balancer node sends traffic only to targets in its own AZ. Turning it on spreads traffic evenly across all registered targets."
+  },
+  {
+   "id": "saa-437",
+   "domain": "resilient",
+   "prompt": "A company must keep backups of its DynamoDB tables in a second Region to recover from a Regional disaster, with centrally managed schedules and retention. Which solution meets this requirement?",
+   "choices": [
+    "An AWS Backup plan for the tables with a cross-Region copy rule",
+    "DynamoDB TTL with a long expiry period",
+    "DynamoDB Accelerator (DAX) clusters in the second Region",
+    "DynamoDB on-demand backups, which are automatically stored in every Region"
+   ],
+   "answer": 0,
+   "explanation": "AWS Backup can schedule DynamoDB backups and copy recovery points to a vault in another Region. On-demand DynamoDB backups stay in the source Region, and DAX is a cache, not a backup."
+  },
+  {
+   "id": "saa-438",
+   "domain": "resilient",
+   "prompt": "An application connects to an RDS Multi-AZ DB instance using the IP address it resolved when it first started. After a failover, the application cannot reconnect. What is the BEST fix?",
+   "choices": [
+    "Assign an Elastic IP address to the DB instance",
+    "Connect by the endpoint DNS name and re-resolve it on reconnect",
+    "Disable Multi-AZ to keep the IP address stable",
+    "Point the application at the standby instance's private IP address permanently"
+   ],
+   "answer": 1,
+   "explanation": "During a Multi-AZ failover, RDS updates the endpoint's DNS record to point to the new primary. Applications must use the endpoint name and avoid caching the old IP address."
+  },
+  {
+   "id": "saa-439",
+   "domain": "resilient",
+   "prompt": "A company uses Amazon ElastiCache for Redis OSS in us-east-1 and needs a replicated copy in another Region that can be promoted quickly during a Regional outage. Which feature should be used?",
+   "choices": [
+    "ElastiCache Multi-AZ with automatic failover in the same Region",
+    "DynamoDB global tables in front of the cache",
+    "ElastiCache Global Datastore",
+    "Redis AOF persistence to an EBS volume"
+   ],
+   "answer": 2,
+   "explanation": "Global Datastore replicates a Redis OSS or Valkey cluster to secondary Regions with low latency, and a secondary can be promoted to primary. Multi-AZ protects only within one Region."
+  },
+  {
+   "id": "saa-440",
+   "domain": "resilient",
+   "prompt": "An application in several Regions reads and writes objects in replicated S3 buckets. It needs a single global endpoint for S3 requests and the ability to shift traffic away from a Region's bucket during an outage. Which feature should be used?",
+   "choices": [
+    "S3 Transfer Acceleration endpoints",
+    "S3 Same-Region Replication rules",
+    "S3 Access Points created separately in each Region with VPC-only network origin",
+    "S3 Multi-Region Access Points with failover controls"
+   ],
+   "answer": 3,
+   "explanation": "Multi-Region Access Points provide one global endpoint that routes requests to buckets in multiple Regions, and failover controls let you set buckets active or passive to shift traffic."
+  },
+  {
+   "id": "saa-441",
+   "domain": "resilient",
+   "prompt": "A new Amazon ECS service deployment keeps failing because the new tasks never pass health checks, and the service gets stuck. The team wants failed deployments to roll back automatically. What should be enabled?",
+   "choices": [
+    "The ECS deployment circuit breaker with rollback",
+    "Fargate Spot as the capacity provider",
+    "ECS Service Auto Scaling with a target tracking scaling policy",
+    "A longer container stop timeout"
+   ],
+   "answer": 0,
+   "explanation": "The deployment circuit breaker detects deployments that cannot reach a steady state and, with rollback enabled, returns the service to the last completed deployment."
+  },
+  {
+   "id": "saa-442",
+   "domain": "resilient",
+   "prompt": "A company must deploy the same baseline infrastructure, defined in one CloudFormation template, to many accounts and to a disaster recovery Region, and keep it consistent. Which feature should be used?",
+   "choices": [
+    "CloudFormation change sets in a single account",
+    "AWS CloudFormation StackSets",
+    "AWS Elastic Beanstalk environments",
+    "CloudFormation drift detection only"
+   ],
+   "answer": 1,
+   "explanation": "StackSets deploy and update stacks across multiple accounts and Regions from a single template and operation, which supports consistent multi-Region recovery environments."
+  },
+  {
+   "id": "saa-443",
+   "domain": "resilient",
+   "prompt": "Route 53 alias records with failover routing point to Application Load Balancers in two Regions. Traffic must move to the secondary Region if the primary ALB has no healthy targets, without creating separate health checks. What should be configured?",
+   "choices": [
+    "Lower the TTL of the alias records to 0",
+    "Enable cross-zone load balancing on both ALBs",
+    "Set Evaluate Target Health to Yes on the alias records",
+    "Use simple routing with both ALBs listed in a single record"
+   ],
+   "answer": 2,
+   "explanation": "With Evaluate Target Health enabled, an alias record to an ALB inherits the health of the load balancer's targets, so Route 53 fails over when the primary has no healthy targets."
+  },
+  {
+   "id": "saa-444",
+   "domain": "resilient",
+   "prompt": "A Lambda function triggered by a high-volume event source writes to a relational database that fails when more than 50 connections are open. How can the architect stop the function from overwhelming the database?",
+   "choices": [
+    "Increase the function's memory setting",
+    "Increase the function's timeout to the 15-minute maximum",
+    "Enable provisioned concurrency on the function",
+    "Set reserved concurrency on the function"
+   ],
+   "answer": 3,
+   "explanation": "Reserved concurrency sets a maximum number of concurrent instances for a function, limiting downstream connections. Provisioned concurrency pre-initializes environments but does not cap scaling."
+  },
+  {
+   "id": "saa-445",
+   "domain": "resilient",
+   "prompt": "A cost-sensitive team runs an Aurora MySQL cluster with only a single writer instance and no Aurora Replicas. What happens if that instance fails?",
+   "choices": [
+    "Aurora creates a new DB instance, which is slower than a replica failover",
+    "Aurora switches the cluster to read-only mode permanently",
+    "Aurora promotes a standby in another Region automatically",
+    "The cluster's data is lost because no replica holds a copy of the data"
+   ],
+   "answer": 0,
+   "explanation": "Without replicas, Aurora recreates the writer instance, which typically takes longer than promotion. Data is safe in the cluster volume, which keeps six copies across three AZs; adding replicas in other AZs enables fast failover."
+  },
+  {
+   "id": "saa-446",
+   "domain": "resilient",
+   "prompt": "A public API on Amazon API Gateway must protect its backend from sudden traffic surges that could cause failures, by rejecting excess requests. What should be configured?",
+   "choices": [
+    "Mutual TLS on the custom domain name",
+    "Stage or method throttling limits on the API",
+    "An API Gateway resource policy allowing all IPs",
+    "A longer integration timeout for the backend"
+   ],
+   "answer": 1,
+   "explanation": "API Gateway throttling sets steady-state rate and burst limits; requests above them receive 429 Too Many Requests, protecting downstream services."
+  },
+  {
+   "id": "saa-447",
+   "domain": "resilient",
+   "prompt": "A Lambda function is invoked asynchronously by Amazon S3 event notifications. If the function returns an error, how does Lambda handle the event by default?",
+   "choices": [
+    "It discards the event immediately",
+    "It retries indefinitely until the function succeeds",
+    "It retries the invocation up to two more times",
+    "It sends the event back to S3 to resend later"
+   ],
+   "answer": 2,
+   "explanation": "For asynchronous invocations, Lambda retries failed events twice by default, with delays between attempts. A dead-letter queue or on-failure destination can capture events that still fail."
+  },
+  {
+   "id": "saa-448",
+   "domain": "resilient",
+   "prompt": "A Kinesis Data Streams consumer built with the Kinesis Client Library (KCL) restarts after a crash. How can it continue from where it left off instead of reprocessing the whole stream?",
+   "choices": [
+    "Kinesis deletes records as soon as they are read",
+    "The producers automatically resend all of their records after a consumer restart",
+    "Each consumer keeps checkpoints only in instance memory",
+    "KCL resumes from checkpoints stored in a DynamoDB lease table"
+   ],
+   "answer": 3,
+   "explanation": "KCL uses a DynamoDB lease table to track shard ownership and checkpoints, so a restarted worker resumes after the last checkpointed record."
+  },
+  {
+   "id": "saa-449",
+   "domain": "perf",
+   "prompt": "An order-processing system uses an SQS FIFO queue and needs much higher throughput than the default FIFO limits, while keeping ordering per customer. What should a solutions architect do?",
+   "choices": [
+    "Enable FIFO high throughput mode and use many message group IDs",
+    "Switch to a standard queue and keep the same consumers",
+    "Increase the queue's message retention period",
+    "Use one message group ID for all messages so ordering is fully global"
+   ],
+   "answer": 0,
+   "explanation": "High throughput mode raises FIFO throughput, which scales across message group IDs. Ordering is kept within each group, so using the customer ID as the group ID preserves per-customer order."
+  },
+  {
+   "id": "saa-450",
+   "domain": "perf",
+   "prompt": "An application downloads very large objects from Amazon S3 and wants to speed up transfers by retrieving parts of each object in parallel. What should it use?",
+   "choices": [
+    "S3 Inventory reports",
+    "Byte-range fetches in parallel",
+    "S3 Object Lock retention modes",
+    "S3 Lifecycle transition rules to faster tiers"
+   ],
+   "answer": 1,
+   "explanation": "Byte-range fetches let clients request specific ranges of an object concurrently, improving throughput and allowing retries of only the failed parts."
+  },
+  {
+   "id": "saa-451",
+   "domain": "perf",
+   "prompt": "A Lambda function must download and unpack a 3 GB archive for processing during each invocation, but it runs out of local disk space. What is the simplest fix?",
+   "choices": [
+    "Increase the function's timeout to 15 minutes",
+    "Attach a 10 GB Amazon EBS volume to the function",
+    "Increase the function's ephemeral storage (/tmp)",
+    "Enable provisioned concurrency"
+   ],
+   "answer": 2,
+   "explanation": "Lambda ephemeral storage in /tmp can be configured from 512 MB up to 10,240 MB. Lambda functions cannot attach EBS volumes."
+  },
+  {
+   "id": "saa-452",
+   "domain": "perf",
+   "prompt": "Several Lambda functions need to load the same multi-gigabyte machine learning model files and share them, and the files are too large to package with the function. Which solution fits BEST?",
+   "choices": [
+    "Store the files in Lambda environment variables",
+    "Store the files in the function's /tmp of one instance",
+    "Package the files in a Lambda layer",
+    "Mount an Amazon EFS file system to the functions"
+   ],
+   "answer": 3,
+   "explanation": "Lambda can mount Amazon EFS file systems for shared, persistent storage that is larger than deployment packages or layers allow. Layers have size limits, and /tmp is not shared between execution environments."
+  },
+  {
+   "id": "saa-453",
+   "domain": "perf",
+   "prompt": "A Redshift dashboard repeatedly runs the same complex aggregation query over large tables, and each run is slow. Which feature MOST improves performance for this repeated query?",
+   "choices": [
+    "A materialized view of the query results",
+    "An ElastiCache cluster in front of Redshift",
+    "Redshift Spectrum external tables",
+    "Increasing the WLM query timeout for the dashboard queue"
+   ],
+   "answer": 0,
+   "explanation": "Materialized views store precomputed results that can be refreshed incrementally, so repeated complex queries return much faster. Spectrum is for querying data in S3, not for speeding up repeated aggregations."
+  },
+  {
+   "id": "saa-454",
+   "domain": "perf",
+   "prompt": "Producers write to a Kinesis data stream with several shards, but one shard is throttled while the others are nearly idle. Most records use the same partition key. What should be done?",
+   "choices": [
+    "Switch consumers to the Kinesis Client Library",
+    "Use a high-cardinality partition key for the records",
+    "Increase the stream's data retention period",
+    "Enable enhanced fan-out for every consumer"
+   ],
+   "answer": 1,
+   "explanation": "The partition key determines which shard receives each record, so a low-cardinality key creates a hot shard. Enhanced fan-out improves read throughput, not write distribution."
+  },
+  {
+   "id": "saa-455",
+   "domain": "perf",
+   "prompt": "A REST API on Amazon API Gateway is called almost entirely by applications running on EC2 in the same AWS Region. Which endpoint type gives the lowest latency for these clients?",
+   "choices": [
+    "A CloudFront distribution in front of an edge-optimized endpoint",
+    "An edge-optimized API endpoint",
+    "A Regional API endpoint",
+    "A private API with no VPC endpoint"
+   ],
+   "answer": 2,
+   "explanation": "Regional endpoints are designed for clients in the same Region and avoid the extra hop through CloudFront that edge-optimized endpoints add. Edge-optimized endpoints help geographically distributed clients."
+  },
+  {
+   "id": "saa-456",
+   "domain": "perf",
+   "prompt": "A company is migrating Linux applications that use an on-premises ZFS-based NFS file server and need sub-millisecond latency with features such as snapshots and clones. Which service fits BEST?",
+   "choices": [
+    "Amazon EBS Multi-Attach volumes",
+    "Amazon S3 with S3 File Gateway",
+    "Amazon FSx for Windows File Server",
+    "Amazon FSx for OpenZFS"
+   ],
+   "answer": 3,
+   "explanation": "FSx for OpenZFS provides fully managed OpenZFS file systems accessible over NFS with low latency, snapshots and clones. FSx for Windows File Server targets SMB-based Windows workloads."
+  },
+  {
+   "id": "saa-457",
+   "domain": "perf",
+   "prompt": "Users in Europe experience slow reads from an Amazon RDS for MySQL database in us-east-1, while all writes can stay in us-east-1. What is the MOST appropriate way to reduce read latency for European users?",
+   "choices": [
+    "Add a cross-Region read replica in Europe for European reads",
+    "Enable Multi-AZ on the primary DB instance",
+    "Increase the primary instance size",
+    "Enable RDS Performance Insights on the primary DB instance"
+   ],
+   "answer": 0,
+   "explanation": "A cross-Region read replica places a copy of the data close to European users for low-latency reads. Multi-AZ improves availability, not read latency, and its standby does not serve reads."
+  },
+  {
+   "id": "saa-458",
+   "domain": "perf",
+   "prompt": "An ElastiCache for Redis OSS cluster with a single shard has reached the write capacity of its primary node. How can the cluster scale write throughput?",
+   "choices": [
+    "Add more read replicas to the existing shard in other AZs",
+    "Use cluster mode enabled with multiple shards",
+    "Enable Multi-AZ automatic failover",
+    "Switch to a larger EBS volume"
+   ],
+   "answer": 1,
+   "explanation": "With cluster mode enabled, data is partitioned across multiple shards, each with its own primary, so writes scale horizontally. Read replicas only add read capacity."
+  },
+  {
+   "id": "saa-459",
+   "domain": "perf",
+   "prompt": "An application on a single EC2 instance needs more throughput and IOPS than one EBS volume can provide, and the application handles data redundancy itself. Which approach can increase performance?",
+   "choices": [
+    "Configure several EBS volumes as a RAID 1 mirror",
+    "Convert the volumes to Cold HDD (sc1)",
+    "Stripe several EBS volumes in RAID 0",
+    "Enable EBS fast snapshot restore"
+   ],
+   "answer": 2,
+   "explanation": "RAID 0 striping combines the IOPS and throughput of multiple volumes. RAID 1 mirrors data for redundancy and does not increase write performance."
+  },
+  {
+   "id": "saa-460",
+   "domain": "perf",
+   "prompt": "A team wants to run a containerized machine learning inference service on Amazon ECS that requires GPUs. Which launch option should be used?",
+   "choices": [
+    "ECS on AWS Fargate with a GPU task definition",
+    "AWS Lambda with container images",
+    "AWS App Runner with GPU instances",
+    "ECS on EC2 with GPU instances"
+   ],
+   "answer": 3,
+   "explanation": "AWS Fargate does not provide GPUs, so GPU workloads on ECS run on EC2 container instances from accelerated computing families. Lambda and App Runner also do not offer GPUs."
+  },
+  {
+   "id": "saa-461",
+   "domain": "cost",
+   "prompt": "Analysts want to run complex queries on a full copy of a large production DynamoDB table every week without consuming the table's read capacity. Which solution is MOST cost-effective?",
+   "choices": [
+    "Export the table to S3 and query the export with Athena",
+    "Add a global secondary index for each query",
+    "Run a parallel Scan of the table each week",
+    "Add a DAX cluster and run all of the analytic queries through it"
+   ],
+   "answer": 0,
+   "explanation": "Exporting a table to S3 uses point-in-time recovery data and does not consume read capacity; Athena can then query the export. Scans consume large amounts of read capacity."
+  },
+  {
+   "id": "saa-462",
+   "domain": "cost",
+   "prompt": "An Amazon OpenSearch Service domain keeps 12 months of logs on hot data nodes, but logs older than 30 days are searched only occasionally. Which change reduces cost the MOST while keeping the data searchable?",
+   "choices": [
+    "Add more hot data nodes",
+    "Move older indexes to UltraWarm or cold storage",
+    "Enable Multi-AZ with standby on the domain for all data",
+    "Increase the EBS volume size on each node"
+   ],
+   "answer": 1,
+   "explanation": "UltraWarm and cold storage keep read-only data searchable at much lower cost than hot nodes by storing it in Amazon S3-backed tiers."
+  },
+  {
+   "id": "saa-463",
+   "domain": "cost",
+   "prompt": "A bucket uses S3 Intelligent-Tiering. Much of the data is not accessed for six months or longer, and waiting up to 12 hours to retrieve it would be acceptable. How can storage costs be reduced further automatically?",
+   "choices": [
+    "Move all objects to S3 Standard",
+    "Enable S3 Versioning and noncurrent version transitions on the bucket",
+    "Activate the optional archive access tiers",
+    "Enable S3 Transfer Acceleration"
+   ],
+   "answer": 2,
+   "explanation": "Intelligent-Tiering's archive tiers are opt-in; once activated, objects not accessed for the configured periods move automatically to lower-cost archive tiers."
+  },
+  {
+   "id": "saa-464",
+   "domain": "cost",
+   "prompt": "An Amazon ECR repository has accumulated thousands of old container image versions, and storage costs keep rising. Which solution reduces cost with the LEAST ongoing effort?",
+   "choices": [
+    "Manually delete images every month",
+    "Enable image scanning on push",
+    "Replicate the repository to a cheaper Region and delete the original",
+    "Create an ECR lifecycle policy to expire old images"
+   ],
+   "answer": 3,
+   "explanation": "ECR lifecycle policies automatically expire images based on rules such as age or count, for example keeping only the latest 20 images."
+  },
+  {
+   "id": "saa-465",
+   "domain": "cost",
+   "prompt": "A new Amazon RDS database will start with 100 GB of data, but its growth is hard to predict. The company does not want to pay for a large amount of unused storage up front. What should be configured?",
+   "choices": [
+    "RDS storage autoscaling with a maximum threshold",
+    "Create a read replica to hold the extra data as it grows",
+    "Provision 5 TB of storage at creation time",
+    "Use Provisioned IOPS at the maximum level"
+   ],
+   "answer": 0,
+   "explanation": "Storage autoscaling increases allocated storage automatically when free space runs low, up to a maximum you set, so you do not need to overprovision storage."
+  },
+  {
+   "id": "saa-466",
+   "domain": "cost",
+   "prompt": "An Amazon EFS file system stores project files that are opened only a few times a year after projects close, but must remain in the same file system. Which option reduces cost the MOST?",
+   "choices": [
+    "Create EFS replication to another Region",
+    "Lifecycle management to the EFS Archive storage class",
+    "Switch the file system to Provisioned throughput",
+    "Copy the files to EBS Provisioned IOPS volumes"
+   ],
+   "answer": 1,
+   "explanation": "EFS Archive is designed for data accessed a few times a year or less and costs less than EFS Infrequent Access; lifecycle policies move files there automatically."
+  },
+  {
+   "id": "saa-467",
+   "domain": "cost",
+   "prompt": "A team runs analytics queries for a few hours each week, with long idle periods in between. It wants to use Amazon Redshift without paying for an always-on cluster. Which option is MOST cost-effective?",
+   "choices": [
+    "A provisioned Redshift cluster with RA3 nodes running 24/7",
+    "Redshift Reserved Nodes for three years",
+    "Amazon Redshift Serverless",
+    "A large provisioned cluster with concurrency scaling"
+   ],
+   "answer": 2,
+   "explanation": "Redshift Serverless charges for compute capacity only while queries run, so intermittent workloads avoid paying for idle provisioned clusters."
+  },
+  {
+   "id": "saa-468",
+   "domain": "cost",
+   "prompt": "Two VPCs in the same Region need private connectivity to each other, and no other networks will be connected. Which option is MOST cost-effective?",
+   "choices": [
+    "AWS Direct Connect gateway",
+    "AWS Site-to-Site VPN between the VPCs",
+    "AWS Transit Gateway",
+    "VPC peering"
+   ],
+   "answer": 3,
+   "explanation": "VPC peering has no hourly charge, and you pay only for data transfer. Transit Gateway adds per-attachment hourly and data processing charges, which make sense only when connecting many networks."
+  },
+  {
+   "id": "saa-469",
+   "domain": "cost",
+   "prompt": "A Lambda function starts an external job and then loops and sleeps for up to 10 minutes while waiting for it to finish, paying for idle duration. Which redesign reduces cost?",
+   "choices": [
+    "A Step Functions Standard workflow with Wait states",
+    "Move the loop to a larger EC2 instance",
+    "Increase the function's memory to finish faster",
+    "Enable provisioned concurrency for the function"
+   ],
+   "answer": 0,
+   "explanation": "A Standard workflow is billed per state transition, not for time spent waiting, so a Wait state avoids paying for idle Lambda duration."
+  },
+  {
+   "id": "saa-470",
+   "domain": "cost",
+   "prompt": "A company runs non-urgent nightly AWS Glue ETL jobs whose start and finish times can vary. Which option reduces cost for these jobs?",
+   "choices": [
+    "Convert each job into a Glue crawler",
+    "Use the AWS Glue Flex execution class",
+    "Increase the number of workers for each job so it finishes sooner",
+    "Run the jobs as Glue streaming jobs"
+   ],
+   "answer": 1,
+   "explanation": "The Flex execution class runs non-urgent jobs on spare capacity at a lower price, accepting variable start and run times."
   }
  ]
 }

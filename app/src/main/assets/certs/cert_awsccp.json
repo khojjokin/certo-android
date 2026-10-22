@@ -5544,6 +5544,656 @@
    ],
    "answer": 2,
    "explanation": "Gateway Load Balancer distributes traffic to fleets of virtual appliances; ALB and NLB route to application targets."
+  },
+  {
+   "id": "awsccp-423",
+   "domain": "tech",
+   "prompt": "A company wants a fully managed, AWS-native container orchestration service and has no need for Kubernetes compatibility. Which service is MOST appropriate?",
+   "choices": [
+    "Amazon Elastic Container Service (Amazon ECS)",
+    "AWS Batch",
+    "Amazon Lightsail",
+    "Amazon Elastic Kubernetes Service (Amazon EKS)"
+   ],
+   "answer": 0,
+   "explanation": "Amazon ECS is AWS's own fully managed container orchestrator and can run tasks on EC2 or Fargate. EKS is the choice when Kubernetes compatibility is required."
+  },
+  {
+   "id": "awsccp-424",
+   "domain": "tech",
+   "prompt": "An EC2 Auto Scaling group should automatically keep average CPU utilization close to 50% as load rises and falls. Which scaling approach is BEST?",
+   "choices": [
+    "Scheduled scaling actions",
+    "A target tracking scaling policy",
+    "Manually changing the desired capacity",
+    "Setting minimum and maximum capacity to the same value"
+   ],
+   "answer": 1,
+   "explanation": "Target tracking adjusts capacity automatically to hold a metric such as average CPU at the chosen target value. Scheduled scaling only suits predictable, time-based changes."
+  },
+  {
+   "id": "awsccp-425",
+   "domain": "tech",
+   "prompt": "An Application Load Balancer finds that one registered EC2 instance is failing its health checks. What does Elastic Load Balancing do?",
+   "choices": [
+    "Terminates the unhealthy instance and immediately launches a replacement in another AZ",
+    "Reboots the instance on new hardware",
+    "Stops routing requests to that instance until it passes health checks again",
+    "Opens a support case with AWS automatically"
+   ],
+   "answer": 2,
+   "explanation": "The load balancer simply stops sending traffic to unhealthy targets and resumes when they are healthy. Replacing unhealthy instances is done by EC2 Auto Scaling, not the load balancer."
+  },
+  {
+   "id": "awsccp-426",
+   "domain": "tech",
+   "prompt": "What makes a subnet in an Amazon VPC a public subnet?",
+   "choices": [
+    "It contains a NAT gateway for outbound traffic",
+    "It is created in an Availability Zone marked as public",
+    "Its network ACL allows all inbound traffic",
+    "Its route table has a route to an internet gateway"
+   ],
+   "answer": 3,
+   "explanation": "A subnet is public when its associated route table sends internet-bound traffic (0.0.0.0/0) to an internet gateway. A NAT gateway gives private subnets outbound access only."
+  },
+  {
+   "id": "awsccp-427",
+   "domain": "tech",
+   "prompt": "A company wants to stop using physical tape libraries for backups while keeping its existing tape-based backup software. Which option fits BEST?",
+   "choices": [
+    "AWS Storage Gateway Tape Gateway",
+    "Amazon Elastic File System",
+    "Amazon EBS snapshots",
+    "Amazon S3 Transfer Acceleration"
+   ],
+   "answer": 0,
+   "explanation": "Tape Gateway presents a virtual tape library to existing backup applications and stores the virtual tapes in Amazon S3 and S3 Glacier storage classes."
+  },
+  {
+   "id": "awsccp-428",
+   "domain": "tech",
+   "prompt": "A company runs NetApp ONTAP storage on premises and wants a fully managed AWS service with the same data management features, accessible over NFS, SMB and iSCSI. Which service fits?",
+   "choices": [
+    "Amazon FSx for Lustre",
+    "Amazon FSx for NetApp ONTAP",
+    "Amazon Elastic File System",
+    "AWS Storage Gateway Volume Gateway"
+   ],
+   "answer": 1,
+   "explanation": "Amazon FSx for NetApp ONTAP provides fully managed ONTAP file systems with multi-protocol access and familiar features such as snapshots and replication."
+  },
+  {
+   "id": "awsccp-429",
+   "domain": "tech",
+   "prompt": "A developer accidentally deleted important rows from an Amazon RDS database 20 minutes ago. Automated backups are enabled. What is the BEST way to recover the data?",
+   "choices": [
+    "Force a failover to the Multi-AZ standby instance in the other Availability Zone",
+    "Promote a read replica to become the primary",
+    "Do a point-in-time restore to a new DB instance from before the deletion",
+    "Restart the DB instance so that it rolls back the most recent transactions"
+   ],
+   "answer": 2,
+   "explanation": "Automated backups allow point-in-time restore to any second within the retention period. Read replicas and the Multi-AZ standby already contain the deletion because changes are replicated."
+  },
+  {
+   "id": "awsccp-430",
+   "domain": "tech",
+   "prompt": "A global application needs a relational database with fast local reads in several Regions and fast recovery if a whole Region becomes unavailable. Which option fits BEST?",
+   "choices": [
+    "Amazon ElastiCache with cluster mode",
+    "Amazon DynamoDB global tables",
+    "An Amazon RDS Multi-AZ deployment",
+    "Amazon Aurora Global Database"
+   ],
+   "answer": 3,
+   "explanation": "Aurora Global Database replicates a relational database to secondary Regions with low latency for local reads and cross-Region disaster recovery. Multi-AZ protects only within one Region, and DynamoDB is not relational."
+  },
+  {
+   "id": "awsccp-431",
+   "domain": "tech",
+   "prompt": "Employees want a generative AI assistant that answers questions and summarizes content using the company's own data, such as wikis and document repositories, while respecting existing access permissions. Which service fits?",
+   "choices": [
+    "Amazon Q Business",
+    "Amazon Lex",
+    "Amazon Polly",
+    "Amazon Q Developer"
+   ],
+   "answer": 0,
+   "explanation": "Amazon Q Business is a generative AI assistant that connects to enterprise data sources and honors user permissions. Amazon Q Developer focuses on software development tasks."
+  },
+  {
+   "id": "awsccp-432",
+   "domain": "tech",
+   "prompt": "A storage team wants organization-wide visibility into Amazon S3 usage and activity trends across all accounts, with recommendations to reduce cost. Which feature should it use?",
+   "choices": [
+    "S3 Lifecycle configuration",
+    "Amazon S3 Storage Lens",
+    "S3 Inventory reports for a single bucket",
+    "Amazon S3 Transfer Acceleration"
+   ],
+   "answer": 1,
+   "explanation": "S3 Storage Lens provides dashboards and metrics on storage usage and activity across accounts and Regions, with cost-optimization and data-protection recommendations."
+  },
+  {
+   "id": "awsccp-433",
+   "domain": "tech",
+   "prompt": "An administrator needs to find all resources with a missing 'CostCenter' tag across several Regions and add the tag to them in bulk. Which tool should they use?",
+   "choices": [
+    "Amazon CloudWatch dashboards",
+    "AWS Trusted Advisor",
+    "Tag Editor in AWS Resource Groups",
+    "AWS Cost Explorer"
+   ],
+   "answer": 2,
+   "explanation": "Tag Editor lets you search for resources across Regions and services and add, edit or remove tags on many resources at once."
+  },
+  {
+   "id": "awsccp-434",
+   "domain": "tech",
+   "prompt": "A team wants to interactively search and analyze its application log data in Amazon CloudWatch Logs using a purpose-built query language. Which feature should it use?",
+   "choices": [
+    "Amazon Inspector",
+    "AWS CloudTrail Lake",
+    "AWS X-Ray service map",
+    "CloudWatch Logs Insights"
+   ],
+   "answer": 3,
+   "explanation": "CloudWatch Logs Insights runs interactive queries against log groups in CloudWatch Logs. CloudTrail Lake queries API activity events, not application logs."
+  },
+  {
+   "id": "awsccp-435",
+   "domain": "tech",
+   "prompt": "A company is migrating an Oracle database to Amazon Aurora PostgreSQL. Which tool helps convert the database schema and code objects to the new engine?",
+   "choices": [
+    "AWS Schema Conversion Tool (AWS SCT)",
+    "AWS DataSync",
+    "AWS Application Migration Service",
+    "AWS Snowball Edge"
+   ],
+   "answer": 0,
+   "explanation": "For heterogeneous migrations, AWS SCT (or DMS Schema Conversion) converts schema and code objects; AWS DMS then migrates the data itself."
+  },
+  {
+   "id": "awsccp-436",
+   "domain": "tech",
+   "prompt": "Which Amazon EBS volume type is the current general purpose SSD that lets you provision IOPS and throughput independently of volume size?",
+   "choices": [
+    "General Purpose SSD (gp2)",
+    "General Purpose SSD (gp3)",
+    "Cold HDD (sc1)",
+    "Throughput Optimized HDD (st1)"
+   ],
+   "answer": 1,
+   "explanation": "gp3 volumes include baseline performance and let you add IOPS and throughput separately from capacity. gp2 performance scales with volume size."
+  },
+  {
+   "id": "awsccp-437",
+   "domain": "tech",
+   "prompt": "Each new order event must be delivered to three independent processing systems that each consume messages at their own pace. Which design is BEST?",
+   "choices": [
+    "Send the event to one SQS standard queue that all three systems poll",
+    "Store the event in an S3 bucket and have each system list the bucket hourly",
+    "Publish to an SNS topic with one SQS queue subscribed per system",
+    "Write the event to a single EC2 instance that forwards it by email"
+   ],
+   "answer": 2,
+   "explanation": "SNS-to-SQS fan-out copies each message to every subscribed queue, so each system processes its own copy independently. With a single shared queue, each message is consumed by only one system."
+  },
+  {
+   "id": "awsccp-438",
+   "domain": "tech",
+   "prompt": "An EC2 instance occasionally fails system status checks because of problems with the underlying AWS hardware. Which automated action can an Amazon CloudWatch alarm take to address this?",
+   "choices": [
+    "Convert the instance to a Spot Instance to obtain new capacity",
+    "Move the instance to another AWS Region",
+    "Increase the instance's EBS volume size",
+    "Recover the instance onto healthy underlying hardware"
+   ],
+   "answer": 3,
+   "explanation": "CloudWatch alarm EC2 actions include stop, terminate, reboot and recover. Recovery moves the instance to new hardware while keeping its instance ID, private IP and attached EBS volumes."
+  },
+  {
+   "id": "awsccp-439",
+   "domain": "tech",
+   "prompt": "An application runs on a single EC2 instance and must become highly available and scale automatically with demand. Which design is BEST?",
+   "choices": [
+    "An Auto Scaling group across multiple AZs behind an Application Load Balancer",
+    "A larger EC2 instance type with more CPU and memory",
+    "Two EC2 instances in the same Availability Zone, each with an Elastic IP address",
+    "A single EC2 instance with a daily EBS snapshot schedule"
+   ],
+   "answer": 0,
+   "explanation": "Spreading an Auto Scaling group across AZs removes single points of failure and adds capacity as needed, while the load balancer distributes traffic to healthy instances. A bigger instance is still a single point of failure."
+  },
+  {
+   "id": "awsccp-440",
+   "domain": "sec",
+   "prompt": "An administrator applied an S3 bucket policy that accidentally denies all principals, including the account's administrators. Who can remove this policy?",
+   "choices": [
+    "Any user in the IAM Identity Center administrators group",
+    "The AWS account root user",
+    "Any IAM user with the AdministratorAccess policy",
+    "The AWS Support team on request"
+   ],
+   "answer": 1,
+   "explanation": "Editing or deleting a bucket policy that denies all principals is one of the tasks that requires root user credentials, because the policy also blocks IAM administrators."
+  },
+  {
+   "id": "awsccp-441",
+   "domain": "sec",
+   "prompt": "A security review finds that access keys exist for the AWS account root user. What does AWS recommend?",
+   "choices": [
+    "Store the root user access keys in AWS Secrets Manager",
+    "Rotate the root user access keys every 90 days",
+    "Delete the root access keys and use IAM roles for programmatic access",
+    "Keep the keys but require MFA for every API call made with the root access keys"
+   ],
+   "answer": 2,
+   "explanation": "AWS recommends not having root user access keys at all, because they grant unrestricted access to the account. Permissions boundaries cannot be applied to the root user."
+  },
+  {
+   "id": "awsccp-442",
+   "domain": "sec",
+   "prompt": "Signed-in users of a mobile app need temporary AWS credentials so the app can upload their photos directly to an Amazon S3 bucket. Which feature provides these credentials?",
+   "choices": [
+    "A separate IAM user for each app customer",
+    "Long-term IAM access keys built into the app",
+    "IAM Identity Center permission sets",
+    "Amazon Cognito identity pools"
+   ],
+   "answer": 3,
+   "explanation": "Cognito identity pools exchange an authenticated identity for temporary, limited-privilege AWS credentials. Embedding long-term keys or creating IAM users per customer is insecure and does not scale."
+  },
+  {
+   "id": "awsccp-443",
+   "domain": "sec",
+   "prompt": "In AWS Control Tower, which type of control finds noncompliant resources after they are created, typically by using AWS Config rules?",
+   "choices": [
+    "Detective",
+    "Proactive",
+    "Preventive",
+    "Compensating"
+   ],
+   "answer": 0,
+   "explanation": "Detective controls detect and report noncompliance using AWS Config rules. Preventive controls use SCPs to block actions, and proactive controls check resources before they are provisioned."
+  },
+  {
+   "id": "awsccp-444",
+   "domain": "sec",
+   "prompt": "Why does AWS recommend running production and development workloads in separate AWS accounts?",
+   "choices": [
+    "Separate accounts are required to use more than one AWS Region",
+    "Accounts are strong security and billing boundaries that limit the impact of mistakes",
+    "Each AWS account is placed on its own dedicated physical hardware in AWS data centers",
+    "Separate accounts remove the need for IAM policies"
+   ],
+   "answer": 1,
+   "explanation": "An AWS account is a hard isolation boundary for resources, permissions and billing, so problems in one environment do not easily affect another. A multi-account structure is a core AWS best practice."
+  },
+  {
+   "id": "awsccp-445",
+   "domain": "sec",
+   "prompt": "A company must ensure that its backups cannot be deleted by anyone, including administrators, before their retention period ends. Which feature meets this requirement?",
+   "choices": [
+    "An IAM permissions boundary on the backup administrator",
+    "Amazon S3 Lifecycle rules",
+    "AWS Backup Vault Lock in compliance mode",
+    "Amazon EBS fast snapshot restore"
+   ],
+   "answer": 2,
+   "explanation": "Backup Vault Lock in compliance mode enforces write-once-read-many protection so recovery points cannot be deleted or have retention shortened, even by the root user, once the lock is in effect."
+  },
+  {
+   "id": "awsccp-446",
+   "domain": "sec",
+   "prompt": "A three-tier web application stores customer data in an Amazon RDS database. Where should the database be placed for the BEST security?",
+   "choices": [
+    "In a public subnet with a network ACL that allows all traffic",
+    "In a public subnet with a public IP address and a strong master password",
+    "In the same public subnet as the web servers",
+    "In private subnets, accepting traffic only from the application tier"
+   ],
+   "answer": 3,
+   "explanation": "Placing databases in private subnets with no route from the internet, and allowing access only from the application tier, reduces the attack surface. A strong password alone does not prevent exposure."
+  },
+  {
+   "id": "awsccp-447",
+   "domain": "sec",
+   "prompt": "A database's security group must allow connections only from the application servers, whose IP addresses change as Auto Scaling replaces them. What is the BEST approach?",
+   "choices": [
+    "Use the application tier's security group as the source in the inbound rule",
+    "Add each application server's current private IP address as a separate rule",
+    "Allow inbound traffic from 0.0.0.0/0 on the database port",
+    "Use a network ACL to allow the whole VPC CIDR range"
+   ],
+   "answer": 0,
+   "explanation": "A security group rule can reference another security group, so any instance in the application tier is allowed automatically regardless of its IP address. Opening to 0.0.0.0/0 would expose the database."
+  },
+  {
+   "id": "awsccp-448",
+   "domain": "sec",
+   "prompt": "On-premises servers need to call AWS APIs without storing long-term access keys. Which feature lets them obtain temporary credentials by using X.509 certificates?",
+   "choices": [
+    "AWS Artifact agreements",
+    "IAM Roles Anywhere",
+    "IAM credential reports",
+    "Amazon Cognito user pools"
+   ],
+   "answer": 1,
+   "explanation": "IAM Roles Anywhere lets workloads outside AWS use X.509 certificates from a trusted certificate authority to assume IAM roles and receive temporary credentials."
+  },
+  {
+   "id": "awsccp-449",
+   "domain": "sec",
+   "prompt": "A small team wants its public web application protected against common exploits such as those in the OWASP Top 10 without writing and maintaining its own rules. What should it use?",
+   "choices": [
+    "Security groups on the web servers",
+    "Amazon Inspector vulnerability scans",
+    "AWS Managed Rules rule groups in AWS WAF",
+    "AWS Shield Standard"
+   ],
+   "answer": 2,
+   "explanation": "AWS Managed Rules are prebuilt WAF rule groups, maintained by AWS, that protect against common web exploits. Shield Standard protects against DDoS attacks, and security groups cannot inspect HTTP content."
+  },
+  {
+   "id": "awsccp-450",
+   "domain": "sec",
+   "prompt": "A team moves its self-managed MySQL server to Amazon RDS. Which task does the team still own?",
+   "choices": [
+    "Maintaining the physical network in the data center",
+    "Patching the operating system of the underlying database host",
+    "Replacing failed storage hardware",
+    "Managing database users and security group access rules"
+   ],
+   "answer": 3,
+   "explanation": "With RDS, AWS manages the underlying infrastructure and host OS, while the customer controls database users, security groups and other access settings."
+  },
+  {
+   "id": "awsccp-451",
+   "domain": "sec",
+   "prompt": "Which policy is the primary way to control who can use and manage an AWS KMS key?",
+   "choices": [
+    "The key policy attached to the KMS key",
+    "A network ACL",
+    "A tag policy in AWS Organizations",
+    "An S3 bucket policy"
+   ],
+   "answer": 0,
+   "explanation": "Every KMS key has a key policy, which is the primary resource-based policy controlling access to it. IAM policies only take effect when the key policy allows them."
+  },
+  {
+   "id": "awsccp-452",
+   "domain": "sec",
+   "prompt": "A company wants every new Amazon EBS volume created in a Region to be encrypted automatically, without relying on each user to choose encryption. What should it enable?",
+   "choices": [
+    "EBS Multi-Attach on each volume",
+    "EBS encryption by default for the account in that Region",
+    "S3 Block Public Access at the account level for all buckets",
+    "AWS Shield Advanced for the account"
+   ],
+   "answer": 1,
+   "explanation": "Turning on EBS encryption by default makes the account encrypt all new EBS volumes and snapshot copies in that Region with a KMS key."
+  },
+  {
+   "id": "awsccp-453",
+   "domain": "sec",
+   "prompt": "A company wants to make sure that nobody in the accounts of an organizational unit can stop or delete AWS CloudTrail trails, including account administrators. What is the MOST effective control?",
+   "choices": [
+    "An Amazon CloudWatch dashboard that displays the status of each trail",
+    "A cost allocation tag on each trail",
+    "An SCP that denies the CloudTrail StopLogging and DeleteTrail actions",
+    "An IAM password policy in each account"
+   ],
+   "answer": 2,
+   "explanation": "SCPs set guardrails that apply to all IAM users and roles in member accounts, including administrators, so a deny on cloudtrail:StopLogging and cloudtrail:DeleteTrail cannot be overridden there."
+  },
+  {
+   "id": "awsccp-454",
+   "domain": "sec",
+   "prompt": "A CloudTrail trail is not showing Amazon S3 object-level activity such as GetObject and PutObject calls. What must be configured to capture these events?",
+   "choices": [
+    "VPC Flow Logs for the VPC",
+    "AWS Config recording for S3",
+    "Logging of management events only",
+    "Logging of data events for the S3 buckets"
+   ],
+   "answer": 3,
+   "explanation": "Trails log management events by default, but data events such as S3 object-level operations must be enabled explicitly and incur additional charges."
+  },
+  {
+   "id": "awsccp-455",
+   "domain": "concepts",
+   "prompt": "A team monitors key business metrics and configures automation so that when a threshold is breached the workload recovers on its own. Which Reliability design principle is this?",
+   "choices": [
+    "Automatically recover from failure",
+    "Experiment more often",
+    "Stop guessing capacity",
+    "Test recovery procedures"
+   ],
+   "answer": 0,
+   "explanation": "The Reliability pillar's 'automatically recover from failure' principle uses monitoring of KPIs to trigger automated recovery. Testing recovery procedures is about validating recovery, not performing it automatically."
+  },
+  {
+   "id": "awsccp-456",
+   "domain": "concepts",
+   "prompt": "A team chooses a key-value database for simple lookups and a graph database for relationship queries, matching each technology to how the data is actually used. Which Performance Efficiency design principle does this reflect?",
+   "choices": [
+    "Keep people away from data",
+    "Consider mechanical sympathy",
+    "Adopt a consumption model",
+    "Go global in minutes"
+   ],
+   "answer": 1,
+   "explanation": "Mechanical sympathy means using the technology approach that aligns best with your goals and data access patterns. Adopting a consumption model is a Cost Optimization principle."
+  },
+  {
+   "id": "awsccp-457",
+   "domain": "concepts",
+   "prompt": "A security team regularly runs incident response simulations and uses tools to speed up detection, investigation and recovery. Which Security pillar design principle is this?",
+   "choices": [
+    "Protect data in transit and at rest",
+    "Enable traceability",
+    "Prepare for security events",
+    "Implement a strong identity foundation"
+   ],
+   "answer": 2,
+   "explanation": "Preparing for security events includes having incident management processes and running simulations so the team can respond quickly when something happens."
+  },
+  {
+   "id": "awsccp-458",
+   "domain": "concepts",
+   "prompt": "A company moves workloads to newer, more efficient instance types mainly to reduce the energy needed to do the same work. Which Well-Architected pillar is it primarily applying?",
+   "choices": [
+    "Operational Excellence",
+    "Security",
+    "Reliability",
+    "Sustainability"
+   ],
+   "answer": 3,
+   "explanation": "The Sustainability pillar includes the principle 'anticipate and adopt new, more efficient hardware and software offerings' to reduce environmental impact."
+  },
+  {
+   "id": "awsccp-459",
+   "domain": "concepts",
+   "prompt": "Before launching a new feature, a team runs exercises to identify potential sources of failure and tests how the workload behaves when those failures happen. Which Operational Excellence design principle is this?",
+   "choices": [
+    "Anticipate failure",
+    "Use managed services",
+    "Organize teams around business outcomes",
+    "Make frequent, small, reversible changes"
+   ],
+   "answer": 0,
+   "explanation": "'Anticipate failure' means performing pre-mortem exercises and testing failure scenarios so their impact is understood and removed or mitigated before they occur."
+  },
+  {
+   "id": "awsccp-460",
+   "domain": "concepts",
+   "prompt": "Which AWS Cloud Adoption Framework perspective includes cloud financial management, alongside capabilities such as program management and risk management?",
+   "choices": [
+    "People",
+    "Governance",
+    "Operations",
+    "Platform"
+   ],
+   "answer": 1,
+   "explanation": "The Governance perspective covers capabilities such as program and project management, benefits management, risk management and cloud financial management."
+  },
+  {
+   "id": "awsccp-461",
+   "domain": "concepts",
+   "prompt": "In which AWS Cloud Adoption Framework phase does an organization identify and prioritize transformation opportunities in line with its strategic objectives?",
+   "choices": [
+    "Scale",
+    "Launch",
+    "Envision",
+    "Align"
+   ],
+   "answer": 2,
+   "explanation": "The Envision phase demonstrates how the cloud can accelerate business outcomes by identifying and prioritizing transformation opportunities. Align then identifies capability gaps."
+  },
+  {
+   "id": "awsccp-462",
+   "domain": "concepts",
+   "prompt": "Which term describes a system's ability to continue operating without interruption even when some of its components fail?",
+   "choices": [
+    "Durability",
+    "Agility",
+    "Elasticity",
+    "Fault tolerance"
+   ],
+   "answer": 3,
+   "explanation": "Fault tolerance means the system keeps working through component failures, usually through redundancy. Durability refers to data not being lost, and elasticity to matching capacity to demand."
+  },
+  {
+   "id": "awsccp-463",
+   "domain": "concepts",
+   "prompt": "An application is broken into small, independently deployable services that each own a business capability and communicate through well-defined APIs. What is this architectural style called?",
+   "choices": [
+    "Microservices",
+    "Monolithic architecture",
+    "Vertical scaling",
+    "Multi-tenancy"
+   ],
+   "answer": 0,
+   "explanation": "A microservices architecture splits an application into independent services that can be developed, deployed and scaled separately, unlike a monolith where all parts are deployed together."
+  },
+  {
+   "id": "awsccp-464",
+   "domain": "concepts",
+   "prompt": "Which statement BEST describes serverless computing on AWS?",
+   "choices": [
+    "AWS removes the need to write any application code",
+    "AWS manages the servers; it scales automatically and you pay for what you use",
+    "You rent dedicated physical servers by the month",
+    "Applications run on no physical hardware at all, only on virtual network functions"
+   ],
+   "answer": 1,
+   "explanation": "Serverless services such as AWS Lambda still run on servers, but AWS manages them; customers get automatic scaling, built-in availability and pay-for-use pricing."
+  },
+  {
+   "id": "awsccp-465",
+   "domain": "concepts",
+   "prompt": "A web application stores user session data in Amazon ElastiCache instead of in memory on each web server. Which benefit does this MOST directly enable?",
+   "choices": [
+    "Session data no longer needs to be encrypted",
+    "The application must now run in a single Availability Zone to keep sessions consistent",
+    "Stateless web servers that can be added or removed freely to scale horizontally",
+    "The web servers no longer need a load balancer"
+   ],
+   "answer": 2,
+   "explanation": "Moving session state out of the servers makes the web tier stateless, so any instance can serve any request and the tier can scale out and in without losing sessions."
+  },
+  {
+   "id": "awsccp-466",
+   "domain": "concepts",
+   "prompt": "A team regularly simulates events such as Availability Zone failures in production to practice its response and improve the workload. Which general Well-Architected design principle does this follow?",
+   "choices": [
+    "Stop guessing your capacity needs",
+    "Automate to make architectural experimentation easier",
+    "Allow for evolutionary architectures",
+    "Improve through game days"
+   ],
+   "answer": 3,
+   "explanation": "The general design principle 'improve through game days' recommends regularly scheduled simulations of production events to find areas for improvement and build experience handling them."
+  },
+  {
+   "id": "awsccp-467",
+   "domain": "billing",
+   "prompt": "Which AWS Trusted Advisor category includes the check that flags Amazon RDS DB instances not configured for Multi-AZ deployment?",
+   "choices": [
+    "Fault tolerance",
+    "Cost optimization",
+    "Service limits",
+    "Performance"
+   ],
+   "answer": 0,
+   "explanation": "Fault tolerance checks look for ways to increase availability and redundancy, such as RDS Multi-AZ, EBS snapshots and instances spread across AZs."
+  },
+  {
+   "id": "awsccp-468",
+   "domain": "billing",
+   "prompt": "A new application's Amazon DynamoDB table will have unpredictable traffic that varies widely from hour to hour. Which capacity mode is the simplest and MOST cost-effective starting point?",
+   "choices": [
+    "Provisioned capacity set to the minimum allowed",
+    "On-demand capacity mode",
+    "Provisioned capacity set for the expected peak",
+    "Provisioned capacity with reserved capacity purchased"
+   ],
+   "answer": 1,
+   "explanation": "On-demand mode charges per request and scales instantly, so you do not pay for unused provisioned throughput when traffic is unpredictable. Provisioning for the peak wastes money most of the time."
+  },
+  {
+   "id": "awsccp-469",
+   "domain": "billing",
+   "prompt": "An organization uses consolidated billing in AWS Organizations. Which account is responsible for paying the charges of all member accounts?",
+   "choices": [
+    "Each member account pays its own bill separately",
+    "A delegated administrator account",
+    "The management account",
+    "The account with the highest monthly spend"
+   ],
+   "answer": 2,
+   "explanation": "With consolidated billing, the management account receives one combined bill and pays the charges incurred by all member accounts."
+  },
+  {
+   "id": "awsccp-470",
+   "domain": "billing",
+   "prompt": "A developer wants an application to programmatically retrieve current AWS service prices to build an internal cost tool. Which option should they use?",
+   "choices": [
+    "AWS Budgets",
+    "AWS Pricing Calculator",
+    "AWS Cost and Usage Report",
+    "AWS Price List API"
+   ],
+   "answer": 3,
+   "explanation": "The AWS Price List API returns current prices for AWS services in a machine-readable format. The Pricing Calculator is an interactive web tool, and the CUR shows your own past usage."
+  },
+  {
+   "id": "awsccp-471",
+   "domain": "billing",
+   "prompt": "A finance team wants to group AWS costs into custom categories such as 'Marketing' and 'Research', using rules based on accounts, tags and services, and see them in billing tools. Which feature fits?",
+   "choices": [
+    "AWS Cost Categories",
+    "AWS Service Catalog",
+    "AWS Compute Optimizer",
+    "AWS Resource Access Manager"
+   ],
+   "answer": 0,
+   "explanation": "AWS Cost Categories let you define rules that map costs to your own business structure; the categories then appear in Cost Explorer, Budgets and the Cost and Usage Report."
+  },
+  {
+   "id": "awsccp-472",
+   "domain": "billing",
+   "prompt": "Which Reserved Instance scope provides a capacity reservation for the instances in addition to a billing discount?",
+   "choices": [
+    "A Compute Savings Plan",
+    "A zonal Reserved Instance",
+    "A regional Reserved Instance",
+    "An EC2 Instance Savings Plan"
+   ],
+   "answer": 1,
+   "explanation": "Zonal Reserved Instances reserve capacity in the specified AZ. Regional RIs and Savings Plans give discounts and flexibility but do not reserve capacity."
   }
  ]
 }

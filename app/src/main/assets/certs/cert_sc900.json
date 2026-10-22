@@ -5520,6 +5520,656 @@
    ],
    "answer": 3,
    "explanation": "Communication Compliance helps organizations meet regulatory supervision requirements for communications, such as those for financial services."
+  },
+  {
+   "id": "sc900-421",
+   "domain": "concepts",
+   "prompt": "A sender digitally signs a contract so the recipient can confirm who sent it and that it was not changed. Which key does the sender use to create the signature?",
+   "choices": [
+    "The sender's private key",
+    "The recipient's private key",
+    "A shared symmetric key",
+    "The sender's public key"
+   ],
+   "answer": 0,
+   "explanation": "A digital signature is created with the sender's private key and verified by anyone with the sender's public key, proving authenticity and integrity."
+  },
+  {
+   "id": "sc900-422",
+   "domain": "concepts",
+   "prompt": "Alice wants to send Bob a message that only Bob can read, using asymmetric encryption. Which key should she use to encrypt it?",
+   "choices": [
+    "Bob's private key",
+    "Bob's public key",
+    "Alice's private key",
+    "Alice's public key"
+   ],
+   "answer": 1,
+   "explanation": "Data encrypted with a recipient's public key can be decrypted only with the matching private key, which only the recipient holds."
+  },
+  {
+   "id": "sc900-423",
+   "domain": "concepts",
+   "prompt": "Attackers take username and password pairs leaked from another website's breach and try them automatically against a company's sign-in page. What is this attack called?",
+   "choices": [
+    "Spear phishing",
+    "Password spray",
+    "Credential stuffing",
+    "Ransomware"
+   ],
+   "answer": 2,
+   "explanation": "Credential stuffing reuses stolen credential pairs, relying on people reusing passwords across sites. Password spray tries a few common passwords against many accounts."
+  },
+  {
+   "id": "sc900-424",
+   "domain": "concepts",
+   "prompt": "An attacker uses automated tools to try thousands of password combinations against a single administrator account. Which type of attack is this?",
+   "choices": [
+    "Denial of service",
+    "Password spray",
+    "Phishing",
+    "Brute force"
+   ],
+   "answer": 3,
+   "explanation": "A brute force attack tries many passwords against one account. Password spray does the opposite, trying a few common passwords across many accounts to avoid lockouts."
+  },
+  {
+   "id": "sc900-425",
+   "domain": "concepts",
+   "prompt": "Which type of malware can copy itself and spread to other computers across a network without any user action?",
+   "choices": [
+    "A worm",
+    "A trojan",
+    "Ransomware that needs a user to open a file",
+    "Adware"
+   ],
+   "answer": 0,
+   "explanation": "Worms self-replicate and spread across networks without user interaction. Trojans disguise themselves as legitimate software and rely on users to run them."
+  },
+  {
+   "id": "sc900-426",
+   "domain": "concepts",
+   "prompt": "In modern authentication, what does a security token issued by an identity provider contain that applications use to make decisions about the user?",
+   "choices": [
+    "The user's password in encrypted form",
+    "Claims about the user",
+    "The user's full browsing history",
+    "The application's source code"
+   ],
+   "answer": 1,
+   "explanation": "Identity providers issue tokens containing claims, such as the user's name, roles or group memberships, which applications trust instead of handling passwords themselves."
+  },
+  {
+   "id": "sc900-427",
+   "domain": "entra",
+   "prompt": "A university wants to issue digital diplomas that graduates can store in a wallet and share, and that employers can verify cryptographically without contacting the university. Which Microsoft Entra capability fits?",
+   "choices": [
+    "Microsoft Entra B2B collaboration",
+    "Privileged Identity Management",
+    "Microsoft Entra Verified ID",
+    "Microsoft Entra Connect"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft Entra Verified ID issues and verifies verifiable credentials based on open decentralized identity standards, so holders control and share their own credentials."
+  },
+  {
+   "id": "sc900-428",
+   "domain": "entra",
+   "prompt": "A company wants to replace its traditional VPN with identity-centric, Zero Trust access to private applications in its datacenter and in Azure. Which Microsoft Entra solution is designed for this?",
+   "choices": [
+    "Microsoft Entra Internet Access",
+    "Microsoft Entra Connect Health",
+    "Microsoft Entra Domain Services",
+    "Microsoft Entra Private Access"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Entra Private Access, part of Global Secure Access, provides Zero Trust network access to private apps without a VPN. Internet Access secures traffic to the internet and SaaS apps."
+  },
+  {
+   "id": "sc900-429",
+   "domain": "entra",
+   "prompt": "A company wants to secure users' access to internet sites and SaaS apps with an identity-aware secure web gateway, including web content filtering. Which Microsoft Entra solution fits?",
+   "choices": [
+    "Microsoft Entra Internet Access",
+    "Microsoft Entra application proxy",
+    "Microsoft Entra Private Access",
+    "Microsoft Entra Verified ID"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Entra Internet Access is the secure web gateway component of Global Secure Access for internet and SaaS traffic. Application proxy publishes on-premises web apps."
+  },
+  {
+   "id": "sc900-430",
+   "domain": "entra",
+   "prompt": "An employee is disabled in Microsoft Entra ID after resigning. The company wants their existing access tokens for supported apps such as Exchange Online to stop working almost immediately rather than at token expiry. Which capability supports this?",
+   "choices": [
+    "Self-service password reset",
+    "Continuous access evaluation (CAE)",
+    "Security defaults",
+    "Seamless single sign-on"
+   ],
+   "answer": 1,
+   "explanation": "Continuous access evaluation lets supporting services react in near real time to critical events, such as account disablement or a password reset, instead of waiting for token lifetimes to expire."
+  },
+  {
+   "id": "sc900-431",
+   "domain": "entra",
+   "prompt": "An administrator wants to monitor the health and performance of the on-premises identity infrastructure, such as Microsoft Entra Connect sync servers and AD FS. Which tool should be used?",
+   "choices": [
+    "Microsoft Purview Audit",
+    "Microsoft Defender for Cloud Apps",
+    "Microsoft Entra Connect Health",
+    "Microsoft Entra ID Protection"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft Entra Connect Health monitors on-premises identity components, including sync and AD FS servers, and raises alerts about problems."
+  },
+  {
+   "id": "sc900-432",
+   "domain": "entra",
+   "prompt": "An administrator wants to assign the Helpdesk Administrator role to a group instead of to each user individually. What kind of group is required?",
+   "choices": [
+    "Any group created by a guest user",
+    "A dynamic membership group based on user attributes",
+    "A dynamic distribution list",
+    "A group created with the setting that allows Microsoft Entra roles to be assigned to it"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Entra roles can be assigned to groups only if the group was created with the setting that makes it assignable to roles, which protects the group from being modified by lower-privileged admins."
+  },
+  {
+   "id": "sc900-433",
+   "domain": "entra",
+   "prompt": "Where does an administrator centrally enable or disable authentication methods, such as FIDO2 security keys or Microsoft Authenticator, for specific users and groups in Microsoft Entra ID?",
+   "choices": [
+    "The authentication methods policy",
+    "The entitlement management catalog",
+    "The Identity Secure Score page",
+    "The Conditional Access named locations list"
+   ],
+   "answer": 0,
+   "explanation": "The authentication methods policy controls which methods users can register and use for sign-in and MFA, and can target specific users and groups."
+  },
+  {
+   "id": "sc900-434",
+   "domain": "entra",
+   "prompt": "A worker on a secure manufacturing floor cannot carry a phone but needs a second factor that displays a six-digit code that changes regularly. Which method fits?",
+   "choices": [
+    "Microsoft Authenticator push notifications",
+    "A hardware OATH token",
+    "SMS text message codes",
+    "Voice call verification"
+   ],
+   "answer": 1,
+   "explanation": "Hardware OATH tokens generate time-based one-time codes without needing a phone. The other methods all rely on a mobile phone."
+  },
+  {
+   "id": "sc900-435",
+   "domain": "entra",
+   "prompt": "Microsoft Entra ID Protection rates a sign-in as medium risk, and a sign-in risk policy is in place. What does the user typically need to do to continue?",
+   "choices": [
+    "Reinstall the Microsoft Authenticator app",
+    "Wait 24 hours before trying again",
+    "Complete multifactor authentication",
+    "Call the help desk to unlock the account"
+   ],
+   "answer": 2,
+   "explanation": "Sign-in risk policies typically require MFA so the user can prove their identity and self-remediate. User risk policies typically require a secure password change."
+  },
+  {
+   "id": "sc900-436",
+   "domain": "entra",
+   "prompt": "A company wants employees of a specific partner organization to be able to request an access package themselves, without first being invited as guests. Which entitlement management feature enables this?",
+   "choices": [
+    "Configuring password writeback",
+    "Enabling security defaults for the whole tenant",
+    "Creating a dynamic membership group",
+    "Add the partner as a connected organization"
+   ],
+   "answer": 3,
+   "explanation": "Connected organizations let users from another directory or domain request access packages; when their request is approved, they are added to the tenant as guests automatically."
+  },
+  {
+   "id": "sc900-437",
+   "domain": "entra",
+   "prompt": "A company has several disconnected Active Directory forests after an acquisition and wants a lightweight agent-based way to synchronize users to Microsoft Entra ID. Which option is designed for this?",
+   "choices": [
+    "Microsoft Entra Cloud Sync",
+    "Microsoft Entra Connect Health",
+    "Microsoft Entra Domain Services",
+    "Microsoft Entra application proxy"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Entra Cloud Sync uses lightweight provisioning agents managed from the cloud and supports syncing from multiple disconnected forests."
+  },
+  {
+   "id": "sc900-438",
+   "domain": "entra",
+   "prompt": "Users are blocked from consenting to apps that request access to company data. The company wants users to be able to ask an administrator to review and approve such apps. What should be enabled?",
+   "choices": [
+    "Security defaults",
+    "The admin consent workflow",
+    "Seamless single sign-on",
+    "Self-service password reset"
+   ],
+   "answer": 1,
+   "explanation": "The admin consent workflow lets users request admin approval for an application when they cannot consent themselves, and designated reviewers approve or deny the request."
+  },
+  {
+   "id": "sc900-439",
+   "domain": "entra",
+   "prompt": "A company wants to stop employees from signing in to other organizations' Microsoft Entra tenants from corporate devices and networks, to reduce the risk of data leaving through personal or external tenants. What should it configure?",
+   "choices": [
+    "Access reviews",
+    "Password protection",
+    "Tenant restrictions",
+    "Named locations"
+   ],
+   "answer": 2,
+   "explanation": "Tenant restrictions let an organization control which external tenants its users can access from its managed devices and networks, helping prevent data exfiltration."
+  },
+  {
+   "id": "sc900-440",
+   "domain": "entra",
+   "prompt": "When configuring self-service password reset, what can an administrator set regarding the verification methods users must provide?",
+   "choices": [
+    "That users must call the help desk to complete each reset",
+    "That resets are allowed only from domain-joined devices",
+    "That only security questions can ever be used",
+    "Whether one or two methods are required for a reset"
+   ],
+   "answer": 3,
+   "explanation": "SSPR policy lets admins choose the available methods and whether one or two of them are required to reset a password, balancing security and convenience."
+  },
+  {
+   "id": "sc900-441",
+   "domain": "compliance",
+   "prompt": "A financial services firm must prevent its investment bankers and its research analysts from communicating or sharing files with each other in Microsoft Teams. Which Microsoft Purview solution should it use?",
+   "choices": [
+    "Information barriers",
+    "Data Lifecycle Management",
+    "Compliance Manager",
+    "Communication Compliance"
+   ],
+   "answer": 0,
+   "explanation": "Information barriers restrict communication and collaboration between defined groups to avoid conflicts of interest. Communication Compliance detects inappropriate messages after they are sent."
+  },
+  {
+   "id": "sc900-442",
+   "domain": "compliance",
+   "prompt": "A company requires that Microsoft support engineers can access its mailbox content only after the company explicitly approves each request. Which feature provides this?",
+   "choices": [
+    "Sensitivity label encryption",
+    "Customer Lockbox",
+    "Privileged Identity Management",
+    "Microsoft Purview Audit (Standard)"
+   ],
+   "answer": 1,
+   "explanation": "Customer Lockbox requires the customer to approve or reject Microsoft engineers' requests to access customer content during a support case."
+  },
+  {
+   "id": "sc900-443",
+   "domain": "compliance",
+   "prompt": "A company handles highly sensitive data and requires that Microsoft must not be able to decrypt it on its own, while still using sensitivity labels. Which option should it use?",
+   "choices": [
+    "Microsoft-managed encryption keys",
+    "Data loss prevention policy tips",
+    "Double Key Encryption",
+    "BitLocker on user devices"
+   ],
+   "answer": 2,
+   "explanation": "Double Key Encryption protects content with two keys, one held by the customer and one in Microsoft Azure, so Microsoft alone cannot decrypt the data."
+  },
+  {
+   "id": "sc900-444",
+   "domain": "compliance",
+   "prompt": "A company must find and respond to requests from individuals who want to know what personal data the company holds about them, as required by privacy regulations. Which Microsoft solution is designed for this?",
+   "choices": [
+    "Microsoft Entra access reviews",
+    "Microsoft Defender for Cloud Apps",
+    "Microsoft Purview Insider Risk Management",
+    "Microsoft Priva Subject Rights Requests"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Priva helps organizations manage privacy risk and handle subject rights requests by finding personal data and managing the review and response."
+  },
+  {
+   "id": "sc900-445",
+   "domain": "compliance",
+   "prompt": "A retention policy applies to a SharePoint site. A user deletes a document from the site before the retention period ends. Where is a copy kept?",
+   "choices": [
+    "In the site's Preservation Hold library",
+    "In the user's OneDrive recycle bin only",
+    "In the Exchange recoverable items folder",
+    "Nowhere; deletion overrides retention"
+   ],
+   "answer": 0,
+   "explanation": "When retention settings apply to SharePoint or OneDrive, deleted or changed content is preserved in the Preservation Hold library until the retention period ends."
+  },
+  {
+   "id": "sc900-446",
+   "domain": "compliance",
+   "prompt": "A company wants a retention policy to apply automatically to users in the Finance department, including people who join the department later, based on their attributes. What should it use?",
+   "choices": [
+    "A DLP policy tip",
+    "An adaptive scope",
+    "A static scope listing each user",
+    "A sensitivity label policy"
+   ],
+   "answer": 1,
+   "explanation": "Adaptive scopes use attribute queries, such as department, so the policy's targets update automatically as users change. Static scopes require locations to be specified manually."
+  },
+  {
+   "id": "sc900-447",
+   "domain": "compliance",
+   "prompt": "A company wants to discover, classify and label sensitive files stored on its on-premises file servers and SharePoint Server. Which tool should it use?",
+   "choices": [
+    "Azure Bastion",
+    "Microsoft Defender for Identity sensors",
+    "The Information Protection scanner",
+    "The Service Trust Portal"
+   ],
+   "answer": 2,
+   "explanation": "The Information Protection scanner runs on premises to discover files containing sensitive information on file shares and SharePoint Server and can apply sensitivity labels."
+  },
+  {
+   "id": "sc900-448",
+   "domain": "compliance",
+   "prompt": "A company wants employees to send encrypted email to any recipient, including people using Gmail, who can read it through a secure portal or one-time passcode. Which feature fits?",
+   "choices": [
+    "Information barriers",
+    "Microsoft Purview Communication Compliance",
+    "Safe Attachments",
+    "Microsoft Purview Message Encryption"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Purview Message Encryption lets users send and receive encrypted messages with people inside and outside the organization, regardless of their email provider."
+  },
+  {
+   "id": "sc900-449",
+   "domain": "compliance",
+   "prompt": "Where do administrators access Microsoft Purview solutions such as Data Loss Prevention, Information Protection and eDiscovery?",
+   "choices": [
+    "The Microsoft Purview portal",
+    "The Service Trust Portal",
+    "The Azure Bastion portal",
+    "The Microsoft Entra Connect wizard"
+   ],
+   "answer": 0,
+   "explanation": "The Microsoft Purview portal is the central place to manage Purview data security, governance and compliance solutions. The Service Trust Portal provides Microsoft's audit reports."
+  },
+  {
+   "id": "sc900-450",
+   "domain": "compliance",
+   "prompt": "A company wants a retention label applied automatically to every document that contains a specific sensitive information type, such as a tax ID number, without relying on users. What should it configure?",
+   "choices": [
+    "A Communication Compliance policy for documents",
+    "An auto-apply retention label policy",
+    "A default sensitivity label",
+    "An eDiscovery hold"
+   ],
+   "answer": 1,
+   "explanation": "Retention labels can be auto-applied based on conditions such as sensitive information types, keywords or trainable classifiers, so content is labeled without user action."
+  },
+  {
+   "id": "sc900-451",
+   "domain": "compliance",
+   "prompt": "A company wants Endpoint DLP to monitor and block copying of sensitive files to USB drives on its Windows 11 laptops. What must be done before policies can apply to those devices?",
+   "choices": [
+    "Enable Customer Lockbox",
+    "Join the devices to Microsoft Entra Domain Services",
+    "Onboard the devices to Microsoft Purview",
+    "Install the Information Protection scanner on each laptop"
+   ],
+   "answer": 2,
+   "explanation": "Endpoint DLP requires devices to be onboarded, for example through Microsoft Defender for Endpoint or Intune onboarding, so that Purview can monitor and enforce actions on them."
+  },
+  {
+   "id": "sc900-452",
+   "domain": "solutions",
+   "prompt": "A company wants alerts when suspicious resource management operations occur in its Azure subscriptions, such as unusual deployments from a rare location. Which Defender for Cloud plan should it enable?",
+   "choices": [
+    "Defender for Storage",
+    "Foundational CSPM",
+    "Defender for Containers",
+    "Defender for Resource Manager"
+   ],
+   "answer": 3,
+   "explanation": "Defender for Resource Manager monitors resource management operations performed through Azure Resource Manager and alerts on suspicious activity."
+  },
+  {
+   "id": "sc900-453",
+   "domain": "solutions",
+   "prompt": "A company wants alerts on unusual and potentially harmful attempts to access or exploit its Azure Key Vault accounts. Which Defender for Cloud plan should it enable?",
+   "choices": [
+    "Defender for Key Vault",
+    "Defender for Databases",
+    "Defender CSPM",
+    "Defender for Servers"
+   ],
+   "answer": 0,
+   "explanation": "Defender for Key Vault detects unusual and potentially harmful attempts to access or exploit Key Vault accounts."
+  },
+  {
+   "id": "sc900-454",
+   "domain": "solutions",
+   "prompt": "A team wants Defender for Cloud to automatically run a response, such as opening a ticket or notifying a channel, whenever a specific alert or recommendation is generated. Which feature should it use?",
+   "choices": [
+    "Just-in-time VM access",
+    "Workflow automation",
+    "The regulatory compliance dashboard",
+    "Secure score recommendations"
+   ],
+   "answer": 1,
+   "explanation": "Defender for Cloud workflow automation triggers Logic Apps when alerts, recommendations or compliance changes occur, enabling automated responses."
+  },
+  {
+   "id": "sc900-455",
+   "domain": "solutions",
+   "prompt": "A company wants Defender for Cloud to find security issues in its code repositories and pipelines in GitHub and Azure DevOps. Which capability should it use?",
+   "choices": [
+    "Defender for Storage",
+    "Just-in-time VM access for build agents",
+    "DevOps security",
+    "Azure DDoS Protection"
+   ],
+   "answer": 2,
+   "explanation": "Defender for Cloud's DevOps security connects to platforms such as GitHub and Azure DevOps to surface code, secrets and configuration issues across the development lifecycle."
+  },
+  {
+   "id": "sc900-456",
+   "domain": "solutions",
+   "prompt": "A security team wants to continuously discover its organization's internet-facing assets, including forgotten domains and IP addresses, from an outside-in attacker's perspective. Which Microsoft solution fits?",
+   "choices": [
+    "Microsoft Purview Compliance Manager assessments",
+    "Azure Firewall Manager",
+    "Microsoft Defender for Identity",
+    "Defender External Attack Surface Management"
+   ],
+   "answer": 3,
+   "explanation": "Defender External Attack Surface Management discovers and maps an organization's externally exposed assets so unknown or unmanaged ones can be found and secured."
+  },
+  {
+   "id": "sc900-457",
+   "domain": "solutions",
+   "prompt": "A company with a small security team wants Microsoft experts to monitor, investigate and respond to incidents in its Defender XDR environment around the clock as a managed service. Which offering fits?",
+   "choices": [
+    "Microsoft Defender Experts for XDR",
+    "Microsoft Defender Threat Intelligence",
+    "Microsoft Secure Score",
+    "Attack simulation training"
+   ],
+   "answer": 0,
+   "explanation": "Defender Experts for XDR is a managed extended detection and response service in which Microsoft experts triage, investigate and respond to incidents for the customer."
+  },
+  {
+   "id": "sc900-458",
+   "domain": "solutions",
+   "prompt": "A phishing email was delivered to several Exchange Online mailboxes before it was identified as malicious. Which feature can automatically remove it from the mailboxes after delivery?",
+   "choices": [
+    "Attack simulation training",
+    "Zero-hour auto purge (ZAP)",
+    "A DLP policy tip",
+    "Safe Links"
+   ],
+   "answer": 1,
+   "explanation": "Zero-hour auto purge retroactively detects and moves or removes malicious messages that have already been delivered to Exchange Online mailboxes."
+  },
+  {
+   "id": "sc900-459",
+   "domain": "solutions",
+   "prompt": "Which service provides built-in anti-spam and anti-malware filtering for all Exchange Online mailboxes, even without Microsoft Defender for Office 365?",
+   "choices": [
+    "Azure Web Application Firewall",
+    "Microsoft Defender for Identity",
+    "Exchange Online Protection (EOP)",
+    "Microsoft Defender for Cloud Apps"
+   ],
+   "answer": 2,
+   "explanation": "Exchange Online Protection is the cloud filtering service included with Exchange Online; Defender for Office 365 adds advanced protection such as Safe Links and Safe Attachments."
+  },
+  {
+   "id": "sc900-460",
+   "domain": "solutions",
+   "prompt": "Attackers who gain admin rights on a laptop try to turn off Microsoft Defender Antivirus and real-time protection. Which Defender for Endpoint feature helps prevent this?",
+   "choices": [
+    "Web content filtering",
+    "Device isolation",
+    "Attack simulation training",
+    "Tamper protection"
+   ],
+   "answer": 3,
+   "explanation": "Tamper protection prevents unauthorized changes to security settings such as disabling antivirus or real-time protection, even by local administrators."
+  },
+  {
+   "id": "sc900-461",
+   "domain": "solutions",
+   "prompt": "A company wants Defender for Cloud Apps to scan files stored in connected cloud apps, such as Box, for sensitive data and automatically restrict public sharing of matching files. What should it create?",
+   "choices": [
+    "A file policy",
+    "An access policy",
+    "A Cloud Discovery report",
+    "An app connector removal"
+   ],
+   "answer": 0,
+   "explanation": "File policies in Defender for Cloud Apps scan files in connected apps for content or sharing levels and can apply governance actions such as removing public links."
+  },
+  {
+   "id": "sc900-462",
+   "domain": "solutions",
+   "prompt": "An administrator wants NSG rules to target all web server VMs as a group, without listing their IP addresses, so new web servers are covered automatically when added. What should be used?",
+   "choices": [
+    "Service tags",
+    "Application security groups",
+    "Route tables",
+    "Azure Firewall DNAT rules"
+   ],
+   "answer": 1,
+   "explanation": "Application security groups group VM network interfaces by role so NSG rules can reference the group instead of IP addresses. Service tags represent Azure service address ranges, not your own VMs."
+  },
+  {
+   "id": "sc900-463",
+   "domain": "solutions",
+   "prompt": "A web app behind Azure Application Gateway WAF is being hit by bad bots and scrapers. Which WAF capability helps block known malicious bots with little configuration?",
+   "choices": [
+    "Azure Bastion",
+    "A network security group service tag",
+    "The bot protection managed rule set",
+    "Azure DDoS IP Protection"
+   ],
+   "answer": 2,
+   "explanation": "The WAF bot protection rule set uses Microsoft threat intelligence to identify and block known bad bots. DDoS Protection addresses volumetric attacks, not bot behavior."
+  },
+  {
+   "id": "sc900-464",
+   "domain": "solutions",
+   "prompt": "A threat hunter writes an advanced hunting query in Microsoft Defender XDR and wants it to run regularly and generate alerts automatically when it finds matches. What should be created?",
+   "choices": [
+    "A hunting bookmark",
+    "A Secure Score improvement action",
+    "A threat analytics report",
+    "A custom detection rule"
+   ],
+   "answer": 3,
+   "explanation": "Custom detection rules run advanced hunting queries on a schedule and raise alerts, and can take automated response actions on matching entities."
+  },
+  {
+   "id": "sc900-465",
+   "domain": "solutions",
+   "prompt": "A manufacturer wants agentless network monitoring to discover and protect its operational technology (OT) and industrial IoT devices. Which Microsoft solution fits?",
+   "choices": [
+    "Microsoft Defender for IoT",
+    "Microsoft Purview Information Protection",
+    "Microsoft Defender for Office 365",
+    "Microsoft Defender for Identity"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Defender for IoT provides asset discovery, vulnerability management and threat detection for OT and IoT devices, typically using passive network monitoring."
+  },
+  {
+   "id": "sc900-466",
+   "domain": "solutions",
+   "prompt": "A company wants to block employees' devices from accessing websites in categories such as gambling, regardless of the network they are on, using Defender for Endpoint. Which feature fits?",
+   "choices": [
+    "Tamper protection",
+    "Web content filtering",
+    "Live response",
+    "Attack surface reduction rules"
+   ],
+   "answer": 1,
+   "explanation": "Web content filtering in Defender for Endpoint lets organizations track and block access to websites based on content categories on onboarded devices."
+  },
+  {
+   "id": "sc900-467",
+   "domain": "solutions",
+   "prompt": "Which type of Microsoft Sentinel analytics rule runs a KQL query at a configured interval over a defined lookback period and creates alerts when results match?",
+   "choices": [
+    "Fusion",
+    "Microsoft Security incident creation",
+    "Scheduled",
+    "Anomaly"
+   ],
+   "answer": 2,
+   "explanation": "Scheduled query rules are the most common analytics rules; they run KQL queries on a schedule and generate alerts and incidents. Fusion uses machine learning to correlate signals."
+  },
+  {
+   "id": "sc900-468",
+   "domain": "solutions",
+   "prompt": "During an investigation, an analyst needs a remote shell connection to a compromised device to collect forensic files and run scripts. Which Defender for Endpoint capability provides this?",
+   "choices": [
+    "Web content filtering",
+    "Threat analytics",
+    "Secure Score",
+    "Live response"
+   ],
+   "answer": 3,
+   "explanation": "Live response gives security operations teams instant access to a device through a remote shell to collect data, run scripts and take response actions."
+  },
+  {
+   "id": "sc900-469",
+   "domain": "solutions",
+   "prompt": "A security team creates a dormant account that no legitimate user should ever use, so any sign-in attempt reveals an attacker. How can Microsoft Defender for Identity help?",
+   "choices": [
+    "Tag it as a honeytoken account",
+    "Assign the account the Global Administrator role",
+    "Store the account's password in Azure Key Vault and rotate it",
+    "Add the account to a Conditional Access exclusion"
+   ],
+   "answer": 0,
+   "explanation": "Defender for Identity lets you tag accounts as honeytokens; any authentication activity involving them triggers an alert, exposing attackers performing reconnaissance or lateral movement."
+  },
+  {
+   "id": "sc900-470",
+   "domain": "solutions",
+   "prompt": "A security team with Defender for Office 365 Plan 2 wants to see a coordinated phishing attack as a whole, including all the related messages, senders and affected users. Which feature should it use?",
+   "choices": [
+    "Attack surface reduction rules",
+    "Campaign views",
+    "Safe Attachments",
+    "Exchange Online Protection"
+   ],
+   "answer": 1,
+   "explanation": "Campaign views in Defender for Office 365 Plan 2 group related phishing and malware messages into campaigns, showing their scope, timeline and impacted users."
   }
  ]
 }

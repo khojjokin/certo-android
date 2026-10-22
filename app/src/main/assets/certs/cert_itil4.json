@@ -5601,6 +5601,656 @@
    ],
    "answer": 3,
    "explanation": "In pull deployment, software is made available in a controlled repository and users download it when they choose."
+  },
+  {
+   "id": "itil4-426",
+   "domain": "concepts",
+   "prompt": "When an organization provides services, which form of value do its shareholders typically expect?",
+   "choices": [
+    "Financial benefits such as dividends",
+    "Employment opportunities and taxes paid locally",
+    "Career development, job satisfaction and recognition",
+    "Reduced costs and risks in their own daily work as users"
+   ],
+   "answer": 0,
+   "explanation": "ITIL 4 lists financial benefits such as dividends, and a sense of confidence and predictability, as the value shareholders receive. Career development is value for employees, and taxes and jobs are value for society."
+  },
+  {
+   "id": "itil4-427",
+   "domain": "concepts",
+   "prompt": "Which ITIL 4 term is the generic role that includes the more specific roles of customer, user and sponsor?",
+   "choices": [
+    "Service provider",
+    "Service consumer",
+    "Service integrator",
+    "Service owner"
+   ],
+   "answer": 1,
+   "explanation": "When an organization receives services it acts as a service consumer, and the specific consumer roles are customer, user and sponsor."
+  },
+  {
+   "id": "itil4-428",
+   "domain": "concepts",
+   "prompt": "How does ITIL 4 describe a service provider?",
+   "choices": [
+    "The person who authorizes the budget for a service",
+    "Any external company that sells technology products",
+    "A role an organization performs in a service relationship to provide services",
+    "The internal department that owns and operates all of the IT infrastructure"
+   ],
+   "answer": 2,
+   "explanation": "Being a service provider is a role an organization performs in a service relationship; the same organization can be a consumer in other relationships. Authorizing budget is the sponsor's role."
+  },
+  {
+   "id": "itil4-429",
+   "domain": "concepts",
+   "prompt": "A new analytics tool lets the sales team prepare monthly forecasts in half the time they took before. Which aspect of the service does this mainly illustrate?",
+   "choices": [
+    "A cost imposed on the consumer by the service",
+    "Warranty, because the service has enough capacity for all users",
+    "Warranty, because the service is available when needed",
+    "Utility, as it supports the consumer's performance"
+   ],
+   "answer": 3,
+   "explanation": "Utility is what the service does: it either supports the performance of the consumer or removes constraints. Warranty is about how well it performs, such as availability, capacity, security and continuity."
+  },
+  {
+   "id": "itil4-430",
+   "domain": "concepts",
+   "prompt": "A provider's support engineers carry out the password resets and data restores that were agreed in the service offering. Which part of the service relationship do these activities belong to?",
+   "choices": [
+    "Service provision",
+    "Service relationship management",
+    "Service consumption",
+    "Service sponsorship"
+   ],
+   "answer": 0,
+   "explanation": "Fulfilment of agreed service actions is part of service provision, alongside managing the provider's resources and providing access to them. Requesting those actions is part of service consumption."
+  },
+  {
+   "id": "itil4-431",
+   "domain": "concepts",
+   "prompt": "A consumer's staff take delivery of new laptops supplied under a service and start managing them as their own property. Which part of the service relationship does receiving these goods belong to?",
+   "choices": [
+    "Service relationship management",
+    "Service consumption",
+    "Service integration and management",
+    "Service provision"
+   ],
+   "answer": 1,
+   "explanation": "Service consumption includes managing the consumer's resources, users using the service, and receiving (acquiring) goods. Supplying the goods is part of the provider's service provision."
+  },
+  {
+   "id": "itil4-432",
+   "domain": "concepts",
+   "prompt": "How is warranty for a service typically expressed and agreed between a provider and its consumers?",
+   "choices": [
+    "Through the price the consumer pays for the service",
+    "Through the maximum number of users who can be registered for the service",
+    "Through agreed service levels, such as for availability and capacity",
+    "Through the list of features the service offers"
+   ],
+   "answer": 2,
+   "explanation": "Warranty is the assurance that a service will meet agreed requirements, and it is usually related to service levels aligned with consumers' needs. The list of features describes utility."
+  },
+  {
+   "id": "itil4-433",
+   "domain": "dimensions",
+   "prompt": "Managers keep making poor decisions because the configuration data they rely on contains many wrong entries. Which characteristic of information is MOST clearly lacking?",
+   "choices": [
+    "Timeliness",
+    "Accessibility",
+    "Availability",
+    "Accuracy"
+   ],
+   "answer": 3,
+   "explanation": "ITIL 4 highlights information characteristics such as availability, reliability, accessibility, timeliness, accuracy and relevance. Wrong entries are an accuracy problem; out-of-date data would be a timeliness problem."
+  },
+  {
+   "id": "itil4-434",
+   "domain": "dimensions",
+   "prompt": "Within the value streams and processes dimension, what describes in more detail who is involved in a process and how the work should be done?",
+   "choices": [
+    "Procedures and work instructions",
+    "Service level agreements",
+    "The organizational chart",
+    "Supplier contracts"
+   ],
+   "answer": 0,
+   "explanation": "A process can be defined in more detail using procedures, which outline who is involved, and work instructions, which describe how to carry out specific tasks."
+  },
+  {
+   "id": "itil4-435",
+   "domain": "dimensions",
+   "prompt": "During service design, a manager checks that every team member understands how their work contributes to creating value. Which dimension is this MAINLY addressing?",
+   "choices": [
+    "Value streams and processes",
+    "Organizations and people",
+    "Partners and suppliers",
+    "Information and technology"
+   ],
+   "answer": 1,
+   "explanation": "Making sure everyone understands their contribution to value creation is a key consideration of the organizations and people dimension, together with culture, roles and competencies."
+  },
+  {
+   "id": "itil4-436",
+   "domain": "dimensions",
+   "prompt": "A provider launches a 24x7 support process, but it fails at night because the outsourced vendor's contract only covers business hours. Which dimension was overlooked?",
+   "choices": [
+    "Value streams and processes",
+    "Organizations and people",
+    "Partners and suppliers",
+    "Information and technology"
+   ],
+   "answer": 2,
+   "explanation": "The supplier's contract and its integration into the service fall under the partners and suppliers dimension. All four dimensions must be considered when designing a process."
+  },
+  {
+   "id": "itil4-437",
+   "domain": "dimensions",
+   "prompt": "A provider has a formal contract with clearly separated responsibilities with one supplier, and a flexible partnership with shared goals and risks with another. What does the partners and suppliers dimension say about this?",
+   "choices": [
+    "Partnerships are allowed only with hardware suppliers",
+    "Shared risks mean the partner becomes a service consumer",
+    "Only formal contracts with fixed penalties are acceptable",
+    "Both are valid forms of relationship between organizations"
+   ],
+   "answer": 3,
+   "explanation": "ITIL 4 describes a range of relationships between organizations, from formal contracts with clear demarcation of responsibilities to flexible partnerships where goals and risks are shared."
+  },
+  {
+   "id": "itil4-438",
+   "domain": "dimensions",
+   "prompt": "A weekly report given to a manager is full of data that has nothing to do with the decision she must make. Which characteristic of information is MOST clearly lacking?",
+   "choices": [
+    "Relevance",
+    "Availability",
+    "Timeliness",
+    "Accuracy"
+   ],
+   "answer": 0,
+   "explanation": "Relevance is one of the information characteristics considered in the information and technology dimension; data that does not relate to the decision being made has little value, however accurate or current it is."
+  },
+  {
+   "id": "itil4-439",
+   "domain": "principles",
+   "prompt": "A team spends months analysing every part of a large system before taking any action. Which piece of advice from 'progress iteratively with feedback' applies?",
+   "choices": [
+    "Do fewer things, but do them better",
+    "Comprehend the whole, but do something",
+    "Decisions can only be made on visible data",
+    "Collaboration does not mean consensus"
+   ],
+   "answer": 1,
+   "explanation": "'Comprehend the whole, but do something' warns that waiting to understand everything perfectly can stall progress; teams should understand the big picture yet still make progress in iterations."
+  },
+  {
+   "id": "itil4-440",
+   "domain": "principles",
+   "prompt": "A team argues that because iterations are small, they can be delivered half-finished. Which advice from 'progress iteratively with feedback' counters this?",
+   "choices": [
+    "Comprehend the whole, but do something",
+    "Simplicity is the ultimate sophistication",
+    "Fast does not mean incomplete",
+    "Respect the time of the people involved"
+   ],
+   "answer": 2,
+   "explanation": "'Fast does not mean incomplete' means that even small iterations should be complete enough to deliver something of value, not partial work."
+  },
+  {
+   "id": "itil4-441",
+   "domain": "principles",
+   "prompt": "A project lead insists that no decision can be made until every stakeholder agrees completely. What does 'collaborate and promote visibility' say about this?",
+   "choices": [
+    "Decisions should be kept private until complete",
+    "Every stakeholder must sign off each step",
+    "Only senior managers should be consulted",
+    "Collaboration does not mean consensus"
+   ],
+   "answer": 3,
+   "explanation": "ITIL 4 notes that collaboration does not mean consensus; it is not always necessary or appropriate to get everyone's agreement before moving forward."
+  },
+  {
+   "id": "itil4-442",
+   "domain": "principles",
+   "prompt": "Managers cannot decide which improvements to fund because no one can see how work flows or where it is delayed. Which advice from 'collaborate and promote visibility' applies MOST?",
+   "choices": [
+    "Decisions can only be made on visible data",
+    "Do fewer things, but do them better",
+    "Fast does not mean incomplete",
+    "Recognize the complexity of the systems"
+   ],
+   "answer": 0,
+   "explanation": "Making work, bottlenecks and data visible lets stakeholders make informed decisions. Without visibility, decisions are made on assumptions."
+  },
+  {
+   "id": "itil4-443",
+   "domain": "principles",
+   "prompt": "A team tries to improve a dozen processes at the same time and does none of them well. Which advice from 'keep it simple and practical' fits BEST?",
+   "choices": [
+    "Automate everything that can be automated",
+    "Do fewer things, but do them better",
+    "Collaboration does not mean consensus",
+    "Comprehend the whole, but do something"
+   ],
+   "answer": 1,
+   "explanation": "'Do fewer things, but do them better' encourages focusing effort on the most valuable outcomes rather than spreading resources thinly."
+  },
+  {
+   "id": "itil4-444",
+   "domain": "principles",
+   "prompt": "According to 'focus on value', when should an organization apply a focus on value?",
+   "choices": [
+    "Only after a customer complaint is received",
+    "Only during annual strategy reviews",
+    "In everyday operations as well as in improvement work",
+    "Only when a new service is being designed and built"
+   ],
+   "answer": 2,
+   "explanation": "ITIL 4 advises focusing on value during everyday operational work as well as in every step of improvement initiatives, and encouraging this focus among all staff."
+  },
+  {
+   "id": "itil4-445",
+   "domain": "principles",
+   "prompt": "After assessing its current service desk tools, a team concludes that none of them can be reused. What does 'start where you are' say about this situation?",
+   "choices": [
+    "The team should keep using the old tools indefinitely",
+    "The assessment must be repeated until something reusable is found",
+    "Something must always be reused, however poor its current quality is",
+    "Sometimes nothing can be reused, and that should be accepted"
+   ],
+   "answer": 3,
+   "explanation": "While 'start where you are' encourages reuse, it also recognizes that sometimes nothing from the current state is suitable and a fresh start is justified."
+  },
+  {
+   "id": "itil4-446",
+   "domain": "principles",
+   "prompt": "When applying 'start where you are' to decide whether existing practices can be replicated or expanded, which skills does ITIL 4 recommend applying?",
+   "choices": [
+    "Risk management skills",
+    "Contract negotiation skills",
+    "Financial auditing skills",
+    "Software development skills"
+   ],
+   "answer": 0,
+   "explanation": "ITIL 4 advises applying risk management skills when deciding whether to reuse, replicate or expand existing services and practices, since reuse carries its own risks."
+  },
+  {
+   "id": "itil4-447",
+   "domain": "principles",
+   "prompt": "When optimizing a process, which step follows assessing its current state?",
+   "choices": [
+    "Remove stakeholders from the decision so that progress is faster",
+    "Agree the future state and priorities, focusing on simplicity and value",
+    "Stop measuring the process to avoid introducing measurement bias",
+    "Automate every manual task immediately, before any further analysis"
+   ],
+   "answer": 1,
+   "explanation": "The recommended optimization steps include understanding the context, assessing the current state, agreeing the future state and priorities with a focus on simplicity and value, engaging stakeholders, executing iteratively and monitoring continually."
+  },
+  {
+   "id": "itil4-448",
+   "domain": "principles",
+   "prompt": "A team applying 'optimize and automate' asks whether it should consider the other guiding principles as well. What does ITIL 4 advise?",
+   "choices": [
+    "Apply only this principle so the work stays focused",
+    "Apply the other principles only to manual tasks",
+    "Use the other guiding principles when applying this one",
+    "Consider other principles only after automation is complete"
+   ],
+   "answer": 2,
+   "explanation": "ITIL 4 explicitly advises using the other guiding principles, such as 'keep it simple and practical' and 'focus on value', when optimizing and automating."
+  },
+  {
+   "id": "itil4-449",
+   "domain": "principles",
+   "prompt": "According to 'think and work holistically', how should an organization deal with systems of differing complexity?",
+   "choices": [
+    "Use one fixed decision-making method for every system",
+    "Leave complex systems unchanged to avoid risk",
+    "Treat every system as simple so that work always stays practical",
+    "Use different decision-making approaches for different levels of complexity"
+   ],
+   "answer": 3,
+   "explanation": "ITIL 4 advises recognizing the complexity of systems, because different levels of complexity require different heuristics for decision-making."
+  },
+  {
+   "id": "itil4-450",
+   "domain": "svs",
+   "prompt": "In which forms does continual improvement appear in ITIL 4?",
+   "choices": [
+    "As an SVS component, a value chain activity, a practice and a model",
+    "Only as one of the seven guiding principles that apply to all work",
+    "Only as a value chain activity",
+    "Only as part of governance"
+   ],
+   "answer": 0,
+   "explanation": "Continual improvement is an SVS component, appears as the 'improve' value chain activity, is one of the management practices, and is supported by the continual improvement model."
+  },
+  {
+   "id": "itil4-451",
+   "domain": "svs",
+   "prompt": "How does ITIL 4 organize its 34 management practices?",
+   "choices": [
+    "Into strategy, design, transition, operation and improvement practices",
+    "Into general, service and technical management practices",
+    "Into plan, build, run and improve practices",
+    "Into people, process, partner and product practices"
+   ],
+   "answer": 1,
+   "explanation": "ITIL 4 groups its 34 practices into general management practices, service management practices and technical management practices."
+  },
+  {
+   "id": "itil4-452",
+   "domain": "svs",
+   "prompt": "Which group of ITIL 4 management practices includes deployment management?",
+   "choices": [
+    "Service management practices",
+    "General management practices",
+    "Technical management practices",
+    "Governance practices"
+   ],
+   "answer": 2,
+   "explanation": "Deployment management is one of the three technical management practices, together with infrastructure and platform management and software development and management."
+  },
+  {
+   "id": "itil4-453",
+   "domain": "svs",
+   "prompt": "Which group of ITIL 4 management practices includes information security management?",
+   "choices": [
+    "Value chain practices",
+    "Service management practices",
+    "Technical management practices",
+    "General management practices"
+   ],
+   "answer": 3,
+   "explanation": "Information security management is a general management practice, as are continual improvement, relationship management and supplier management."
+  },
+  {
+   "id": "itil4-454",
+   "domain": "svs",
+   "prompt": "Which value chain activity passes new and changed products and services to deliver and support?",
+   "choices": [
+    "Design and transition",
+    "Plan",
+    "Obtain/build",
+    "Engage"
+   ],
+   "answer": 0,
+   "explanation": "Design and transition produces new and changed products and services for deliver and support, along with requirements and specifications for obtain/build."
+  },
+  {
+   "id": "itil4-455",
+   "domain": "svs",
+   "prompt": "Which value chain activity provides consolidated demands and opportunities to the plan activity?",
+   "choices": [
+    "Deliver and support",
+    "Engage",
+    "Obtain/build",
+    "Design and transition"
+   ],
+   "answer": 1,
+   "explanation": "Engage interacts with stakeholders and passes consolidated demands and opportunities to plan, as well as product and service requirements to design and transition."
+  },
+  {
+   "id": "itil4-456",
+   "domain": "svs",
+   "prompt": "While supporting a live service, the support team identifies that a service component needs to be modified. To which value chain activity does deliver and support send the resulting change request?",
+   "choices": [
+    "Plan",
+    "Engage",
+    "Obtain/build",
+    "Improve"
+   ],
+   "answer": 2,
+   "explanation": "Outputs of deliver and support include change requests for obtain/build, as well as performance information for engage and improve and improvement opportunities for improve."
+  },
+  {
+   "id": "itil4-457",
+   "domain": "svs",
+   "prompt": "A new automation technology appears that could cut the cost of running several services, although no consumer has asked for it. In SVS terms, what is this?",
+   "choices": [
+    "Demand",
+    "A value stream",
+    "An output of governance",
+    "An opportunity"
+   ],
+   "answer": 3,
+   "explanation": "Opportunities are options or possibilities to add value or improve the organization. Demand is the need or desire for products and services from consumers."
+  },
+  {
+   "id": "itil4-458",
+   "domain": "svs",
+   "prompt": "A business unit asks the IT department for a new self-service reporting capability. In SVS terms, what does this request represent?",
+   "choices": [
+    "Demand",
+    "An opportunity",
+    "A guiding principle",
+    "A practice"
+   ],
+   "answer": 0,
+   "explanation": "Demand is the need or desire for products and services among internal and external consumers, and is one of the two inputs to the SVS together with opportunity."
+  },
+  {
+   "id": "itil4-459",
+   "domain": "practices",
+   "prompt": "How does ITIL 4 define a service request?",
+   "choices": [
+    "Any unplanned interruption or quality reduction reported by a user",
+    "A user request that initiates an agreed service action",
+    "A request to modify a configuration item in production",
+    "A complaint raised against a service level target"
+   ],
+   "answer": 1,
+   "explanation": "A service request initiates a service action that has been agreed as a normal part of service delivery. An unplanned interruption is an incident, and modifying a CI is a change."
+  },
+  {
+   "id": "itil4-460",
+   "domain": "practices",
+   "prompt": "How does ITIL 4 define a service level?",
+   "choices": [
+    "A written contract between a provider and a supplier",
+    "The number of users a service can support",
+    "Metrics that define expected or achieved service quality",
+    "A ranking of services by their business importance and priority"
+   ],
+   "answer": 2,
+   "explanation": "A service level is one or more metrics that define expected or achieved service quality; service levels are documented in agreements such as SLAs."
+  },
+  {
+   "id": "itil4-461",
+   "domain": "practices",
+   "prompt": "How does ITIL 4 define a release?",
+   "choices": [
+    "The movement of components into a live environment",
+    "A request to add or remove a configuration item",
+    "An authorization for a normal change",
+    "A version of a service or CI made available for use"
+   ],
+   "answer": 3,
+   "explanation": "A release is a version of a service or CI(s) made available for use. Moving components to live environments is deployment, which can happen separately from release."
+  },
+  {
+   "id": "itil4-462",
+   "domain": "practices",
+   "prompt": "A monitoring tool records that the nightly backup completed successfully. Which type of event is this MOST likely?",
+   "choices": [
+    "An informational event",
+    "A major incident",
+    "A warning event",
+    "An exception event"
+   ],
+   "answer": 0,
+   "explanation": "Informational events do not require action but may be useful for analysis. Warning events signal that a threshold is being approached, and exception events indicate a breach or failure that needs action."
+  },
+  {
+   "id": "itil4-463",
+   "domain": "practices",
+   "prompt": "An organization moves all users to a new version of an application at the same time in one deployment. Which deployment approach is this?",
+   "choices": [
+    "Pull deployment",
+    "Big bang deployment",
+    "Continuous delivery",
+    "Phased deployment"
+   ],
+   "answer": 1,
+   "explanation": "In a big bang deployment, new or changed components are deployed to all targets at once. Phased deployment moves them to parts of the environment at a time."
+  },
+  {
+   "id": "itil4-464",
+   "domain": "practices",
+   "prompt": "A team integrates, tests and deploys components whenever they are needed, with frequent feedback loops between development and operations. Which deployment approach is this?",
+   "choices": [
+    "Phased deployment",
+    "Big bang deployment",
+    "Continuous delivery",
+    "Pull deployment"
+   ],
+   "answer": 2,
+   "explanation": "With continuous delivery, components are integrated, tested and deployed when needed, providing frequent opportunities for customer feedback loops."
+  },
+  {
+   "id": "itil4-465",
+   "domain": "practices",
+   "prompt": "An attack overloads the HR system so that authorized staff cannot use it for several hours, although no data is changed or disclosed. Which aspect of information security is MAINLY affected?",
+   "choices": [
+    "Integrity",
+    "Authentication",
+    "Confidentiality",
+    "Availability"
+   ],
+   "answer": 3,
+   "explanation": "Availability means information is accessible and usable by authorized people when needed. Integrity concerns unauthorized changes, and confidentiality concerns unauthorized disclosure."
+  },
+  {
+   "id": "itil4-466",
+   "domain": "practices",
+   "prompt": "An organization uses several different suppliers to provide parts of its network, hosting and support services. Which sourcing model is this?",
+   "choices": [
+    "Multi-sourcing",
+    "Service integration only",
+    "Insourcing",
+    "Single source or partnership"
+   ],
+   "answer": 0,
+   "explanation": "Multi-sourcing means obtaining products and services from more than one supplier. Single sourcing or partnership relies on one strategic supplier."
+  },
+  {
+   "id": "itil4-467",
+   "domain": "practices",
+   "prompt": "An organization decides to use its own internal staff and resources to design, develop and maintain its services rather than using external suppliers. Which sourcing model is this?",
+   "choices": [
+    "Outsourcing",
+    "Insourcing",
+    "Partnership",
+    "Multi-sourcing"
+   ],
+   "answer": 1,
+   "explanation": "Insourcing is the use of internal resources to design, develop, maintain, run and support products and services. Outsourcing uses external suppliers for these activities."
+  },
+  {
+   "id": "itil4-468",
+   "domain": "practices",
+   "prompt": "A provider uses checksums and access controls to ensure that customer records cannot be altered without authorization. Which aspect of information security does this MAINLY protect?",
+   "choices": [
+    "Availability",
+    "Non-repudiation",
+    "Integrity",
+    "Confidentiality"
+   ],
+   "answer": 2,
+   "explanation": "Integrity means information is accurate and complete and is protected from unauthorized modification. Confidentiality protects it from unauthorized disclosure."
+  },
+  {
+   "id": "itil4-469",
+   "domain": "practices",
+   "prompt": "A user asks for the toner cartridge in a team printer to be replaced. Which type of service request is this?",
+   "choices": [
+    "Feedback, a compliment or a complaint",
+    "A request for information",
+    "A request for access to a resource",
+    "A request for a service delivery action"
+   ],
+   "answer": 3,
+   "explanation": "ITIL 4 lists replacing a toner cartridge or providing a report as examples of requests for a service delivery action."
+  },
+  {
+   "id": "itil4-470",
+   "domain": "practices",
+   "prompt": "Shortly after a weekend of changes, users report failures in a business application. How can the change schedule help in this situation?",
+   "choices": [
+    "It shows recent changes, which helps incident and problem management",
+    "It is used only to plan future changes, so it cannot help after deployment",
+    "It automatically rolls back all recent changes",
+    "It replaces the need to raise incident records"
+   ],
+   "answer": 0,
+   "explanation": "Besides planning and avoiding conflicts, the change schedule provides information after changes are deployed that is useful for incident management, problem management and improvement planning."
+  },
+  {
+   "id": "itil4-471",
+   "domain": "practices",
+   "prompt": "Two business units keep raising conflicting priorities for the IT department's limited resources. Which practice is MOST relevant to understanding their needs and mediating the conflict?",
+   "choices": [
+    "IT asset management",
+    "Relationship management",
+    "Deployment management",
+    "Monitoring and event management"
+   ],
+   "answer": 1,
+   "explanation": "Relationship management establishes and nurtures links with stakeholders, helping understand their needs and resolve conflicting requirements at strategic and tactical levels."
+  },
+  {
+   "id": "itil4-472",
+   "domain": "practices",
+   "prompt": "How are standard changes, such as installing approved software for a user, often initiated?",
+   "choices": [
+    "As emergency change requests",
+    "As problem records",
+    "As service requests",
+    "Through a full change advisory board review"
+   ],
+   "answer": 2,
+   "explanation": "Standard changes are low-risk and pre-authorized, so they are commonly initiated as service requests and fulfilled through a defined procedure."
+  },
+  {
+   "id": "itil4-473",
+   "domain": "practices",
+   "prompt": "Which of the following can be treated as a configuration item in service configuration management?",
+   "choices": [
+    "Only software installed in the production environment",
+    "Only items that have a financial value recorded on the asset register",
+    "Only physical hardware such as servers and network devices",
+    "A service, as well as hardware, software and documentation"
+   ],
+   "answer": 3,
+   "explanation": "Service configuration management manages information about a wide variety of CIs, including hardware, software, networks, buildings, people, suppliers and documentation; services are also treated as CIs."
+  },
+  {
+   "id": "itil4-474",
+   "domain": "practices",
+   "prompt": "An organization wants to make sure old laptops are tracked until they are securely wiped and disposed of, and that reusable parts are recovered. Which practice is MOST relevant?",
+   "choices": [
+    "IT asset management",
+    "Release management",
+    "Service desk",
+    "Service level management"
+   ],
+   "answer": 0,
+   "explanation": "IT asset management covers the full lifecycle of IT assets, including decisions about reuse and retirement, to maximize value, control costs and manage risks."
+  },
+  {
+   "id": "itil4-475",
+   "domain": "practices",
+   "prompt": "Which practice gives users a clear path to report issues, queries and requests and have them acknowledged, classified, owned and actioned?",
+   "choices": [
+    "Problem management",
+    "Service desk",
+    "Change enablement",
+    "Service configuration management"
+   ],
+   "answer": 1,
+   "explanation": "The service desk is the single point of contact for users and provides a clear path for reporting issues, queries and requests and having them acknowledged, classified, owned and actioned."
   }
  ]
 }
