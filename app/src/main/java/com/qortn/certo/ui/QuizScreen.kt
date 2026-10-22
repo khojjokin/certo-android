@@ -113,6 +113,15 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
         }
     }
 
+    // Celebrate any milestone once the results are on screen.
+    val achContext = androidx.compose.ui.platform.LocalContext.current
+    LaunchedEffect(finished) {
+        if (!finished) return@LaunchedEffect
+        delay(1100)
+        val correct = questions.count { answers[it.id] == it.answer }
+        Achievements.evaluate(achContext, store, correct, questions.size)
+    }
+
     // Timers: whole-exam countdown (simulator) or per-question (pop quiz).
     LaunchedEffect(index, finished) {
         if (finished) return@LaunchedEffect

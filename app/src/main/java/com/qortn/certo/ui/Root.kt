@@ -82,20 +82,34 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
 
     CertoTheme(store.data.appearance) {
         Box(Modifier.fillMaxSize().background(P.bg)) {
-            when {
-                !auth.loaded -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator(Modifier.size(28.dp), color = Brand)
+            // Which screen to show. Crossfading between them avoids hard jumps (e.g. sign-in → app).
+            val screen = when {
+                !auth.loaded -> "loading"
+                auth.user == null -> "welcome"
+                auth.state.status != "active" && !auth.isAdmin -> "blocked"
+                auth.state.maintenance != null && !auth.isAdmin -> "maintenance"
+                AppVersion.isOlder(auth.state.minVersion) && !auth.isAdmin -> "update"
+                !store.data.onboarded -> "onboarding"
+                else -> "main"
+            }
+            androidx.compose.animation.Crossfade(screen, animationSpec = androidx.compose.animation.core.tween(380), label = "screen") { s ->
+                when (s) {
+                    "loading" -> Box(Modifier.fillMaxSize().background(P.bg))
+                    "welcome" -> WelcomeScreen(app, activity)
+                    "blocked" -> GateScreen(app, GateKind.Blocked(auth.state.status, auth.state.statusMessage))
+                    "maintenance" -> GateScreen(app, GateKind.Maintenance(auth.state.maintenance ?: ""))
+                    "update" -> GateScreen(app, GateKind.Update)
+                    "onboarding" -> OnboardingScreen(store)
+                    else -> Column(Modifier.fillMaxSize()) {
+                        auth.state.announcement?.let { AnnouncementBanner(it) { auth.dismissAnnouncement() } }
+                        val inset = if (auth.state.announcement != null) Modifier.consumeWindowInsets(WindowInsets.statusBars) else Modifier
+                        Box(Modifier.weight(1f).then(inset)) { MainTabs(app, nav) }
+                    }
                 }
-                auth.user == null -> WelcomeScreen(app, activity)
-                auth.state.status != "active" && !auth.isAdmin -> GateScreen(app, GateKind.Blocked(auth.state.status, auth.state.statusMessage))
-                auth.state.maintenance != null && !auth.isAdmin -> GateScreen(app, GateKind.Maintenance(auth.state.maintenance!!))
-                AppVersion.isOlder(auth.state.minVersion) && !auth.isAdmin -> GateScreen(app, GateKind.Update)
-                !store.data.onboarded -> OnboardingScreen(store)
-                else -> Column(Modifier.fillMaxSize()) {
-                    auth.state.announcement?.let { AnnouncementBanner(it) { auth.dismissAnnouncement() } }
-                    val inset = if (auth.state.announcement != null) Modifier.consumeWindowInsets(WindowInsets.statusBars) else Modifier
-                    Box(Modifier.weight(1f).then(inset)) { MainTabs(app, nav) }
-                }
+            }
+            if (screen == "main") {
+                val ctx = androidx.compose.ui.platform.LocalContext.current
+                LaunchedEffect(userId) { Achievements.evaluate(ctx, store) }
             }
             auth.state.notices.firstOrNull()?.takeIf { auth.user != null }?.let { n ->
                 NoticeDialog(n) { scope.launch { auth.acknowledge(n) } }
@@ -118,6 +132,7 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
                     }
                 }
             }
+            AchievementHost()
         }
     }
 }
