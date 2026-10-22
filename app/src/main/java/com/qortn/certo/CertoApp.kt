@@ -29,6 +29,8 @@ class CertoApp : Application() {
     val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     private var pushJob: Job? = null
     private var applyingRemote = false
+    /** When the app last went to the background (for the 10-minute splash). */
+    var leftAt: Long = 0
 
     override fun onCreate() {
         super.onCreate()

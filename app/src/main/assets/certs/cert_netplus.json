@@ -3009,6 +3009,2606 @@
    ],
    "answer": 0,
    "explanation": "Anything not matched by a permit statement is dropped by the implicit deny at the end of the ACL."
+  },
+  {
+   "id": "netplus-227",
+   "domain": "concepts",
+   "prompt": "At which OSI layer does a network switch make forwarding decisions using MAC addresses?",
+   "choices": [
+    "Layer 1 (Physical)",
+    "Layer 3 (Network)",
+    "Layer 2 (Data Link)",
+    "Layer 4 (Transport)"
+   ],
+   "answer": 2,
+   "explanation": "Switches read destination MAC addresses in frames, which is a Data Link (Layer 2) function. Routers, not switches, forward on IP at Layer 3."
+  },
+  {
+   "id": "netplus-228",
+   "domain": "concepts",
+   "prompt": "A technician is troubleshooting a problem with voltage levels and bit timing on a cable. Which OSI layer is involved?",
+   "choices": [
+    "Data Link",
+    "Physical",
+    "Network",
+    "Session"
+   ],
+   "answer": 1,
+   "explanation": "The Physical layer defines electrical signaling, bit timing, connectors and media."
+  },
+  {
+   "id": "netplus-229",
+   "domain": "concepts",
+   "prompt": "Which OSI layer is responsible for segmentation, flow control and port numbers?",
+   "choices": [
+    "Network",
+    "Session",
+    "Presentation",
+    "Transport"
+   ],
+   "answer": 3,
+   "explanation": "The Transport layer (Layer 4) uses port numbers and handles segmentation, flow control and, with TCP, reliable delivery."
+  },
+  {
+   "id": "netplus-230",
+   "domain": "concepts",
+   "prompt": "Which two sublayers make up the Data Link layer?",
+   "choices": [
+    "LLC and PHY",
+    "MAC and IP",
+    "LLC and MAC",
+    "PCS and PMD"
+   ],
+   "answer": 2,
+   "explanation": "IEEE splits Layer 2 into Logical Link Control (LLC) and Media Access Control (MAC)."
+  },
+  {
+   "id": "netplus-231",
+   "domain": "concepts",
+   "prompt": "A user cannot browse websites because the browser sends malformed HTTP requests. At which OSI layer is the problem?",
+   "choices": [
+    "Application",
+    "Transport",
+    "Network",
+    "Data Link"
+   ],
+   "answer": 0,
+   "explanation": "HTTP is an Application layer (Layer 7) protocol, so malformed HTTP requests are an Application layer issue."
+  },
+  {
+   "id": "netplus-232",
+   "domain": "concepts",
+   "prompt": "Which port does HTTPS use by default?",
+   "choices": [
+    "TCP 443",
+    "TCP 80",
+    "TCP 8080",
+    "TCP 8443"
+   ],
+   "answer": 0,
+   "explanation": "HTTPS uses TCP 443 by default; TCP 80 is unencrypted HTTP."
+  },
+  {
+   "id": "netplus-233",
+   "domain": "concepts",
+   "prompt": "Which ports does FTP use for data and control connections in active mode?",
+   "choices": [
+    "TCP 20 for data and TCP 21 for control",
+    "TCP 21 for data and TCP 20 for control",
+    "UDP 20 for data and UDP 21 for control",
+    "TCP 22 for data and TCP 21 for control"
+   ],
+   "answer": 0,
+   "explanation": "FTP control runs on TCP 21, and active-mode data transfers originate from TCP 20."
+  },
+  {
+   "id": "netplus-234",
+   "domain": "concepts",
+   "prompt": "Which port is used by SMTP for server-to-server mail relay?",
+   "choices": [
+    "TCP 110",
+    "TCP 143",
+    "TCP 993",
+    "TCP 25"
+   ],
+   "answer": 3,
+   "explanation": "SMTP relay between mail servers uses TCP 25. TCP 587 is generally used for client mail submission."
+  },
+  {
+   "id": "netplus-235",
+   "domain": "concepts",
+   "prompt": "A legacy mail client downloads email using POP3 without encryption. Which port does it use?",
+   "choices": [
+    "TCP 995",
+    "TCP 143",
+    "TCP 25",
+    "TCP 110"
+   ],
+   "answer": 3,
+   "explanation": "POP3 uses TCP 110; POP3 over TLS uses TCP 995."
+  },
+  {
+   "id": "netplus-236",
+   "domain": "concepts",
+   "prompt": "Which port does Telnet use, and why is it discouraged?",
+   "choices": [
+    "TCP 23, because it sends data including passwords in cleartext",
+    "TCP 22, because it uses weak encryption",
+    "TCP 23, because it is not supported on modern routers",
+    "UDP 23, because it is connectionless"
+   ],
+   "answer": 0,
+   "explanation": "Telnet runs on TCP 23 and transmits everything unencrypted, so SSH on TCP 22 should be used instead."
+  },
+  {
+   "id": "netplus-237",
+   "domain": "concepts",
+   "prompt": "Which UDP ports are used by DHCPv4 servers and clients?",
+   "choices": [
+    "UDP 68 for the server and UDP 67 for the client",
+    "UDP 53 for the server and UDP 54 for the client",
+    "UDP 67 for the server and UDP 68 for the client",
+    "UDP 546 for the server and UDP 547 for the client"
+   ],
+   "answer": 2,
+   "explanation": "DHCPv4 servers listen on UDP 67 and clients use UDP 68. Ports 546/547 are used by DHCPv6."
+  },
+  {
+   "id": "netplus-238",
+   "domain": "concepts",
+   "prompt": "Which port does an SNMP agent listen on for get and set requests from a manager?",
+   "choices": [
+    "UDP 162",
+    "TCP 179",
+    "UDP 161",
+    "UDP 514"
+   ],
+   "answer": 2,
+   "explanation": "SNMP agents receive polling requests on UDP 161; traps are sent to UDP 162."
+  },
+  {
+   "id": "netplus-239",
+   "domain": "concepts",
+   "prompt": "Network devices forward log messages to a central server using traditional syslog. Which port is used?",
+   "choices": [
+    "UDP 161",
+    "TCP 389",
+    "UDP 123",
+    "UDP 514"
+   ],
+   "answer": 3,
+   "explanation": "Traditional syslog uses UDP 514."
+  },
+  {
+   "id": "netplus-240",
+   "domain": "concepts",
+   "prompt": "Which port is used by unencrypted LDAP directory queries?",
+   "choices": [
+    "636",
+    "389",
+    "88",
+    "445"
+   ],
+   "answer": 1,
+   "explanation": "LDAP uses TCP/UDP 389 by default; LDAPS uses 636 and Kerberos uses 88."
+  },
+  {
+   "id": "netplus-241",
+   "domain": "concepts",
+   "prompt": "Which protocol does the ping utility use to send echo requests?",
+   "choices": [
+    "UDP",
+    "ICMP",
+    "TCP",
+    "IGMP"
+   ],
+   "answer": 1,
+   "explanation": "Ping sends ICMP echo request messages and waits for ICMP echo replies."
+  },
+  {
+   "id": "netplus-242",
+   "domain": "concepts",
+   "prompt": "Which IP protocol number identifies Encapsulating Security Payload (ESP) in the IP header?",
+   "choices": [
+    "51",
+    "47",
+    "50",
+    "17"
+   ],
+   "answer": 2,
+   "explanation": "ESP is IP protocol 50. AH is 51, GRE is 47 and UDP is 17."
+  },
+  {
+   "id": "netplus-243",
+   "domain": "concepts",
+   "prompt": "Which device operates at Layer 1 and simply repeats incoming signals out every other port?",
+   "choices": [
+    "Switch",
+    "Hub",
+    "Bridge",
+    "Router"
+   ],
+   "answer": 1,
+   "explanation": "A hub is a Layer 1 device that repeats signals to all ports, creating a single collision domain."
+  },
+  {
+   "id": "netplus-244",
+   "domain": "concepts",
+   "prompt": "A company wants to cache web content and filter users' outbound web requests through one intermediary server. Which device fits?",
+   "choices": [
+    "Load balancer",
+    "Layer 2 switch",
+    "Wireless controller",
+    "Proxy server"
+   ],
+   "answer": 3,
+   "explanation": "A forward proxy sits between clients and the internet, caching content and enforcing web filtering policies."
+  },
+  {
+   "id": "netplus-245",
+   "domain": "concepts",
+   "prompt": "Which storage approach connects servers to storage over a dedicated high-speed network and presents block-level storage?",
+   "choices": [
+    "Network-attached storage (NAS)",
+    "Proxy server cache",
+    "Content delivery network",
+    "Storage area network (SAN)"
+   ],
+   "answer": 3,
+   "explanation": "A SAN provides block-level storage over a dedicated network such as Fibre Channel or iSCSI. A NAS provides file-level shares."
+  },
+  {
+   "id": "netplus-246",
+   "domain": "concepts",
+   "prompt": "What distinguishes a NAS from a SAN?",
+   "choices": [
+    "A NAS only works over Fibre Channel, while a SAN uses only Ethernet",
+    "A NAS shares files over SMB or NFS, while a SAN presents block storage",
+    "A NAS presents block storage, while a SAN shares files",
+    "A NAS requires a hypervisor, while a SAN does not"
+   ],
+   "answer": 1,
+   "explanation": "NAS devices serve file-level storage via SMB/NFS; SANs present block-level storage that servers format themselves."
+  },
+  {
+   "id": "netplus-247",
+   "domain": "concepts",
+   "prompt": "A company distributes its static web content across many edge servers worldwide so users download it from a nearby location. What is this?",
+   "choices": [
+    "Storage area network",
+    "Content delivery network (CDN)",
+    "Virtual private cloud",
+    "Software-defined WAN"
+   ],
+   "answer": 1,
+   "explanation": "A CDN caches content at geographically distributed edge locations to reduce latency for users."
+  },
+  {
+   "id": "netplus-248",
+   "domain": "concepts",
+   "prompt": "Which cloud deployment model combines on-premises private infrastructure with public cloud resources?",
+   "choices": [
+    "Community cloud",
+    "Public cloud",
+    "Multitenant cloud",
+    "Hybrid cloud"
+   ],
+   "answer": 3,
+   "explanation": "A hybrid cloud integrates private infrastructure with public cloud services."
+  },
+  {
+   "id": "netplus-249",
+   "domain": "concepts",
+   "prompt": "A company uses a hosted email and office suite where the provider manages everything except user accounts and data. Which service model is this?",
+   "choices": [
+    "Software as a Service (SaaS)",
+    "Infrastructure as a Service (IaaS)",
+    "Platform as a Service (PaaS)",
+    "Network as a Service (NaaS)"
+   ],
+   "answer": 0,
+   "explanation": "SaaS delivers complete applications managed by the provider, with the customer managing users and data."
+  },
+  {
+   "id": "netplus-250",
+   "domain": "concepts",
+   "prompt": "A company needs consistent, private connectivity from its data center to its cloud VPC without traversing the internet. What should it use?",
+   "choices": [
+    "An internet gateway",
+    "A NAT gateway",
+    "A dedicated cloud interconnect such as Direct Connect",
+    "Public IP addresses on every instance behind an internet gateway"
+   ],
+   "answer": 2,
+   "explanation": "Dedicated interconnects such as AWS Direct Connect provide private, consistent connectivity to the cloud provider."
+  },
+  {
+   "id": "netplus-251",
+   "domain": "concepts",
+   "prompt": "In a public cloud, what is the purpose of an internet gateway attached to a VPC?",
+   "choices": [
+    "To provide only outbound access for private subnets",
+    "To encrypt traffic between VPCs",
+    "To let resources with public IPs reach the internet directly",
+    "To connect two VPCs privately"
+   ],
+   "answer": 2,
+   "explanation": "An internet gateway enables two-way internet traffic for resources with public IPs. Outbound-only access for private subnets uses a NAT gateway."
+  },
+  {
+   "id": "netplus-252",
+   "domain": "concepts",
+   "prompt": "Several cloud customers share the same physical hosts but are logically isolated from each other. What is this called?",
+   "choices": [
+    "Multitenancy",
+    "Elasticity",
+    "Scalability",
+    "Hybrid deployment"
+   ],
+   "answer": 0,
+   "explanation": "Multitenancy means many customers share underlying infrastructure while being logically separated."
+  },
+  {
+   "id": "netplus-253",
+   "domain": "concepts",
+   "prompt": "Which fiber type uses a small core and laser light to carry signals many kilometers?",
+   "choices": [
+    "Single-mode fiber",
+    "Multimode fiber",
+    "Plenum-rated fiber",
+    "Step-index plastic fiber"
+   ],
+   "answer": 0,
+   "explanation": "Single-mode fiber has a roughly 9 micron core and is used for long distances with laser light sources."
+  },
+  {
+   "id": "netplus-254",
+   "domain": "concepts",
+   "prompt": "Which copper cable category is the minimum rated to support 10GBASE-T to the full 100 meters?",
+   "choices": [
+    "Cat 5e",
+    "Cat 6",
+    "Cat 5",
+    "Cat 6a"
+   ],
+   "answer": 3,
+   "explanation": "Cat 6a supports 10 Gbps up to 100 m. Cat 6 supports 10GBASE-T only to about 55 m."
+  },
+  {
+   "id": "netplus-255",
+   "domain": "concepts",
+   "prompt": "Which connector is commonly used on coaxial cable for cable modems and broadband TV service?",
+   "choices": [
+    "F-type",
+    "RJ45",
+    "LC",
+    "RJ11"
+   ],
+   "answer": 0,
+   "explanation": "F-type connectors are used on RG-6 coaxial cable for cable TV and DOCSIS modems."
+  },
+  {
+   "id": "netplus-256",
+   "domain": "concepts",
+   "prompt": "Which small-form-factor fiber connector uses a latch similar to RJ45 and is common on SFP transceivers?",
+   "choices": [
+    "ST",
+    "LC",
+    "SC",
+    "F-type"
+   ],
+   "answer": 1,
+   "explanation": "LC (Lucent Connector) is a small push-and-latch connector commonly used with SFP and SFP+ modules."
+  },
+  {
+   "id": "netplus-257",
+   "domain": "concepts",
+   "prompt": "Which transceiver form factor is used for 40 Gbps Ethernet links?",
+   "choices": [
+    "SFP",
+    "SFP+",
+    "GBIC",
+    "QSFP+"
+   ],
+   "answer": 3,
+   "explanation": "QSFP+ supports 40 Gbps by combining four 10 Gbps lanes. SFP+ is 10 Gbps."
+  },
+  {
+   "id": "netplus-258",
+   "domain": "concepts",
+   "prompt": "What does the 'T' indicate in the Ethernet standard name 1000BASE-T?",
+   "choices": [
+    "Twisted pair",
+    "Transceiver-based fiber",
+    "Thick coaxial cable",
+    "Time-division multiplexing"
+   ],
+   "answer": 0,
+   "explanation": "The T suffix means the standard runs over twisted-pair copper, such as Cat 5e or better."
+  },
+  {
+   "id": "netplus-259",
+   "domain": "concepts",
+   "prompt": "Which topology connects every device to a single central switch?",
+   "choices": [
+    "Bus",
+    "Ring",
+    "Star",
+    "Full mesh"
+   ],
+   "answer": 2,
+   "explanation": "In a star topology all nodes connect to a central device, which is the most common LAN design."
+  },
+  {
+   "id": "netplus-260",
+   "domain": "concepts",
+   "prompt": "In the traditional three-tier hierarchical network model, which layer provides end-user device connectivity?",
+   "choices": [
+    "Distribution",
+    "Core",
+    "Access",
+    "WAN edge"
+   ],
+   "answer": 2,
+   "explanation": "The access layer connects end devices; distribution aggregates access switches; the core provides high-speed backbone transport."
+  },
+  {
+   "id": "netplus-261",
+   "domain": "concepts",
+   "prompt": "In a collapsed core design, which two tiers are combined?",
+   "choices": [
+    "Core and distribution",
+    "Access and distribution",
+    "Access and core",
+    "Core and WAN edge"
+   ],
+   "answer": 0,
+   "explanation": "A collapsed core merges the core and distribution layers, which is common in smaller networks."
+  },
+  {
+   "id": "netplus-262",
+   "domain": "concepts",
+   "prompt": "In data center traffic terminology, what is east-west traffic?",
+   "choices": [
+    "Traffic between users and the internet",
+    "Traffic between branch offices over the WAN",
+    "Traffic between servers within the data center",
+    "Traffic between the data center and a cloud provider"
+   ],
+   "answer": 2,
+   "explanation": "East-west traffic flows laterally between servers inside the data center; north-south traffic enters or leaves it."
+  },
+  {
+   "id": "netplus-263",
+   "domain": "concepts",
+   "prompt": "Which topology uses a central site with each branch connecting only to it?",
+   "choices": [
+    "Full mesh",
+    "Hub-and-spoke",
+    "Ring",
+    "Partial mesh between branches"
+   ],
+   "answer": 1,
+   "explanation": "In a hub-and-spoke design, branches (spokes) connect to a central hub, reducing link count but making the hub critical."
+  },
+  {
+   "id": "netplus-264",
+   "domain": "concepts",
+   "prompt": "How many usable host addresses are available in a /29 subnet?",
+   "choices": [
+    "6",
+    "8",
+    "14",
+    "4"
+   ],
+   "answer": 0,
+   "explanation": "A /29 has 3 host bits: 2^3 = 8 addresses minus network and broadcast leaves 6 usable hosts."
+  },
+  {
+   "id": "netplus-265",
+   "domain": "concepts",
+   "prompt": "Which subnet mask corresponds to a /23 prefix?",
+   "choices": [
+    "255.255.252.0",
+    "255.255.255.0",
+    "255.255.255.128",
+    "255.255.254.0"
+   ],
+   "answer": 3,
+   "explanation": "A /23 has 23 one bits: 255.255.254.0, giving 510 usable hosts."
+  },
+  {
+   "id": "netplus-266",
+   "domain": "concepts",
+   "prompt": "What is the usable host range of the subnet 10.10.10.64/26?",
+   "choices": [
+    "10.10.10.65 to 10.10.10.126",
+    "10.10.10.64 to 10.10.10.127",
+    "10.10.10.65 to 10.10.10.127",
+    "10.10.10.1 to 10.10.10.62"
+   ],
+   "answer": 0,
+   "explanation": "A /26 block of 64 starting at .64 ends at .127 (broadcast), so usable hosts are .65 through .126."
+  },
+  {
+   "id": "netplus-267",
+   "domain": "concepts",
+   "prompt": "Which classful IPv4 address class has a default mask of 255.255.0.0 and a first octet from 128 to 191?",
+   "choices": [
+    "Class A",
+    "Class B",
+    "Class C",
+    "Class D"
+   ],
+   "answer": 1,
+   "explanation": "Class B covers first octets 128-191 with a default /16 mask."
+  },
+  {
+   "id": "netplus-268",
+   "domain": "concepts",
+   "prompt": "An administrator combines 192.168.0.0/24 through 192.168.3.0/24 into one routing table entry. What is the summary route?",
+   "choices": [
+    "192.168.0.0/23",
+    "192.168.0.0/21",
+    "192.168.0.0/16",
+    "192.168.0.0/22"
+   ],
+   "answer": 3,
+   "explanation": "Four contiguous /24s summarize to a /22 (four times 256 addresses) starting at 192.168.0.0."
+  },
+  {
+   "id": "netplus-269",
+   "domain": "concepts",
+   "prompt": "What does variable-length subnet masking (VLSM) allow?",
+   "choices": [
+    "Assigning multiple MAC addresses to one interface",
+    "Using the same subnet on multiple VLANs",
+    "Using different prefix lengths within one major network",
+    "Automatically assigning IPv6 addresses"
+   ],
+   "answer": 2,
+   "explanation": "VLSM lets administrators size subnets differently, such as /30 for links and /24 for user LANs, reducing waste."
+  },
+  {
+   "id": "netplus-270",
+   "domain": "concepts",
+   "prompt": "Which IPv6 address type delivers a packet to all members of a group and takes the place of IPv4 broadcast?",
+   "choices": [
+    "Anycast",
+    "Multicast",
+    "Unicast",
+    "Link-local unicast"
+   ],
+   "answer": 1,
+   "explanation": "IPv6 has no broadcast; multicast addresses (ff00::/8) deliver to all subscribed members."
+  },
+  {
+   "id": "netplus-271",
+   "domain": "concepts",
+   "prompt": "A team uses infrastructure as code (IaC) templates to deploy network configurations. What is a key advantage?",
+   "choices": [
+    "Elimination of the need for any change testing or peer review",
+    "Automatic hardware upgrades",
+    "No need to document IP addressing",
+    "Repeatable, consistent deployments that can be version-controlled"
+   ],
+   "answer": 3,
+   "explanation": "IaC defines infrastructure in code templates, enabling consistent, repeatable deployments tracked in version control."
+  },
+  {
+   "id": "netplus-272",
+   "domain": "concepts",
+   "prompt": "In a zero trust architecture, which component evaluates access requests and decides whether to grant them?",
+   "choices": [
+    "Policy decision point",
+    "Policy enforcement point",
+    "Default gateway",
+    "DHCP server"
+   ],
+   "answer": 0,
+   "explanation": "The policy decision point evaluates identity, device posture and context; the policy enforcement point then applies that decision."
+  },
+  {
+   "id": "netplus-273",
+   "domain": "impl",
+   "prompt": "What is the default administrative distance of a static route on Cisco devices?",
+   "choices": [
+    "1",
+    "0",
+    "90",
+    "110"
+   ],
+   "answer": 0,
+   "explanation": "Static routes have an AD of 1. Directly connected routes are 0, internal EIGRP is 90 and OSPF is 110."
+  },
+  {
+   "id": "netplus-274",
+   "domain": "impl",
+   "prompt": "Which metric does OSPF use to choose the best path?",
+   "choices": [
+    "Hop count",
+    "Cost based on interface bandwidth",
+    "Hop count weighted by link delay",
+    "AS path length"
+   ],
+   "answer": 1,
+   "explanation": "OSPF uses cost, derived from reference bandwidth divided by interface bandwidth. RIP uses hop count."
+  },
+  {
+   "id": "netplus-275",
+   "domain": "impl",
+   "prompt": "Which type of routing protocol shares its entire routing table with neighbors at regular intervals and uses hop count?",
+   "choices": [
+    "Distance-vector, such as RIP",
+    "Link-state, such as OSPF or IS-IS",
+    "Path-vector, such as BGP",
+    "Advanced distance-vector, such as EIGRP"
+   ],
+   "answer": 0,
+   "explanation": "RIP is a distance-vector protocol that periodically sends its routing table and uses hop count as its metric."
+  },
+  {
+   "id": "netplus-276",
+   "domain": "impl",
+   "prompt": "Which BGP attribute lists the autonomous systems a route has crossed and is used to prevent loops and prefer shorter paths?",
+   "choices": [
+    "Hop count",
+    "Interface cost",
+    "Router ID",
+    "AS_PATH"
+   ],
+   "answer": 3,
+   "explanation": "AS_PATH records each AS a route traverses; a router rejects routes containing its own AS and, all else equal, prefers a shorter AS_PATH."
+  },
+  {
+   "id": "netplus-277",
+   "domain": "impl",
+   "prompt": "What is the administrative distance of external BGP (eBGP) routes by default?",
+   "choices": [
+    "200",
+    "110",
+    "20",
+    "120"
+   ],
+   "answer": 2,
+   "explanation": "eBGP routes have AD 20; iBGP routes have AD 200."
+  },
+  {
+   "id": "netplus-278",
+   "domain": "impl",
+   "prompt": "Which Cisco-proprietary first-hop redundancy protocol uses an active and standby router sharing a virtual IP?",
+   "choices": [
+    "VRRP",
+    "HSRP",
+    "GLBP only for IPv6",
+    "CARP"
+   ],
+   "answer": 1,
+   "explanation": "Hot Standby Router Protocol (HSRP) is Cisco proprietary and uses active/standby routers. VRRP is the open standard."
+  },
+  {
+   "id": "netplus-279",
+   "domain": "impl",
+   "prompt": "Why do networks deploy a first-hop redundancy protocol?",
+   "choices": [
+    "To load-balance traffic across multiple ISPs using BGP peering",
+    "To prevent switching loops",
+    "To keep the default gateway available if a router fails",
+    "To assign IP addresses dynamically"
+   ],
+   "answer": 2,
+   "explanation": "FHRPs present a virtual gateway IP shared by multiple routers, so hosts continue forwarding if the active router fails."
+  },
+  {
+   "id": "netplus-280",
+   "domain": "impl",
+   "prompt": "A router has two equal-cost OSPF paths to the same destination. What happens by default?",
+   "choices": [
+    "Only the path with the lowest router ID is used",
+    "The route is rejected as a loop",
+    "The router uses the path learned first and ignores the other",
+    "Traffic is load-balanced across both paths"
+   ],
+   "answer": 3,
+   "explanation": "OSPF supports equal-cost multipath (ECMP), installing both routes and sharing traffic across them."
+  },
+  {
+   "id": "netplus-281",
+   "domain": "impl",
+   "prompt": "What is route redistribution?",
+   "choices": [
+    "Summarizing several subnets into one route",
+    "Removing routes when a link fails",
+    "Injecting routes learned by one routing protocol into another",
+    "Sending a default route to every host through a DHCP option"
+   ],
+   "answer": 2,
+   "explanation": "Redistribution shares routes between routing protocols, such as importing OSPF routes into BGP."
+  },
+  {
+   "id": "netplus-282",
+   "domain": "impl",
+   "prompt": "Which OSPF router type connects one or more areas to the backbone area?",
+   "choices": [
+    "Autonomous system boundary router (ASBR)",
+    "Designated router (DR)",
+    "Area border router (ABR)",
+    "Backup designated router (BDR)"
+   ],
+   "answer": 2,
+   "explanation": "An ABR has interfaces in area 0 and at least one other area. An ASBR connects OSPF to external routing domains."
+  },
+  {
+   "id": "netplus-283",
+   "domain": "impl",
+   "prompt": "A switch port connects to a single workstation in VLAN 30. How should the port be configured?",
+   "choices": [
+    "As a trunk port with VLAN 30 native",
+    "As a routed port with an IP in VLAN 30",
+    "As a mirrored port to VLAN 30",
+    "As an access port in VLAN 30"
+   ],
+   "answer": 3,
+   "explanation": "End devices normally connect to access ports assigned to one VLAN; trunks carry multiple VLANs between network devices."
+  },
+  {
+   "id": "netplus-284",
+   "domain": "impl",
+   "prompt": "Which IEEE standard defines VLAN tagging on trunk links?",
+   "choices": [
+    "802.1X",
+    "802.1Q",
+    "802.3ad",
+    "802.1D"
+   ],
+   "answer": 1,
+   "explanation": "802.1Q defines VLAN tagging. 802.1X is port authentication, 802.3ad is link aggregation and 802.1D is STP."
+  },
+  {
+   "id": "netplus-285",
+   "domain": "impl",
+   "prompt": "In STP, which port state forwards frames and learns MAC addresses?",
+   "choices": [
+    "Forwarding",
+    "Blocking",
+    "Listening",
+    "Learning"
+   ],
+   "answer": 0,
+   "explanation": "Only the forwarding state both forwards frames and learns MAC addresses; learning populates the table without forwarding."
+  },
+  {
+   "id": "netplus-286",
+   "domain": "impl",
+   "prompt": "An engineer wants a specific core switch to always become the STP root bridge. What should be done?",
+   "choices": [
+    "Raise that switch's bridge priority",
+    "Give it the highest MAC address",
+    "Disable STP on all other switches",
+    "Lower that switch's bridge priority"
+   ],
+   "answer": 3,
+   "explanation": "The bridge with the lowest bridge ID wins, so lowering priority (for example to 4096) ensures it becomes root."
+  },
+  {
+   "id": "netplus-287",
+   "domain": "impl",
+   "prompt": "What is the default STP bridge priority on most switches?",
+   "choices": [
+    "4096",
+    "0",
+    "32768",
+    "65535"
+   ],
+   "answer": 2,
+   "explanation": "The default bridge priority is 32768; the switch with the lowest bridge ID becomes root."
+  },
+  {
+   "id": "netplus-288",
+   "domain": "impl",
+   "prompt": "A switch's MAC address table has no entry for a frame's destination. What does the switch do?",
+   "choices": [
+    "Drops the frame",
+    "Floods it out all other ports in that VLAN",
+    "Sends it only to the default gateway",
+    "Returns an ICMP unreachable message"
+   ],
+   "answer": 1,
+   "explanation": "Unknown unicast frames are flooded within the VLAN until the switch learns the destination's port."
+  },
+  {
+   "id": "netplus-289",
+   "domain": "impl",
+   "prompt": "Two switches are connected by a link configured as full duplex on one end and half duplex on the other. What is this called?",
+   "choices": [
+    "Native VLAN mismatch",
+    "Speed negotiation success",
+    "Port aggregation",
+    "Duplex mismatch"
+   ],
+   "answer": 3,
+   "explanation": "A duplex mismatch occurs when ends disagree on duplex, causing collisions and poor performance."
+  },
+  {
+   "id": "netplus-290",
+   "domain": "impl",
+   "prompt": "Which IEEE standard specifies Link Aggregation Control Protocol (LACP)?",
+   "choices": [
+    "802.1Q",
+    "802.1w",
+    "802.11ax",
+    "802.3ad"
+   ],
+   "answer": 3,
+   "explanation": "LACP was defined in 802.3ad and later moved to 802.1AX."
+  },
+  {
+   "id": "netplus-291",
+   "domain": "impl",
+   "prompt": "Which Wi-Fi standard is known as Wi-Fi 6?",
+   "choices": [
+    "802.11ax",
+    "802.11ac",
+    "802.11n",
+    "802.11be"
+   ],
+   "answer": 0,
+   "explanation": "802.11ax is Wi-Fi 6 (and Wi-Fi 6E in 6 GHz). 802.11ac is Wi-Fi 5 and 802.11n is Wi-Fi 4."
+  },
+  {
+   "id": "netplus-292",
+   "domain": "impl",
+   "prompt": "Which frequency bands does 802.11ac (Wi-Fi 5) operate in?",
+   "choices": [
+    "2.4 GHz only",
+    "5 GHz only",
+    "2.4 GHz and 5 GHz",
+    "5 GHz and 6 GHz"
+   ],
+   "answer": 1,
+   "explanation": "802.11ac operates only in the 5 GHz band. 802.11n and 802.11ax support both 2.4 and 5 GHz."
+  },
+  {
+   "id": "netplus-293",
+   "domain": "impl",
+   "prompt": "Which wireless authentication setup uses a RADIUS server so each user logs in with individual credentials?",
+   "choices": [
+    "WPA2/WPA3-Personal",
+    "Open authentication with captive portal",
+    "WPA2/WPA3-Enterprise",
+    "WEP shared key"
+   ],
+   "answer": 2,
+   "explanation": "Enterprise mode uses 802.1X with a RADIUS server for per-user authentication; Personal mode uses a shared passphrase."
+  },
+  {
+   "id": "netplus-294",
+   "domain": "impl",
+   "prompt": "A coffee shop wants guests to accept terms of use on a web page before getting internet access. What should be configured?",
+   "choices": [
+    "Captive portal",
+    "MAC filtering",
+    "WPA3-Enterprise",
+    "Hidden SSID"
+   ],
+   "answer": 0,
+   "explanation": "A captive portal intercepts web traffic and requires acceptance or login before granting access."
+  },
+  {
+   "id": "netplus-295",
+   "domain": "impl",
+   "prompt": "Which antenna type radiates signal roughly equally in all horizontal directions and suits ceiling-mounted office APs?",
+   "choices": [
+    "Yagi",
+    "Parabolic grid dish",
+    "Patch panel",
+    "Omnidirectional"
+   ],
+   "answer": 3,
+   "explanation": "Omnidirectional antennas provide 360-degree horizontal coverage, ideal for general indoor coverage."
+  },
+  {
+   "id": "netplus-296",
+   "domain": "impl",
+   "prompt": "An AP is configured to connect to another AP wirelessly to extend coverage without cabling. What is this mode called?",
+   "choices": [
+    "Wireless mesh or repeater mode",
+    "Ad hoc mode",
+    "Monitor mode",
+    "Autonomous bridge-to-switch mode"
+   ],
+   "answer": 0,
+   "explanation": "Mesh/repeater mode lets APs relay traffic wirelessly to extend coverage where cabling is not available."
+  },
+  {
+   "id": "netplus-297",
+   "domain": "impl",
+   "prompt": "Two laptops connect directly to each other over Wi-Fi without any access point. Which mode is this?",
+   "choices": [
+    "Ad hoc (IBSS)",
+    "Infrastructure",
+    "Mesh backhaul",
+    "Point-to-multipoint"
+   ],
+   "answer": 0,
+   "explanation": "Ad hoc mode forms an Independent Basic Service Set where clients communicate directly without an AP."
+  },
+  {
+   "id": "netplus-298",
+   "domain": "impl",
+   "prompt": "What is the purpose of the SSID in a wireless network?",
+   "choices": [
+    "It is the encryption key for the network",
+    "It is the MAC address of the access point",
+    "It is the network name clients see",
+    "It is the channel number used by the AP"
+   ],
+   "answer": 2,
+   "explanation": "The SSID is the network name clients use to find and join the WLAN. The BSSID is the AP radio's MAC."
+  },
+  {
+   "id": "netplus-299",
+   "domain": "impl",
+   "prompt": "Which channel width is recommended for the 2.4 GHz band in most enterprise deployments?",
+   "choices": [
+    "40 MHz",
+    "80 MHz",
+    "160 MHz",
+    "20 MHz"
+   ],
+   "answer": 3,
+   "explanation": "With only three non-overlapping 20 MHz channels, using 40 MHz in 2.4 GHz causes overlap and interference."
+  },
+  {
+   "id": "netplus-300",
+   "domain": "impl",
+   "prompt": "Which rack-mounted component organizes cable terminations so patch cords can connect switch ports to wall jacks?",
+   "choices": [
+    "Power distribution unit",
+    "Patch panel",
+    "Media converter",
+    "KVM switch"
+   ],
+   "answer": 1,
+   "explanation": "Patch panels terminate horizontal cabling and allow flexible patching to switches."
+  },
+  {
+   "id": "netplus-301",
+   "domain": "impl",
+   "prompt": "Which device distributes power from a UPS or circuit to multiple devices in a rack?",
+   "choices": [
+    "Power distribution unit (PDU)",
+    "Patch panel",
+    "Uninterruptible power supply bypass",
+    "Transfer switch for HVAC"
+   ],
+   "answer": 0,
+   "explanation": "A PDU provides multiple outlets in the rack, often with metering or remote switching."
+  },
+  {
+   "id": "netplus-302",
+   "domain": "impl",
+   "prompt": "What is the maximum length of a twisted-pair Ethernet horizontal run, including patch cords, per channel?",
+   "choices": [
+    "55 meters",
+    "100 meters",
+    "185 meters",
+    "500 meters"
+   ],
+   "answer": 1,
+   "explanation": "Twisted-pair Ethernet supports a 100 m channel (90 m permanent link plus up to 10 m of patch cords)."
+  },
+  {
+   "id": "netplus-303",
+   "domain": "impl",
+   "prompt": "Which wiring standards define pin assignments for RJ45 Ethernet terminations?",
+   "choices": [
+    "IEEE 802.3af and 802.3at",
+    "RS-232 and RS-485",
+    "ISO 9001 and 27001",
+    "TIA/EIA-568A and 568B"
+   ],
+   "answer": 3,
+   "explanation": "T568A and T568B define the color-to-pin assignments for twisted-pair terminations."
+  },
+  {
+   "id": "netplus-304",
+   "domain": "impl",
+   "prompt": "In a building's structured cabling, where do horizontal cable runs from a floor's wall jacks usually terminate?",
+   "choices": [
+    "The ISP demarc",
+    "The IDF on that floor",
+    "The building's entrance facility",
+    "Each user's desk"
+   ],
+   "answer": 1,
+   "explanation": "Floor cabling terminates in the IDF, which then connects via backbone cabling to the MDF."
+  },
+  {
+   "id": "netplus-305",
+   "domain": "impl",
+   "prompt": "Where does the ISP's responsibility usually end and the customer's begin?",
+   "choices": [
+    "The IDF",
+    "The core switch",
+    "The demarcation point",
+    "The first access point"
+   ],
+   "answer": 2,
+   "explanation": "The demarc is the boundary between the provider's network and the customer premises equipment."
+  },
+  {
+   "id": "netplus-306",
+   "domain": "impl",
+   "prompt": "Which PoE standard provides up to 15.4 W per port at the source?",
+   "choices": [
+    "802.3at (PoE+)",
+    "802.3bt Type 3",
+    "802.3af (PoE)",
+    "802.3bt Type 4"
+   ],
+   "answer": 2,
+   "explanation": "802.3af supplies up to 15.4 W at the PSE. PoE+ (802.3at) provides 30 W and 802.3bt up to 60 W or 90-100 W."
+  },
+  {
+   "id": "netplus-307",
+   "domain": "impl",
+   "prompt": "A router must translate all inside addresses to a pool of public addresses, assigning one public IP per inside host as needed. What is this?",
+   "choices": [
+    "Dynamic NAT",
+    "Static NAT",
+    "Port address translation",
+    "NAT64"
+   ],
+   "answer": 0,
+   "explanation": "Dynamic NAT maps inside hosts to available addresses from a pool one-to-one; PAT shares one address using ports."
+  },
+  {
+   "id": "netplus-308",
+   "domain": "impl",
+   "prompt": "Which switch feature lets a single physical interface on a Layer 3 switch act as a router port with its own IP address?",
+   "choices": [
+    "Access port",
+    "Trunk port",
+    "Routed port",
+    "SPAN destination port"
+   ],
+   "answer": 2,
+   "explanation": "A routed port removes Layer 2 switching from the interface so it can be assigned an IP like a router interface."
+  },
+  {
+   "id": "netplus-309",
+   "domain": "impl",
+   "prompt": "Which type of route points to a router that leads to networks not otherwise listed in the routing table?",
+   "choices": [
+    "Host route",
+    "Floating summary route",
+    "Default route",
+    "Connected route"
+   ],
+   "answer": 2,
+   "explanation": "The default route (0.0.0.0/0) is used when no more specific route matches."
+  },
+  {
+   "id": "netplus-310",
+   "domain": "impl",
+   "prompt": "Which protocol lets switches automatically propagate VLAN definitions to other Cisco switches in the same domain?",
+   "choices": [
+    "STP",
+    "LACP",
+    "CDP",
+    "VTP"
+   ],
+   "answer": 3,
+   "explanation": "VLAN Trunking Protocol (VTP) distributes VLAN information between Cisco switches."
+  },
+  {
+   "id": "netplus-311",
+   "domain": "impl",
+   "prompt": "A data center requires redundant power for each server. What is the BEST approach?",
+   "choices": [
+    "One power supply connected to a larger UPS",
+    "Dual power supplies fed from separate PDUs and circuits",
+    "Two power supplies plugged into the same PDU and circuit",
+    "A single PDU with surge protection"
+   ],
+   "answer": 1,
+   "explanation": "Connecting redundant PSUs to separate PDUs and circuits removes single points of failure in the power path."
+  },
+  {
+   "id": "netplus-312",
+   "domain": "impl",
+   "prompt": "Which wireless security protocol should be used on a new WLAN when all clients support it?",
+   "choices": [
+    "WPA2-TKIP",
+    "WPA3",
+    "WEP",
+    "WPA with TKIP"
+   ],
+   "answer": 1,
+   "explanation": "WPA3 is the current, strongest Wi-Fi security standard. WEP and TKIP are deprecated."
+  },
+  {
+   "id": "netplus-313",
+   "domain": "ops",
+   "prompt": "Which SNMP message type is sent by an agent to a manager without being polled, to report an event such as a link going down?",
+   "choices": [
+    "Get",
+    "Set",
+    "Trap",
+    "Walk"
+   ],
+   "answer": 2,
+   "explanation": "Traps are unsolicited notifications from agents to managers, sent to UDP 162."
+  },
+  {
+   "id": "netplus-314",
+   "domain": "ops",
+   "prompt": "Which SNMP versions rely on plaintext community strings for authentication?",
+   "choices": [
+    "SNMPv2c and SNMPv3",
+    "SNMPv1 and SNMPv2c",
+    "SNMPv3 only",
+    "SNMPv1 and SNMPv3"
+   ],
+   "answer": 1,
+   "explanation": "SNMPv1 and v2c use cleartext community strings; SNMPv3 adds user-based authentication and encryption."
+  },
+  {
+   "id": "netplus-315",
+   "domain": "ops",
+   "prompt": "What is the purpose of a Management Information Base (MIB)?",
+   "choices": [
+    "It defines the objects SNMP can query on a device",
+    "It stores syslog messages for a SIEM",
+    "It holds firewall rule sets",
+    "It contains flow records exported by routers"
+   ],
+   "answer": 0,
+   "explanation": "A MIB is a hierarchical database describing the objects an SNMP manager can query or set, each identified by an OID."
+  },
+  {
+   "id": "netplus-316",
+   "domain": "ops",
+   "prompt": "Which syslog severity level number indicates debugging messages?",
+   "choices": [
+    "7",
+    "0",
+    "3",
+    "5"
+   ],
+   "answer": 0,
+   "explanation": "Syslog levels run from 0 (emergency) to 7 (debugging)."
+  },
+  {
+   "id": "netplus-317",
+   "domain": "ops",
+   "prompt": "Interface statistics show output discards rising on a switch uplink during peak hours. What does this MOST likely indicate?",
+   "choices": [
+    "A bad cable causing CRC errors",
+    "A duplex mismatch causing late collisions",
+    "An incorrect native VLAN",
+    "Congestion overflowing the interface buffers"
+   ],
+   "answer": 3,
+   "explanation": "Output discards usually mean the interface can't transmit fast enough and buffers are dropping packets due to congestion."
+  },
+  {
+   "id": "netplus-318",
+   "domain": "ops",
+   "prompt": "Which tool or method lets administrators send device configurations and retrieve state using structured data over a programmable interface?",
+   "choices": [
+    "Console cable connections",
+    "Telnet sessions",
+    "SNMPv1 traps",
+    "RESTCONF or NETCONF APIs"
+   ],
+   "answer": 3,
+   "explanation": "RESTCONF and NETCONF are programmable management interfaces that use structured data (JSON/XML) for configuration and state."
+  },
+  {
+   "id": "netplus-319",
+   "domain": "ops",
+   "prompt": "A company must keep firewall logs for one year to meet regulations. Which concept does this describe?",
+   "choices": [
+    "Log aggregation",
+    "Log retention",
+    "Baseline creation",
+    "Port mirroring"
+   ],
+   "answer": 1,
+   "explanation": "A retention policy defines how long logs must be stored to meet legal, regulatory or business requirements."
+  },
+  {
+   "id": "netplus-320",
+   "domain": "ops",
+   "prompt": "Which document maps the physical cable paths between patch panels, jacks and switch ports?",
+   "choices": [
+    "Physical network diagram",
+    "Logical network diagram",
+    "Acceptable use policy",
+    "Service level agreement"
+   ],
+   "answer": 0,
+   "explanation": "Physical diagrams show cable runs, rack locations and port connections; logical diagrams show IP and VLAN layout."
+  },
+  {
+   "id": "netplus-321",
+   "domain": "ops",
+   "prompt": "Which document lists an organization's network devices with serial numbers, locations and warranty dates?",
+   "choices": [
+    "Change request",
+    "Asset inventory",
+    "Incident response plan",
+    "Wireless survey report"
+   ],
+   "answer": 1,
+   "explanation": "An asset inventory records hardware details such as model, serial number, location and warranty status."
+  },
+  {
+   "id": "netplus-322",
+   "domain": "ops",
+   "prompt": "Which wireless documentation shows signal strength across a floor plan, typically created during a site survey?",
+   "choices": [
+    "Rack diagram",
+    "Logical topology diagram",
+    "Heat map",
+    "Bill of materials"
+   ],
+   "answer": 2,
+   "explanation": "A heat map visualizes RF coverage and signal strength across physical spaces."
+  },
+  {
+   "id": "netplus-323",
+   "domain": "ops",
+   "prompt": "A change to a core router causes an outage. Which part of the change management process should be followed to restore service quickly?",
+   "choices": [
+    "The asset inventory",
+    "The acceptable use policy",
+    "The rollback plan",
+    "The non-disclosure agreement"
+   ],
+   "answer": 2,
+   "explanation": "Change requests include rollback plans so failed changes can be reversed quickly."
+  },
+  {
+   "id": "netplus-324",
+   "domain": "ops",
+   "prompt": "What is the purpose of a maintenance window?",
+   "choices": [
+    "The warranty period for new hardware",
+    "The time allowed to respond to a high-priority help desk ticket",
+    "The interval between SNMP polls",
+    "A scheduled time for changes with minimal business impact"
+   ],
+   "answer": 3,
+   "explanation": "Maintenance windows are approved times, often off-hours, for making changes that may disrupt service."
+  },
+  {
+   "id": "netplus-325",
+   "domain": "ops",
+   "prompt": "Which agreement legally requires a contractor not to disclose a company's confidential network details?",
+   "choices": [
+    "Memorandum of understanding (MOU)",
+    "Non-disclosure agreement (NDA)",
+    "Service level agreement (SLA)",
+    "Acceptable use policy (AUP)"
+   ],
+   "answer": 1,
+   "explanation": "An NDA is a binding agreement to keep confidential information private."
+  },
+  {
+   "id": "netplus-326",
+   "domain": "ops",
+   "prompt": "A company uses two ISPs so the internet stays up if one provider fails. What is this called?",
+   "choices": [
+    "Load balancing between VLANs",
+    "Cold site failover",
+    "Port aggregation",
+    "Multihoming"
+   ],
+   "answer": 3,
+   "explanation": "Connecting to multiple ISPs (multihoming) eliminates a single provider as a point of failure."
+  },
+  {
+   "id": "netplus-327",
+   "domain": "ops",
+   "prompt": "Two firewalls are configured so one handles all traffic and the other takes over only if the first fails. What is this?",
+   "choices": [
+    "Active-passive high availability",
+    "Active-active high availability cluster",
+    "Load balancing cluster",
+    "Cold standby site"
+   ],
+   "answer": 0,
+   "explanation": "In active-passive HA, the standby unit stays idle until it detects the active unit's failure."
+  },
+  {
+   "id": "netplus-328",
+   "domain": "ops",
+   "prompt": "Which DR test actually shifts production operations to the recovery site to verify it works?",
+   "choices": [
+    "Tabletop exercise",
+    "Document review",
+    "Failover test",
+    "Walkthrough checklist"
+   ],
+   "answer": 2,
+   "explanation": "A failover test moves real workloads to the DR site, validating readiness more thoroughly than discussion-based exercises."
+  },
+  {
+   "id": "netplus-329",
+   "domain": "ops",
+   "prompt": "Which DR site has no hardware or connectivity and is the cheapest but slowest to activate?",
+   "choices": [
+    "Warm site",
+    "Hot site",
+    "Cloud hot standby",
+    "Cold site"
+   ],
+   "answer": 3,
+   "explanation": "A cold site provides space and basic utilities but needs equipment installed, so recovery takes the longest."
+  },
+  {
+   "id": "netplus-330",
+   "domain": "ops",
+   "prompt": "Which DNS record type maps a hostname to an IPv6 address?",
+   "choices": [
+    "A",
+    "PTR",
+    "CNAME",
+    "AAAA"
+   ],
+   "answer": 3,
+   "explanation": "AAAA records hold IPv6 addresses; A records hold IPv4 addresses."
+  },
+  {
+   "id": "netplus-331",
+   "domain": "ops",
+   "prompt": "Which DNS record type lets www.example.com point to another hostname such as web1.example.com?",
+   "choices": [
+    "MX",
+    "NS",
+    "CNAME",
+    "SOA"
+   ],
+   "answer": 2,
+   "explanation": "A CNAME record creates an alias pointing one name to another canonical name."
+  },
+  {
+   "id": "netplus-332",
+   "domain": "ops",
+   "prompt": "Which DNS record is used in reverse lookups to map an IP address to a hostname?",
+   "choices": [
+    "PTR",
+    "A",
+    "TXT",
+    "SRV"
+   ],
+   "answer": 0,
+   "explanation": "PTR records live in reverse zones (in-addr.arpa or ip6.arpa) and map addresses to names."
+  },
+  {
+   "id": "netplus-333",
+   "domain": "ops",
+   "prompt": "An email administrator publishes SPF and DKIM information for a domain. Which DNS record type holds this data?",
+   "choices": [
+    "MX",
+    "TXT",
+    "PTR",
+    "AAAA"
+   ],
+   "answer": 1,
+   "explanation": "SPF and DKIM data are published in TXT records."
+  },
+  {
+   "id": "netplus-334",
+   "domain": "ops",
+   "prompt": "Which DNS record identifies the authoritative name servers for a zone?",
+   "choices": [
+    "SOA",
+    "CNAME",
+    "SRV",
+    "NS"
+   ],
+   "answer": 3,
+   "explanation": "NS records list the authoritative name servers for a domain."
+  },
+  {
+   "id": "netplus-335",
+   "domain": "ops",
+   "prompt": "Which DNS feature uses digital signatures to verify that DNS responses have not been tampered with?",
+   "choices": [
+    "DNSSEC",
+    "DNS over HTTPS",
+    "Dynamic DNS",
+    "Zone transfer"
+   ],
+   "answer": 0,
+   "explanation": "DNSSEC adds cryptographic signatures to DNS records so resolvers can validate authenticity and integrity."
+  },
+  {
+   "id": "netplus-336",
+   "domain": "ops",
+   "prompt": "What is the difference between DNS over HTTPS (DoH) and DNSSEC?",
+   "choices": [
+    "DoH signs records, while DNSSEC encrypts queries",
+    "DoH encrypts queries, while DNSSEC signs records",
+    "Both encrypt queries on UDP 53",
+    "DoH is used only for zone transfers"
+   ],
+   "answer": 1,
+   "explanation": "DoH (and DoT) encrypt the query channel; DNSSEC validates data authenticity without encrypting it."
+  },
+  {
+   "id": "netplus-337",
+   "domain": "ops",
+   "prompt": "A DNS resolver repeatedly answers queries from memory instead of contacting authoritative servers until a timer expires. Which value controls this?",
+   "choices": [
+    "Serial number",
+    "TTL",
+    "Lease time",
+    "Hop limit"
+   ],
+   "answer": 1,
+   "explanation": "Each DNS record's TTL tells resolvers how long they may cache it."
+  },
+  {
+   "id": "netplus-338",
+   "domain": "ops",
+   "prompt": "A printer must always receive the same IP address from DHCP. What should be configured?",
+   "choices": [
+    "A shorter lease time",
+    "A DHCP exclusion covering the whole scope",
+    "A DHCP reservation",
+    "A second DHCP scope"
+   ],
+   "answer": 2,
+   "explanation": "A reservation binds a specific IP to a client's MAC so it always receives the same address."
+  },
+  {
+   "id": "netplus-339",
+   "domain": "ops",
+   "prompt": "Network team members manually configure static IPs for servers in a range that is also in the DHCP scope. What should be configured to prevent conflicts?",
+   "choices": [
+    "A DHCP exclusion range",
+    "A shorter DHCP lease",
+    "DHCP relay",
+    "A larger subnet mask"
+   ],
+   "answer": 0,
+   "explanation": "Exclusions prevent DHCP from handing out addresses reserved for static assignment."
+  },
+  {
+   "id": "netplus-340",
+   "domain": "ops",
+   "prompt": "Which DHCP option provides clients with their default gateway address?",
+   "choices": [
+    "Option 3 (router)",
+    "Option 6 (DNS servers)",
+    "Option 15 (domain name)",
+    "Option 66 (TFTP server)"
+   ],
+   "answer": 0,
+   "explanation": "DHCP option 3 specifies the default router; option 6 lists DNS servers."
+  },
+  {
+   "id": "netplus-341",
+   "domain": "ops",
+   "prompt": "Which IPv6 method lets hosts configure their own addresses from router advertisements without a DHCP server?",
+   "choices": [
+    "DHCPv6 stateful",
+    "APIPA",
+    "SLAAC",
+    "NAT64"
+   ],
+   "answer": 2,
+   "explanation": "Stateless address autoconfiguration (SLAAC) builds addresses from the RA prefix and an interface ID."
+  },
+  {
+   "id": "netplus-342",
+   "domain": "ops",
+   "prompt": "Which ICMPv6 message do routers send to advertise network prefixes and their presence to hosts?",
+   "choices": [
+    "Neighbor solicitation",
+    "Echo request",
+    "Redirect",
+    "Router advertisement"
+   ],
+   "answer": 3,
+   "explanation": "Router advertisements tell hosts about prefixes, default gateways and whether to use DHCPv6."
+  },
+  {
+   "id": "netplus-343",
+   "domain": "ops",
+   "prompt": "What is the main difference between in-band and out-of-band management?",
+   "choices": [
+    "In-band uses console cables, while out-of-band always uses SSH over the WAN",
+    "In-band is always encrypted, while out-of-band never is",
+    "In-band uses the production network; out-of-band uses a separate path",
+    "In-band is used only for wireless devices"
+   ],
+   "answer": 2,
+   "explanation": "Out-of-band management uses separate connectivity, such as a console server or dedicated management network, so devices are reachable even when production fails."
+  },
+  {
+   "id": "netplus-344",
+   "domain": "ops",
+   "prompt": "A remote employee needs secure access to internal web apps from a hotel without installing a full VPN client. Which option fits BEST?",
+   "choices": [
+    "Site-to-site IPsec VPN",
+    "Telnet to the internal router and port forwarding",
+    "An unencrypted GRE tunnel",
+    "A clientless TLS VPN portal"
+   ],
+   "answer": 3,
+   "explanation": "Clientless VPNs give browser-based access to internal web resources over TLS without a dedicated client."
+  },
+  {
+   "id": "netplus-345",
+   "domain": "ops",
+   "prompt": "A remote-access VPN sends only corporate traffic through the tunnel while internet traffic goes directly out the user's connection. What is this?",
+   "choices": [
+    "Full tunnel",
+    "Split tunnel",
+    "Site-to-site tunnel",
+    "GRE over IPsec"
+   ],
+   "answer": 1,
+   "explanation": "Split tunneling routes only specified traffic through the VPN; full tunnel sends everything through it."
+  },
+  {
+   "id": "netplus-346",
+   "domain": "ops",
+   "prompt": "Security policy requires all of a remote user's traffic, including internet browsing, to pass through the corporate firewall. Which VPN setting is needed?",
+   "choices": [
+    "Split tunnel",
+    "Full tunnel",
+    "Clientless VPN",
+    "Split horizon"
+   ],
+   "answer": 1,
+   "explanation": "Full tunnel forces all traffic through the VPN so corporate security controls inspect it."
+  },
+  {
+   "id": "netplus-347",
+   "domain": "ops",
+   "prompt": "Which GUI management method should be preferred when accessing a switch's web interface?",
+   "choices": [
+    "HTTP",
+    "Telnet",
+    "HTTPS",
+    "TFTP"
+   ],
+   "answer": 2,
+   "explanation": "HTTPS encrypts web management sessions, protecting credentials; plain HTTP sends them in cleartext."
+  },
+  {
+   "id": "netplus-348",
+   "domain": "ops",
+   "prompt": "Network monitoring shows a link's utilization is consistently at 95%. What should the administrator do FIRST?",
+   "choices": [
+    "Replace the switch and its uplink optics immediately",
+    "Identify top talkers with flow data",
+    "Disable SNMP on the link",
+    "Lower the interface MTU"
+   ],
+   "answer": 1,
+   "explanation": "Flow data (NetFlow/IPFIX/sFlow) shows which hosts and applications consume bandwidth, guiding the right fix."
+  },
+  {
+   "id": "netplus-349",
+   "domain": "ops",
+   "prompt": "What does a configuration management system typically provide for network devices?",
+   "choices": [
+    "Config backups and change detection",
+    "Real-time RF heat maps",
+    "Encryption of all traffic",
+    "Physical cable tracing"
+   ],
+   "answer": 0,
+   "explanation": "Configuration management tools back up configs, track versions and detect unauthorized or unexpected changes."
+  },
+  {
+   "id": "netplus-350",
+   "domain": "ops",
+   "prompt": "Which standard protocol is an IETF version of Cisco NetFlow for exporting flow records?",
+   "choices": [
+    "sFlow",
+    "SNMPv3",
+    "Syslog-ng",
+    "IPFIX"
+   ],
+   "answer": 3,
+   "explanation": "IPFIX (IP Flow Information Export) is the IETF standard based on NetFlow v9. sFlow is a separate sampling technology."
+  },
+  {
+   "id": "netplus-351",
+   "domain": "sec",
+   "prompt": "Which part of the CIA triad is protected when data is encrypted so unauthorized people cannot read it?",
+   "choices": [
+    "Integrity",
+    "Confidentiality",
+    "Availability",
+    "Non-repudiation"
+   ],
+   "answer": 1,
+   "explanation": "Encryption keeps data secret from unauthorized parties, which is confidentiality."
+  },
+  {
+   "id": "netplus-352",
+   "domain": "sec",
+   "prompt": "A file's hash is compared before and after transfer to confirm it was not altered. Which security goal does this support?",
+   "choices": [
+    "Confidentiality",
+    "Availability",
+    "Integrity",
+    "Authorization"
+   ],
+   "answer": 2,
+   "explanation": "Hashing verifies data has not been modified, supporting integrity."
+  },
+  {
+   "id": "netplus-353",
+   "domain": "sec",
+   "prompt": "Which encryption type uses the same key to encrypt and decrypt data?",
+   "choices": [
+    "Asymmetric",
+    "Symmetric",
+    "Hashing",
+    "Digital signature"
+   ],
+   "answer": 1,
+   "explanation": "Symmetric algorithms such as AES use one shared key. Asymmetric uses a public/private key pair."
+  },
+  {
+   "id": "netplus-354",
+   "domain": "sec",
+   "prompt": "In asymmetric cryptography, which key does a sender use to encrypt a message so only the recipient can read it?",
+   "choices": [
+    "The recipient's private key",
+    "The recipient's public key",
+    "The sender's private key",
+    "A shared session key known to everyone"
+   ],
+   "answer": 1,
+   "explanation": "Data encrypted with the recipient's public key can only be decrypted with the recipient's private key."
+  },
+  {
+   "id": "netplus-355",
+   "domain": "sec",
+   "prompt": "Which PKI entity issues and digitally signs certificates?",
+   "choices": [
+    "Registration server for DNS",
+    "Key distribution switch",
+    "Certificate authority (CA)",
+    "RADIUS client"
+   ],
+   "answer": 2,
+   "explanation": "A CA validates identities and signs certificates that bind public keys to subjects."
+  },
+  {
+   "id": "netplus-356",
+   "domain": "sec",
+   "prompt": "An internal web server uses a certificate it signed itself. What problem will client browsers typically report?",
+   "choices": [
+    "The certificate key is too long for TLS to negotiate",
+    "The certificate is not trusted because no trusted CA issued it",
+    "The server's port is blocked",
+    "The DNS record is missing"
+   ],
+   "answer": 1,
+   "explanation": "Self-signed certificates are not chained to a trusted root CA, so browsers warn that the certificate is untrusted."
+  },
+  {
+   "id": "netplus-357",
+   "domain": "sec",
+   "prompt": "Which concept describes protecting data while it travels across the network, for example with TLS?",
+   "choices": [
+    "Data at rest",
+    "Data in use",
+    "Data sovereignty",
+    "Data in transit"
+   ],
+   "answer": 3,
+   "explanation": "Data in transit is data moving across a network; TLS and IPsec protect it."
+  },
+  {
+   "id": "netplus-358",
+   "domain": "sec",
+   "prompt": "Which of the following is an example of multifactor authentication?",
+   "choices": [
+    "A password plus a security question",
+    "A password plus an authenticator app code",
+    "Two different passwords",
+    "A PIN plus a password"
+   ],
+   "answer": 1,
+   "explanation": "MFA requires factors from different categories: something you know (password) plus something you have (authenticator)."
+  },
+  {
+   "id": "netplus-359",
+   "domain": "sec",
+   "prompt": "In the AAA framework, which function records what a user did after logging in?",
+   "choices": [
+    "Authentication",
+    "Accounting",
+    "Authorization",
+    "Auditing approval"
+   ],
+   "answer": 1,
+   "explanation": "Accounting tracks user activity, such as commands run and session times."
+  },
+  {
+   "id": "netplus-360",
+   "domain": "sec",
+   "prompt": "Which access control model grants permissions based on a user's job function?",
+   "choices": [
+    "Role-based access control",
+    "Discretionary access control",
+    "Mandatory access control",
+    "Rule-based time-of-day control"
+   ],
+   "answer": 0,
+   "explanation": "RBAC assigns permissions to roles, and users get access through their assigned roles."
+  },
+  {
+   "id": "netplus-361",
+   "domain": "sec",
+   "prompt": "Which protocol is commonly used to authenticate users against a directory service and uses tickets?",
+   "choices": [
+    "RADIUS",
+    "SNMP",
+    "Kerberos",
+    "TACACS+"
+   ],
+   "answer": 2,
+   "explanation": "Kerberos uses tickets issued by a key distribution center and is the default authentication for Active Directory."
+  },
+  {
+   "id": "netplus-362",
+   "domain": "sec",
+   "prompt": "An attacker calls the help desk pretending to be an executive and requests a password reset. What type of attack is this?",
+   "choices": [
+    "Social engineering",
+    "On-path attack",
+    "DNS spoofing",
+    "Brute-force attack"
+   ],
+   "answer": 0,
+   "explanation": "Impersonating someone over the phone to manipulate staff is social engineering, specifically vishing."
+  },
+  {
+   "id": "netplus-363",
+   "domain": "sec",
+   "prompt": "Many compromised devices send traffic to a single web server to make it unavailable. What attack is this?",
+   "choices": [
+    "Phishing",
+    "DDoS",
+    "VLAN hopping",
+    "ARP spoofing"
+   ],
+   "answer": 1,
+   "explanation": "A DDoS uses many sources, often a botnet, to overwhelm a target's resources."
+  },
+  {
+   "id": "netplus-364",
+   "domain": "sec",
+   "prompt": "An attacker secretly relays and possibly alters communications between two parties who believe they are talking directly. What is this?",
+   "choices": [
+    "Denial-of-service attack",
+    "Dumpster diving",
+    "Shoulder surfing",
+    "On-path attack"
+   ],
+   "answer": 3,
+   "explanation": "An on-path attack places the attacker between two endpoints to intercept or modify traffic."
+  },
+  {
+   "id": "netplus-365",
+   "domain": "sec",
+   "prompt": "Employees receive emails that appear to come from IT asking them to log in to a fake portal. What attack is this?",
+   "choices": [
+    "Tailgating",
+    "MAC flooding",
+    "Phishing",
+    "Rogue DHCP"
+   ],
+   "answer": 2,
+   "explanation": "Phishing uses fraudulent messages to trick users into revealing credentials."
+  },
+  {
+   "id": "netplus-366",
+   "domain": "sec",
+   "prompt": "An unauthorized wireless access point has been plugged into a wall jack by an employee. What is this called?",
+   "choices": [
+    "Evil twin",
+    "Rogue access point",
+    "Wardriving station",
+    "Mesh repeater"
+   ],
+   "answer": 1,
+   "explanation": "A rogue AP is an unauthorized AP connected to the network; an evil twin imitates a legitimate SSID to lure users."
+  },
+  {
+   "id": "netplus-367",
+   "domain": "sec",
+   "prompt": "Malware encrypts a company's file shares and demands payment for the key. What type of malware is this?",
+   "choices": [
+    "Spyware",
+    "Ransomware",
+    "Adware",
+    "Rootkit"
+   ],
+   "answer": 1,
+   "explanation": "Ransomware encrypts data and demands a ransom for decryption."
+  },
+  {
+   "id": "netplus-368",
+   "domain": "sec",
+   "prompt": "An attacker tries thousands of passwords per minute against an SSH login. What control BEST mitigates this?",
+   "choices": [
+    "Lockout or rate limiting after failures",
+    "Changing the SSH banner",
+    "Enabling Telnet as a backup",
+    "Disabling logging"
+   ],
+   "answer": 0,
+   "explanation": "Lockout thresholds and rate limiting slow or stop brute-force password attempts."
+  },
+  {
+   "id": "netplus-369",
+   "domain": "sec",
+   "prompt": "Which device hardening step should be done FIRST on a newly installed switch?",
+   "choices": [
+    "Enable all unused ports",
+    "Enable Telnet for convenience",
+    "Change the default credentials",
+    "Set the SNMP community to public"
+   ],
+   "answer": 2,
+   "explanation": "Default credentials are widely known, so they must be changed immediately."
+  },
+  {
+   "id": "netplus-370",
+   "domain": "sec",
+   "prompt": "What is a recommended practice for unused switch ports?",
+   "choices": [
+    "Configure them as trunks",
+    "Shut them down and assign them to an unused VLAN",
+    "Leave them enabled in the default VLAN",
+    "Enable PoE on all of them"
+   ],
+   "answer": 1,
+   "explanation": "Disabling unused ports and placing them in an unused VLAN prevents unauthorized connections."
+  },
+  {
+   "id": "netplus-371",
+   "domain": "sec",
+   "prompt": "Which type of firewall tracks the state of connections and allows return traffic for sessions initiated from inside?",
+   "choices": [
+    "Stateless packet filter",
+    "Layer 2 bridge",
+    "Stateful firewall",
+    "Proxy ARP device"
+   ],
+   "answer": 2,
+   "explanation": "Stateful firewalls maintain a connection table and automatically permit legitimate return traffic."
+  },
+  {
+   "id": "netplus-372",
+   "domain": "sec",
+   "prompt": "A company wants to block employees from visiting gambling and malware websites by category. Which control fits BEST?",
+   "choices": [
+    "Port security",
+    "MAC filtering",
+    "URL filtering",
+    "DHCP snooping"
+   ],
+   "answer": 2,
+   "explanation": "URL/content filtering blocks access to websites based on categories or reputation."
+  },
+  {
+   "id": "netplus-373",
+   "domain": "sec",
+   "prompt": "Which network segmentation technique isolates guest Wi-Fi users from internal resources?",
+   "choices": [
+    "The same VLAN as employees but with a different Wi-Fi password",
+    "Disabling DHCP for guests",
+    "Using a hidden SSID for employees",
+    "A separate guest VLAN with rules blocking internal networks"
+   ],
+   "answer": 3,
+   "explanation": "A separate guest VLAN with ACLs or firewall rules prevents guests from reaching internal systems."
+  },
+  {
+   "id": "netplus-374",
+   "domain": "sec",
+   "prompt": "Which protocol should replace TFTP or FTP for securely transferring configuration files to a router?",
+   "choices": [
+    "SFTP or SCP",
+    "Telnet",
+    "HTTP",
+    "SNMPv1"
+   ],
+   "answer": 0,
+   "explanation": "SFTP and SCP run over SSH and encrypt file transfers, unlike FTP and TFTP."
+  },
+  {
+   "id": "netplus-375",
+   "domain": "sec",
+   "prompt": "Which security concept uses several overlapping layers of controls so that one failure does not expose the network?",
+   "choices": [
+    "Least privilege",
+    "Defense in depth",
+    "Separation of duties",
+    "Implicit trust"
+   ],
+   "answer": 1,
+   "explanation": "Defense in depth layers controls such as firewalls, IPS, NAC and endpoint protection."
+  },
+  {
+   "id": "netplus-376",
+   "domain": "sec",
+   "prompt": "Which regulation protects the personal data of people in the European Union?",
+   "choices": [
+    "GDPR",
+    "PCI DSS",
+    "HIPAA",
+    "SOX"
+   ],
+   "answer": 0,
+   "explanation": "The General Data Protection Regulation governs processing of EU residents' personal data."
+  },
+  {
+   "id": "netplus-377",
+   "domain": "sec",
+   "prompt": "Which access control list approach allows only explicitly approved applications or addresses and denies everything else?",
+   "choices": [
+    "Block list (blacklist)",
+    "Allow list (whitelist)",
+    "Implicit allow",
+    "Open policy"
+   ],
+   "answer": 1,
+   "explanation": "An allow list permits only specified items, which is more restrictive than blocking known bad items."
+  },
+  {
+   "id": "netplus-378",
+   "domain": "sec",
+   "prompt": "Why is MAC address filtering considered a weak security control on its own?",
+   "choices": [
+    "MAC addresses are easily spoofed",
+    "It only works on fiber connections",
+    "It encrypts traffic too slowly",
+    "It blocks all wireless clients"
+   ],
+   "answer": 0,
+   "explanation": "Attackers can sniff allowed MAC addresses and clone them, so MAC filtering should be combined with stronger controls such as 802.1X."
+  },
+  {
+   "id": "netplus-379",
+   "domain": "ts",
+   "prompt": "A technician has gathered information and questioned users about an outage. What is the next step in the CompTIA troubleshooting methodology?",
+   "choices": [
+    "Establish a theory of probable cause",
+    "Implement the solution",
+    "Document findings",
+    "Verify full system functionality and implement preventive measures"
+   ],
+   "answer": 0,
+   "explanation": "After identifying the problem, the technician establishes a theory of probable cause, questioning the obvious."
+  },
+  {
+   "id": "netplus-380",
+   "domain": "ts",
+   "prompt": "When establishing a theory of probable cause, which approach starts at the Physical layer and works up the OSI model?",
+   "choices": [
+    "Top-down",
+    "Divide and conquer",
+    "Bottom-up",
+    "Follow the path"
+   ],
+   "answer": 2,
+   "explanation": "Bottom-up troubleshooting begins at Layer 1 and moves upward."
+  },
+  {
+   "id": "netplus-381",
+   "domain": "ts",
+   "prompt": "A technician starts troubleshooting at the Network layer and moves up or down depending on test results. Which approach is this?",
+   "choices": [
+    "Bottom-up",
+    "Top-down",
+    "Spot-the-difference",
+    "Divide and conquer"
+   ],
+   "answer": 3,
+   "explanation": "Divide and conquer starts in the middle of the OSI model and narrows the problem from there."
+  },
+  {
+   "id": "netplus-382",
+   "domain": "ts",
+   "prompt": "A fix will require rebooting a production core switch during business hours. What should the technician do before implementing it?",
+   "choices": [
+    "Reboot immediately to save time",
+    "Plan the change and get approval",
+    "Document the outcome first",
+    "Close the ticket and schedule later"
+   ],
+   "answer": 1,
+   "explanation": "The methodology requires a plan of action that considers impacts, typically including change approval, before implementing."
+  },
+  {
+   "id": "netplus-383",
+   "domain": "ts",
+   "prompt": "A technician duplicates a user's issue on a test machine before trying fixes. Which part of identifying the problem is this?",
+   "choices": [
+    "Verifying full system functionality",
+    "Duplicating the problem",
+    "Documenting lessons learned",
+    "Escalating the issue"
+   ],
+   "answer": 1,
+   "explanation": "Reproducing the problem is part of identifying the problem and helps confirm its cause."
+  },
+  {
+   "id": "netplus-384",
+   "domain": "ts",
+   "prompt": "A link light on a switch port is off after a new cable is connected to a PC. What should be checked FIRST?",
+   "choices": [
+    "The DNS server configuration",
+    "The routing table",
+    "The DHCP lease time",
+    "The cable and NIC connections"
+   ],
+   "answer": 3,
+   "explanation": "No link light points to a Layer 1 issue, so check the cable, connectors and NIC first."
+  },
+  {
+   "id": "netplus-385",
+   "domain": "ts",
+   "prompt": "A cable tester shows wires 1 and 2 swapped with 3 and 6 on one end of a straight-through patch cable. What is the issue?",
+   "choices": [
+    "The cable is a rollover cable",
+    "The cable is too long",
+    "One end is T568A and the other is T568B",
+    "The cable has a split pair"
+   ],
+   "answer": 2,
+   "explanation": "Swapping pairs 1-2 and 3-6 is a crossover caused by mixing T568A and T568B terminations."
+  },
+  {
+   "id": "netplus-386",
+   "domain": "ts",
+   "prompt": "Which tool verifies continuity and correct pin-out of each wire in a twisted-pair cable?",
+   "choices": [
+    "Toner probe",
+    "Spectrum analyzer",
+    "Light meter",
+    "Cable tester"
+   ],
+   "answer": 3,
+   "explanation": "A basic cable tester checks continuity, opens, shorts and wiremap."
+  },
+  {
+   "id": "netplus-387",
+   "domain": "ts",
+   "prompt": "A technician measures the received light level on a fiber link to determine whether it falls within the transceiver's specifications. Which tool is used?",
+   "choices": [
+    "Toner probe",
+    "Multimeter",
+    "Loopback plug for copper",
+    "Optical power meter"
+   ],
+   "answer": 3,
+   "explanation": "An optical power meter measures received optical power in dBm to verify signal levels."
+  },
+  {
+   "id": "netplus-388",
+   "domain": "ts",
+   "prompt": "Which tool is used to test a NIC or switch port by sending its transmit signal straight back to its receive side?",
+   "choices": [
+    "Punchdown tool",
+    "Loopback plug",
+    "Crimper",
+    "Wi-Fi analyzer"
+   ],
+   "answer": 1,
+   "explanation": "A loopback adapter connects transmit to receive, so the port can test itself."
+  },
+  {
+   "id": "netplus-389",
+   "domain": "ts",
+   "prompt": "Two wires in a twisted-pair cable are untwisted too far back at the connector, causing signal from one pair to bleed into another. What is this called?",
+   "choices": [
+    "Attenuation",
+    "Crosstalk",
+    "Jitter",
+    "Reflection loss due to fiber"
+   ],
+   "answer": 1,
+   "explanation": "Excess untwisting causes crosstalk (such as NEXT) between adjacent pairs."
+  },
+  {
+   "id": "netplus-390",
+   "domain": "ts",
+   "prompt": "A switch interface shows speed 100 Mbps even though both devices support 1 Gbps. What is a likely cause?",
+   "choices": [
+    "An incorrect DNS server",
+    "An STP root bridge election",
+    "A cable with a broken pair",
+    "A missing default route"
+   ],
+   "answer": 2,
+   "explanation": "Gigabit Ethernet needs all four pairs; a bad pair often causes negotiation down to 100 Mbps."
+  },
+  {
+   "id": "netplus-391",
+   "domain": "ts",
+   "prompt": "An interface's status shows 'administratively down'. What does this mean?",
+   "choices": [
+    "The cable is unplugged",
+    "The remote device is powered off",
+    "It was disabled with a shutdown command",
+    "The interface has a duplex mismatch"
+   ],
+   "answer": 2,
+   "explanation": "Administratively down means the port was manually disabled in the configuration."
+  },
+  {
+   "id": "netplus-392",
+   "domain": "ts",
+   "prompt": "A port shows 'up/down' (line protocol down) on a router serial or Ethernet interface. Which layer is MOST likely the problem?",
+   "choices": [
+    "Data Link layer",
+    "Application layer",
+    "Transport layer",
+    "Session layer"
+   ],
+   "answer": 0,
+   "explanation": "Physical status up but protocol down usually indicates a Layer 2 issue such as encapsulation or keepalive mismatch."
+  },
+  {
+   "id": "netplus-393",
+   "domain": "ts",
+   "prompt": "Interface counters show a large number of giants. What does this indicate?",
+   "choices": [
+    "Frames smaller than 64 bytes are arriving",
+    "The port is using PoE",
+    "The port is in the wrong VLAN",
+    "Oversized frames are arriving, often from an MTU mismatch"
+   ],
+   "answer": 3,
+   "explanation": "Giants are oversized frames, commonly caused by MTU or jumbo frame mismatches."
+  },
+  {
+   "id": "netplus-394",
+   "domain": "ts",
+   "prompt": "A server can reach the internet but users report its website is unreachable from outside. The firewall logs show inbound TCP 443 being denied. What should be done?",
+   "choices": [
+    "Change the server's DNS servers",
+    "Permit inbound TCP 443 on the firewall",
+    "Replace the server's NIC",
+    "Enable DHCP on the server"
+   ],
+   "answer": 1,
+   "explanation": "The logs show the firewall blocking HTTPS, so a rule permitting the traffic is needed."
+  },
+  {
+   "id": "netplus-395",
+   "domain": "ts",
+   "prompt": "Users on a new subnet can reach local resources but not a remote branch, while other subnets can. What is the MOST likely cause?",
+   "choices": [
+    "The users' NICs are faulty",
+    "The DNS server is offline",
+    "The branch lacks a route to the new subnet",
+    "The switch has a duplex mismatch"
+   ],
+   "answer": 2,
+   "explanation": "If other subnets work, the new subnet is likely missing from routing tables at the remote side, so return traffic fails."
+  },
+  {
+   "id": "netplus-396",
+   "domain": "ts",
+   "prompt": "A user reports that a website loads by name on their phone using cellular data but not on the office Wi-Fi. Other sites work in the office. What should be checked FIRST?",
+   "choices": [
+    "The office web filter rules",
+    "The phone's battery",
+    "The website's TLS certificate",
+    "The office switch's spanning tree"
+   ],
+   "answer": 0,
+   "explanation": "Since only the office network fails for one site, a content filter or firewall rule is the likely cause."
+  },
+  {
+   "id": "netplus-397",
+   "domain": "ts",
+   "prompt": "Which command on a Windows PC displays the IP address, mask, gateway, DNS servers and DHCP lease information?",
+   "choices": [
+    "ipconfig /all",
+    "netstat -an",
+    "tracert",
+    "arp -a"
+   ],
+   "answer": 0,
+   "explanation": "ipconfig /all shows full IP configuration including DNS and DHCP lease details."
+  },
+  {
+   "id": "netplus-398",
+   "domain": "ts",
+   "prompt": "Which Windows command releases and then requests a new DHCP lease?",
+   "choices": [
+    "ipconfig /flushdns followed by ipconfig /registerdns",
+    "netstat -r",
+    "nslookup -renew",
+    "ipconfig /release followed by ipconfig /renew"
+   ],
+   "answer": 3,
+   "explanation": "ipconfig /release drops the current lease and ipconfig /renew requests a new one."
+  },
+  {
+   "id": "netplus-399",
+   "domain": "ts",
+   "prompt": "Which Linux command displays a host's IP addresses on each interface?",
+   "choices": [
+    "route print",
+    "ipconfig",
+    "ip addr",
+    "nbtstat"
+   ],
+   "answer": 2,
+   "explanation": "ip addr (or the older ifconfig) shows interface addresses on Linux."
+  },
+  {
+   "id": "netplus-400",
+   "domain": "ts",
+   "prompt": "Which command displays the routing table on a Windows host?",
+   "choices": [
+    "ipconfig /displaydns",
+    "arp -d",
+    "pathping -n only",
+    "route print"
+   ],
+   "answer": 3,
+   "explanation": "route print (or netstat -r) shows the Windows routing table."
+  },
+  {
+   "id": "netplus-401",
+   "domain": "ts",
+   "prompt": "A network engineer wants to see neighboring Cisco devices and the ports they connect to from a switch CLI. Which command fits?",
+   "choices": [
+    "show ip route",
+    "show vlan",
+    "show mac address-table count",
+    "show cdp neighbors"
+   ],
+   "answer": 3,
+   "explanation": "show cdp neighbors lists directly connected Cisco devices with local and remote ports; LLDP has a similar command."
+  },
+  {
+   "id": "netplus-402",
+   "domain": "ts",
+   "prompt": "Which switch command shows which MAC addresses have been learned on each port?",
+   "choices": [
+    "show arp",
+    "show interfaces trunk",
+    "show mac address-table",
+    "show ip interface brief"
+   ],
+   "answer": 2,
+   "explanation": "The MAC address table maps learned MACs to ports and VLANs."
+  },
+  {
+   "id": "netplus-403",
+   "domain": "ts",
+   "prompt": "An engineer needs to quickly see the IP addresses and up/down status of all router interfaces. Which command is BEST?",
+   "choices": [
+    "show running-config all",
+    "show version",
+    "show ip interface brief",
+    "show logging"
+   ],
+   "answer": 2,
+   "explanation": "show ip interface brief summarizes each interface's IP, status and protocol state."
+  },
+  {
+   "id": "netplus-404",
+   "domain": "ts",
+   "prompt": "A user reports that a host name resolves to the wrong IP address only on their PC. Which local file could override DNS?",
+   "choices": [
+    "The hosts file",
+    "The DHCP lease file",
+    "The ARP cache",
+    "The routing table"
+   ],
+   "answer": 0,
+   "explanation": "Entries in the hosts file are consulted before DNS and can override it."
+  },
+  {
+   "id": "netplus-405",
+   "domain": "ts",
+   "prompt": "Which tool lets a technician analyze captured packets in a graphical interface and follow TCP streams?",
+   "choices": [
+    "Wireshark",
+    "Nmap",
+    "iperf",
+    "Tracert"
+   ],
+   "answer": 0,
+   "explanation": "Wireshark is a protocol analyzer that decodes captures and can reconstruct streams."
+  },
+  {
+   "id": "netplus-406",
+   "domain": "ts",
+   "prompt": "A VoIP call has noticeable delay and users talk over each other. Which metric is MOST relevant?",
+   "choices": [
+    "Jitter",
+    "CRC errors",
+    "Latency",
+    "Throughput"
+   ],
+   "answer": 2,
+   "explanation": "High one-way latency (generally over about 150 ms) causes delayed conversations and talk-over."
+  },
+  {
+   "id": "netplus-407",
+   "domain": "ts",
+   "prompt": "Packets arrive at uneven intervals, causing a video call to stutter. What is this variation in delay called?",
+   "choices": [
+    "Jitter",
+    "Latency",
+    "Attenuation",
+    "Packet duplication"
+   ],
+   "answer": 0,
+   "explanation": "Jitter is the variation in packet arrival times; buffers and QoS help reduce its impact."
+  },
+  {
+   "id": "netplus-408",
+   "domain": "ts",
+   "prompt": "Video conferencing quality drops whenever large backups run across the WAN. What is the BEST solution?",
+   "choices": [
+    "Use QoS to prioritize real-time traffic",
+    "Increase the DHCP lease time",
+    "Disable STP on the WAN routers",
+    "Replace Cat 6 cables with Cat 5e"
+   ],
+   "answer": 0,
+   "explanation": "QoS ensures delay-sensitive traffic is prioritized over bulk transfers during congestion."
+  },
+  {
+   "id": "netplus-409",
+   "domain": "ts",
+   "prompt": "A WAN link is oversubscribed at peak times and packets are dropped. What is this condition called?",
+   "choices": [
+    "Congestion causing packet loss",
+    "Attenuation",
+    "Crosstalk",
+    "A broadcast storm from a single host"
+   ],
+   "answer": 0,
+   "explanation": "When demand exceeds capacity, queues fill and packets are dropped due to congestion."
+  },
+  {
+   "id": "netplus-410",
+   "domain": "ts",
+   "prompt": "A 1 Gbps uplink from an access switch serves 48 users who each have 1 Gbps ports, and performance degrades at busy times. What is the cause?",
+   "choices": [
+    "The users have the wrong subnet mask",
+    "An oversubscribed uplink",
+    "The switch has a native VLAN mismatch",
+    "The DHCP server is down"
+   ],
+   "answer": 1,
+   "explanation": "Aggregate user demand exceeds the single uplink's capacity, making it a bottleneck."
+  },
+  {
+   "id": "netplus-411",
+   "domain": "ts",
+   "prompt": "Users on a large flat network notice high CPU use on hosts and slow performance due to excessive broadcast traffic. What is the BEST long-term fix?",
+   "choices": [
+    "Segment it into smaller VLANs",
+    "Increase the MTU on all hosts",
+    "Disable ARP on all hosts",
+    "Replace switches with hubs"
+   ],
+   "answer": 0,
+   "explanation": "Segmenting reduces broadcast domain size and the amount of broadcast traffic each host processes."
+  },
+  {
+   "id": "netplus-412",
+   "domain": "ts",
+   "prompt": "A wireless client connects but gets very low data rates despite strong signal. A Wi-Fi analyzer shows high noise. Which metric is poor?",
+   "choices": [
+    "Received signal strength only",
+    "Channel width",
+    "SSID length",
+    "Signal-to-noise ratio (SNR)"
+   ],
+   "answer": 3,
+   "explanation": "A strong signal is useless if noise is also high; a low SNR causes low data rates and retransmissions."
+  },
+  {
+   "id": "netplus-413",
+   "domain": "ts",
+   "prompt": "A technician suspects a non-Wi-Fi device such as a wireless video sender is disrupting the 2.4 GHz band. Which tool can identify this type of interference?",
+   "choices": [
+    "Cable tester",
+    "Protocol analyzer on the wired LAN",
+    "Toner probe",
+    "Spectrum analyzer"
+   ],
+   "answer": 3,
+   "explanation": "A spectrum analyzer shows raw RF energy across frequencies, revealing non-802.11 interference that Wi-Fi analyzers cannot decode."
+  },
+  {
+   "id": "netplus-414",
+   "domain": "ts",
+   "prompt": "Two APs in adjacent rooms on 2.4 GHz use channels 1 and 3. Users experience errors. What is the problem?",
+   "choices": [
+    "Overlapping channel interference",
+    "Co-channel contention on the same channel",
+    "Incorrect SSID",
+    "Insufficient PoE"
+   ],
+   "answer": 0,
+   "explanation": "Channels 1 and 3 overlap in 2.4 GHz, causing adjacent-channel interference. Use 1, 6 and 11."
+  },
+  {
+   "id": "netplus-415",
+   "domain": "ts",
+   "prompt": "A client is configured for WPA3 but the AP only supports WPA2. What will MOST likely happen?",
+   "choices": [
+    "The client connects at a lower speed",
+    "The client gets an APIPA address",
+    "The client connects to the 6 GHz band",
+    "It fails to connect due to a security mismatch"
+   ],
+   "answer": 3,
+   "explanation": "Security settings must match; a mismatch in encryption or authentication type prevents association."
+  },
+  {
+   "id": "netplus-416",
+   "domain": "ts",
+   "prompt": "Users in a warehouse lose Wi-Fi when they walk behind metal shelving. What is the most likely cause?",
+   "choices": [
+    "DHCP scope exhaustion",
+    "RF absorption and reflection",
+    "Incorrect VLAN assignment",
+    "Expired certificates"
+   ],
+   "answer": 1,
+   "explanation": "Metal and dense materials reflect and absorb RF, creating dead zones; additional or repositioned APs help."
+  },
+  {
+   "id": "netplus-417",
+   "domain": "ts",
+   "prompt": "A user's laptop shows an IP address on the wrong subnet after connecting to Wi-Fi in a new building. What is the MOST likely cause?",
+   "choices": [
+    "The SSID maps to the wrong VLAN",
+    "The laptop has a bad Ethernet cable",
+    "The DNS server is overloaded",
+    "The switch is using STP"
+   ],
+   "answer": 0,
+   "explanation": "If clients land in the wrong subnet, the WLAN-to-VLAN mapping is likely wrong."
+  },
+  {
+   "id": "netplus-418",
+   "domain": "ts",
+   "prompt": "A DNS change was made, but some users still reach the old server for hours. What is the MOST likely reason?",
+   "choices": [
+    "The DHCP server is handing out the wrong default gateway",
+    "The users' NICs need replacement",
+    "Resolvers cached the old record until its TTL ends",
+    "The switch MAC table is full"
+   ],
+   "answer": 2,
+   "explanation": "Cached DNS records remain until their TTL expires; lowering TTL before changes helps."
+  },
+  {
+   "id": "netplus-419",
+   "domain": "ts",
+   "prompt": "Switch clocks are not synchronized with NTP, and log timestamps don't match across devices. What is the main impact on troubleshooting?",
+   "choices": [
+    "VLAN trunks stop passing tagged traffic",
+    "DHCP leases are shortened",
+    "Fiber links lose signal",
+    "Correlating events across devices is harder"
+   ],
+   "answer": 3,
+   "explanation": "Inconsistent clocks make it hard to correlate logs from multiple devices during investigations."
+  },
+  {
+   "id": "netplus-420",
+   "domain": "ts",
+   "prompt": "A server's NIC is set to 1 Gbps full duplex manually, and the switch port is set to auto. Performance is poor with many errors. What is the MOST likely cause?",
+   "choices": [
+    "A native VLAN mismatch",
+    "An incorrect DNS server",
+    "An STP loop",
+    "A duplex mismatch"
+   ],
+   "answer": 3,
+   "explanation": "When one side is hard-coded, autonegotiation fails on the other side and it may default to half duplex, causing a mismatch."
+  },
+  {
+   "id": "netplus-421",
+   "domain": "ts",
+   "prompt": "A traceroute to a server stops responding after the company's edge firewall. Pings to the server fail too, but HTTPS works. What is the MOST likely explanation?",
+   "choices": [
+    "The server is powered off",
+    "The firewall filters ICMP",
+    "The DNS record is wrong",
+    "The traceroute tool is broken"
+   ],
+   "answer": 1,
+   "explanation": "If application traffic works but ICMP-based tools fail, ICMP is likely being filtered."
+  },
+  {
+   "id": "netplus-422",
+   "domain": "ts",
+   "prompt": "A user reports that only one website fails with a certificate name mismatch error. What is the MOST likely cause?",
+   "choices": [
+    "The user's NIC is failing",
+    "The DHCP scope is exhausted",
+    "The switch port is err-disabled",
+    "The certificate name doesn't match the URL"
+   ],
+   "answer": 3,
+   "explanation": "Certificates must match the hostname in the URL; accessing a site by a different name triggers a mismatch."
+  },
+  {
+   "id": "netplus-423",
+   "domain": "ts",
+   "prompt": "A new VLAN was created on the core switch, but hosts in that VLAN on an access switch can't reach the gateway. Other VLANs work. What should be checked FIRST?",
+   "choices": [
+    "The DNS server settings",
+    "The PoE budget",
+    "Whether the trunk allows the VLAN",
+    "The NTP stratum"
+   ],
+   "answer": 2,
+   "explanation": "If a VLAN is missing from the trunk's allowed list, its traffic can't reach the core."
+  },
+  {
+   "id": "netplus-424",
+   "domain": "ts",
+   "prompt": "A technician uses a Wi-Fi analyzer and sees an AP with the company SSID that isn't in the inventory. What should be done FIRST?",
+   "choices": [
+    "Locate it and determine if it is rogue",
+    "Change the company SSID name",
+    "Disable all company APs",
+    "Ignore it if the signal is weak"
+   ],
+   "answer": 0,
+   "explanation": "An unknown AP broadcasting the company SSID may be rogue or an evil twin and should be investigated and located."
+  },
+  {
+   "id": "netplus-425",
+   "domain": "ts",
+   "prompt": "Hosts are dropping off the network, and the switch logs show the DHCP server leasing addresses already in use by static devices. What is the BEST fix?",
+   "choices": [
+    "Lower the DHCP lease time to one minute for all clients",
+    "Disable DHCP and use APIPA",
+    "Enable BPDU guard",
+    "Exclude the static addresses from the scope"
+   ],
+   "answer": 3,
+   "explanation": "Excluding static addresses from the scope prevents DHCP from handing them out and causing conflicts."
+  },
+  {
+   "id": "netplus-426",
+   "domain": "ts",
+   "prompt": "Which command shows established TCP connections and their remote addresses on a Windows host?",
+   "choices": [
+    "ipconfig /all",
+    "nslookup",
+    "netstat -an",
+    "hostname"
+   ],
+   "answer": 2,
+   "explanation": "netstat -an lists active connections and listening ports with numeric addresses."
   }
  ]
 }

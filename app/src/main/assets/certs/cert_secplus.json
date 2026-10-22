@@ -2986,6 +2986,2606 @@
    ],
    "answer": 3,
    "explanation": "A risk threshold defines the level at which a risk must be acted on or escalated."
+  },
+  {
+   "id": "secplus-225",
+   "domain": "gen",
+   "prompt": "Which control category includes security policies and periodic risk assessments?",
+   "choices": [
+    "Managerial",
+    "Technical",
+    "Physical",
+    "Operational"
+   ],
+   "answer": 0,
+   "explanation": "Managerial controls are administrative controls focused on policy, planning and risk management rather than technology or people performing tasks."
+  },
+  {
+   "id": "secplus-226",
+   "domain": "gen",
+   "prompt": "A firewall ACL that blocks all inbound Telnet traffic is BEST classified as which category and type of control?",
+   "choices": [
+    "Physical and preventive",
+    "Managerial and detective",
+    "Operational and corrective",
+    "Technical and preventive"
+   ],
+   "answer": 3,
+   "explanation": "A firewall rule is implemented in technology and stops the activity before it happens, making it a technical preventive control."
+  },
+  {
+   "id": "secplus-227",
+   "domain": "gen",
+   "prompt": "A company policy states that all visitors must sign in at reception and wear a visitor badge. Which control type is this policy?",
+   "choices": [
+    "Compensating",
+    "Corrective",
+    "Detective",
+    "Directive"
+   ],
+   "answer": 3,
+   "explanation": "Directive controls tell people what they should or must do, such as a written rule requiring visitors to sign in."
+  },
+  {
+   "id": "secplus-228",
+   "domain": "gen",
+   "prompt": "After a user's identity has been verified, the system checks which shared folders that user is allowed to open. This step is:",
+   "choices": [
+    "Authentication",
+    "Accounting",
+    "Identification",
+    "Authorization"
+   ],
+   "answer": 3,
+   "explanation": "Authorization determines what an authenticated identity is permitted to access; authentication only proves who the user is."
+  },
+  {
+   "id": "secplus-229",
+   "domain": "gen",
+   "prompt": "In a zero trust architecture, which component sits in the data plane and actually allows or blocks the connection to a resource based on the decision it receives?",
+   "choices": [
+    "Policy administrator",
+    "Policy engine",
+    "Threat intelligence feed",
+    "Policy enforcement point"
+   ],
+   "answer": 3,
+   "explanation": "The policy enforcement point carries out the access decision in the data plane, while the policy engine and administrator in the control plane make and communicate it."
+  },
+  {
+   "id": "secplus-230",
+   "domain": "gen",
+   "prompt": "A zero trust system requires an extra verification step when a user signs in from a new country at an unusual hour. This is an example of:",
+   "choices": [
+    "Implicit trust zones",
+    "Static access control",
+    "Adaptive identity",
+    "Physical isolation"
+   ],
+   "answer": 2,
+   "explanation": "Adaptive identity adjusts authentication requirements based on context such as location, time and device risk."
+  },
+  {
+   "id": "secplus-231",
+   "domain": "gen",
+   "prompt": "A security team builds a network of intentionally vulnerable decoy systems to study attacker techniques. This is a:",
+   "choices": [
+    "Honeytoken",
+    "Screened subnet",
+    "Sinkhole",
+    "Honeynet"
+   ],
+   "answer": 3,
+   "explanation": "A honeynet is a group of honeypots networked together to observe attackers; a honeytoken is a single fake data item."
+  },
+  {
+   "id": "secplus-232",
+   "domain": "gen",
+   "prompt": "Which physical security sensor detects the heat signature of a person moving through a restricted room after hours?",
+   "choices": [
+    "Pressure sensor",
+    "Ultrasonic sensor",
+    "Infrared sensor",
+    "Microwave sensor"
+   ],
+   "answer": 2,
+   "explanation": "Passive infrared sensors detect changes in infrared radiation such as body heat; pressure sensors detect weight on a surface."
+  },
+  {
+   "id": "secplus-233",
+   "domain": "gen",
+   "prompt": "Before approving a firewall upgrade, the change team determines which business services would be disrupted and for how long. This activity is called:",
+   "choices": [
+    "Impact analysis",
+    "Backout planning",
+    "Root cause analysis",
+    "Version control"
+   ],
+   "answer": 0,
+   "explanation": "An impact analysis evaluates the effects and risks of a proposed change before it is approved."
+  },
+  {
+   "id": "secplus-234",
+   "domain": "gen",
+   "prompt": "To minimize disruption, a team schedules server patching for 2 a.m. on Sunday during a pre-approved period reserved for changes. This period is a:",
+   "choices": [
+    "Recovery point",
+    "Change freeze",
+    "Service level",
+    "Maintenance window"
+   ],
+   "answer": 3,
+   "explanation": "A maintenance window is an agreed time when changes can be made with the least impact on users."
+  },
+  {
+   "id": "secplus-235",
+   "domain": "gen",
+   "prompt": "After a network change is completed, why should the network diagrams and configuration documentation be updated?",
+   "choices": [
+    "So documentation reflects the current state of the environment",
+    "So the change can be approved by the change board",
+    "So the backout plan can be removed from the ticket",
+    "So users are notified of the outage window"
+   ],
+   "answer": 0,
+   "explanation": "Updating documentation after a change keeps diagrams and records accurate for troubleshooting, audits and future changes."
+  },
+  {
+   "id": "secplus-236",
+   "domain": "gen",
+   "prompt": "Upgrading a database server requires first upgrading the application that relies on it. In change management, this relationship is called a:",
+   "choices": [
+    "Deny list",
+    "Dependency",
+    "Legacy application",
+    "Restricted activity"
+   ],
+   "answer": 1,
+   "explanation": "Dependencies are systems or services that rely on each other and must be considered when planning the order of a change."
+  },
+  {
+   "id": "secplus-237",
+   "domain": "gen",
+   "prompt": "Which symmetric algorithm is the current standard for bulk data encryption and supports 128-, 192- and 256-bit keys?",
+   "choices": [
+    "RSA",
+    "3DES",
+    "Diffie-Hellman",
+    "AES"
+   ],
+   "answer": 3,
+   "explanation": "AES is a symmetric block cipher with 128, 192 and 256-bit keys; RSA and Diffie-Hellman are asymmetric, and 3DES is deprecated."
+  },
+  {
+   "id": "secplus-238",
+   "domain": "gen",
+   "prompt": "Which asymmetric algorithm provides security comparable to RSA while using much smaller keys, making it well suited to mobile devices?",
+   "choices": [
+    "Blowfish",
+    "SHA-256",
+    "Elliptic curve cryptography",
+    "AES-GCM"
+   ],
+   "answer": 2,
+   "explanation": "ECC achieves strong security with small key sizes, reducing processing and power requirements; Blowfish and AES are symmetric and SHA-256 is a hash."
+  },
+  {
+   "id": "secplus-239",
+   "domain": "gen",
+   "prompt": "Which technique provides both integrity and authenticity of a message by combining a hash function with a shared secret key?",
+   "choices": [
+    "HMAC",
+    "Salting",
+    "Key stretching",
+    "Steganography"
+   ],
+   "answer": 0,
+   "explanation": "An HMAC hashes the message together with a secret key, so only someone holding the key can produce or verify the value."
+  },
+  {
+   "id": "secplus-240",
+   "domain": "gen",
+   "prompt": "Which TLS property ensures that if a server's long-term private key is later stolen, previously recorded session traffic still cannot be decrypted?",
+   "choices": [
+    "Key escrow",
+    "Certificate pinning",
+    "Non-repudiation",
+    "Perfect forward secrecy"
+   ],
+   "answer": 3,
+   "explanation": "Perfect forward secrecy uses unique ephemeral session keys, so compromising the long-term key does not expose past sessions."
+  },
+  {
+   "id": "secplus-241",
+   "domain": "gen",
+   "prompt": "A bank needs a dedicated, tamper-resistant network appliance to generate and store thousands of cryptographic keys for its payment servers. Which is the BEST choice?",
+   "choices": [
+    "Trusted Platform Module",
+    "Hardware security module",
+    "Self-encrypting drive",
+    "Key management spreadsheet"
+   ],
+   "answer": 1,
+   "explanation": "An HSM is a high-performance, tamper-resistant device for managing many keys for multiple servers; a TPM is a chip tied to a single computer."
+  },
+  {
+   "id": "secplus-242",
+   "domain": "gen",
+   "prompt": "Which processor feature isolates sensitive operations, such as handling biometric data on a smartphone, from the main operating system?",
+   "choices": [
+    "Hypervisor",
+    "Sandbox",
+    "Key escrow",
+    "Secure enclave"
+   ],
+   "answer": 3,
+   "explanation": "A secure enclave is a hardware-isolated area of the processor that protects sensitive data even if the main OS is compromised."
+  },
+  {
+   "id": "secplus-243",
+   "domain": "gen",
+   "prompt": "To obtain a certificate from a certificate authority, an administrator generates a key pair and sends which item to the CA?",
+   "choices": [
+    "The private key",
+    "A certificate revocation list",
+    "The root certificate",
+    "A certificate signing request"
+   ],
+   "answer": 3,
+   "explanation": "A CSR contains the public key and identifying information for the CA to sign; the private key must never leave the requester."
+  },
+  {
+   "id": "secplus-244",
+   "domain": "gen",
+   "prompt": "An internal test web server uses a certificate it issued to itself, so users see browser trust warnings. This certificate is:",
+   "choices": [
+    "Wildcard",
+    "Self-signed",
+    "Extended validation",
+    "Revoked"
+   ],
+   "answer": 1,
+   "explanation": "A self-signed certificate is not issued by a trusted CA, so browsers cannot validate it and display warnings."
+  },
+  {
+   "id": "secplus-245",
+   "domain": "gen",
+   "prompt": "Which technique has the web server include a time-stamped revocation status response from the CA during the TLS handshake, reducing load on the CA?",
+   "choices": [
+    "Certificate pinning",
+    "Key escrow",
+    "OCSP stapling",
+    "CRL distribution"
+   ],
+   "answer": 2,
+   "explanation": "With OCSP stapling, the server fetches and attaches the signed OCSP response, so clients do not need to query the CA themselves."
+  },
+  {
+   "id": "secplus-246",
+   "domain": "gen",
+   "prompt": "A browser trusts a site's certificate because it was issued by an intermediate CA whose certificate was signed by a root CA in the browser's trust store. This is called the:",
+   "choices": [
+    "Chain of trust",
+    "Web of trust",
+    "Key escrow model",
+    "Certificate pinning"
+   ],
+   "answer": 0,
+   "explanation": "The chain of trust links an end-entity certificate through intermediates to a trusted root CA."
+  },
+  {
+   "id": "secplus-247",
+   "domain": "gen",
+   "prompt": "Which certificate field allows a single certificate to cover several different domain names, such as example.com and example.net?",
+   "choices": [
+    "Subject Alternative Name",
+    "Common Name",
+    "Serial number",
+    "Key usage"
+   ],
+   "answer": 0,
+   "explanation": "The SAN extension lists additional names a certificate is valid for; a wildcard only covers subdomains of one domain."
+  },
+  {
+   "id": "secplus-248",
+   "domain": "gen",
+   "prompt": "Which hashing algorithm is considered insecure because of known collision weaknesses and should not be used for digital signatures?",
+   "choices": [
+    "SHA-256",
+    "SHA-384",
+    "MD5",
+    "SHA-3"
+   ],
+   "answer": 2,
+   "explanation": "MD5 has practical collision attacks, so it is unsuitable for signatures; the SHA-2 and SHA-3 families remain secure."
+  },
+  {
+   "id": "secplus-249",
+   "domain": "threats",
+   "prompt": "A recently terminated system administrator still has VPN access and uses it to copy customer records. Which threat actor type is this?",
+   "choices": [
+    "Nation-state",
+    "Hacktivist",
+    "Unskilled attacker",
+    "Insider threat"
+   ],
+   "answer": 3,
+   "explanation": "An insider threat is someone with current or former authorized access to the organization's systems who misuses it."
+  },
+  {
+   "id": "secplus-250",
+   "domain": "threats",
+   "prompt": "An attacker with little technical knowledge downloads a ready-made exploit tool and runs it against random websites. This actor is BEST described as an:",
+   "choices": [
+    "Unskilled attacker",
+    "Advanced persistent threat",
+    "Organized crime group",
+    "Insider threat"
+   ],
+   "answer": 0,
+   "explanation": "An unskilled attacker relies on tools written by others and has limited resources and sophistication."
+  },
+  {
+   "id": "secplus-251",
+   "domain": "threats",
+   "prompt": "A fired employee posts the company's internal documents online to embarrass the leadership team. Which motivation is MOST likely?",
+   "choices": [
+    "Espionage",
+    "Revenge",
+    "Financial gain",
+    "War"
+   ],
+   "answer": 1,
+   "explanation": "Acting out of a personal grievance against the former employer is a revenge motivation."
+  },
+  {
+   "id": "secplus-252",
+   "domain": "threats",
+   "prompt": "Which threat actor attribute describes whether the attacker operates from inside or outside the organization?",
+   "choices": [
+    "Level of sophistication",
+    "Internal or external",
+    "Resources and funding",
+    "Motivation"
+   ],
+   "answer": 1,
+   "explanation": "Threat actors are categorized as internal or external based on their position relative to the organization."
+  },
+  {
+   "id": "secplus-253",
+   "domain": "threats",
+   "prompt": "An attacker builds a believable story, claiming to be an auditor who needs records urgently before a deadline, to persuade staff to share data. This technique is:",
+   "choices": [
+    "Typosquatting",
+    "Pretexting",
+    "Watering hole",
+    "Tailgating"
+   ],
+   "answer": 1,
+   "explanation": "Pretexting uses an invented scenario and false identity to make a request for information seem legitimate."
+  },
+  {
+   "id": "secplus-254",
+   "domain": "threats",
+   "prompt": "A fake website copies a well-known bank's logo, colors and layout to trick visitors into entering their credentials. This is BEST described as:",
+   "choices": [
+    "Disinformation",
+    "Pharming via ARP",
+    "Brand impersonation",
+    "Shadow IT"
+   ],
+   "answer": 2,
+   "explanation": "Brand impersonation mimics a trusted organization's branding to deceive victims."
+  },
+  {
+   "id": "secplus-255",
+   "domain": "threats",
+   "prompt": "Deliberately spreading false information on social media to damage a company's reputation is known as:",
+   "choices": [
+    "Pretexting",
+    "Disinformation",
+    "Misconfiguration",
+    "Smishing"
+   ],
+   "answer": 1,
+   "explanation": "Disinformation is intentionally false information spread to deceive; misinformation is false information shared without intent to deceive."
+  },
+  {
+   "id": "secplus-256",
+   "domain": "threats",
+   "prompt": "An attacker leaves infected USB drives labeled 'Payroll' in a company parking lot, hoping employees plug them in. This attack is called:",
+   "choices": [
+    "Vishing",
+    "Bluejacking",
+    "Whaling",
+    "Baiting"
+   ],
+   "answer": 3,
+   "explanation": "Baiting uses an enticing item, such as a USB drive, to lure victims into compromising their own systems."
+  },
+  {
+   "id": "secplus-257",
+   "domain": "threats",
+   "prompt": "A port scan reveals that Telnet is listening on a production server even though no one uses it. Which threat vector does this represent?",
+   "choices": [
+    "Supply chain",
+    "Open service ports",
+    "Removable media",
+    "Message-based"
+   ],
+   "answer": 1,
+   "explanation": "Unneeded open service ports expose services an attacker can target and should be closed."
+  },
+  {
+   "id": "secplus-258",
+   "domain": "threats",
+   "prompt": "A new network switch is installed with the manufacturer's admin username and password unchanged. Which threat vector does this create?",
+   "choices": [
+    "Side loading",
+    "Default credentials",
+    "Watering hole",
+    "Image-based"
+   ],
+   "answer": 1,
+   "explanation": "Default credentials are publicly documented, so attackers can easily log in to devices where they were never changed."
+  },
+  {
+   "id": "secplus-259",
+   "domain": "threats",
+   "prompt": "Software that secretly monitors a user's browsing and activity and sends the information to a third party is:",
+   "choices": [
+    "Ransomware",
+    "A logic bomb",
+    "A worm",
+    "Spyware"
+   ],
+   "answer": 3,
+   "explanation": "Spyware gathers information about a user without consent and transmits it to someone else."
+  },
+  {
+   "id": "secplus-260",
+   "domain": "threats",
+   "prompt": "An attacker installs software that records every key a user presses in order to capture passwords. This is a:",
+   "choices": [
+    "Rootkit",
+    "Logic bomb",
+    "Worm",
+    "Keylogger"
+   ],
+   "answer": 3,
+   "explanation": "A keylogger captures keystrokes, allowing attackers to harvest credentials and other typed data."
+  },
+  {
+   "id": "secplus-261",
+   "domain": "threats",
+   "prompt": "Unwanted applications preinstalled by a device manufacturer that consume resources and may introduce vulnerabilities are called:",
+   "choices": [
+    "Bloatware",
+    "Ransomware",
+    "Firmware",
+    "Rootkits"
+   ],
+   "answer": 0,
+   "explanation": "Bloatware is unnecessary preinstalled software that wastes resources and enlarges the attack surface."
+  },
+  {
+   "id": "secplus-262",
+   "domain": "threats",
+   "prompt": "Which type of malware requires a user action, such as opening an infected file, in order to spread?",
+   "choices": [
+    "Worm",
+    "Botnet",
+    "Virus",
+    "Fileless malware"
+   ],
+   "answer": 2,
+   "explanation": "A virus needs a user to run its host file, while a worm self-propagates without user interaction."
+  },
+  {
+   "id": "secplus-263",
+   "domain": "threats",
+   "prompt": "An attacker uses a concealed portable reader to copy an employee's proximity badge from a short distance. This is:",
+   "choices": [
+    "Bluesnarfing",
+    "Badge tailgating",
+    "Credential stuffing",
+    "RFID cloning"
+   ],
+   "answer": 3,
+   "explanation": "RFID cloning reads and duplicates the data on a proximity card so the attacker can use a copy."
+  },
+  {
+   "id": "secplus-264",
+   "domain": "threats",
+   "prompt": "An attacker gains access to a data center's building controls and disables cooling so the servers overheat and shut down. This is BEST described as an:",
+   "choices": [
+    "On-path attack",
+    "Amplification attack",
+    "Injection attack",
+    "Environmental attack"
+   ],
+   "answer": 3,
+   "explanation": "Environmental attacks target supporting systems such as power, HVAC or fire suppression to disrupt operations."
+  },
+  {
+   "id": "secplus-265",
+   "domain": "threats",
+   "prompt": "An attacker corrupts a DNS resolver's cache so that users requesting a bank's domain are sent to a malicious IP address. This is:",
+   "choices": [
+    "Domain hijacking",
+    "DNS cache poisoning",
+    "ARP spoofing",
+    "MAC flooding"
+   ],
+   "answer": 1,
+   "explanation": "DNS cache poisoning inserts false records into a resolver's cache; domain hijacking takes over the domain registration itself."
+  },
+  {
+   "id": "secplus-266",
+   "domain": "threats",
+   "prompt": "An attacker repeatedly sends forged management frames that disconnect users from a Wi-Fi network. This is a:",
+   "choices": [
+    "Bluesnarfing attack",
+    "Evil twin attack",
+    "Deauthentication attack",
+    "MAC flooding attack"
+   ],
+   "answer": 2,
+   "explanation": "Deauthentication attacks spoof management frames to kick clients off a wireless network, often to force reconnection to a rogue AP."
+  },
+  {
+   "id": "secplus-267",
+   "domain": "threats",
+   "prompt": "An attacker gains unauthorized access to a phone over Bluetooth and copies its contacts and messages. This is:",
+   "choices": [
+    "Bluejacking",
+    "Jailbreaking",
+    "Bluesnarfing",
+    "Side loading"
+   ],
+   "answer": 2,
+   "explanation": "Bluesnarfing steals data over Bluetooth; bluejacking only sends unsolicited messages."
+  },
+  {
+   "id": "secplus-268",
+   "domain": "threats",
+   "prompt": "A standard user exploits a flaw in a Windows service to gain administrator rights on the workstation. This is:",
+   "choices": [
+    "Lateral movement",
+    "Privilege escalation",
+    "Directory traversal",
+    "Session replay"
+   ],
+   "answer": 1,
+   "explanation": "Privilege escalation is gaining a higher level of access than was originally granted."
+  },
+  {
+   "id": "secplus-269",
+   "domain": "threats",
+   "prompt": "Malware forces a legitimate running process to load a malicious library so the attacker's code runs under that process. This technique is:",
+   "choices": [
+    "Cross-site scripting",
+    "DLL injection",
+    "Buffer underrun",
+    "Directory traversal"
+   ],
+   "answer": 1,
+   "explanation": "DLL injection loads a malicious dynamic link library into another process's memory space so it executes with that process's privileges."
+  },
+  {
+   "id": "secplus-270",
+   "domain": "threats",
+   "prompt": "An application slowly consumes more and more memory without releasing it until the server becomes unresponsive. This is a:",
+   "choices": [
+    "Memory leak",
+    "Race condition",
+    "Buffer overflow",
+    "Logic bomb"
+   ],
+   "answer": 0,
+   "explanation": "A memory leak occurs when allocated memory is never freed, eventually exhausting available resources."
+  },
+  {
+   "id": "secplus-271",
+   "domain": "threats",
+   "prompt": "An attacker tests every word from a list of common words and leaked passwords against a captured password hash. This is a:",
+   "choices": [
+    "Password spraying attack",
+    "Dictionary attack",
+    "Birthday attack",
+    "Downgrade attack"
+   ],
+   "answer": 1,
+   "explanation": "A dictionary attack tries candidate passwords from a word list rather than every possible character combination."
+  },
+  {
+   "id": "secplus-272",
+   "domain": "threats",
+   "prompt": "A web server has directory listing enabled, allowing anyone to browse and download its configuration files. This vulnerability is BEST classified as:",
+   "choices": [
+    "Zero-day",
+    "Misconfiguration",
+    "Race condition",
+    "Memory injection"
+   ],
+   "answer": 1,
+   "explanation": "An insecure setting that exposes data is a misconfiguration vulnerability."
+  },
+  {
+   "id": "secplus-273",
+   "domain": "threats",
+   "prompt": "A vulnerability in a printer's embedded software can only be fixed by applying an update from the manufacturer. This is a:",
+   "choices": [
+    "Firmware vulnerability",
+    "Side loading vulnerability",
+    "SQL injection flaw",
+    "Cloud misconfiguration"
+   ],
+   "answer": 0,
+   "explanation": "Firmware is the low-level software embedded in hardware, and its flaws are fixed through vendor firmware updates."
+  },
+  {
+   "id": "secplus-274",
+   "domain": "threats",
+   "prompt": "Memory previously assigned to one virtual machine is allocated to another VM without being cleared, exposing the first VM's data. This virtualization vulnerability is:",
+   "choices": [
+    "VM sprawl",
+    "Resource reuse",
+    "Side loading",
+    "Jailbreaking"
+   ],
+   "answer": 1,
+   "explanation": "Resource reuse occurs when shared resources such as memory or storage are reassigned without being sanitized."
+  },
+  {
+   "id": "secplus-275",
+   "domain": "threats",
+   "prompt": "An organization buys discounted network switches from an unauthorized reseller, and they contain hidden backdoors. This BEST represents which risk?",
+   "choices": [
+    "Typosquatting",
+    "Shadow IT",
+    "Credential stuffing",
+    "Hardware supply chain compromise"
+   ],
+   "answer": 3,
+   "explanation": "Counterfeit or tampered hardware introduced before delivery is a hardware supply chain risk."
+  },
+  {
+   "id": "secplus-276",
+   "domain": "threats",
+   "prompt": "A user's account logs in from New York and then from Singapore 20 minutes later. Which indicator of malicious activity is this?",
+   "choices": [
+    "Resource inaccessibility",
+    "Impossible travel",
+    "Missing logs",
+    "Blocked content"
+   ],
+   "answer": 1,
+   "explanation": "Logins from distant locations within a time frame too short for physical travel suggest stolen credentials."
+  },
+  {
+   "id": "secplus-277",
+   "domain": "threats",
+   "prompt": "The help desk suddenly receives many calls from users who are locked out of their accounts. What does this MOST likely indicate?",
+   "choices": [
+    "A failing DHCP server on the network",
+    "A password-guessing attack against many accounts",
+    "An expired TLS certificate on the website",
+    "A recent operating system update"
+   ],
+   "answer": 1,
+   "explanation": "A spike in account lockouts is a common indicator that someone is trying many passwords against user accounts."
+  },
+  {
+   "id": "secplus-278",
+   "domain": "threats",
+   "prompt": "A single user account shows active sessions from two workstations in different buildings at the same time. Which indicator is this?",
+   "choices": [
+    "Resource consumption",
+    "Concurrent session usage",
+    "Out-of-cycle logging",
+    "Blocked content"
+   ],
+   "answer": 1,
+   "explanation": "Simultaneous sessions for one account in different places suggest the credentials are being used by someone else."
+  },
+  {
+   "id": "secplus-279",
+   "domain": "threats",
+   "prompt": "A server's CPU runs at 100% around the clock because of an unknown process, though network traffic is normal and no files are encrypted. What is MOST likely?",
+   "choices": [
+    "Ransomware",
+    "A DNS amplification attack",
+    "A logic bomb waiting to trigger",
+    "Cryptomining malware"
+   ],
+   "answer": 3,
+   "explanation": "Unexplained sustained resource consumption is a classic indicator of malware using the system to mine cryptocurrency."
+  },
+  {
+   "id": "secplus-280",
+   "domain": "threats",
+   "prompt": "A vendor has released a fix for a newly announced vulnerability in a web server. Which mitigation MOST directly addresses it?",
+   "choices": [
+    "Applying the patch",
+    "Adding a warning banner",
+    "Enabling account lockout",
+    "Increasing log retention"
+   ],
+   "answer": 0,
+   "explanation": "Patching removes the vulnerability itself, while the other options do not address the flaw."
+  },
+  {
+   "id": "secplus-281",
+   "domain": "threats",
+   "prompt": "Several old servers are no longer needed but remain powered on and connected to the network. Which mitigation BEST reduces the attack surface?",
+   "choices": [
+    "Encrypting their drives",
+    "Adding them to the SIEM",
+    "Decommissioning them",
+    "Changing their hostnames"
+   ],
+   "answer": 2,
+   "explanation": "Decommissioning removes unneeded systems so they can no longer be targeted."
+  },
+  {
+   "id": "secplus-282",
+   "domain": "threats",
+   "prompt": "Which mitigation BEST prevents SQL injection in a web application?",
+   "choices": [
+    "Enabling full-disk encryption",
+    "Requiring longer passwords",
+    "Using parameterized queries",
+    "Disabling ICMP on the server"
+   ],
+   "answer": 2,
+   "explanation": "Parameterized queries keep user input separate from SQL code, so input cannot change the query's logic."
+  },
+  {
+   "id": "secplus-283",
+   "domain": "threats",
+   "prompt": "Which mitigation automatically checks devices against required security settings and corrects any configuration drift?",
+   "choices": [
+    "Data masking",
+    "Configuration enforcement",
+    "Tokenization",
+    "Steganography"
+   ],
+   "answer": 1,
+   "explanation": "Configuration enforcement tools continuously compare systems with approved settings and remediate deviations."
+  },
+  {
+   "id": "secplus-284",
+   "domain": "threats",
+   "prompt": "To prevent devices on the guest Wi-Fi from reaching internal servers, an administrator adds rules on the router that deny that traffic. Which mitigation is this?",
+   "choices": [
+    "Application allow list",
+    "Data loss prevention",
+    "Patch management",
+    "Access control list"
+   ],
+   "answer": 3,
+   "explanation": "An ACL permits or denies traffic based on criteria such as source and destination addresses."
+  },
+  {
+   "id": "secplus-285",
+   "domain": "threats",
+   "prompt": "A small office still uses WEP to secure its wireless network. What is the PRIMARY risk?",
+   "choices": [
+    "Its encryption can be cracked quickly",
+    "It blocks most modern devices",
+    "It cannot broadcast an SSID",
+    "It requires a RADIUS server"
+   ],
+   "answer": 0,
+   "explanation": "WEP has fundamental cryptographic flaws that allow its keys to be recovered in minutes."
+  },
+  {
+   "id": "secplus-286",
+   "domain": "threats",
+   "prompt": "An email claims a user's account will be permanently deleted in one hour unless they click a link to verify it. Which social engineering principle is being exploited?",
+   "choices": [
+    "Consensus",
+    "Urgency",
+    "Familiarity",
+    "Scarcity of supply"
+   ],
+   "answer": 1,
+   "explanation": "Imposing a short deadline pressures victims to act before they think critically."
+  },
+  {
+   "id": "secplus-287",
+   "domain": "threats",
+   "prompt": "A malicious script is embedded in a crafted link and executes in the victim's browser only when they click that URL. This type of XSS is:",
+   "choices": [
+    "Stored",
+    "Reflected",
+    "Persistent",
+    "Server-side"
+   ],
+   "answer": 1,
+   "explanation": "Reflected XSS is delivered through a crafted request and is not stored on the server; stored (persistent) XSS is saved in the application."
+  },
+  {
+   "id": "secplus-288",
+   "domain": "threats",
+   "prompt": "A website is knocked offline by floods of traffic from thousands of compromised IoT cameras. This is BEST described as a:",
+   "choices": [
+    "Cross-site request forgery",
+    "Replay attack",
+    "Privilege escalation",
+    "Distributed denial-of-service attack"
+   ],
+   "answer": 3,
+   "explanation": "Traffic from many compromised devices in a botnet overwhelming a target is a DDoS attack."
+  },
+  {
+   "id": "secplus-289",
+   "domain": "threats",
+   "prompt": "A developer commits an API secret key directly into source code that is published in a public code repository. What is the PRIMARY risk?",
+   "choices": [
+    "The application will run more slowly",
+    "The key will expire immediately",
+    "The code will fail to compile",
+    "Attackers can find and use the exposed credential"
+   ],
+   "answer": 3,
+   "explanation": "Hard-coded secrets in public repositories are routinely harvested by attackers to access the associated service."
+  },
+  {
+   "id": "secplus-290",
+   "domain": "threats",
+   "prompt": "An employee plugs a personal wireless router into a network jack under their desk without IT's approval. This device is a:",
+   "choices": [
+    "Evil twin",
+    "Rogue access point",
+    "Jump server",
+    "Honeypot"
+   ],
+   "answer": 1,
+   "explanation": "A rogue AP is an unauthorized access point connected to the network; an evil twin imitates a legitimate SSID."
+  },
+  {
+   "id": "secplus-291",
+   "domain": "threats",
+   "prompt": "An attacker sends a crafted LDAP filter such as '*)(uid=*))(|(uid=*' into a login form backed by a directory service. This is an example of:",
+   "choices": [
+    "SQL injection",
+    "Directory traversal",
+    "Cross-site scripting",
+    "LDAP injection"
+   ],
+   "answer": 3,
+   "explanation": "Injecting directory filter syntax into unsanitized input to alter an LDAP query is LDAP injection."
+  },
+  {
+   "id": "secplus-292",
+   "domain": "threats",
+   "prompt": "Which motivation is MOST closely associated with a threat actor whose goal is to sabotage a rival country's power grid during a conflict?",
+   "choices": [
+    "Financial gain",
+    "Blackmail",
+    "Revenge",
+    "War"
+   ],
+   "answer": 3,
+   "explanation": "Attacks on another nation's critical infrastructure as part of a conflict are motivated by war or military objectives."
+  },
+  {
+   "id": "secplus-293",
+   "domain": "arch",
+   "prompt": "An organization keeps sensitive databases in its own data center while running its web front-end in a public cloud. This deployment is:",
+   "choices": [
+    "Community cloud",
+    "Private cloud",
+    "Multitenant cloud",
+    "Hybrid cloud"
+   ],
+   "answer": 3,
+   "explanation": "A hybrid cloud combines on-premises or private infrastructure with public cloud services."
+  },
+  {
+   "id": "secplus-294",
+   "domain": "arch",
+   "prompt": "An application is built as many small, independently deployable services that communicate through APIs. This architecture is:",
+   "choices": [
+    "Monolithic",
+    "Microservices",
+    "Mainframe",
+    "Peer-to-peer"
+   ],
+   "answer": 1,
+   "explanation": "Microservices split an application into small services, so a compromise or failure in one can be contained."
+  },
+  {
+   "id": "secplus-295",
+   "domain": "arch",
+   "prompt": "Which component allows multiple virtual machines to share the hardware of a single physical host?",
+   "choices": [
+    "Hypervisor",
+    "Container image",
+    "Load balancer",
+    "Jump server"
+   ],
+   "answer": 0,
+   "explanation": "A hypervisor creates and manages virtual machines and allocates the host's resources to them."
+  },
+  {
+   "id": "secplus-296",
+   "domain": "arch",
+   "prompt": "Which type of hypervisor runs directly on the physical hardware without a host operating system?",
+   "choices": [
+    "Type 2",
+    "Hosted",
+    "Container runtime",
+    "Type 1"
+   ],
+   "answer": 3,
+   "explanation": "A Type 1 (bare-metal) hypervisor runs directly on hardware; a Type 2 hypervisor runs on top of a host OS."
+  },
+  {
+   "id": "secplus-297",
+   "domain": "arch",
+   "prompt": "Which cloud construct gives a customer a logically isolated private network for its resources inside a public cloud provider?",
+   "choices": [
+    "Content delivery network",
+    "Virtual private cloud",
+    "Community cloud",
+    "Software-defined WAN"
+   ],
+   "answer": 1,
+   "explanation": "A VPC is an isolated virtual network within a public cloud where the customer controls addressing, routing and security rules."
+  },
+  {
+   "id": "secplus-298",
+   "domain": "arch",
+   "prompt": "Which technology separates traffic into different broadcast domains on the same physical switch?",
+   "choices": [
+    "VLAN",
+    "NAT",
+    "SPAN",
+    "VPN"
+   ],
+   "answer": 0,
+   "explanation": "VLANs logically segment a switch into separate broadcast domains, so traffic between them must pass through a router or firewall."
+  },
+  {
+   "id": "secplus-299",
+   "domain": "arch",
+   "prompt": "Which device makes web requests on behalf of internal users, allowing the organization to filter content and cache pages?",
+   "choices": [
+    "Reverse proxy",
+    "Load balancer",
+    "Forward proxy",
+    "Jump server"
+   ],
+   "answer": 2,
+   "explanation": "A forward proxy sits between internal clients and the internet; a reverse proxy sits in front of servers."
+  },
+  {
+   "id": "secplus-300",
+   "domain": "arch",
+   "prompt": "A server receives requests from the internet and passes them to internal web servers, hiding the internal servers' identities. This device is a:",
+   "choices": [
+    "Forward proxy",
+    "Jump server",
+    "Reverse proxy",
+    "Network tap"
+   ],
+   "answer": 2,
+   "explanation": "A reverse proxy accepts inbound requests on behalf of back-end servers, protecting and often load balancing them."
+  },
+  {
+   "id": "secplus-301",
+   "domain": "arch",
+   "prompt": "Which type of firewall can identify and control traffic by application, such as allowing a video meeting tool but blocking games, regardless of the port used?",
+   "choices": [
+    "Packet-filtering firewall",
+    "Next-generation firewall",
+    "Stateless router ACL",
+    "Host-based firewall"
+   ],
+   "answer": 1,
+   "explanation": "An NGFW performs application-aware inspection at Layer 7 rather than relying only on ports and addresses."
+  },
+  {
+   "id": "secplus-302",
+   "domain": "arch",
+   "prompt": "A small business wants one appliance that combines firewall, antivirus, content filtering and intrusion prevention. Which is the BEST choice?",
+   "choices": [
+    "Hardware security module",
+    "Network tap",
+    "Unified threat management appliance",
+    "Layer 2 switch"
+   ],
+   "answer": 2,
+   "explanation": "A UTM device consolidates several security functions into a single appliance, which suits small organizations."
+  },
+  {
+   "id": "secplus-303",
+   "domain": "arch",
+   "prompt": "A firewall that makes decisions based only on IP addresses and port numbers operates at which OSI layer at most?",
+   "choices": [
+    "Layer 2",
+    "Layer 4",
+    "Layer 6",
+    "Layer 7"
+   ],
+   "answer": 1,
+   "explanation": "Port numbers are part of the transport layer (Layer 4); application inspection requires Layer 7."
+  },
+  {
+   "id": "secplus-304",
+   "domain": "arch",
+   "prompt": "Which VPN technology lets remote users connect securely over HTTPS, often through a web browser, without a full IPsec client?",
+   "choices": [
+    "GRE tunnel",
+    "L2TP without IPsec",
+    "SSL/TLS VPN",
+    "PPTP"
+   ],
+   "answer": 2,
+   "explanation": "TLS VPNs use the HTTPS port and can run through a browser or lightweight client, simplifying remote access."
+  },
+  {
+   "id": "secplus-305",
+   "domain": "arch",
+   "prompt": "Which IPsec mode encrypts the entire original packet, including its IP header, and is typically used for site-to-site VPNs?",
+   "choices": [
+    "Transport mode",
+    "Tunnel mode",
+    "Aggressive mode",
+    "Main mode"
+   ],
+   "answer": 1,
+   "explanation": "Tunnel mode encapsulates the whole original packet in a new one; transport mode protects only the payload."
+  },
+  {
+   "id": "secplus-306",
+   "domain": "arch",
+   "prompt": "Which IPsec protocol provides integrity and authentication of packets but does NOT encrypt the data?",
+   "choices": [
+    "Encapsulating Security Payload",
+    "Internet Key Exchange",
+    "Transport Layer Security",
+    "Authentication Header"
+   ],
+   "answer": 3,
+   "explanation": "AH authenticates and protects the integrity of packets without encryption; ESP adds confidentiality."
+  },
+  {
+   "id": "secplus-307",
+   "domain": "arch",
+   "prompt": "A company wants to connect branch offices over ordinary broadband links using centralized, application-aware routing policies. Which technology BEST fits?",
+   "choices": [
+    "Air gap",
+    "SD-WAN",
+    "Port security",
+    "Screened subnet"
+   ],
+   "answer": 1,
+   "explanation": "SD-WAN manages WAN connections in software and routes traffic intelligently across links such as broadband."
+  },
+  {
+   "id": "secplus-308",
+   "domain": "arch",
+   "prompt": "Which switch feature limits which MAC addresses, and how many, are allowed on a given port?",
+   "choices": [
+    "Spanning Tree Protocol",
+    "Port security",
+    "Link aggregation",
+    "Port mirroring"
+   ],
+   "answer": 1,
+   "explanation": "Port security restricts the MAC addresses permitted on a switch port, helping stop unauthorized devices and MAC flooding."
+  },
+  {
+   "id": "secplus-309",
+   "domain": "arch",
+   "prompt": "Patient health records that must be protected under HIPAA are an example of which data type?",
+   "choices": [
+    "Public data",
+    "Trade secret data",
+    "Regulated data",
+    "Non-human-readable data"
+   ],
+   "answer": 2,
+   "explanation": "Regulated data is governed by laws or regulations that dictate how it must be handled."
+  },
+  {
+   "id": "secplus-310",
+   "domain": "arch",
+   "prompt": "A secret manufacturing process that gives a company a competitive advantage and is protected by keeping it confidential rather than registering it is a:",
+   "choices": [
+    "Patent",
+    "Trademark",
+    "Trade secret",
+    "Public record"
+   ],
+   "answer": 2,
+   "explanation": "A trade secret is valuable confidential business information protected by secrecy, while a patent is publicly registered."
+  },
+  {
+   "id": "secplus-311",
+   "domain": "arch",
+   "prompt": "Which method BEST protects data in transit between a user's browser and a web server?",
+   "choices": [
+    "Full-disk encryption",
+    "Data masking",
+    "File hashing",
+    "TLS encryption"
+   ],
+   "answer": 3,
+   "explanation": "TLS encrypts the network connection, protecting data while it moves; full-disk encryption protects data at rest."
+  },
+  {
+   "id": "secplus-312",
+   "domain": "arch",
+   "prompt": "Encrypting backup tapes before they are shipped to an offsite vault protects data in which state?",
+   "choices": [
+    "In transit",
+    "In use",
+    "At rest",
+    "In processing"
+   ],
+   "answer": 2,
+   "explanation": "Data stored on media such as tapes or disks is at rest, even while the media is physically transported; 'in transit' refers to data moving across a network."
+  },
+  {
+   "id": "secplus-313",
+   "domain": "arch",
+   "prompt": "Which data protection method is one-way and cannot be reversed to recover the original data?",
+   "choices": [
+    "Encryption",
+    "Hashing",
+    "Tokenization",
+    "Compression"
+   ],
+   "answer": 1,
+   "explanation": "A hash cannot be reversed to reveal the input; encryption and tokenization are designed to be reversible by authorized parties."
+  },
+  {
+   "id": "secplus-314",
+   "domain": "arch",
+   "prompt": "Configuring a database so only HR staff can read the salary column is an example of which data protection method?",
+   "choices": [
+    "Geographic restrictions",
+    "Steganography",
+    "Data sovereignty",
+    "Permission restrictions"
+   ],
+   "answer": 3,
+   "explanation": "Permission restrictions limit who can access specific data based on role or need."
+  },
+  {
+   "id": "secplus-315",
+   "domain": "arch",
+   "prompt": "Which data classification is MOST appropriate for a marketing brochure published on the company's public website?",
+   "choices": [
+    "Confidential",
+    "Restricted",
+    "Public",
+    "Private"
+   ],
+   "answer": 2,
+   "explanation": "Information intended for release to anyone, with no harm from disclosure, is classified as public."
+  },
+  {
+   "id": "secplus-316",
+   "domain": "arch",
+   "prompt": "Several servers work together as one logical system so that if one node fails, another node takes over its workload. This is:",
+   "choices": [
+    "Clustering",
+    "Journaling",
+    "Tokenization",
+    "Sandboxing"
+   ],
+   "answer": 0,
+   "explanation": "A cluster groups servers to provide high availability and failover for a service."
+  },
+  {
+   "id": "secplus-317",
+   "domain": "arch",
+   "prompt": "Which recovery site has some equipment and connectivity in place but typically needs hours to days to become fully operational?",
+   "choices": [
+    "Hot site",
+    "Cold site",
+    "Warm site",
+    "Mobile site"
+   ],
+   "answer": 2,
+   "explanation": "A warm site sits between a hot site (ready almost immediately) and a cold site (space and power only)."
+  },
+  {
+   "id": "secplus-318",
+   "domain": "arch",
+   "prompt": "Why should a disaster recovery data center be located a significant distance from the primary site?",
+   "choices": [
+    "So staff can commute between the two sites",
+    "So network latency between sites is reduced",
+    "So a single regional disaster cannot affect both sites",
+    "So both sites share the same power grid"
+   ],
+   "answer": 2,
+   "explanation": "Geographic dispersion ensures events such as floods, storms or regional outages do not take down both locations."
+  },
+  {
+   "id": "secplus-319",
+   "domain": "arch",
+   "prompt": "Ensuring an organization has enough people, technology and infrastructure to handle future increases in demand is called:",
+   "choices": [
+    "Change management",
+    "Asset tagging",
+    "Capacity planning",
+    "Risk transference"
+   ],
+   "answer": 2,
+   "explanation": "Capacity planning forecasts and provides the resources needed to meet expected demand."
+  },
+  {
+   "id": "secplus-320",
+   "domain": "arch",
+   "prompt": "Which resilience test actually moves production workloads to the backup site to confirm it can take over?",
+   "choices": [
+    "Failover test",
+    "Tabletop exercise",
+    "Code review",
+    "Vulnerability scan"
+   ],
+   "answer": 0,
+   "explanation": "A failover test performs a real switch to backup systems; a tabletop exercise only discusses the process."
+  },
+  {
+   "id": "secplus-321",
+   "domain": "arch",
+   "prompt": "Which backup method captures the state of a virtual machine at a specific point in time so it can be quickly rolled back?",
+   "choices": [
+    "Differential backup",
+    "Snapshot",
+    "Journaling",
+    "Tape rotation"
+   ],
+   "answer": 1,
+   "explanation": "A snapshot records a VM's disk and often memory state at a moment in time for quick restoration."
+  },
+  {
+   "id": "secplus-322",
+   "domain": "arch",
+   "prompt": "Which technique continuously copies data to another location in near real time so a secondary system stays current?",
+   "choices": [
+    "Weekly full backup",
+    "Data masking",
+    "Replication",
+    "Archiving"
+   ],
+   "answer": 2,
+   "explanation": "Replication keeps a copy of data synchronized at another site, minimizing data loss."
+  },
+  {
+   "id": "secplus-323",
+   "domain": "arch",
+   "prompt": "A company runs a full backup on Sunday and incremental backups every other night. A server fails on Thursday afternoon before that night's backup. What is needed to restore it?",
+   "choices": [
+    "Only Wednesday's incremental backup",
+    "Sunday's full backup plus Wednesday's incremental only",
+    "The Monday through Wednesday incrementals without the full backup",
+    "Sunday's full backup plus the Monday, Tuesday and Wednesday incrementals"
+   ],
+   "answer": 3,
+   "explanation": "Incremental backups contain only changes since the previous backup, so the full backup and every incremental after it are required."
+  },
+  {
+   "id": "secplus-324",
+   "domain": "arch",
+   "prompt": "Which power source is designed to supply a data center during an extended outage lasting many hours?",
+   "choices": [
+    "UPS battery",
+    "Surge protector",
+    "Generator",
+    "Power distribution unit"
+   ],
+   "answer": 2,
+   "explanation": "Generators provide long-term power; a UPS only bridges the short gap until the generator starts."
+  },
+  {
+   "id": "secplus-325",
+   "domain": "arch",
+   "prompt": "Which backup approach MOST helps an organization recover if ransomware attempts to encrypt or delete its backups?",
+   "choices": [
+    "Storing backups on a mapped network drive",
+    "Running backups more slowly",
+    "Keeping offline or immutable backup copies",
+    "Compressing backups before storing them"
+   ],
+   "answer": 2,
+   "explanation": "Backups that are offline or cannot be modified are out of the ransomware's reach."
+  },
+  {
+   "id": "secplus-326",
+   "domain": "arch",
+   "prompt": "Which term describes systems designed to remain operational with minimal downtime, often expressed as 'five nines' of uptime?",
+   "choices": [
+    "Data sovereignty",
+    "Least functionality",
+    "Capacity planning",
+    "High availability"
+   ],
+   "answer": 3,
+   "explanation": "High availability designs eliminate single points of failure to achieve uptime such as 99.999%."
+  },
+  {
+   "id": "secplus-327",
+   "domain": "arch",
+   "prompt": "In 802.1X, which component, typically a switch or wireless access point, passes the client's credentials to the authentication server?",
+   "choices": [
+    "Supplicant",
+    "Certificate authority",
+    "Authenticator",
+    "Policy engine"
+   ],
+   "answer": 2,
+   "explanation": "The supplicant is the client, the authenticator is the network device, and the authentication server is usually RADIUS."
+  },
+  {
+   "id": "secplus-328",
+   "domain": "arch",
+   "prompt": "Servers with two power supplies connected to separate electrical circuits are an example of:",
+   "choices": [
+    "Segmentation",
+    "Obfuscation",
+    "Redundancy",
+    "Tokenization"
+   ],
+   "answer": 2,
+   "explanation": "Redundant components remove single points of failure so a service continues if one part fails."
+  },
+  {
+   "id": "secplus-329",
+   "domain": "ops",
+   "prompt": "After rolling out a secure baseline, an administrator periodically compares each server against it to find unauthorized changes. This detects:",
+   "choices": [
+    "Data sovereignty issues",
+    "Certificate expiration",
+    "Configuration drift",
+    "Privilege creep"
+   ],
+   "answer": 2,
+   "explanation": "Comparing systems to the baseline over time reveals drift from the approved secure configuration."
+  },
+  {
+   "id": "secplus-330",
+   "domain": "ops",
+   "prompt": "Before installing wireless access points, a technician measures signal coverage and interference throughout the building. This is a:",
+   "choices": [
+    "Site survey",
+    "Penetration test",
+    "Tabletop exercise",
+    "Port scan"
+   ],
+   "answer": 0,
+   "explanation": "A wireless site survey determines optimal AP placement and helps limit signal leakage outside the building."
+  },
+  {
+   "id": "secplus-331",
+   "domain": "ops",
+   "prompt": "A small office's Wi-Fi uses one shared passphrase for all users. Which authentication method is this?",
+   "choices": [
+    "802.1X with RADIUS",
+    "Pre-shared key",
+    "EAP-TLS",
+    "Captive portal with LDAP"
+   ],
+   "answer": 1,
+   "explanation": "WPA2-Personal and WPA3-Personal use a pre-shared key, whereas Enterprise mode authenticates each user individually."
+  },
+  {
+   "id": "secplus-332",
+   "domain": "ops",
+   "prompt": "Which secure coding technique checks that user-supplied data matches the expected type, length and format before it is processed?",
+   "choices": [
+    "Code obfuscation",
+    "Code signing",
+    "Input validation",
+    "Error suppression"
+   ],
+   "answer": 2,
+   "explanation": "Input validation rejects unexpected data, helping prevent injection and overflow attacks."
+  },
+  {
+   "id": "secplus-333",
+   "domain": "ops",
+   "prompt": "Which technique lets users verify that downloaded software came from the legitimate developer and has not been altered?",
+   "choices": [
+    "Static analysis",
+    "Code signing",
+    "Sandboxing",
+    "Fuzzing"
+   ],
+   "answer": 1,
+   "explanation": "Code signing uses the developer's private key to sign software, so users can verify origin and integrity with the public key."
+  },
+  {
+   "id": "secplus-334",
+   "domain": "ops",
+   "prompt": "Testing a running web application by sending it requests and observing its responses for vulnerabilities is called:",
+   "choices": [
+    "Static analysis",
+    "Dynamic analysis",
+    "Code signing",
+    "Manual code review"
+   ],
+   "answer": 1,
+   "explanation": "Dynamic analysis examines software while it executes; static analysis reviews code without running it."
+  },
+  {
+   "id": "secplus-335",
+   "domain": "ops",
+   "prompt": "An organization requires that all new hardware be bought from approved vendors and recorded in inventory before deployment. Which asset management process is this?",
+   "choices": [
+    "Sanitization",
+    "Certification",
+    "Data retention",
+    "Procurement"
+   ],
+   "answer": 3,
+   "explanation": "Controlled acquisition and procurement ensures assets come from trusted sources and are tracked from the start."
+  },
+  {
+   "id": "secplus-336",
+   "domain": "ops",
+   "prompt": "Which asset management consideration determines how long records must be kept before they can be destroyed?",
+   "choices": [
+    "Asset tagging",
+    "Change management",
+    "Data retention",
+    "Capacity planning"
+   ],
+   "answer": 2,
+   "explanation": "Data retention requirements, often driven by law or policy, specify how long data must be kept."
+  },
+  {
+   "id": "secplus-337",
+   "domain": "ops",
+   "prompt": "Which method destroys data on magnetic hard drives by exposing them to a powerful magnetic field?",
+   "choices": [
+    "Degaussing",
+    "Wiping",
+    "Shredding",
+    "Pulverizing"
+   ],
+   "answer": 0,
+   "explanation": "Degaussing disrupts the magnetic domains on the platters, rendering the data unreadable and usually the drive unusable."
+  },
+  {
+   "id": "secplus-338",
+   "domain": "ops",
+   "prompt": "Why is degaussing NOT an effective sanitization method for solid-state drives?",
+   "choices": [
+    "SSDs are too small to fit in a degausser",
+    "SSDs store data in flash memory rather than magnetically",
+    "SSDs automatically encrypt all stored data",
+    "SSDs cannot be removed from laptops"
+   ],
+   "answer": 1,
+   "explanation": "Degaussing only affects magnetic media; SSDs need secure erase commands, cryptographic erase or physical destruction."
+  },
+  {
+   "id": "secplus-339",
+   "domain": "ops",
+   "prompt": "A vulnerability scan reports a server as clean, but a penetration tester later exploits a known flaw on it. The scan result was a:",
+   "choices": [
+    "False positive",
+    "True positive",
+    "True negative",
+    "False negative"
+   ],
+   "answer": 3,
+   "explanation": "A false negative is a missed detection: the vulnerability exists but the scan did not report it."
+  },
+  {
+   "id": "secplus-340",
+   "domain": "ops",
+   "prompt": "Which factor should MOST raise the remediation priority of a vulnerability?",
+   "choices": [
+    "It was found by an internal scan rather than an external one",
+    "It is being actively exploited and the system is internet-facing",
+    "It affects a test system that is powered off",
+    "It has a low CVSS score on an isolated host"
+   ],
+   "answer": 1,
+   "explanation": "Active exploitation and external exposure greatly increase the likelihood of compromise, so such flaws should be fixed first."
+  },
+  {
+   "id": "secplus-341",
+   "domain": "ops",
+   "prompt": "Which NIST suite of specifications allows security tools to automate vulnerability checks and configuration compliance in a standard way?",
+   "choices": [
+    "SCAP",
+    "STIX",
+    "SAML",
+    "SNMP"
+   ],
+   "answer": 0,
+   "explanation": "The Security Content Automation Protocol standardizes how vulnerabilities and configurations are described and checked."
+  },
+  {
+   "id": "secplus-342",
+   "domain": "ops",
+   "prompt": "Which organization publishes widely used consensus-based hardening benchmarks for operating systems and applications?",
+   "choices": [
+    "Center for Internet Security",
+    "Internet Engineering Task Force",
+    "World Wide Web Consortium",
+    "Payment Card Industry Council"
+   ],
+   "answer": 0,
+   "explanation": "CIS Benchmarks are a common source of secure configuration baselines."
+  },
+  {
+   "id": "secplus-343",
+   "domain": "ops",
+   "prompt": "Analysts monitor hidden criminal forums for leaked company credentials and planned attacks. This is a form of:",
+   "choices": [
+    "Passive vulnerability scanning",
+    "Static code analysis",
+    "Bug bounty research",
+    "Dark web threat intelligence"
+   ],
+   "answer": 3,
+   "explanation": "Dark web monitoring gathers intelligence from criminal marketplaces and forums not indexed by normal search engines."
+  },
+  {
+   "id": "secplus-344",
+   "domain": "ops",
+   "prompt": "Hospitals share threat intelligence about attacks targeting their sector through which type of organization?",
+   "choices": [
+    "Information Sharing and Analysis Center",
+    "Certificate authority",
+    "Computer emergency backup site",
+    "Internet service provider"
+   ],
+   "answer": 0,
+   "explanation": "ISACs are sector-specific groups that collect and share threat information among members."
+  },
+  {
+   "id": "secplus-345",
+   "domain": "ops",
+   "prompt": "A SIEM generates hundreds of alerts per day for normal backup jobs. What should the security team do to reduce these false alarms?",
+   "choices": [
+    "Disable the SIEM during backups",
+    "Delete the backup server's logs",
+    "Tune the alert rules for the environment",
+    "Raise every alert's severity to critical"
+   ],
+   "answer": 2,
+   "explanation": "Alert tuning adjusts detection thresholds and rules so analysts can focus on real threats."
+  },
+  {
+   "id": "secplus-346",
+   "domain": "ops",
+   "prompt": "An investigator needs to see which websites a user visited through the corporate web gateway. Which data source is BEST?",
+   "choices": [
+    "DHCP logs",
+    "Switch MAC tables",
+    "Web proxy logs",
+    "Antivirus definitions"
+   ],
+   "answer": 2,
+   "explanation": "Proxy logs record the URLs requested by each user passing through the proxy."
+  },
+  {
+   "id": "secplus-347",
+   "domain": "ops",
+   "prompt": "Why should an organization archive SIEM log data for a defined period?",
+   "choices": [
+    "To speed up real-time correlation on the SIEM",
+    "To reduce the number of log sources",
+    "To avoid needing time synchronization",
+    "To meet compliance requirements and support later investigations"
+   ],
+   "answer": 3,
+   "explanation": "Archived logs satisfy retention requirements and allow investigators to look back at historical activity."
+  },
+  {
+   "id": "secplus-348",
+   "domain": "ops",
+   "prompt": "Which SNMP message is sent by a device to the management station without being polled, for example when an interface goes down?",
+   "choices": [
+    "Get request",
+    "Set request",
+    "Walk",
+    "Trap"
+   ],
+   "answer": 3,
+   "explanation": "SNMP traps are unsolicited alerts sent by agents to the manager when events occur."
+  },
+  {
+   "id": "secplus-349",
+   "domain": "ops",
+   "prompt": "Which monitoring approach requires installing software on each endpoint to collect and report data?",
+   "choices": [
+    "Agentless",
+    "Agent-based",
+    "Passive tap",
+    "Port mirroring"
+   ],
+   "answer": 1,
+   "explanation": "Agent-based monitoring uses installed software on the device; agentless monitoring collects data remotely."
+  },
+  {
+   "id": "secplus-350",
+   "domain": "ops",
+   "prompt": "Which antivirus detection method identifies previously unknown malware by observing suspicious actions rather than matching known patterns?",
+   "choices": [
+    "Signature-based detection",
+    "Hash allow listing",
+    "Behavior-based detection",
+    "Certificate pinning"
+   ],
+   "answer": 2,
+   "explanation": "Behavior-based or heuristic detection looks for malicious activity, while signature-based detection only catches known samples."
+  },
+  {
+   "id": "secplus-351",
+   "domain": "ops",
+   "prompt": "The final rule in a firewall ACL blocks all traffic that was not explicitly permitted by earlier rules. This rule is called:",
+   "choices": [
+    "Implicit allow",
+    "Fail-open",
+    "Implicit deny",
+    "Port forwarding"
+   ],
+   "answer": 2,
+   "explanation": "Implicit deny ensures anything not specifically allowed is blocked, following a default-deny approach."
+  },
+  {
+   "id": "secplus-352",
+   "domain": "ops",
+   "prompt": "A firewall administrator must permit encrypted remote command-line management of Linux servers. Which TCP port should be allowed?",
+   "choices": [
+    "23",
+    "21",
+    "25",
+    "22"
+   ],
+   "answer": 3,
+   "explanation": "SSH uses TCP port 22; port 23 is unencrypted Telnet."
+  },
+  {
+   "id": "secplus-353",
+   "domain": "ops",
+   "prompt": "Help desk staff need to use Microsoft Remote Desktop to reach Windows servers. Which default port must be open?",
+   "choices": [
+    "445",
+    "1433",
+    "3389",
+    "5900"
+   ],
+   "answer": 2,
+   "explanation": "RDP listens on TCP 3389; 445 is SMB, 1433 is SQL Server and 5900 is VNC."
+  },
+  {
+   "id": "secplus-354",
+   "domain": "ops",
+   "prompt": "Network devices are configured to send their logs to a central collector using traditional syslog. Which port does it use by default?",
+   "choices": [
+    "UDP 514",
+    "UDP 161",
+    "TCP 389",
+    "TCP 636"
+   ],
+   "answer": 0,
+   "explanation": "Standard syslog uses UDP 514; 161 is SNMP, 389 is LDAP and 636 is LDAPS."
+  },
+  {
+   "id": "secplus-355",
+   "domain": "ops",
+   "prompt": "Domain clients obtain authentication tickets from a Windows domain controller. Which port does Kerberos use by default?",
+   "choices": [
+    "53",
+    "123",
+    "443",
+    "88"
+   ],
+   "answer": 3,
+   "explanation": "Kerberos uses port 88; 53 is DNS, 123 is NTP and 443 is HTTPS."
+  },
+  {
+   "id": "secplus-356",
+   "domain": "ops",
+   "prompt": "An email client must retrieve messages using IMAP over an encrypted TLS connection. Which port is used by default?",
+   "choices": [
+    "143",
+    "110",
+    "993",
+    "587"
+   ],
+   "answer": 2,
+   "explanation": "IMAPS uses port 993; 143 is unencrypted IMAP, 110 is POP3 and 587 is mail submission."
+  },
+  {
+   "id": "secplus-357",
+   "domain": "ops",
+   "prompt": "A monitoring server polls network switches using SNMP. Which UDP port do the switches listen on for these requests?",
+   "choices": [
+    "161",
+    "162",
+    "514",
+    "69"
+   ],
+   "answer": 0,
+   "explanation": "SNMP agents receive queries on UDP 161; traps are sent to the manager on UDP 162."
+  },
+  {
+   "id": "secplus-358",
+   "domain": "ops",
+   "prompt": "Which protocol adds TLS encryption to traditional FTP rather than running over SSH?",
+   "choices": [
+    "SFTP",
+    "FTPS",
+    "TFTP",
+    "SCP"
+   ],
+   "answer": 1,
+   "explanation": "FTPS is FTP secured with TLS; SFTP is a different protocol that runs over SSH."
+  },
+  {
+   "id": "secplus-359",
+   "domain": "ops",
+   "prompt": "Which solution scans inbound email for spam, phishing links and malicious attachments before messages reach user mailboxes?",
+   "choices": [
+    "Secure email gateway",
+    "Network tap",
+    "Jump server",
+    "Load balancer"
+   ],
+   "answer": 0,
+   "explanation": "A secure email gateway inspects and filters mail traffic at the perimeter or in the cloud."
+  },
+  {
+   "id": "secplus-360",
+   "domain": "ops",
+   "prompt": "Users are prevented from reaching known malicious domains because the organization's resolver refuses to return addresses for them. This is:",
+   "choices": [
+    "DNS filtering",
+    "DNSSEC",
+    "DHCP snooping",
+    "Port security"
+   ],
+   "answer": 0,
+   "explanation": "DNS filtering blocks access by refusing or redirecting lookups for prohibited domains; DNSSEC only validates responses."
+  },
+  {
+   "id": "secplus-361",
+   "domain": "ops",
+   "prompt": "Which Windows feature lets administrators centrally push security settings, such as password policies, to all domain-joined computers?",
+   "choices": [
+    "Task Scheduler",
+    "BitLocker To Go",
+    "Group Policy",
+    "Windows Sandbox"
+   ],
+   "answer": 2,
+   "explanation": "Group Policy Objects apply configuration settings across users and computers in Active Directory."
+  },
+  {
+   "id": "secplus-362",
+   "domain": "ops",
+   "prompt": "Which Linux security module enforces mandatory access control policies on processes and files?",
+   "choices": [
+    "sudo",
+    "cron",
+    "SELinux",
+    "iptables"
+   ],
+   "answer": 2,
+   "explanation": "SELinux implements mandatory access control in the Linux kernel; iptables is a packet filter."
+  },
+  {
+   "id": "secplus-363",
+   "domain": "ops",
+   "prompt": "When a new employee joins, creating their accounts and assigning the appropriate permissions is called:",
+   "choices": [
+    "Deprovisioning",
+    "Attestation",
+    "Federation",
+    "Provisioning"
+   ],
+   "answer": 3,
+   "explanation": "User provisioning creates accounts and grants access; deprovisioning removes them when no longer needed."
+  },
+  {
+   "id": "secplus-364",
+   "domain": "ops",
+   "prompt": "Before issuing credentials, the help desk verifies a new contractor's government-issued photo ID. This process is:",
+   "choices": [
+    "Single sign-on",
+    "Identity proofing",
+    "Attestation",
+    "Privilege escalation"
+   ],
+   "answer": 1,
+   "explanation": "Identity proofing confirms a person is who they claim to be before an account is created for them."
+  },
+  {
+   "id": "secplus-365",
+   "domain": "ops",
+   "prompt": "Employees of a partner company log in to your web application using their own organization's credentials and identity provider. This is:",
+   "choices": [
+    "Password vaulting",
+    "Federation",
+    "Ephemeral credentials",
+    "Role-based access"
+   ],
+   "answer": 1,
+   "explanation": "Federation establishes trust between organizations so one can accept identities authenticated by the other."
+  },
+  {
+   "id": "secplus-366",
+   "domain": "ops",
+   "prompt": "Which protocol is used to query and modify entries in directory services such as Active Directory?",
+   "choices": [
+    "LDAP",
+    "SMTP",
+    "SNMP",
+    "RDP"
+   ],
+   "answer": 0,
+   "explanation": "The Lightweight Directory Access Protocol reads and writes directory information."
+  },
+  {
+   "id": "secplus-367",
+   "domain": "ops",
+   "prompt": "Which authentication layer built on top of OAuth 2.0 provides applications with verified information about a user's identity?",
+   "choices": [
+    "OpenID Connect",
+    "Kerberos",
+    "RADIUS",
+    "TACACS+"
+   ],
+   "answer": 0,
+   "explanation": "OAuth handles authorization; OpenID Connect adds an identity layer so apps can authenticate users."
+  },
+  {
+   "id": "secplus-368",
+   "domain": "ops",
+   "prompt": "Which access control model allows the owner of a file to decide who else can read or modify it?",
+   "choices": [
+    "Discretionary access control",
+    "Mandatory access control",
+    "Role-based access control",
+    "Attribute-based access control"
+   ],
+   "answer": 0,
+   "explanation": "In DAC, resource owners control permissions; in MAC, the system enforces labels."
+  },
+  {
+   "id": "secplus-369",
+   "domain": "ops",
+   "prompt": "A system allows employees to sign in only between 7 a.m. and 7 p.m. on weekdays. Which access control model does this BEST represent?",
+   "choices": [
+    "Discretionary access control",
+    "Mandatory access control",
+    "Role-based access control",
+    "Rule-based access control"
+   ],
+   "answer": 3,
+   "explanation": "Rule-based access control applies administrator-defined rules, such as time-of-day restrictions, to all users."
+  },
+  {
+   "id": "secplus-370",
+   "domain": "ops",
+   "prompt": "A user unlocks a laptop with a fingerprint scan. Which authentication factor is being used?",
+   "choices": [
+    "Something you are",
+    "Something you know",
+    "Something you have",
+    "Somewhere you are"
+   ],
+   "answer": 0,
+   "explanation": "Biometrics such as fingerprints are inherence factors, or something you are."
+  },
+  {
+   "id": "secplus-371",
+   "domain": "ops",
+   "prompt": "In biometrics, the point at which the false acceptance rate equals the false rejection rate is called the:",
+   "choices": [
+    "False match ratio",
+    "Template threshold",
+    "Failure to enroll rate",
+    "Crossover error rate"
+   ],
+   "answer": 3,
+   "explanation": "The CER is where FAR and FRR are equal; a lower CER indicates a more accurate biometric system."
+  },
+  {
+   "id": "secplus-372",
+   "domain": "ops",
+   "prompt": "A system grants access only when the device's GPS reports that it is inside the corporate campus. Which authentication factor is this?",
+   "choices": [
+    "Somewhere you are",
+    "Something you have",
+    "Something you know",
+    "Something you are"
+   ],
+   "answer": 0,
+   "explanation": "Location-based authentication uses the somewhere-you-are factor."
+  },
+  {
+   "id": "secplus-373",
+   "domain": "ops",
+   "prompt": "Which password practice is favored by current NIST guidance?",
+   "choices": [
+    "Long passphrases checked against lists of breached passwords",
+    "Forced password changes every 30 days for all users",
+    "Short passwords with mandatory special characters",
+    "Password hints stored with each account"
+   ],
+   "answer": 0,
+   "explanation": "NIST recommends length and screening against known-compromised passwords rather than arbitrary frequent changes."
+  },
+  {
+   "id": "secplus-374",
+   "domain": "ops",
+   "prompt": "Which tool helps users create and securely store a unique complex password for every website they use?",
+   "choices": [
+    "Key escrow service",
+    "Certificate authority",
+    "Password manager",
+    "Group Policy"
+   ],
+   "answer": 2,
+   "explanation": "A password manager generates and stores strong unique passwords in an encrypted vault."
+  },
+  {
+   "id": "secplus-375",
+   "domain": "ops",
+   "prompt": "Which is a potential drawback of security automation and orchestration?",
+   "choices": [
+    "A failed script can become a single point of failure",
+    "It always increases staff workload",
+    "It prevents consistent enforcement of baselines",
+    "It slows down incident reaction time"
+   ],
+   "answer": 0,
+   "explanation": "Complex automation can create dependencies, technical debt and single points of failure if not maintained."
+  },
+  {
+   "id": "secplus-376",
+   "domain": "ops",
+   "prompt": "Integrating automated security testing into the CI/CD pipeline PRIMARILY helps an organization:",
+   "choices": [
+    "Find vulnerabilities early before code reaches production",
+    "Eliminate the need for change management",
+    "Avoid having to patch production systems",
+    "Remove the need for user awareness training"
+   ],
+   "answer": 0,
+   "explanation": "Shifting security testing into the build pipeline catches flaws early, when they are cheaper to fix."
+  },
+  {
+   "id": "secplus-377",
+   "domain": "ops",
+   "prompt": "An analyst reviews SIEM alerts to confirm whether an incident actually occurred and to determine its scope. Which incident response phase is this?",
+   "choices": [
+    "Preparation",
+    "Analysis",
+    "Recovery",
+    "Lessons learned"
+   ],
+   "answer": 1,
+   "explanation": "During detection and analysis, responders validate events and determine the nature and extent of an incident."
+  },
+  {
+   "id": "secplus-378",
+   "domain": "ops",
+   "prompt": "Restoring systems from clean backups and monitoring them closely before returning them to production occurs during which incident response phase?",
+   "choices": [
+    "Containment",
+    "Detection",
+    "Preparation",
+    "Recovery"
+   ],
+   "answer": 3,
+   "explanation": "Recovery returns systems to normal operation after eradication, with monitoring to confirm the threat is gone."
+  },
+  {
+   "id": "secplus-379",
+   "domain": "ops",
+   "prompt": "The incident response team responds to a staged ransomware attack on a test environment that mirrors production, performing real actions. This exercise is a:",
+   "choices": [
+    "Simulation",
+    "Tabletop exercise",
+    "Walkthrough checklist",
+    "Policy review"
+   ],
+   "answer": 0,
+   "explanation": "A simulation has participants perform actual response activities against a realistic scenario, unlike a discussion-based tabletop."
+  },
+  {
+   "id": "secplus-380",
+   "domain": "ops",
+   "prompt": "Why does a forensic analyst connect a suspect drive through a write blocker before imaging it?",
+   "choices": [
+    "To prevent any changes to the original evidence",
+    "To speed up the copying process",
+    "To decrypt the drive automatically",
+    "To remove malware from the drive"
+   ],
+   "answer": 0,
+   "explanation": "A write blocker allows reading but blocks writes, preserving the integrity and admissibility of the original evidence."
+  },
+  {
+   "id": "secplus-381",
+   "domain": "ops",
+   "prompt": "Identifying, collecting and producing electronically stored information for a lawsuit is known as:",
+   "choices": [
+    "E-discovery",
+    "Threat hunting",
+    "Data masking",
+    "Reconnaissance"
+   ],
+   "answer": 0,
+   "explanation": "E-discovery is the legal process of gathering and providing electronic data as evidence."
+  },
+  {
+   "id": "secplus-382",
+   "domain": "ops",
+   "prompt": "Which data source would BEST show the exact contents of network traffic exchanged during an attack?",
+   "choices": [
+    "NetFlow records",
+    "Packet capture",
+    "DHCP lease logs",
+    "Firewall rule list"
+   ],
+   "answer": 1,
+   "explanation": "A packet capture records full packet payloads; NetFlow only records metadata about connections."
+  },
+  {
+   "id": "secplus-383",
+   "domain": "ops",
+   "prompt": "An analyst needs to determine which process launched a malicious executable on a workstation and what its parent process was. Which data source is BEST?",
+   "choices": [
+    "Network flow data",
+    "Endpoint logs",
+    "Firewall logs",
+    "Vulnerability scan reports"
+   ],
+   "answer": 1,
+   "explanation": "Endpoint and OS logs, often collected by EDR, record process creation and parent-child relationships on the host."
+  },
+  {
+   "id": "secplus-384",
+   "domain": "ops",
+   "prompt": "Investigators examine an email's headers to trace the servers it passed through and the timestamps at each hop. This is analysis of:",
+   "choices": [
+    "Payload encryption",
+    "Steganography",
+    "Firmware",
+    "Metadata"
+   ],
+   "answer": 3,
+   "explanation": "Email headers are metadata describing the message's origin and delivery path rather than its content."
+  },
+  {
+   "id": "secplus-385",
+   "domain": "gov",
+   "prompt": "A document requires that all company laptops use AES-256 full-disk encryption. This mandatory, specific requirement is BEST described as a:",
+   "choices": [
+    "Standard",
+    "Guideline",
+    "Policy",
+    "Procedure"
+   ],
+   "answer": 0,
+   "explanation": "Standards define specific mandatory technologies or settings that support higher-level policies."
+  },
+  {
+   "id": "secplus-386",
+   "domain": "gov",
+   "prompt": "Which policy defines how the organization will keep critical operations running during and after a major disruption?",
+   "choices": [
+    "Acceptable use policy",
+    "Password policy",
+    "Business continuity policy",
+    "Change management policy"
+   ],
+   "answer": 2,
+   "explanation": "A business continuity policy sets requirements for maintaining essential functions through disruptions."
+  },
+  {
+   "id": "secplus-387",
+   "domain": "gov",
+   "prompt": "Which policy requires security activities, such as threat modeling and code review, at each phase of building software?",
+   "choices": [
+    "Acceptable use policy",
+    "Data retention policy",
+    "Software development lifecycle policy",
+    "Clean desk policy"
+   ],
+   "answer": 2,
+   "explanation": "An SDLC policy embeds security requirements throughout the software development process."
+  },
+  {
+   "id": "secplus-388",
+   "domain": "gov",
+   "prompt": "A step-by-step checklist that responders follow for a specific type of incident, such as a ransomware outbreak, is called a:",
+   "choices": [
+    "Playbook",
+    "Guideline",
+    "Risk register",
+    "Statement of work"
+   ],
+   "answer": 0,
+   "explanation": "Playbooks give responders consistent, predefined actions for a particular incident type."
+  },
+  {
+   "id": "secplus-389",
+   "domain": "gov",
+   "prompt": "Why should an organization review and update its security policies on a regular schedule?",
+   "choices": [
+    "To ensure they become less restrictive over time",
+    "To avoid needing approval from senior management",
+    "To keep them aligned with changes in threats, laws and business operations",
+    "To replace the need for security awareness training"
+   ],
+   "answer": 2,
+   "explanation": "Periodic review keeps governance documents current as the environment, regulations and risks change."
+  },
+  {
+   "id": "secplus-390",
+   "domain": "gov",
+   "prompt": "Which governance role is accountable for classifying a dataset and approving who may access it?",
+   "choices": [
+    "Data owner",
+    "Data custodian",
+    "Data processor",
+    "Data subject"
+   ],
+   "answer": 0,
+   "explanation": "The data owner, usually a senior business leader, is accountable for the data; the custodian handles it day to day."
+  },
+  {
+   "id": "secplus-391",
+   "domain": "gov",
+   "prompt": "In a large company, each business unit makes its own security decisions with little central oversight. This governance structure is:",
+   "choices": [
+    "Decentralized",
+    "Centralized",
+    "Federated identity",
+    "Hierarchical by default"
+   ],
+   "answer": 0,
+   "explanation": "Decentralized governance distributes decision-making to individual units rather than a single central group."
+  },
+  {
+   "id": "secplus-392",
+   "domain": "gov",
+   "prompt": "A company's monitoring tools assess risk automatically and in real time as conditions change. Which risk assessment frequency is this?",
+   "choices": [
+    "Continuous",
+    "Ad hoc",
+    "One-time",
+    "Recurring annual"
+   ],
+   "answer": 0,
+   "explanation": "Continuous risk assessment is ongoing and often automated, unlike recurring or one-time assessments."
+  },
+  {
+   "id": "secplus-393",
+   "domain": "gov",
+   "prompt": "A risk has a single loss expectancy of $10,000 and an annualized rate of occurrence of 0.5. What is the annualized loss expectancy?",
+   "choices": [
+    "$20,000",
+    "$10,000",
+    "$5,000",
+    "$500"
+   ],
+   "answer": 2,
+   "explanation": "ALE = SLE x ARO, so $10,000 x 0.5 = $5,000."
+  },
+  {
+   "id": "secplus-394",
+   "domain": "gov",
+   "prompt": "An asset is valued at $50,000, the exposure factor is 40%, and the event is expected twice per year. What is the ALE?",
+   "choices": [
+    "$40,000",
+    "$20,000",
+    "$100,000",
+    "$80,000"
+   ],
+   "answer": 0,
+   "explanation": "SLE = $50,000 x 0.40 = $20,000, and ALE = $20,000 x 2 = $40,000."
+  },
+  {
+   "id": "secplus-395",
+   "domain": "gov",
+   "prompt": "Management decides a risk is low enough that no further controls are needed and formally documents that decision. This risk response is:",
+   "choices": [
+    "Acceptance",
+    "Avoidance",
+    "Transference",
+    "Mitigation"
+   ],
+   "answer": 0,
+   "explanation": "Risk acceptance means acknowledging the risk and choosing to take no further action."
+  },
+  {
+   "id": "secplus-396",
+   "domain": "gov",
+   "prompt": "Which person in the risk register is assigned responsibility for monitoring and managing a specific risk?",
+   "choices": [
+    "Data subject",
+    "Risk owner",
+    "Risk auditor",
+    "Data processor"
+   ],
+   "answer": 1,
+   "explanation": "Each risk should have an owner accountable for tracking it and ensuring the response is carried out."
+  },
+  {
+   "id": "secplus-397",
+   "domain": "gov",
+   "prompt": "A metric that warns when a risk is increasing, such as a rising number of failed logins each week, is a:",
+   "choices": [
+    "Recovery time objective",
+    "Service level agreement",
+    "Exposure factor",
+    "Key risk indicator"
+   ],
+   "answer": 3,
+   "explanation": "Key risk indicators are early-warning metrics that show changes in risk levels."
+  },
+  {
+   "id": "secplus-398",
+   "domain": "gov",
+   "prompt": "Which metric represents the average time it takes to fix a failed component and return it to service?",
+   "choices": [
+    "Mean time between failures",
+    "Recovery point objective",
+    "Mean time to repair",
+    "Annualized rate of occurrence"
+   ],
+   "answer": 2,
+   "explanation": "MTTR measures average repair time; MTBF measures average time between failures."
+  },
+  {
+   "id": "secplus-399",
+   "domain": "gov",
+   "prompt": "During a business impact analysis, the team determines which business functions must continue for the organization to survive. These are:",
+   "choices": [
+    "Mission-essential functions",
+    "Residual risks",
+    "Compensating controls",
+    "Key performance indicators"
+   ],
+   "answer": 0,
+   "explanation": "Identifying mission-essential functions lets the organization prioritize their protection and recovery."
+  },
+  {
+   "id": "secplus-400",
+   "domain": "gov",
+   "prompt": "After a vendor is hired, the company reviews the vendor's security reports and performance each year. This activity is:",
+   "choices": [
+    "Vendor monitoring",
+    "Due diligence",
+    "Vendor onboarding",
+    "Penetration testing"
+   ],
+   "answer": 0,
+   "explanation": "Ongoing vendor monitoring confirms a third party continues to meet security and contractual requirements after selection."
+  },
+  {
+   "id": "secplus-401",
+   "domain": "gov",
+   "prompt": "A company evaluates the security risks introduced by its vendor's own suppliers and subcontractors. This is:",
+   "choices": [
+    "Root cause analysis",
+    "Gap analysis",
+    "Supply chain analysis",
+    "Qualitative analysis"
+   ],
+   "answer": 2,
+   "explanation": "Supply chain analysis examines risk across the chain of suppliers that contribute to a product or service."
+  },
+  {
+   "id": "secplus-402",
+   "domain": "gov",
+   "prompt": "Which agreement between business partners defines each party's responsibilities, profit sharing and decision-making in a joint venture?",
+   "choices": [
+    "Non-disclosure agreement",
+    "Service level agreement",
+    "Business partners agreement",
+    "Memorandum of understanding"
+   ],
+   "answer": 2,
+   "explanation": "A BPA formalizes the business relationship between partners, including roles and the sharing of profits and losses."
+  },
+  {
+   "id": "secplus-403",
+   "domain": "gov",
+   "prompt": "Which document details the specific deliverables, timeline and cost for a single project performed under a master agreement?",
+   "choices": [
+    "Memorandum of understanding",
+    "Non-disclosure agreement",
+    "Acceptable use policy",
+    "Statement of work"
+   ],
+   "answer": 3,
+   "explanation": "An SOW defines the scope and deliverables of a particular engagement."
+  },
+  {
+   "id": "secplus-404",
+   "domain": "gov",
+   "prompt": "During vendor selection, an evaluator turns out to own shares in one of the competing vendors. Which concern does this raise?",
+   "choices": [
+    "Conflict of interest",
+    "Data sovereignty",
+    "Separation of duties",
+    "Right to audit"
+   ],
+   "answer": 0,
+   "explanation": "A conflict of interest can bias selection and should be disclosed and addressed."
+  },
+  {
+   "id": "secplus-405",
+   "domain": "gov",
+   "prompt": "A bank submits its compliance status reports to a government regulator. Which type of compliance reporting is this?",
+   "choices": [
+    "Internal",
+    "Self-assessment",
+    "Informal",
+    "External"
+   ],
+   "answer": 3,
+   "explanation": "Reporting to regulators or other outside parties is external compliance reporting."
+  },
+  {
+   "id": "secplus-406",
+   "domain": "gov",
+   "prompt": "Which consequence of non-compliance is a monetary penalty imposed by a regulator?",
+   "choices": [
+    "Reputational damage",
+    "Loss of license",
+    "Contractual impacts",
+    "Fines"
+   ],
+   "answer": 3,
+   "explanation": "Fines are financial penalties for violating regulations."
+  },
+  {
+   "id": "secplus-407",
+   "domain": "gov",
+   "prompt": "Regulators revoke a company's authorization to operate in a market because of repeated compliance failures. This consequence is:",
+   "choices": [
+    "Sanctions on employees",
+    "Contractual impact",
+    "Loss of license",
+    "Risk transference"
+   ],
+   "answer": 2,
+   "explanation": "Loss of license removes the legal right to conduct certain business, one of the most severe consequences of non-compliance."
+  },
+  {
+   "id": "secplus-408",
+   "domain": "gov",
+   "prompt": "Under GDPR, the individual whose personal data is being collected and processed is called the:",
+   "choices": [
+    "Data controller",
+    "Data processor",
+    "Data subject",
+    "Data custodian"
+   ],
+   "answer": 2,
+   "explanation": "The data subject is the person the data is about, and GDPR grants them rights over it."
+  },
+  {
+   "id": "secplus-409",
+   "domain": "gov",
+   "prompt": "Which privacy activity creates a record of what personal data the organization holds, where it is stored and why it is used?",
+   "choices": [
+    "Data masking",
+    "Data inventory",
+    "Data sovereignty",
+    "Data replication"
+   ],
+   "answer": 1,
+   "explanation": "A data inventory documents personal data assets, supporting privacy compliance and retention decisions."
+  },
+  {
+   "id": "secplus-410",
+   "domain": "gov",
+   "prompt": "A formal statement from management or an auditor confirming that controls operate as described is called an:",
+   "choices": [
+    "Exception",
+    "Attestation",
+    "Exemption",
+    "Escalation"
+   ],
+   "answer": 1,
+   "explanation": "Attestation is a declaration that the stated controls and information are accurate."
+  },
+  {
+   "id": "secplus-411",
+   "domain": "gov",
+   "prompt": "Which group, typically made up of board members, oversees the organization's internal and external audit activities?",
+   "choices": [
+    "Change advisory board",
+    "Incident response team",
+    "Audit committee",
+    "Help desk"
+   ],
+   "answer": 2,
+   "explanation": "The audit committee provides independent oversight of audits, financial reporting and compliance."
+  },
+  {
+   "id": "secplus-412",
+   "domain": "gov",
+   "prompt": "A department completes a checklist to evaluate its own adherence to security policies before an external audit. This is a:",
+   "choices": [
+    "Regulatory examination",
+    "Third-party audit",
+    "Penetration test",
+    "Self-assessment"
+   ],
+   "answer": 3,
+   "explanation": "A self-assessment is an internal review performed by the organization of its own controls."
+  },
+  {
+   "id": "secplus-413",
+   "domain": "gov",
+   "prompt": "A government banking agency arrives to inspect a bank's controls for compliance with financial regulations. This is a:",
+   "choices": [
+    "Self-assessment",
+    "Regulatory examination",
+    "Vulnerability scan",
+    "Tabletop exercise"
+   ],
+   "answer": 1,
+   "explanation": "Regulatory examinations are external assessments performed by an authority with oversight power."
+  },
+  {
+   "id": "secplus-414",
+   "domain": "gov",
+   "prompt": "Penetration testers are given full network diagrams, source code and credentials before the test begins. This test environment is:",
+   "choices": [
+    "Known environment",
+    "Unknown environment",
+    "Partially known environment",
+    "Passive environment"
+   ],
+   "answer": 0,
+   "explanation": "A known environment (white box) test gives testers complete information about the target."
+  },
+  {
+   "id": "secplus-415",
+   "domain": "gov",
+   "prompt": "Penetration testers receive a list of IP ranges but no credentials or system documentation. This test environment is:",
+   "choices": [
+    "Known environment",
+    "Partially known environment",
+    "Unknown environment",
+    "Integrated environment"
+   ],
+   "answer": 1,
+   "explanation": "A partially known environment (gray box) test provides limited information about the target."
+  },
+  {
+   "id": "secplus-416",
+   "domain": "gov",
+   "prompt": "During a penetration test, the tester runs port scans directly against the target's servers. This is:",
+   "choices": [
+    "Active reconnaissance",
+    "Passive reconnaissance",
+    "OSINT gathering",
+    "Social media research"
+   ],
+   "answer": 0,
+   "explanation": "Active reconnaissance interacts with target systems and can be detected; passive reconnaissance does not touch them."
+  },
+  {
+   "id": "secplus-417",
+   "domain": "gov",
+   "prompt": "As part of an authorized assessment, a tester tries to enter the building by following employees through a secured door. This is:",
+   "choices": [
+    "Vulnerability scanning",
+    "Physical penetration testing",
+    "Static code analysis",
+    "Passive reconnaissance"
+   ],
+   "answer": 1,
+   "explanation": "Physical penetration testing evaluates controls such as doors, locks, badges and guards."
+  },
+  {
+   "id": "secplus-418",
+   "domain": "gov",
+   "prompt": "In a security exercise, which team is responsible for defending systems against the simulated attackers?",
+   "choices": [
+    "Red team",
+    "Blue team",
+    "White team",
+    "Purple team"
+   ],
+   "answer": 1,
+   "explanation": "The blue team defends, the red team attacks, and the white team referees the exercise."
+  },
+  {
+   "id": "secplus-419",
+   "domain": "gov",
+   "prompt": "An exercise has attackers and defenders work together and share findings in real time to improve detection. This approach is a:",
+   "choices": [
+    "Purple team",
+    "Red team",
+    "Blue team",
+    "White team"
+   ],
+   "answer": 0,
+   "explanation": "A purple team combines red and blue team efforts collaboratively."
+  },
+  {
+   "id": "secplus-420",
+   "domain": "gov",
+   "prompt": "Training employees to recognize and report a coworker who repeatedly accesses files unrelated to their job addresses which awareness topic?",
+   "choices": [
+    "Insider threat and anomalous behavior",
+    "Password management",
+    "Removable media use",
+    "Physical badge procedures"
+   ],
+   "answer": 0,
+   "explanation": "Awareness programs teach staff to recognize risky or unexpected behavior that may indicate an insider threat."
+  },
+  {
+   "id": "secplus-421",
+   "domain": "gov",
+   "prompt": "After a simulated phishing campaign, which employee response is the MOST desirable outcome?",
+   "choices": [
+    "Deleting the email without telling anyone",
+    "Forwarding the email to coworkers as a warning",
+    "Reporting the email to the security team",
+    "Replying to the sender to confirm it is fake"
+   ],
+   "answer": 2,
+   "explanation": "Reporting lets the security team respond quickly and protect others who received the same message."
+  },
+  {
+   "id": "secplus-422",
+   "domain": "gov",
+   "prompt": "Which security awareness topic covers using the company VPN and securing home Wi-Fi when staff work from home?",
+   "choices": [
+    "Clean desk policy",
+    "Data center access procedures",
+    "Vendor due diligence",
+    "Remote and hybrid work environments"
+   ],
+   "answer": 3,
+   "explanation": "Awareness training should address the risks of working outside the office, including home networks and VPN use."
+  },
+  {
+   "id": "secplus-423",
+   "domain": "gov",
+   "prompt": "When should new employees FIRST receive security awareness training?",
+   "choices": [
+    "After their first annual performance review",
+    "Only after they report a phishing email",
+    "Only if they work in the IT department",
+    "During onboarding, before or as they receive system access"
+   ],
+   "answer": 3,
+   "explanation": "Initial training at onboarding sets expectations before employees begin using company systems."
+  },
+  {
+   "id": "secplus-424",
+   "domain": "gov",
+   "prompt": "An organization takes reasonable steps to protect its assets, such as implementing controls and following its security policies. This is known as:",
+   "choices": [
+    "Due diligence",
+    "Risk avoidance",
+    "Attestation",
+    "Due care"
+   ],
+   "answer": 3,
+   "explanation": "Due care is acting responsibly to protect assets; due diligence is the investigation and research that informs those actions."
   }
  ]
 }

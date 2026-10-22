@@ -98,7 +98,7 @@ fun WelcomeScreen(app: CertoApp, activity: Activity) {
         Spacer(Modifier.height(24.dp))
         Text("Pass your IT\ncertification.", color = P.ink, fontSize = 40.sp, fontWeight = FontWeight.Black, lineHeight = 44.sp)
         Spacer(Modifier.height(14.dp))
-        Text("1,800+ questions across CompTIA, Cisco, Microsoft, AWS, ITIL and ISC2.", color = P.inkSoft, fontSize = 17.sp)
+        Text("4,200+ questions across CompTIA, Cisco, Microsoft, AWS, ITIL and ISC2.", color = P.inkSoft, fontSize = 17.sp)
         Spacer(Modifier.height(18.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             listOf("A+", "Network+", "Security+", "AWS", "CCNA").forEach {

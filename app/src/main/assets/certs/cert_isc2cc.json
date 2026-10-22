@@ -2992,6 +2992,2606 @@
    ],
    "answer": 3,
    "explanation": "Pretexting uses a fabricated story to persuade victims to reveal information."
+  },
+  {
+   "id": "isc2cc-226",
+   "domain": "principles",
+   "prompt": "Which of the following is the BEST example of a control that primarily supports availability?",
+   "choices": [
+    "Redundant power supplies in a critical server",
+    "Encrypting a database with AES-256",
+    "Hashing files before they are archived",
+    "Requiring every user to sign a nondisclosure agreement"
+   ],
+   "answer": 0,
+   "explanation": "Redundant components keep systems running when one part fails, which directly supports availability. Encryption and hashing support confidentiality and integrity instead."
+  },
+  {
+   "id": "isc2cc-227",
+   "domain": "principles",
+   "prompt": "Which term describes the assurance that a system performs its intended function in an unimpaired manner, free from unauthorized manipulation?",
+   "choices": [
+    "System integrity",
+    "Data confidentiality",
+    "Data integrity",
+    "System availability"
+   ],
+   "answer": 0,
+   "explanation": "System integrity concerns the correct, untampered operation of the system itself, while data integrity concerns the accuracy of the information it holds."
+  },
+  {
+   "id": "isc2cc-228",
+   "domain": "principles",
+   "prompt": "A measure of the importance an owner assigns to information, reflecting the harm that would result from its disclosure, is called its:",
+   "choices": [
+    "Retention",
+    "Sensitivity",
+    "Criticality",
+    "Availability"
+   ],
+   "answer": 1,
+   "explanation": "Sensitivity reflects how much harm unauthorized disclosure would cause. Criticality reflects how much the organization depends on the information to operate."
+  },
+  {
+   "id": "isc2cc-229",
+   "domain": "principles",
+   "prompt": "The degree to which an organization depends on a system or piece of information to accomplish its mission is known as:",
+   "choices": [
+    "Criticality",
+    "Integrity",
+    "Classification",
+    "Sensitivity"
+   ],
+   "answer": 0,
+   "explanation": "Criticality measures how essential an asset is to the mission; highly critical systems need strong availability protections."
+  },
+  {
+   "id": "isc2cc-230",
+   "domain": "principles",
+   "prompt": "A user inserts a hardware security token and then types a PIN to unlock it. How many distinct authentication factor types are being used?",
+   "choices": [
+    "Three",
+    "Two",
+    "One",
+    "Four"
+   ],
+   "answer": 1,
+   "explanation": "The token is something you have and the PIN is something you know, so two different factor types are combined."
+  },
+  {
+   "id": "isc2cc-231",
+   "domain": "principles",
+   "prompt": "A one-time code sent by SMS to a user's registered phone is an example of which authentication factor type?",
+   "choices": [
+    "Something you are",
+    "Something you do",
+    "Something you have",
+    "Something you know"
+   ],
+   "answer": 2,
+   "explanation": "The code proves possession of the registered phone, so it is a possession factor (something you have)."
+  },
+  {
+   "id": "isc2cc-232",
+   "domain": "principles",
+   "prompt": "Which of the following is the STRONGEST example of multifactor authentication?",
+   "choices": [
+    "A password combined with a fingerprint scan",
+    "A username combined with a password",
+    "A password combined with a second password",
+    "A PIN combined with a security question"
+   ],
+   "answer": 0,
+   "explanation": "MFA requires factors from different categories. A password (knowledge) plus a fingerprint (inherence) qualifies; the other options use only knowledge factors."
+  },
+  {
+   "id": "isc2cc-233",
+   "domain": "principles",
+   "prompt": "Security questions such as 'What was the name of your first pet?' are considered weak authentication MAINLY because:",
+   "choices": [
+    "They can only be used once before expiring",
+    "Answers are often public or easy to research",
+    "They require special hardware to process",
+    "They are too difficult for users to remember"
+   ],
+   "answer": 1,
+   "explanation": "Knowledge-based answers are frequently public or easily researched, so attackers can obtain them without the user's involvement."
+  },
+  {
+   "id": "isc2cc-234",
+   "domain": "principles",
+   "prompt": "A message authentication code (HMAC) generated with a key shared by two parties does NOT provide which property?",
+   "choices": [
+    "Data origin authentication between the two parties",
+    "Non-repudiation",
+    "Detection of message tampering",
+    "Integrity"
+   ],
+   "answer": 1,
+   "explanation": "Because both parties hold the same key, either one could have created the HMAC, so it cannot prove to a third party who sent the message. Digital signatures are needed for non-repudiation."
+  },
+  {
+   "id": "isc2cc-235",
+   "domain": "principles",
+   "prompt": "Which item is BEST classified as protected health information (PHI)?",
+   "choices": [
+    "A patient's diagnosis linked to the patient's name",
+    "A clinic's main telephone number and fax",
+    "A hospital's public street address and hours",
+    "Anonymized regional flu statistics for the year"
+   ],
+   "answer": 0,
+   "explanation": "PHI is health information that can be tied to an identifiable individual. Public facility details and anonymized statistics are not PHI."
+  },
+  {
+   "id": "isc2cc-236",
+   "domain": "principles",
+   "prompt": "An online retailer collects only the customer details it actually needs to ship an order and nothing more. Which privacy principle is being applied?",
+   "choices": [
+    "Data sovereignty",
+    "Data minimization",
+    "Data aggregation",
+    "Data remanence"
+   ],
+   "answer": 1,
+   "explanation": "Data minimization limits collection to what is necessary for the stated purpose, reducing privacy risk."
+  },
+  {
+   "id": "isc2cc-237",
+   "domain": "principles",
+   "prompt": "A customer asks a company covered by the GDPR to permanently delete all personal data it holds about them. Which right is the customer exercising?",
+   "choices": [
+    "Right to rectification",
+    "Right to restrict processing",
+    "Right to erasure",
+    "Right to data portability"
+   ],
+   "answer": 2,
+   "explanation": "The right to erasure, also called the right to be forgotten, lets individuals request deletion of their personal data. Rectification is about correcting inaccurate data."
+  },
+  {
+   "id": "isc2cc-238",
+   "domain": "principles",
+   "prompt": "Under the GDPR, the individual whose personal data is being processed is called the:",
+   "choices": [
+    "Data processor",
+    "Data custodian",
+    "Data subject",
+    "Data controller"
+   ],
+   "answer": 2,
+   "explanation": "The data subject is the identifiable person the data relates to. The controller decides why and how data is processed, and the processor handles it on the controller's behalf."
+  },
+  {
+   "id": "isc2cc-239",
+   "domain": "principles",
+   "prompt": "Under the GDPR, the organization that determines the purposes and means of processing personal data is the:",
+   "choices": [
+    "Data subject",
+    "Data processor",
+    "Supervisory authority",
+    "Data controller"
+   ],
+   "answer": 3,
+   "explanation": "The controller decides why and how personal data is processed and carries primary accountability. A processor only acts on the controller's instructions."
+  },
+  {
+   "id": "isc2cc-240",
+   "domain": "principles",
+   "prompt": "Which statement about the GDPR's scope is correct?",
+   "choices": [
+    "It applies only to government agencies in member states",
+    "It applies only to companies headquartered inside the EU",
+    "It covers financial records but not names or addresses",
+    "It can apply to non-EU firms that process EU residents' data"
+   ],
+   "answer": 3,
+   "explanation": "The GDPR has extraterritorial reach: organizations anywhere that offer goods or services to, or monitor, people in the EU must comply."
+  },
+  {
+   "id": "isc2cc-241",
+   "domain": "principles",
+   "prompt": "Which privacy technique replaces direct identifiers with artificial values so the data can be re-linked to individuals only with separately held information?",
+   "choices": [
+    "Aggregation",
+    "Normalization",
+    "Anonymization",
+    "Pseudonymization"
+   ],
+   "answer": 3,
+   "explanation": "Pseudonymized data can be re-identified with the separately kept key. Anonymized data is altered so individuals can no longer be identified at all."
+  },
+  {
+   "id": "isc2cc-242",
+   "domain": "principles",
+   "prompt": "Before an app collects location data, it asks users to agree to that specific use. Which privacy concept does this demonstrate?",
+   "choices": [
+    "Remanence",
+    "Retention",
+    "Consent",
+    "Portability"
+   ],
+   "answer": 2,
+   "explanation": "Consent means individuals knowingly agree to the collection and use of their personal data for a stated purpose."
+  },
+  {
+   "id": "isc2cc-243",
+   "domain": "principles",
+   "prompt": "Which California law gives consumers rights to know about, delete, and opt out of the sale of their personal information?",
+   "choices": [
+    "SOX",
+    "CCPA",
+    "GLBA",
+    "FERPA"
+   ],
+   "answer": 1,
+   "explanation": "The California Consumer Privacy Act (CCPA), as amended by the CPRA, grants California residents these privacy rights."
+  },
+  {
+   "id": "isc2cc-244",
+   "domain": "principles",
+   "prompt": "Which U.S. law requires publicly traded companies to maintain internal controls over the accuracy of their financial reporting?",
+   "choices": [
+    "Health Insurance Portability Act",
+    "Sarbanes-Oxley Act (SOX)",
+    "Federal Information Security Act",
+    "Gramm-Leach-Bliley Act (GLBA)"
+   ],
+   "answer": 1,
+   "explanation": "SOX was enacted after major accounting scandals and requires public companies to establish and attest to internal controls over financial reporting."
+  },
+  {
+   "id": "isc2cc-245",
+   "domain": "principles",
+   "prompt": "Which function was added to the NIST Cybersecurity Framework in version 2.0?",
+   "choices": [
+    "Govern",
+    "Detect",
+    "Recover",
+    "Identify"
+   ],
+   "answer": 0,
+   "explanation": "CSF 2.0, released in 2024, added Govern to the original five functions of Identify, Protect, Detect, Respond, and Recover."
+  },
+  {
+   "id": "isc2cc-246",
+   "domain": "principles",
+   "prompt": "The path or method a threat uses to reach and attack a target, such as email attachments or an exposed remote access port, is called a:",
+   "choices": [
+    "Risk register",
+    "Vulnerability scan",
+    "Threat vector",
+    "Threat actor"
+   ],
+   "answer": 2,
+   "explanation": "A threat vector is the route or means of attack. The threat actor is the person or group carrying out the attack."
+  },
+  {
+   "id": "isc2cc-247",
+   "domain": "principles",
+   "prompt": "Which of the following is the BEST example of a vulnerability?",
+   "choices": [
+    "A hurricane approaching the coastline",
+    "An operating system missing a critical security patch",
+    "An organized criminal hacking group targeting banks",
+    "A database holding customer orders"
+   ],
+   "answer": 1,
+   "explanation": "A vulnerability is a weakness that could be exploited. The hacking group and hurricane are threats, and the database is an asset."
+  },
+  {
+   "id": "isc2cc-248",
+   "domain": "principles",
+   "prompt": "A disgruntled employee with valid access copies customer data to a personal drive before resigning. Which threat source does this represent?",
+   "choices": [
+    "Insider threat",
+    "Nation-state actor",
+    "Script kiddie",
+    "Hacktivist"
+   ],
+   "answer": 0,
+   "explanation": "An insider threat comes from someone with legitimate access, such as an employee or contractor, who misuses it."
+  },
+  {
+   "id": "isc2cc-249",
+   "domain": "principles",
+   "prompt": "Which type of threat actor is MOST likely to be well funded and conduct long-term espionage campaigns against another country's organizations?",
+   "choices": [
+    "Hacktivist",
+    "Nation-state actor",
+    "Opportunistic insider",
+    "Script kiddie"
+   ],
+   "answer": 1,
+   "explanation": "Nation-state actors have significant resources and often run advanced persistent threat (APT) campaigns for intelligence gathering."
+  },
+  {
+   "id": "isc2cc-250",
+   "domain": "principles",
+   "prompt": "A group defaces a company's website to protest the company's environmental policies. This attacker is BEST described as a:",
+   "choices": [
+    "Organized crime group",
+    "Hacktivist",
+    "Nation-state actor",
+    "Competitor"
+   ],
+   "answer": 1,
+   "explanation": "Hacktivists are motivated by political or social causes, and defacement to send a message is a typical hacktivist tactic."
+  },
+  {
+   "id": "isc2cc-251",
+   "domain": "principles",
+   "prompt": "The acceptable level of variation an organization will allow around its risk appetite for a specific objective is called its:",
+   "choices": [
+    "Risk transfer",
+    "Risk register",
+    "Risk tolerance",
+    "Residual risk"
+   ],
+   "answer": 2,
+   "explanation": "Risk appetite is the broad amount of risk an organization is willing to pursue, while risk tolerance is the acceptable deviation for a particular risk or objective."
+  },
+  {
+   "id": "isc2cc-252",
+   "domain": "principles",
+   "prompt": "Who is ultimately accountable for deciding to accept a significant risk on behalf of an organization?",
+   "choices": [
+    "Senior management",
+    "The external auditor",
+    "The system administrator",
+    "The security analyst who found it"
+   ],
+   "answer": 0,
+   "explanation": "Senior management owns organizational risk and is accountable for acceptance decisions. Analysts identify and report risk but do not accept it for the business."
+  },
+  {
+   "id": "isc2cc-253",
+   "domain": "principles",
+   "prompt": "Which statement BEST describes the relationship between security controls and risk?",
+   "choices": [
+    "Controls eliminate risk entirely when properly installed",
+    "Controls are needed only after a risk has been realized",
+    "Controls only reduce the impact of a risk and never its likelihood",
+    "Controls reduce risk to an acceptable level but rarely eliminate it"
+   ],
+   "answer": 3,
+   "explanation": "Controls lower likelihood or impact, but some residual risk almost always remains and must be accepted or further treated."
+  },
+  {
+   "id": "isc2cc-254",
+   "domain": "principles",
+   "prompt": "Which of the following is NOT a legitimate risk treatment option?",
+   "choices": [
+    "Transferring the risk",
+    "Accepting the risk formally",
+    "Ignoring the risk entirely",
+    "Avoiding the risk"
+   ],
+   "answer": 2,
+   "explanation": "Accept, avoid, transfer, and mitigate are valid treatments. Ignoring a risk without a conscious, documented decision is not risk management."
+  },
+  {
+   "id": "isc2cc-255",
+   "domain": "principles",
+   "prompt": "When choosing a security control for an asset, the cost of the control should generally be:",
+   "choices": [
+    "Unrelated to the value of the asset",
+    "Equal to the organization's entire security budget",
+    "Less than the value of the loss it is expected to prevent",
+    "Greater than the total value of the asset it is protecting"
+   ],
+   "answer": 2,
+   "explanation": "A control is cost-effective only when its cost is lower than the expected loss it reduces; otherwise the organization may accept the risk instead."
+  },
+  {
+   "id": "isc2cc-256",
+   "domain": "principles",
+   "prompt": "An asset is valued at $200,000 and a specific threat would destroy 25% of it. What is the single loss expectancy (SLE)?",
+   "choices": [
+    "$800,000",
+    "$50,000",
+    "$150,000",
+    "$25,000"
+   ],
+   "answer": 1,
+   "explanation": "SLE equals asset value multiplied by exposure factor: $200,000 x 0.25 = $50,000."
+  },
+  {
+   "id": "isc2cc-257",
+   "domain": "principles",
+   "prompt": "A threat has a single loss expectancy of $40,000 and is expected to occur once every four years. What is the annualized loss expectancy (ALE)?",
+   "choices": [
+    "$40,000",
+    "$10,000",
+    "$4,000",
+    "$160,000"
+   ],
+   "answer": 1,
+   "explanation": "ALE equals SLE multiplied by the annualized rate of occurrence: $40,000 x 0.25 = $10,000."
+  },
+  {
+   "id": "isc2cc-258",
+   "domain": "principles",
+   "prompt": "In quantitative risk analysis, the annualized rate of occurrence (ARO) represents:",
+   "choices": [
+    "The cost of the control per year",
+    "The total value of the asset",
+    "Expected number of occurrences per year",
+    "The percentage of an asset lost in one incident"
+   ],
+   "answer": 2,
+   "explanation": "ARO is the expected yearly frequency of a threat. The percentage of asset loss is the exposure factor."
+  },
+  {
+   "id": "isc2cc-259",
+   "domain": "principles",
+   "prompt": "What is a key advantage of qualitative risk analysis over quantitative analysis?",
+   "choices": [
+    "It is faster and needs no precise dollar figures",
+    "It removes all subjectivity from risk ratings",
+    "It produces exact dollar values for every risk",
+    "It is required by every regulation"
+   ],
+   "answer": 0,
+   "explanation": "Qualitative analysis uses ratings such as high, medium, and low, making it faster and practical when reliable financial figures are unavailable, though it is more subjective."
+  },
+  {
+   "id": "isc2cc-260",
+   "domain": "principles",
+   "prompt": "After controls are implemented, which risk management activity ensures they stay effective as threats and the business change?",
+   "choices": [
+    "Transferring all remaining risk to insurers",
+    "Removing the risk from the register",
+    "Repeating the original purchase of controls",
+    "Ongoing monitoring and periodic review"
+   ],
+   "answer": 3,
+   "explanation": "Risk management is a continuous cycle; controls and risks must be monitored and reassessed as conditions change."
+  },
+  {
+   "id": "isc2cc-261",
+   "domain": "principles",
+   "prompt": "A company requires all new hires to sign a nondisclosure agreement before they start work. What category of control is this?",
+   "choices": [
+    "Administrative",
+    "Physical",
+    "Compensating",
+    "Technical"
+   ],
+   "answer": 0,
+   "explanation": "An NDA is a management-driven, paperwork-based control, which places it in the administrative (managerial) category."
+  },
+  {
+   "id": "isc2cc-262",
+   "domain": "principles",
+   "prompt": "An antivirus product detects an infected file and automatically quarantines it. Which control function does the quarantine action perform?",
+   "choices": [
+    "Deterrent",
+    "Directive",
+    "Preventive",
+    "Corrective"
+   ],
+   "answer": 3,
+   "explanation": "Quarantining reacts to a detected problem and limits its damage, which is a corrective function. Detection alone would be detective."
+  },
+  {
+   "id": "isc2cc-263",
+   "domain": "principles",
+   "prompt": "An ISC2 member discovers that their employer's product contains a flaw that could endanger public safety. Which canon of the Code of Ethics takes highest priority?",
+   "choices": [
+    "Provide diligent and competent service to principals",
+    "Act honorably, honestly, justly, responsibly, and legally",
+    "Protect society, the common good, and the infrastructure",
+    "Advance and protect the profession"
+   ],
+   "answer": 2,
+   "explanation": "The canons are applied in order, and protecting society is the first canon, so public safety outweighs duties to an employer."
+  },
+  {
+   "id": "isc2cc-264",
+   "domain": "principles",
+   "prompt": "Which canon is the LAST of the four canons in the ISC2 Code of Ethics?",
+   "choices": [
+    "Advance and protect the profession",
+    "Protect society, the common good, and the infrastructure",
+    "Act honorably, honestly, justly, responsibly, and legally",
+    "Provide diligent and competent service to principals"
+   ],
+   "answer": 0,
+   "explanation": "The fourth and final canon is to advance and protect the profession."
+  },
+  {
+   "id": "isc2cc-265",
+   "domain": "principles",
+   "prompt": "When two canons of the ISC2 Code of Ethics appear to conflict, how should a member resolve the conflict?",
+   "choices": [
+    "Follow the most recently published canon",
+    "Follow whichever canon benefits the employer most",
+    "Ignore both canons and follow local custom",
+    "Apply the canons in their listed order of precedence"
+   ],
+   "answer": 3,
+   "explanation": "The canons are listed in order of priority, so a conflict is resolved in favor of the earlier canon."
+  },
+  {
+   "id": "isc2cc-266",
+   "domain": "principles",
+   "prompt": "An ISC2 member volunteers to mentor students who are new to cybersecurity. This activity BEST supports which canon?",
+   "choices": [
+    "Protect society and the infrastructure",
+    "Advance and protect the profession",
+    "Act honorably, honestly, justly, responsibly, and legally",
+    "Provide diligent and competent service to principals"
+   ],
+   "answer": 1,
+   "explanation": "Mentoring and developing new practitioners strengthens the field, which aligns with advancing and protecting the profession."
+  },
+  {
+   "id": "isc2cc-267",
+   "domain": "principles",
+   "prompt": "A consultant accepts a penetration testing engagement without disclosing that they have no experience with the client's technology. Which canon is MOST at risk of being violated?",
+   "choices": [
+    "Advance and protect the profession",
+    "Protect society, the common good, and infrastructure",
+    "Provide diligent and competent service to principals",
+    "Act honorably, honestly, justly, and legally"
+   ],
+   "answer": 2,
+   "explanation": "Taking on work beyond one's competence without disclosure fails the duty to provide diligent and competent service to clients and employers."
+  },
+  {
+   "id": "isc2cc-268",
+   "domain": "principles",
+   "prompt": "What can happen to an ISC2 member who is found to have violated the Code of Ethics?",
+   "choices": [
+    "ISC2 may take action, including revoking the certification",
+    "The member is automatically fined by their national government",
+    "The member's employer must terminate them",
+    "Nothing, because the code is only advisory"
+   ],
+   "answer": 0,
+   "explanation": "Adherence to the code is a condition of certification, and ISC2 can sanction violators, including by revoking their credentials."
+  },
+  {
+   "id": "isc2cc-269",
+   "domain": "principles",
+   "prompt": "A document stating 'All employees must protect company information assets from unauthorized disclosure' is BEST classified as a:",
+   "choices": [
+    "Baseline",
+    "Procedure",
+    "Guideline",
+    "Policy"
+   ],
+   "answer": 3,
+   "explanation": "Broad, high-level statements of management intent are policies. Procedures give step-by-step instructions, and guidelines are optional advice."
+  },
+  {
+   "id": "isc2cc-270",
+   "domain": "principles",
+   "prompt": "Which statement about procedures is correct?",
+   "choices": [
+    "They are high-level statements that rarely change",
+    "They are issued only by government regulators",
+    "They are detailed and change more often than policies",
+    "They are optional recommendations for staff"
+   ],
+   "answer": 2,
+   "explanation": "Procedures describe exactly how to perform tasks, so they are updated as tools and processes change, while policies remain broad and stable."
+  },
+  {
+   "id": "isc2cc-271",
+   "domain": "principles",
+   "prompt": "Who should formally approve an organization's information security policy?",
+   "choices": [
+    "Each individual employee",
+    "Senior management",
+    "The help desk team",
+    "An external vendor"
+   ],
+   "answer": 1,
+   "explanation": "Policies express management's intent and authority, so senior management must approve and support them for them to be enforceable."
+  },
+  {
+   "id": "isc2cc-272",
+   "domain": "principles",
+   "prompt": "Why should an organization's security policies be reviewed on a regular schedule?",
+   "choices": [
+    "Because policies expire automatically after one year by law",
+    "To ensure the documents become longer each year",
+    "So employees can choose which policies to follow",
+    "To stay aligned with changing laws, threats, and business"
+   ],
+   "answer": 3,
+   "explanation": "Regular review keeps policies current and relevant as regulations, technology, and the threat landscape evolve."
+  },
+  {
+   "id": "isc2cc-273",
+   "domain": "principles",
+   "prompt": "Conforming to applicable laws, regulations, contracts, and internal policies is known as:",
+   "choices": [
+    "Assurance",
+    "Remediation",
+    "Attestation",
+    "Compliance"
+   ],
+   "answer": 3,
+   "explanation": "Compliance is the state of meeting the requirements imposed by laws, regulations, standards, and organizational policies."
+  },
+  {
+   "id": "isc2cc-274",
+   "domain": "principles",
+   "prompt": "A contract between a cloud provider and a customer that specifies guaranteed uptime and response times is called a(n):",
+   "choices": [
+    "Service level agreement (SLA)",
+    "Nondisclosure agreement (NDA)",
+    "Business impact analysis (BIA)",
+    "Acceptable use policy (AUP)"
+   ],
+   "answer": 0,
+   "explanation": "An SLA defines measurable service expectations, such as availability percentages, and remedies if they are not met."
+  },
+  {
+   "id": "isc2cc-275",
+   "domain": "principles",
+   "prompt": "Which security concept ensures that actions on a system can be traced back to a specific individual?",
+   "choices": [
+    "Anonymity",
+    "Availability",
+    "Accountability",
+    "Abstraction"
+   ],
+   "answer": 2,
+   "explanation": "Accountability relies on unique identification, authentication, and logging so that each action can be attributed to the person who performed it."
+  },
+  {
+   "id": "isc2cc-276",
+   "domain": "principles",
+   "prompt": "A digital certificate issued by a trusted certificate authority PRIMARILY helps a user verify a website's:",
+   "choices": [
+    "Processing speed",
+    "Physical location",
+    "Availability",
+    "Identity"
+   ],
+   "answer": 3,
+   "explanation": "The certificate binds a public key to the site's identity, letting users authenticate that they are connected to the genuine server."
+  },
+  {
+   "id": "isc2cc-277",
+   "domain": "bcdr",
+   "prompt": "Which statement BEST describes the relationship between a business continuity plan and a disaster recovery plan?",
+   "choices": [
+    "The DRP covers people, while the BCP covers only data",
+    "The DRP restores IT and is usually part of the broader BCP",
+    "They are identical documents with different names",
+    "The BCP is a technical subset of the DRP"
+   ],
+   "answer": 1,
+   "explanation": "Business continuity addresses keeping the whole business operating, while disaster recovery concentrates on restoring IT systems and data as part of that effort."
+  },
+  {
+   "id": "isc2cc-278",
+   "domain": "bcdr",
+   "prompt": "Which activity should be completed BEFORE an organization selects its recovery strategies and alternate sites?",
+   "choices": [
+    "Full interruption testing",
+    "Eradication of malware",
+    "Post-incident lessons learned",
+    "Business impact analysis"
+   ],
+   "answer": 3,
+   "explanation": "The BIA identifies critical functions and recovery targets such as RTO and RPO, which drive the choice of recovery strategies."
+  },
+  {
+   "id": "isc2cc-279",
+   "domain": "bcdr",
+   "prompt": "The longest period a business function can be unavailable before the organization suffers unacceptable harm is the:",
+   "choices": [
+    "Mean time between failures (MTBF)",
+    "Maximum tolerable downtime (MTD)",
+    "Recovery point objective (RPO)",
+    "Annualized rate of occurrence (ARO)"
+   ],
+   "answer": 1,
+   "explanation": "MTD is the absolute outer limit of downtime the business can survive; recovery time objectives must fit within it."
+  },
+  {
+   "id": "isc2cc-280",
+   "domain": "bcdr",
+   "prompt": "How should a system's recovery time objective (RTO) relate to its maximum tolerable downtime (MTD)?",
+   "choices": [
+    "The RTO should be less than or equal to the MTD",
+    "The RTO should be exactly double the MTD",
+    "The RTO and MTD are unrelated values",
+    "The RTO should always be set longer than the MTD value"
+   ],
+   "answer": 0,
+   "explanation": "If recovery took longer than the MTD, the business would suffer unacceptable harm, so the RTO must fall within it."
+  },
+  {
+   "id": "isc2cc-281",
+   "domain": "bcdr",
+   "prompt": "Which backup type copies all data changed since the last full backup and does NOT reset the archive bit?",
+   "choices": [
+    "Full",
+    "Snapshot of the boot sector",
+    "Incremental",
+    "Differential"
+   ],
+   "answer": 3,
+   "explanation": "A differential backup grows each day until the next full backup. Incremental backups copy only changes since the last backup of any type and reset the archive bit."
+  },
+  {
+   "id": "isc2cc-282",
+   "domain": "bcdr",
+   "prompt": "An organization runs a full backup on Sunday and incremental backups Monday through Friday. A failure occurs Friday afternoon. What is needed to restore the data?",
+   "choices": [
+    "Only Friday's incremental backup",
+    "Only Sunday's full backup",
+    "Sunday's full plus every incremental through Friday",
+    "Sunday's full backup and Friday's incremental only"
+   ],
+   "answer": 2,
+   "explanation": "Each incremental backup contains only changes since the previous backup, so the full backup plus every incremental in sequence is required."
+  },
+  {
+   "id": "isc2cc-283",
+   "domain": "bcdr",
+   "prompt": "Why should backup copies be stored offsite or in a different geographic region?",
+   "choices": [
+    "So a disaster at the main site does not destroy them too",
+    "Because offsite storage removes the need for encryption",
+    "So users can edit backups directly",
+    "So backups can be completed faster"
+   ],
+   "answer": 0,
+   "explanation": "Geographic separation ensures that a fire, flood, or regional outage affecting the main site does not also destroy the recovery copies."
+  },
+  {
+   "id": "isc2cc-284",
+   "domain": "bcdr",
+   "prompt": "The 3-2-1 backup rule recommends:",
+   "choices": [
+    "Three full backups kept for two years in one location",
+    "Three administrators, two passwords, and one key",
+    "Three backups per day, two per week, and one per month",
+    "Three copies, on two media types, with one offsite"
+   ],
+   "answer": 3,
+   "explanation": "The 3-2-1 rule provides redundancy across copies, media, and locations to survive many types of failure."
+  },
+  {
+   "id": "isc2cc-285",
+   "domain": "bcdr",
+   "prompt": "Two companies agree to host each other's critical operations if either suffers a disaster. This arrangement is called a:",
+   "choices": [
+    "Service level agreement",
+    "Cold site lease",
+    "Reciprocal agreement",
+    "Hot site contract"
+   ],
+   "answer": 2,
+   "explanation": "A reciprocal (mutual aid) agreement is inexpensive, but it can be hard to enforce and the partner may lack spare capacity in a real emergency."
+  },
+  {
+   "id": "isc2cc-286",
+   "domain": "bcdr",
+   "prompt": "During which disaster recovery test are systems brought up at the alternate site while the primary site continues normal production?",
+   "choices": [
+    "Checklist review",
+    "Full interruption test",
+    "Tabletop exercise",
+    "Parallel test"
+   ],
+   "answer": 3,
+   "explanation": "A parallel test verifies the alternate site can process work without disrupting primary operations. A full interruption test actually shuts down the primary site."
+  },
+  {
+   "id": "isc2cc-287",
+   "domain": "bcdr",
+   "prompt": "In the NIST incident response life cycle, determining whether reported events actually constitute an incident occurs in which phase?",
+   "choices": [
+    "Preparation",
+    "Post-incident activity",
+    "Detection and analysis",
+    "Containment, eradication, and recovery"
+   ],
+   "answer": 2,
+   "explanation": "Detection and analysis involves reviewing alerts and indicators to confirm an incident and assess its scope and priority."
+  },
+  {
+   "id": "isc2cc-288",
+   "domain": "bcdr",
+   "prompt": "After malware has been removed, restoring systems to normal operation and monitoring them to confirm they are clean is part of:",
+   "choices": [
+    "Preparation",
+    "Recovery",
+    "Detection",
+    "Lessons learned"
+   ],
+   "answer": 1,
+   "explanation": "Recovery returns affected systems to production and verifies they are functioning normally and are no longer compromised."
+  },
+  {
+   "id": "isc2cc-289",
+   "domain": "bcdr",
+   "prompt": "Which activity belongs to the preparation phase of incident response?",
+   "choices": [
+    "Holding the lessons learned meeting",
+    "Isolating a compromised host from the network",
+    "Wiping and reimaging an infected server",
+    "Writing the IR plan and training the team"
+   ],
+   "answer": 3,
+   "explanation": "Preparation happens before incidents and includes developing plans, assembling the team, acquiring tools, and running training."
+  },
+  {
+   "id": "isc2cc-290",
+   "domain": "bcdr",
+   "prompt": "An analyst responding to a compromised workstation wants to preserve evidence. Which data should be captured FIRST?",
+   "choices": [
+    "Archived backup tapes",
+    "Printed copies of policies",
+    "Files on the hard drive",
+    "Contents of system memory (RAM)"
+   ],
+   "answer": 3,
+   "explanation": "Evidence should be collected in order of volatility; RAM contents are lost when the system powers off, so they are captured before disk data."
+  },
+  {
+   "id": "isc2cc-291",
+   "domain": "bcdr",
+   "prompt": "During a publicly visible security incident, who should normally communicate with the news media?",
+   "choices": [
+    "The attacker's representative",
+    "Whichever analyst is working the incident",
+    "Any employee who happens to be contacted by a reporter",
+    "Designated public relations or communications staff"
+   ],
+   "answer": 3,
+   "explanation": "Using designated spokespeople keeps messaging accurate and consistent and prevents disclosure of sensitive response details."
+  },
+  {
+   "id": "isc2cc-292",
+   "domain": "bcdr",
+   "prompt": "Which incident response team member is MOST responsible for advising on breach notification requirements?",
+   "choices": [
+    "Network administrator",
+    "Help desk technician",
+    "Facilities manager",
+    "Legal counsel"
+   ],
+   "answer": 3,
+   "explanation": "Legal counsel interprets laws and contracts that determine whether, when, and how affected parties and regulators must be notified."
+  },
+  {
+   "id": "isc2cc-293",
+   "domain": "bcdr",
+   "prompt": "In a business continuity plan, a call tree is used to:",
+   "choices": [
+    "Route network traffic to the alternate site",
+    "Track the rotation order of backup tapes",
+    "Notify staff in a set order during an emergency",
+    "Rank recovery vendors by their pricing"
+   ],
+   "answer": 2,
+   "explanation": "A call tree spreads notification responsibility so that every team member is contacted quickly and reliably when the plan is activated."
+  },
+  {
+   "id": "isc2cc-294",
+   "domain": "bcdr",
+   "prompt": "When should a business continuity plan be updated?",
+   "choices": [
+    "After major changes and at regular review intervals",
+    "Never, once senior management has formally approved it",
+    "Only after a real disaster has occurred",
+    "Only when an external auditor requests it"
+   ],
+   "answer": 0,
+   "explanation": "An outdated plan may reference missing systems or departed staff, so it must be maintained as the organization changes and reviewed periodically."
+  },
+  {
+   "id": "isc2cc-295",
+   "domain": "bcdr",
+   "prompt": "The average time it takes to repair a failed component and return it to service is known as:",
+   "choices": [
+    "Recovery point objective (RPO)",
+    "Maximum tolerable downtime (MTD)",
+    "Mean time to repair (MTTR)",
+    "Mean time between failures (MTBF)"
+   ],
+   "answer": 2,
+   "explanation": "MTTR measures repair speed, while MTBF measures how long a component typically runs before it fails."
+  },
+  {
+   "id": "isc2cc-296",
+   "domain": "bcdr",
+   "prompt": "A web server log shows an external host running a vulnerability scanner against it, but no attack has succeeded yet. In NIST terms, this is BEST described as a(n):",
+   "choices": [
+    "Breach",
+    "Indicator",
+    "Precursor",
+    "Eradication"
+   ],
+   "answer": 2,
+   "explanation": "A precursor signals that an incident may occur in the future. An indicator suggests an incident may have occurred or is occurring now."
+  },
+  {
+   "id": "isc2cc-297",
+   "domain": "access",
+   "prompt": "What is a major security weakness of discretionary access control (DAC)?",
+   "choices": [
+    "Only a central administrator can change any permission",
+    "It requires every object to carry a security label",
+    "It cannot be used on common operating systems",
+    "Users may grant access too widely to others"
+   ],
+   "answer": 3,
+   "explanation": "In DAC the owner decides who gets access, so users may share data too widely, and malware running as the user inherits that power."
+  },
+  {
+   "id": "isc2cc-298",
+   "domain": "access",
+   "prompt": "In a role-based access control system, an employee transfers from Sales to Finance. What is the BEST practice?",
+   "choices": [
+    "Create a custom account that copies both roles",
+    "Remove the Sales role and assign the Finance role",
+    "Add the Finance role and keep the Sales role",
+    "Leave the roles unchanged until the annual review"
+   ],
+   "answer": 1,
+   "explanation": "Removing the old role when assigning the new one prevents privilege creep and keeps access aligned with least privilege."
+  },
+  {
+   "id": "isc2cc-299",
+   "domain": "access",
+   "prompt": "A firewall allows or denies traffic based on a set of predefined rules that apply equally to all users. This is an example of:",
+   "choices": [
+    "Rule-based access control",
+    "Role-based access control",
+    "Discretionary access control",
+    "Mandatory vacation"
+   ],
+   "answer": 0,
+   "explanation": "Rule-based access control applies global rules, such as firewall rules, regardless of who the user is."
+  },
+  {
+   "id": "isc2cc-300",
+   "domain": "access",
+   "prompt": "In a mandatory access control system, which conditions must typically be met for a user to read a classified document?",
+   "choices": [
+    "Membership in any administrator group",
+    "Ownership of the document and a strong password",
+    "Approval from any coworker with the same clearance",
+    "Clearance at or above the label plus need to know"
+   ],
+   "answer": 3,
+   "explanation": "MAC compares the subject's clearance with the object's label, and need to know further restricts access even when clearance is sufficient."
+  },
+  {
+   "id": "isc2cc-301",
+   "domain": "access",
+   "prompt": "Which fence height is generally considered sufficient to deter a determined intruder?",
+   "choices": [
+    "3 to 4 feet",
+    "5 feet without any topping",
+    "Any height, as long as it is painted",
+    "8 feet with strands of barbed wire on top"
+   ],
+   "answer": 3,
+   "explanation": "Fences of 3 to 4 feet deter casual trespassers, 6 to 7 feet are hard to climb, and 8 feet topped with barbed wire deters determined intruders."
+  },
+  {
+   "id": "isc2cc-302",
+   "domain": "access",
+   "prompt": "What is a key weakness of a physical access system that relies only on badges?",
+   "choices": [
+    "Badges always require a matching biometric scan",
+    "Badges cannot be deactivated once they are issued",
+    "Badges cannot record the time of each entry",
+    "A lost or stolen badge works for anyone holding it"
+   ],
+   "answer": 3,
+   "explanation": "A badge is a single possession factor; adding a PIN or biometric ensures the person presenting it is the authorized holder."
+  },
+  {
+   "id": "isc2cc-303",
+   "domain": "access",
+   "prompt": "Bright lighting installed around a building's perimeter primarily serves which purposes?",
+   "choices": [
+    "Correcting damage after a break-in",
+    "Deterring intruders and aiding their detection",
+    "Authenticating visitors at the entrance",
+    "Preventing all unauthorized entry on its own"
+   ],
+   "answer": 1,
+   "explanation": "Lighting discourages intruders who fear being seen and improves the effectiveness of guards and CCTV, but it does not physically stop entry."
+  },
+  {
+   "id": "isc2cc-304",
+   "domain": "access",
+   "prompt": "In a shared colocation data center, which control BEST protects an organization's individual servers from other tenants?",
+   "choices": [
+    "A warning sign posted on the main entrance",
+    "A visitor log kept at the lobby front desk",
+    "Locked cages or racks for the organization only",
+    "A shared door code issued to all tenants"
+   ],
+   "answer": 2,
+   "explanation": "Locked cages and racks add a dedicated physical barrier around the organization's equipment inside the shared facility."
+  },
+  {
+   "id": "isc2cc-305",
+   "domain": "access",
+   "prompt": "A walkthrough finds passwords written on sticky notes attached to monitors. Which control would MOST directly address this?",
+   "choices": [
+    "Installing additional CCTV cameras",
+    "A clean desk policy with awareness training",
+    "Increasing the logging level on the perimeter firewall",
+    "Adding bollards outside the building"
+   ],
+   "answer": 1,
+   "explanation": "A clean desk policy requires sensitive information to be secured when unattended, and training explains why passwords must not be posted."
+  },
+  {
+   "id": "isc2cc-306",
+   "domain": "access",
+   "prompt": "Configuring workstations to lock automatically after a few minutes of inactivity mainly protects against:",
+   "choices": [
+    "Brute-force attacks against remote servers",
+    "Power failures in the office",
+    "Malware spreading across the network",
+    "Someone using an unattended, logged-in session"
+   ],
+   "answer": 3,
+   "explanation": "An automatic screen lock forces re-authentication, so a passerby cannot use an unattended session."
+  },
+  {
+   "id": "isc2cc-307",
+   "domain": "access",
+   "prompt": "A help desk technician needs to reset user passwords but should not be able to change security policies. Which approach follows least privilege?",
+   "choices": [
+    "Share an administrator password with the technician",
+    "Add the technician to the Domain Admins group",
+    "Delegate only the password reset permission to the technician",
+    "Grant full control over the entire directory for convenience"
+   ],
+   "answer": 2,
+   "explanation": "Delegating only the specific permission required gives the technician exactly the access the job needs and nothing more."
+  },
+  {
+   "id": "isc2cc-308",
+   "domain": "access",
+   "prompt": "Granting administrative rights only when needed and automatically revoking them after a short time is known as:",
+   "choices": [
+    "Privilege creep",
+    "Discretionary delegation",
+    "Just-in-time privileged access",
+    "Permanent privilege assignment"
+   ],
+   "answer": 2,
+   "explanation": "Just-in-time access reduces standing privileges, shrinking the window in which elevated rights could be misused or stolen."
+  },
+  {
+   "id": "isc2cc-309",
+   "domain": "access",
+   "prompt": "A developer can write code and push it straight to production without any review or approval. Which principle is being violated?",
+   "choices": [
+    "Defense in depth",
+    "Segregation of duties",
+    "Data minimization",
+    "Implicit deny"
+   ],
+   "answer": 1,
+   "explanation": "Separating development from deployment approval ensures no single person can introduce unauthorized or harmful changes alone."
+  },
+  {
+   "id": "isc2cc-310",
+   "domain": "access",
+   "prompt": "Segregation of duties can be defeated MOST directly by:",
+   "choices": [
+    "Collusion between two or more employees",
+    "Rotating encryption keys",
+    "Enabling multifactor authentication",
+    "Using strong passwords"
+   ],
+   "answer": 0,
+   "explanation": "Segregation of duties assumes people act independently; if they cooperate to commit fraud, the control can be bypassed. Job rotation and audits help detect this."
+  },
+  {
+   "id": "isc2cc-311",
+   "domain": "access",
+   "prompt": "Which approach BEST applies least privilege to a service account used by a backup application?",
+   "choices": [
+    "Use the same account for all company services",
+    "Grant only the rights it needs and block interactive logon",
+    "Make it a member of every administrative group",
+    "Give it a password that never changes and share it widely"
+   ],
+   "answer": 1,
+   "explanation": "Limiting a service account to its required rights and preventing interactive use reduces damage if it is compromised."
+  },
+  {
+   "id": "isc2cc-312",
+   "domain": "access",
+   "prompt": "A newly purchased network appliance ships with the username 'admin' and password 'admin'. What should be done FIRST?",
+   "choices": [
+    "Change the default credentials before deployment",
+    "Keep the defaults so the vendor can support it",
+    "Write the credentials on the device's label",
+    "Disable logging to improve its performance"
+   ],
+   "answer": 0,
+   "explanation": "Default credentials are publicly documented, and attackers routinely try them, so they must be changed immediately."
+  },
+  {
+   "id": "isc2cc-313",
+   "domain": "access",
+   "prompt": "Which attack tries a single common password against many different accounts to avoid triggering account lockouts?",
+   "choices": [
+    "Dictionary attack against one account",
+    "Credential stuffing",
+    "Pass-the-hash",
+    "Password spraying"
+   ],
+   "answer": 3,
+   "explanation": "Password spraying spreads a few guesses across many accounts so no single account exceeds the lockout threshold."
+  },
+  {
+   "id": "isc2cc-314",
+   "domain": "access",
+   "prompt": "Attackers take username and password pairs leaked from one website's breach and try them on a bank's login page. This attack is called:",
+   "choices": [
+    "Shoulder surfing",
+    "Password spraying",
+    "Rainbow table attack",
+    "Credential stuffing"
+   ],
+   "answer": 3,
+   "explanation": "Credential stuffing exploits password reuse by testing previously breached credential pairs against other services."
+  },
+  {
+   "id": "isc2cc-315",
+   "domain": "access",
+   "prompt": "Which control is MOST effective at stopping credential stuffing attacks from succeeding?",
+   "choices": [
+    "Visitor sign-in logs",
+    "Longer session timeouts",
+    "Disk encryption",
+    "Multifactor authentication"
+   ],
+   "answer": 3,
+   "explanation": "Even if the stolen password is correct, the attacker still lacks the second factor, so MFA blocks most credential stuffing."
+  },
+  {
+   "id": "isc2cc-316",
+   "domain": "access",
+   "prompt": "An attacker tries every word from a large word list as the password for one account. This is a(n):",
+   "choices": [
+    "Replay attack",
+    "Dictionary attack",
+    "Password spraying attack",
+    "Phishing attack"
+   ],
+   "answer": 1,
+   "explanation": "A dictionary attack tests a list of likely words and common passwords, which is why strong, unpredictable passwords resist it."
+  },
+  {
+   "id": "isc2cc-317",
+   "domain": "access",
+   "prompt": "The point at which a biometric system's false acceptance rate equals its false rejection rate is the:",
+   "choices": [
+    "Crossover error rate (CER)",
+    "Mean time to repair",
+    "Exposure factor",
+    "Recovery point objective"
+   ],
+   "answer": 0,
+   "explanation": "The CER, also called the equal error rate, is used to compare biometric systems; a lower CER indicates a more accurate system."
+  },
+  {
+   "id": "isc2cc-318",
+   "domain": "access",
+   "prompt": "Employees of a partner company log in to your web portal using credentials issued by their own organization. This capability is called:",
+   "choices": [
+    "Discretionary access control",
+    "Federated identity management",
+    "Account lockout",
+    "Mandatory access control"
+   ],
+   "answer": 1,
+   "explanation": "Federation establishes trust between organizations so that one identity provider's authentication is accepted by another's services."
+  },
+  {
+   "id": "isc2cc-319",
+   "domain": "access",
+   "prompt": "Which standard uses XML-based assertions to exchange authentication information between an identity provider and a service provider for web single sign-on?",
+   "choices": [
+    "SAML",
+    "SMTP",
+    "SNMP",
+    "SFTP"
+   ],
+   "answer": 0,
+   "explanation": "Security Assertion Markup Language (SAML) passes signed assertions so users can sign on once and access multiple web applications."
+  },
+  {
+   "id": "isc2cc-320",
+   "domain": "access",
+   "prompt": "OAuth 2.0 is BEST described as:",
+   "choices": [
+    "A standard for biometric authentication devices",
+    "An encryption algorithm for securing stored files",
+    "A framework for granting delegated authorization",
+    "A protocol for synchronizing system clocks"
+   ],
+   "answer": 2,
+   "explanation": "OAuth lets a user authorize an application to access resources on their behalf without sharing their password."
+  },
+  {
+   "id": "isc2cc-321",
+   "domain": "access",
+   "prompt": "Which authentication protocol relies on a key distribution center that issues time-limited tickets?",
+   "choices": [
+    "Kerberos",
+    "LDAP",
+    "Telnet",
+    "RADIUS"
+   ],
+   "answer": 0,
+   "explanation": "Kerberos uses tickets from a key distribution center so users authenticate once and then access services without resending passwords."
+  },
+  {
+   "id": "isc2cc-322",
+   "domain": "access",
+   "prompt": "Which AAA protocol encrypts the entire packet body and separates authentication, authorization, and accounting functions?",
+   "choices": [
+    "TACACS+",
+    "RADIUS",
+    "SNMPv1",
+    "TFTP"
+   ],
+   "answer": 0,
+   "explanation": "TACACS+ encrypts the whole payload and handles the three AAA functions separately. RADIUS encrypts only the password and combines authentication with authorization."
+  },
+  {
+   "id": "isc2cc-323",
+   "domain": "access",
+   "prompt": "A pre-approved emergency administrator account that is used only when normal privileged access fails is commonly called a:",
+   "choices": [
+    "Guest account",
+    "Orphaned account",
+    "Break-glass account",
+    "Service account"
+   ],
+   "answer": 2,
+   "explanation": "Break-glass accounts are tightly protected and heavily monitored, and their use should trigger alerts and a review."
+  },
+  {
+   "id": "isc2cc-324",
+   "domain": "access",
+   "prompt": "Visitor badges should be:",
+   "choices": [
+    "Kept by visitors for use on future visits",
+    "Distinct, time-limited, and collected on exit",
+    "Issued without recording the visitor's name",
+    "Identical to employee badges for simplicity"
+   ],
+   "answer": 1,
+   "explanation": "Distinct, expiring visitor badges let staff spot visitors easily and prevent badges from being reused later."
+  },
+  {
+   "id": "isc2cc-325",
+   "domain": "access",
+   "prompt": "During a weekend, a sensor reports that a data center door was opened without a valid badge swipe. Which type of control generated this alert?",
+   "choices": [
+    "Physical compensating control",
+    "Physical detective control",
+    "Administrative preventive control",
+    "Technical corrective control"
+   ],
+   "answer": 1,
+   "explanation": "A door contact alarm detects unauthorized physical entry after it happens, making it a physical detective control."
+  },
+  {
+   "id": "isc2cc-326",
+   "domain": "access",
+   "prompt": "Which sequence correctly orders physical security layers from the outermost to the innermost?",
+   "choices": [
+    "Perimeter fence, building entrance, server room door, locked rack",
+    "Locked rack, server room door, building entrance, perimeter fence",
+    "Server room door, perimeter fence, locked rack, building entrance",
+    "Building entrance, perimeter fence, locked rack, server room door"
+   ],
+   "answer": 0,
+   "explanation": "Layered physical security places successive barriers from the site boundary inward, so an intruder must defeat several controls to reach assets."
+  },
+  {
+   "id": "isc2cc-327",
+   "domain": "access",
+   "prompt": "Which role implements and maintains controls such as backups and access settings on behalf of the data owner?",
+   "choices": [
+    "Data custodian",
+    "Auditor",
+    "Data controller",
+    "Data subject"
+   ],
+   "answer": 0,
+   "explanation": "The owner decides how data should be protected, and the custodian, often IT staff, carries out those protections day to day."
+  },
+  {
+   "id": "isc2cc-328",
+   "domain": "access",
+   "prompt": "Why are FIDO2 security keys and passkeys considered resistant to phishing?",
+   "choices": [
+    "The credential is bound to the real site's domain",
+    "They send the user's password by SMS",
+    "They use passwords longer than usual",
+    "They let users safely share one credential with coworkers"
+   ],
+   "answer": 0,
+   "explanation": "FIDO2 uses public key cryptography tied to the site's origin, so a look-alike phishing site cannot obtain a usable credential."
+  },
+  {
+   "id": "isc2cc-329",
+   "domain": "access",
+   "prompt": "An attacker logged in as a standard user exploits a software flaw to gain administrator rights. This is known as:",
+   "choices": [
+    "Least privilege",
+    "Separation of duties",
+    "Privilege escalation",
+    "Privilege creep"
+   ],
+   "answer": 2,
+   "explanation": "Privilege escalation is gaining higher rights than authorized. Privilege creep is the gradual buildup of legitimate access over time."
+  },
+  {
+   "id": "isc2cc-330",
+   "domain": "access",
+   "prompt": "An audit finds active accounts belonging to employees who left the company months ago. These are called:",
+   "choices": [
+    "Orphaned accounts",
+    "Service accounts",
+    "Shared accounts",
+    "Federated accounts"
+   ],
+   "answer": 0,
+   "explanation": "Orphaned accounts lack an active owner and are attractive to attackers; timely deprovisioning prevents them."
+  },
+  {
+   "id": "isc2cc-331",
+   "domain": "access",
+   "prompt": "An access review reveals that a user has permissions that do not match their current job. What should be done FIRST?",
+   "choices": [
+    "Validate with the data owner, then remove the excess access",
+    "Delete the user's account immediately",
+    "Ignore it until the next annual access review",
+    "Grant the same access to the whole team for consistency"
+   ],
+   "answer": 0,
+   "explanation": "The reviewer should validate the finding with the accountable owner and then revoke unnecessary access to restore least privilege."
+  },
+  {
+   "id": "isc2cc-332",
+   "domain": "access",
+   "prompt": "Which physical control is a preventive measure against theft of a laptop left on a desk in an open office?",
+   "choices": [
+    "A sign stating that theft will be prosecuted",
+    "A CCTV camera recording the office",
+    "An inventory audit at the end of the year",
+    "A cable lock attaching it to the desk"
+   ],
+   "answer": 3,
+   "explanation": "A cable lock physically prevents easy removal. The camera is detective, the sign is deterrent, and the audit detects loss afterward."
+  },
+  {
+   "id": "isc2cc-333",
+   "domain": "access",
+   "prompt": "Administrators must log in to servers remotely over the internet. Which control is MOST important to require?",
+   "choices": [
+    "Longer usernames",
+    "Multifactor authentication",
+    "Weekly password hints",
+    "A desktop wallpaper policy"
+   ],
+   "answer": 1,
+   "explanation": "Remote privileged access is a prime target, and MFA ensures a stolen password alone is not enough to gain access."
+  },
+  {
+   "id": "isc2cc-334",
+   "domain": "access",
+   "prompt": "What is a drawback of setting a very low account lockout threshold?",
+   "choices": [
+    "It prevents logging of failed attempts",
+    "It disables multifactor authentication",
+    "It makes user passwords much easier for attackers to guess",
+    "Attackers can trigger lockouts to deny service"
+   ],
+   "answer": 3,
+   "explanation": "Lockouts can be abused for denial of service, so thresholds and lockout durations must balance security against availability."
+  },
+  {
+   "id": "isc2cc-335",
+   "domain": "access",
+   "prompt": "Where is the BEST location for a server room within a building?",
+   "choices": [
+    "The ground floor beside the main lobby",
+    "An interior room away from exterior walls",
+    "A top-floor room with large windows",
+    "A basement below the local water line"
+   ],
+   "answer": 1,
+   "explanation": "An interior location reduces exposure to break-ins, weather, and flooding while making access easier to control."
+  },
+  {
+   "id": "isc2cc-336",
+   "domain": "access",
+   "prompt": "A user must enter a password and then approve a push notification on a registered phone. Which principle does adding the second step BEST support?",
+   "choices": [
+    "Implicit allow",
+    "Data remanence",
+    "Defense in depth",
+    "Discretionary access"
+   ],
+   "answer": 2,
+   "explanation": "Adding an independent factor layers protection, so compromising the password alone does not grant access."
+  },
+  {
+   "id": "isc2cc-337",
+   "domain": "access",
+   "prompt": "Which of the following is a logical control that enforces least privilege on a shared network folder?",
+   "choices": [
+    "A signed acceptable use policy for staff",
+    "File share permissions limited to those who need them",
+    "A locked door on the room that houses the file server",
+    "Security guards stationed in the lobby"
+   ],
+   "answer": 1,
+   "explanation": "File and share permissions are technical (logical) controls that restrict what each user can do with the data."
+  },
+  {
+   "id": "isc2cc-338",
+   "domain": "access",
+   "prompt": "A company requires that new accounts be created only after a manager submits an approved request. This process MAINLY ensures that:",
+   "choices": [
+    "Accounts never need to be reviewed again",
+    "Access is authorized and documented first",
+    "Passwords are encrypted while in transit",
+    "Users can choose their own permissions"
+   ],
+   "answer": 1,
+   "explanation": "Approval-based provisioning ties every account to a legitimate business need and creates an audit trail."
+  },
+  {
+   "id": "isc2cc-339",
+   "domain": "access",
+   "prompt": "Which statement correctly describes a difference between authentication and authorization?",
+   "choices": [
+    "Authorization always occurs before authentication",
+    "Authentication proves identity; authorization grants rights",
+    "Authorization verifies a user's identity using a password",
+    "Authentication and authorization mean the same thing"
+   ],
+   "answer": 1,
+   "explanation": "A system first authenticates the subject's identity and then authorizes specific actions based on permissions."
+  },
+  {
+   "id": "isc2cc-340",
+   "domain": "network",
+   "prompt": "Which OSI layer is responsible for data formatting, character encoding, compression, and encryption?",
+   "choices": [
+    "Session layer",
+    "Data link layer",
+    "Transport layer",
+    "Presentation layer"
+   ],
+   "answer": 3,
+   "explanation": "Layer 6, the presentation layer, translates data into a format the application layer can use and handles encoding, compression, and encryption."
+  },
+  {
+   "id": "isc2cc-341",
+   "domain": "network",
+   "prompt": "Which OSI layer establishes, manages, and terminates communication sessions between applications?",
+   "choices": [
+    "Presentation layer",
+    "Physical layer",
+    "Network layer",
+    "Session layer"
+   ],
+   "answer": 3,
+   "explanation": "Layer 5, the session layer, controls dialogs between applications, including setting up and tearing down sessions."
+  },
+  {
+   "id": "isc2cc-342",
+   "domain": "network",
+   "prompt": "A network hub, which simply repeats electrical signals out of every port, operates at which OSI layer?",
+   "choices": [
+    "Layer 2 (Data link)",
+    "Layer 3 (Network)",
+    "Layer 4 (Transport)",
+    "Layer 1 (Physical)"
+   ],
+   "answer": 3,
+   "explanation": "Hubs work only with raw signals and have no awareness of MAC or IP addresses, placing them at the physical layer."
+  },
+  {
+   "id": "isc2cc-343",
+   "domain": "network",
+   "prompt": "At the transport layer, a unit of TCP data is called a:",
+   "choices": [
+    "Segment",
+    "Frame",
+    "Packet",
+    "Bit"
+   ],
+   "answer": 0,
+   "explanation": "TCP data at Layer 4 is a segment; Layer 3 uses packets, Layer 2 uses frames, and Layer 1 transmits bits."
+  },
+  {
+   "id": "isc2cc-344",
+   "domain": "network",
+   "prompt": "Which sequence correctly shows how data is encapsulated as it moves down the OSI layers on the sending host?",
+   "choices": [
+    "Frame, packet, data, segment, bits",
+    "Data, segment, packet, frame, bits",
+    "Bits, frame, packet, segment, data",
+    "Packet, segment, frame, data, bits"
+   ],
+   "answer": 1,
+   "explanation": "Each lower layer adds its own header: the transport layer creates segments, the network layer creates packets, and the data link layer creates frames that are sent as bits."
+  },
+  {
+   "id": "isc2cc-345",
+   "domain": "network",
+   "prompt": "Which default port does LDAP over TLS (LDAPS) use?",
+   "choices": [
+    "389",
+    "636",
+    "3389",
+    "443"
+   ],
+   "answer": 1,
+   "explanation": "LDAPS uses TCP 636. Plain LDAP uses 389."
+  },
+  {
+   "id": "isc2cc-346",
+   "domain": "network",
+   "prompt": "SNMP agents listen for management queries on which default UDP port?",
+   "choices": [
+    "514",
+    "161",
+    "123",
+    "162"
+   ],
+   "answer": 1,
+   "explanation": "SNMP queries go to UDP 161 on the agent, while SNMP traps are sent to UDP 162 on the manager."
+  },
+  {
+   "id": "isc2cc-347",
+   "domain": "network",
+   "prompt": "Modern Windows file sharing using SMB runs directly over which TCP port?",
+   "choices": [
+    "139",
+    "21",
+    "445",
+    "135"
+   ],
+   "answer": 2,
+   "explanation": "SMB runs directly over TCP 445 on modern systems; 139 was used for SMB over NetBIOS. Port 445 should never be exposed to the internet."
+  },
+  {
+   "id": "isc2cc-348",
+   "domain": "network",
+   "prompt": "Network Time Protocol (NTP), used to synchronize clocks, uses which port?",
+   "choices": [
+    "TCP 110",
+    "TCP 25",
+    "UDP 123",
+    "UDP 69"
+   ],
+   "answer": 2,
+   "explanation": "NTP uses UDP 123. Accurate time matters for log correlation and for protocols such as Kerberos."
+  },
+  {
+   "id": "isc2cc-349",
+   "domain": "network",
+   "prompt": "Which port is used by IMAP over SSL/TLS for secure email retrieval?",
+   "choices": [
+    "587",
+    "993",
+    "995",
+    "143"
+   ],
+   "answer": 1,
+   "explanation": "IMAPS uses 993. Plain IMAP uses 143, and POP3S uses 995."
+  },
+  {
+   "id": "isc2cc-350",
+   "domain": "network",
+   "prompt": "FTP uses which port for its control channel, where commands and credentials are sent?",
+   "choices": [
+    "20",
+    "22",
+    "69",
+    "21"
+   ],
+   "answer": 3,
+   "explanation": "FTP sends commands over TCP 21 and uses TCP 20 for data in active mode. Credentials cross port 21 in cleartext."
+  },
+  {
+   "id": "isc2cc-351",
+   "domain": "network",
+   "prompt": "Syslog messages are traditionally sent to a log server on which port?",
+   "choices": [
+    "TCP 443",
+    "TCP 3306",
+    "UDP 514",
+    "UDP 161"
+   ],
+   "answer": 2,
+   "explanation": "Traditional syslog uses UDP 514; secure syslog over TLS commonly uses TCP 6514."
+  },
+  {
+   "id": "isc2cc-352",
+   "domain": "network",
+   "prompt": "SFTP, which transfers files securely, runs over which default port?",
+   "choices": [
+    "69",
+    "21",
+    "990",
+    "22"
+   ],
+   "answer": 3,
+   "explanation": "SFTP is a subsystem of SSH and uses TCP 22. FTPS, a different protocol, commonly uses 990 for implicit TLS."
+  },
+  {
+   "id": "isc2cc-353",
+   "domain": "network",
+   "prompt": "Which protocol maps an IPv4 address to a device's MAC address on a local network?",
+   "choices": [
+    "ICMP",
+    "DNS",
+    "DHCP",
+    "ARP"
+   ],
+   "answer": 3,
+   "explanation": "Address Resolution Protocol (ARP) finds the hardware address for a known IP address on the local segment."
+  },
+  {
+   "id": "isc2cc-354",
+   "domain": "network",
+   "prompt": "An attacker sends forged ARP replies so that hosts send traffic meant for the default gateway to the attacker's machine. This attack is called:",
+   "choices": [
+    "VLAN trunking",
+    "DNS tunneling",
+    "ARP poisoning",
+    "SYN flooding"
+   ],
+   "answer": 2,
+   "explanation": "ARP poisoning corrupts hosts' ARP caches, letting the attacker intercept or modify traffic as an on-path attacker."
+  },
+  {
+   "id": "isc2cc-355",
+   "domain": "network",
+   "prompt": "Users who type their bank's correct URL are sent to a fake site because their DNS resolver has stored forged records. This is:",
+   "choices": [
+    "Smurf attack",
+    "Typosquatting",
+    "DNS cache poisoning",
+    "ARP spoofing on the local segment"
+   ],
+   "answer": 2,
+   "explanation": "DNS cache poisoning inserts false records into a resolver so legitimate names resolve to attacker-controlled addresses."
+  },
+  {
+   "id": "isc2cc-356",
+   "domain": "network",
+   "prompt": "What is the IPv6 loopback address?",
+   "choices": [
+    "::1",
+    "0.0.0.0",
+    "127.0.0.1",
+    "FE80::"
+   ],
+   "answer": 0,
+   "explanation": "In IPv6, ::1 is the loopback address, which is equivalent to 127.0.0.1 in IPv4."
+  },
+  {
+   "id": "isc2cc-357",
+   "domain": "network",
+   "prompt": "How is an IPv6 address written?",
+   "choices": [
+    "As four decimal numbers separated by periods",
+    "As a single 32-bit binary string",
+    "As eight groups of hexadecimal digits separated by colons",
+    "As six pairs of hexadecimal digits separated by hyphens"
+   ],
+   "answer": 2,
+   "explanation": "IPv6 uses 128 bits written as eight 16-bit hexadecimal groups, which can be shortened with the :: notation."
+  },
+  {
+   "id": "isc2cc-358",
+   "domain": "network",
+   "prompt": "A workstation reports an IP address of 169.254.10.20. What does this MOST likely indicate?",
+   "choices": [
+    "The host is using a public internet address",
+    "The host could not reach a DHCP server",
+    "The host is configured as the default gateway",
+    "The host has been assigned an IPv6 address"
+   ],
+   "answer": 1,
+   "explanation": "169.254.0.0/16 is the APIPA (link-local) range that Windows assigns itself when DHCP is unreachable."
+  },
+  {
+   "id": "isc2cc-359",
+   "domain": "network",
+   "prompt": "A subnet written as /24 in CIDR notation has which subnet mask?",
+   "choices": [
+    "255.255.0.0",
+    "255.255.255.128",
+    "255.0.0.0",
+    "255.255.255.0"
+   ],
+   "answer": 3,
+   "explanation": "A /24 means 24 network bits, which is 255.255.255.0 and leaves 8 bits for hosts."
+  },
+  {
+   "id": "isc2cc-360",
+   "domain": "network",
+   "prompt": "WPA3-Personal replaces the WPA2 pre-shared key handshake with which method to resist offline password guessing?",
+   "choices": [
+    "Simultaneous Authentication of Equals (SAE)",
+    "Wired Equivalent Privacy (WEP)",
+    "Wi-Fi Protected Setup (WPS)",
+    "Temporal Key Integrity Protocol (TKIP)"
+   ],
+   "answer": 0,
+   "explanation": "SAE, a form of the Dragonfly handshake, prevents attackers from capturing a handshake and cracking the passphrase offline."
+  },
+  {
+   "id": "isc2cc-361",
+   "domain": "network",
+   "prompt": "A company wants each employee to join the corporate Wi-Fi with their own directory credentials rather than a shared password. What is the BEST choice?",
+   "choices": [
+    "WPA3-Enterprise using 802.1X and a RADIUS server",
+    "WEP with a long key",
+    "WPA3-Personal with one shared passphrase for all staff",
+    "An open network with a hidden SSID"
+   ],
+   "answer": 0,
+   "explanation": "Enterprise mode authenticates each user individually through 802.1X, allowing per-user access control and revocation."
+  },
+  {
+   "id": "isc2cc-362",
+   "domain": "network",
+   "prompt": "Disabling the broadcast of a wireless network's SSID is considered a weak security measure because:",
+   "choices": [
+    "The name can still be found by sniffing traffic",
+    "It encrypts traffic with an outdated algorithm",
+    "It blocks legitimate users from connecting",
+    "It forces all wireless clients to use WEP"
+   ],
+   "answer": 0,
+   "explanation": "Hidden SSIDs still appear in probe requests and other frames, so they provide obscurity rather than real protection."
+  },
+  {
+   "id": "isc2cc-363",
+   "domain": "network",
+   "prompt": "An attacker sends a flood of TCP SYN packets and never completes the handshake, exhausting the server's connection table. This is a:",
+   "choices": [
+    "Smishing attack",
+    "Replay attack",
+    "DNS poisoning attack",
+    "SYN flood"
+   ],
+   "answer": 3,
+   "explanation": "A SYN flood leaves many half-open connections, consuming server resources and causing a denial of service."
+  },
+  {
+   "id": "isc2cc-364",
+   "domain": "network",
+   "prompt": "A network of malware-infected computers controlled remotely by an attacker through command-and-control servers is called a:",
+   "choices": [
+    "Botnet",
+    "Subnet",
+    "Honeynet",
+    "Extranet"
+   ],
+   "answer": 0,
+   "explanation": "Botnets are commonly used to launch DDoS attacks, send spam, and spread malware on the attacker's command."
+  },
+  {
+   "id": "isc2cc-365",
+   "domain": "network",
+   "prompt": "A vulnerability that is unknown to the vendor and has no patch available when it is exploited is called a:",
+   "choices": [
+    "False positive",
+    "Zero-day",
+    "Rootkit",
+    "Logic bomb"
+   ],
+   "answer": 1,
+   "explanation": "Zero-day exploits target flaws before a fix exists, so signature-based defenses often fail to detect them."
+  },
+  {
+   "id": "isc2cc-366",
+   "domain": "network",
+   "prompt": "An attacker enters ' OR 1=1 -- into the username field of a login form to bypass authentication. This is:",
+   "choices": [
+    "SQL injection",
+    "Cross-site scripting",
+    "Buffer overflow",
+    "Directory traversal"
+   ],
+   "answer": 0,
+   "explanation": "SQL injection inserts SQL syntax into input that is passed to a database query. Parameterized queries and input validation prevent it."
+  },
+  {
+   "id": "isc2cc-367",
+   "domain": "network",
+   "prompt": "An attacker posts a comment containing JavaScript that runs in the browsers of other users who view the page. This is:",
+   "choices": [
+    "ARP cache poisoning",
+    "SQL injection (SQLi)",
+    "Session fixation attack",
+    "Cross-site scripting (XSS)"
+   ],
+   "answer": 3,
+   "explanation": "XSS injects malicious scripts into content served to other users, which can steal session cookies or perform actions on their behalf."
+  },
+  {
+   "id": "isc2cc-368",
+   "domain": "network",
+   "prompt": "Sending more input than a program's memory area can hold, overwriting adjacent memory to run malicious code, is a:",
+   "choices": [
+    "Buffer overflow",
+    "SQL injection",
+    "Replay attack",
+    "Phishing attack"
+   ],
+   "answer": 0,
+   "explanation": "Buffer overflows exploit missing bounds checks; input validation and memory protections such as ASLR help prevent them."
+  },
+  {
+   "id": "isc2cc-369",
+   "domain": "network",
+   "prompt": "An attacker captures a valid authentication exchange on the network and later resends it to gain access. This is a(n):",
+   "choices": [
+    "Evil twin attack",
+    "Smurf attack",
+    "Replay attack",
+    "Dictionary attack"
+   ],
+   "answer": 2,
+   "explanation": "Replay attacks reuse captured credentials or tokens; timestamps, nonces, and session tokens defend against them."
+  },
+  {
+   "id": "isc2cc-370",
+   "domain": "network",
+   "prompt": "An IPS is typically deployed in which way so that it can block malicious traffic?",
+   "choices": [
+    "Inline, so traffic passes through it",
+    "On a mirror port that only copies traffic",
+    "Outside the network with no connection to it",
+    "Only on backup servers"
+   ],
+   "answer": 0,
+   "explanation": "Because an IPS must stop traffic in real time, it sits inline. An IDS commonly monitors a copy of traffic from a span or mirror port."
+  },
+  {
+   "id": "isc2cc-371",
+   "domain": "network",
+   "prompt": "An IDS fails to generate an alert during a real attack. This outcome is called a:",
+   "choices": [
+    "False negative",
+    "True negative",
+    "False positive",
+    "True positive"
+   ],
+   "answer": 0,
+   "explanation": "A false negative misses actual malicious activity, which is dangerous because the attack goes unnoticed."
+  },
+  {
+   "id": "isc2cc-372",
+   "domain": "network",
+   "prompt": "Compared with a traditional stateful firewall, a next-generation firewall (NGFW) adds:",
+   "choices": [
+    "Application awareness and deep packet inspection",
+    "Wireless access point functions",
+    "Physical protection for the server room",
+    "Only the ability to filter traffic by port number"
+   ],
+   "answer": 0,
+   "explanation": "NGFWs identify applications and users, inspect payloads, and often integrate intrusion prevention."
+  },
+  {
+   "id": "isc2cc-373",
+   "domain": "network",
+   "prompt": "How does a typical firewall process its rule list when a packet arrives?",
+   "choices": [
+    "From top to bottom, applying the first rule that matches",
+    "By applying every matching rule at the same time",
+    "From bottom to top, applying the last match",
+    "Randomly, to prevent attackers from predicting it"
+   ],
+   "answer": 0,
+   "explanation": "Rules are evaluated in order and the first match wins, so rule placement matters and specific rules belong above general ones."
+  },
+  {
+   "id": "isc2cc-374",
+   "domain": "network",
+   "prompt": "Employees often connect their laptops to public Wi-Fi in hotels. Which control BEST protects each laptop from other devices on those networks?",
+   "choices": [
+    "A VLAN on the office switch",
+    "A DMZ for the company web server",
+    "A perimeter firewall installed at corporate headquarters",
+    "A host-based firewall enabled on each laptop"
+   ],
+   "answer": 3,
+   "explanation": "A host-based firewall travels with the device and filters traffic even when the device is outside the corporate network."
+  },
+  {
+   "id": "isc2cc-375",
+   "domain": "network",
+   "prompt": "A server that makes web requests on behalf of internal clients and can filter or log the sites they visit is a:",
+   "choices": [
+    "Forward proxy",
+    "Load balancer",
+    "Honeypot",
+    "DHCP server"
+   ],
+   "answer": 0,
+   "explanation": "A forward proxy sits between users and the internet, enabling content filtering, caching, and monitoring of outbound web traffic."
+  },
+  {
+   "id": "isc2cc-376",
+   "domain": "network",
+   "prompt": "A deliberately vulnerable decoy system set up to attract attackers and study their methods is called a:",
+   "choices": [
+    "Honeypot",
+    "Domain controller",
+    "Bastion host",
+    "Jump server"
+   ],
+   "answer": 0,
+   "explanation": "Honeypots divert attackers from real assets and reveal their techniques; any interaction with one is suspicious by definition."
+  },
+  {
+   "id": "isc2cc-377",
+   "domain": "network",
+   "prompt": "A remote user's VPN sends only corporate-bound traffic through the tunnel while other internet traffic goes directly to the internet. This configuration is called:",
+   "choices": [
+    "Split tunneling",
+    "Full tunneling",
+    "Network address translation",
+    "Port mirroring"
+   ],
+   "answer": 0,
+   "explanation": "Split tunneling saves bandwidth, but corporate security controls cannot inspect the user's direct internet traffic."
+  },
+  {
+   "id": "isc2cc-378",
+   "domain": "network",
+   "prompt": "Which IPsec mode encrypts the entire original IP packet, including its header, and is typically used for site-to-site VPNs?",
+   "choices": [
+    "Promiscuous mode",
+    "Transport mode",
+    "Tunnel mode",
+    "Monitor mode"
+   ],
+   "answer": 2,
+   "explanation": "Tunnel mode wraps the whole original packet inside a new one. Transport mode protects only the payload."
+  },
+  {
+   "id": "isc2cc-379",
+   "domain": "network",
+   "prompt": "Which IPsec protocol provides confidentiality by encrypting the payload?",
+   "choices": [
+    "Internet Key Exchange (IKE)",
+    "Generic Routing Encapsulation (GRE)",
+    "Encapsulating Security Payload (ESP)",
+    "Authentication Header (AH)"
+   ],
+   "answer": 2,
+   "explanation": "ESP provides encryption plus integrity. AH provides integrity and authentication only, with no encryption."
+  },
+  {
+   "id": "isc2cc-380",
+   "domain": "network",
+   "prompt": "Which IEEE standard provides port-based network access control, requiring devices to authenticate before a switch port allows traffic?",
+   "choices": [
+    "802.11",
+    "802.3",
+    "802.1Q",
+    "802.1X"
+   ],
+   "answer": 3,
+   "explanation": "802.1X uses a supplicant, authenticator, and authentication server, usually RADIUS. 802.1Q defines VLAN tagging."
+  },
+  {
+   "id": "isc2cc-381",
+   "domain": "network",
+   "prompt": "Which cloud characteristic lets resources automatically scale up during peak demand and back down afterward?",
+   "choices": [
+    "Resource pooling",
+    "Broad network access",
+    "Rapid elasticity",
+    "Measured service"
+   ],
+   "answer": 2,
+   "explanation": "Rapid elasticity allows capacity to expand and contract quickly with demand, so customers pay only for what they use."
+  },
+  {
+   "id": "isc2cc-382",
+   "domain": "network",
+   "prompt": "Several hospitals share a cloud infrastructure built to meet their common regulatory requirements. Which deployment model is this?",
+   "choices": [
+    "Hybrid cloud",
+    "Public cloud",
+    "Community cloud",
+    "Private cloud"
+   ],
+   "answer": 2,
+   "explanation": "A community cloud is shared by organizations with common concerns, such as compliance needs, and is not open to the general public."
+  },
+  {
+   "id": "isc2cc-383",
+   "domain": "network",
+   "prompt": "A company outsources the monitoring and management of its firewalls and security alerts to a third party. This provider is BEST described as a(n):",
+   "choices": [
+    "Internet service provider (ISP)",
+    "Value-added reseller of networking hardware",
+    "Managed security service provider (MSSP)",
+    "Certificate authority (CA)"
+   ],
+   "answer": 2,
+   "explanation": "An MSSP delivers security operations such as monitoring and device management as a service; contracts and SLAs define its responsibilities."
+  },
+  {
+   "id": "isc2cc-384",
+   "domain": "network",
+   "prompt": "Why should IoT devices such as smart cameras usually be placed on a separate network segment?",
+   "choices": [
+    "They cannot obtain IP addresses on normal networks",
+    "They require much faster network connections than workstations",
+    "They often lack updates, so isolation limits any compromise",
+    "Separating them makes the devices cheaper to buy"
+   ],
+   "answer": 2,
+   "explanation": "Segmenting IoT devices prevents an attacker who compromises one from easily reaching critical internal systems."
+  },
+  {
+   "id": "isc2cc-385",
+   "domain": "network",
+   "prompt": "Why is a network switch considered more secure than a hub?",
+   "choices": [
+    "It sends frames only to the destination's port",
+    "It assigns IP addresses to every device",
+    "It encrypts all traffic automatically",
+    "It blocks all malware at the application layer"
+   ],
+   "answer": 0,
+   "explanation": "A hub sends every frame to all ports, making sniffing easy, while a switch uses MAC address tables to deliver frames only where they belong."
+  },
+  {
+   "id": "isc2cc-386",
+   "domain": "network",
+   "prompt": "A control system network is physically disconnected from all other networks, including the internet. This is called a(n):",
+   "choices": [
+    "Virtual LAN",
+    "Demilitarized zone",
+    "Extranet",
+    "Air gap"
+   ],
+   "answer": 3,
+   "explanation": "An air gap provides strong isolation, although removable media and insiders can still bridge it."
+  },
+  {
+   "id": "isc2cc-387",
+   "domain": "network",
+   "prompt": "Which extension adds digital signatures to DNS responses so that resolvers can verify they have not been forged?",
+   "choices": [
+    "SNMPv3",
+    "DHCP snooping",
+    "DNSSEC",
+    "S/MIME"
+   ],
+   "answer": 2,
+   "explanation": "DNSSEC lets resolvers validate the origin and integrity of DNS data, defending against cache poisoning. It does not encrypt queries."
+  },
+  {
+   "id": "isc2cc-388",
+   "domain": "ops",
+   "prompt": "Which hashing algorithm is considered broken because practical collisions can be produced, and should not be used for security purposes?",
+   "choices": [
+    "SHA-512",
+    "SHA-256",
+    "MD5",
+    "SHA-384"
+   ],
+   "answer": 2,
+   "explanation": "Researchers can generate MD5 collisions easily, so it is unsuitable for signatures or integrity checks. The SHA-2 family remains secure."
+  },
+  {
+   "id": "isc2cc-389",
+   "domain": "ops",
+   "prompt": "When two different inputs produce the same hash value, this is called a:",
+   "choices": [
+    "Digital signature",
+    "Key exchange",
+    "Collision",
+    "Salt"
+   ],
+   "answer": 2,
+   "explanation": "A secure hash function makes collisions computationally infeasible to find; once practical collisions exist, the algorithm is considered broken."
+  },
+  {
+   "id": "isc2cc-390",
+   "domain": "ops",
+   "prompt": "Which of the following is an asymmetric encryption algorithm?",
+   "choices": [
+    "3DES",
+    "AES",
+    "Blowfish",
+    "RSA"
+   ],
+   "answer": 3,
+   "explanation": "RSA uses a public and private key pair. AES, 3DES, and Blowfish are symmetric algorithms that use one shared key."
+  },
+  {
+   "id": "isc2cc-391",
+   "domain": "ops",
+   "prompt": "Ten users each need to communicate privately with every other user using symmetric encryption. How many unique keys are required?",
+   "choices": [
+    "45",
+    "10",
+    "20",
+    "90"
+   ],
+   "answer": 0,
+   "explanation": "Each pair of users needs its own shared secret key, so n(n-1)/2 keys are required: 10 x 9 / 2 = 45. This scaling problem is one reason asymmetric cryptography is used for key exchange."
+  },
+  {
+   "id": "isc2cc-392",
+   "domain": "ops",
+   "prompt": "A company enables BitLocker full-disk encryption on all laptops. Which data state does this PRIMARILY protect?",
+   "choices": [
+    "Data in transit",
+    "Data in archive tape only",
+    "Data in use",
+    "Data at rest"
+   ],
+   "answer": 3,
+   "explanation": "Full-disk encryption protects stored data if a device is lost or stolen. TLS protects data in transit."
+  },
+  {
+   "id": "isc2cc-393",
+   "domain": "ops",
+   "prompt": "Which entity issues and digitally signs certificates within a public key infrastructure?",
+   "choices": [
+    "Internet service provider",
+    "Certificate authority (CA)",
+    "Domain name registrar",
+    "Key distribution center"
+   ],
+   "answer": 1,
+   "explanation": "A CA vouches for the binding between an identity and a public key by signing the certificate with its own private key."
+  },
+  {
+   "id": "isc2cc-394",
+   "domain": "ops",
+   "prompt": "To verify a digital signature on a message from Alice, Bob should use:",
+   "choices": [
+    "Bob's public key",
+    "Bob's private key",
+    "Alice's private key",
+    "Alice's public key"
+   ],
+   "answer": 3,
+   "explanation": "Alice signs with her private key, and anyone can verify the signature with her public key, confirming authenticity and integrity."
+  },
+  {
+   "id": "isc2cc-395",
+   "domain": "ops",
+   "prompt": "Which AES key lengths are defined by the standard?",
+   "choices": [
+    "512, 1024, and 2048 bits",
+    "64, 96, and 160 bits",
+    "56, 112, and 168 bits",
+    "128, 192, and 256 bits"
+   ],
+   "answer": 3,
+   "explanation": "AES supports 128-, 192-, and 256-bit keys. 56 bits is the DES key size, and 2048 bits is a common RSA key size."
+  },
+  {
+   "id": "isc2cc-396",
+   "domain": "ops",
+   "prompt": "A company press release has already been published on its public website. Which classification level is MOST appropriate for it?",
+   "choices": [
+    "Internal use only",
+    "Public",
+    "Confidential",
+    "Restricted"
+   ],
+   "answer": 1,
+   "explanation": "Information intentionally released to the public requires no confidentiality protection, so it is classified as public."
+  },
+  {
+   "id": "isc2cc-397",
+   "domain": "ops",
+   "prompt": "Which method is MOST appropriate for disposing of printed documents containing confidential customer data?",
+   "choices": [
+    "Placing them in an office recycling bin",
+    "Storing them in a basement",
+    "Cross-cut shredding",
+    "Tearing each page in half"
+   ],
+   "answer": 2,
+   "explanation": "Cross-cut shredding reduces paper to small pieces that are very hard to reassemble; recycling or tearing leaves the data readable."
+  },
+  {
+   "id": "isc2cc-398",
+   "domain": "ops",
+   "prompt": "Under NIST SP 800-88, overwriting media so that data cannot be recovered with standard tools, while allowing the media to be reused, is called:",
+   "choices": [
+    "Clearing",
+    "Degaussing",
+    "Archiving",
+    "Destroying"
+   ],
+   "answer": 0,
+   "explanation": "NIST defines three levels: clear, purge, and destroy. Clearing protects against simple, non-invasive recovery and keeps the media usable."
+  },
+  {
+   "id": "isc2cc-399",
+   "domain": "ops",
+   "prompt": "Which sanitization method is well suited to quickly rendering data on a self-encrypting SSD unrecoverable while keeping the drive reusable?",
+   "choices": [
+    "Defragmentation",
+    "Cryptographic erase",
+    "Formatting with a quick format",
+    "Degaussing"
+   ],
+   "answer": 1,
+   "explanation": "Cryptographic erase destroys the encryption key, making the data unreadable. Degaussing does not work on flash storage, and a quick format leaves data recoverable."
+  },
+  {
+   "id": "isc2cc-400",
+   "domain": "ops",
+   "prompt": "Which event is MOST important to capture in security logs?",
+   "choices": [
+    "Users changing their desktop wallpaper",
+    "Repeated failed admin account logins",
+    "Printer toner level changes",
+    "Routine screen saver activation"
+   ],
+   "answer": 1,
+   "explanation": "Failed privileged logins can indicate brute-force or credential attacks and are key evidence for detection and investigation."
+  },
+  {
+   "id": "isc2cc-401",
+   "domain": "ops",
+   "prompt": "Which measure BEST protects logs from being altered by an attacker who gains administrator access to a server?",
+   "choices": [
+    "Keeping logs only on the local server's disk",
+    "Allowing all users to edit the log files",
+    "Turning off logging during maintenance windows",
+    "Forwarding logs in real time to immutable storage"
+   ],
+   "answer": 3,
+   "explanation": "Immutable, off-host storage preserves log integrity because the attacker cannot change records once they are written."
+  },
+  {
+   "id": "isc2cc-402",
+   "domain": "ops",
+   "prompt": "Why is it useful to establish a baseline of normal network and system activity?",
+   "choices": [
+    "It makes unusual activity easier to recognize",
+    "It guarantees that no attacks will succeed",
+    "It removes the need to collect logs",
+    "It replaces the need for patching"
+   ],
+   "answer": 0,
+   "explanation": "Monitoring tools and analysts compare current behavior against the baseline to spot anomalies that may signal an attack."
+  },
+  {
+   "id": "isc2cc-403",
+   "domain": "ops",
+   "prompt": "Which type of tool automates incident response workflows by running playbooks across security products?",
+   "choices": [
+    "DHCP",
+    "NAT",
+    "RAID",
+    "SOAR"
+   ],
+   "answer": 3,
+   "explanation": "Security orchestration, automation, and response (SOAR) platforms automate repetitive response steps and coordinate tools."
+  },
+  {
+   "id": "isc2cc-404",
+   "domain": "ops",
+   "prompt": "Monitoring outbound (egress) network traffic is MOST useful for detecting:",
+   "choices": [
+    "Data exfiltration and command-and-control traffic",
+    "Power outages affecting the data center",
+    "Software licenses that have expired",
+    "Users who frequently forget their account passwords"
+   ],
+   "answer": 0,
+   "explanation": "Egress monitoring reveals unusual outbound transfers and connections that indicate stolen data or compromised hosts."
+  },
+  {
+   "id": "isc2cc-405",
+   "domain": "ops",
+   "prompt": "A tool detects an employee trying to email a spreadsheet of credit card numbers to a personal address and blocks the message. This tool is:",
+   "choices": [
+    "A DHCP server",
+    "Data loss prevention (DLP)",
+    "A load balancer",
+    "Network address translation (NAT)"
+   ],
+   "answer": 1,
+   "explanation": "DLP inspects content for sensitive data patterns and blocks or alerts on unauthorized transfers."
+  },
+  {
+   "id": "isc2cc-406",
+   "domain": "ops",
+   "prompt": "Which resource provides consensus-based, freely available secure configuration guides for operating systems and applications?",
+   "choices": [
+    "RFC 1918",
+    "The ISC2 Code of Ethics",
+    "The OSI model",
+    "CIS Benchmarks"
+   ],
+   "answer": 3,
+   "explanation": "The Center for Internet Security publishes benchmarks that organizations commonly use as the basis for hardening baselines."
+  },
+  {
+   "id": "isc2cc-407",
+   "domain": "ops",
+   "prompt": "After deploying a security patch to production servers, what should the team do next?",
+   "choices": [
+    "Disable logging on the patched servers",
+    "Verify it installed and systems work correctly",
+    "Delete the associated change request record",
+    "Remove the systems from the asset inventory"
+   ],
+   "answer": 1,
+   "explanation": "Verification confirms that the vulnerability is closed and that the patch did not break functionality, and it completes the change record."
+  },
+  {
+   "id": "isc2cc-408",
+   "domain": "ops",
+   "prompt": "Over time, servers gradually deviate from their approved secure configuration because of undocumented changes. This is called:",
+   "choices": [
+    "Privilege escalation",
+    "Configuration drift",
+    "Load balancing",
+    "Data remanence"
+   ],
+   "answer": 1,
+   "explanation": "Configuration drift weakens security; regular scans against the baseline and enforced change management help detect and correct it."
+  },
+  {
+   "id": "isc2cc-409",
+   "domain": "ops",
+   "prompt": "Why is an accurate asset inventory the foundation of configuration management?",
+   "choices": [
+    "It replaces the need for regular backups",
+    "It eliminates the need for network firewalls",
+    "It encrypts all listed devices automatically",
+    "You cannot secure systems you do not know exist"
+   ],
+   "answer": 3,
+   "explanation": "Unknown, unmanaged devices are left unpatched and unmonitored, so a complete inventory is required before baselines can be applied."
+  },
+  {
+   "id": "isc2cc-410",
+   "domain": "ops",
+   "prompt": "Which tool continuously monitors endpoints for suspicious behavior and lets analysts investigate and contain threats remotely?",
+   "choices": [
+    "Content delivery network (CDN)",
+    "Wireless access point with built-in controller",
+    "Network address translation",
+    "Endpoint detection and response (EDR)"
+   ],
+   "answer": 3,
+   "explanation": "EDR goes beyond signature-based antivirus by recording endpoint activity, detecting malicious behavior, and supporting remote response actions."
+  },
+  {
+   "id": "isc2cc-411",
+   "domain": "ops",
+   "prompt": "Which policy tells customers and users how an organization collects, uses, shares, and protects their personal information?",
+   "choices": [
+    "Change management policy",
+    "Password policy",
+    "Privacy policy",
+    "Acceptable use policy"
+   ],
+   "answer": 2,
+   "explanation": "A privacy policy documents personal data practices and is often required by privacy laws such as the GDPR."
+  },
+  {
+   "id": "isc2cc-412",
+   "domain": "ops",
+   "prompt": "When should employees typically acknowledge the acceptable use policy?",
+   "choices": [
+    "Only when they leave the company",
+    "At onboarding and periodically, such as yearly",
+    "Only after they have violated it",
+    "Never, because it applies only to IT staff"
+   ],
+   "answer": 1,
+   "explanation": "Signed acknowledgment at hire and on a recurring basis ensures staff know the rules and supports enforcement."
+  },
+  {
+   "id": "isc2cc-413",
+   "domain": "ops",
+   "prompt": "In change management, which group typically reviews, prioritizes, and approves proposed changes?",
+   "choices": [
+    "Help desk tier one",
+    "Computer incident response team",
+    "Change advisory board (CAB)",
+    "Board of directors' audit committee"
+   ],
+   "answer": 2,
+   "explanation": "The CAB evaluates the risk, impact, and readiness of changes before they are approved for implementation."
+  },
+  {
+   "id": "isc2cc-414",
+   "domain": "ops",
+   "prompt": "A critical production outage requires an immediate configuration fix outside the normal change schedule. What is the BEST approach?",
+   "choices": [
+    "Make the change without any record to save time",
+    "Use the emergency change process, then document and review",
+    "Wait for the next scheduled monthly change board meeting",
+    "Ask affected users to apply the fix themselves"
+   ],
+   "answer": 1,
+   "explanation": "Emergency change procedures allow fast action while preserving accountability through documentation and after-the-fact review."
+  },
+  {
+   "id": "isc2cc-415",
+   "domain": "ops",
+   "prompt": "Which method is MOST effective for measuring whether security awareness training is changing employee behavior?",
+   "choices": [
+    "Recording the time of day training was taken",
+    "Asking employees whether they enjoyed the training",
+    "Running periodic simulated phishing campaigns",
+    "Counting the number of slides in the course"
+   ],
+   "answer": 2,
+   "explanation": "Simulated phishing shows how many users click or report suspicious messages, giving measurable evidence of behavior change."
+  },
+  {
+   "id": "isc2cc-416",
+   "domain": "ops",
+   "prompt": "A phishing email crafted specifically for a company's chief financial officer is an example of:",
+   "choices": [
+    "Vishing",
+    "Whaling",
+    "Tailgating",
+    "Smishing"
+   ],
+   "answer": 1,
+   "explanation": "Whaling is spear phishing aimed at senior executives, who have high authority and access."
+  },
+  {
+   "id": "isc2cc-417",
+   "domain": "ops",
+   "prompt": "An attacker researches a specific employee on social media and sends a tailored email mentioning their manager and current project. This is:",
+   "choices": [
+    "Baiting",
+    "Spear phishing",
+    "Shoulder surfing",
+    "Mass phishing"
+   ],
+   "answer": 1,
+   "explanation": "Spear phishing uses personal details to target a specific individual, making the message far more convincing than generic phishing."
+  },
+  {
+   "id": "isc2cc-418",
+   "domain": "ops",
+   "prompt": "Attackers leave infected USB drives labeled 'Salary Review' in a company parking lot, hoping employees will plug them in. This technique is called:",
+   "choices": [
+    "Baiting",
+    "Pretexting",
+    "Whaling",
+    "Vishing"
+   ],
+   "answer": 0,
+   "explanation": "Baiting uses curiosity or greed to lure victims into using malicious media or downloads."
+  },
+  {
+   "id": "isc2cc-419",
+   "domain": "ops",
+   "prompt": "An employee receives an email that looks suspicious and asks them to log in through a link. What is the BEST action?",
+   "choices": [
+    "Reply to the sender to ask if it is legitimate",
+    "Report it to security without clicking the link",
+    "Forward it to all coworkers as a warning",
+    "Click the link to check whether it is real"
+   ],
+   "answer": 1,
+   "explanation": "Reporting lets security analyze and block the threat, while clicking, forwarding, or replying can spread or confirm the attack."
+  },
+  {
+   "id": "isc2cc-420",
+   "domain": "ops",
+   "prompt": "A caller claims to be a senior executive and demands that an employee bypass procedures immediately. Which social engineering principles are being exploited?",
+   "choices": [
+    "Familiarity and trust in technology",
+    "Scarcity and consensus",
+    "Authority and urgency",
+    "Liking and reciprocity"
+   ],
+   "answer": 2,
+   "explanation": "Attackers impersonate powerful figures and create time pressure so victims comply without verifying the request."
+  },
+  {
+   "id": "isc2cc-421",
+   "domain": "ops",
+   "prompt": "A company expects to be sued and must preserve relevant email even though its retention schedule says to delete it. This requirement is called a:",
+   "choices": [
+    "Legal hold",
+    "Change freeze",
+    "Service level agreement",
+    "Data minimization notice"
+   ],
+   "answer": 0,
+   "explanation": "A legal hold suspends normal deletion for data relevant to anticipated or ongoing litigation, overriding the retention schedule."
+  },
+  {
+   "id": "isc2cc-422",
+   "domain": "ops",
+   "prompt": "A payment system replaces credit card numbers with random substitute values and stores the real numbers in a separate secure vault. This technique is:",
+   "choices": [
+    "Hashing",
+    "Compression",
+    "Tokenization",
+    "Steganography"
+   ],
+   "answer": 2,
+   "explanation": "Tokenization swaps sensitive data for meaningless tokens, reducing the systems that handle real card data. Masking only hides part of the value on display."
+  },
+  {
+   "id": "isc2cc-423",
+   "domain": "ops",
+   "prompt": "A customer service screen shows only the last four digits of a customer's Social Security number. This technique is called:",
+   "choices": [
+    "Data tokenization in a vault",
+    "Data masking",
+    "Key escrow",
+    "Full-disk encryption"
+   ],
+   "answer": 1,
+   "explanation": "Masking obscures part of a value so staff see only what they need, reducing exposure of sensitive data."
+  },
+  {
+   "id": "isc2cc-424",
+   "domain": "principles",
+   "prompt": "An organization implements an information security management system and seeks certification against ISO/IEC 27001. What is the MAIN benefit?",
+   "choices": [
+    "Elimination of the need for internal risk assessments",
+    "Automatic compliance with every national privacy law",
+    "Independent assurance that its ISMS meets a recognized standard",
+    "Legal immunity from all data breach lawsuits"
+   ],
+   "answer": 2,
+   "explanation": "ISO/IEC 27001 certification shows an accredited auditor has verified the ISMS. It does not grant legal immunity or replace risk assessment, which the standard itself requires."
+  },
+  {
+   "id": "isc2cc-425",
+   "domain": "access",
+   "prompt": "What is a key security advantage of a biometric door reader over a badge-only reader?",
+   "choices": [
+    "It never produces false rejections of valid users",
+    "It removes the need to log door entries",
+    "The credential cannot easily be lent or handed to someone else",
+    "It costs less to install than badge readers"
+   ],
+   "answer": 2,
+   "explanation": "A fingerprint or palm print stays with the person, so unlike a badge it cannot simply be passed to another individual. Biometrics still have error rates and should still be logged."
   }
  ]
 }

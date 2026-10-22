@@ -3017,6 +3017,2606 @@
    ],
    "answer": 2,
    "explanation": "The underlay is the physical infrastructure and its routing protocol, over which the overlay tunnels are built."
+  },
+  {
+   "id": "ccna-226",
+   "domain": "fund",
+   "prompt": "A host is configured as 192.168.10.130/26. What is the network address of its subnet?",
+   "choices": [
+    "192.168.10.64",
+    "192.168.10.130",
+    "192.168.10.128",
+    "192.168.10.192"
+   ],
+   "answer": 2,
+   "explanation": "A /26 mask creates blocks of 64 in the last octet (0, 64, 128, 192), so .130 falls in the 192.168.10.128 subnet."
+  },
+  {
+   "id": "ccna-227",
+   "domain": "fund",
+   "prompt": "What is the broadcast address of the subnet 10.0.48.0/21?",
+   "choices": [
+    "10.0.49.255",
+    "10.0.63.255",
+    "10.0.51.255",
+    "10.0.55.255"
+   ],
+   "answer": 3,
+   "explanation": "A /21 mask uses a block size of 8 in the third octet, so 10.0.48.0/21 covers 10.0.48.0 through 10.0.55.255."
+  },
+  {
+   "id": "ccna-228",
+   "domain": "fund",
+   "prompt": "The network 172.16.0.0/16 is divided into /23 subnets. How many subnets are created?",
+   "choices": [
+    "64",
+    "128",
+    "256",
+    "512"
+   ],
+   "answer": 1,
+   "explanation": "Moving from /16 to /23 borrows 7 bits, and 2^7 equals 128 subnets."
+  },
+  {
+   "id": "ccna-229",
+   "domain": "fund",
+   "prompt": "An engineer must split 192.168.1.0/24 into the largest possible number of equal subnets, each supporting at least 50 hosts. Which subnet mask should be used?",
+   "choices": [
+    "255.255.255.224",
+    "255.255.255.192",
+    "255.255.255.128",
+    "255.255.255.240"
+   ],
+   "answer": 1,
+   "explanation": "A /26 (255.255.255.192) provides 62 usable hosts and four subnets; a /27 supports only 30 hosts, and a /25 yields fewer subnets."
+  },
+  {
+   "id": "ccna-230",
+   "domain": "fund",
+   "prompt": "What is the last usable host address in the subnet 172.20.96.0/19?",
+   "choices": [
+    "172.20.127.255",
+    "172.20.111.254",
+    "172.20.128.254",
+    "172.20.127.254"
+   ],
+   "answer": 3,
+   "explanation": "A /19 has a block size of 32 in the third octet, so the subnet spans 172.20.96.0 to 172.20.127.255; the last usable host is one below the broadcast."
+  },
+  {
+   "id": "ccna-231",
+   "domain": "fund",
+   "prompt": "Using a /27 mask, which pair of host addresses is in the same subnet?",
+   "choices": [
+    "10.1.1.30 and 10.1.1.35",
+    "10.1.1.33 and 10.1.1.62",
+    "10.1.1.63 and 10.1.1.64",
+    "10.1.1.95 and 10.1.1.97"
+   ],
+   "answer": 1,
+   "explanation": "/27 subnets increment by 32, so 10.1.1.32 to 10.1.1.63 is one subnet containing both .33 and .62; the other pairs straddle a subnet boundary."
+  },
+  {
+   "id": "ccna-232",
+   "domain": "fund",
+   "prompt": "Using VLSM on 192.168.50.0/24, an engineer allocates subnets largest first for LANs needing 100, 50 and 20 hosts. Which subnet is assigned to the 20-host LAN?",
+   "choices": [
+    "192.168.50.160/27",
+    "192.168.50.192/27",
+    "192.168.50.224/27",
+    "192.168.50.192/28"
+   ],
+   "answer": 1,
+   "explanation": "The 100-host LAN takes 192.168.50.0/25 and the 50-host LAN takes 192.168.50.128/26, so the next free block for a /27 (30 hosts) starts at .192. A /28 would only give 14 hosts."
+  },
+  {
+   "id": "ccna-233",
+   "domain": "fund",
+   "prompt": "Which single summary address most efficiently covers the networks 10.10.16.0/24 through 10.10.23.0/24?",
+   "choices": [
+    "10.10.16.0/20",
+    "10.10.16.0/22",
+    "10.10.16.0/21",
+    "10.10.0.0/19"
+   ],
+   "answer": 2,
+   "explanation": "Eight contiguous /24 networks starting on a multiple of 8 summarize to a /21; a /22 covers only four networks and a /20 includes extra space."
+  },
+  {
+   "id": "ccna-234",
+   "domain": "fund",
+   "prompt": "Which prefix length is equivalent to the subnet mask 255.255.248.0?",
+   "choices": [
+    "/21",
+    "/20",
+    "/22",
+    "/19"
+   ],
+   "answer": 0,
+   "explanation": "248 in binary is 11111000, which adds 5 bits to the 16 bits of the first two octets for a total of 21."
+  },
+  {
+   "id": "ccna-235",
+   "domain": "fund",
+   "prompt": "How many usable host addresses exist in a subnet that uses the mask 255.255.240.0?",
+   "choices": [
+    "4094",
+    "4096",
+    "2046",
+    "8190"
+   ],
+   "answer": 0,
+   "explanation": "255.255.240.0 is a /20, leaving 12 host bits; 2^12 minus 2 equals 4094 usable addresses."
+  },
+  {
+   "id": "ccna-236",
+   "domain": "fund",
+   "prompt": "A PC is configured with 192.168.1.70/26 and default gateway 192.168.1.1. It can reach local hosts but not other networks. What is the MOST likely cause?",
+   "choices": [
+    "The default gateway is outside the PC's subnet",
+    "The PC's mask should be /24 to reach the internet",
+    "The PC address is a broadcast address",
+    "The gateway address is reserved for multicast"
+   ],
+   "answer": 0,
+   "explanation": "192.168.1.70/26 belongs to the 192.168.1.64/26 subnet, so a gateway of 192.168.1.1 is on a different subnet and cannot be reached directly."
+  },
+  {
+   "id": "ccna-237",
+   "domain": "fund",
+   "prompt": "What is the /64 prefix of the IPv6 address 2001:DB8:AC10:FE01:1234::1/64?",
+   "choices": [
+    "2001:DB8:AC10::/64",
+    "2001:DB8:AC10:FE01:1234::/64",
+    "2001:DB8:AC10:FE01::/64",
+    "2001:DB8::/64"
+   ],
+   "answer": 2,
+   "explanation": "The first 64 bits are the first four hextets, 2001:DB8:AC10:FE01, followed by zeros for the interface ID portion."
+  },
+  {
+   "id": "ccna-238",
+   "domain": "fund",
+   "prompt": "Which IPv6 address block is allocated for global unicast addresses?",
+   "choices": [
+    "2000::/3",
+    "FC00::/7",
+    "FE80::/10",
+    "FF00::/8"
+   ],
+   "answer": 0,
+   "explanation": "Global unicast addresses currently come from 2000::/3; FC00::/7 is unique local, FE80::/10 is link-local and FF00::/8 is multicast."
+  },
+  {
+   "id": "ccna-239",
+   "domain": "fund",
+   "prompt": "Which of these IPv6 addresses is written incorrectly?",
+   "choices": [
+    "2001:DB8::1::5",
+    "2001:DB8:0:0:8:800:200C:417A",
+    "FE80::1",
+    "::1"
+   ],
+   "answer": 0,
+   "explanation": "The double colon may appear only once in an IPv6 address, because using it twice makes the number of omitted zero hextets ambiguous."
+  },
+  {
+   "id": "ccna-240",
+   "domain": "fund",
+   "prompt": "What is the IPv6 loopback address?",
+   "choices": [
+    "::",
+    "FE80::1",
+    "::1",
+    "FF02::1"
+   ],
+   "answer": 2,
+   "explanation": "::1 is the IPv6 loopback, equivalent to 127.0.0.1 in IPv4; :: is the unspecified address."
+  },
+  {
+   "id": "ccna-241",
+   "domain": "fund",
+   "prompt": "Which IPv6 multicast address is used to reach all IPv6 nodes on the local link?",
+   "choices": [
+    "FF02::2",
+    "FF02::5",
+    "FF05::1",
+    "FF02::1"
+   ],
+   "answer": 3,
+   "explanation": "FF02::1 is the link-local all-nodes group; FF02::2 is all routers and FF02::5 is used by OSPFv3 routers."
+  },
+  {
+   "id": "ccna-242",
+   "domain": "fund",
+   "prompt": "A host has the IPv6 address 2001:DB8::ABCD:1234. What is its solicited-node multicast address?",
+   "choices": [
+    "FF02::2:FFCD:1234",
+    "FF02::1:FFCD:1234",
+    "FF02::1:FFAB:CD12",
+    "FF02::1:FF12:34CD"
+   ],
+   "answer": 1,
+   "explanation": "The solicited-node address is FF02::1:FF00:0/104 combined with the low-order 24 bits of the unicast address, which here are CD:1234."
+  },
+  {
+   "id": "ccna-243",
+   "domain": "fund",
+   "prompt": "A host is using SLAAC. Which message gives it the IPv6 prefix and default gateway information?",
+   "choices": [
+    "Neighbor Solicitation",
+    "ICMPv6 Redirect",
+    "Router Advertisement",
+    "DHCPv6 Request"
+   ],
+   "answer": 2,
+   "explanation": "Routers send ICMPv6 Router Advertisements containing the prefix, prefix length and their link-local address, which hosts use as the gateway."
+  },
+  {
+   "id": "ccna-244",
+   "domain": "fund",
+   "prompt": "Before an IPv6 host starts using a newly configured address, how does it confirm that no other node already uses it?",
+   "choices": [
+    "It sends a gratuitous ARP for the address",
+    "It queries the DHCPv6 server for conflicts",
+    "It performs Duplicate Address Detection with a Neighbor Solicitation",
+    "It pings the all-routers multicast group"
+   ],
+   "answer": 2,
+   "explanation": "Duplicate Address Detection sends a Neighbor Solicitation targeting the tentative address; a reply means the address is already in use. IPv6 does not use ARP."
+  },
+  {
+   "id": "ccna-245",
+   "domain": "fund",
+   "prompt": "Which interface command assigns an IPv6 address from prefix 2001:DB8:1:1::/64 using a modified EUI-64 interface ID?",
+   "choices": [
+    "ipv6 address autoconfig eui-64",
+    "ipv6 address 2001:DB8:1:1::/64 link-local",
+    "ipv6 enable 2001:DB8:1:1::/64",
+    "ipv6 address 2001:DB8:1:1::/64 eui-64"
+   ],
+   "answer": 3,
+   "explanation": "The eui-64 keyword tells IOS to build the interface ID from the interface MAC address; autoconfig uses SLAAC instead."
+  },
+  {
+   "id": "ccna-246",
+   "domain": "fund",
+   "prompt": "Which statement correctly compares single-mode and multimode fiber?",
+   "choices": [
+    "Single-mode has a larger core and uses LEDs for short runs",
+    "Multimode supports longer distances because it carries more light modes",
+    "Multimode is required for any link over 10 km",
+    "Single-mode has a smaller core, uses lasers and supports longer distances"
+   ],
+   "answer": 3,
+   "explanation": "Single-mode fiber has a narrow core of about 9 microns and uses laser light, allowing links of many kilometers; multimode is cheaper but limited to shorter distances."
+  },
+  {
+   "id": "ccna-247",
+   "domain": "fund",
+   "prompt": "A Cisco switch port set to auto speed and duplex connects to a device hard-coded to 100 Mbps full duplex with autonegotiation disabled. What does the switch port select?",
+   "choices": [
+    "100 Mbps full duplex",
+    "1000 Mbps full duplex",
+    "10 Mbps half duplex",
+    "100 Mbps half duplex"
+   ],
+   "answer": 3,
+   "explanation": "When autonegotiation fails, the switch can sense the speed but defaults to half duplex at 10/100 Mbps, causing a duplex mismatch."
+  },
+  {
+   "id": "ccna-248",
+   "domain": "fund",
+   "prompt": "The output of show ip interface brief lists GigabitEthernet0/1 as administratively down / down. What should be done FIRST to bring it up?",
+   "choices": [
+    "Replace the cable",
+    "Configure an IP address on the interface",
+    "Enter no shutdown on the interface",
+    "Change the encapsulation type"
+   ],
+   "answer": 2,
+   "explanation": "Administratively down means the interface has been disabled with the shutdown command, so no shutdown is the first fix."
+  },
+  {
+   "id": "ccna-249",
+   "domain": "fund",
+   "prompt": "A serial link between two routers shows up / down on both ends. Which issue is MOST likely?",
+   "choices": [
+    "A missing IP address on one interface",
+    "The interface was disabled with shutdown",
+    "Mismatched Layer 2 encapsulation such as HDLC on one side and PPP on the other",
+    "An incorrect default route"
+   ],
+   "answer": 2,
+   "explanation": "Up / down means Layer 1 is working but the data link protocol is failing, which is commonly caused by an encapsulation mismatch."
+  },
+  {
+   "id": "ccna-250",
+   "domain": "fund",
+   "prompt": "Which TCP mechanism controls how much data a sender can transmit before it must receive an acknowledgment?",
+   "choices": [
+    "Sequencing",
+    "The checksum",
+    "Windowing",
+    "The three-way handshake"
+   ],
+   "answer": 2,
+   "explanation": "The TCP window size advertised by the receiver limits unacknowledged data in flight, providing flow control."
+  },
+  {
+   "id": "ccna-251",
+   "domain": "fund",
+   "prompt": "What is the size of the UDP header?",
+   "choices": [
+    "20 bytes",
+    "16 bytes",
+    "8 bytes",
+    "40 bytes"
+   ],
+   "answer": 2,
+   "explanation": "The UDP header has only four 2-byte fields (source port, destination port, length and checksum), totaling 8 bytes; a basic TCP header is 20 bytes."
+  },
+  {
+   "id": "ccna-252",
+   "domain": "fund",
+   "prompt": "DNS normally uses UDP port 53 for queries. Which transport and port are used for DNS zone transfers between servers?",
+   "choices": [
+    "UDP port 853",
+    "TCP port 953",
+    "UDP port 5353",
+    "TCP port 53"
+   ],
+   "answer": 3,
+   "explanation": "Zone transfers move large amounts of data reliably, so they use TCP on port 53."
+  },
+  {
+   "id": "ccna-253",
+   "domain": "fund",
+   "prompt": "Which protocol and port pairing is correct?",
+   "choices": [
+    "SMTP uses UDP port 25",
+    "DHCP server uses TCP port 67",
+    "Telnet uses TCP port 23",
+    "SNMP traps use TCP port 162"
+   ],
+   "answer": 2,
+   "explanation": "Telnet uses TCP 23. SMTP uses TCP 25, DHCP uses UDP 67/68 and SNMP traps use UDP 162."
+  },
+  {
+   "id": "ccna-254",
+   "domain": "fund",
+   "prompt": "Which IEEE 802.11 standard is marketed as Wi-Fi 6?",
+   "choices": [
+    "802.11ac",
+    "802.11ax",
+    "802.11n",
+    "802.11g"
+   ],
+   "answer": 1,
+   "explanation": "802.11ax is Wi-Fi 6; 802.11ac is Wi-Fi 5 and 802.11n is Wi-Fi 4."
+  },
+  {
+   "id": "ccna-255",
+   "domain": "fund",
+   "prompt": "What does the BSSID identify in an 802.11 network?",
+   "choices": [
+    "The name of the WLAN broadcast to clients",
+    "The VLAN that wireless clients are placed in",
+    "The MAC address of the AP radio serving a basic service set",
+    "The channel number used by the AP"
+   ],
+   "answer": 2,
+   "explanation": "The BSSID is the radio MAC address of the AP for a BSS, while the SSID is the human-readable network name."
+  },
+  {
+   "id": "ccna-256",
+   "domain": "fund",
+   "prompt": "Two neighboring 2.4 GHz APs are set to channels 1 and 3, and users report poor throughput. What is the MOST likely issue?",
+   "choices": [
+    "Co-channel interference because both use channel 1",
+    "Adjacent-channel interference from overlapping channels",
+    "Interference from the 5 GHz band",
+    "The SSIDs on both APs must be different"
+   ],
+   "answer": 1,
+   "explanation": "In 2.4 GHz only channels 1, 6 and 11 do not overlap, so channels 1 and 3 overlap and interfere with each other."
+  },
+  {
+   "id": "ccna-257",
+   "domain": "fund",
+   "prompt": "Wi-Fi 6E extended 802.11ax operation into which frequency band?",
+   "choices": [
+    "2.4 GHz",
+    "5 GHz",
+    "6 GHz",
+    "60 GHz"
+   ],
+   "answer": 2,
+   "explanation": "Wi-Fi 6E adds the 6 GHz band, providing many additional wide channels; 60 GHz is used by 802.11ad/ay."
+  },
+  {
+   "id": "ccna-258",
+   "domain": "fund",
+   "prompt": "What characterizes a Type 1 hypervisor?",
+   "choices": [
+    "It runs directly on the server hardware without a host operating system",
+    "It runs as an application on top of a desktop operating system",
+    "It shares one kernel among isolated containers",
+    "It is used only to emulate network switches"
+   ],
+   "answer": 0,
+   "explanation": "Type 1 (bare-metal) hypervisors such as ESXi run directly on hardware; Type 2 hypervisors run on a host OS."
+  },
+  {
+   "id": "ccna-259",
+   "domain": "fund",
+   "prompt": "Two virtual machines on the same physical host are in the same VLAN and communicate with each other. Which component forwards their traffic?",
+   "choices": [
+    "A virtual switch inside the hypervisor",
+    "The upstream physical router",
+    "The server's BIOS",
+    "A wireless LAN controller"
+   ],
+   "answer": 0,
+   "explanation": "Hypervisors provide a virtual switch that connects VM virtual NICs, so traffic between VMs on the same host and VLAN stays inside the host."
+  },
+  {
+   "id": "ccna-260",
+   "domain": "fund",
+   "prompt": "A service provider router must keep separate routing tables for two customers that use overlapping IP address ranges. Which technology should be used?",
+   "choices": [
+    "HSRP",
+    "VRF",
+    "Port security",
+    "NAT64"
+   ],
+   "answer": 1,
+   "explanation": "Virtual Routing and Forwarding creates multiple independent routing table instances on one router, allowing overlapping addresses."
+  },
+  {
+   "id": "ccna-261",
+   "domain": "fund",
+   "prompt": "How does a switch populate its MAC address table?",
+   "choices": [
+    "By recording the destination MAC address of each frame it floods",
+    "By recording the source MAC address of each received frame with the incoming port",
+    "By sending ARP requests to every connected host",
+    "By receiving MAC tables from the default gateway"
+   ],
+   "answer": 1,
+   "explanation": "Switches learn by examining source MAC addresses on incoming frames and mapping them to the ingress port and VLAN."
+  },
+  {
+   "id": "ccna-262",
+   "domain": "fund",
+   "prompt": "A switch receives a frame on a VLAN 10 access port with destination MAC FFFF.FFFF.FFFF. What does the switch do?",
+   "choices": [
+    "Drops it because broadcasts are not forwarded",
+    "Floods it out all ports in VLAN 10 except the receiving port",
+    "Sends it to the default gateway only",
+    "Floods it out every port in every VLAN"
+   ],
+   "answer": 1,
+   "explanation": "A broadcast frame is flooded within its VLAN, out every port except the one it arrived on; VLANs bound the broadcast domain."
+  },
+  {
+   "id": "ccna-263",
+   "domain": "fund",
+   "prompt": "In a three-tier campus design, which layer aggregates access switches and commonly enforces policy and routing between VLANs?",
+   "choices": [
+    "Access layer",
+    "Core layer",
+    "Edge layer",
+    "Distribution layer"
+   ],
+   "answer": 3,
+   "explanation": "The distribution layer aggregates access switches, provides boundaries and policy, and often performs inter-VLAN routing before traffic reaches the core."
+  },
+  {
+   "id": "ccna-264",
+   "domain": "fund",
+   "prompt": "A router has two LAN interfaces, each connected to its own 24-port switch with no VLANs configured. How many broadcast domains exist?",
+   "choices": [
+    "2",
+    "1",
+    "24",
+    "48"
+   ],
+   "answer": 0,
+   "explanation": "Each router interface forms a separate broadcast domain, and switches without VLANs do not split broadcast domains."
+  },
+  {
+   "id": "ccna-265",
+   "domain": "fund",
+   "prompt": "PC1 at 10.1.1.10/24 sends its first packet to a server at 10.2.2.20. For which IP address does PC1 send an ARP request?",
+   "choices": [
+    "Its default gateway address",
+    "10.2.2.20",
+    "10.1.1.255",
+    "The DNS server address"
+   ],
+   "answer": 0,
+   "explanation": "Because the destination is on a different subnet, PC1 needs the MAC address of its default gateway, so it ARPs for the gateway."
+  },
+  {
+   "id": "ccna-266",
+   "domain": "access",
+   "prompt": "Which command sequence creates VLAN 100 and names it SALES?",
+   "choices": [
+    "vlan database 100 SALES",
+    "switchport access vlan 100 name SALES",
+    "interface vlan 100 followed by description SALES",
+    "vlan 100 followed by name SALES"
+   ],
+   "answer": 3,
+   "explanation": "In global configuration, vlan 100 enters VLAN configuration mode and name SALES sets the name. interface vlan 100 creates an SVI, not a VLAN."
+  },
+  {
+   "id": "ccna-267",
+   "domain": "access",
+   "prompt": "Where does a Catalyst switch store normal-range VLAN configuration by default?",
+   "choices": [
+    "In the vlan.dat file in flash",
+    "Only in the running configuration",
+    "In NVRAM inside the startup configuration",
+    "In the boot ROM"
+   ],
+   "answer": 0,
+   "explanation": "Normal-range VLANs are stored in vlan.dat in flash memory, which is why erasing the startup config alone does not remove VLANs."
+  },
+  {
+   "id": "ccna-268",
+   "domain": "access",
+   "prompt": "Which interface command changes the native VLAN of an 802.1Q trunk to VLAN 99?",
+   "choices": [
+    "switchport native vlan 99 trunk",
+    "switchport trunk allowed vlan 99",
+    "switchport trunk native vlan 99",
+    "encapsulation dot1q 99 native"
+   ],
+   "answer": 2,
+   "explanation": "switchport trunk native vlan 99 sets the untagged VLAN on the trunk; the same value should be set on both ends."
+  },
+  {
+   "id": "ccna-269",
+   "domain": "access",
+   "prompt": "On a switch that supports both ISL and 802.1Q, switchport mode trunk is rejected because the trunk encapsulation is Auto. What should be configured first?",
+   "choices": [
+    "switchport trunk encapsulation dot1q",
+    "switchport nonegotiate",
+    "switchport mode dynamic desirable",
+    "spanning-tree portfast trunk"
+   ],
+   "answer": 0,
+   "explanation": "Switches that support ISL require the encapsulation to be set before the port can be statically configured as a trunk."
+  },
+  {
+   "id": "ccna-270",
+   "domain": "access",
+   "prompt": "Which command verifies the administrative mode, access VLAN and voice VLAN configured on port Gi0/2?",
+   "choices": [
+    "show interfaces gi0/2 switchport",
+    "show vlan brief",
+    "show interfaces trunk",
+    "show running-config vlan"
+   ],
+   "answer": 0,
+   "explanation": "show interfaces switchport displays per-port details including administrative and operational mode, access VLAN and voice VLAN."
+  },
+  {
+   "id": "ccna-271",
+   "domain": "access",
+   "prompt": "An administrator deletes VLAN 30 from a switch. Users on ports assigned to VLAN 30 immediately lose connectivity. Why?",
+   "choices": [
+    "The ports remain assigned to VLAN 30 and stay inactive until it is recreated or the ports are reassigned",
+    "The ports automatically move to VLAN 1 and need new IP addresses",
+    "The ports are placed into err-disabled state",
+    "The ports become trunks and drop untagged frames"
+   ],
+   "answer": 0,
+   "explanation": "Deleting a VLAN does not reassign its access ports; they become inactive and do not forward traffic until the VLAN exists again."
+  },
+  {
+   "id": "ccna-272",
+   "domain": "access",
+   "prompt": "Which command removes only VLAN 50 from the allowed list of a trunk while keeping other allowed VLANs?",
+   "choices": [
+    "no switchport trunk allowed vlan 50",
+    "switchport trunk allowed vlan remove 50",
+    "switchport trunk allowed vlan except 50",
+    "switchport trunk pruning vlan remove 50"
+   ],
+   "answer": 1,
+   "explanation": "The remove keyword deletes a single VLAN from the existing list; except would replace the list with every VLAN other than 50."
+  },
+  {
+   "id": "ccna-273",
+   "domain": "access",
+   "prompt": "An engineer wants to stop CDP advertisements on an internet-facing interface but keep CDP running on all other interfaces. Which command should be used?",
+   "choices": [
+    "no cdp run in global configuration",
+    "no lldp transmit on that interface",
+    "no cdp enable on that interface",
+    "cdp timer 0 on that interface"
+   ],
+   "answer": 2,
+   "explanation": "no cdp enable disables CDP per interface, while no cdp run would disable it on the entire device."
+  },
+  {
+   "id": "ccna-274",
+   "domain": "access",
+   "prompt": "LLDP is enabled globally. Which interface command stops Gi0/1 from sending LLDP advertisements while still learning neighbors from received LLDP frames?",
+   "choices": [
+    "no lldp receive",
+    "no lldp transmit",
+    "no lldp run",
+    "lldp holdtime 0"
+   ],
+   "answer": 1,
+   "explanation": "LLDP transmit and receive are controlled separately per interface, so no lldp transmit stops advertisements while receiving continues."
+  },
+  {
+   "id": "ccna-275",
+   "domain": "access",
+   "prompt": "What is the default LLDP holdtime on Cisco IOS?",
+   "choices": [
+    "30 seconds",
+    "120 seconds",
+    "180 seconds",
+    "60 seconds"
+   ],
+   "answer": 1,
+   "explanation": "By default LLDP advertises every 30 seconds with a holdtime of 120 seconds; CDP uses 60 and 180 seconds."
+  },
+  {
+   "id": "ccna-276",
+   "domain": "access",
+   "prompt": "A Cisco switch connects to a third-party switch, and both run LLDP. Which command shows the neighbor's system name and the local and remote port IDs?",
+   "choices": [
+    "show cdp neighbors",
+    "show lldp neighbors",
+    "show interfaces status",
+    "show mac address-table dynamic"
+   ],
+   "answer": 1,
+   "explanation": "show lldp neighbors lists LLDP neighbors with device ID, local interface and port ID; CDP is Cisco proprietary and will not show the third-party device."
+  },
+  {
+   "id": "ccna-277",
+   "domain": "access",
+   "prompt": "A newly installed switch has no IP address configured, yet a neighboring Cisco switch sees it in show cdp neighbors. Why is this possible?",
+   "choices": [
+    "CDP uses the switch's DHCP-assigned address",
+    "CDP uses IPv6 link-local addresses automatically",
+    "CDP tunnels inside the native VLAN's SVI",
+    "CDP runs at Layer 2 and does not require IP addressing"
+   ],
+   "answer": 3,
+   "explanation": "CDP messages are sent as Layer 2 multicast frames, so devices can discover each other without any IP configuration."
+  },
+  {
+   "id": "ccna-278",
+   "domain": "access",
+   "prompt": "Which IEEE standard originally defined LACP?",
+   "choices": [
+    "802.1Q",
+    "802.1w",
+    "802.1X",
+    "802.3ad"
+   ],
+   "answer": 3,
+   "explanation": "LACP was defined in IEEE 802.3ad, later moved into 802.1AX. 802.1Q is trunking, 802.1w is RSTP and 802.1X is port-based authentication."
+  },
+  {
+   "id": "ccna-279",
+   "domain": "access",
+   "prompt": "Which configuration bundles Gi0/1 and Gi0/2 into Port-channel 1 using LACP and actively initiates negotiation?",
+   "choices": [
+    "interface range gi0/1 - 2 then channel-group 1 mode desirable",
+    "interface range gi0/1 - 2 then channel-group 1 mode active",
+    "interface port-channel 1 then lacp mode active gi0/1 - 2",
+    "interface range gi0/1 - 2 then channel-protocol pagp"
+   ],
+   "answer": 1,
+   "explanation": "channel-group 1 mode active enables LACP in active mode on the member ports; desirable is a PAgP mode."
+  },
+  {
+   "id": "ccna-280",
+   "domain": "access",
+   "prompt": "Two servers transfer a large file across a four-link EtherChannel, but only one member link shows high utilization. What is the MOST likely reason?",
+   "choices": [
+    "Three member links are in STP blocking state",
+    "LACP only allows one active link at a time",
+    "The port-channel interface is misconfigured as half duplex",
+    "EtherChannel load balancing hashes each flow onto a single member link"
+   ],
+   "answer": 3,
+   "explanation": "EtherChannel distributes traffic per flow using a hash of addresses or ports, so a single conversation uses one link. port-channel load-balance can change the hash inputs."
+  },
+  {
+   "id": "ccna-281",
+   "domain": "access",
+   "prompt": "What is the maximum number of active member links in a single LACP EtherChannel on Cisco Catalyst switches?",
+   "choices": [
+    "8",
+    "4",
+    "16",
+    "2"
+   ],
+   "answer": 0,
+   "explanation": "LACP supports up to 16 configured ports, with up to 8 active and the rest in hot-standby."
+  },
+  {
+   "id": "ccna-282",
+   "domain": "access",
+   "prompt": "In show etherchannel summary, member port Gi0/3 shows the flag (I). What does this indicate?",
+   "choices": [
+    "The port is in use and bundled in the port-channel",
+    "The port is operating as a stand-alone individual port, not bundled",
+    "The port is suspended due to a speed mismatch",
+    "The port is a Layer 3 routed member"
+   ],
+   "answer": 1,
+   "explanation": "The I flag means stand-alone, which often happens when the neighbor is not sending LACP; a P flag means bundled."
+  },
+  {
+   "id": "ccna-283",
+   "domain": "access",
+   "prompt": "An engineer must create a Layer 3 EtherChannel on a multilayer switch. Where is the IP address configured?",
+   "choices": [
+    "On the port-channel interface after entering no switchport",
+    "On the first member interface only",
+    "On each member interface using the same address",
+    "On an SVI matching the channel-group number"
+   ],
+   "answer": 0,
+   "explanation": "For a Layer 3 EtherChannel, the member ports and port-channel are routed (no switchport) and the IP address is applied to the port-channel interface."
+  },
+  {
+   "id": "ccna-284",
+   "domain": "access",
+   "prompt": "What role do all active ports on the STP root bridge take?",
+   "choices": [
+    "Designated ports",
+    "Root ports",
+    "Alternate ports",
+    "Backup ports"
+   ],
+   "answer": 0,
+   "explanation": "The root bridge has no root port; each of its ports is the designated port for its segment."
+  },
+  {
+   "id": "ccna-285",
+   "domain": "access",
+   "prompt": "SW3 has two equal-cost links to the same upstream switch, which is on its path to the root. Both links have equal root path cost and the same sender bridge ID. How does SW3 choose its root port?",
+   "choices": [
+    "It selects the port receiving the lowest sender port priority and port number",
+    "It selects the port with the highest local MAC address",
+    "It load balances across both ports",
+    "It selects the port that came up first"
+   ],
+   "answer": 0,
+   "explanation": "After root path cost and sender bridge ID tie, STP uses the lowest sender port priority and then the lowest sender port number."
+  },
+  {
+   "id": "ccna-286",
+   "domain": "access",
+   "prompt": "show spanning-tree vlan 10 shows a bridge priority of 32778. Why is it not 32768?",
+   "choices": [
+    "The switch adds its port count to the priority",
+    "VLAN 10 was manually given priority 32778",
+    "The extended system ID adds the VLAN number to the configured priority",
+    "Rapid PVST+ always adds 10 to the priority"
+   ],
+   "answer": 2,
+   "explanation": "With the extended system ID, the displayed priority is the configured priority (32768) plus the VLAN ID (10)."
+  },
+  {
+   "id": "ccna-287",
+   "domain": "access",
+   "prompt": "Which global command enables Rapid PVST+ on a Catalyst switch?",
+   "choices": [
+    "spanning-tree mode mst",
+    "spanning-tree rapid enable",
+    "spanning-tree mode rapid-pvst",
+    "spanning-tree vlan 1-4094 rapid"
+   ],
+   "answer": 2,
+   "explanation": "spanning-tree mode rapid-pvst changes the STP mode from PVST+ to Rapid PVST+ for all VLANs."
+  },
+  {
+   "id": "ccna-288",
+   "domain": "access",
+   "prompt": "Which RSTP port role provides a redundant path to a segment that already has a designated port from the same switch, such as two ports connected to one hub?",
+   "choices": [
+    "Backup port",
+    "Alternate port",
+    "Root port",
+    "Edge port"
+   ],
+   "answer": 0,
+   "explanation": "A backup port provides redundancy for the switch's own designated port on a shared segment; an alternate port backs up the root port."
+  },
+  {
+   "id": "ccna-289",
+   "domain": "access",
+   "prompt": "For RSTP to perform rapid proposal and agreement transitions between switches, which link type is required?",
+   "choices": [
+    "Point-to-point, typically a full-duplex link",
+    "Shared, typically a half-duplex link",
+    "Edge, typically a PortFast link",
+    "Native, typically the VLAN 1 link"
+   ],
+   "answer": 0,
+   "explanation": "RSTP rapid synchronization works on point-to-point links, which it assumes for full-duplex ports; shared links fall back to slower timers."
+  },
+  {
+   "id": "ccna-290",
+   "domain": "access",
+   "prompt": "Which global command enables PortFast on every access port on a switch?",
+   "choices": [
+    "spanning-tree portfast trunk",
+    "spanning-tree portfast bpduguard default",
+    "spanning-tree uplinkfast",
+    "spanning-tree portfast default"
+   ],
+   "answer": 3,
+   "explanation": "spanning-tree portfast default enables PortFast on all non-trunking access ports; the bpduguard default command enables BPDU Guard on PortFast ports."
+  },
+  {
+   "id": "ccna-291",
+   "domain": "access",
+   "prompt": "SW1 is the root for VLAN 10. An engineer wants SW2 to take over as root only if SW1 fails. Which command should be entered on SW2?",
+   "choices": [
+    "spanning-tree vlan 10 root primary",
+    "spanning-tree vlan 10 priority 61440",
+    "spanning-tree vlan 10 root secondary",
+    "spanning-tree vlan 10 cost 1"
+   ],
+   "answer": 2,
+   "explanation": "root secondary sets the priority to 28672, below the default 32768 but above a typical primary root, making SW2 the backup root."
+  },
+  {
+   "id": "ccna-292",
+   "domain": "access",
+   "prompt": "With classic 802.1D STP and default timers, why can it take up to 50 seconds for a blocked port to begin forwarding after an indirect failure?",
+   "choices": [
+    "Hello time of 2 seconds repeated 25 times",
+    "Three 15-second forward delay periods plus a 5-second hold",
+    "The 30-second LLDP timer plus 20 seconds of learning",
+    "Max age of 20 seconds plus 15 seconds each in listening and learning"
+   ],
+   "answer": 3,
+   "explanation": "The port waits for the 20-second max age timer to expire and then spends one 15-second forward delay in listening and another in learning."
+  },
+  {
+   "id": "ccna-293",
+   "domain": "access",
+   "prompt": "SW3 can reach the root through two FastEthernet hops or through one direct 10 Mbps link. Using short path costs, which path does SW3 use?",
+   "choices": [
+    "The 10 Mbps link with a cost of 10",
+    "The 10 Mbps link with a cost of 100",
+    "Both paths, because they are load balanced",
+    "The two FastEthernet hops with a cost of 38"
+   ],
+   "answer": 3,
+   "explanation": "FastEthernet has a cost of 19 per link (38 total), while 10 Mbps Ethernet costs 100, so the two-hop path has the lower root path cost."
+  },
+  {
+   "id": "ccna-294",
+   "domain": "access",
+   "prompt": "A network engineer needs an AP to capture 802.11 frames and forward them to a remote PC running Wireshark. Which AP mode should be used?",
+   "choices": [
+    "Monitor mode",
+    "FlexConnect mode",
+    "Sniffer mode",
+    "Local mode"
+   ],
+   "answer": 2,
+   "explanation": "Sniffer mode captures frames on a channel and forwards them to a remote analyzer; monitor mode scans for rogues and IDS events."
+  },
+  {
+   "id": "ccna-295",
+   "domain": "access",
+   "prompt": "An AP should perform spectrum analysis to identify non-Wi-Fi interference sources such as microwave ovens. Which AP mode supports this?",
+   "choices": [
+    "Bridge mode",
+    "SE-Connect mode",
+    "Local mode",
+    "Rogue detector mode"
+   ],
+   "answer": 1,
+   "explanation": "SE-Connect dedicates the AP radio to spectrum analysis and lets tools such as Cisco Spectrum Expert classify interference."
+  },
+  {
+   "id": "ccna-296",
+   "domain": "access",
+   "prompt": "Which AP mode is used to build a wireless link between two buildings, extending the wired network without running cable?",
+   "choices": [
+    "Sniffer mode",
+    "Monitor mode",
+    "Bridge mode",
+    "SE-Connect mode"
+   ],
+   "answer": 2,
+   "explanation": "Bridge (mesh) mode allows APs to connect to each other wirelessly to form point-to-point or point-to-multipoint backhaul links."
+  },
+  {
+   "id": "ccna-297",
+   "domain": "access",
+   "prompt": "Which statement describes an autonomous AP?",
+   "choices": [
+    "It requires a CAPWAP tunnel to a controller",
+    "It is managed only from a cloud dashboard",
+    "It can serve clients only in FlexConnect mode",
+    "It is configured and managed individually without a WLC"
+   ],
+   "answer": 3,
+   "explanation": "Autonomous APs contain the full configuration locally and are managed one by one, unlike lightweight APs that rely on a WLC."
+  },
+  {
+   "id": "ccna-298",
+   "domain": "access",
+   "prompt": "A company manages all of its APs from a web dashboard hosted on the internet with no on-premises controller. Which wireless architecture is this?",
+   "choices": [
+    "Autonomous AP architecture",
+    "Cloud-based AP architecture",
+    "Split-MAC with a local WLC",
+    "Mesh bridge architecture"
+   ],
+   "answer": 1,
+   "explanation": "In a cloud-based architecture such as Meraki, APs are managed by a cloud service rather than by a local controller."
+  },
+  {
+   "id": "ccna-299",
+   "domain": "access",
+   "prompt": "Which UDP ports does CAPWAP use for control and data traffic between a lightweight AP and a WLC?",
+   "choices": [
+    "5246 for control and 5247 for data",
+    "5247 for control and 5246 for data",
+    "1812 for control and 1813 for data",
+    "161 for control and 162 for data"
+   ],
+   "answer": 0,
+   "explanation": "CAPWAP control messages use UDP 5246 and encapsulated client data uses UDP 5247; 1812/1813 are RADIUS ports."
+  },
+  {
+   "id": "ccna-300",
+   "domain": "access",
+   "prompt": "LAG is enabled on a Cisco AireOS WLC that connects to a Catalyst switch with two links. How should the switch EtherChannel be configured?",
+   "choices": [
+    "channel-group mode active, because the WLC requires LACP",
+    "channel-group mode on, because the WLC does not negotiate LACP or PAgP",
+    "channel-group mode desirable, because the WLC uses PAgP",
+    "No EtherChannel; configure each port as a separate access port"
+   ],
+   "answer": 1,
+   "explanation": "AireOS WLC link aggregation does not support LACP or PAgP, so the switch side must use an unconditional static EtherChannel."
+  },
+  {
+   "id": "ccna-301",
+   "domain": "access",
+   "prompt": "Which physical port on a Cisco AireOS WLC is used for out-of-band management?",
+   "choices": [
+    "Distribution system port",
+    "Redundancy port",
+    "Service port",
+    "Management interface"
+   ],
+   "answer": 2,
+   "explanation": "The service port is reserved for out-of-band management; distribution system ports carry AP and client traffic. The management interface is logical, not a physical port."
+  },
+  {
+   "id": "ccna-302",
+   "domain": "access",
+   "prompt": "Which logical interface on a Cisco WLC is used for in-band management and for CAPWAP communication with APs?",
+   "choices": [
+    "Management interface",
+    "Virtual interface",
+    "Dynamic interface",
+    "Service-port interface"
+   ],
+   "answer": 0,
+   "explanation": "The management interface handles in-band management and AP CAPWAP communication; dynamic interfaces map WLANs to client VLANs."
+  },
+  {
+   "id": "ccna-303",
+   "domain": "access",
+   "prompt": "An engineer creates a WLAN on a WLC for VoIP handsets. Which QoS profile should be applied to give voice the highest priority?",
+   "choices": [
+    "Gold",
+    "Silver",
+    "Bronze",
+    "Platinum"
+   ],
+   "answer": 3,
+   "explanation": "WLC QoS profiles are Platinum for voice, Gold for video, Silver for best effort and Bronze for background traffic."
+  },
+  {
+   "id": "ccna-304",
+   "domain": "access",
+   "prompt": "How many bits are used for the VLAN ID in an 802.1Q tag?",
+   "choices": [
+    "8",
+    "10",
+    "12",
+    "16"
+   ],
+   "answer": 2,
+   "explanation": "The 12-bit VLAN ID allows 4096 values, of which 0 and 4095 are reserved, leaving 1 to 4094 usable."
+  },
+  {
+   "id": "ccna-305",
+   "domain": "access",
+   "prompt": "Which VLAN ID range is the extended range on Cisco switches?",
+   "choices": [
+    "1006 to 4094",
+    "1 to 1005",
+    "1002 to 1005",
+    "4095 to 8191"
+   ],
+   "answer": 0,
+   "explanation": "Normal-range VLANs are 1 to 1005 and extended-range VLANs are 1006 to 4094; 1002 to 1005 are reserved legacy VLANs."
+  },
+  {
+   "id": "ccna-306",
+   "domain": "ipconn",
+   "prompt": "A router has 192.168.0.0/16 via R-A, 192.168.32.0/19 via R-B and 192.168.40.0/21 via R-C. Which next hop is used for a packet to 192.168.50.1?",
+   "choices": [
+    "R-A",
+    "R-B",
+    "R-C",
+    "The packet is dropped"
+   ],
+   "answer": 1,
+   "explanation": "192.168.40.0/21 covers only 40 to 47, while 192.168.32.0/19 covers 32 to 63, so the /19 is the longest matching prefix."
+  },
+  {
+   "id": "ccna-307",
+   "domain": "ipconn",
+   "prompt": "Why is it recommended to include a next-hop address when configuring a static route out of an Ethernet interface?",
+   "choices": [
+    "Without it, the route receives an administrative distance of 255",
+    "Without it, the route is never added to the routing table",
+    "Without it, the router must ARP for every destination and relies on proxy ARP",
+    "Without it, the router forwards only broadcast traffic"
+   ],
+   "answer": 2,
+   "explanation": "A static route pointing only to a multiaccess exit interface treats every destination as directly connected, so the router ARPs for each destination and depends on the neighbor answering with proxy ARP."
+  },
+  {
+   "id": "ccna-308",
+   "domain": "ipconn",
+   "prompt": "A static route was configured with only an exit interface, ip route 10.50.0.0 255.255.0.0 Serial0/0/0. How does it appear in show ip route?",
+   "choices": [
+    "C 10.50.0.0/16 is directly connected, Serial0/0/0",
+    "S 10.50.0.0/16 is directly connected, Serial0/0/0",
+    "S 10.50.0.0/16 [110/1] via Serial0/0/0",
+    "L 10.50.0.0/16 is directly connected, Serial0/0/0"
+   ],
+   "answer": 1,
+   "explanation": "Static routes are coded S; one that uses only an exit interface is shown as directly connected through that interface."
+  },
+  {
+   "id": "ccna-309",
+   "domain": "ipconn",
+   "prompt": "An engineer configures ip route 10.8.0.0 255.255.0.0 172.16.9.2, but the route does not appear in the routing table. What is the MOST likely cause?",
+   "choices": [
+    "Static routes appear only in the running configuration",
+    "The router has no route to reach next hop 172.16.9.2",
+    "The administrative distance must be set to 0",
+    "The route conflicts with the gateway of last resort"
+   ],
+   "answer": 1,
+   "explanation": "A static route is installed only when its next hop is resolvable through another route or connected interface that is up."
+  },
+  {
+   "id": "ccna-310",
+   "domain": "ipconn",
+   "prompt": "Which command configures an IPv6 static route to 2001:DB8:5::/64 through next hop 2001:DB8:12::2?",
+   "choices": [
+    "ip route 2001:DB8:5::/64 2001:DB8:12::2",
+    "ipv6 route 2001:DB8:5:: 64 2001:DB8:12::2",
+    "ipv6 route 2001:DB8:5::/64 2001:DB8:12::2",
+    "ipv6 static 2001:DB8:5::/64 next-hop 2001:DB8:12::2"
+   ],
+   "answer": 2,
+   "explanation": "IPv6 static routes use ipv6 route followed by the prefix in slash notation and the next hop or exit interface."
+  },
+  {
+   "id": "ccna-311",
+   "domain": "ipconn",
+   "prompt": "A router needs a backup IPv6 default route through 2001:DB8:99::1 that is used only if the primary OSPF-learned default fails. Which command achieves this?",
+   "choices": [
+    "ipv6 route ::/0 2001:DB8:99::1 1",
+    "ipv6 route ::/0 2001:DB8:99::1 200",
+    "ipv6 route ::/128 2001:DB8:99::1 200",
+    "ipv6 route 0::/64 2001:DB8:99::1 110"
+   ],
+   "answer": 1,
+   "explanation": "::/0 is the IPv6 default route, and an AD of 200 is higher than OSPF's 110, making this a floating static route."
+  },
+  {
+   "id": "ccna-312",
+   "domain": "ipconn",
+   "prompt": "In show ipv6 route, an entry marked L with a /128 prefix represents what?",
+   "choices": [
+    "A link-local route learned from a neighbor",
+    "A route learned from LLDP",
+    "The router's own IPv6 address on that interface",
+    "A summary route for the entire link"
+   ],
+   "answer": 2,
+   "explanation": "L entries are local host routes for addresses configured on the router's own interfaces, using /128 in IPv6."
+  },
+  {
+   "id": "ccna-313",
+   "domain": "ipconn",
+   "prompt": "A router learns 10.1.0.0/16 from OSPF and 10.1.1.0/24 from RIP. Which route is used for a packet to 10.1.1.5?",
+   "choices": [
+    "The RIP route, because it is the longest prefix match",
+    "The OSPF route, because OSPF has a lower AD",
+    "Both routes, load balanced equally",
+    "Neither, because the routes conflict"
+   ],
+   "answer": 0,
+   "explanation": "Administrative distance only compares routes to the same prefix; for forwarding, the most specific matching route always wins."
+  },
+  {
+   "id": "ccna-314",
+   "domain": "ipconn",
+   "prompt": "A router learns the same prefix from OSPF, RIP, external EIGRP and iBGP. Which source is installed with default administrative distances?",
+   "choices": [
+    "RIP",
+    "External EIGRP",
+    "iBGP",
+    "OSPF"
+   ],
+   "answer": 3,
+   "explanation": "OSPF has AD 110, lower than RIP (120), external EIGRP (170) and iBGP (200)."
+  },
+  {
+   "id": "ccna-315",
+   "domain": "ipconn",
+   "prompt": "What does an administrative distance of 255 mean for a route?",
+   "choices": [
+    "The route is the most preferred static route",
+    "The route is a directly connected network",
+    "The route is used only for IPv6",
+    "The source is untrusted and the route is never installed"
+   ],
+   "answer": 3,
+   "explanation": "An AD of 255 marks the route as unusable, so it will not be placed in the routing table."
+  },
+  {
+   "id": "ccna-316",
+   "domain": "ipconn",
+   "prompt": "Which OSPF network statement enables OSPF on interfaces 172.16.0.1/24 and 172.16.1.1/24 but not on 172.16.2.1/24?",
+   "choices": [
+    "network 172.16.0.0 0.0.3.255 area 0",
+    "network 172.16.0.0 0.0.0.255 area 0",
+    "network 172.16.0.0 255.255.254.0 area 0",
+    "network 172.16.0.0 0.0.1.255 area 0"
+   ],
+   "answer": 3,
+   "explanation": "The wildcard 0.0.1.255 matches 172.16.0.0 through 172.16.1.255; 0.0.3.255 would also include 172.16.2.1."
+  },
+  {
+   "id": "ccna-317",
+   "domain": "ipconn",
+   "prompt": "R1 runs router ospf 1 and R2 runs router ospf 10 on the same link, with all other settings matching. Can they form an OSPF adjacency?",
+   "choices": [
+    "No, because process IDs must match",
+    "Only if both use the same router ID",
+    "Only if they are configured as point-to-point",
+    "Yes, because the process ID is only locally significant"
+   ],
+   "answer": 3,
+   "explanation": "The OSPF process ID is local to the router and is not carried in Hello packets, so different process IDs do not prevent adjacencies."
+  },
+  {
+   "id": "ccna-318",
+   "domain": "ipconn",
+   "prompt": "Two directly connected OSPF routers are accidentally configured with the same router ID. What is the result?",
+   "choices": [
+    "They do not form an adjacency and log a duplicate router ID message",
+    "They form an adjacency but elect no DR",
+    "The router with the higher interface IP changes its ID automatically",
+    "They become neighbors in a different area"
+   ],
+   "answer": 0,
+   "explanation": "OSPF requires unique router IDs; a router that receives a Hello with its own router ID rejects it and reports a duplicate."
+  },
+  {
+   "id": "ccna-319",
+   "domain": "ipconn",
+   "prompt": "R2 is the DR on an Ethernet segment. An engineer then sets ip ospf priority 255 on R1, the current DROTHER. What happens?",
+   "choices": [
+    "R2 remains DR until the DR fails or OSPF is reset, because DR election is not preemptive",
+    "R1 immediately becomes DR",
+    "R1 becomes BDR immediately and R2 becomes DROTHER",
+    "Both routers become DR for redundancy"
+   ],
+   "answer": 0,
+   "explanation": "Changing priority does not trigger a new election; the DR and BDR keep their roles until they go down or the OSPF process is cleared."
+  },
+  {
+   "id": "ccna-320",
+   "domain": "ipconn",
+   "prompt": "On a broadcast segment, to which multicast address does a DROTHER send its LSUs to reach the DR and BDR?",
+   "choices": [
+    "224.0.0.5",
+    "224.0.0.10",
+    "224.0.0.2",
+    "224.0.0.6"
+   ],
+   "answer": 3,
+   "explanation": "224.0.0.6 is the AllDRRouters address used to send updates to the DR and BDR; the DR floods to everyone using 224.0.0.5."
+  },
+  {
+   "id": "ccna-321",
+   "domain": "ipconn",
+   "prompt": "Which interface command manually sets the OSPF cost, overriding the value calculated from bandwidth?",
+   "choices": [
+    "ip ospf cost 50",
+    "bandwidth 50",
+    "ip ospf priority 50",
+    "auto-cost reference-bandwidth 50"
+   ],
+   "answer": 0,
+   "explanation": "ip ospf cost sets the cost directly; bandwidth and the reference bandwidth only influence the calculated value."
+  },
+  {
+   "id": "ccna-322",
+   "domain": "ipconn",
+   "prompt": "With auto-cost reference-bandwidth 10000 configured, what is the OSPF cost of a GigabitEthernet interface?",
+   "choices": [
+    "1",
+    "100",
+    "1000",
+    "10"
+   ],
+   "answer": 3,
+   "explanation": "Cost equals reference bandwidth divided by interface bandwidth in Mbps: 10000 divided by 1000 equals 10."
+  },
+  {
+   "id": "ccna-323",
+   "domain": "ipconn",
+   "prompt": "An interface is configured with bandwidth 50000 and OSPF uses the default reference bandwidth. What is its OSPF cost?",
+   "choices": [
+    "2",
+    "1",
+    "5",
+    "50"
+   ],
+   "answer": 0,
+   "explanation": "The default reference bandwidth is 100 Mbps (100000 kbps); 100000 divided by 50000 kbps gives a cost of 2."
+  },
+  {
+   "id": "ccna-324",
+   "domain": "ipconn",
+   "prompt": "R1 can reach a network directly with a path cost of 15, or through R2 with a link cost of 10 to R2 and 1 from R2 to the network. Which path does OSPF choose?",
+   "choices": [
+    "Through R2 with a total cost of 11",
+    "The direct path with a cost of 15",
+    "Both paths load balanced",
+    "The path with the fewest hops"
+   ],
+   "answer": 0,
+   "explanation": "OSPF selects the path with the lowest cumulative cost, and 10 plus 1 is lower than 15; hop count is not used."
+  },
+  {
+   "id": "ccna-325",
+   "domain": "ipconn",
+   "prompt": "A router has interfaces in OSPF area 0 and area 1. What is this router called?",
+   "choices": [
+    "Autonomous System Boundary Router",
+    "Designated Router",
+    "Backbone Internal Router",
+    "Area Border Router"
+   ],
+   "answer": 3,
+   "explanation": "An ABR connects one or more areas to the backbone area 0; an ASBR redistributes external routes into OSPF."
+  },
+  {
+   "id": "ccna-326",
+   "domain": "ipconn",
+   "prompt": "Which OSPF LSA type is generated by the DR to describe a multiaccess network and the routers attached to it?",
+   "choices": [
+    "Type 1 router LSA",
+    "Type 3 summary LSA",
+    "Type 2 network LSA",
+    "Type 5 external LSA"
+   ],
+   "answer": 2,
+   "explanation": "The DR originates the Type 2 network LSA listing the routers on the segment; every router originates its own Type 1 LSA."
+  },
+  {
+   "id": "ccna-327",
+   "domain": "ipconn",
+   "prompt": "What is the main function of OSPF Hello packets?",
+   "choices": [
+    "To discover neighbors, maintain adjacencies and elect the DR and BDR",
+    "To carry full routing table updates every 30 seconds",
+    "To request missing LSAs from neighbors",
+    "To acknowledge received link-state updates"
+   ],
+   "answer": 0,
+   "explanation": "Hellos discover and keep neighbors alive and carry DR/BDR election information; LSRs request LSAs and LSAcks acknowledge them."
+  },
+  {
+   "id": "ccna-328",
+   "domain": "ipconn",
+   "prompt": "What is the correct order of OSPF neighbor states when forming a full adjacency?",
+   "choices": [
+    "Down, 2-Way, Init, Exchange, ExStart, Loading, Full",
+    "Down, Init, 2-Way, ExStart, Exchange, Loading, Full",
+    "Init, Down, ExStart, 2-Way, Loading, Exchange, Full",
+    "Down, Init, ExStart, 2-Way, Loading, Exchange, Full"
+   ],
+   "answer": 1,
+   "explanation": "Routers move from Down to Init on receiving a Hello, to 2-Way when they see themselves in the neighbor's Hello, then through database exchange to Full."
+  },
+  {
+   "id": "ccna-329",
+   "domain": "ipconn",
+   "prompt": "show ip ospf neighbor shows a neighbor stuck in the INIT state. What does this indicate?",
+   "choices": [
+    "The routers have fully synchronized their databases",
+    "The routers are exchanging DBD packets",
+    "The router has never received any Hello from the neighbor",
+    "The router receives the neighbor's Hellos, but the neighbor does not list this router's ID in them"
+   ],
+   "answer": 3,
+   "explanation": "Init means Hellos are arriving in only one direction, often due to an ACL or a one-way communication problem."
+  },
+  {
+   "id": "ccna-330",
+   "domain": "ipconn",
+   "prompt": "Which command shows OSPF neighbor router IDs, neighbor state, dead timer countdown and the interface used?",
+   "choices": [
+    "show ip ospf database",
+    "show ip protocols",
+    "show ip route ospf",
+    "show ip ospf neighbor"
+   ],
+   "answer": 3,
+   "explanation": "show ip ospf neighbor lists each neighbor's router ID, priority, state, dead time, address and interface."
+  },
+  {
+   "id": "ccna-331",
+   "domain": "ipconn",
+   "prompt": "An engineer wants every OSPF interface on a router to be passive except the uplink Gi0/0. What is the MOST efficient configuration?",
+   "choices": [
+    "passive-interface gi0/0 only",
+    "ip ospf priority 0 on every interface except gi0/0",
+    "passive-interface default followed by no passive-interface gi0/0",
+    "no network statement for gi0/0"
+   ],
+   "answer": 2,
+   "explanation": "passive-interface default makes all interfaces passive, and no passive-interface re-enables Hellos only on the uplink."
+  },
+  {
+   "id": "ccna-332",
+   "domain": "ipconn",
+   "prompt": "Under router ospf 1, which command advertises a default route into OSPF even when the router has no default route in its own routing table?",
+   "choices": [
+    "default-information originate",
+    "redistribute static default",
+    "ip default-network 0.0.0.0",
+    "default-information originate always"
+   ],
+   "answer": 3,
+   "explanation": "Without the always keyword, the router advertises a default only if one exists in its routing table."
+  },
+  {
+   "id": "ccna-333",
+   "domain": "ipconn",
+   "prompt": "In a routing table, what does the code O E2 indicate?",
+   "choices": [
+    "An OSPF external type 2 route that was redistributed into OSPF",
+    "An OSPF intra-area route in area 2",
+    "An OSPF route learned over a second equal path",
+    "An EIGRP route learned from OSPF"
+   ],
+   "answer": 0,
+   "explanation": "E2 routes come from redistribution into OSPF and by default keep the seed metric without adding internal cost."
+  },
+  {
+   "id": "ccna-334",
+   "domain": "ipconn",
+   "prompt": "In a routing table entry, what does a timer such as 00:04:11 indicate?",
+   "choices": [
+    "The time remaining before the route expires",
+    "The round-trip delay to the next hop",
+    "How long ago the route was learned or last updated",
+    "How long the interface has been up"
+   ],
+   "answer": 2,
+   "explanation": "The timestamp in a dynamically learned route shows the age of the route since it was installed or refreshed."
+  },
+  {
+   "id": "ccna-335",
+   "domain": "ipconn",
+   "prompt": "Which Cisco forwarding mechanism uses a FIB and an adjacency table, built in advance from the routing and ARP tables, to switch packets?",
+   "choices": [
+    "Process switching",
+    "Fast switching with a route cache",
+    "Cisco Express Forwarding",
+    "Policy-based routing"
+   ],
+   "answer": 2,
+   "explanation": "CEF precomputes the FIB from the routing table and the adjacency table from Layer 2 information so packets do not need per-packet lookups by the CPU."
+  },
+  {
+   "id": "ccna-336",
+   "domain": "ipconn",
+   "prompt": "An interface is configured with an IP address, but no connected (C) route for its subnet appears in show ip route. What is the MOST likely reason?",
+   "choices": [
+    "Connected routes must be added with a static route",
+    "OSPF must be enabled on the interface",
+    "The interface is not in an up/up state",
+    "The interface needs a default gateway"
+   ],
+   "answer": 2,
+   "explanation": "Connected and local routes are installed only when the interface is up/up; a shutdown interface or missing cable removes them."
+  },
+  {
+   "id": "ccna-337",
+   "domain": "ipconn",
+   "prompt": "On a router-on-a-stick configuration, which subinterface command handles untagged frames for native VLAN 99?",
+   "choices": [
+    "encapsulation dot1Q 99 native",
+    "encapsulation dot1Q native 99 untagged",
+    "switchport trunk native vlan 99",
+    "encapsulation isl 99 native"
+   ],
+   "answer": 0,
+   "explanation": "Adding the native keyword tells the subinterface to process untagged frames as VLAN 99, matching the switch trunk native VLAN."
+  },
+  {
+   "id": "ccna-338",
+   "domain": "ipconn",
+   "prompt": "Hosts in VLAN 20 cannot reach their router-on-a-stick gateway. Subinterface Gi0/0.20 has the correct IP but is configured with encapsulation dot1Q 30. What should be fixed?",
+   "choices": [
+    "Rename the subinterface to Gi0/0.30",
+    "Make the switch port an access port in VLAN 20",
+    "Change the subinterface to encapsulation dot1Q 20",
+    "Add ip routing to the router"
+   ],
+   "answer": 2,
+   "explanation": "The subinterface number is only a label; the dot1Q VLAN ID must match the VLAN tag used for VLAN 20 on the trunk."
+  },
+  {
+   "id": "ccna-339",
+   "domain": "ipconn",
+   "prompt": "A multilayer switch has SVIs for VLANs 10 and 20 that are up/up, but hosts in the two VLANs cannot communicate. What is the MOST likely missing command?",
+   "choices": [
+    "ip routing",
+    "switchport mode trunk",
+    "no switchport",
+    "ip helper-address"
+   ],
+   "answer": 0,
+   "explanation": "Multilayer switches need ip routing enabled globally to route between SVIs; without it they act only as Layer 2 switches."
+  },
+  {
+   "id": "ccna-340",
+   "domain": "ipconn",
+   "prompt": "Which interface command configures HSRP group 1 with a virtual gateway address of 192.168.10.1?",
+   "choices": [
+    "vrrp 1 ip 192.168.10.1",
+    "standby 1 ip 192.168.10.1",
+    "hsrp 1 virtual 192.168.10.1",
+    "glbp 1 ip 192.168.10.1"
+   ],
+   "answer": 1,
+   "explanation": "HSRP uses the standby command family; standby 1 ip sets the virtual IP address for group 1."
+  },
+  {
+   "id": "ccna-341",
+   "domain": "ipconn",
+   "prompt": "What are the default HSRP hello and hold timers?",
+   "choices": [
+    "1 second hello and 3 seconds hold",
+    "10 seconds hello and 40 seconds hold",
+    "3 seconds hello and 10 seconds hold",
+    "5 seconds hello and 15 seconds hold"
+   ],
+   "answer": 2,
+   "explanation": "HSRP sends hellos every 3 seconds and declares the active router down after a 10-second hold time."
+  },
+  {
+   "id": "ccna-342",
+   "domain": "ipconn",
+   "prompt": "Which virtual MAC address range is used by HSRP version 2?",
+   "choices": [
+    "0000.0C07.AC00 to 0000.0C07.ACFF",
+    "0000.0C9F.F000 to 0000.0C9F.FFFF",
+    "0000.5E00.0100 to 0000.5E00.01FF",
+    "0007.B400.0000 to 0007.B4FF.FFFF"
+   ],
+   "answer": 1,
+   "explanation": "HSRPv2 uses 0000.0C9F.FXXX to support group numbers up to 4095; HSRPv1 uses 0000.0C07.ACXX and VRRP uses 0000.5E00.01XX."
+  },
+  {
+   "id": "ccna-343",
+   "domain": "ipconn",
+   "prompt": "In VRRP, what is the router that currently forwards traffic for the virtual IP address called?",
+   "choices": [
+    "Master",
+    "Active",
+    "Active virtual forwarder",
+    "Designated"
+   ],
+   "answer": 0,
+   "explanation": "VRRP uses master and backup roles; HSRP uses active and standby, and GLBP uses AVG and AVF."
+  },
+  {
+   "id": "ccna-344",
+   "domain": "ipconn",
+   "prompt": "In GLBP, which router answers ARP requests for the virtual IP and assigns virtual MAC addresses to group members?",
+   "choices": [
+    "Active Virtual Forwarder",
+    "VRRP master",
+    "HSRP standby router",
+    "Active Virtual Gateway"
+   ],
+   "answer": 3,
+   "explanation": "The GLBP AVG hands out different virtual MACs in ARP replies, spreading hosts across the AVFs that forward traffic."
+  },
+  {
+   "id": "ccna-345",
+   "domain": "ipconn",
+   "prompt": "Two routers run HSRP for a user VLAN. What should end hosts use as their default gateway?",
+   "choices": [
+    "The real IP address of the active router",
+    "The HSRP virtual IP address",
+    "The real IP address of the standby router",
+    "The HSRP virtual MAC address"
+   ],
+   "answer": 1,
+   "explanation": "Hosts point to the virtual IP so that the gateway keeps working when the active role moves to the other router."
+  },
+  {
+   "id": "ccna-346",
+   "domain": "ipconn",
+   "prompt": "Two HSRP routers in the same group both use the default priority. Which router becomes active?",
+   "choices": [
+    "The router with the lowest interface IP address",
+    "The router with the highest interface IP address",
+    "The router with the lowest MAC address",
+    "The router that was configured last"
+   ],
+   "answer": 1,
+   "explanation": "When priorities tie, HSRP elects the router with the highest IP address on the HSRP interface as active."
+  },
+  {
+   "id": "ccna-347",
+   "domain": "ipconn",
+   "prompt": "Which single static route covers the networks 172.16.4.0/24 through 172.16.7.0/24 via next hop 10.0.0.2?",
+   "choices": [
+    "ip route 172.16.4.0 255.255.248.0 10.0.0.2",
+    "ip route 172.16.4.0 255.255.252.0 10.0.0.2",
+    "ip route 172.16.0.0 255.255.252.0 10.0.0.2",
+    "ip route 172.16.4.0 255.255.254.0 10.0.0.2"
+   ],
+   "answer": 1,
+   "explanation": "Four contiguous /24 networks starting at 4 summarize to 172.16.4.0/22, which is the mask 255.255.252.0."
+  },
+  {
+   "id": "ccna-348",
+   "domain": "ipconn",
+   "prompt": "A static route points to next hop 10.9.9.2, which is not on a directly connected subnet. What must exist for the router to forward packets using this route?",
+   "choices": [
+    "An ARP entry for every destination in the static route",
+    "Another route that resolves how to reach 10.9.9.2",
+    "OSPF must also advertise the static route",
+    "The static route must have an AD of 0"
+   ],
+   "answer": 1,
+   "explanation": "Routers perform a recursive lookup to resolve a remote next hop to an exit interface, so a route to the next hop must be present."
+  },
+  {
+   "id": "ccna-349",
+   "domain": "ipconn",
+   "prompt": "Which routing table code identifies a route learned through EIGRP?",
+   "choices": [
+    "E",
+    "O",
+    "D",
+    "R"
+   ],
+   "answer": 2,
+   "explanation": "EIGRP routes are coded D (from DUAL); O is OSPF and R is RIP."
+  },
+  {
+   "id": "ccna-350",
+   "domain": "ipconn",
+   "prompt": "Which command displays the specific routing table entry a router would use for destination 10.1.1.5?",
+   "choices": [
+    "show ip route 10.1.1.5",
+    "show ip interface 10.1.1.5",
+    "show ip arp 10.1.1.5",
+    "show ip cef summary"
+   ],
+   "answer": 0,
+   "explanation": "Specifying an address with show ip route returns the best matching route, including its source, metric and next hop."
+  },
+  {
+   "id": "ccna-351",
+   "domain": "ipconn",
+   "prompt": "A user reports that a remote server is unreachable. Which tool BEST identifies the router hop where packets stop?",
+   "choices": [
+    "ping",
+    "show cdp neighbors",
+    "show arp",
+    "traceroute"
+   ],
+   "answer": 3,
+   "explanation": "traceroute lists each hop that returns an ICMP time-exceeded message, showing where along the path forwarding fails; ping only confirms end-to-end reachability."
+  },
+  {
+   "id": "ccna-352",
+   "domain": "ipconn",
+   "prompt": "During OSPF adjacency formation, what happens in the Loading state?",
+   "choices": [
+    "The routers elect the DR and BDR",
+    "The router sends LSRs for LSAs it is missing and receives LSUs in reply",
+    "The routers decide which is master for DBD exchange",
+    "The routers first discover each other with Hellos"
+   ],
+   "answer": 1,
+   "explanation": "After DBD exchange, routers request missing LSAs with Link-State Requests and receive them in Link-State Updates before reaching Full."
+  },
+  {
+   "id": "ccna-353",
+   "domain": "ipconn",
+   "prompt": "Which statement about the OSPF link-state database in a single area is correct?",
+   "choices": [
+    "All routers in the area have an identical LSDB",
+    "Each router has only the routes from its direct neighbors",
+    "Only the DR stores the complete LSDB",
+    "The LSDB contains only the best routes"
+   ],
+   "answer": 0,
+   "explanation": "Within an area, LSAs are flooded so every router has the same database and independently runs SPF to compute its own best paths."
+  },
+  {
+   "id": "ccna-354",
+   "domain": "ipconn",
+   "prompt": "What does the asterisk in a routing table entry such as S* 0.0.0.0/0 indicate?",
+   "choices": [
+    "The route is learned from a neighbor's summary",
+    "The route is a candidate default route",
+    "The route is inactive and not used",
+    "The route has the lowest metric of all routes"
+   ],
+   "answer": 1,
+   "explanation": "The asterisk marks a candidate default route, which IOS can select as the gateway of last resort."
+  },
+  {
+   "id": "ccna-355",
+   "domain": "ipconn",
+   "prompt": "An engineer wants to view only the routes that OSPF has installed in the IPv4 routing table. Which command should be used?",
+   "choices": [
+    "show ip ospf database",
+    "show ip ospf interface brief",
+    "show ip route ospf",
+    "show ip protocols ospf"
+   ],
+   "answer": 2,
+   "explanation": "show ip route ospf filters the routing table to OSPF-learned routes; the OSPF database shows LSAs, not installed routes."
+  },
+  {
+   "id": "ccna-356",
+   "domain": "ipsvc",
+   "prompt": "In Cisco NAT terminology, what is the inside local address?",
+   "choices": [
+    "The public address that represents an inside host",
+    "The address of an outside host as seen from the internet",
+    "The private address assigned to an inside host",
+    "The address of the NAT router's outside interface"
+   ],
+   "answer": 2,
+   "explanation": "Inside local is the real, usually RFC 1918, address configured on the inside host; inside global is the translated public address."
+  },
+  {
+   "id": "ccna-357",
+   "domain": "ipsvc",
+   "prompt": "An internal HTTPS server at 192.168.1.20 must be reachable from the internet on port 443 of the router's public address 203.0.113.5. Which command accomplishes this?",
+   "choices": [
+    "ip nat outside source static tcp 203.0.113.5 443 192.168.1.20 443",
+    "ip nat inside source static tcp 192.168.1.20 443 203.0.113.5 443",
+    "ip nat inside source list 1 interface gi0/1 overload",
+    "ip nat pool WEB 203.0.113.5 203.0.113.5 netmask 255.255.255.255"
+   ],
+   "answer": 1,
+   "explanation": "Static PAT (port forwarding) maps a specific inside local address and port to an inside global address and port."
+  },
+  {
+   "id": "ccna-358",
+   "domain": "ipsvc",
+   "prompt": "A router with no external time source must act as the authoritative NTP server for the LAN. Which command makes it serve time?",
+   "choices": [
+    "ntp server 127.0.0.1",
+    "ntp master 3",
+    "ntp peer 3",
+    "clock timezone master 3"
+   ],
+   "answer": 1,
+   "explanation": "ntp master makes the router an authoritative NTP source using its own clock at the given stratum."
+  },
+  {
+   "id": "ccna-359",
+   "domain": "ipsvc",
+   "prompt": "Which command confirms whether a Cisco router's clock is synchronized with NTP and shows its stratum and reference?",
+   "choices": [
+    "show ntp status",
+    "show clock detail ntp",
+    "show ntp peers status",
+    "show ip ntp"
+   ],
+   "answer": 0,
+   "explanation": "show ntp status reports whether the clock is synchronized, its stratum and the reference server; show ntp associations lists the configured servers."
+  },
+  {
+   "id": "ccna-360",
+   "domain": "ipsvc",
+   "prompt": "A branch router's internet-facing interface must obtain its IPv4 address from the ISP's DHCP server. Which interface command is used?",
+   "choices": [
+    "ip dhcp client enable",
+    "ip helper-address dhcp",
+    "ip address auto",
+    "ip address dhcp"
+   ],
+   "answer": 3,
+   "explanation": "ip address dhcp makes the router interface a DHCP client."
+  },
+  {
+   "id": "ccna-361",
+   "domain": "ipsvc",
+   "prompt": "Inside an IOS DHCP pool, which command gives clients the address of their DNS server?",
+   "choices": [
+    "ip name-server 8.8.8.8",
+    "dns-server 8.8.8.8",
+    "domain-name 8.8.8.8",
+    "option dns 8.8.8.8"
+   ],
+   "answer": 1,
+   "explanation": "dns-server is the pool command that hands out DNS servers; ip name-server configures the router's own resolver."
+  },
+  {
+   "id": "ccna-362",
+   "domain": "ipsvc",
+   "prompt": "Which UDP ports are used by DHCPv4 servers and clients?",
+   "choices": [
+    "Server 68 and client 67",
+    "Server 67 and client 68",
+    "Server 53 and client 54",
+    "Server 546 and client 547"
+   ],
+   "answer": 1,
+   "explanation": "DHCPv4 servers listen on UDP 67 and clients on UDP 68; DHCPv6 uses 546 and 547."
+  },
+  {
+   "id": "ccna-363",
+   "domain": "ipsvc",
+   "prompt": "Pinging www.example.com from a router returns Translating... followed by an unknown host error, while pinging the IP works. Which configuration is MOST likely missing?",
+   "choices": [
+    "ip name-server pointing to a reachable DNS server",
+    "ip helper-address on the LAN interface",
+    "ip dhcp excluded-address",
+    "ntp server pointing to the DNS server"
+   ],
+   "answer": 0,
+   "explanation": "The router needs a DNS server configured with ip name-server, and ip domain-lookup must be enabled, to resolve hostnames."
+  },
+  {
+   "id": "ccna-364",
+   "domain": "ipsvc",
+   "prompt": "In SNMP, what is the structured database of managed objects that an agent exposes called?",
+   "choices": [
+    "OID trap table",
+    "Syslog buffer",
+    "NetFlow cache",
+    "MIB"
+   ],
+   "answer": 3,
+   "explanation": "The Management Information Base organizes variables identified by OIDs that a manager can read or set."
+  },
+  {
+   "id": "ccna-365",
+   "domain": "ipsvc",
+   "prompt": "Which ports does SNMP use for manager polling of agents and for agent notifications?",
+   "choices": [
+    "TCP 161 for polling and TCP 162 for traps",
+    "UDP 162 for polling and UDP 161 for traps",
+    "UDP 161 for polling and UDP 162 for traps and informs",
+    "UDP 514 for polling and UDP 161 for traps"
+   ],
+   "answer": 2,
+   "explanation": "Managers send Get and Set requests to agents on UDP 161, and agents send notifications to managers on UDP 162."
+  },
+  {
+   "id": "ccna-366",
+   "domain": "ipsvc",
+   "prompt": "In the log message %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down, what does the number 3 indicate?",
+   "choices": [
+    "The facility number for interfaces",
+    "The message sequence number",
+    "The severity level, which is error",
+    "The interface slot number"
+   ],
+   "answer": 2,
+   "explanation": "Syslog messages use the format FACILITY-SEVERITY-MNEMONIC, and severity 3 is error."
+  },
+  {
+   "id": "ccna-367",
+   "domain": "ipsvc",
+   "prompt": "An administrator connected through SSH does not see console log messages when an interface flaps. Which command shows them in the current session?",
+   "choices": [
+    "terminal monitor",
+    "logging console 7",
+    "logging synchronous",
+    "show logging buffered"
+   ],
+   "answer": 0,
+   "explanation": "Log messages are not sent to VTY sessions by default; terminal monitor enables them for the current session."
+  },
+  {
+   "id": "ccna-368",
+   "domain": "ipsvc",
+   "prompt": "In QoS design, where should the trust boundary ideally be placed?",
+   "choices": [
+    "At the internet edge router",
+    "As close to the endpoint as possible, such as the IP phone or access switch port",
+    "At the core switches only",
+    "At the WAN service provider"
+   ],
+   "answer": 1,
+   "explanation": "Classifying and marking near the source ensures markings are reliable as traffic crosses the network and prevents untrusted endpoints from setting high priority."
+  },
+  {
+   "id": "ccna-369",
+   "domain": "ipsvc",
+   "prompt": "Which queuing method gives voice traffic a strict-priority queue while other classes share remaining bandwidth with guarantees?",
+   "choices": [
+    "FIFO",
+    "LLQ",
+    "Weighted RED",
+    "Policing"
+   ],
+   "answer": 1,
+   "explanation": "Low Latency Queuing adds a strict priority queue to CBWFQ so voice is serviced first with low delay and jitter."
+  },
+  {
+   "id": "ccna-370",
+   "domain": "ipsvc",
+   "prompt": "Which QoS marking is carried in the 3-bit Priority Code Point field of the 802.1Q tag?",
+   "choices": [
+    "CoS",
+    "DSCP",
+    "IP Precedence",
+    "ToS byte"
+   ],
+   "answer": 0,
+   "explanation": "Class of Service uses 3 bits in the 802.1Q header at Layer 2; DSCP is 6 bits in the IP header."
+  },
+  {
+   "id": "ccna-371",
+   "domain": "ipsvc",
+   "prompt": "Within AF class 1, which DSCP value has the highest drop probability during congestion?",
+   "choices": [
+    "AF11",
+    "AF12",
+    "AF41",
+    "AF13"
+   ],
+   "answer": 3,
+   "explanation": "In AFxy, x is the class and y is drop precedence, so AF13 is dropped before AF12 and AF11."
+  },
+  {
+   "id": "ccna-372",
+   "domain": "ipsvc",
+   "prompt": "Which QoS congestion avoidance tool randomly drops lower-priority packets before a queue fills, to avoid TCP global synchronization?",
+   "choices": [
+    "Tail drop",
+    "WRED",
+    "Shaping",
+    "CBWFQ"
+   ],
+   "answer": 1,
+   "explanation": "Weighted Random Early Detection drops packets selectively as queues grow, signaling TCP senders to slow down before tail drop occurs."
+  },
+  {
+   "id": "ccna-373",
+   "domain": "ipsvc",
+   "prompt": "Which command makes a router accept only SSH version 2 connections?",
+   "choices": [
+    "ip ssh version 2",
+    "crypto key generate rsa version 2",
+    "transport input ssh2",
+    "ssh server enable v2"
+   ],
+   "answer": 0,
+   "explanation": "ip ssh version 2 disables SSHv1 support; transport input ssh controls which protocols the VTY lines accept."
+  },
+  {
+   "id": "ccna-374",
+   "domain": "ipsvc",
+   "prompt": "Which file transfer protocol uses UDP port 69 and has no authentication?",
+   "choices": [
+    "TFTP",
+    "FTP",
+    "SFTP",
+    "SCP"
+   ],
+   "answer": 0,
+   "explanation": "TFTP is simple and connectionless on UDP 69 with no login; FTP uses TCP 20 and 21 with username and password."
+  },
+  {
+   "id": "ccna-375",
+   "domain": "ipsvc",
+   "prompt": "Which command backs up a router's current configuration to a TFTP server?",
+   "choices": [
+    "copy tftp: running-config",
+    "write tftp startup-config",
+    "archive tftp running-config",
+    "copy running-config tftp:"
+   ],
+   "answer": 3,
+   "explanation": "copy running-config tftp: copies the active configuration to the TFTP server; copy tftp: running-config would load a file onto the router."
+  },
+  {
+   "id": "ccna-376",
+   "domain": "sec",
+   "prompt": "Which address range is matched by the ACL entry permit 192.168.4.0 0.0.3.255?",
+   "choices": [
+    "192.168.4.0 to 192.168.4.255",
+    "192.168.4.0 to 192.168.7.255",
+    "192.168.0.0 to 192.168.3.255",
+    "192.168.4.0 to 192.168.5.255"
+   ],
+   "answer": 1,
+   "explanation": "A wildcard of 0.0.3.255 ignores the last two bits of the third octet and all of the fourth, covering four /24 networks starting at 192.168.4.0."
+  },
+  {
+   "id": "ccna-377",
+   "domain": "sec",
+   "prompt": "ACL 10 contains only deny 10.1.1.0 0.0.0.255 and is applied outbound on an interface. What happens to traffic from 10.2.2.0/24 leaving that interface?",
+   "choices": [
+    "It is permitted because it does not match the deny",
+    "It is dropped by the implicit deny at the end of the ACL",
+    "It is permitted but logged",
+    "It is dropped only if it is TCP traffic"
+   ],
+   "answer": 1,
+   "explanation": "Every ACL ends with an implicit deny any, so an ACL with only deny entries blocks all traffic."
+  },
+  {
+   "id": "ccna-378",
+   "domain": "sec",
+   "prompt": "Where should an extended ACL generally be placed?",
+   "choices": [
+    "As close to the destination as possible",
+    "Only on the router's outside interface",
+    "On the switch access ports of the destination",
+    "As close to the source of the traffic as possible"
+   ],
+   "answer": 3,
+   "explanation": "Extended ACLs can match source, destination and ports precisely, so filtering near the source stops unwanted traffic before it uses bandwidth."
+  },
+  {
+   "id": "ccna-379",
+   "domain": "sec",
+   "prompt": "How many IPv4 ACLs can be applied to a single router interface?",
+   "choices": [
+    "One total, regardless of direction",
+    "Up to four per direction",
+    "Unlimited, processed in numeric order",
+    "One per direction, inbound and outbound"
+   ],
+   "answer": 3,
+   "explanation": "IOS allows one IPv4 ACL per interface per direction; applying a second one in the same direction replaces the first."
+  },
+  {
+   "id": "ccna-380",
+   "domain": "sec",
+   "prompt": "An administrator needs to insert a new entry before sequence number 20 in the named extended ACL WEB-FILTER. What is the BEST approach?",
+   "choices": [
+    "In ip access-list extended WEB-FILTER mode, enter the new entry with sequence number 15",
+    "Remove the whole ACL and re-enter it in the new order",
+    "Use access-list WEB-FILTER insert 20 in global configuration",
+    "Apply a second ACL in the same direction before WEB-FILTER"
+   ],
+   "answer": 0,
+   "explanation": "Named ACLs and numbered ACLs edited in ACL configuration mode support sequence numbers, so an entry numbered 15 is placed before 20."
+  },
+  {
+   "id": "ccna-381",
+   "domain": "sec",
+   "prompt": "Which extended ACL entry blocks ping echo requests from any source to any destination?",
+   "choices": [
+    "deny icmp any any echo-reply",
+    "deny udp any any eq 7",
+    "deny tcp any any eq icmp",
+    "deny icmp any any echo"
+   ],
+   "answer": 3,
+   "explanation": "Ping uses ICMP echo requests (type 8); blocking echo stops pings from starting, while echo-reply blocks the responses."
+  },
+  {
+   "id": "ccna-382",
+   "domain": "sec",
+   "prompt": "Which number ranges identify standard numbered IPv4 ACLs?",
+   "choices": [
+    "1 to 99 and 1300 to 1999",
+    "100 to 199 and 2000 to 2699",
+    "1 to 199 only",
+    "1 to 99 and 2000 to 2699"
+   ],
+   "answer": 0,
+   "explanation": "Standard ACLs use 1 to 99 and the expanded 1300 to 1999 range; extended ACLs use 100 to 199 and 2000 to 2699."
+  },
+  {
+   "id": "ccna-383",
+   "domain": "sec",
+   "prompt": "Which extended ACL entry permits hosts to send DNS queries to the server 8.8.8.8?",
+   "choices": [
+    "permit udp host 8.8.8.8 eq 53 any",
+    "permit udp any host 8.8.8.8 eq 53",
+    "permit tcp any host 8.8.8.8 eq 443",
+    "permit udp any eq 53 host 8.8.8.8"
+   ],
+   "answer": 1,
+   "explanation": "DNS queries are sent to destination UDP port 53, so the port is matched after the destination address."
+  },
+  {
+   "id": "ccna-384",
+   "domain": "sec",
+   "prompt": "Which command shows ACL entries along with the number of packets that have matched each entry?",
+   "choices": [
+    "show ip interface brief",
+    "show running-config interface",
+    "show access-lists",
+    "show ip route access-list"
+   ],
+   "answer": 2,
+   "explanation": "show access-lists displays each ACL with per-entry match counters, useful for verifying which entries traffic hits."
+  },
+  {
+   "id": "ccna-385",
+   "domain": "sec",
+   "prompt": "Which interface command limits a port-security-enabled port to two learned MAC addresses?",
+   "choices": [
+    "switchport port-security mac-address 2",
+    "switchport port-security limit 2",
+    "switchport port-security maximum 2",
+    "port-security max-mac 2"
+   ],
+   "answer": 2,
+   "explanation": "switchport port-security maximum sets how many secure MAC addresses are allowed; the default is one."
+  },
+  {
+   "id": "ccna-386",
+   "domain": "sec",
+   "prompt": "Entering switchport port-security on Gi0/1 returns an error stating the port is a dynamic port. What must be done FIRST?",
+   "choices": [
+    "Enable spanning-tree portfast on the port",
+    "Shut down the port before enabling security",
+    "Configure switchport mode access on the port",
+    "Configure a voice VLAN on the port"
+   ],
+   "answer": 2,
+   "explanation": "Port security cannot be enabled on ports in a dynamic DTP mode, so the port must be statically set to access or trunk mode first."
+  },
+  {
+   "id": "ccna-387",
+   "domain": "sec",
+   "prompt": "Which command automatically re-enables ports that were err-disabled by a port security violation after the recovery interval?",
+   "choices": [
+    "switchport port-security recovery",
+    "errdisable recovery cause psecure-violation",
+    "spanning-tree errdisable recovery",
+    "port-security auto-restore enable"
+   ],
+   "answer": 1,
+   "explanation": "errdisable recovery cause psecure-violation tells the switch to recover ports from that cause automatically, by default after 300 seconds."
+  },
+  {
+   "id": "ccna-388",
+   "domain": "sec",
+   "prompt": "After enabling Dynamic ARP Inspection on VLAN 10, routers connected through an inter-switch trunk lose connectivity because their ARP messages are dropped. What should be configured?",
+   "choices": [
+    "ip dhcp snooping limit rate on the trunk",
+    "no ip arp inspection vlan 10 on the access ports",
+    "switchport port-security on the trunk",
+    "ip arp inspection trust on the trunk interfaces"
+   ],
+   "answer": 3,
+   "explanation": "By default all DAI ports are untrusted; links to other switches and routers should be trusted so valid ARP traffic is not dropped."
+  },
+  {
+   "id": "ccna-389",
+   "domain": "sec",
+   "prompt": "Which pair of global commands is required to activate DHCP snooping for VLAN 10?",
+   "choices": [
+    "ip dhcp snooping and ip dhcp snooping vlan 10",
+    "ip dhcp snooping vlan 10 and ip arp inspection vlan 10",
+    "service dhcp and ip dhcp snooping trust",
+    "ip dhcp snooping and ip helper-address vlan 10"
+   ],
+   "answer": 0,
+   "explanation": "DHCP snooping must be enabled globally and then for each VLAN; trusted ports are configured separately on interfaces."
+  },
+  {
+   "id": "ccna-390",
+   "domain": "sec",
+   "prompt": "A user connects a home router to an access port, and it starts handing out addresses. DHCP snooping is enabled and the port is untrusted. What happens to the rogue DHCPOFFER messages?",
+   "choices": [
+    "The switch forwards them but logs a warning",
+    "The switch converts them into unicast messages",
+    "The switch forwards them only to the native VLAN",
+    "The switch drops them because server messages are not allowed on untrusted ports"
+   ],
+   "answer": 3,
+   "explanation": "DHCP snooping drops server messages such as OFFER and ACK received on untrusted ports, stopping rogue servers."
+  },
+  {
+   "id": "ccna-391",
+   "domain": "sec",
+   "prompt": "A router has both enable password Cisco1 and enable secret Cisco2 configured. Which password grants privileged EXEC access?",
+   "choices": [
+    "Cisco1, because it was configured first",
+    "Cisco2, because enable secret takes precedence",
+    "Either password works",
+    "Neither until service password-encryption is entered"
+   ],
+   "answer": 1,
+   "explanation": "When both exist, IOS uses the enable secret and ignores the enable password."
+  },
+  {
+   "id": "ccna-392",
+   "domain": "sec",
+   "prompt": "Which line configuration command makes VTY logins authenticate against usernames configured on the router?",
+   "choices": [
+    "login local",
+    "login",
+    "password local",
+    "aaa authentication line"
+   ],
+   "answer": 0,
+   "explanation": "login local uses the local username database; login alone uses the line password."
+  },
+  {
+   "id": "ccna-393",
+   "domain": "sec",
+   "prompt": "An administrator wants to block all login attempts for 120 seconds if 5 failed attempts occur within 60 seconds. Which command should be used?",
+   "choices": [
+    "login block-for 60 attempts 5 within 120",
+    "login block-for 120 attempts 5 within 60",
+    "security attempts 5 block 120",
+    "aaa lockout 120 attempts 5 within 60"
+   ],
+   "answer": 1,
+   "explanation": "login block-for sets the quiet period in seconds, followed by the number of failed attempts and the time window."
+  },
+  {
+   "id": "ccna-394",
+   "domain": "sec",
+   "prompt": "Which command creates a local user account whose password is stored as a hash?",
+   "choices": [
+    "username admin password StrongPass1",
+    "user admin hash StrongPass1",
+    "enable username admin secret StrongPass1",
+    "username admin secret StrongPass1"
+   ],
+   "answer": 3,
+   "explanation": "The secret keyword hashes the password; the password keyword stores it in plain text unless service password-encryption is used."
+  },
+  {
+   "id": "ccna-395",
+   "domain": "sec",
+   "prompt": "Which VTY line command permits only SSH and blocks Telnet access?",
+   "choices": [
+    "transport output ssh",
+    "ip ssh only",
+    "transport input ssh",
+    "no transport input telnet ssh"
+   ],
+   "answer": 2,
+   "explanation": "transport input ssh limits incoming VTY connections to SSH."
+  },
+  {
+   "id": "ccna-396",
+   "domain": "sec",
+   "prompt": "Which IPsec protocol provides encryption of the payload in addition to integrity and authentication?",
+   "choices": [
+    "AH",
+    "IKE",
+    "ESP",
+    "GRE"
+   ],
+   "answer": 2,
+   "explanation": "Encapsulating Security Payload encrypts data; Authentication Header provides integrity and authentication but no confidentiality."
+  },
+  {
+   "id": "ccna-397",
+   "domain": "sec",
+   "prompt": "Employees working from home need secure access to company resources from their laptops. Which VPN type is MOST appropriate?",
+   "choices": [
+    "Remote-access VPN using a client such as Cisco Secure Client",
+    "Site-to-site IPsec VPN between routers",
+    "GRE tunnel without encryption",
+    "MPLS Layer 3 VPN"
+   ],
+   "answer": 0,
+   "explanation": "Remote-access VPNs connect individual users using client software, typically with TLS or IPsec; site-to-site VPNs connect entire networks."
+  },
+  {
+   "id": "ccna-398",
+   "domain": "sec",
+   "prompt": "A small office wants every device to join the Wi-Fi with one shared passphrase and no RADIUS server. Which security mode should be used?",
+   "choices": [
+    "WPA2 Enterprise with 802.1X",
+    "Open authentication with web auth",
+    "WEP with a 128-bit key",
+    "WPA2 or WPA3 Personal"
+   ],
+   "answer": 3,
+   "explanation": "Personal mode uses a pre-shared key or passphrase, while Enterprise mode requires 802.1X with an authentication server."
+  },
+  {
+   "id": "ccna-399",
+   "domain": "sec",
+   "prompt": "Which encryption method was introduced with the original WPA to replace WEP?",
+   "choices": [
+    "AES-CCMP",
+    "GCMP-256",
+    "SAE",
+    "TKIP"
+   ],
+   "answer": 3,
+   "explanation": "WPA used TKIP as an interim fix for WEP; WPA2 mandates AES-CCMP and WPA3 adds SAE and GCMP options."
+  },
+  {
+   "id": "ccna-400",
+   "domain": "sec",
+   "prompt": "An attacker uses thousands of compromised hosts to flood a web server with traffic until it stops responding. Which attack is this?",
+   "choices": [
+    "Man-in-the-middle",
+    "Reconnaissance",
+    "Distributed denial of service",
+    "Privilege escalation"
+   ],
+   "answer": 2,
+   "explanation": "A DDoS attack uses many sources, often a botnet, to overwhelm a target's resources."
+  },
+  {
+   "id": "ccna-401",
+   "domain": "sec",
+   "prompt": "Which global command must be entered before any other AAA configuration on a Cisco router?",
+   "choices": [
+    "aaa enable",
+    "aaa authentication login default",
+    "aaa new-model",
+    "radius server enable"
+   ],
+   "answer": 2,
+   "explanation": "aaa new-model activates AAA; method lists such as aaa authentication login are configured after it."
+  },
+  {
+   "id": "ccna-402",
+   "domain": "sec",
+   "prompt": "Which transport and port does TACACS+ use?",
+   "choices": [
+    "UDP port 1812",
+    "UDP port 49",
+    "TCP port 1645",
+    "TCP port 49"
+   ],
+   "answer": 3,
+   "explanation": "TACACS+ uses TCP 49; RADIUS uses UDP 1812 for authentication and 1813 for accounting."
+  },
+  {
+   "id": "ccna-403",
+   "domain": "sec",
+   "prompt": "In 802.1X, which protocol carries EAP messages between the supplicant and the switch?",
+   "choices": [
+    "RADIUS",
+    "EAPoL",
+    "TACACS+",
+    "LLDP"
+   ],
+   "answer": 1,
+   "explanation": "EAP over LAN carries EAP between the supplicant and authenticator; the switch then relays EAP to the RADIUS server."
+  },
+  {
+   "id": "ccna-404",
+   "domain": "sec",
+   "prompt": "Which term describes code or a technique that takes advantage of a vulnerability?",
+   "choices": [
+    "Threat",
+    "Mitigation",
+    "Exploit",
+    "Risk"
+   ],
+   "answer": 2,
+   "explanation": "An exploit is the means used to leverage a vulnerability; a threat is the potential danger and mitigation reduces it."
+  },
+  {
+   "id": "ccna-405",
+   "domain": "sec",
+   "prompt": "When configuring a WLAN on a Cisco WLC GUI for WPA2 with a pre-shared key, which settings are required under Layer 2 security?",
+   "choices": [
+    "WPA2 policy with 802.1X key management and a RADIUS server",
+    "WPA2 policy with AES encryption and PSK authentication key management",
+    "Static WEP with a 104-bit key",
+    "Web authentication with a guest portal"
+   ],
+   "answer": 1,
+   "explanation": "WPA2 PSK on a WLC uses the WPA2 policy, AES (CCMP) encryption and PSK as the authentication key management method with the passphrase entered."
+  },
+  {
+   "id": "ccna-406",
+   "domain": "auto",
+   "prompt": "What is a key benefit of controller-based networking compared with traditional device-by-device management?",
+   "choices": [
+    "Each device keeps its own independent control plane configuration",
+    "It eliminates the need for any data plane",
+    "It requires no network connectivity to the devices",
+    "Policies are defined centrally and pushed consistently to many devices"
+   ],
+   "answer": 3,
+   "explanation": "A controller centralizes configuration and policy, reducing errors and making changes consistent across the network."
+  },
+  {
+   "id": "ccna-407",
+   "domain": "auto",
+   "prompt": "SSH sessions, SNMP polling and syslog belong to which plane of a network device?",
+   "choices": [
+    "Control plane",
+    "Data plane",
+    "Forwarding plane",
+    "Management plane"
+   ],
+   "answer": 3,
+   "explanation": "The management plane handles device access and monitoring; the control plane runs protocols such as OSPF, and the data plane forwards traffic."
+  },
+  {
+   "id": "ccna-408",
+   "domain": "auto",
+   "prompt": "OSPF Hello and LSA exchanges between routers are functions of which plane?",
+   "choices": [
+    "Data plane",
+    "Management plane",
+    "Application plane",
+    "Control plane"
+   ],
+   "answer": 3,
+   "explanation": "Routing protocols build the routing table and belong to the control plane; the data plane then forwards packets using that information."
+  },
+  {
+   "id": "ccna-409",
+   "domain": "auto",
+   "prompt": "Which statement correctly describes NETCONF?",
+   "choices": [
+    "It uses JSON over HTTP on TCP port 80",
+    "It uses YAML over Telnet on TCP port 23",
+    "It uses SNMP traps on UDP port 162",
+    "It uses XML-encoded data over SSH, typically on TCP port 830"
+   ],
+   "answer": 3,
+   "explanation": "NETCONF is a southbound protocol that exchanges XML-encoded YANG data over SSH, usually on port 830."
+  },
+  {
+   "id": "ccna-410",
+   "domain": "auto",
+   "prompt": "How does RESTCONF transport and encode data?",
+   "choices": [
+    "Over HTTPS using JSON or XML",
+    "Over SSH using only XML",
+    "Over UDP using binary encoding",
+    "Over Telnet using plain text"
+   ],
+   "answer": 0,
+   "explanation": "RESTCONF provides a REST-like interface to YANG data over HTTPS and supports JSON or XML encoding."
+  },
+  {
+   "id": "ccna-411",
+   "domain": "auto",
+   "prompt": "Which HTTP method is used to update only part of an existing resource through a REST API?",
+   "choices": [
+    "PATCH",
+    "GET",
+    "POST",
+    "DELETE"
+   ],
+   "answer": 0,
+   "explanation": "PATCH applies a partial modification; PUT typically replaces the whole resource and POST creates a new one."
+  },
+  {
+   "id": "ccna-412",
+   "domain": "auto",
+   "prompt": "A script sends a GET request for a device that does not exist on the controller. Which HTTP status code is MOST likely returned?",
+   "choices": [
+    "200 OK",
+    "201 Created",
+    "500 Internal Server Error",
+    "404 Not Found"
+   ],
+   "answer": 3,
+   "explanation": "404 means the requested resource could not be found; 500 would indicate a server-side failure."
+  },
+  {
+   "id": "ccna-413",
+   "domain": "auto",
+   "prompt": "Which HTTP status code typically indicates that a POST request successfully created a new resource?",
+   "choices": [
+    "200 OK",
+    "204 No Content",
+    "201 Created",
+    "302 Found"
+   ],
+   "answer": 2,
+   "explanation": "201 Created confirms a new resource was created, often returning its location."
+  },
+  {
+   "id": "ccna-414",
+   "domain": "auto",
+   "prompt": "A user sends an API request with a valid token but receives a response saying the action is not permitted for their role. Which status code is this?",
+   "choices": [
+    "401 Unauthorized",
+    "400 Bad Request",
+    "404 Not Found",
+    "403 Forbidden"
+   ],
+   "answer": 3,
+   "explanation": "403 means the client is authenticated but lacks permission; 401 means authentication is missing or invalid."
+  },
+  {
+   "id": "ccna-415",
+   "domain": "auto",
+   "prompt": "Which HTTP header tells a REST API server that the request body contains JSON?",
+   "choices": [
+    "Accept-Encoding: json",
+    "Content-Type: application/json",
+    "Authorization: application/json",
+    "Host: application/json"
+   ],
+   "answer": 1,
+   "explanation": "Content-Type describes the format of the request body; Accept indicates the format the client wants back."
+  },
+  {
+   "id": "ccna-416",
+   "domain": "auto",
+   "prompt": "In JSON, how must object keys be written?",
+   "choices": [
+    "As unquoted words",
+    "As strings enclosed in single quotes",
+    "As strings enclosed in double quotes",
+    "As numbers only"
+   ],
+   "answer": 2,
+   "explanation": "JSON requires keys to be double-quoted strings, such as \"hostname\": \"R1\"."
+  },
+  {
+   "id": "ccna-417",
+   "domain": "auto",
+   "prompt": "How many objects are contained in the array in {\"interfaces\": [{\"name\": \"Gi0/1\"}, {\"name\": \"Gi0/2\"}, {\"name\": \"Gi0/3\"}]}?",
+   "choices": [
+    "3",
+    "1",
+    "2",
+    "6"
+   ],
+   "answer": 0,
+   "explanation": "The square brackets hold a list of three objects, each enclosed in curly braces with one name key."
+  },
+  {
+   "id": "ccna-418",
+   "domain": "auto",
+   "prompt": "Why is {'hostname': 'R1'} not valid JSON?",
+   "choices": [
+    "JSON objects must use square brackets",
+    "JSON values cannot be text",
+    "JSON requires a trailing comma after the last pair",
+    "JSON strings and keys require double quotes, not single quotes"
+   ],
+   "answer": 3,
+   "explanation": "Strict JSON only accepts double-quoted strings; the structure is otherwise valid, and trailing commas are not allowed."
+  },
+  {
+   "id": "ccna-419",
+   "domain": "auto",
+   "prompt": "Which JSON value represents the absence of a value?",
+   "choices": [
+    "\"none\"",
+    "null",
+    "0",
+    "[]"
+   ],
+   "answer": 1,
+   "explanation": "null is a JSON literal meaning no value; \"none\" is a string, 0 is a number and [] is an empty array."
+  },
+  {
+   "id": "ccna-420",
+   "domain": "auto",
+   "prompt": "In Ansible, which file lists the managed devices and groups that playbooks run against?",
+   "choices": [
+    "Manifest",
+    "Cookbook",
+    "Inventory",
+    "State file"
+   ],
+   "answer": 2,
+   "explanation": "Ansible uses an inventory file of hosts and groups; manifests belong to Puppet, cookbooks to Chef and state files to Terraform."
+  },
+  {
+   "id": "ccna-421",
+   "domain": "auto",
+   "prompt": "How does Terraform keep track of the infrastructure it has already provisioned?",
+   "choices": [
+    "It installs an agent on each managed device",
+    "It queries an inventory of SSH hosts",
+    "It records resources in a state file",
+    "It stores everything in the device startup configuration"
+   ],
+   "answer": 2,
+   "explanation": "Terraform compares its configuration against the state file to determine which resources to create, change or destroy."
+  },
+  {
+   "id": "ccna-422",
+   "domain": "auto",
+   "prompt": "In Chef, what are the units of configuration that describe how a node should be set up, grouped into cookbooks?",
+   "choices": [
+    "Playbooks",
+    "Recipes",
+    "Manifests",
+    "Modules"
+   ],
+   "answer": 1,
+   "explanation": "Chef recipes are collected into cookbooks; Ansible uses playbooks and Puppet uses manifests."
+  },
+  {
+   "id": "ccna-423",
+   "domain": "auto",
+   "prompt": "An Ansible playbook that sets an interface description is run twice. The second run reports no changes. Which property does this demonstrate?",
+   "choices": [
+    "Statelessness",
+    "Encapsulation",
+    "Idempotency",
+    "Redundancy"
+   ],
+   "answer": 2,
+   "explanation": "Idempotent automation applies changes only when the current state differs from the desired state, so repeated runs are safe."
+  },
+  {
+   "id": "ccna-424",
+   "domain": "auto",
+   "prompt": "Which statement BEST describes intent-based networking as used by Cisco Catalyst Center?",
+   "choices": [
+    "Administrators define desired business outcomes and the controller translates them into device configuration",
+    "Administrators type CLI commands on each device in sequence",
+    "Devices independently negotiate policy without a controller",
+    "The controller only collects syslog messages for review"
+   ],
+   "answer": 0,
+   "explanation": "Intent-based networking turns high-level intent into policy and configuration, then continuously verifies that the network meets it."
+  },
+  {
+   "id": "ccna-425",
+   "domain": "auto",
+   "prompt": "Over time, manual changes cause switch configurations to differ from the approved standard. How does configuration management automation help?",
+   "choices": [
+    "It disables the CLI on all devices permanently",
+    "It replaces routing protocols with static routes",
+    "It encrypts configurations so they cannot change",
+    "It detects and corrects configuration drift by enforcing a defined desired state"
+   ],
+   "answer": 3,
+   "explanation": "Tools such as Ansible, Puppet and Chef compare devices to a desired state and remediate drift, improving consistency."
   }
  ]
 }

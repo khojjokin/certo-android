@@ -3001,6 +3001,2606 @@
    ],
    "answer": 3,
    "explanation": "IT assets are defined by financial value; CIs are defined by the need to manage them for service delivery."
+  },
+  {
+   "id": "itil4-226",
+   "domain": "concepts",
+   "prompt": "A customer says a new HR portal is 'fit for purpose' but not 'fit for use'. What does this mean?",
+   "choices": [
+    "It is cheap to run but expensive for the customer to adopt",
+    "It meets the SLA but has not yet been formally released",
+    "It has the right features but does not perform reliably enough",
+    "It performs reliably but lacks the features the customer needs"
+   ],
+   "answer": 2,
+   "explanation": "Fit for purpose describes utility (functionality); fit for use describes warranty (meeting agreed performance such as availability and capacity)."
+  },
+  {
+   "id": "itil4-227",
+   "domain": "concepts",
+   "prompt": "Which of the following is the BEST example of utility?",
+   "choices": [
+    "A guarantee that the service is available during business hours",
+    "A plan to recover the service after a major site failure",
+    "Enough capacity to support the peak number of concurrent users",
+    "A feature that removes a constraint the user previously faced"
+   ],
+   "answer": 3,
+   "explanation": "Utility is about functionality: supporting the consumer's performance or removing constraints. Availability, continuity and capacity are aspects of warranty."
+  },
+  {
+   "id": "itil4-228",
+   "domain": "concepts",
+   "prompt": "An online store adds a second data centre so that checkout keeps working if one site fails. What is being improved?",
+   "choices": [
+    "Utility, through new checkout functionality",
+    "Warranty, through improved service continuity",
+    "The sponsor role, through a new budget approval",
+    "The service offering, through new goods"
+   ],
+   "answer": 1,
+   "explanation": "Continuity is an aspect of warranty: the assurance that the service will meet agreed requirements even when things go wrong."
+  },
+  {
+   "id": "itil4-229",
+   "domain": "concepts",
+   "prompt": "A provider gives a consumer a set of laptops that the consumer then owns and is responsible for. Which part of a service offering is this?",
+   "choices": [
+    "Access to resources, because the consumer can use them",
+    "Goods, because ownership is transferred to the consumer",
+    "Warranty, because the laptops must work reliably",
+    "A service action, because the laptops are delivered"
+   ],
+   "answer": 1,
+   "explanation": "Goods are supplied with ownership transferred to the consumer, who then takes responsibility for their future use."
+  },
+  {
+   "id": "itil4-230",
+   "domain": "concepts",
+   "prompt": "A company rents capacity on a provider's storage platform. It can store files there but never owns the hardware. What is this an example of?",
+   "choices": [
+    "A service action",
+    "A service relationship model",
+    "Goods",
+    "Access to resources"
+   ],
+   "answer": 3,
+   "explanation": "Access to resources grants the consumer use of resources under agreed terms without transferring ownership."
+  },
+  {
+   "id": "itil4-231",
+   "domain": "concepts",
+   "prompt": "Which statement BEST describes how value is perceived in ITIL 4?",
+   "choices": [
+    "It equals the price the consumer pays, less the provider's delivery cost",
+    "It is subjective and can differ between stakeholders of the same service",
+    "It is the same for every consumer of a given service",
+    "It is fixed by the provider when the service is designed and documented"
+   ],
+   "answer": 1,
+   "explanation": "Value is the perceived benefits, usefulness and importance of something, so different stakeholders can see different value in the same service."
+  },
+  {
+   "id": "itil4-232",
+   "domain": "concepts",
+   "prompt": "From a provider's point of view, which is a typical form of value received from a service relationship?",
+   "choices": [
+    "Lower risk because the consumer runs the infrastructure",
+    "Funding from the consumer and business development opportunities",
+    "Removal of costs the provider previously carried for its own infrastructure",
+    "Outcomes the consumer achieves using the service"
+   ],
+   "answer": 1,
+   "explanation": "Providers typically gain funding, business development and image improvement from service relationships; outcomes and removed costs are value for the consumer."
+  },
+  {
+   "id": "itil4-233",
+   "domain": "concepts",
+   "prompt": "A bank introduces an online loan application. Which is the outcome rather than the output?",
+   "choices": [
+    "A decision report generated for each application",
+    "A new web form for submitting loan applications",
+    "Customers obtain approved loans faster than before",
+    "A confirmation email sent to each applicant"
+   ],
+   "answer": 2,
+   "explanation": "Outputs are deliverables of an activity, such as forms, reports and emails; the outcome is the result the stakeholder wants, such as obtaining loans faster."
+  },
+  {
+   "id": "itil4-234",
+   "domain": "concepts",
+   "prompt": "Which role is MOST likely to take responsibility for the outcomes of service consumption in a large organization?",
+   "choices": [
+    "The customer",
+    "The sponsor",
+    "The user",
+    "The supplier"
+   ],
+   "answer": 0,
+   "explanation": "The customer defines requirements and takes responsibility for the outcomes of service consumption; the sponsor authorizes budget and the user uses the service."
+  },
+  {
+   "id": "itil4-235",
+   "domain": "concepts",
+   "prompt": "A school buys a learning platform. The head teacher approves the spending, the IT lead defines requirements, and pupils log in to study. Which role do the pupils hold?",
+   "choices": [
+    "User",
+    "Sponsor",
+    "Service provider",
+    "Customer"
+   ],
+   "answer": 0,
+   "explanation": "Users are the people who actually use the services; the customer defines requirements and the sponsor authorizes budget."
+  },
+  {
+   "id": "itil4-236",
+   "domain": "concepts",
+   "prompt": "What does ITIL 4 mean when it says a service provider takes on 'specific costs and risks' for the consumer?",
+   "choices": [
+    "The consumer no longer manages certain costs and risks itself",
+    "The consumer pays nothing and bears no risk at all",
+    "The provider accepts every cost and risk the consumer previously had",
+    "The provider shares its profits and losses with the consumer"
+   ],
+   "answer": 0,
+   "explanation": "A service removes some costs and risks from the consumer, but the consumer still bears other costs and risks, such as fees and dependency on the provider."
+  },
+  {
+   "id": "itil4-237",
+   "domain": "concepts",
+   "prompt": "Which statement about costs in a service relationship is correct?",
+   "choices": [
+    "Only the provider incurs costs when a service is delivered",
+    "Costs are not part of value and can be ignored by the consumer when choosing",
+    "A service can both remove some costs and impose new costs on the consumer",
+    "A service always reduces the total cost to the consumer over its lifetime"
+   ],
+   "answer": 2,
+   "explanation": "Consumers evaluate both costs removed (such as staff or infrastructure) and costs imposed (such as fees, training and integration)."
+  },
+  {
+   "id": "itil4-238",
+   "domain": "concepts",
+   "prompt": "When a consumer evaluates a new service, what should it weigh against the outcomes it expects?",
+   "choices": [
+    "The costs and risks the service removes and the ones it introduces",
+    "Only the provider's reputation in the market",
+    "Only the number of features the provider offers compared with competitors",
+    "Only the purchase price stated in the contract and any discounts offered"
+   ],
+   "answer": 0,
+   "explanation": "Value depends on balancing desired outcomes against both the costs and risks taken away and those that are imposed."
+  },
+  {
+   "id": "itil4-239",
+   "domain": "concepts",
+   "prompt": "Which statement about the relationship between products and services is correct?",
+   "choices": [
+    "Services are based on one or more products",
+    "A product and a service are the same thing in ITIL 4",
+    "Services can be offered without any product behind them",
+    "Products are based on one or more services"
+   ],
+   "answer": 0,
+   "explanation": "Organizations configure their resources into products, and services are offered to consumers based on one or more of those products."
+  },
+  {
+   "id": "itil4-240",
+   "domain": "concepts",
+   "prompt": "Why might a consumer not see most of the components of a product?",
+   "choices": [
+    "Providers are required to hide all product details by contract",
+    "Products contain only intangible elements that cannot be seen",
+    "Products are complex and often only partly visible to consumers",
+    "Consumers are not allowed to know which provider supplies the product"
+   ],
+   "answer": 2,
+   "explanation": "Products are typically complex configurations of resources, and the consumer usually sees only the parts that matter to the service they receive."
+  },
+  {
+   "id": "itil4-241",
+   "domain": "concepts",
+   "prompt": "A provider offers the same core product to two groups: a basic package for small firms and a premium package with extra support for enterprises. What are these packages?",
+   "choices": [
+    "Two value streams for the same service action",
+    "Two service relationships with the same sponsor",
+    "Two separate products built from different sets of resources",
+    "Different service offerings based on the same product"
+   ],
+   "answer": 3,
+   "explanation": "Service offerings are formal descriptions of services tailored to target consumer groups, and several can be built from one product."
+  },
+  {
+   "id": "itil4-242",
+   "domain": "concepts",
+   "prompt": "In a service relationship, which activity is the responsibility of the service consumer?",
+   "choices": [
+    "Configuring the provider's own resources so that the service can be delivered",
+    "Managing the consumer's own resources needed to consume the service",
+    "Authorizing changes to the provider's infrastructure",
+    "Designing the provider's service offerings and pricing"
+   ],
+   "answer": 1,
+   "explanation": "Service consumption includes managing the consumer's resources needed to use the service, as well as using it and requesting service actions."
+  },
+  {
+   "id": "itil4-243",
+   "domain": "concepts",
+   "prompt": "An organization relies on an external payroll provider while also running its own internal IT services for staff. Which statement is correct?",
+   "choices": [
+    "It must merge both relationships into a single service level agreement",
+    "It can only be classed as a provider of services",
+    "It acts as a consumer in one relationship and a provider in another",
+    "It can only be classed as a consumer because it buys external services"
+   ],
+   "answer": 2,
+   "explanation": "Organizations commonly act as both service consumers and service providers, forming chains of service relationships."
+  },
+  {
+   "id": "itil4-244",
+   "domain": "concepts",
+   "prompt": "Which of the following is an example of a service action?",
+   "choices": [
+    "A sponsor approving next year's service budget",
+    "A user owning the headset supplied with a contract",
+    "A support engineer resetting a user's multi-factor authentication",
+    "A user storing project files on the provider's cloud storage platform"
+   ],
+   "answer": 2,
+   "explanation": "Service actions are performed by the provider to address consumer needs, such as user support; ownership of goods and use of storage are other offering elements."
+  },
+  {
+   "id": "itil4-245",
+   "domain": "concepts",
+   "prompt": "Which aspect of warranty is MOST affected when a service slows down badly because too many users log in at once?",
+   "choices": [
+    "Continuity",
+    "Security",
+    "Utility",
+    "Capacity"
+   ],
+   "answer": 3,
+   "explanation": "Capacity is an aspect of warranty; when demand exceeds capacity, performance falls below agreed levels even though the functions still exist."
+  },
+  {
+   "id": "itil4-246",
+   "domain": "concepts",
+   "prompt": "A provider launches a service that has excellent features but frequent security breaches. Why is the service unlikely to create value?",
+   "choices": [
+    "Security is part of utility, so the service's features are considered faulty",
+    "Value is only created when the consumer bears no additional costs or risks",
+    "A service with good utility never needs warranty to create value",
+    "Without adequate warranty, the utility cannot be relied on to deliver outcomes"
+   ],
+   "answer": 3,
+   "explanation": "Both utility and warranty are needed; poor security (warranty) undermines the consumer's ability to achieve outcomes from the functionality."
+  },
+  {
+   "id": "itil4-247",
+   "domain": "concepts",
+   "prompt": "What is the MAIN purpose of the service relationship management activities in a service relationship?",
+   "choices": [
+    "To transfer ownership of goods from the provider to the consumer's organization",
+    "To configure provider resources into new products",
+    "To authorize the budget for consuming the service",
+    "To ensure continued value co-creation based on the agreed offerings"
+   ],
+   "answer": 3,
+   "explanation": "Service relationship management covers joint activities by provider and consumer to keep value co-creation going."
+  },
+  {
+   "id": "itil4-248",
+   "domain": "concepts",
+   "prompt": "Which stakeholder would MOST typically value a provider through employment, taxes and organizational contributions to the community?",
+   "choices": [
+    "Shareholders",
+    "Partners and suppliers",
+    "Society and community",
+    "Service consumers"
+   ],
+   "answer": 2,
+   "explanation": "Society and the community gain value such as employment, taxes and contributions from service providers; shareholders seek financial benefits."
+  },
+  {
+   "id": "itil4-249",
+   "domain": "concepts",
+   "prompt": "A provider and consumer agree that the consumer will supply accurate data and timely approvals for a service to work well. What does this illustrate?",
+   "choices": [
+    "The service has no warranty until the data is supplied",
+    "The consumer has become the service provider",
+    "Value is co-created and depends on both parties contributing",
+    "The provider has transferred all its risks to the consumer"
+   ],
+   "answer": 2,
+   "explanation": "Value co-creation means consumers are active participants, contributing resources such as information and approvals."
+  },
+  {
+   "id": "itil4-250",
+   "domain": "concepts",
+   "prompt": "Which statement about outcomes is correct?",
+   "choices": [
+    "An outcome is the same as an output",
+    "An outcome is always a tangible deliverable",
+    "An outcome can be enabled by one or more outputs",
+    "An outcome is produced only by the service provider"
+   ],
+   "answer": 2,
+   "explanation": "Outcomes are results for stakeholders enabled by outputs; outputs are the deliverables of activities."
+  },
+  {
+   "id": "itil4-251",
+   "domain": "concepts",
+   "prompt": "In ITIL 4, what does service management focus on enabling?",
+   "choices": [
+    "Delivery of IT projects within budget",
+    "The lowest possible cost for the provider",
+    "Value for customers in the form of services",
+    "Maximum utilization of technical resources"
+   ],
+   "answer": 2,
+   "explanation": "Service management is a set of specialized organizational capabilities for enabling value for customers in the form of services."
+  },
+  {
+   "id": "itil4-252",
+   "domain": "concepts",
+   "prompt": "A user complains a service 'does exactly what we need but keeps crashing'. A manager says 'it is reliable but cannot do what we need'. Which aspects are they criticising, respectively?",
+   "choices": [
+    "Utility and warranty",
+    "Outputs and outcomes",
+    "Costs and risks",
+    "Warranty and utility"
+   ],
+   "answer": 3,
+   "explanation": "Crashing despite correct functions is a warranty issue; reliability without needed functions is a utility issue."
+  },
+  {
+   "id": "itil4-253",
+   "domain": "concepts",
+   "prompt": "Which of the following is considered a risk REMOVED from a consumer by using a service?",
+   "choices": [
+    "The provider failing to meet its security obligations",
+    "The consumer losing internal skills it once had to run the servers",
+    "Failure of on-premises servers the consumer previously had to maintain",
+    "The provider going out of business part way through the contract term"
+   ],
+   "answer": 2,
+   "explanation": "Using a service can remove risks such as failure of consumer-owned infrastructure, while introducing new risks such as provider dependency."
+  },
+  {
+   "id": "itil4-254",
+   "domain": "principles",
+   "prompt": "A project team keeps adding new features without checking whether users want them. Which guiding principle would MOST help redirect their effort?",
+   "choices": [
+    "Start where you are",
+    "Focus on value",
+    "Think and work holistically",
+    "Optimize and automate"
+   ],
+   "answer": 1,
+   "explanation": "Focus on value asks that everything the organization does links back to value for stakeholders, so work should be driven by what users actually need."
+  },
+  {
+   "id": "itil4-255",
+   "domain": "principles",
+   "prompt": "When applying 'focus on value', why is the user experience important?",
+   "choices": [
+    "User experience only matters for consumer-facing websites and mobile apps",
+    "User experience is measured only by the service desk",
+    "Experience is part of how consumers judge the value of a service",
+    "User experience replaces the need to measure outcomes"
+   ],
+   "answer": 2,
+   "explanation": "Customer and user experience are significant parts of perceived value, so they must be understood and managed along with outcomes."
+  },
+  {
+   "id": "itil4-256",
+   "domain": "principles",
+   "prompt": "A service provider applies 'focus on value' for internal IT. Who should it identify as the service consumer?",
+   "choices": [
+    "Only the suppliers who provide the technology",
+    "The business units and staff who use and pay for the services",
+    "Only the IT staff who support the services",
+    "Only the external customers who buy the organization's own products"
+   ],
+   "answer": 1,
+   "explanation": "Focus on value starts with knowing who the consumers are; for internal IT these are the business units and users it serves."
+  },
+  {
+   "id": "itil4-257",
+   "domain": "principles",
+   "prompt": "An organization plans to replace its change process. Before designing anything new, the team reviews the existing process to find what still works. Which principle is this?",
+   "choices": [
+    "Focus on value",
+    "Progress iteratively with feedback",
+    "Start where you are",
+    "Keep it simple and practical"
+   ],
+   "answer": 2,
+   "explanation": "Start where you are encourages assessing the current state and reusing what is valuable before building something new."
+  },
+  {
+   "id": "itil4-258",
+   "domain": "principles",
+   "prompt": "Under 'start where you are', why should existing services and processes be considered for reuse?",
+   "choices": [
+    "Reusing what works reduces waste and risk compared with starting over",
+    "Reuse is required by every governance framework",
+    "Existing services must always be kept unchanged",
+    "Existing services are always better than new ones and should be protected"
+   ],
+   "answer": 0,
+   "explanation": "Discarding everything and starting over is wasteful and risky; much of the current state is often reusable or can be improved."
+  },
+  {
+   "id": "itil4-259",
+   "domain": "principles",
+   "prompt": "A team relies only on reports to judge a process, but the reports contain old data. What does 'start where you are' recommend?",
+   "choices": [
+    "Supplement the measurements with direct observation",
+    "Assume the reports are accurate and continue the plan",
+    "Rebuild the reports before any improvement is planned",
+    "Stop measuring and rely on staff opinions instead"
+   ],
+   "answer": 0,
+   "explanation": "Measurement supports analysis, but data can be misleading or out of date, so direct observation helps understand the real current state."
+  },
+  {
+   "id": "itil4-260",
+   "domain": "principles",
+   "prompt": "A team delivers a large change all at once and finds months later that it no longer meets needs. Which principle could have prevented this?",
+   "choices": [
+    "Collaborate and promote visibility",
+    "Progress iteratively with feedback",
+    "Optimize and automate",
+    "Start where you are"
+   ],
+   "answer": 1,
+   "explanation": "Breaking work into smaller iterations with feedback lets teams detect changing needs early and adjust direction."
+  },
+  {
+   "id": "itil4-261",
+   "domain": "principles",
+   "prompt": "When progressing iteratively, what is a feedback loop used for?",
+   "choices": [
+    "Returning faulty products to the supplier for repair",
+    "Using outputs and results of one part of the work to adjust what follows",
+    "Escalating incidents back to the service desk",
+    "Sending approved changes back to the change authority for a final review"
+   ],
+   "answer": 1,
+   "explanation": "A feedback loop occurs when outputs of part of a system are used as inputs to that part, allowing actions to be adjusted based on results."
+  },
+  {
+   "id": "itil4-262",
+   "domain": "principles",
+   "prompt": "A team is so focused on gathering feedback that it never completes any iteration. What does ITIL 4 advise?",
+   "choices": [
+    "The team should stop iterating and plan the whole initiative upfront instead",
+    "Feedback is important, but iterations must still progress and deliver",
+    "Feedback should be collected only from managers",
+    "Feedback should be ignored until the final release"
+   ],
+   "answer": 1,
+   "explanation": "Progress iteratively with feedback warns against analysis paralysis: feedback should inform progress, not prevent it."
+  },
+  {
+   "id": "itil4-263",
+   "domain": "principles",
+   "prompt": "Which statement BEST reflects 'progress iteratively with feedback' when circumstances change during an initiative?",
+   "choices": [
+    "Changes should be postponed until the initiative is complete",
+    "The initiative should be cancelled and restarted",
+    "The original plan should be followed without deviation",
+    "The approach can be revised in the next iteration"
+   ],
+   "answer": 3,
+   "explanation": "Each iteration provides an opportunity to reevaluate and adjust the work to reflect new circumstances."
+  },
+  {
+   "id": "itil4-264",
+   "domain": "principles",
+   "prompt": "An improvement team designs a new process without involving the people who will use it, and adoption is poor. Which principle was MOST neglected?",
+   "choices": [
+    "Collaborate and promote visibility",
+    "Optimize and automate",
+    "Keep it simple and practical",
+    "Start where you are"
+   ],
+   "answer": 0,
+   "explanation": "Involving the right stakeholders builds buy-in and relevance; without collaboration, initiatives often fail to be adopted."
+  },
+  {
+   "id": "itil4-265",
+   "domain": "principles",
+   "prompt": "According to 'collaborate and promote visibility', why should the work and its progress be made visible?",
+   "choices": [
+    "So stakeholders can support it and make informed decisions",
+    "So suppliers can bid for the work being performed",
+    "So auditors can approve each task before it is allowed to start",
+    "So managers can monitor individual staff productivity"
+   ],
+   "answer": 0,
+   "explanation": "Visibility of work supports good decisions, reduces hidden agendas and builds support for improvement."
+  },
+  {
+   "id": "itil4-266",
+   "domain": "principles",
+   "prompt": "Which statement about collaboration in ITIL 4 is correct?",
+   "choices": [
+    "It replaces the need for clear roles and responsibilities",
+    "It means that every decision requires full consensus",
+    "It should be limited to people within the same department",
+    "It can include people outside the team, such as customers"
+   ],
+   "answer": 3,
+   "explanation": "Collaborate and promote visibility encourages involving the right stakeholders, including customers, users and suppliers where useful."
+  },
+  {
+   "id": "itil4-267",
+   "domain": "principles",
+   "prompt": "A team is reluctant to involve a sceptical stakeholder group in an improvement. What does ITIL 4 suggest?",
+   "choices": [
+    "Engaging critics early can improve the outcome and build support",
+    "Sceptical groups should be replaced by supportive ones",
+    "Sceptical groups should be excluded to avoid delays",
+    "Sceptical groups should only be informed after the improvement is completed"
+   ],
+   "answer": 0,
+   "explanation": "Collaboration is about involving the right people; even sceptics can contribute insight and become supporters when engaged."
+  },
+  {
+   "id": "itil4-268",
+   "domain": "principles",
+   "prompt": "An organization optimizes its service desk in isolation, but the change overloads second-line teams. Which principle was ignored?",
+   "choices": [
+    "Focus on value",
+    "Progress iteratively with feedback",
+    "Think and work holistically",
+    "Optimize and automate"
+   ],
+   "answer": 2,
+   "explanation": "Think and work holistically recognizes that outcomes depend on how all parts of the system work together, not on one part alone."
+  },
+  {
+   "id": "itil4-269",
+   "domain": "principles",
+   "prompt": "When applying 'think and work holistically', which approach to automation is recommended?",
+   "choices": [
+    "Automation can help, especially where it supports integration",
+    "Automation should be avoided because it tends to isolate teams",
+    "Automation should replace analysis of system interactions",
+    "Automation should only be applied by external suppliers"
+   ],
+   "answer": 0,
+   "explanation": "Holistic working is facilitated by automation where it supports end-to-end integration and visibility across the system."
+  },
+  {
+   "id": "itil4-270",
+   "domain": "principles",
+   "prompt": "Which statement BEST expresses 'think and work holistically'?",
+   "choices": [
+    "Outcomes depend on how all the elements of the system work together",
+    "Each team should optimize its own work independently",
+    "Technology is the main factor that determines success",
+    "A single practice should be fully optimized before any other is considered"
+   ],
+   "answer": 0,
+   "explanation": "Services are delivered through the integrated work of many teams, practices, partners and technologies."
+  },
+  {
+   "id": "itil4-271",
+   "domain": "principles",
+   "prompt": "A team creates a 40-step process when 10 steps would achieve the same result. Which principle is MOST relevant?",
+   "choices": [
+    "Keep it simple and practical",
+    "Think and work holistically",
+    "Collaborate and promote visibility",
+    "Start where you are"
+   ],
+   "answer": 0,
+   "explanation": "Keep it simple and practical recommends using the minimum number of steps needed to achieve the objective."
+  },
+  {
+   "id": "itil4-272",
+   "domain": "principles",
+   "prompt": "When applying 'keep it simple and practical', what should be done with a control that adds no value but is required by regulation?",
+   "choices": [
+    "Document it but ignore it in daily operations",
+    "Keep it, because it is needed to meet a compliance obligation",
+    "Remove it, because it does not add value for the service consumer",
+    "Automate it fully so that no one has to review it"
+   ],
+   "answer": 1,
+   "explanation": "Simplicity is about removing what does not contribute to value or required outcomes; compliance requirements still have to be met."
+  },
+  {
+   "id": "itil4-273",
+   "domain": "principles",
+   "prompt": "What does ITIL 4 suggest about designing a process for every exception?",
+   "choices": [
+    "Exceptions should be forbidden so that the process always stays simple",
+    "Exceptions should be automated before the main process",
+    "Design for the common cases and handle rare exceptions separately",
+    "Every exception should have its own documented workflow"
+   ],
+   "answer": 2,
+   "explanation": "Trying to cover every exception produces overly complex processes; rules should be designed for the normal situation."
+  },
+  {
+   "id": "itil4-274",
+   "domain": "principles",
+   "prompt": "A process improvement removes several approvals and introduces quick wins that customers notice immediately. Which principle is MOST clearly applied?",
+   "choices": [
+    "Optimize and automate",
+    "Keep it simple and practical",
+    "Start where you are",
+    "Think and work holistically"
+   ],
+   "answer": 1,
+   "explanation": "Removing unnecessary steps and delivering quick wins that show progress are both associated with keep it simple and practical."
+  },
+  {
+   "id": "itil4-275",
+   "domain": "principles",
+   "prompt": "Which statement about 'keep it simple and practical' and understanding value is correct?",
+   "choices": [
+    "Value should be ignored when deciding what to simplify",
+    "Knowing how each element contributes to value helps decide what to keep",
+    "Simplicity is more important than the outcomes achieved",
+    "All existing elements must be kept because they were approved by management"
+   ],
+   "answer": 1,
+   "explanation": "Understanding contributions to value is how a team decides which steps, controls and outputs to keep or remove."
+  },
+  {
+   "id": "itil4-276",
+   "domain": "principles",
+   "prompt": "A manager wants to automate a process to fix its problems. What should be done FIRST according to ITIL 4?",
+   "choices": [
+    "Select an automation tool and configure it immediately",
+    "Optimize and simplify the process as far as practical",
+    "Hire extra staff to run the process in parallel",
+    "Outsource the process to a specialist supplier"
+   ],
+   "answer": 1,
+   "explanation": "Optimize and automate recommends simplifying and optimizing before automating, so that inefficiencies are not built into the automation."
+  },
+  {
+   "id": "itil4-277",
+   "domain": "principles",
+   "prompt": "Which statement BEST describes the purpose of optimization in ITIL 4?",
+   "choices": [
+    "To reduce the number of staff in every team",
+    "To make every process as fast as technically possible",
+    "To replace manual work with automation wherever it is possible to do so",
+    "To make something as effective and useful as it needs to be"
+   ],
+   "answer": 3,
+   "explanation": "Optimization means making something as effective and useful as it needs to be, which comes before any decision to automate."
+  },
+  {
+   "id": "itil4-278",
+   "domain": "principles",
+   "prompt": "What is the main benefit of automating frequent and repetitive tasks?",
+   "choices": [
+    "It guarantees that no errors will occur in the process",
+    "It eliminates the need for any human decision-making",
+    "It removes the need to measure the outcomes of those tasks in future",
+    "Staff can be freed to focus on more complex and valuable work"
+   ],
+   "answer": 3,
+   "explanation": "Automation of standard, repeatable tasks increases efficiency and frees human resources for work where they add value."
+  },
+  {
+   "id": "itil4-279",
+   "domain": "principles",
+   "prompt": "Which step should come early when optimizing a process, according to ITIL 4?",
+   "choices": [
+    "Choose the vendor that will supply the automation tool",
+    "Assess the current state of the proposed optimization",
+    "Remove all approvals to make the process faster",
+    "Automate the process before measuring its performance"
+   ],
+   "answer": 1,
+   "explanation": "The optimization approach includes understanding the context, assessing the current state, agreeing the future state, and ensuring stakeholder engagement."
+  },
+  {
+   "id": "itil4-280",
+   "domain": "principles",
+   "prompt": "Which pair of guiding principles is MOST directly applied when a team first assesses a process and then simplifies it?",
+   "choices": [
+    "Collaborate and promote visibility, and think and work holistically",
+    "Focus on value, and optimize and automate",
+    "Progress iteratively with feedback, and focus on value",
+    "Start where you are, and keep it simple and practical"
+   ],
+   "answer": 3,
+   "explanation": "Assessing the current state is start where you are; removing unnecessary steps is keep it simple and practical."
+  },
+  {
+   "id": "itil4-281",
+   "domain": "principles",
+   "prompt": "Which statement about the relationship between the guiding principles is correct?",
+   "choices": [
+    "They interact with and depend on each other",
+    "Only one principle should be used in each situation",
+    "They must be applied one at a time in a fixed order",
+    "Each principle applies to a single value chain activity"
+   ],
+   "answer": 0,
+   "explanation": "The guiding principles are interconnected; organizations should consider all of them and how they apply together."
+  },
+  {
+   "id": "itil4-282",
+   "domain": "principles",
+   "prompt": "An organization is unsure which guiding principles apply to a new initiative. What does ITIL 4 recommend?",
+   "choices": [
+    "Wait until a problem occurs and then choose the most relevant principle",
+    "Consider all of them and judge how relevant each is to the situation",
+    "Use only the first principle that seems relevant",
+    "Choose the principle that the governing body prefers"
+   ],
+   "answer": 1,
+   "explanation": "Not every principle is critical in every situation, but all should be reviewed to decide how they apply."
+  },
+  {
+   "id": "itil4-283",
+   "domain": "principles",
+   "prompt": "Which guiding principle reminds teams that they should not try to do everything at once?",
+   "choices": [
+    "Progress iteratively with feedback",
+    "Think and work holistically",
+    "Focus on value",
+    "Collaborate and promote visibility"
+   ],
+   "answer": 0,
+   "explanation": "Progress iteratively with feedback recommends working in smaller, manageable sections rather than all at once."
+  },
+  {
+   "id": "itil4-284",
+   "domain": "principles",
+   "prompt": "A team uses metrics to show leadership the real benefits achieved by a new self-service portal. Which principle does this BEST support?",
+   "choices": [
+    "Focus on value",
+    "Keep it simple and practical",
+    "Start where you are",
+    "Think and work holistically"
+   ],
+   "answer": 0,
+   "explanation": "Measuring the benefits delivered to consumers keeps attention on the value the work is meant to create."
+  },
+  {
+   "id": "itil4-285",
+   "domain": "principles",
+   "prompt": "Which guiding principle is MOST concerned with avoiding hidden agendas and building trust across teams?",
+   "choices": [
+    "Collaborate and promote visibility",
+    "Start where you are",
+    "Focus on value",
+    "Keep it simple and practical"
+   ],
+   "answer": 0,
+   "explanation": "Making work visible and collaborating openly reduces hidden agendas and supports trust and better decisions."
+  },
+  {
+   "id": "itil4-286",
+   "domain": "principles",
+   "prompt": "An organization adopts DevOps tools but leaves team structures, supplier contracts and processes unchanged, and results are poor. Which principle explains why?",
+   "choices": [
+    "Optimize and automate",
+    "Start where you are",
+    "Think and work holistically",
+    "Progress iteratively with feedback"
+   ],
+   "answer": 2,
+   "explanation": "Changing one element, such as technology, without considering the other dimensions and interactions rarely produces the desired outcomes."
+  },
+  {
+   "id": "itil4-287",
+   "domain": "principles",
+   "prompt": "What is one recommended reason to measure the current state when applying 'start where you are'?",
+   "choices": [
+    "To replace direct observation with automated reports",
+    "To prove that the existing process should never change",
+    "To provide a baseline for analysing what to keep or change",
+    "To allocate blame for poor performance to individuals"
+   ],
+   "answer": 2,
+   "explanation": "Measurement provides a basis for analysis, though it should be used carefully and complemented by direct observation."
+  },
+  {
+   "id": "itil4-288",
+   "domain": "principles",
+   "prompt": "A team is choosing between several improvement options. Which question MOST reflects 'focus on value'?",
+   "choices": [
+    "Which option best helps our consumers achieve the outcomes they need?",
+    "Which option uses the newest technology currently available on the market?",
+    "Which option keeps the team's workload unchanged?",
+    "Which option was used by the previous manager?"
+   ],
+   "answer": 0,
+   "explanation": "Focus on value means decisions should be guided by how they create value for stakeholders, especially consumers."
+  },
+  {
+   "id": "itil4-289",
+   "domain": "dimensions",
+   "prompt": "Which consideration belongs MOST clearly to the organizations and people dimension?",
+   "choices": [
+    "Whether leaders champion values that motivate staff to work well",
+    "Whether the workflow from request to delivery has delays",
+    "Whether a supplier can provide services at a lower cost",
+    "Whether a new tool can integrate with the existing data platforms"
+   ],
+   "answer": 0,
+   "explanation": "Organizations and people covers culture, leadership, structures, roles and competencies; tools, suppliers and workflows belong to the other dimensions."
+  },
+  {
+   "id": "itil4-290",
+   "domain": "dimensions",
+   "prompt": "A provider struggles because no one is clear who approves new service designs. Which dimension MOST needs attention?",
+   "choices": [
+    "Value streams and processes",
+    "Information and technology",
+    "Partners and suppliers",
+    "Organizations and people"
+   ],
+   "answer": 3,
+   "explanation": "Clear roles, responsibilities and systems of authority are part of the organizations and people dimension."
+  },
+  {
+   "id": "itil4-291",
+   "domain": "dimensions",
+   "prompt": "Which statement about culture in the organizations and people dimension is correct?",
+   "choices": [
+    "Culture is fixed and cannot be influenced by leadership",
+    "Culture only matters for staff in customer-facing roles",
+    "A culture of trust and transparency supports its objectives",
+    "Culture is managed entirely through the partners and suppliers dimension"
+   ],
+   "answer": 2,
+   "explanation": "ITIL 4 emphasizes a culture that supports objectives, built on trust and transparency and encouraged by leadership."
+  },
+  {
+   "id": "itil4-292",
+   "domain": "dimensions",
+   "prompt": "Which characteristic of information is MOST relevant when a service desk agent needs current data to resolve an incident?",
+   "choices": [
+    "Ownership",
+    "Licensing",
+    "Volume",
+    "Timeliness"
+   ],
+   "answer": 3,
+   "explanation": "Information should have qualities such as availability, reliability, accessibility, timeliness, accuracy and relevance for the people who need it."
+  },
+  {
+   "id": "itil4-293",
+   "domain": "dimensions",
+   "prompt": "A provider is selecting a new platform. Which question is MOST relevant to the information and technology dimension?",
+   "choices": [
+    "Will staff need new competencies and role descriptions?",
+    "Will the workflow need new handoffs between teams?",
+    "Will the supplier agree to a long-term partnership contract with fixed prices?",
+    "Will this technology remain viable and supportable in the foreseeable future?"
+   ],
+   "answer": 3,
+   "explanation": "The information and technology dimension considers whether technologies are viable, compatible, secure, compliant and supportable."
+  },
+  {
+   "id": "itil4-294",
+   "domain": "dimensions",
+   "prompt": "A government agency decides not to use public cloud for some data because of strict security rules. Which factor influenced this decision in the information and technology dimension?",
+   "choices": [
+    "The skills profile of the organization's service desk",
+    "The organization's strategic focus on core competencies",
+    "The nature of its business and the regulations it must follow",
+    "The demand patterns of the organization's consumers"
+   ],
+   "answer": 2,
+   "explanation": "The type of business and the regulations it faces strongly influence the technologies an organization can use."
+  },
+  {
+   "id": "itil4-295",
+   "domain": "dimensions",
+   "prompt": "Which of the following is MOST likely an emerging technology considered under the information and technology dimension?",
+   "choices": [
+    "Workforce and talent planning",
+    "Artificial intelligence and machine learning",
+    "Value stream mapping workshops",
+    "Supplier performance management"
+   ],
+   "answer": 1,
+   "explanation": "Information and technology considers technologies such as AI, machine learning, cloud computing and mobile solutions that support services."
+  },
+  {
+   "id": "itil4-296",
+   "domain": "dimensions",
+   "prompt": "Which consideration is part of the information and technology dimension for a new service?",
+   "choices": [
+    "Which external partner will act as the service integrator for the provider",
+    "Which staff will be promoted to lead the service",
+    "What information the service will manage and how it will be protected",
+    "Which activities make up the delivery workflow"
+   ],
+   "answer": 2,
+   "explanation": "This dimension covers the information created and managed by services, its security and compliance, and the supporting technology."
+  },
+  {
+   "id": "itil4-297",
+   "domain": "dimensions",
+   "prompt": "A provider cannot hire specialist database skills quickly enough and engages an external firm. Which factor influencing supplier strategy is this?",
+   "choices": [
+    "External constraints",
+    "Demand patterns",
+    "Corporate culture",
+    "Subject matter expertise"
+   ],
+   "answer": 3,
+   "explanation": "Organizations may use suppliers when it is more efficient or effective to use a supplier's existing expertise than to develop it internally."
+  },
+  {
+   "id": "itil4-298",
+   "domain": "dimensions",
+   "prompt": "A company has always preferred to do everything in-house because leadership distrusts outsourcing. Which factor influencing supplier strategy does this show?",
+   "choices": [
+    "Cost concerns",
+    "Corporate culture",
+    "Subject matter expertise",
+    "Resource scarcity"
+   ],
+   "answer": 1,
+   "explanation": "Some organizations have a historical preference for one approach over another, which is the corporate culture factor."
+  },
+  {
+   "id": "itil4-299",
+   "domain": "dimensions",
+   "prompt": "A provider uses a supplier for seasonal peaks in call volume rather than hiring permanent staff. Which factor influencing supplier strategy is MOST relevant?",
+   "choices": [
+    "Demand patterns",
+    "Strategic focus",
+    "External constraints",
+    "Corporate culture"
+   ],
+   "answer": 0,
+   "explanation": "Customer activity and demand may be seasonal or variable, which can influence the use of suppliers for flexible capacity."
+  },
+  {
+   "id": "itil4-300",
+   "domain": "dimensions",
+   "prompt": "A regulation requires a financial firm to keep certain data processing within its own country, limiting which suppliers it can use. Which factor is this?",
+   "choices": [
+    "Corporate culture",
+    "External constraints",
+    "Demand patterns",
+    "Strategic focus"
+   ],
+   "answer": 1,
+   "explanation": "Government regulation and other external constraints can restrict or shape an organization's supplier strategy."
+  },
+  {
+   "id": "itil4-301",
+   "domain": "dimensions",
+   "prompt": "An organization decides to use a supplier because it believes the supplier can deliver more economically than it can itself. Which factor is this?",
+   "choices": [
+    "Subject matter expertise",
+    "Resource scarcity",
+    "Cost concerns",
+    "Corporate culture"
+   ],
+   "answer": 2,
+   "explanation": "Cost concerns influence supplier strategy when a supplier can provide a service or product more economically."
+  },
+  {
+   "id": "itil4-302",
+   "domain": "dimensions",
+   "prompt": "Which statement about the partners and suppliers dimension is correct?",
+   "choices": [
+    "It covers contracts and agreements and how services are integrated",
+    "It covers only relationships with internal departments and shared services",
+    "It applies only to suppliers of hardware and software",
+    "It replaces the need for supplier management practices"
+   ],
+   "answer": 0,
+   "explanation": "The partners and suppliers dimension covers relationships with other organizations, including contracts, agreements and service integration."
+  },
+  {
+   "id": "itil4-303",
+   "domain": "dimensions",
+   "prompt": "Which question is MOST relevant to the value streams and processes dimension?",
+   "choices": [
+    "Which cloud platform offers the strongest protection for customer data?",
+    "Which supplier has the most suitable contract terms?",
+    "Which staff members need new competencies?",
+    "How do the organization's activities work together to create value?"
+   ],
+   "answer": 3,
+   "explanation": "Value streams and processes focuses on the activities the organization undertakes, how they are organized, and how they ensure value creation."
+  },
+  {
+   "id": "itil4-304",
+   "domain": "dimensions",
+   "prompt": "A team removes a redundant approval step that added two days to every order without improving quality. Which dimension is MOST involved?",
+   "choices": [
+    "Information and technology",
+    "Organizations and people",
+    "Value streams and processes",
+    "Partners and suppliers"
+   ],
+   "answer": 2,
+   "explanation": "Identifying and removing non-value-adding activities from workflows is part of the value streams and processes dimension."
+  },
+  {
+   "id": "itil4-305",
+   "domain": "dimensions",
+   "prompt": "What does a value stream help an organization identify?",
+   "choices": [
+    "Activities that add value and those that create waste or delay",
+    "The staff who should be promoted to management roles",
+    "The technologies that are most popular in the market",
+    "The suppliers that offer the most profitable contracts for each service"
+   ],
+   "answer": 0,
+   "explanation": "Mapping a value stream gives a clear picture of the work, helping identify waste and opportunities for improvement."
+  },
+  {
+   "id": "itil4-306",
+   "domain": "dimensions",
+   "prompt": "Which statement about processes in ITIL 4 is correct?",
+   "choices": [
+    "Processes are the same as organizational structures",
+    "Processes define the sequence of actions and their dependencies",
+    "Processes are only needed for external customers",
+    "Processes describe only the technology used to perform each task"
+   ],
+   "answer": 1,
+   "explanation": "A process is a set of interrelated activities that transforms inputs into outputs, defining the sequence of actions and their dependencies."
+  },
+  {
+   "id": "itil4-307",
+   "domain": "dimensions",
+   "prompt": "A provider loses customers because a competitor launches a cheaper, cloud-based alternative. Which PESTLE factor is MOST involved?",
+   "choices": [
+    "Legal",
+    "Political",
+    "Technological",
+    "Environmental"
+   ],
+   "answer": 2,
+   "explanation": "New technologies that change market options and customer choices are technological external factors, possibly combined with economic ones."
+  },
+  {
+   "id": "itil4-308",
+   "domain": "dimensions",
+   "prompt": "A change of government leads to new policies on public sector outsourcing that affect a provider's contracts. Which PESTLE factor is this?",
+   "choices": [
+    "Social",
+    "Political",
+    "Technological",
+    "Economic"
+   ],
+   "answer": 1,
+   "explanation": "Government policy changes are political factors that can constrain or influence how organizations operate."
+  },
+  {
+   "id": "itil4-309",
+   "domain": "dimensions",
+   "prompt": "Why does ITIL 4 consider external factors when looking at the four dimensions?",
+   "choices": [
+    "External factors only matter during the design of a service",
+    "Providers work in dynamic environments that influence them",
+    "External factors can be fully controlled by good governance",
+    "External factors replace the need to manage the four dimensions"
+   ],
+   "answer": 1,
+   "explanation": "Factors such as political, economic, social, technological, legal and environmental conditions constrain and influence service providers."
+  },
+  {
+   "id": "itil4-310",
+   "domain": "dimensions",
+   "prompt": "A provider introduces a new incident tool but staff are not trained and the workflow is unchanged, so the tool is barely used. What is the MOST likely cause?",
+   "choices": [
+    "The tool belonged to the wrong PESTLE category",
+    "The tool should have been approved by the sponsor",
+    "Only one dimension was addressed instead of all four",
+    "The tool was implemented before a value stream existed"
+   ],
+   "answer": 2,
+   "explanation": "Effective services require balanced attention to all four dimensions; technology alone fails without people and process changes."
+  },
+  {
+   "id": "itil4-311",
+   "domain": "dimensions",
+   "prompt": "Which of the following is part of the organizations and people dimension rather than value streams and processes?",
+   "choices": [
+    "The controls applied at each process step",
+    "Staff capacity and competencies to deliver services",
+    "The handoffs between teams in a workflow",
+    "The order in which activities are performed"
+   ],
+   "answer": 1,
+   "explanation": "Capacity and competencies of people are part of organizations and people; sequencing, handoffs and controls relate to value streams and processes."
+  },
+  {
+   "id": "itil4-312",
+   "domain": "dimensions",
+   "prompt": "A provider is concerned that a new service needs to work well with information from several partner systems. Which dimension is MOST involved?",
+   "choices": [
+    "Organizations and people",
+    "Value streams and processes",
+    "Information and technology",
+    "Partners and suppliers"
+   ],
+   "answer": 2,
+   "explanation": "How information is exchanged between services and systems is a key consideration of the information and technology dimension."
+  },
+  {
+   "id": "itil4-313",
+   "domain": "dimensions",
+   "prompt": "Which statement about the four dimensions is correct?",
+   "choices": [
+    "They apply to services and to the whole SVS",
+    "They are replaced by practices once a service goes live",
+    "They apply only to services that use external suppliers",
+    "They must be addressed in a strict sequence"
+   ],
+   "answer": 0,
+   "explanation": "The four dimensions provide a holistic approach and apply both to individual services and to the entire SVS."
+  },
+  {
+   "id": "itil4-314",
+   "domain": "svs",
+   "prompt": "Which statement BEST describes how the service value system converts its inputs into value?",
+   "choices": [
+    "Value is created by suppliers and passed through the SVS unchanged",
+    "Practices create value without needing opportunity or demand",
+    "Value is created by governance before any demand is received",
+    "Opportunity and demand trigger activities in the SVS that create value"
+   ],
+   "answer": 3,
+   "explanation": "Opportunity and demand are the inputs that trigger SVS activities, which together lead to value creation."
+  },
+  {
+   "id": "itil4-315",
+   "domain": "svs",
+   "prompt": "Why can an organization not always respond to every opportunity or demand?",
+   "choices": [
+    "Opportunities only apply to external consumers",
+    "Governance forbids responding to new demand",
+    "Demand is always created internally by the provider's own teams",
+    "Opportunities and demand can exceed the resources available"
+   ],
+   "answer": 3,
+   "explanation": "The SVS recognizes that opportunities and demand may not always be acted on immediately; they must be prioritized against available resources."
+  },
+  {
+   "id": "itil4-316",
+   "domain": "svs",
+   "prompt": "Which statement about organizational agility and resilience in the SVS is correct?",
+   "choices": [
+    "Agility is only required during service design",
+    "Resilience depends only on the technology used",
+    "Agility is achieved by keeping each team strictly separated from others",
+    "An integrated SVS helps the organization respond and adapt to change"
+   ],
+   "answer": 3,
+   "explanation": "The SVS supports flexibility and integration, which help organizations remain agile and resilient as conditions change."
+  },
+  {
+   "id": "itil4-317",
+   "domain": "svs",
+   "prompt": "In the SVS, who is responsible for evaluating, directing and monitoring the organization?",
+   "choices": [
+    "The service owner",
+    "The change authority",
+    "The service desk",
+    "The governing body"
+   ],
+   "answer": 3,
+   "explanation": "Governance is carried out by the governing body, which evaluates, directs and monitors the organization."
+  },
+  {
+   "id": "itil4-318",
+   "domain": "svs",
+   "prompt": "A board reviews whether current strategies still fit the organization's environment. Which governance activity is this?",
+   "choices": [
+    "Evaluate",
+    "Engage",
+    "Monitor",
+    "Direct"
+   ],
+   "answer": 0,
+   "explanation": "Evaluate involves examining the organization, its strategy, portfolios and relationships with other parties as circumstances change."
+  },
+  {
+   "id": "itil4-319",
+   "domain": "svs",
+   "prompt": "A governing body assigns responsibility for preparing and implementing a new policy. Which governance activity is this?",
+   "choices": [
+    "Direct",
+    "Evaluate",
+    "Monitor",
+    "Plan"
+   ],
+   "answer": 0,
+   "explanation": "Direct involves assigning responsibility for, and directing the preparation and implementation of, strategy and policies."
+  },
+  {
+   "id": "itil4-320",
+   "domain": "svs",
+   "prompt": "A governing body checks whether performance and compliance meet the strategy it set. Which governance activity is this?",
+   "choices": [
+    "Evaluate",
+    "Direct",
+    "Improve",
+    "Monitor"
+   ],
+   "answer": 3,
+   "explanation": "Monitor involves overseeing the performance of the organization and its practices against strategy and policies."
+  },
+  {
+   "id": "itil4-321",
+   "domain": "svs",
+   "prompt": "Which statement about the relationship between governance and continual improvement is correct?",
+   "choices": [
+    "Continual improvement applies to governance too",
+    "Continual improvement replaces the need for governance",
+    "Governance performs all continual improvement activities",
+    "Governance is excluded from continual improvement"
+   ],
+   "answer": 0,
+   "explanation": "Continual improvement is a recurring organizational activity applied at all levels, including governance."
+  },
+  {
+   "id": "itil4-322",
+   "domain": "svs",
+   "prompt": "How do the activities of the service value chain relate to each other?",
+   "choices": [
+    "They form a separate chain of activities for each practice",
+    "They must always be performed in the same linear order",
+    "They are used only when developing new services",
+    "They are interconnected and exchange inputs and outputs"
+   ],
+   "answer": 3,
+   "explanation": "Value chain activities are interconnected, each receiving and providing triggers and inputs; they are not a fixed linear sequence."
+  },
+  {
+   "id": "itil4-323",
+   "domain": "svs",
+   "prompt": "Which value chain activity represents the main interaction with stakeholders outside the provider, such as customers and suppliers?",
+   "choices": [
+    "Engage",
+    "Deliver and support",
+    "Plan",
+    "Design and transition"
+   ],
+   "answer": 0,
+   "explanation": "Engage provides understanding of stakeholder needs and handles the interaction with all stakeholders, including consumers and suppliers."
+  },
+  {
+   "id": "itil4-324",
+   "domain": "svs",
+   "prompt": "A team creates service designs and moves new services into live operation. Which value chain activity is this?",
+   "choices": [
+    "Design and transition",
+    "Deliver and support",
+    "Obtain/build",
+    "Plan"
+   ],
+   "answer": 0,
+   "explanation": "Design and transition ensures products and services meet stakeholder expectations for quality, costs and time to market, including transitioning them."
+  },
+  {
+   "id": "itil4-325",
+   "domain": "svs",
+   "prompt": "Which value chain activity would typically receive incident and performance information from deliver and support to drive improvement initiatives?",
+   "choices": [
+    "Plan",
+    "Engage",
+    "Obtain/build",
+    "Improve"
+   ],
+   "answer": 3,
+   "explanation": "Improve receives performance information and improvement opportunities from all value chain activities, including deliver and support."
+  },
+  {
+   "id": "itil4-326",
+   "domain": "svs",
+   "prompt": "Which value chain activity is MOST responsible for ensuring service components meet agreed specifications and are available when needed?",
+   "choices": [
+    "Deliver and support",
+    "Engage",
+    "Obtain/build",
+    "Design and transition"
+   ],
+   "answer": 2,
+   "explanation": "Obtain/build ensures that service components are available when and where needed and meet agreed specifications."
+  },
+  {
+   "id": "itil4-327",
+   "domain": "svs",
+   "prompt": "An organization defines its future service portfolio, architecture direction and improvement priorities. Which value chain activity is this?",
+   "choices": [
+    "Plan",
+    "Design and transition",
+    "Engage",
+    "Improve"
+   ],
+   "answer": 0,
+   "explanation": "Plan creates a shared understanding of vision, current status and improvement direction across all dimensions and services."
+  },
+  {
+   "id": "itil4-328",
+   "domain": "svs",
+   "prompt": "Where does demand for a new service, raised by a customer, typically enter the service value chain?",
+   "choices": [
+    "Through governance",
+    "Through the engage activity",
+    "Through the improve activity",
+    "Through the obtain/build activity"
+   ],
+   "answer": 1,
+   "explanation": "Demand from consumers enters the value chain through engage, where requirements are captured and turned into work."
+  },
+  {
+   "id": "itil4-329",
+   "domain": "svs",
+   "prompt": "Which statement about value streams is correct?",
+   "choices": [
+    "Value streams can only include a single practice",
+    "Each organization should define only one value stream for all its work",
+    "Value streams replace the service value chain",
+    "An organization can define many value streams for different scenarios"
+   ],
+   "answer": 3,
+   "explanation": "Value streams are combinations of value chain activities and practices; different streams are designed for different scenarios."
+  },
+  {
+   "id": "itil4-330",
+   "domain": "svs",
+   "prompt": "A user reports that an application is not working, and the service is restored. Which value chain activity is MOST central to this value stream?",
+   "choices": [
+    "Obtain/build",
+    "Plan",
+    "Design and transition",
+    "Deliver and support"
+   ],
+   "answer": 3,
+   "explanation": "Restoring a live service is primarily a deliver and support activity, typically triggered through engage."
+  },
+  {
+   "id": "itil4-331",
+   "domain": "svs",
+   "prompt": "A provider develops a brand-new service requested by a business unit. Which value chain activities are MOST likely to be involved?",
+   "choices": [
+    "Engage and deliver and support only, as with incident handling",
+    "Obtain/build only, because the service has to be developed",
+    "Engage, design and transition, obtain/build, and deliver and support",
+    "Plan and improve only, since new services are strategic"
+   ],
+   "answer": 2,
+   "explanation": "Developing a new service typically requires most value chain activities, from capturing needs to building, transitioning and supporting it."
+  },
+  {
+   "id": "itil4-332",
+   "domain": "svs",
+   "prompt": "Which statement about practices and the service value chain is correct?",
+   "choices": [
+    "Practices are used only in the deliver and support activity",
+    "Each practice belongs to exactly one value chain activity in ITIL 4",
+    "Practices are part of governance rather than the value chain",
+    "A single practice can contribute to several value chain activities"
+   ],
+   "answer": 3,
+   "explanation": "Practices are flexible resources that can be used across multiple value chain activities, as needed by each value stream."
+  },
+  {
+   "id": "itil4-333",
+   "domain": "svs",
+   "prompt": "Which component of the SVS ensures that the organization's activities are aligned with policies and strategy?",
+   "choices": [
+    "Governance",
+    "Guiding principles",
+    "Value streams",
+    "Practices"
+   ],
+   "answer": 0,
+   "explanation": "Governance directs and controls the organization and checks that it remains aligned with strategy and policies."
+  },
+  {
+   "id": "itil4-334",
+   "domain": "svs",
+   "prompt": "Which statement about the guiding principles within the SVS is correct?",
+   "choices": [
+    "They are binding rules that must not be adapted",
+    "They are replaced by practices during operations",
+    "They are universal and apply to any type of work",
+    "They apply only to the plan activity"
+   ],
+   "answer": 2,
+   "explanation": "The guiding principles are universal and enduring recommendations that can guide decisions in all circumstances."
+  },
+  {
+   "id": "itil4-335",
+   "domain": "svs",
+   "prompt": "In the continual improvement model, a team reviews the organization's mission and goals to understand where an improvement fits. Which step is this?",
+   "choices": [
+    "Where do we want to be?",
+    "How do we get there?",
+    "What is the vision?",
+    "Where are we now?"
+   ],
+   "answer": 2,
+   "explanation": "The first step links the improvement initiative to the organization's vision and objectives."
+  },
+  {
+   "id": "itil4-336",
+   "domain": "svs",
+   "prompt": "A team collects current performance data before setting improvement targets. Which step of the continual improvement model is this?",
+   "choices": [
+    "What is the vision?",
+    "Did we get there?",
+    "Where are we now?",
+    "Take action"
+   ],
+   "answer": 2,
+   "explanation": "Where are we now? involves a baseline assessment of the current state, including services, users, culture, processes and technology."
+  },
+  {
+   "id": "itil4-337",
+   "domain": "svs",
+   "prompt": "After a gap analysis, a team sets key performance indicators and target values for an improvement. Which step is this?",
+   "choices": [
+    "Where do we want to be?",
+    "Did we get there?",
+    "Where are we now?",
+    "How do we get there?"
+   ],
+   "answer": 0,
+   "explanation": "Where do we want to be? defines the target state with measurable objectives, CSFs and KPIs based on the gap between vision and current state."
+  },
+  {
+   "id": "itil4-338",
+   "domain": "svs",
+   "prompt": "During the 'take action' step, what should a team continue to do while executing the plan?",
+   "choices": [
+    "Redefine the vision before each task",
+    "Avoid any feedback until the plan is fully completed",
+    "Measure progress and adjust the approach as needed",
+    "Repeat the baseline assessment every day"
+   ],
+   "answer": 2,
+   "explanation": "Take action executes the plan, often iteratively, while monitoring progress and managing risks."
+  },
+  {
+   "id": "itil4-339",
+   "domain": "svs",
+   "prompt": "An improvement has met its targets. The team now reinforces new behaviours and communicates the success. Which step of the continual improvement model is this?",
+   "choices": [
+    "How do we keep the momentum going?",
+    "Take action",
+    "Did we get there?",
+    "What is the vision?"
+   ],
+   "answer": 0,
+   "explanation": "Keeping momentum involves reinforcing the improvement, communicating success and embedding the changes."
+  },
+  {
+   "id": "itil4-340",
+   "domain": "svs",
+   "prompt": "If an improvement does NOT achieve its expected results, what does the continual improvement model suggest?",
+   "choices": [
+    "Stop using the continual improvement model for this work",
+    "Analyse why and plan further actions, possibly repeating steps",
+    "Immediately reverse all changes made during the improvement",
+    "Declare the improvement a success and close it anyway"
+   ],
+   "answer": 1,
+   "explanation": "If results fall short, the team analyses the reasons and may revisit earlier steps or plan further iterations."
+  },
+  {
+   "id": "itil4-341",
+   "domain": "svs",
+   "prompt": "Which statement about the continual improvement model's steps is correct?",
+   "choices": [
+    "They apply only to large organizational changes",
+    "They must always be completed in strict order and never repeated",
+    "They can be applied iteratively, not strictly in sequence",
+    "They can only be used by a dedicated improvement team"
+   ],
+   "answer": 2,
+   "explanation": "The model is a guide that can be applied flexibly and iteratively, and at any scale."
+  },
+  {
+   "id": "itil4-342",
+   "domain": "svs",
+   "prompt": "Which statement about the SVS and silos is correct?",
+   "choices": [
+    "Silos are removed automatically when practices are defined",
+    "Silos reduce agility; the SVS promotes integration",
+    "Silos only exist in organizations without governance",
+    "Silos improve control and should be encouraged by the SVS"
+   ],
+   "answer": 1,
+   "explanation": "Silos can limit communication, collaboration and agility; the SVS promotes integrated and coordinated working."
+  },
+  {
+   "id": "itil4-343",
+   "domain": "svs",
+   "prompt": "What does ITIL 4 describe as the main output of the improve value chain activity?",
+   "choices": [
+    "Improvement initiatives and improvement status reports",
+    "Contracts and agreements with external and internal suppliers",
+    "Completed service requests and user support tasks",
+    "Service components ready for use in live operational environments"
+   ],
+   "answer": 0,
+   "explanation": "Improve produces improvement initiatives, plans and status reports that are used across the value chain."
+  },
+  {
+   "id": "itil4-344",
+   "domain": "svs",
+   "prompt": "Which value chain activity would typically produce contracts and agreements with external suppliers?",
+   "choices": [
+    "Improve",
+    "Deliver and support",
+    "Plan",
+    "Engage"
+   ],
+   "answer": 3,
+   "explanation": "Engage interacts with suppliers and partners, producing outputs such as contracts and agreements with external and internal suppliers."
+  },
+  {
+   "id": "itil4-345",
+   "domain": "svs",
+   "prompt": "Which statement about the SVS's inputs is correct?",
+   "choices": [
+    "Opportunity is created only by the governing body of the organization",
+    "Demand can come from both internal and external consumers",
+    "Only demand, not opportunity, triggers the SVS",
+    "Demand comes only from external paying customers"
+   ],
+   "answer": 1,
+   "explanation": "Demand is the need or desire for products and services among internal and external consumers; opportunity is another SVS input."
+  },
+  {
+   "id": "itil4-346",
+   "domain": "practices",
+   "prompt": "An organization wants continual improvement to be part of everyday work rather than a one-off project. What is the BEST approach?",
+   "choices": [
+    "Assign all improvement work to an external consultancy",
+    "Encourage improvement everywhere and secure time and budget",
+    "Limit improvement ideas to the IT management team",
+    "Run a single improvement programme every five years"
+   ],
+   "answer": 1,
+   "explanation": "Continual improvement activities include encouraging improvement throughout the organization and securing time and budget for it."
+  },
+  {
+   "id": "itil4-347",
+   "domain": "practices",
+   "prompt": "A small team is set up to lead continual improvement. Which statement about its role is correct?",
+   "choices": [
+    "It only reviews improvements proposed by suppliers",
+    "It coordinates improvement, but everyone stays responsible",
+    "It becomes solely responsible for every improvement",
+    "It replaces the need for a continual improvement register"
+   ],
+   "answer": 1,
+   "explanation": "A dedicated team may lead and coordinate improvement, but continual improvement is everyone's responsibility."
+  },
+  {
+   "id": "itil4-348",
+   "domain": "practices",
+   "prompt": "Which technique is commonly used in continual improvement to identify strengths, weaknesses, opportunities and threats?",
+   "choices": [
+    "Swarming",
+    "SWOT analysis",
+    "Value stream deployment",
+    "Trend analysis of incidents"
+   ],
+   "answer": 1,
+   "explanation": "SWOT analysis is one of several techniques, alongside balanced scorecard reviews and maturity assessments, used to support continual improvement."
+  },
+  {
+   "id": "itil4-349",
+   "domain": "practices",
+   "prompt": "A proposed improvement is expensive. What should usually be prepared before it is approved?",
+   "choices": [
+    "A standard change model for the improvement",
+    "A major incident procedure for the improvement",
+    "A business case justifying the expected value",
+    "A new service level agreement for the improvement"
+   ],
+   "answer": 2,
+   "explanation": "Continual improvement activities include making business cases for improvement actions where appropriate."
+  },
+  {
+   "id": "itil4-350",
+   "domain": "practices",
+   "prompt": "After an improvement is implemented, what should the continual improvement practice do next?",
+   "choices": [
+    "Measure and evaluate the results against the expected outcomes",
+    "Close the record without further review",
+    "Raise a problem record to investigate the improvement",
+    "Ask the service desk to promote the improvement to users"
+   ],
+   "answer": 0,
+   "explanation": "Measuring and evaluating improvement results is a key continual improvement activity and confirms whether value was achieved."
+  },
+  {
+   "id": "itil4-351",
+   "domain": "practices",
+   "prompt": "Why does ITIL 4 recommend that organizations have staff with deep knowledge of a few improvement methods?",
+   "choices": [
+    "So external suppliers are not needed for any improvement",
+    "So the improvement register can be removed",
+    "So that only one method is ever used in the organization",
+    "So improvement work is applied consistently and effectively"
+   ],
+   "answer": 3,
+   "explanation": "Some staff should understand key methods and techniques well, so improvement can be applied consistently; many methods can be used."
+  },
+  {
+   "id": "itil4-352",
+   "domain": "practices",
+   "prompt": "A team wants to update a production web server configuration. It is not on the list of standard changes. What should happen FIRST?",
+   "choices": [
+    "Ask the release manager to make the update available to users",
+    "Raise a change request for assessment as a normal change",
+    "Apply the update and record it as a standard change afterwards",
+    "Log an incident so the service desk can approve the update"
+   ],
+   "answer": 1,
+   "explanation": "Changes that are not pre-authorized standard changes and are not emergencies are handled as normal changes, which need assessment and authorization."
+  },
+  {
+   "id": "itil4-353",
+   "domain": "practices",
+   "prompt": "Which statement about the change authority for normal changes is correct?",
+   "choices": [
+    "It can vary depending on the type and risk of the change",
+    "It is always a single change advisory board for the organization",
+    "It is always the requester's line manager",
+    "It is never required for low-risk changes"
+   ],
+   "answer": 0,
+   "explanation": "The appropriate change authority depends on the type of change; low-risk changes may be authorized locally, high-risk ones at a higher level."
+  },
+  {
+   "id": "itil4-354",
+   "domain": "practices",
+   "prompt": "In an organization with a highly automated deployment pipeline, how might low-risk normal changes be authorized?",
+   "choices": [
+    "By the service desk after each deployment",
+    "Through automated checks built into the pipeline",
+    "By converting them all into emergency changes",
+    "By the governing body at its quarterly meeting"
+   ],
+   "answer": 1,
+   "explanation": "In organizations with mature automation, authorization of many normal changes can be automated as part of the pipeline."
+  },
+  {
+   "id": "itil4-355",
+   "domain": "practices",
+   "prompt": "A change request is raised to replace a failed router that is causing a major outage. Which change type is MOST appropriate?",
+   "choices": [
+    "Standard change",
+    "Normal change",
+    "Emergency change",
+    "Service request"
+   ],
+   "answer": 2,
+   "explanation": "Changes that must be implemented as soon as possible, for example to resolve a major incident, are emergency changes."
+  },
+  {
+   "id": "itil4-356",
+   "domain": "practices",
+   "prompt": "How should emergency changes be tested, according to ITIL 4?",
+   "choices": [
+    "Not at all, because there is never enough time",
+    "Only after the next major release has been deployed",
+    "As far as practical, even if testing is reduced",
+    "Testing is skipped because the change authority's approval replaces it"
+   ],
+   "answer": 2,
+   "explanation": "Emergency changes are expedited and may have reduced testing because of time constraints, but they should still be assessed and tested as far as is practical before implementation; approval does not replace testing."
+  },
+  {
+   "id": "itil4-357",
+   "domain": "practices",
+   "prompt": "Which statement about the scope of change enablement is correct?",
+   "choices": [
+    "It includes only changes requested by customers or their sponsors",
+    "Each organization defines what is in scope for change enablement",
+    "It covers only changes to physical hardware",
+    "It is fixed by ITIL and cannot be adjusted"
+   ],
+   "answer": 1,
+   "explanation": "Organizations define the scope of change enablement; typically it covers changes to IT infrastructure, applications, documentation, processes, supplier relationships and more."
+  },
+  {
+   "id": "itil4-358",
+   "domain": "practices",
+   "prompt": "How does change enablement differ from organizational change management?",
+   "choices": [
+    "They are identical practices described with different names",
+    "It manages changes to services, not the people side of change",
+    "It manages staff restructuring and communication about change",
+    "It only manages changes to the organization's business strategy"
+   ],
+   "answer": 1,
+   "explanation": "Change enablement focuses on changes to products and services; organizational change management deals with the people aspects of change."
+  },
+  {
+   "id": "itil4-359",
+   "domain": "practices",
+   "prompt": "A team realises its standard password reset change is now causing occasional failures. What is the BEST action?",
+   "choices": [
+    "Review and update the standard change and its risk assessment",
+    "Stop recording password resets altogether",
+    "Continue using it, since standard changes never need review",
+    "Convert all future resets into emergency changes"
+   ],
+   "answer": 0,
+   "explanation": "Standard changes are pre-authorized based on an initial risk assessment; if circumstances change, the procedure should be reviewed."
+  },
+  {
+   "id": "itil4-360",
+   "domain": "practices",
+   "prompt": "Two teams plan changes to the same system on the same weekend without knowing about each other. Which tool would BEST have prevented this conflict?",
+   "choices": [
+    "The continual improvement register",
+    "The service catalogue",
+    "The known error database",
+    "The change schedule"
+   ],
+   "answer": 3,
+   "explanation": "The change schedule helps plan changes, communicate them and avoid conflicts between changes."
+  },
+  {
+   "id": "itil4-361",
+   "domain": "practices",
+   "prompt": "Which of the following is MOST likely to be handled as a standard change?",
+   "choices": [
+    "Restoring a failed database after a major outage",
+    "Adding a user to an application using a documented procedure",
+    "Redesigning the network architecture of a data centre",
+    "Migrating all customer data to a new cloud provider"
+   ],
+   "answer": 1,
+   "explanation": "Standard changes are low-risk, relatively common and follow a documented, pre-authorized procedure."
+  },
+  {
+   "id": "itil4-362",
+   "domain": "practices",
+   "prompt": "An online banking service is down for all customers. How should this incident be prioritized?",
+   "choices": [
+    "As low priority until a problem record is created",
+    "As high priority because of its wide impact and urgency",
+    "As a service request because many users are affected",
+    "In order of arrival with all other incidents"
+   ],
+   "answer": 1,
+   "explanation": "Incidents are prioritized by impact and urgency, so that incidents with the highest business impact are resolved first."
+  },
+  {
+   "id": "itil4-363",
+   "domain": "practices",
+   "prompt": "According to ITIL 4, by whom may incidents be resolved?",
+   "choices": [
+    "By the service desk, support teams, suppliers or users",
+    "Only by specialists once the root cause is known",
+    "Only by problem management after escalation",
+    "Only by the service desk, as the single point of contact"
+   ],
+   "answer": 0,
+   "explanation": "ITIL 4 recognizes many resolution routes, including self-help, the service desk, support teams, suppliers and swarming."
+  },
+  {
+   "id": "itil4-364",
+   "domain": "practices",
+   "prompt": "What should the incident management practice do to help users while an incident is being worked on?",
+   "choices": [
+    "Avoid contact until the incident is closed to save agent time",
+    "Transfer the user to problem management",
+    "Ask the user to raise a change request",
+    "Provide good-quality updates and set realistic expectations"
+   ],
+   "answer": 3,
+   "explanation": "Effective incident management includes timely communication with affected users and setting expectations about progress and resolution."
+  },
+  {
+   "id": "itil4-365",
+   "domain": "practices",
+   "prompt": "A rare incident affects an entire data centre. Which resource is MOST likely needed in addition to normal incident procedures?",
+   "choices": [
+    "The continual improvement register",
+    "The standard change catalogue",
+    "Disaster recovery plans",
+    "The service request catalogue"
+   ],
+   "answer": 2,
+   "explanation": "Extreme incidents may require invoking disaster recovery plans, which are covered by service continuity management."
+  },
+  {
+   "id": "itil4-366",
+   "domain": "practices",
+   "prompt": "Why should incident records include information about symptoms, business impact and actions taken?",
+   "choices": [
+    "So the incident can be billed to the customer",
+    "So the user can be identified for disciplinary action",
+    "So it can be managed and the data reused for diagnosis",
+    "So the incident can be automatically closed"
+   ],
+   "answer": 2,
+   "explanation": "Good incident records support effective management, diagnosis, reuse of knowledge and later problem analysis."
+  },
+  {
+   "id": "itil4-367",
+   "domain": "practices",
+   "prompt": "Which practice relationship BEST supports fast incident resolution?",
+   "choices": [
+    "Access to known errors and workarounds from problem management",
+    "Access to the change schedule from release management",
+    "Access to supplier contracts from relationship management",
+    "Access to asset costs from IT asset management"
+   ],
+   "answer": 0,
+   "explanation": "Known errors and workarounds provide diagnostic information that helps incident management restore service quickly."
+  },
+  {
+   "id": "itil4-368",
+   "domain": "practices",
+   "prompt": "What does ITIL 4 say about the design of incident management processes?",
+   "choices": [
+    "One identical process must be used for all incidents",
+    "Different processes may suit different types of incidents",
+    "Incident processes must be fully manual to allow judgement",
+    "Incident processes are designed by suppliers only"
+   ],
+   "answer": 1,
+   "explanation": "Organizations may design separate processes for major incidents, security incidents and other types, as appropriate."
+  },
+  {
+   "id": "itil4-369",
+   "domain": "practices",
+   "prompt": "A complex incident has been passed between four support teams, each assuming another owns it. Which approach could resolve this faster?",
+   "choices": [
+    "Raising an emergency change to reassign the incident",
+    "Swarming, with the relevant experts working on it together",
+    "Logging a service request for further investigation",
+    "Closing the incident and opening a new one with a clearer description"
+   ],
+   "answer": 1,
+   "explanation": "Swarming involves many stakeholders working together on an incident until it is clear who is best placed to continue."
+  },
+  {
+   "id": "itil4-370",
+   "domain": "practices",
+   "prompt": "A user reports that the expense app runs very slowly. Is this an incident?",
+   "choices": [
+    "Yes, because reduced service quality is an incident",
+    "No, because the service is still available to the user",
+    "No, because slowness is always handled as a service request",
+    "Yes, but only if the user cannot log in to the app at all"
+   ],
+   "answer": 0,
+   "explanation": "An incident is an unplanned interruption or a reduction in the quality of a service, so significant slowness counts."
+  },
+  {
+   "id": "itil4-371",
+   "domain": "practices",
+   "prompt": "Which approach can help users resolve simple incidents without contacting the service desk?",
+   "choices": [
+    "Direct access to the configuration management database and tools",
+    "Emergency changes requested directly by users",
+    "Escalation of every issue to the supplier",
+    "Self-help resources such as knowledge articles and automated tools"
+   ],
+   "answer": 3,
+   "explanation": "Self-help through portals and knowledge articles allows users to resolve common incidents themselves, and these should still be recorded."
+  },
+  {
+   "id": "itil4-372",
+   "domain": "practices",
+   "prompt": "A service desk notices the same printer error reported 30 times this month. Which practice should investigate the underlying cause?",
+   "choices": [
+    "Release management",
+    "Problem management",
+    "Service request management",
+    "Incident management"
+   ],
+   "answer": 1,
+   "explanation": "Recurring incidents indicate a problem; problem management identifies and manages the underlying cause."
+  },
+  {
+   "id": "itil4-373",
+   "domain": "practices",
+   "prompt": "Which of the following is a source for problem identification?",
+   "choices": [
+    "Information from suppliers and partners about known issues",
+    "The continual improvement register and its prioritized ideas",
+    "Approved standard change procedures",
+    "Completed service request records only"
+   ],
+   "answer": 0,
+   "explanation": "Problems can be identified from trend analysis, recurring incidents, major incidents, and information from suppliers, partners, developers and testers."
+  },
+  {
+   "id": "itil4-374",
+   "domain": "practices",
+   "prompt": "During a major incident, a team spots a likely underlying cause. What should happen?",
+   "choices": [
+    "A problem may be identified for later investigation",
+    "The cause should be ignored until the incident is closed",
+    "The incident must be paused until the problem is solved",
+    "An emergency change must be raised immediately"
+   ],
+   "answer": 0,
+   "explanation": "Problem identification can occur during major incident handling; investigation of the cause is then managed through problem management."
+  },
+  {
+   "id": "itil4-375",
+   "domain": "practices",
+   "prompt": "Why does ITIL 4 say that problem analysis should take a holistic view?",
+   "choices": [
+    "Problems are always caused by technology failures",
+    "Problems are only relevant to the service desk",
+    "Problems must be solved by a single specialist team",
+    "Causes may lie in any of the four dimensions"
+   ],
+   "answer": 3,
+   "explanation": "Causes may lie in people, information and technology, partners and suppliers, or value streams and processes."
+  },
+  {
+   "id": "itil4-376",
+   "domain": "practices",
+   "prompt": "A workaround has been documented for a known error. What does error control do with it over time?",
+   "choices": [
+    "Sends it to the sponsor for budget approval",
+    "Reassesses its effectiveness and looks for better solutions",
+    "Deletes it once the incident is closed",
+    "Converts it into a standard change automatically after review"
+   ],
+   "answer": 1,
+   "explanation": "Error control regularly reassesses known errors and the effectiveness of workarounds, and identifies potential permanent solutions."
+  },
+  {
+   "id": "itil4-377",
+   "domain": "practices",
+   "prompt": "Problem management identifies a permanent fix that needs a configuration change to a live server. What is the NEXT step?",
+   "choices": [
+    "Apply the fix immediately without authorization",
+    "Raise a change request to be assessed and authorized",
+    "Close the problem and wait for the next failure",
+    "Log a new incident to track the fix"
+   ],
+   "answer": 1,
+   "explanation": "Problem management may result in a change request; implementing the fix is handled by change enablement."
+  },
+  {
+   "id": "itil4-378",
+   "domain": "practices",
+   "prompt": "Which statement about the interaction between problem management and continual improvement is correct?",
+   "choices": [
+    "They have no relationship in ITIL 4",
+    "Continual improvement handles all known errors",
+    "Problem management replaces the need for continual improvement",
+    "Problem management outcomes can feed improvement opportunities"
+   ],
+   "answer": 3,
+   "explanation": "Problem management activities can identify improvement opportunities, and solutions may be recorded in the continual improvement register."
+  },
+  {
+   "id": "itil4-379",
+   "domain": "practices",
+   "prompt": "A problem has a low likelihood of recurring and minimal impact. How is it likely to be treated?",
+   "choices": [
+    "With the highest priority, to clear the problem backlog quickly",
+    "As an emergency change to remove the risk",
+    "As a service request for the service desk",
+    "With lower priority than problems posing greater risk"
+   ],
+   "answer": 3,
+   "explanation": "Problems are prioritized for analysis based on the risk they pose, considering both probability and impact."
+  },
+  {
+   "id": "itil4-380",
+   "domain": "practices",
+   "prompt": "Which skill set is especially important for problem management?",
+   "choices": [
+    "Analytical skills and understanding of complex systems",
+    "Contract negotiation and supplier management skills",
+    "Marketing and stakeholder communication skills",
+    "Customer service and call handling skills"
+   ],
+   "answer": 0,
+   "explanation": "Problem management requires understanding complex systems and analysing how failures might occur, often across many teams."
+  },
+  {
+   "id": "itil4-381",
+   "domain": "practices",
+   "prompt": "Which statement BEST describes service requests in ITIL 4?",
+   "choices": [
+    "They always require a change request to fulfil",
+    "They always indicate that a service has failed",
+    "They are only raised by customers, never by users",
+    "They are a normal part of delivery, not a failure"
+   ],
+   "answer": 3,
+   "explanation": "Service requests are pre-defined, user-initiated requests that are part of normal service delivery."
+  },
+  {
+   "id": "itil4-382",
+   "domain": "practices",
+   "prompt": "Which of the following is MOST likely a service request rather than an incident?",
+   "choices": [
+    "A request for a new monitor for a new employee",
+    "A laptop that will not start in the morning",
+    "An email service that is not receiving messages",
+    "A website that shows errors for all users"
+   ],
+   "answer": 0,
+   "explanation": "Requesting provision of a resource is a service request; failures and degradations are incidents."
+  },
+  {
+   "id": "itil4-383",
+   "domain": "practices",
+   "prompt": "Some service requests are complex and need workflows involving several teams. How should these be handled?",
+   "choices": [
+    "Always as emergency changes",
+    "Using standard workflows with defined steps and approvals",
+    "Using ad hoc handling each time they occur",
+    "By rejecting them until they are simplified"
+   ],
+   "answer": 1,
+   "explanation": "Service request management uses standardized workflows wherever possible, even for complex requests."
+  },
+  {
+   "id": "itil4-384",
+   "domain": "practices",
+   "prompt": "Which statement about fulfilment of service requests is correct?",
+   "choices": [
+    "Fulfilment times should be set separately for each request",
+    "Users should not be told how long fulfilment will take",
+    "Users should be told what to expect and when",
+    "Users should always contact the supplier directly"
+   ],
+   "answer": 2,
+   "explanation": "Setting clear expectations about fulfilment times and steps improves user experience and satisfaction."
+  },
+  {
+   "id": "itil4-385",
+   "domain": "practices",
+   "prompt": "A new type of service request is frequently raised but has no defined workflow. What should be done?",
+   "choices": [
+    "Handle it as an incident until users stop raising it",
+    "Treat each request as a normal change",
+    "Define a standard procedure for handling it",
+    "Escalate each request to problem management"
+   ],
+   "answer": 2,
+   "explanation": "Requests should be predefined and handled through standardized procedures; new common requests should get their own workflow."
+  },
+  {
+   "id": "itil4-386",
+   "domain": "practices",
+   "prompt": "Which service request type covers a user asking to borrow a projector for a meeting?",
+   "choices": [
+    "Feedback, compliments and complaints",
+    "Request for access to a resource",
+    "Provision of a resource or service",
+    "Request for information"
+   ],
+   "answer": 2,
+   "explanation": "Provision of resources or services, such as equipment, is a common type of service request."
+  },
+  {
+   "id": "itil4-387",
+   "domain": "practices",
+   "prompt": "A user complains that the support team was rude. Which practice should handle this, according to ITIL 4?",
+   "choices": [
+    "Incident management",
+    "Service request management",
+    "Problem management",
+    "Change enablement"
+   ],
+   "answer": 1,
+   "explanation": "Feedback, compliments and complaints are a type of service request in ITIL 4."
+  },
+  {
+   "id": "itil4-388",
+   "domain": "practices",
+   "prompt": "Which approach does ITIL 4 recommend to improve service request fulfilment over time?",
+   "choices": [
+    "Reduce the number of request types users can raise",
+    "Move all requests to the problem management team",
+    "Add approval steps to every request to reduce risk",
+    "Automate and continually improve fulfilment"
+   ],
+   "answer": 3,
+   "explanation": "Service request management benefits from automation and continual improvement to increase efficiency and user satisfaction."
+  },
+  {
+   "id": "itil4-389",
+   "domain": "practices",
+   "prompt": "A provider deploys a chatbot that answers common questions before passing users to agents. Which practice is this MOST likely supporting?",
+   "choices": [
+    "Service desk",
+    "Change enablement",
+    "Supplier management",
+    "Problem management"
+   ],
+   "answer": 0,
+   "explanation": "Service desks increasingly use automation and AI-based tools, such as chatbots, to handle demand and support users."
+  },
+  {
+   "id": "itil4-390",
+   "domain": "practices",
+   "prompt": "Which statement about the service desk's role in the organization is correct?",
+   "choices": [
+    "It is only responsible for logging incidents, not service requests",
+    "It is the team that fixes every incident permanently",
+    "It should focus only on technical issues and avoid business matters",
+    "It strongly influences user experience and perception"
+   ],
+   "answer": 3,
+   "explanation": "The service desk is the single point of contact and strongly influences user experience and perception of the provider."
+  },
+  {
+   "id": "itil4-391",
+   "domain": "practices",
+   "prompt": "Does a service desk need to be highly technical according to ITIL 4?",
+   "choices": [
+    "No, because the service desk only routes calls to suppliers",
+    "Not necessarily; understanding users and the business matters",
+    "Yes, every agent must be a technical expert in all services",
+    "Yes, because the service desk resolves all problems"
+   ],
+   "answer": 1,
+   "explanation": "ITIL 4 notes that service desks may be more or less technical, but they must understand users, business processes and the wider organization."
+  },
+  {
+   "id": "itil4-392",
+   "domain": "practices",
+   "prompt": "A user cannot describe their issue clearly and is frustrated. Which service desk skill is MOST important here?",
+   "choices": [
+    "Empathy and effective communication",
+    "Advanced programming knowledge",
+    "Financial analysis",
+    "Contract negotiation"
+   ],
+   "answer": 0,
+   "explanation": "Service desk staff need soft skills such as empathy, communication and emotional intelligence to support users effectively."
+  },
+  {
+   "id": "itil4-393",
+   "domain": "practices",
+   "prompt": "Which channel would a service desk use to let users log and track requests themselves?",
+   "choices": [
+    "A continual improvement register",
+    "A service portal",
+    "A change advisory board",
+    "A configuration management database"
+   ],
+   "answer": 1,
+   "explanation": "Service portals are one of the service desk's channels, enabling users to log, track and update their requests and incidents."
+  },
+  {
+   "id": "itil4-394",
+   "domain": "practices",
+   "prompt": "Which statement about the service desk and incident ownership is correct?",
+   "choices": [
+    "It must resolve every incident itself without escalation",
+    "It cannot be involved after an incident is logged",
+    "It only handles problems, never incidents",
+    "It may escalate incidents to support teams to resolve"
+   ],
+   "answer": 3,
+   "explanation": "The service desk captures demand and may resolve incidents itself or route them to support and development teams."
+  },
+  {
+   "id": "itil4-395",
+   "domain": "practices",
+   "prompt": "Which of the following is a benefit of a virtual service desk?",
+   "choices": [
+    "All staff must be located in a single building",
+    "It removes the need to provide a single point of contact",
+    "Staff in different locations can work together as one desk",
+    "It eliminates the need for any support tools"
+   ],
+   "answer": 2,
+   "explanation": "A virtual service desk lets staff in multiple locations work as one team using shared technology."
+  },
+  {
+   "id": "itil4-396",
+   "domain": "practices",
+   "prompt": "A service desk agent records an incident and provides a workaround from the knowledge base on the first call. Which practice is MOST directly being performed?",
+   "choices": [
+    "Release management, working with deployment management",
+    "Service level management, working with supplier management",
+    "Service desk, working with incident management",
+    "Problem management, working with change enablement"
+   ],
+   "answer": 2,
+   "explanation": "The service desk captures demand and can resolve incidents at first contact using knowledge and workarounds, as part of incident management."
+  },
+  {
+   "id": "itil4-397",
+   "domain": "practices",
+   "prompt": "Why should service level targets be agreed with customers rather than set solely by IT?",
+   "choices": [
+    "So they reflect what the business values",
+    "So suppliers can set their own penalty clauses",
+    "So IT can choose targets that are easy to meet",
+    "So the service desk can ignore user feedback"
+   ],
+   "answer": 0,
+   "explanation": "Service level management sets clear business-based targets that reflect what customers actually need and value."
+  },
+  {
+   "id": "itil4-398",
+   "domain": "practices",
+   "prompt": "An SLA measures only system uptime, but users care about completing orders quickly. What is the BEST improvement?",
+   "choices": [
+    "Stop reporting to the customer until uptime improves",
+    "Remove all metrics and rely on customer comments",
+    "Increase the uptime target to 100 percent",
+    "Add metrics linked to the outcomes users care about"
+   ],
+   "answer": 3,
+   "explanation": "SLAs should relate to defined outcomes, not just operational metrics, to avoid the watermelon effect."
+  },
+  {
+   "id": "itil4-399",
+   "domain": "practices",
+   "prompt": "Which of the following is a key requirement for a successful SLA, according to ITIL 4?",
+   "choices": [
+    "It must be agreed only by the service provider",
+    "It must be renewed every month without review",
+    "It must contain as many technical metrics as possible",
+    "It must be simply written and easy to understand"
+   ],
+   "answer": 3,
+   "explanation": "SLAs should be simply written, easy to understand and use, and agreed by all parties."
+  },
+  {
+   "id": "itil4-400",
+   "domain": "practices",
+   "prompt": "Which activity BEST helps service level management understand customer satisfaction?",
+   "choices": [
+    "Reviewing supplier invoices",
+    "Checking the change schedule",
+    "Running customer surveys",
+    "Analysing configuration item counts"
+   ],
+   "answer": 2,
+   "explanation": "Customer feedback, through surveys and key business-related measures, is an important input to service level management."
+  },
+  {
+   "id": "itil4-401",
+   "domain": "practices",
+   "prompt": "A customer says SLA reports are full of technical figures they cannot interpret. What should service level management do?",
+   "choices": [
+    "Stop sending the reports altogether",
+    "Ask the customer to learn the technical terms",
+    "Report service levels in business terms",
+    "Add more technical figures to show detail"
+   ],
+   "answer": 2,
+   "explanation": "Service level reporting should reflect the customer's perspective and business outcomes."
+  },
+  {
+   "id": "itil4-402",
+   "domain": "practices",
+   "prompt": "Which statement about service level management and external suppliers is correct?",
+   "choices": [
+    "Suppliers set the SLAs for the provider's customers",
+    "Supplier targets replace the need for customer SLAs",
+    "Service level management never involves supplier agreements",
+    "Commercial and supplier management skills can be useful"
+   ],
+   "answer": 3,
+   "explanation": "Service level management involves relationship, business liaison, business analysis and commercial and supplier management skills."
+  },
+  {
+   "id": "itil4-403",
+   "domain": "practices",
+   "prompt": "Which type of metric is MOST useful when combined with operational metrics in service level management?",
+   "choices": [
+    "Metrics on the number of changes raised each month",
+    "Business metrics on how services support the business",
+    "Metrics on the age of IT equipment only",
+    "Metrics on the number of staff in each support team"
+   ],
+   "answer": 1,
+   "explanation": "Service level management uses operational metrics and business metrics that reflect the service's contribution to business outcomes."
+  },
+  {
+   "id": "itil4-404",
+   "domain": "practices",
+   "prompt": "During a service review, a customer reveals new business priorities. What should service level management do?",
+   "choices": [
+    "Record it as an incident for the service desk",
+    "Ignore it until the SLA expires",
+    "Use it to update service level targets",
+    "Raise a problem to investigate the customer"
+   ],
+   "answer": 2,
+   "explanation": "Ongoing engagement with customers allows service level management to keep targets aligned with changing needs."
+  },
+  {
+   "id": "itil4-405",
+   "domain": "practices",
+   "prompt": "Which set of concepts is MOST associated with the information security management practice?",
+   "choices": [
+    "Utility, warranty and value",
+    "Confidentiality, integrity and availability",
+    "Plan, build and deliver",
+    "Impact, urgency and priority"
+   ],
+   "answer": 1,
+   "explanation": "Information security management protects information by managing risks to its confidentiality, integrity and availability."
+  },
+  {
+   "id": "itil4-406",
+   "domain": "practices",
+   "prompt": "Which statement about the information security management practice is correct?",
+   "choices": [
+    "It focuses only on preventing security incidents",
+    "It is the sole responsibility of the IT security team",
+    "It only applies to externally facing services",
+    "It balances prevention, detection and correction"
+   ],
+   "answer": 3,
+   "explanation": "Information security management must balance prevention, detection and correction, and involves everyone in the organization."
+  },
+  {
+   "id": "itil4-407",
+   "domain": "practices",
+   "prompt": "A provider wants to ensure that users cannot later deny having performed an action in a system. Which aspect of information security does this support?",
+   "choices": [
+    "Capacity",
+    "Utility",
+    "Availability",
+    "Non-repudiation"
+   ],
+   "answer": 3,
+   "explanation": "Besides confidentiality, integrity and availability, information security also considers aspects such as authentication and non-repudiation."
+  },
+  {
+   "id": "itil4-408",
+   "domain": "practices",
+   "prompt": "A provider wants to understand its key stakeholders' priorities and maintain good links with them at a strategic level. Which practice is MOST relevant?",
+   "choices": [
+    "Service request management",
+    "Monitoring and event management",
+    "Deployment management",
+    "Relationship management"
+   ],
+   "answer": 3,
+   "explanation": "Relationship management establishes and nurtures links with stakeholders at strategic and tactical levels."
+  },
+  {
+   "id": "itil4-409",
+   "domain": "practices",
+   "prompt": "Which activity is part of the relationship management practice?",
+   "choices": [
+    "Restoring services after stakeholder incidents",
+    "Recording configuration items owned by stakeholders",
+    "Authorizing changes requested by key stakeholders and sponsors",
+    "Identifying, analysing and improving stakeholder relationships"
+   ],
+   "answer": 3,
+   "explanation": "Relationship management includes identifying, analysing, monitoring and continually improving relationships with and between stakeholders."
+  },
+  {
+   "id": "itil4-410",
+   "domain": "practices",
+   "prompt": "Which activity is part of the supplier management practice?",
+   "choices": [
+    "Negotiating contracts and monitoring supplier performance",
+    "Resolving supplier incidents through swarming",
+    "Deploying supplier software to live environments",
+    "Recording supplier improvement ideas in the change schedule"
+   ],
+   "answer": 0,
+   "explanation": "Supplier management includes creating a supplier strategy, contract negotiation, relationship management and performance management."
+  },
+  {
+   "id": "itil4-411",
+   "domain": "practices",
+   "prompt": "An organization relies on one strategic partner for all its network services under a close, long-term relationship. Which sourcing approach is this?",
+   "choices": [
+    "Single source or partnership",
+    "Insourcing",
+    "Multi-sourcing",
+    "Emergency sourcing"
+   ],
+   "answer": 0,
+   "explanation": "Single sourcing or partnership involves one supplier with a close, often strategic, relationship; multi-sourcing spreads services across several."
+  },
+  {
+   "id": "itil4-412",
+   "domain": "practices",
+   "prompt": "Why does supplier management seek to create a single point of visibility and control?",
+   "choices": [
+    "To allow each team to manage suppliers independently",
+    "To replace service level management",
+    "To remove the need for supplier contracts",
+    "To ensure consistency across all suppliers"
+   ],
+   "answer": 3,
+   "explanation": "Supplier management aims to create a single point of visibility and control over suppliers to ensure consistency."
+  },
+  {
+   "id": "itil4-413",
+   "domain": "practices",
+   "prompt": "An organization finds it is paying for 500 software licences but only 300 are installed. Which practice should address this?",
+   "choices": [
+    "Service desk",
+    "Release management",
+    "IT asset management",
+    "Incident management"
+   ],
+   "answer": 2,
+   "explanation": "IT asset management controls costs and manages the lifecycle of assets, including software licences."
+  },
+  {
+   "id": "itil4-414",
+   "domain": "practices",
+   "prompt": "Which activity is commonly part of IT asset management?",
+   "choices": [
+    "Defining business-based service level targets",
+    "Making new features available to users",
+    "Restoring services after unplanned interruptions",
+    "Maintaining an asset register and auditing assets"
+   ],
+   "answer": 3,
+   "explanation": "IT asset management maintains information about assets, often in a register, and uses audits to keep it accurate."
+  },
+  {
+   "id": "itil4-415",
+   "domain": "practices",
+   "prompt": "Which statement BEST describes the difference between IT asset management and service configuration management?",
+   "choices": [
+    "Asset management records relationships; configuration management records costs",
+    "Asset management covers value and lifecycle; configuration covers relationships",
+    "They are the same practice described using two different names",
+    "Asset management covers only hardware; configuration covers only software"
+   ],
+   "answer": 1,
+   "explanation": "IT asset management manages the financial and lifecycle aspects of assets; service configuration management maintains information about CIs and their relationships."
+  },
+  {
+   "id": "itil4-416",
+   "domain": "practices",
+   "prompt": "A disk usage alert reaches 80 percent, below the critical threshold of 95 percent. What type of event is this MOST likely?",
+   "choices": [
+    "An exception event",
+    "An informational event",
+    "A warning event",
+    "A major incident"
+   ],
+   "answer": 2,
+   "explanation": "Events can be informational, warnings or exceptions; a warning indicates a threshold is approaching that may require action."
+  },
+  {
+   "id": "itil4-417",
+   "domain": "practices",
+   "prompt": "A monitoring tool detects that a critical service has stopped responding. Which type of event is this?",
+   "choices": [
+    "An exception event that may lead to an incident",
+    "A warning event that can be ignored",
+    "A standard change that has been completed",
+    "An informational event that needs no action"
+   ],
+   "answer": 0,
+   "explanation": "Exception events indicate something abnormal, such as a service failure, and often lead to incidents being created."
+  },
+  {
+   "id": "itil4-418",
+   "domain": "practices",
+   "prompt": "Which statement about the monitoring and event management practice is correct?",
+   "choices": [
+    "It records only events that cause outages",
+    "It replaces the need for incident management",
+    "It only collects information about user complaints",
+    "It identifies and prioritizes significant events"
+   ],
+   "answer": 3,
+   "explanation": "Monitoring and event management observes services and components, recording and reporting significant events and establishing appropriate responses."
+  },
+  {
+   "id": "itil4-419",
+   "domain": "practices",
+   "prompt": "Which statement about release management in ITIL 4 is correct?",
+   "choices": [
+    "Release management deploys hardware to data centres",
+    "Releases can be made available independently of when they are deployed",
+    "Releases must always be made available at the moment of deployment",
+    "Release management authorizes all normal changes"
+   ],
+   "answer": 1,
+   "explanation": "Release and deployment can be separated, for example by deploying components and releasing them later with feature flags."
+  },
+  {
+   "id": "itil4-420",
+   "domain": "practices",
+   "prompt": "In an Agile or DevOps environment, how are releases often managed?",
+   "choices": [
+    "As emergency changes approved by the board",
+    "As rare, large releases planned once per year",
+    "As frequent, small and often automated releases",
+    "As service requests raised by users"
+   ],
+   "answer": 2,
+   "explanation": "Modern approaches tend to use frequent, small releases supported by automated pipelines."
+  },
+  {
+   "id": "itil4-421",
+   "domain": "practices",
+   "prompt": "Which statement about configuration information is correct?",
+   "choices": [
+    "It should be stored in a single tool by every organization",
+    "It is only needed by the service desk",
+    "Its value should justify the cost of maintaining it",
+    "All possible data about every component should always be recorded"
+   ],
+   "answer": 2,
+   "explanation": "Service configuration management should balance the value of configuration information against the cost and effort of maintaining it."
+  },
+  {
+   "id": "itil4-422",
+   "domain": "practices",
+   "prompt": "During an incident, a support analyst wants to see which applications depend on a failed server. Which practice provides this information?",
+   "choices": [
+    "IT asset management",
+    "Service configuration management",
+    "Supplier management",
+    "Service level management"
+   ],
+   "answer": 1,
+   "explanation": "Service configuration management provides information on CIs and their relationships, supporting impact assessment and diagnosis."
+  },
+  {
+   "id": "itil4-423",
+   "domain": "practices",
+   "prompt": "What is a configuration management system (CMS)?",
+   "choices": [
+    "A team that authorizes changes to configuration items",
+    "A list of all services offered to customers",
+    "Tools and data used to manage configuration information",
+    "A process for deploying software to live environments"
+   ],
+   "answer": 2,
+   "explanation": "A CMS is a set of tools, data and information used to support service configuration management; it may combine several data sources."
+  },
+  {
+   "id": "itil4-424",
+   "domain": "practices",
+   "prompt": "A new software version is moved to a small part of the production environment at a time over several weeks. Which deployment approach is this?",
+   "choices": [
+    "Phased deployment",
+    "Emergency deployment",
+    "Big bang deployment",
+    "Pull deployment"
+   ],
+   "answer": 0,
+   "explanation": "Phased deployment moves new or changed components to parts of the environment in stages."
+  },
+  {
+   "id": "itil4-425",
+   "domain": "practices",
+   "prompt": "Users download a new application version from a self-service portal when they choose. Which deployment approach is this?",
+   "choices": [
+    "Continuous delivery",
+    "Phased deployment",
+    "Big bang deployment",
+    "Pull deployment"
+   ],
+   "answer": 3,
+   "explanation": "In pull deployment, software is made available in a controlled repository and users download it when they choose."
   }
  ]
 }

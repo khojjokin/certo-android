@@ -57,6 +57,8 @@ fun certIcon(symbol: String): ImageVector = when {
     symbol.contains("cpu") || symbol.contains("desktop") || symbol.contains("pc") -> Icons.Filled.Computer
     symbol.contains("arrow") || symbol.contains("cycle") -> Icons.Filled.Autorenew
     symbol.contains("server") -> Icons.Filled.Dns
+    symbol.contains("building") -> Icons.Filled.AccountBalance
+    symbol.contains("key") -> Icons.Filled.VpnKey
     symbol.contains("antenna") || symbol.contains("wave") -> Icons.Filled.Router
     else -> Icons.Filled.School
 }
