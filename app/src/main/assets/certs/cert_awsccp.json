@@ -6194,6 +6194,1306 @@
    ],
    "answer": 1,
    "explanation": "Zonal Reserved Instances reserve capacity in the specified AZ. Regional RIs and Savings Plans give discounts and flexibility but do not reserve capacity."
+  },
+  {
+   "id": "awsccp-473",
+   "domain": "concepts",
+   "prompt": "During its cloud transformation, a company expands its successful pilot initiatives into production across the wider business at the desired scale. Which AWS CAF phase is this?",
+   "choices": [
+    "Launch",
+    "Align",
+    "Scale",
+    "Envision"
+   ],
+   "answer": 2,
+   "explanation": "The AWS CAF phases are Envision, Align, Launch and Scale. Scale expands pilots in production to the desired scale; Launch is where the pilots are first delivered."
+  },
+  {
+   "id": "awsccp-474",
+   "domain": "concepts",
+   "prompt": "Which AWS Cloud Adoption Framework perspective includes capabilities such as strategy management, data monetization and business insights?",
+   "choices": [
+    "Business",
+    "Platform",
+    "Operations",
+    "Governance"
+   ],
+   "answer": 0,
+   "explanation": "The Business perspective covers capabilities such as strategy management, portfolio management, data monetization and business insights."
+  },
+  {
+   "id": "awsccp-475",
+   "domain": "concepts",
+   "prompt": "Which AWS Cloud Adoption Framework perspective includes capabilities such as continuous integration and continuous delivery (CI/CD) and provisioning and orchestration?",
+   "choices": [
+    "Operations",
+    "People",
+    "Governance",
+    "Platform"
+   ],
+   "answer": 3,
+   "explanation": "The Platform perspective covers platform engineering, provisioning and orchestration, modern application development and CI/CD."
+  },
+  {
+   "id": "awsccp-476",
+   "domain": "concepts",
+   "prompt": "A company replaces long-term IAM user access keys with centrally managed identities, temporary credentials and least-privilege permissions. Which Security pillar design principle is it applying?",
+   "choices": [
+    "Prepare for security events",
+    "Apply security at all layers",
+    "Implement a strong identity foundation",
+    "Protect data in transit and at rest"
+   ],
+   "answer": 2,
+   "explanation": "A strong identity foundation means least privilege, separation of duties, centralized identity management and avoiding long-term static credentials."
+  },
+  {
+   "id": "awsccp-477",
+   "domain": "concepts",
+   "prompt": "A security team defines its security controls as code in version-controlled templates so they are deployed consistently and automatically. Which Security pillar design principle does this follow?",
+   "choices": [
+    "Maintain traceability",
+    "Keep people away from data",
+    "Automate security best practices",
+    "Implement a strong identity foundation"
+   ],
+   "answer": 2,
+   "explanation": "Automating security best practices includes defining and managing security controls as code that is version controlled and deployed automatically."
+  },
+  {
+   "id": "awsccp-478",
+   "domain": "concepts",
+   "prompt": "A team makes all infrastructure changes through automated, tested pipelines instead of manual console changes, so every change can be tracked and reviewed. Which Reliability design principle is this?",
+   "choices": [
+    "Scale horizontally to increase aggregate workload availability",
+    "Stop guessing capacity",
+    "Test recovery procedures",
+    "Manage change in automation"
+   ],
+   "answer": 3,
+   "explanation": "The Reliability pillar recommends making infrastructure changes through automation so they can be tracked and reviewed, rather than by hand."
+  },
+  {
+   "id": "awsccp-479",
+   "domain": "concepts",
+   "prompt": "A team instruments its workload to collect metrics, logs and traces tied to business outcomes so it can understand behaviour and act quickly on issues. Which Operational Excellence design principle is this?",
+   "choices": [
+    "Make frequent, small, reversible changes",
+    "Implement observability for actionable insights",
+    "Refine operations procedures frequently",
+    "Anticipate failure"
+   ],
+   "answer": 1,
+   "explanation": "Implementing observability gives a full understanding of workload behaviour, performance and business outcomes so teams can make informed decisions and respond to issues."
+  },
+  {
+   "id": "awsccp-480",
+   "domain": "concepts",
+   "prompt": "A company creates a dedicated function that brings finance and technology teams together to build cost awareness and own cloud spending processes. Which Cost Optimization design principle is this?",
+   "choices": [
+    "Analyze and attribute expenditure",
+    "Adopt a consumption model",
+    "Measure overall efficiency",
+    "Implement Cloud Financial Management"
+   ],
+   "answer": 3,
+   "explanation": "Implementing Cloud Financial Management means investing in the people, processes and partnerships that build cost awareness across the organization."
+  },
+  {
+   "id": "awsccp-481",
+   "domain": "concepts",
+   "prompt": "A company consolidates several lightly loaded EC2 instances onto fewer instances that run at higher utilization, mainly to reduce the energy its workload consumes. Which Sustainability design principle is this?",
+   "choices": [
+    "Establish sustainability goals",
+    "Maximize utilization",
+    "Anticipate and adopt new, more efficient hardware and software offerings",
+    "Reduce the downstream impact of your cloud workloads"
+   ],
+   "answer": 1,
+   "explanation": "Maximizing utilization means right-sizing and consolidating so fewer, busier resources do the work, because idle capacity still consumes energy."
+  },
+  {
+   "id": "awsccp-482",
+   "domain": "concepts",
+   "prompt": "A company optimizes its mobile app to send less data and run well on older devices, so customers do not need to upgrade their phones. Which Sustainability design principle does this reflect?",
+   "choices": [
+    "Anticipate and adopt new, more efficient hardware and software offerings",
+    "Reduce the downstream impact of your cloud workloads",
+    "Understand your impact",
+    "Maximize utilization"
+   ],
+   "answer": 1,
+   "explanation": "This principle reduces the energy and resources customers need to use your service, including reducing the need for them to upgrade their devices."
+  },
+  {
+   "id": "awsccp-483",
+   "domain": "concepts",
+   "prompt": "A team moves a workload to AWS Lambda and Amazon DynamoDB so it no longer runs and maintains servers for traditional compute activities. Which Performance Efficiency design principle is this?",
+   "choices": [
+    "Go global in minutes",
+    "Consider mechanical sympathy",
+    "Use serverless architectures",
+    "Experiment more often"
+   ],
+   "answer": 2,
+   "explanation": "Serverless architectures remove the need to run and maintain physical servers, and AWS manages the underlying infrastructure."
+  },
+  {
+   "id": "awsccp-484",
+   "domain": "concepts",
+   "prompt": "Which general Well-Architected design principle recognises that automation and on-demand testing in the cloud make it lower risk to change a workload's design as requirements change over time?",
+   "choices": [
+    "Improve through game days",
+    "Allow for evolutionary architectures",
+    "Stop guessing your capacity needs",
+    "Test systems at production scale"
+   ],
+   "answer": 1,
+   "explanation": "In the cloud, automation and on-demand testing lower the risk of design changes, so architectures can evolve instead of being fixed at the start."
+  },
+  {
+   "id": "awsccp-485",
+   "domain": "concepts",
+   "prompt": "A team collects data on how its architecture choices affect workload behaviour and uses that data to make fact-based design decisions. Which general Well-Architected design principle is this?",
+   "choices": [
+    "Drive architectures using data",
+    "Allow for evolutionary architectures",
+    "Improve through game days",
+    "Automate with architectural experimentation in mind"
+   ],
+   "answer": 0,
+   "explanation": "Driving architectures using data means collecting data on how choices affect the workload and using it to make fact-based improvements."
+  },
+  {
+   "id": "awsccp-486",
+   "domain": "concepts",
+   "prompt": "Foundations, workload architecture, change management and failure management are best practice areas of which Well-Architected pillar?",
+   "choices": [
+    "Security",
+    "Performance Efficiency",
+    "Operational Excellence",
+    "Reliability"
+   ],
+   "answer": 3,
+   "explanation": "These four areas make up the Reliability pillar, which focuses on a workload performing its intended function correctly and consistently."
+  },
+  {
+   "id": "awsccp-487",
+   "domain": "concepts",
+   "prompt": "Detection, infrastructure protection, data protection and incident response are best practice areas of which Well-Architected pillar?",
+   "choices": [
+    "Security",
+    "Sustainability",
+    "Operational Excellence",
+    "Reliability"
+   ],
+   "answer": 0,
+   "explanation": "These are best practice areas of the Security pillar, alongside identity and access management, security foundations and application security."
+  },
+  {
+   "id": "awsccp-488",
+   "domain": "concepts",
+   "prompt": "Expenditure and usage awareness, cost-effective resources, and managing demand and supplying resources are best practice areas of which Well-Architected pillar?",
+   "choices": [
+    "Performance Efficiency",
+    "Operational Excellence",
+    "Cost Optimization",
+    "Sustainability"
+   ],
+   "answer": 2,
+   "explanation": "These are best practice areas of the Cost Optimization pillar, together with practicing Cloud Financial Management and optimizing over time."
+  },
+  {
+   "id": "awsccp-489",
+   "domain": "concepts",
+   "prompt": "A company uses AWS CloudFormation templates to create identical test environments on demand and delete them when testing ends. Which cloud economics benefit does this automation MOST directly provide?",
+   "choices": [
+    "No charges for any resources that are created by templates",
+    "Reserved Instance discounts applied automatically to each new stack",
+    "Lower hourly prices for the EC2 instances that the templates launch",
+    "Less manual work and fewer errors, paying only while resources exist"
+   ],
+   "answer": 3,
+   "explanation": "Automation cuts labour and configuration errors, and tearing environments down stops charges. CloudFormation does not change resource prices; you pay for what it creates."
+  },
+  {
+   "id": "awsccp-490",
+   "domain": "concepts",
+   "prompt": "Under the shared responsibility model for sustainability, what is AWS responsible for?",
+   "choices": [
+    "Choosing efficient instance types and Regions for each customer workload",
+    "Efficient data centers, including their power, cooling and hardware",
+    "Deleting unused data that customers keep in their S3 buckets",
+    "Rightsizing customer workloads so they match actual demand"
+   ],
+   "answer": 1,
+   "explanation": "AWS is responsible for sustainability of the cloud, meaning efficient global infrastructure. Customers are responsible for sustainability in the cloud, such as rightsizing and data management."
+  },
+  {
+   "id": "awsccp-491",
+   "domain": "concepts",
+   "prompt": "In the AWS Migration Acceleration Program, which phase focuses on creating a detailed migration plan, building a secure landing zone and closing readiness gaps found earlier?",
+   "choices": [
+    "Optimize",
+    "Assess",
+    "Mobilize",
+    "Migrate and modernize"
+   ],
+   "answer": 2,
+   "explanation": "The MAP phases are Assess, Mobilize, and Migrate and Modernize. Mobilize builds the detailed plan, landing zone and operating model, and closes gaps found during Assess."
+  },
+  {
+   "id": "awsccp-492",
+   "domain": "concepts",
+   "prompt": "Which term describes the percentage of time that a workload is operational and able to serve requests?",
+   "choices": [
+    "Elasticity",
+    "Agility",
+    "Availability",
+    "Durability"
+   ],
+   "answer": 2,
+   "explanation": "Availability is the share of time a workload is usable. Durability is about data not being lost over time."
+  },
+  {
+   "id": "awsccp-493",
+   "domain": "concepts",
+   "prompt": "A web application and its database both run on a single EC2 instance in one Availability Zone. Which risk does this design MOST clearly present?",
+   "choices": [
+    "Higher data transfer charges between the web tier and the database",
+    "A single point of failure that can take the whole application offline",
+    "No ability to use security groups to restrict network access",
+    "Automatic loss of all stored data whenever the instance stops"
+   ],
+   "answer": 1,
+   "explanation": "With everything on one instance in one AZ, a single instance or AZ failure stops the whole application. Data on EBS volumes is not lost just because an instance stops."
+  },
+  {
+   "id": "awsccp-494",
+   "domain": "concepts",
+   "prompt": "A company aligns each operations team to a specific business outcome so that teams understand how their work contributes to that result. Which Operational Excellence design principle is this?",
+   "choices": [
+    "Safely automate where possible",
+    "Organize teams around business outcomes",
+    "Use managed services",
+    "Learn from all operational events and metrics"
+   ],
+   "answer": 1,
+   "explanation": "Organizing teams around business outcomes is an Operational Excellence design principle, with leadership vision and team ownership aligned to business results."
+  },
+  {
+   "id": "awsccp-495",
+   "domain": "concepts",
+   "prompt": "What is the primary purpose of the AWS Cloud Adoption Framework (AWS CAF)?",
+   "choices": [
+    "To estimate the monthly cost of a proposed AWS architecture",
+    "To certify that customer workloads meet compliance standards",
+    "To review individual workloads against AWS architectural best practices",
+    "To help organizations plan and speed up their cloud transformation"
+   ],
+   "answer": 3,
+   "explanation": "AWS CAF draws on AWS experience to help organizations identify and prioritize transformation opportunities. Reviewing individual workloads is the role of the Well-Architected Framework."
+  },
+  {
+   "id": "awsccp-496",
+   "domain": "concepts",
+   "prompt": "In the AWS Well-Architected Framework, what does the term 'workload' mean?",
+   "choices": [
+    "A set of components that together deliver business value",
+    "A monthly report that shows usage for each AWS service",
+    "A single AWS account together with all of the resources inside it",
+    "The CPU and memory load measured on a single EC2 instance"
+   ],
+   "answer": 0,
+   "explanation": "A workload is a collection of resources and code that delivers business value, such as a customer-facing application or a backend process."
+  },
+  {
+   "id": "awsccp-497",
+   "domain": "sec",
+   "prompt": "A company wants permissions to follow resource tags, so developers can manage only resources tagged with the same project as their own IAM identity, without editing policies for each new project. Which approach is this?",
+   "choices": [
+    "Attribute-based access control (ABAC)",
+    "Resource-based policies attached to each AWS account",
+    "Service control policies applied to each organizational unit",
+    "Role-based access control with one policy for each project"
+   ],
+   "answer": 0,
+   "explanation": "ABAC grants permissions based on attributes such as tags, so new projects work by tagging rather than writing new policies."
+  },
+  {
+   "id": "awsccp-498",
+   "domain": "sec",
+   "prompt": "A company runs containers on Amazon EKS. Under the shared responsibility model, who is responsible for the availability and patching of the Kubernetes control plane?",
+   "choices": [
+    "The customer, which manages the control plane nodes",
+    "The AWS Partner that the customer selects",
+    "AWS, which manages the EKS control plane",
+    "The Kubernetes open source community"
+   ],
+   "answer": 2,
+   "explanation": "Amazon EKS is a managed Kubernetes control plane, so AWS runs, scales and patches it. The customer remains responsible for items such as workloads, IAM and network configuration."
+  },
+  {
+   "id": "awsccp-499",
+   "domain": "sec",
+   "prompt": "A team runs its containers on AWS Fargate. Who is responsible for patching the operating system of the underlying hosts that run the tasks?",
+   "choices": [
+    "Docker, which supplies the container runtime",
+    "The customer, by rebuilding each container image",
+    "AWS",
+    "The customer, by using Systems Manager Patch Manager"
+   ],
+   "answer": 2,
+   "explanation": "With Fargate, AWS manages the underlying hosts and their operating systems. The customer is still responsible for the contents of its container images."
+  },
+  {
+   "id": "awsccp-500",
+   "domain": "sec",
+   "prompt": "Which type of IAM policy is embedded directly in a single user, group or role and is deleted when that identity is deleted?",
+   "choices": [
+    "Service control policy",
+    "AWS managed policy",
+    "Customer managed policy",
+    "Inline policy"
+   ],
+   "answer": 3,
+   "explanation": "An inline policy has a strict one-to-one relationship with an identity. Managed policies are standalone and can be attached to many identities."
+  },
+  {
+   "id": "awsccp-501",
+   "domain": "sec",
+   "prompt": "Which type of IAM role is linked directly to an AWS service, is predefined by that service and includes all the permissions the service needs to call other services on your behalf?",
+   "choices": [
+    "Instance profile",
+    "Permissions boundary",
+    "Service-linked role",
+    "Cross-account role"
+   ],
+   "answer": 2,
+   "explanation": "A service-linked role is created for and owned by a specific AWS service, with permissions that the service defines."
+  },
+  {
+   "id": "awsccp-502",
+   "domain": "sec",
+   "prompt": "A company wants an IAM policy to allow an action only when the request comes from its corporate IP range and the user has signed in with MFA. Which policy element expresses these requirements?",
+   "choices": [
+    "Effect",
+    "Resource",
+    "Condition",
+    "Principal"
+   ],
+   "answer": 2,
+   "explanation": "The Condition element applies extra checks, such as aws:SourceIp or aws:MultiFactorAuthPresent, before the statement takes effect."
+  },
+  {
+   "id": "awsccp-503",
+   "domain": "sec",
+   "prompt": "What are the rules of the default network ACL that is created with a new VPC?",
+   "choices": [
+    "It allows inbound traffic only from inside the VPC",
+    "It denies all inbound and allows all outbound traffic",
+    "It denies all inbound and all outbound traffic",
+    "It allows all inbound and all outbound traffic"
+   ],
+   "answer": 3,
+   "explanation": "The default network ACL allows all traffic in both directions. A newly created custom network ACL denies all traffic until you add rules."
+  },
+  {
+   "id": "awsccp-504",
+   "domain": "sec",
+   "prompt": "A security team wants to be alerted when an account shows unusual API activity, such as a sudden spike in resource provisioning calls compared with its normal pattern. Which feature should it enable?",
+   "choices": [
+    "CloudTrail log file integrity validation",
+    "AWS CloudTrail Insights",
+    "The IAM credential report",
+    "AWS Config conformance packs"
+   ],
+   "answer": 1,
+   "explanation": "CloudTrail Insights analyses management events to detect unusual API call volumes or error rates against a baseline. Log file validation only proves that logs were not changed."
+  },
+  {
+   "id": "awsccp-505",
+   "domain": "sec",
+   "prompt": "In AWS Control Tower, which type of control checks resources before they are provisioned, for example by using AWS CloudFormation hooks, and blocks noncompliant ones?",
+   "choices": [
+    "Preventive control",
+    "Proactive control",
+    "Detective control",
+    "Corrective control"
+   ],
+   "answer": 1,
+   "explanation": "Proactive controls use CloudFormation hooks to check resources before deployment. Preventive controls use policies such as SCPs, and detective controls use AWS Config rules after resources exist."
+  },
+  {
+   "id": "awsccp-506",
+   "domain": "sec",
+   "prompt": "An SCP that denies the use of Amazon SageMaker is attached to an OU named Production. A child OU named Production-EU sits inside Production. What is the effect on accounts in Production-EU?",
+   "choices": [
+    "They can still use SageMaker if an IAM policy in the account allows it",
+    "They also cannot use SageMaker, because SCPs apply to all OUs below",
+    "Only the root users of those accounts are blocked from SageMaker",
+    "They are unaffected unless the SCP is attached to Production-EU directly"
+   ],
+   "answer": 1,
+   "explanation": "SCPs attached to an OU apply to all child OUs and accounts. An IAM allow cannot override an SCP deny."
+  },
+  {
+   "id": "awsccp-507",
+   "domain": "sec",
+   "prompt": "Which AWS Organizations policy type lets a company centrally create and apply AWS Backup plans to accounts in its organization?",
+   "choices": [
+    "Service control policies",
+    "Resource control policies",
+    "Backup policies",
+    "Tag policies"
+   ],
+   "answer": 2,
+   "explanation": "Backup policies deploy AWS Backup plans across accounts in an organization. SCPs and RCPs set permission limits rather than creating backups."
+  },
+  {
+   "id": "awsccp-508",
+   "domain": "sec",
+   "prompt": "A company wants to stop AWS AI services such as Amazon Rekognition from storing and using its content to develop and improve those services, across every account in its organization. Which policy type should it use?",
+   "choices": [
+    "AI services opt-out policies",
+    "Backup policies",
+    "Tag policies",
+    "Service control policies"
+   ],
+   "answer": 0,
+   "explanation": "AI services opt-out policies in AWS Organizations control whether AWS AI services can store and use customer content for service improvement."
+  },
+  {
+   "id": "awsccp-509",
+   "domain": "sec",
+   "prompt": "An administrator schedules deletion of a customer managed AWS KMS key, then realises some data is still encrypted with it. Which statement is true?",
+   "choices": [
+    "The key is moved to an archive tier and can be restored on request",
+    "AWS Support can restore the key material for up to one year",
+    "The key is deleted at once and the data can never be decrypted again",
+    "A 7 to 30 day waiting period starts, during which you can cancel"
+   ],
+   "answer": 3,
+   "explanation": "AWS KMS requires a waiting period of 7 to 30 days before deleting a key, and you can cancel deletion during that time. After deletion, data encrypted under the key cannot be decrypted."
+  },
+  {
+   "id": "awsccp-510",
+   "domain": "sec",
+   "prompt": "A small company on the AWS Basic Support plan wants AWS Trusted Advisor to tell it whether MFA is enabled on its root user. Which statement is true?",
+   "choices": [
+    "This check is available only after enabling Amazon GuardDuty",
+    "This check requires a higher support plan than Basic Support",
+    "This is a core security check that is available to all AWS customers",
+    "Trusted Advisor cannot check any settings of the root user"
+   ],
+   "answer": 2,
+   "explanation": "MFA on the root account is one of the core Trusted Advisor security checks available to every customer, along with checks such as open security group ports."
+  },
+  {
+   "id": "awsccp-511",
+   "domain": "sec",
+   "prompt": "When a customer creates an Amazon EC2 key pair, who is responsible for storing the private key securely?",
+   "choices": [
+    "The customer, because AWS does not keep a copy of the private key",
+    "Both, because AWS keeps a backup copy of it in Amazon S3",
+    "AWS, which sends the private key by email to the root user",
+    "AWS, which stores the private key in AWS KMS for the customer"
+   ],
+   "answer": 0,
+   "explanation": "AWS stores only the public key. The customer must download and protect the private key; if it is lost, AWS cannot recover it."
+  },
+  {
+   "id": "awsccp-512",
+   "domain": "sec",
+   "prompt": "A company requires that a different person approves a production change than the developer who wrote it. Which security principle does this apply?",
+   "choices": [
+    "Defense in depth",
+    "Encryption at rest",
+    "Data classification",
+    "Separation of duties"
+   ],
+   "answer": 3,
+   "explanation": "Separation of duties splits critical tasks between people so no single person can make and approve a risky change alone."
+  },
+  {
+   "id": "awsccp-513",
+   "domain": "sec",
+   "prompt": "A customer's auditor wants evidence of the physical security controls at the AWS data centers that host the company's workloads. What is the appropriate way to obtain it?",
+   "choices": [
+    "Download third-party audit reports, such as SOC 2, from AWS Artifact",
+    "Ask AWS to install the auditor's own cameras in the data center",
+    "Book an on-site inspection tour of the data centers through AWS Support",
+    "Request the street addresses of the data centers from AWS"
+   ],
+   "answer": 0,
+   "explanation": "AWS does not offer customer data center visits. Independent auditors test AWS physical controls, and their reports are available in AWS Artifact."
+  },
+  {
+   "id": "awsccp-514",
+   "domain": "sec",
+   "prompt": "A company sends application logs to Amazon CloudWatch Logs and wants an alarm when more than 20 failed login messages appear in five minutes. What should it configure?",
+   "choices": [
+    "An AWS Config rule that reads and evaluates entries in the log group",
+    "An Amazon Inspector assessment that scans every entry in the log group",
+    "A metric filter on the log group with a CloudWatch alarm on the metric",
+    "An AWS CloudTrail trail with log file validation enabled"
+   ],
+   "answer": 2,
+   "explanation": "Metric filters turn matching log entries into CloudWatch metrics, and an alarm can then notify when the count crosses a threshold."
+  },
+  {
+   "id": "awsccp-515",
+   "domain": "sec",
+   "prompt": "Following AWS multi-account best practices, how should the AWS Organizations management account be used?",
+   "choices": [
+    "Only for organization tasks such as billing and account management",
+    "As the main account for hosting all production workloads",
+    "As the central account that stores all application data",
+    "As a shared account where developers deploy test resources"
+   ],
+   "answer": 0,
+   "explanation": "The management account cannot be restricted by SCPs, so AWS recommends keeping workloads out of it and using it only for organization-wide tasks."
+  },
+  {
+   "id": "awsccp-516",
+   "domain": "sec",
+   "prompt": "Which statement about security groups and EC2 instances is correct?",
+   "choices": [
+    "A security group can be attached to only one instance at a time",
+    "Security groups are applied to subnets rather than to instances",
+    "An instance can use several security groups, and a group many instances",
+    "Each instance can be associated with only one security group at a time"
+   ],
+   "answer": 2,
+   "explanation": "Security groups are associated with network interfaces; an instance can use multiple groups and a group can be reused across many instances. Network ACLs apply to subnets."
+  },
+  {
+   "id": "awsccp-517",
+   "domain": "sec",
+   "prompt": "A company stores customer content in the eu-west-1 Region. Which statement about where AWS keeps this content is accurate?",
+   "choices": [
+    "AWS automatically copies it to another Region for disaster recovery purposes",
+    "AWS replicates it to a US Region for compliance processing",
+    "AWS does not move it out of that Region without the customer's agreement",
+    "AWS moves it to whichever Region currently has the lowest cost"
+   ],
+   "answer": 2,
+   "explanation": "Customers choose the Regions where their content is stored, and AWS does not move it out of those Regions unless the customer agrees. Cross-Region copies are something the customer configures."
+  },
+  {
+   "id": "awsccp-518",
+   "domain": "sec",
+   "prompt": "Which IAM Access Analyzer capability checks a policy against IAM policy grammar and AWS best practices while you write it, returning warnings and suggestions?",
+   "choices": [
+    "Permissions boundaries",
+    "Policy validation",
+    "Credential report",
+    "Last accessed information"
+   ],
+   "answer": 1,
+   "explanation": "Access Analyzer policy validation reviews policies for errors, security warnings and suggestions as you author them."
+  },
+  {
+   "id": "awsccp-519",
+   "domain": "sec",
+   "prompt": "Which of the following can be specified as the source of an inbound rule in a security group?",
+   "choices": [
+    "The ID of another security group",
+    "The ARN of an IAM role",
+    "The AWS account root user",
+    "The name of an Amazon S3 bucket"
+   ],
+   "answer": 0,
+   "explanation": "Security group rules accept CIDR ranges, prefix lists or other security groups as sources, which lets you allow traffic from a tier whose IPs change."
+  },
+  {
+   "id": "awsccp-520",
+   "domain": "sec",
+   "prompt": "A network ACL has rule 100 allowing TCP 443 from 0.0.0.0/0 and rule 200 denying TCP 443 from 203.0.113.0/24. What happens to HTTPS traffic from 203.0.113.10?",
+   "choices": [
+    "It is denied, because deny rules in a network ACL always take priority over allow rules",
+    "It is denied, because the most specific CIDR range always wins regardless of rule number",
+    "It is allowed, because rules are evaluated from the lowest number and the first match applies",
+    "It is dropped, because conflicting rules block all matching traffic"
+   ],
+   "answer": 2,
+   "explanation": "Network ACL rules are processed in number order and evaluation stops at the first match. To block the range, the deny rule needs a lower number than the allow rule."
+  },
+  {
+   "id": "awsccp-521",
+   "domain": "sec",
+   "prompt": "An administrator creates an IAM user while the console shows the us-east-1 Region. Can the user work with resources in eu-west-1?",
+   "choices": [
+    "Yes, but only after IAM has first been enabled in the eu-west-1 Region",
+    "No, the user must be created again separately in the eu-west-1 Region",
+    "No, IAM users are copied only to the paired Region of us-east-1",
+    "Yes, IAM is a global service, so the user can if their permissions allow it"
+   ],
+   "answer": 3,
+   "explanation": "IAM identities and policies are global and not tied to a Region; what the user can do is controlled by their permissions."
+  },
+  {
+   "id": "awsccp-522",
+   "domain": "sec",
+   "prompt": "Which statement about AWS managed KMS keys, such as aws/ebs, is correct?",
+   "choices": [
+    "AWS rotates them every year, and you cannot change their key policies",
+    "Customers must rotate them manually every 90 days using the KMS console",
+    "They can be deleted at any time without any waiting period",
+    "Customers can edit their key policies to share them with other accounts"
+   ],
+   "answer": 0,
+   "explanation": "AWS managed keys are created and managed by AWS services, rotated yearly, and their key policies cannot be edited. Use a customer managed key when you need that control."
+  },
+  {
+   "id": "awsccp-523",
+   "domain": "sec",
+   "prompt": "A company must keep the operating systems of its EC2 fleet patched, which is its responsibility under the shared responsibility model, and wants to automate this on a schedule. Which capability should it use?",
+   "choices": [
+    "Amazon Inspector vulnerability scanning",
+    "AWS Systems Manager Patch Manager",
+    "AWS Config managed rules",
+    "AWS Trusted Advisor security checks"
+   ],
+   "answer": 1,
+   "explanation": "Patch Manager automates scanning and installing patches on managed nodes. Inspector finds vulnerabilities but does not install patches."
+  },
+  {
+   "id": "awsccp-524",
+   "domain": "sec",
+   "prompt": "Developers sign in through AWS IAM Identity Center. How should they get credentials to use the AWS CLI without creating IAM user access keys?",
+   "choices": [
+    "Ask an administrator to share the root user's access keys",
+    "Set up the CLI with IAM Identity Center to get short-term credentials",
+    "Generate long-term access keys for each user in the Identity Center portal",
+    "Copy the console session cookie into the CLI configuration file"
+   ],
+   "answer": 1,
+   "explanation": "The AWS CLI can sign in through IAM Identity Center and obtain temporary credentials, removing the need for long-term access keys."
+  },
+  {
+   "id": "awsccp-525",
+   "domain": "sec",
+   "prompt": "A security team enabled Amazon GuardDuty only in us-east-1. Workloads in eu-west-1 produce no GuardDuty findings. What is the MOST likely reason?",
+   "choices": [
+    "Findings from other Regions appear only after 30 days",
+    "GuardDuty needs an agent installed on every instance first",
+    "GuardDuty analyses resources only in the US Regions",
+    "GuardDuty is a Regional service and must be enabled in each Region"
+   ],
+   "answer": 3,
+   "explanation": "GuardDuty is enabled per Region, and AWS recommends enabling it in all Regions, including ones you do not actively use."
+  },
+  {
+   "id": "awsccp-526",
+   "domain": "sec",
+   "prompt": "A company wants every new object written to an S3 bucket to be encrypted with AWS KMS keys by default, instead of the standard Amazon S3 managed keys. What should it configure?",
+   "choices": [
+    "Enable S3 Object Lock in governance mode",
+    "Enable S3 Versioning on the bucket",
+    "Set the bucket's default encryption to SSE-KMS",
+    "Turn on S3 Block Public Access"
+   ],
+   "answer": 2,
+   "explanation": "S3 encrypts new objects with SSE-S3 by default; changing the bucket's default encryption setting to SSE-KMS makes AWS KMS keys the default."
+  },
+  {
+   "id": "awsccp-527",
+   "domain": "tech",
+   "prompt": "Which AWS service is global rather than deployed into a single Region?",
+   "choices": [
+    "Amazon EC2",
+    "Amazon CloudFront",
+    "Amazon RDS",
+    "Amazon EBS"
+   ],
+   "answer": 1,
+   "explanation": "CloudFront is a global service that serves content from edge locations worldwide. EC2, RDS and EBS resources live in a specific Region."
+  },
+  {
+   "id": "awsccp-528",
+   "domain": "tech",
+   "prompt": "An operations engineer wants to check CloudWatch alarms and view the status of AWS resources from a smartphone while away from a computer. Which option is designed for this?",
+   "choices": [
+    "The AWS Cloud Development Kit",
+    "The AWS Command Line Interface",
+    "The AWS Console Mobile Application",
+    "AWS CloudShell"
+   ],
+   "answer": 2,
+   "explanation": "The AWS Console Mobile Application lets users view resources, CloudWatch alarms and AWS Health events from iOS and Android devices."
+  },
+  {
+   "id": "awsccp-529",
+   "domain": "tech",
+   "prompt": "A company wants to automate building, testing and distributing hardened, patched Amazon Machine Images on a schedule. Which service fits?",
+   "choices": [
+    "AWS App Runner",
+    "AWS Elastic Beanstalk",
+    "Amazon Lightsail",
+    "EC2 Image Builder"
+   ],
+   "answer": 3,
+   "explanation": "EC2 Image Builder automates the creation, patching, testing and distribution of AMIs and container images."
+  },
+  {
+   "id": "awsccp-530",
+   "domain": "tech",
+   "prompt": "A company is migrating Linux workloads that depend on an on-premises ZFS file server and wants a fully managed AWS service with the same file system. Which service fits?",
+   "choices": [
+    "Amazon FSx for Windows File Server",
+    "Amazon FSx for OpenZFS",
+    "Amazon Elastic Block Store",
+    "Amazon FSx for Lustre"
+   ],
+   "answer": 1,
+   "explanation": "FSx for OpenZFS provides fully managed file storage built on the OpenZFS file system, accessed over NFS."
+  },
+  {
+   "id": "awsccp-531",
+   "domain": "tech",
+   "prompt": "Files in an Amazon EFS file system are rarely opened after 30 days. Which feature moves them automatically to a lower-cost storage class?",
+   "choices": [
+    "Amazon EBS Snapshots Archive",
+    "S3 Lifecycle configuration",
+    "EFS lifecycle management",
+    "S3 Intelligent-Tiering"
+   ],
+   "answer": 2,
+   "explanation": "EFS lifecycle management transitions files that have not been accessed for a set period to EFS Infrequent Access or Archive storage classes."
+  },
+  {
+   "id": "awsccp-532",
+   "domain": "tech",
+   "prompt": "A company needs encrypted connectivity between its office network and a VPC within a day, at low cost, and can accept internet-based performance. Which option fits BEST?",
+   "choices": [
+    "AWS Site-to-Site VPN",
+    "VPC peering",
+    "AWS Client VPN",
+    "AWS Direct Connect"
+   ],
+   "answer": 0,
+   "explanation": "Site-to-Site VPN creates IPsec tunnels over the internet and can be set up quickly. Direct Connect needs a physical connection that takes longer to provision, and Client VPN is for individual users."
+  },
+  {
+   "id": "awsccp-533",
+   "domain": "tech",
+   "prompt": "A company uses machine learning to extract data from loan forms and wants predictions with low confidence sent to people for review. Which service provides this human review workflow?",
+   "choices": [
+    "Amazon Lex",
+    "Amazon Comprehend",
+    "Amazon SageMaker Ground Truth",
+    "Amazon Augmented AI (Amazon A2I)"
+   ],
+   "answer": 3,
+   "explanation": "Amazon A2I adds human review of machine learning predictions, for example when confidence is low. Ground Truth is for labeling training data."
+  },
+  {
+   "id": "awsccp-534",
+   "domain": "tech",
+   "prompt": "A company wants to find, subscribe to and use third-party datasets, such as financial market data, directly in AWS. Which service fits?",
+   "choices": [
+    "Amazon AppFlow",
+    "AWS Glue Data Catalog",
+    "AWS Lake Formation",
+    "AWS Data Exchange"
+   ],
+   "answer": 3,
+   "explanation": "AWS Data Exchange lets customers find, subscribe to and use third-party data in the cloud."
+  },
+  {
+   "id": "awsccp-535",
+   "domain": "tech",
+   "prompt": "A company wants to stream video from security cameras to AWS for storage, playback and analysis. Which service fits?",
+   "choices": [
+    "Amazon Kinesis Video Streams",
+    "Amazon Kinesis Data Streams",
+    "Amazon Data Firehose",
+    "AWS Elemental MediaConvert"
+   ],
+   "answer": 0,
+   "explanation": "Kinesis Video Streams securely ingests and stores video from connected devices for playback and analytics."
+  },
+  {
+   "id": "awsccp-536",
+   "domain": "tech",
+   "prompt": "A company wants to transfer data on a schedule from SaaS applications such as Salesforce into Amazon S3 without writing integration code. Which service fits?",
+   "choices": [
+    "AWS Transfer Family",
+    "Amazon AppFlow",
+    "AWS Data Exchange",
+    "AWS DataSync"
+   ],
+   "answer": 1,
+   "explanation": "AppFlow is a managed integration service that moves data between SaaS applications and AWS services. DataSync moves data from storage systems such as NFS and SMB."
+  },
+  {
+   "id": "awsccp-537",
+   "domain": "tech",
+   "prompt": "Developers want a managed repository to store and share software packages such as npm, Maven and pip artifacts. Which service fits?",
+   "choices": [
+    "Amazon Elastic Container Registry",
+    "AWS CodeArtifact",
+    "AWS CodePipeline",
+    "AWS CodeBuild"
+   ],
+   "answer": 1,
+   "explanation": "CodeArtifact is a managed artifact repository for software packages. Amazon ECR stores container images."
+  },
+  {
+   "id": "awsccp-538",
+   "domain": "tech",
+   "prompt": "A team wants to run controlled experiments that inject faults, such as stopping instances or adding latency, to see how its application responds. Which service fits?",
+   "choices": [
+    "AWS Fault Injection Service",
+    "AWS Trusted Advisor",
+    "Amazon CloudWatch Synthetics",
+    "AWS X-Ray"
+   ],
+   "answer": 0,
+   "explanation": "AWS Fault Injection Service runs controlled fault injection experiments to improve resilience."
+  },
+  {
+   "id": "awsccp-539",
+   "domain": "tech",
+   "prompt": "A company wants to track and enforce limits on software license usage, such as Microsoft SQL Server licenses, across EC2 and on-premises servers. Which service fits?",
+   "choices": [
+    "AWS Service Catalog",
+    "AWS License Manager",
+    "AWS Marketplace",
+    "AWS Artifact"
+   ],
+   "answer": 1,
+   "explanation": "License Manager tracks license usage and enforces rules to help prevent overuse across AWS and on premises."
+  },
+  {
+   "id": "awsccp-540",
+   "domain": "tech",
+   "prompt": "A team runs containerized applications and wants a managed, Prometheus-compatible service to store and query container metrics. Which service fits?",
+   "choices": [
+    "Amazon OpenSearch Service",
+    "Amazon Managed Service for Prometheus",
+    "Amazon Managed Grafana",
+    "Amazon CloudWatch Logs Insights"
+   ],
+   "answer": 1,
+   "explanation": "Amazon Managed Service for Prometheus is a Prometheus-compatible monitoring service for container metrics. Managed Grafana is for visualizing data."
+  },
+  {
+   "id": "awsccp-541",
+   "domain": "tech",
+   "prompt": "A team wants managed dashboards that visualize metrics, logs and traces from multiple data sources using the open source Grafana tool. Which service fits?",
+   "choices": [
+    "Amazon Managed Service for Prometheus",
+    "Amazon OpenSearch Service",
+    "Amazon CloudWatch Logs Insights",
+    "Amazon Managed Grafana"
+   ],
+   "answer": 3,
+   "explanation": "Amazon Managed Grafana is a fully managed Grafana service for querying and visualizing operational data from many sources."
+  },
+  {
+   "id": "awsccp-542",
+   "domain": "tech",
+   "prompt": "An administrator wants to connect to a Linux EC2 instance over SSH from the browser-based console, using short-lived keys that AWS pushes to the instance. Which feature fits?",
+   "choices": [
+    "AWS Systems Manager Session Manager",
+    "AWS Client VPN",
+    "EC2 Instance Connect",
+    "Amazon WorkSpaces"
+   ],
+   "answer": 2,
+   "explanation": "EC2 Instance Connect pushes a one-time SSH public key to the instance for the session. Session Manager provides shell access through an agent rather than SSH keys."
+  },
+  {
+   "id": "awsccp-543",
+   "domain": "tech",
+   "prompt": "A company wants to run Kubernetes clusters in its own data center using the same Amazon EKS distribution and tooling. Which option fits?",
+   "choices": [
+    "AWS Fargate",
+    "Amazon EKS Anywhere",
+    "AWS App Runner",
+    "Amazon Elastic Container Registry"
+   ],
+   "answer": 1,
+   "explanation": "EKS Anywhere lets customers create and operate Kubernetes clusters on their own infrastructure using the Amazon EKS Distro."
+  },
+  {
+   "id": "awsccp-544",
+   "domain": "tech",
+   "prompt": "A company needs a managed Oracle database on AWS but must access the underlying operating system to install third-party agents. Which option fits?",
+   "choices": [
+    "Amazon RDS Custom",
+    "Standard Amazon RDS for Oracle",
+    "Amazon Aurora PostgreSQL",
+    "Amazon DynamoDB"
+   ],
+   "answer": 0,
+   "explanation": "RDS Custom for Oracle and SQL Server gives access to the database host OS while keeping managed features. Standard RDS does not allow OS access."
+  },
+  {
+   "id": "awsccp-545",
+   "domain": "tech",
+   "prompt": "A company wants to analyse streaming data in real time using Apache Flink applications, for example to calculate rolling averages. Which service fits?",
+   "choices": [
+    "Amazon Kinesis Video Streams",
+    "AWS Glue DataBrew",
+    "Amazon Redshift",
+    "Amazon Managed Service for Apache Flink"
+   ],
+   "answer": 3,
+   "explanation": "Amazon Managed Service for Apache Flink runs Flink applications to process and analyse streaming data in real time."
+  },
+  {
+   "id": "awsccp-546",
+   "domain": "tech",
+   "prompt": "Analysts run data warehouse queries for a few hours each week and want to avoid managing or paying for an always-on cluster. Which option fits?",
+   "choices": [
+    "Amazon Redshift Serverless",
+    "A provisioned Redshift cluster with Reserved Nodes",
+    "Amazon ElastiCache",
+    "Amazon RDS for MySQL"
+   ],
+   "answer": 0,
+   "explanation": "Redshift Serverless automatically provisions and scales data warehouse capacity and charges only for the capacity used while queries run."
+  },
+  {
+   "id": "awsccp-547",
+   "domain": "tech",
+   "prompt": "A company wants scripts that regularly test its website's endpoints and user journeys and raise an alert if they fail, even when no real users are visiting. Which feature fits?",
+   "choices": [
+    "The AWS Health Dashboard",
+    "Amazon CloudWatch Logs Insights",
+    "AWS CloudTrail Insights",
+    "Amazon CloudWatch Synthetics canaries"
+   ],
+   "answer": 3,
+   "explanation": "Synthetics canaries are configurable scripts that run on a schedule to monitor endpoints and APIs, finding problems before customers do."
+  },
+  {
+   "id": "awsccp-548",
+   "domain": "tech",
+   "prompt": "A satellite operator wants to control satellites and download their data without building its own ground antenna infrastructure. Which service fits?",
+   "choices": [
+    "Amazon Kinesis Data Streams",
+    "AWS Ground Station",
+    "AWS Wavelength",
+    "AWS Outposts"
+   ],
+   "answer": 1,
+   "explanation": "AWS Ground Station is a managed service to control satellite communications and process satellite data."
+  },
+  {
+   "id": "awsccp-549",
+   "domain": "tech",
+   "prompt": "Researchers want to experiment with quantum computing algorithms on different types of quantum hardware. Which service fits?",
+   "choices": [
+    "Amazon Braket",
+    "AWS ParallelCluster",
+    "AWS Batch",
+    "Amazon SageMaker"
+   ],
+   "answer": 0,
+   "explanation": "Amazon Braket is a managed quantum computing service with access to quantum hardware and simulators."
+  },
+  {
+   "id": "awsccp-550",
+   "domain": "tech",
+   "prompt": "A media company needs to convert video files into formats that play on many kinds of devices, as file-based jobs. Which service fits?",
+   "choices": [
+    "Amazon Kinesis Video Streams",
+    "AWS Elemental MediaConvert",
+    "Amazon Transcribe",
+    "Amazon CloudFront"
+   ],
+   "answer": 1,
+   "explanation": "MediaConvert is a file-based video transcoding service. Transcribe converts speech to text, and CloudFront delivers content."
+  },
+  {
+   "id": "awsccp-551",
+   "domain": "tech",
+   "prompt": "A delivery app needs maps, geocoding and route calculation built into the application. Which AWS service fits?",
+   "choices": [
+    "AWS Global Accelerator",
+    "AWS Ground Station",
+    "Amazon Location Service",
+    "Amazon Route 53"
+   ],
+   "answer": 2,
+   "explanation": "Amazon Location Service provides maps, places search, geocoding and routing. Route 53 is DNS, not mapping."
+  },
+  {
+   "id": "awsccp-552",
+   "domain": "tech",
+   "prompt": "A company wants a generative AI application built on Amazon Bedrock to answer questions using its own documents in Amazon S3, by retrieving relevant content at query time. Which feature fits?",
+   "choices": [
+    "Amazon Bedrock Knowledge Bases",
+    "Amazon Polly",
+    "Amazon SageMaker Ground Truth",
+    "Amazon Textract"
+   ],
+   "answer": 0,
+   "explanation": "Bedrock Knowledge Bases implements retrieval augmented generation (RAG), fetching relevant content from your data sources to ground model responses."
+  },
+  {
+   "id": "awsccp-553",
+   "domain": "tech",
+   "prompt": "A team wants to turn application features on or off for users with feature flags, without redeploying code. Which capability fits?",
+   "choices": [
+    "AWS CloudFormation",
+    "AWS AppConfig",
+    "AWS CodeDeploy",
+    "AWS Elastic Beanstalk"
+   ],
+   "answer": 1,
+   "explanation": "AWS AppConfig, part of Systems Manager, manages feature flags and dynamic configuration that applications can pick up without a new deployment."
+  },
+  {
+   "id": "awsccp-554",
+   "domain": "tech",
+   "prompt": "A company needs large numbers of images labeled by human workers to create training data for a machine learning model. Which service fits?",
+   "choices": [
+    "Amazon SageMaker Ground Truth",
+    "Amazon Rekognition",
+    "Amazon Augmented AI",
+    "Amazon Bedrock Knowledge Bases"
+   ],
+   "answer": 0,
+   "explanation": "SageMaker Ground Truth helps build labeled training datasets using human labelers and automated labeling. A2I reviews predictions from models already in use."
+  },
+  {
+   "id": "awsccp-555",
+   "domain": "tech",
+   "prompt": "Which of the following can be configured as an origin for an Amazon CloudFront distribution?",
+   "choices": [
+    "An AWS KMS key used for encryption",
+    "An Amazon EBS volume attached to an instance",
+    "An IAM role in the same AWS account",
+    "An Amazon S3 bucket or an Application Load Balancer"
+   ],
+   "answer": 3,
+   "explanation": "CloudFront origins include S3 buckets, load balancers, EC2 instances and other HTTP servers. EBS volumes are block storage attached to instances, not web origins."
+  },
+  {
+   "id": "awsccp-556",
+   "domain": "tech",
+   "prompt": "A team working in a newly launched Region cannot find a service it uses in other Regions. Which statement BEST explains this?",
+   "choices": [
+    "Services stay hidden until the account reaches a spending level",
+    "Each AWS account can use only five services in each Region",
+    "Not every AWS service and feature is available in every Region",
+    "Newer Regions offer services only through the AWS CLI"
+   ],
+   "answer": 2,
+   "explanation": "Service availability varies by Region, so check the Regional services list when choosing a Region."
+  },
+  {
+   "id": "awsccp-557",
+   "domain": "tech",
+   "prompt": "A healthcare company wants to extract medical conditions, medications and dosages from unstructured clinical notes. Which service fits?",
+   "choices": [
+    "Amazon Translate",
+    "Amazon Textract",
+    "Amazon Comprehend Medical",
+    "Amazon Transcribe"
+   ],
+   "answer": 2,
+   "explanation": "Comprehend Medical uses natural language processing to extract medical information from unstructured text. Textract extracts text and data from scanned documents."
+  },
+  {
+   "id": "awsccp-558",
+   "domain": "tech",
+   "prompt": "A multiplayer game uses UDP and needs fast failover between Regional endpoints and better performance for players worldwide. Which service fits BEST?",
+   "choices": [
+    "AWS Global Accelerator",
+    "Amazon S3 Transfer Acceleration",
+    "AWS Direct Connect",
+    "Amazon CloudFront"
+   ],
+   "answer": 0,
+   "explanation": "Global Accelerator routes TCP and UDP traffic over the AWS global network through static anycast IPs and fails over quickly between endpoints. CloudFront is for HTTP content."
+  },
+  {
+   "id": "awsccp-559",
+   "domain": "tech",
+   "prompt": "An administrator wants to deploy the same AWS CloudFormation template to many AWS accounts and Regions in a single operation. Which feature fits?",
+   "choices": [
+    "CloudFormation StackSets",
+    "CloudFormation change sets",
+    "CloudFormation drift detection",
+    "CloudFormation nested stacks"
+   ],
+   "answer": 0,
+   "explanation": "StackSets create, update or delete stacks across multiple accounts and Regions in one operation. Change sets preview changes to a single stack."
+  },
+  {
+   "id": "awsccp-560",
+   "domain": "tech",
+   "prompt": "What is the maximum number of Aurora Replicas that an Amazon Aurora DB cluster can have?",
+   "choices": [
+    "15",
+    "31",
+    "3",
+    "5"
+   ],
+   "answer": 0,
+   "explanation": "An Aurora DB cluster can have up to 15 Aurora Replicas that share the cluster storage volume, in addition to the writer instance."
+  },
+  {
+   "id": "awsccp-561",
+   "domain": "billing",
+   "prompt": "Which AWS feature lets a company create recurring exports of its cost and usage data, including the CUR 2.0 table, to an Amazon S3 bucket?",
+   "choices": [
+    "AWS Cost Explorer",
+    "AWS Pricing Calculator",
+    "AWS Data Exports",
+    "AWS Budgets"
+   ],
+   "answer": 2,
+   "explanation": "AWS Data Exports delivers billing and cost management data, such as CUR 2.0, to S3 on a recurring basis for analysis."
+  },
+  {
+   "id": "awsccp-562",
+   "domain": "billing",
+   "prompt": "A data science team runs steady Amazon SageMaker training and inference workloads every day. Which Savings Plan type applies to this usage?",
+   "choices": [
+    "SageMaker Savings Plans",
+    "Compute Savings Plans",
+    "Standard Reserved Instances",
+    "EC2 Instance Savings Plans"
+   ],
+   "answer": 0,
+   "explanation": "SageMaker Savings Plans apply to eligible SageMaker usage. Compute Savings Plans cover EC2, Fargate and Lambda, not SageMaker."
+  },
+  {
+   "id": "awsccp-563",
+   "domain": "billing",
+   "prompt": "A company will run the same Amazon RDS for PostgreSQL DB instance continuously for three years. Which pricing option gives a significant discount in exchange for a one- or three-year commitment?",
+   "choices": [
+    "Reserved DB instances",
+    "Dedicated Hosts",
+    "Spot DB instances",
+    "On-Demand DB instances"
+   ],
+   "answer": 0,
+   "explanation": "Amazon RDS Reserved Instances give a discount over On-Demand pricing for a one- or three-year term. RDS has no Spot option."
+  },
+  {
+   "id": "awsccp-564",
+   "domain": "billing",
+   "prompt": "Where in the AWS Billing and Cost Management console can a user see the current month's charges broken down by service and Region, and download invoices?",
+   "choices": [
+    "AWS Cost Anomaly Detection",
+    "AWS Budgets",
+    "AWS Trusted Advisor",
+    "The Bills page"
+   ],
+   "answer": 3,
+   "explanation": "The Bills page shows charges by service and Region for each billing period and provides invoices."
+  },
+  {
+   "id": "awsccp-565",
+   "domain": "billing",
+   "prompt": "Which AWS Trusted Advisor category includes checks such as high-utilization Amazon EC2 instances and CloudFront content delivery optimization?",
+   "choices": [
+    "Fault tolerance",
+    "Cost optimization",
+    "Security",
+    "Performance"
+   ],
+   "answer": 3,
+   "explanation": "The Performance category checks for issues such as overused EC2 instances and CloudFront configuration that could be improved."
+  },
+  {
+   "id": "awsccp-566",
+   "domain": "billing",
+   "prompt": "How are purchases of third-party software from AWS Marketplace typically billed?",
+   "choices": [
+    "The charges appear on the customer's AWS bill",
+    "Each software vendor mails a separate paper invoice",
+    "They are billed only through the AWS Partner Network",
+    "They must be prepaid using AWS Activate credits"
+   ],
+   "answer": 0,
+   "explanation": "AWS Marketplace software is billed through the customer's AWS account, so it appears on the regular AWS bill."
+  },
+  {
+   "id": "awsccp-567",
+   "domain": "billing",
+   "prompt": "A new cloud engineer wants self-paced digital courses, hands-on labs and certification exam preparation from AWS. Which resource fits BEST?",
+   "choices": [
+    "AWS Trusted Advisor",
+    "AWS re:Post",
+    "AWS Professional Services",
+    "AWS Skill Builder"
+   ],
+   "answer": 3,
+   "explanation": "AWS Skill Builder is AWS's online learning center with digital courses, labs and exam preparation. re:Post is a community question and answer site."
+  },
+  {
+   "id": "awsccp-568",
+   "domain": "billing",
+   "prompt": "A company wants AWS to operate its AWS infrastructure on its behalf, including patching, monitoring, backups and incident management. Which offering fits?",
+   "choices": [
+    "AWS Trusted Advisor",
+    "AWS Managed Services (AMS)",
+    "AWS Professional Services",
+    "AWS Activate"
+   ],
+   "answer": 1,
+   "explanation": "AWS Managed Services provides ongoing operation of AWS infrastructure. AWS Professional Services is a consulting team for specific projects and outcomes."
+  },
+  {
+   "id": "awsccp-569",
+   "domain": "billing",
+   "prompt": "A company provisions a 500 GiB gp3 EBS volume but stores only 50 GiB of data on it. How is it charged for storage?",
+   "choices": [
+    "For only the 50 GiB of data that is stored",
+    "For 50 GiB plus a fixed monthly fee per volume",
+    "Only while it is attached to a running instance",
+    "For the full 500 GiB provisioned, per GB-month"
+   ],
+   "answer": 3,
+   "explanation": "EBS volumes are billed on provisioned size per GB-month, whether or not the space is used or the volume is attached."
+  },
+  {
+   "id": "awsccp-570",
+   "domain": "billing",
+   "prompt": "A developer stops an EBS-backed EC2 instance for the weekend. Which charge continues while the instance is stopped?",
+   "choices": [
+    "Instance hours billed at half the normal rate",
+    "Outbound data transfer for the stopped instance",
+    "On-Demand compute hours for the instance",
+    "Storage for the attached EBS volumes"
+   ],
+   "answer": 3,
+   "explanation": "A stopped instance does not incur compute charges, but its EBS volumes are still billed for storage."
+  },
+  {
+   "id": "awsccp-571",
+   "domain": "billing",
+   "prompt": "Which statement about public IPv4 address pricing on AWS is correct?",
+   "choices": [
+    "Public IPv4 addresses are free while attached to running instances",
+    "Elastic IP addresses are always free of charge",
+    "Only IPv6 addresses incur hourly charges on AWS",
+    "AWS charges hourly for public IPv4 addresses, whether in use or idle"
+   ],
+   "answer": 3,
+   "explanation": "Since February 2024, AWS charges for all public IPv4 addresses, including Elastic IPs and auto-assigned addresses, whether attached or not."
+  },
+  {
+   "id": "awsccp-572",
+   "domain": "billing",
+   "prompt": "Is there an additional charge for using consolidated billing in AWS Organizations?",
+   "choices": [
+    "Yes, a monthly fee is charged for each member account",
+    "No, consolidated billing is provided at no additional cost",
+    "Yes, a small percentage of total spend is added",
+    "Only for organizations with more than ten accounts"
+   ],
+   "answer": 1,
+   "explanation": "AWS Organizations and its consolidated billing feature are free; you pay only for the resources that accounts use."
   }
  ]
 }

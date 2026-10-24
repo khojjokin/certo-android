@@ -6380,6 +6380,1306 @@
    ],
    "answer": 1,
    "explanation": "Hyper-V is not included in Windows Home editions; it requires Pro, Enterprise or Education plus hardware virtualization support."
+  },
+  {
+   "id": "aplus-480",
+   "domain": "mobile",
+   "prompt": "A user wants to add more RAM to a thin ultrabook, but the specification sheet says it has 16 GB of LPDDR5 soldered to the motherboard. What should the technician tell the user?",
+   "choices": [
+    "Enable virtual RAM in the UEFI to double capacity",
+    "Replace the soldered chips with larger LPDDR5 chips",
+    "It cannot be upgraded; buy a model with more RAM",
+    "Install a DDR5 SO-DIMM in the empty slot"
+   ],
+   "answer": 2,
+   "explanation": "Soldered LPDDR memory has no slots, so capacity is fixed at purchase; the only practical option is a device configured with more RAM."
+  },
+  {
+   "id": "aplus-481",
+   "domain": "mobile",
+   "prompt": "A laptop's specification lists an M.2 2280 slot. What does the number 2280 describe?",
+   "choices": [
+    "The drive holds up to 2,280 GB",
+    "The module is 22 mm wide and 80 mm long",
+    "The slot uses PCIe generation 2 with 280 pins",
+    "The drive supports 2,280 MB/s transfers"
+   ],
+   "answer": 1,
+   "explanation": "M.2 size codes give width and length in millimetres, so 2280 means 22 mm by 80 mm; it says nothing about speed or capacity."
+  },
+  {
+   "id": "aplus-482",
+   "domain": "mobile",
+   "prompt": "A user with an iPhone 13 lost the charging cable that came with the phone. Which cable connector is needed on the phone end?",
+   "choices": [
+    "USB-C",
+    "Mini-USB",
+    "Micro-USB",
+    "Lightning"
+   ],
+   "answer": 3,
+   "explanation": "iPhone models before the iPhone 15 use Apple's Lightning connector; Apple moved to USB-C starting with the iPhone 15."
+  },
+  {
+   "id": "aplus-483",
+   "domain": "mobile",
+   "prompt": "Government contractors must sign in to their laptops by inserting an ID badge that contains a certificate chip. Which accessory must each laptop have?",
+   "choices": [
+    "A fingerprint reader",
+    "A smart card reader",
+    "A magnetic stripe reader",
+    "An NFC tag writer"
+   ],
+   "answer": 1,
+   "explanation": "A smart card reader reads the certificate stored on the chip of a badge such as a CAC or PIV card; NFC and magnetic stripe readers do not perform this certificate-based login."
+  },
+  {
+   "id": "aplus-484",
+   "domain": "mobile",
+   "prompt": "A new employee's company uses Google Workspace. They want their work email, calendar and contacts on their Android phone. What is the BEST way to set this up?",
+   "choices": [
+    "Export contacts to a CSV file and copy it to the phone",
+    "Add their Google Workspace account in the phone's account settings",
+    "Configure POP3 so mail is downloaded and then deleted from the server",
+    "Forward all work email to a personal address"
+   ],
+   "answer": 1,
+   "explanation": "Adding the Workspace account lets the phone synchronize mail, calendar and contacts with the server; POP3 would only download mail and would not sync calendars or contacts."
+  },
+  {
+   "id": "aplus-485",
+   "domain": "mobile",
+   "prompt": "A technician is ordering a replacement battery for a three-year-old business laptop. What BEST ensures the new battery is compatible?",
+   "choices": [
+    "Choose the battery with the highest mAh rating available",
+    "Buy any battery that has the same physical length",
+    "Match the manufacturer's part number and voltage rating",
+    "Use the cheapest universal battery with an adapter"
+   ],
+   "answer": 2,
+   "explanation": "Laptop batteries are model-specific, so matching the part number and voltage ensures correct fit, connector and charging behaviour; a higher capacity of the wrong type may not fit or charge safely."
+  },
+  {
+   "id": "aplus-486",
+   "domain": "mobile",
+   "prompt": "Besides the screen panel itself, which components are commonly housed in a laptop's display lid?",
+   "choices": [
+    "CPU, RAM and the main cooling fan",
+    "Wi-Fi antennas, webcam and microphone",
+    "Battery, SSD and stereo speakers",
+    "Keyboard controller and touchpad board"
+   ],
+   "answer": 1,
+   "explanation": "Laptop lids normally contain the Wi-Fi antenna leads, the webcam and often microphones, which is why they must be reconnected after a screen replacement."
+  },
+  {
+   "id": "aplus-487",
+   "domain": "net",
+   "prompt": "Which ports does SNMP use for manager polling requests and for agent trap messages?",
+   "choices": [
+    "TCP 20 and 21",
+    "UDP 67 and 68",
+    "UDP 161 and 162",
+    "TCP 389 and 636"
+   ],
+   "answer": 2,
+   "explanation": "SNMP agents listen for queries on UDP 161, and managers receive unsolicited trap notifications on UDP 162."
+  },
+  {
+   "id": "aplus-488",
+   "domain": "net",
+   "prompt": "An office mail server must relay outgoing messages to other mail servers on the internet. Which port is used for server-to-server SMTP delivery?",
+   "choices": [
+    "3389",
+    "110",
+    "143",
+    "25"
+   ],
+   "answer": 3,
+   "explanation": "SMTP between mail servers uses TCP 25; 110 and 143 are POP3 and IMAP for mail retrieval, and 3389 is RDP."
+  },
+  {
+   "id": "aplus-489",
+   "domain": "net",
+   "prompt": "A homeowner wants smart locks and motion sensors that form their own low-power mesh network, separate from the home Wi-Fi. Which technology BEST fits?",
+   "choices": [
+    "RFID",
+    "LTE",
+    "Zigbee",
+    "NFC"
+   ],
+   "answer": 2,
+   "explanation": "Zigbee is a low-power wireless mesh protocol designed for home automation devices; NFC and RFID work only at short range and LTE is a cellular service."
+  },
+  {
+   "id": "aplus-490",
+   "domain": "net",
+   "prompt": "A company wants all employee web requests to pass through a server that caches popular content and can block certain websites. Which server should be deployed?",
+   "choices": [
+    "Syslog server",
+    "Proxy server",
+    "File server",
+    "DHCP server"
+   ],
+   "answer": 1,
+   "explanation": "A proxy server makes requests on behalf of clients, which lets it cache content and filter which sites users may visit."
+  },
+  {
+   "id": "aplus-491",
+   "domain": "net",
+   "prompt": "An online store runs its website on four identical web servers and wants incoming requests spread evenly across them. Which device should be used?",
+   "choices": [
+    "Network tap",
+    "Cable modem",
+    "Load balancer",
+    "Unmanaged switch"
+   ],
+   "answer": 2,
+   "explanation": "A load balancer distributes client requests among multiple servers to share the workload and improve availability."
+  },
+  {
+   "id": "aplus-492",
+   "domain": "net",
+   "prompt": "A small business wants one appliance that combines a firewall, intrusion prevention, antivirus scanning and content filtering. Which type of device is this?",
+   "choices": [
+    "Wireless LAN controller",
+    "Layer 3 managed switch",
+    "Next-hop default gateway",
+    "Unified threat management"
+   ],
+   "answer": 3,
+   "explanation": "A UTM appliance bundles several security functions such as firewall, IPS, malware scanning and filtering into one device."
+  },
+  {
+   "id": "aplus-493",
+   "domain": "net",
+   "prompt": "A domain owner wants receiving mail servers to know whether to quarantine or reject messages that fail SPF and DKIM checks, and to send reports. Which DNS record should be published?",
+   "choices": [
+    "A DMARC TXT record",
+    "An MX record",
+    "A PTR record",
+    "A CNAME alias record"
+   ],
+   "answer": 0,
+   "explanation": "DMARC is published as a TXT record and tells receivers how to handle mail that fails SPF or DKIM and where to send reports; MX only directs incoming mail."
+  },
+  {
+   "id": "aplus-494",
+   "domain": "net",
+   "prompt": "A DHCP scope hands out 192.168.10.10 through 192.168.10.200, but printers already use static addresses from .50 to .60. What should the administrator configure?",
+   "choices": [
+    "An exclusion range for .50 to .60",
+    "A shorter DNS cache lifetime",
+    "A second default gateway option",
+    "A larger subnet mask on the scope"
+   ],
+   "answer": 0,
+   "explanation": "An exclusion range stops the DHCP server from leasing addresses inside the scope that are already assigned statically, preventing IP conflicts."
+  },
+  {
+   "id": "aplus-495",
+   "domain": "net",
+   "prompt": "A rural business gets internet from a local provider that beams service from a nearby tower to a small antenna on its roof. Which connection type is this?",
+   "choices": [
+    "DSL over phone lines",
+    "Wireless ISP (WISP)",
+    "Geostationary satellite",
+    "Cable broadband"
+   ],
+   "answer": 1,
+   "explanation": "A WISP delivers internet using fixed wireless links from towers to customer antennas; DSL and cable use phone and coaxial lines."
+  },
+  {
+   "id": "aplus-496",
+   "domain": "net",
+   "prompt": "A technician needs to passively copy all traffic on a network link to a monitoring device without interrupting the connection. Which tool should be installed inline?",
+   "choices": [
+    "Network tap",
+    "Toner probe",
+    "Loopback plug",
+    "Punchdown tool"
+   ],
+   "answer": 0,
+   "explanation": "A network tap sits on a link and copies traffic to a monitoring port; a toner probe traces cables and a loopback plug tests ports."
+  },
+  {
+   "id": "aplus-497",
+   "domain": "net",
+   "prompt": "A water treatment plant uses networked systems to monitor and control pumps and valves at remote sites. What are these systems called?",
+   "choices": [
+    "SCADA systems",
+    "VDI systems",
+    "NAS systems",
+    "Mesh systems"
+   ],
+   "answer": 0,
+   "explanation": "Supervisory control and data acquisition (SCADA) systems monitor and control industrial equipment and often run legacy software that needs extra protection."
+  },
+  {
+   "id": "aplus-498",
+   "domain": "virt",
+   "prompt": "A developer needs to run software compiled for a different CPU architecture than the host computer's processor. Which technology is required?",
+   "choices": [
+    "An emulator",
+    "A container",
+    "A Type 1 hypervisor",
+    "A VPN client"
+   ],
+   "answer": 0,
+   "explanation": "Hypervisors and containers run code on the host's own CPU architecture, while an emulator translates instructions for a different architecture."
+  },
+  {
+   "id": "aplus-499",
+   "domain": "virt",
+   "prompt": "A VM's virtual disk was created as dynamically expanding with a 500 GB maximum. Months later the host's physical drive unexpectedly runs out of space. What is the MOST likely reason?",
+   "choices": [
+    "The VM switched to bridged networking",
+    "The virtual disk grew as data was added inside the VM",
+    "Snapshots were disabled on the VM",
+    "The hypervisor converted the disk to a fixed-size disk"
+   ],
+   "answer": 1,
+   "explanation": "A dynamically expanding disk starts small and grows as the guest writes data, so the host can fill up if its free space is less than the maximum size."
+  },
+  {
+   "id": "aplus-500",
+   "domain": "virt",
+   "prompt": "A company runs its servers on IaaS virtual machines from a cloud provider. Who is responsible for patching the guest operating systems?",
+   "choices": [
+    "The cloud provider",
+    "The hypervisor vendor",
+    "The customer",
+    "The internet service provider"
+   ],
+   "answer": 2,
+   "explanation": "In IaaS the provider manages the physical hardware and virtualization layer, but the customer manages the operating systems and applications inside the VMs."
+  },
+  {
+   "id": "aplus-501",
+   "domain": "virt",
+   "prompt": "A technician says a group of Windows VMs does not need antivirus or patching because they run inside a hypervisor. What is the BEST response?",
+   "choices": [
+    "Only the host needs protection because it isolates the guests",
+    "Each VM needs the same updates and protection as a physical PC",
+    "Snapshots replace the need for security updates",
+    "VMs cannot be infected because they have no physical NIC"
+   ],
+   "answer": 1,
+   "explanation": "A guest OS is exposed to the same malware and vulnerabilities as a physical system, so it must be patched and protected individually."
+  },
+  {
+   "id": "aplus-502",
+   "domain": "virt",
+   "prompt": "A Mac user must run a Windows-only accounting application without giving up macOS. What is the BEST solution?",
+   "choices": [
+    "Run Windows in a Type 2 hypervisor on the Mac",
+    "Change the Mac's startup disk file system to NTFS",
+    "Open the program in a Linux container",
+    "Install a Type 1 hypervisor and wipe macOS"
+   ],
+   "answer": 0,
+   "explanation": "A Type 2 hypervisor runs as an application on macOS and can host a Windows VM for the accounting app while the user keeps macOS."
+  },
+  {
+   "id": "aplus-503",
+   "domain": "virt",
+   "prompt": "Several VMs share one host. Whenever one VM runs a large nightly database job, the others become very slow. What is the MOST likely cause?",
+   "choices": [
+    "Contention for shared host resources",
+    "The VMs are missing guest display drivers",
+    "The VMs are using host-only networking",
+    "The hypervisor licence has expired"
+   ],
+   "answer": 0,
+   "explanation": "All VMs on a host draw from the same physical CPU, memory and storage, so one heavy workload can starve the others of resources."
+  },
+  {
+   "id": "aplus-504",
+   "domain": "hw",
+   "prompt": "Which is the maximum data rate of USB 2.0 Hi-Speed?",
+   "choices": [
+    "480 Mbps",
+    "10 Gbps",
+    "5 Gbps",
+    "12 Mbps"
+   ],
+   "answer": 0,
+   "explanation": "USB 2.0 Hi-Speed tops out at 480 Mbps; 12 Mbps is USB 1.1 Full Speed and 5 Gbps begins with USB 3.x."
+  },
+  {
+   "id": "aplus-505",
+   "domain": "hw",
+   "prompt": "A user wants a single cable from a laptop to a dock that drives two 4K monitors and a fast external SSD. The laptop's USB-C port has a lightning bolt icon. Which interface does this port provide?",
+   "choices": [
+    "USB 2.0, up to 480 Mbps",
+    "Thunderbolt, up to 40 Gbps",
+    "eSATA, up to 6 Gbps",
+    "USB 3.2 Gen 1, up to 5 Gbps"
+   ],
+   "answer": 1,
+   "explanation": "The lightning bolt icon marks a Thunderbolt port, which uses the USB-C connector and provides up to 40 Gbps for displays, storage and docking."
+  },
+  {
+   "id": "aplus-506",
+   "domain": "hw",
+   "prompt": "Which fiber optic connector is small form factor, uses a push-and-latch design, and is common on SFP transceiver modules?",
+   "choices": [
+    "F-type",
+    "ST",
+    "RJ45",
+    "LC"
+   ],
+   "answer": 3,
+   "explanation": "The LC (Lucent connector) is a small latching fiber connector widely used on SFP modules; ST uses a bayonet twist lock and F-type is for coaxial cable."
+  },
+  {
+   "id": "aplus-507",
+   "domain": "hw",
+   "prompt": "A technician needs to connect a DSL modem to a telephone wall jack. Which connector does the cable use?",
+   "choices": [
+    "BNC",
+    "RJ45",
+    "RJ11",
+    "DB-9"
+   ],
+   "answer": 2,
+   "explanation": "Telephone and DSL lines use the smaller RJ11 connector; RJ45 is for Ethernet."
+  },
+  {
+   "id": "aplus-508",
+   "domain": "hw",
+   "prompt": "A file server must keep running even if one of its power supplies fails. Which feature should be specified when purchasing it?",
+   "choices": [
+    "A modular power supply",
+    "An 80 Plus Bronze power supply",
+    "A single higher-wattage power supply unit",
+    "Redundant hot-swappable power supplies"
+   ],
+   "answer": 3,
+   "explanation": "Redundant power supplies share the load so the server keeps running if one fails, and hot-swap lets the failed unit be replaced without shutting down."
+  },
+  {
+   "id": "aplus-509",
+   "domain": "hw",
+   "prompt": "An older desktop with a manual input-voltage switch on its power supply is being shipped from the United States to an office in the United Kingdom. What should be done before plugging it in?",
+   "choices": [
+    "Remove the 24-pin motherboard connector",
+    "Set the voltage switch to 230 V",
+    "Set the voltage switch to 115 V",
+    "Install a higher-wattage power supply"
+   ],
+   "answer": 1,
+   "explanation": "UK mains is about 230 V, so a manual-switch supply must be set to 230 V; leaving it on 115 V can destroy the power supply."
+  },
+  {
+   "id": "aplus-510",
+   "domain": "hw",
+   "prompt": "A laser printer's display shows a message that it has reached 200,000 pages and needs scheduled service. What should the technician install?",
+   "choices": [
+    "A maintenance kit",
+    "A new network card",
+    "A duplexing assembly",
+    "A new ink cartridge"
+   ],
+   "answer": 0,
+   "explanation": "Laser printer maintenance kits replace wear parts such as the fuser and rollers at the page count set by the manufacturer."
+  },
+  {
+   "id": "aplus-511",
+   "domain": "hw",
+   "prompt": "A graphic design team needs printed output that matches the on-screen layout exactly on complex, graphics-heavy pages. Which printer language driver is generally preferred?",
+   "choices": [
+    "ASCII text",
+    "ESC/POS",
+    "PCL",
+    "PostScript"
+   ],
+   "answer": 3,
+   "explanation": "PostScript is device-independent and handles complex graphics and fonts accurately, which is why design teams usually prefer it; PCL is optimized for fast, general office printing."
+  },
+  {
+   "id": "aplus-512",
+   "domain": "hw",
+   "prompt": "A warehouse prints shipping manifests on continuous paper with perforated holes along both edges. Which feed mechanism does the impact printer use?",
+   "choices": [
+    "Friction feed with pickup rollers",
+    "Duplexing assembly",
+    "Sheet-fed automatic document feeder",
+    "Tractor feed"
+   ],
+   "answer": 3,
+   "explanation": "Tractor feed uses sprocket wheels that engage the holes on continuous-form paper, which is typical of impact printers."
+  },
+  {
+   "id": "aplus-513",
+   "domain": "hw",
+   "prompt": "A dental lab needs a 3D printer that cures liquid material layer by layer with ultraviolet light to create very fine detail. Which type should it buy?",
+   "choices": [
+    "Inkjet printer",
+    "Filament printer",
+    "Thermal printer",
+    "Resin printer"
+   ],
+   "answer": 3,
+   "explanation": "Resin (SLA-type) 3D printers cure liquid resin with UV light and give finer detail than filament printers, which extrude melted plastic."
+  },
+  {
+   "id": "aplus-514",
+   "domain": "hw",
+   "prompt": "A company needs dedicated tamper-resistant hardware to generate and store cryptographic keys for many servers. Which device should it use?",
+   "choices": [
+    "A RAID 1 storage array",
+    "A USB flash drive in a locked drawer",
+    "Hardware security module (HSM)",
+    "Trusted Platform Module on each desktop"
+   ],
+   "answer": 2,
+   "explanation": "An HSM is a dedicated, tamper-resistant device for generating and protecting keys for multiple systems; a TPM protects keys for the single computer it is built into."
+  },
+  {
+   "id": "aplus-515",
+   "domain": "hw",
+   "prompt": "A home studio user needs optical S/PDIF output and better audio quality than the motherboard's onboard audio provides. Which component should be installed?",
+   "choices": [
+    "A dedicated sound card",
+    "An extra SATA controller",
+    "A capture card",
+    "A second network card"
+   ],
+   "answer": 0,
+   "explanation": "A sound card adds higher-quality audio processing and extra outputs such as optical S/PDIF; a capture card records incoming video."
+  },
+  {
+   "id": "aplus-516",
+   "domain": "hwts",
+   "prompt": "Every page from a laser printer has a sharp vertical black line in the same position. Which component is the MOST likely cause?",
+   "choices": [
+    "A worn pickup roller",
+    "An incorrect paper size setting",
+    "A scratched or dirty imaging drum",
+    "A fuser that is not hot enough"
+   ],
+   "answer": 2,
+   "explanation": "A scratch or debris on the drum attracts toner at the same spot on every rotation, producing a vertical line; a cold fuser instead lets toner rub off."
+  },
+  {
+   "id": "aplus-517",
+   "domain": "hwts",
+   "prompt": "Pages from a laser printer have random small black specks scattered across them. What should the technician do?",
+   "choices": [
+    "Clean stray toner inside the printer",
+    "Reinstall the print driver on the PC",
+    "Replace the printer's network cable",
+    "Lower the print resolution to 300 dpi"
+   ],
+   "answer": 0,
+   "explanation": "Speckling usually comes from loose toner inside the printer or a leaking cartridge, so cleaning with a toner vacuum and checking the cartridge is the fix."
+  },
+  {
+   "id": "aplus-518",
+   "domain": "hwts",
+   "prompt": "A printer makes a loud grinding noise each time it tries to feed paper. What should the technician check FIRST?",
+   "choices": [
+    "Whether duplex mode is enabled",
+    "Obstructions or damaged feed gears",
+    "Whether the print spooler is running",
+    "Whether the toner level is low"
+   ],
+   "answer": 1,
+   "explanation": "A grinding noise points to a mechanical problem, such as a foreign object, a jammed sheet or stripped gears in the feed path."
+  },
+  {
+   "id": "aplus-519",
+   "domain": "hwts",
+   "prompt": "A user's portrait documents keep printing sideways on the page from one application only. What should the technician check?",
+   "choices": [
+    "The app's page orientation setting",
+    "The network printer's IP address",
+    "The paper tray's separation pad",
+    "The printer's fuser temperature"
+   ],
+   "answer": 0,
+   "explanation": "Since only one application is affected, its page setup or print dialog is likely set to landscape; hardware faults would affect every application."
+  },
+  {
+   "id": "aplus-520",
+   "domain": "hwts",
+   "prompt": "A multifunction copier stopped stapling finished documents, although copies still come out correctly. What should be checked FIRST?",
+   "choices": [
+    "The stapler cartridge",
+    "The paper's humidity",
+    "The copier's DHCP lease",
+    "The imaging drum"
+   ],
+   "answer": 0,
+   "explanation": "Stapling is handled by the finisher, so an empty or jammed staple cartridge is the most likely cause when copying works normally."
+  },
+  {
+   "id": "aplus-521",
+   "domain": "hwts",
+   "prompt": "A switch log shows that the port connected to a user's PC goes up and down every few seconds, and the user's connection keeps dropping. What is this problem called?",
+   "choices": [
+    "DNS poisoning",
+    "Broadcast storm",
+    "Channel overlap",
+    "Port flapping"
+   ],
+   "answer": 3,
+   "explanation": "Port flapping is a link repeatedly going up and down, usually caused by a faulty cable, connector or NIC."
+  },
+  {
+   "id": "aplus-522",
+   "domain": "hwts",
+   "prompt": "A PC is running and its HDMI cable is connected to the graphics card, but the monitor shows a 'No input' message. What should be checked?",
+   "choices": [
+    "Whether the CMOS battery is dead",
+    "Whether the network cable is unplugged",
+    "Whether the hard drive is failing",
+    "The monitor's selected input source"
+   ],
+   "answer": 3,
+   "explanation": "Monitors with several inputs show 'No input' when set to a different source, so selecting the correct input is the quickest check."
+  },
+  {
+   "id": "aplus-523",
+   "domain": "hwts",
+   "prompt": "A PC is connected to a TV by HDMI. The picture works, but sound still plays from the PC's small speakers. What is the BEST fix?",
+   "choices": [
+    "Make HDMI the default playback device",
+    "Update the network adapter driver",
+    "Lower the display resolution to 720p",
+    "Replace the HDMI cable with a VGA cable"
+   ],
+   "answer": 0,
+   "explanation": "HDMI carries audio, but Windows must be told to send sound to the HDMI output by making it the default playback device; VGA carries no audio."
+  },
+  {
+   "id": "aplus-524",
+   "domain": "hwts",
+   "prompt": "A new monitor has one pixel that always stays black no matter what is displayed. What is this called?",
+   "choices": [
+    "A stuck pixel",
+    "Screen burn-in",
+    "A dead pixel",
+    "Backlight bleed"
+   ],
+   "answer": 2,
+   "explanation": "A dead pixel never lights at all, while a stuck pixel stays lit in one color."
+  },
+  {
+   "id": "aplus-525",
+   "domain": "hwts",
+   "prompt": "A storage server's hot-swap drive bay shows an amber status LED, while the other bays show green. What does this MOST likely indicate?",
+   "choices": [
+    "That drive is the fastest in the array",
+    "That drive is being encrypted",
+    "That drive has failed or may fail soon",
+    "That drive is receiving extra power"
+   ],
+   "answer": 2,
+   "explanation": "Drive bay LEDs usually show green for normal activity and amber for a fault or predicted failure, marking the drive to replace."
+  },
+  {
+   "id": "aplus-526",
+   "domain": "hwts",
+   "prompt": "Users of a database server complain about slow queries. Monitoring shows long read and write times and low IOPS on its mechanical hard drives. What is the BEST upgrade?",
+   "choices": [
+    "Add a second network card",
+    "Replace the hard drives with SSDs",
+    "Increase the screen saver timeout",
+    "Install a faster graphics card"
+   ],
+   "answer": 1,
+   "explanation": "SSDs deliver far more IOPS and lower latency than mechanical drives, which directly addresses slow storage performance."
+  },
+  {
+   "id": "aplus-527",
+   "domain": "hwts",
+   "prompt": "A laptop shows a 'slow charger' warning and its battery drains during heavy use while plugged into a small USB-C phone charger. What is the MOST likely cause?",
+   "choices": [
+    "The charger's wattage is too low",
+    "The USB-C port is in data-only mode",
+    "The display brightness is too high",
+    "The battery firmware needs a reset"
+   ],
+   "answer": 0,
+   "explanation": "Laptops need far more power than phones, so a low-wattage charger cannot keep up with demand; the fix is a charger that meets the laptop's rated wattage."
+  },
+  {
+   "id": "aplus-528",
+   "domain": "hwts",
+   "prompt": "A technician tested a theory and confirmed what caused a problem. According to the CompTIA troubleshooting methodology, what is the NEXT step?",
+   "choices": [
+    "Document findings, actions and outcomes",
+    "Question the user and identify recent changes",
+    "Verify full system functionality and implement preventive measures",
+    "Establish a plan of action and implement the solution"
+   ],
+   "answer": 3,
+   "explanation": "After the theory is confirmed, the technician plans and implements the fix; verifying functionality and documenting come afterward."
+  },
+  {
+   "id": "aplus-529",
+   "domain": "hwts",
+   "prompt": "A desktop that worked yesterday no longer gets an IP address, and the technician finds the NIC port on the back of the PC has a bent and broken pin. What is the BEST fix?",
+   "choices": [
+    "Reset the switch to factory defaults",
+    "Reinstall the operating system",
+    "Install a replacement network adapter",
+    "Replace the CMOS battery"
+   ],
+   "answer": 2,
+   "explanation": "A physically damaged port cannot make a reliable connection, so the adapter must be replaced, for example with an add-in or USB NIC."
+  },
+  {
+   "id": "aplus-530",
+   "domain": "os",
+   "prompt": "A user reports that a cloud application is slow, and the technician wants hop-by-hop statistics showing packet loss at each router along the path over time. Which Windows command should be used?",
+   "choices": [
+    "hostname",
+    "ipconfig",
+    "nbtstat",
+    "pathping"
+   ],
+   "answer": 3,
+   "explanation": "pathping combines ping and tracert, sending packets to each hop over a period and reporting the loss and latency at every router."
+  },
+  {
+   "id": "aplus-531",
+   "domain": "os",
+   "prompt": "At a Windows command prompt, which command creates a new folder named Reports in the current directory?",
+   "choices": [
+    "rd Reports",
+    "cd Reports",
+    "md Reports",
+    "dir Reports"
+   ],
+   "answer": 2,
+   "explanation": "md (or mkdir) makes a directory; cd changes into a directory, rd removes one and dir lists contents."
+  },
+  {
+   "id": "aplus-532",
+   "domain": "os",
+   "prompt": "A user opened an email attachment named invoice.pdf that turned out to be a program. The technician wants users to see the real file type in File Explorer. Which setting should be changed?",
+   "choices": [
+    "Enable compressed folder previews",
+    "Change the default app for PDF files",
+    "Show extensions for known file types",
+    "Show hidden and protected system files"
+   ],
+   "answer": 2,
+   "explanation": "Windows hides known extensions by default, so a file named invoice.pdf.exe appears as invoice.pdf; showing extensions reveals the true type."
+  },
+  {
+   "id": "aplus-533",
+   "domain": "os",
+   "prompt": "A USB barcode scanner on a desktop stops responding after a few minutes of inactivity and works again after being unplugged. Which Power Options setting should the technician disable?",
+   "choices": [
+    "Hibernate after",
+    "Fast startup",
+    "Turn off display after",
+    "USB selective suspend"
+   ],
+   "answer": 3,
+   "explanation": "USB selective suspend lets Windows power down idle USB devices, which can cause some devices to stop responding until reconnected."
+  },
+  {
+   "id": "aplus-534",
+   "domain": "os",
+   "prompt": "Which Windows Power Options feature saves the kernel session to disk at shutdown so the PC boots faster the next time?",
+   "choices": [
+    "Fast startup",
+    "USB selective suspend",
+    "Screen saver",
+    "Sleep"
+   ],
+   "answer": 0,
+   "explanation": "Fast startup performs a hybrid shutdown that writes the kernel session to the hibernation file, which speeds up the next boot."
+  },
+  {
+   "id": "aplus-535",
+   "domain": "os",
+   "prompt": "A traveller wants their laptop to save all open work to disk and power off completely so it uses no battery during a long flight, then resume where they left off. Which power state should they use?",
+   "choices": [
+    "Sign out",
+    "Lock",
+    "Hibernate",
+    "Sleep"
+   ],
+   "answer": 2,
+   "explanation": "Hibernate writes the contents of RAM to disk and turns the system off, while sleep keeps RAM powered and continues to use some battery."
+  },
+  {
+   "id": "aplus-536",
+   "domain": "os",
+   "prompt": "Windows search on a user's PC no longer finds files that are definitely in the Documents folder. Which Control Panel tool should the technician use to fix this?",
+   "choices": [
+    "Programs and Features, to repair Office",
+    "Internet Options, to clear temporary files",
+    "Indexing Options, to rebuild the index",
+    "Device Manager, to update the disk driver"
+   ],
+   "answer": 2,
+   "explanation": "Windows search relies on the index, and rebuilding it in Indexing Options fixes missing or out-of-date search results."
+  },
+  {
+   "id": "aplus-537",
+   "domain": "os",
+   "prompt": "A Linux administrator wants a second drive to be mounted automatically at /data every time the system boots. Which file should be edited?",
+   "choices": [
+    "/etc/fstab",
+    "/etc/passwd",
+    "/etc/shadow",
+    "/etc/hosts"
+   ],
+   "answer": 0,
+   "explanation": "/etc/fstab lists the file systems to mount at boot and their mount points; /etc/passwd and /etc/shadow hold account data and /etc/hosts maps names to IP addresses."
+  },
+  {
+   "id": "aplus-538",
+   "domain": "os",
+   "prompt": "A Linux technician wants to query DNS directly and see detailed information about the records returned for a domain. Which command should be used?",
+   "choices": [
+    "df",
+    "pwd",
+    "dig",
+    "chown"
+   ],
+   "answer": 2,
+   "explanation": "dig queries DNS servers and shows detailed answers for record lookups; chown changes ownership, df shows disk space and pwd prints the current directory."
+  },
+  {
+   "id": "aplus-539",
+   "domain": "os",
+   "prompt": "Which Linux command displays the contents of a text file in the terminal?",
+   "choices": [
+    "cp",
+    "rm",
+    "cat",
+    "ls"
+   ],
+   "answer": 2,
+   "explanation": "cat outputs a file's contents to the screen; cp copies files, rm removes them and ls lists directory contents."
+  },
+  {
+   "id": "aplus-540",
+   "domain": "os",
+   "prompt": "A Mac user downloads software that comes as an installer package with a step-by-step setup wizard. Which file extension does this package use?",
+   "choices": [
+    ".pkg",
+    ".apk",
+    ".msi",
+    ".exe"
+   ],
+   "answer": 0,
+   "explanation": "macOS installer packages use the .pkg extension and run through the Installer app; .exe and .msi are Windows formats and .apk is for Android."
+  },
+  {
+   "id": "aplus-541",
+   "domain": "os",
+   "prompt": "A company needs to set up 200 new laptops with the same operating system, applications and settings as quickly as possible. Which method is BEST?",
+   "choices": [
+    "Have each user install their own applications",
+    "Deploy a prepared standard image to each laptop",
+    "Perform a manual clean install on each laptop",
+    "Do an in-place upgrade on each laptop"
+   ],
+   "answer": 1,
+   "explanation": "Image deployment copies one tested configuration to many machines quickly and consistently, which is far faster than installing each system by hand."
+  },
+  {
+   "id": "aplus-542",
+   "domain": "os",
+   "prompt": "A CAD application requires a dedicated graphics card with 8 GB of VRAM, but an engineer's desktop has only integrated graphics. What should the technician do before installing the application?",
+   "choices": [
+    "Install the 32-bit version of the app",
+    "Add a second monitor to the desktop",
+    "Install a qualifying dedicated GPU",
+    "Increase the paging file size"
+   ],
+   "answer": 2,
+   "explanation": "Integrated graphics shares system memory and does not meet a dedicated VRAM requirement, so a discrete graphics card is needed for the application to run properly."
+  },
+  {
+   "id": "aplus-543",
+   "domain": "os",
+   "prompt": "During a Windows clean install on a new workstation, setup shows no drives on which to install, although the NVMe drive works in the UEFI. What should the technician do?",
+   "choices": [
+    "Convert the drive to MBR in the UEFI",
+    "Replace the NVMe drive with a larger one",
+    "Choose the in-place upgrade option",
+    "Use Load driver to add the storage driver"
+   ],
+   "answer": 3,
+   "explanation": "When setup cannot see a drive, it usually lacks a driver for the storage or RAID controller, which can be loaded from USB during installation."
+  },
+  {
+   "id": "aplus-544",
+   "domain": "sec",
+   "prompt": "A PC is infected with malware that loads before the operating system by hiding in the startup code at the beginning of the drive. Which type of malware is this?",
+   "choices": [
+    "Keylogger",
+    "Adware program",
+    "Boot sector virus",
+    "Spyware"
+   ],
+   "answer": 2,
+   "explanation": "A boot sector virus infects the boot record so it runs before the OS loads, which makes it hard for normal antivirus scans to remove."
+  },
+  {
+   "id": "aplus-545",
+   "domain": "sec",
+   "prompt": "Attackers infect a trade association website that employees of a target company often visit, hoping to compromise their PCs. What is this attack called?",
+   "choices": [
+    "Tailgating",
+    "Shoulder surfing attack",
+    "Dumpster diving",
+    "Watering hole attack"
+   ],
+   "answer": 3,
+   "explanation": "A watering hole attack compromises a site the targets are known to visit rather than attacking them directly."
+  },
+  {
+   "id": "aplus-546",
+   "domain": "sec",
+   "prompt": "An employee who has resigned copies the customer database to a personal USB drive on their last day. Which type of threat does this represent?",
+   "choices": [
+    "Evil twin",
+    "Zero-day exploit",
+    "Brute-force attack",
+    "Insider threat"
+   ],
+   "answer": 3,
+   "explanation": "An insider threat comes from someone with legitimate access, such as an employee, who misuses it."
+  },
+  {
+   "id": "aplus-547",
+   "domain": "sec",
+   "prompt": "Attackers compromised a software vendor and inserted malicious code into a legitimate update that thousands of customers installed. What type of attack is this?",
+   "choices": [
+    "Smishing",
+    "On-path attack",
+    "Dictionary attack",
+    "Supply chain attack"
+   ],
+   "answer": 3,
+   "explanation": "A supply chain attack targets a trusted supplier so the malicious code reaches victims through normal, trusted channels such as updates."
+  },
+  {
+   "id": "aplus-548",
+   "domain": "sec",
+   "prompt": "A technician hardening a SOHO router finds a feature that lets devices on the LAN open inbound ports automatically without administrator approval. Which feature should be disabled?",
+   "choices": [
+    "WPA3",
+    "NAT",
+    "UPnP",
+    "DHCP"
+   ],
+   "answer": 2,
+   "explanation": "Universal Plug and Play lets devices and malware create port forwards automatically, so disabling it keeps control of inbound access with the administrator."
+  },
+  {
+   "id": "aplus-549",
+   "domain": "sec",
+   "prompt": "A small office wants to host a public game server while keeping it separated from the internal LAN. Which SOHO router feature should be used?",
+   "choices": [
+    "A screened subnet",
+    "MAC address filtering",
+    "Disabling SSID broadcast",
+    "A DHCP reservation"
+   ],
+   "answer": 0,
+   "explanation": "A screened subnet (formerly called a DMZ) places internet-facing hosts in a separate zone so a compromise does not give direct access to the internal network."
+  },
+  {
+   "id": "aplus-550",
+   "domain": "sec",
+   "prompt": "A small business wants to stop employees on the office network from reaching gambling and adult websites. Which SOHO router feature should be configured?",
+   "choices": [
+    "Content filtering",
+    "Channel selection",
+    "Quality of service",
+    "Port forwarding"
+   ],
+   "answer": 0,
+   "explanation": "Content filtering blocks websites by category, keyword or address list, which enforces acceptable use on the network."
+  },
+  {
+   "id": "aplus-551",
+   "domain": "sec",
+   "prompt": "A technician performs a quick format on a used drive before giving it to another department. Why is this NOT enough to protect the old data?",
+   "choices": [
+    "Quick formats only work on SSDs",
+    "The data moves to a hidden partition",
+    "The format encrypts data with a known key",
+    "The old data can still be recovered"
+   ],
+   "answer": 3,
+   "explanation": "A standard quick format only rebuilds the file system and marks the space as free, so recovery software can still read the old files; wiping or destruction is needed."
+  },
+  {
+   "id": "aplus-552",
+   "domain": "sec",
+   "prompt": "A company issues employees small key fobs that show a new six-digit code every 30 seconds for logging in to the VPN. What is this an example of?",
+   "choices": [
+    "A soft token",
+    "A hardware token",
+    "A biometric factor",
+    "A security question"
+   ],
+   "answer": 1,
+   "explanation": "A hardware token is a physical device that generates one-time codes; a soft token is an authenticator app on a phone or computer."
+  },
+  {
+   "id": "aplus-553",
+   "domain": "sec",
+   "prompt": "A company wants to prevent warehouse staff accounts from signing in to the domain outside their scheduled shifts. Which account control should be configured?",
+   "choices": [
+    "Disk quotas",
+    "Logon time restrictions",
+    "Password history",
+    "Account lockout threshold"
+   ],
+   "answer": 1,
+   "explanation": "Logon hour restrictions limit when an account can sign in, reducing the window an attacker could use a stolen account."
+  },
+  {
+   "id": "aplus-554",
+   "domain": "sec",
+   "prompt": "Users in an office keep installing unapproved software on their Windows PCs. Which change BEST prevents this?",
+   "choices": [
+    "Enable Remote Desktop on every PC",
+    "Make them standard user accounts",
+    "Disable the screen saver policy",
+    "Turn off Windows Update on each PC"
+   ],
+   "answer": 1,
+   "explanation": "Standard users cannot install most software or change system settings without administrator credentials, which enforces least privilege."
+  },
+  {
+   "id": "aplus-555",
+   "domain": "sec",
+   "prompt": "A user copies a file from a folder where only HR can read it into a public shared folder on the same NTFS volume. What permissions will the copy have?",
+   "choices": [
+    "It loses all permissions and cannot be opened",
+    "It inherits the destination's permissions",
+    "It keeps the HR-only permissions",
+    "It becomes readable only by administrators"
+   ],
+   "answer": 1,
+   "explanation": "A copied file is a new file, so it takes on the inherited permissions of the destination folder, which can expose sensitive data placed in a public share."
+  },
+  {
+   "id": "aplus-556",
+   "domain": "sec",
+   "prompt": "An employee reports a company phone lost somewhere in the city. The MDM shows it is still powered on. What should the technician do FIRST?",
+   "choices": [
+    "Wait a week to see if it is returned",
+    "Locate the phone and remotely lock it",
+    "Reset only the user's domain password",
+    "Immediately order a replacement phone"
+   ],
+   "answer": 1,
+   "explanation": "A locator app can show where the device is and lock it remotely; if it cannot be recovered, a remote wipe protects the company's data."
+  },
+  {
+   "id": "aplus-557",
+   "domain": "sec",
+   "prompt": "A company wants an electronic record of exactly who entered the server room and at what time. Which physical control BEST provides this?",
+   "choices": [
+    "A sign on the door saying Authorized Only",
+    "A standard keyed door lock",
+    "Bollards outside the building",
+    "A badge reader access system with logging"
+   ],
+   "answer": 3,
+   "explanation": "Badge readers tie each entry to an individual credential and log the time, while a shared key gives no record of who opened the door."
+  },
+  {
+   "id": "aplus-558",
+   "domain": "swts",
+   "prompt": "When a user plugs a USB webcam into a hub with several other devices, Windows displays a 'Not enough USB controller resources' message. What should the technician try FIRST?",
+   "choices": [
+    "Use a port on a different USB controller",
+    "Replace the webcam with a Bluetooth model",
+    "Disable the PC's network adapter",
+    "Reinstall Windows and the USB drivers"
+   ],
+   "answer": 0,
+   "explanation": "The message means one controller has run out of endpoints or bandwidth, so moving the device to a port on another controller, often a rear port, or removing devices from the hub resolves it."
+  },
+  {
+   "id": "aplus-559",
+   "domain": "swts",
+   "prompt": "Windows Update repeatedly fails to install a feature update, and the PC's system drive has only 2 GB free. What should the technician do FIRST?",
+   "choices": [
+    "Reinstall all of the device drivers",
+    "Free up space on the drive and retry",
+    "Replace the RAM with faster modules",
+    "Disable the Windows Update service"
+   ],
+   "answer": 1,
+   "explanation": "Feature updates need significant free space to download and install, so clearing space on the system drive is the first fix."
+  },
+  {
+   "id": "aplus-560",
+   "domain": "swts",
+   "prompt": "An MDM report shows that an employee's Android phone has developer options and USB debugging enabled. What is the BEST action?",
+   "choices": [
+    "Disable them, as they weaken security",
+    "Enable unknown sources for updates",
+    "Root the phone to finish the setup",
+    "Leave them on to improve battery life"
+   ],
+   "answer": 0,
+   "explanation": "Developer mode and USB debugging allow deeper access to the device and can be abused to install or extract data, so they should be off on corporate phones."
+  },
+  {
+   "id": "aplus-561",
+   "domain": "swts",
+   "prompt": "A user tries to install a required business app on an older phone, but the app store says the app is not compatible with the device. What should be checked FIRST?",
+   "choices": [
+    "Whether the case is blocking the antenna",
+    "The app's minimum OS version requirement",
+    "Whether the screen brightness is too low",
+    "Whether Bluetooth is turned on"
+   ],
+   "answer": 1,
+   "explanation": "Apps specify a minimum OS version, so updating the operating system, or replacing a phone that can no longer be updated, is usually required."
+  },
+  {
+   "id": "aplus-562",
+   "domain": "swts",
+   "prompt": "An Android phone has started rebooting randomly since the user installed several new apps. Which step BEST helps determine whether a third-party app is responsible?",
+   "choices": [
+    "Turn off location services for a full day",
+    "Increase the screen timeout setting",
+    "Remove and reinsert the SIM card",
+    "Boot into safe mode and watch for reboots"
+   ],
+   "answer": 3,
+   "explanation": "Android safe mode loads only the preinstalled apps, so if the problem stops there, a downloaded app is the likely cause and can be uninstalled."
+  },
+  {
+   "id": "aplus-563",
+   "domain": "swts",
+   "prompt": "A user cannot pay at a store by tapping their phone, though the payment card is set up in the wallet app. What should be checked FIRST?",
+   "choices": [
+    "NFC status and the default wallet app",
+    "That Wi-Fi calling is enabled",
+    "That airplane mode is turned on",
+    "That the phone's GPS is turned off"
+   ],
+   "answer": 0,
+   "explanation": "Tap-to-pay uses NFC, so the NFC radio must be on and the correct wallet set as the default payment app."
+  },
+  {
+   "id": "aplus-564",
+   "domain": "swts",
+   "prompt": "A user downloads what appears to be their bank's app from a link in a text message, but it is published by an unknown developer and asks for their banking password. What is the MOST likely issue?",
+   "choices": [
+    "An expired SSL certificate on the phone",
+    "A spoofed app impersonating the bank",
+    "A failing battery",
+    "A corrupted SIM card"
+   ],
+   "answer": 1,
+   "explanation": "App spoofing uses lookalike apps to steal credentials, so users should install apps only from official stores and check the publisher name."
+  },
+  {
+   "id": "aplus-565",
+   "domain": "swts",
+   "prompt": "After a malware infection was cleaned, a PC can ping IP addresses on the internet but cannot resolve any website names. Other PCs work fine. What should the technician check?",
+   "choices": [
+    "Its DNS server settings",
+    "The monitor cable",
+    "The RAM modules",
+    "The printer driver"
+   ],
+   "answer": 0,
+   "explanation": "Malware often points DNS to rogue servers, so if names fail while IP connectivity works, the adapter's DNS settings should be checked and reset."
+  },
+  {
+   "id": "aplus-566",
+   "domain": "swts",
+   "prompt": "A standard corporate laptop has had repeated OS corruption that sfc, DISM and System Restore could not fix. The user's files are stored on network shares. What is the MOST efficient fix?",
+   "choices": [
+    "Replace the laptop's motherboard",
+    "Disable Windows Update permanently",
+    "Reimage it with the standard image",
+    "Keep running sfc until it succeeds"
+   ],
+   "answer": 2,
+   "explanation": "When repairs fail and data is safely stored elsewhere, reimaging returns the laptop to a known good configuration quickly."
+  },
+  {
+   "id": "aplus-567",
+   "domain": "swts",
+   "prompt": "A user's new 64-bit only application refuses to install on their PC, which shows it is running a 32-bit edition of Windows. What is the fix?",
+   "choices": [
+    "Run the installer in compatibility mode",
+    "Disable User Account Control",
+    "Add more RAM to the PC first",
+    "Install a 64-bit edition of Windows"
+   ],
+   "answer": 3,
+   "explanation": "64-bit applications cannot run on a 32-bit OS, so the system must be reinstalled with a 64-bit edition on a 64-bit capable CPU."
+  },
+  {
+   "id": "aplus-568",
+   "domain": "swts",
+   "prompt": "A user notices that some of their Word documents now contain text they did not write, and several system files have recent modification dates. Which issue should the technician suspect FIRST?",
+   "choices": [
+    "An expired Office licence",
+    "A misconfigured network printer",
+    "A failing monitor panel",
+    "A malware infection altering files"
+   ],
+   "answer": 3,
+   "explanation": "Unexpected changes to personal or system files are a common sign of malware, so the technician should begin the malware removal process."
+  },
+  {
+   "id": "aplus-569",
+   "domain": "ops",
+   "prompt": "A legacy Windows logon script has a .vbs extension. Which scripting language is it written in?",
+   "choices": [
+    "Bash",
+    "VBScript",
+    "PowerShell",
+    "Python"
+   ],
+   "answer": 1,
+   "explanation": ".vbs files are VBScript, run by Windows Script Host; PowerShell uses .ps1, Python .py and Bash .sh."
+  },
+  {
+   "id": "aplus-570",
+   "domain": "ops",
+   "prompt": "A technician finds a handy script on a public forum and wants to run it on all company PCs. What should be done FIRST?",
+   "choices": [
+    "Email it to users to run themselves",
+    "Rename it to .txt to make it safe",
+    "Review and test it in a sandbox first",
+    "Run it immediately on every PC to save time"
+   ],
+   "answer": 2,
+   "explanation": "Unknown scripts can introduce malware, change system settings unexpectedly or crash systems by mishandling resources, so they must be reviewed and tested first."
+  },
+  {
+   "id": "aplus-571",
+   "domain": "ops",
+   "prompt": "A clinic's database stores patients' diagnoses, treatment records and insurance details. Which type of regulated data is this?",
+   "choices": [
+    "Payment card industry (PCI) data",
+    "Protected health information (PHI)",
+    "Open-source data",
+    "Public information"
+   ],
+   "answer": 1,
+   "explanation": "Medical records linked to an individual are PHI, which has strict legal requirements for privacy and protection."
+  },
+  {
+   "id": "aplus-572",
+   "domain": "ops",
+   "prompt": "A company's legal department says certain financial records must be kept for seven years and then securely destroyed. Which policy does this describe?",
+   "choices": [
+    "A password policy",
+    "A data retention policy",
+    "A change management policy",
+    "An acceptable use policy"
+   ],
+   "answer": 1,
+   "explanation": "A data retention policy states how long each type of data must be kept to meet legal or regulatory requirements and how it is disposed of afterward."
+  },
+  {
+   "id": "aplus-573",
+   "domain": "ops",
+   "prompt": "An employee installs software bought under a personal, home-use licence on their company workstation. What is the main issue?",
+   "choices": [
+    "The licence does not permit business or corporate use",
+    "The software will automatically become open source",
+    "The licence makes the PC exempt from updates",
+    "Personal licences only run on Linux"
+   ],
+   "answer": 0,
+   "explanation": "Personal licences usually prohibit commercial use, so the company must obtain a proper corporate licence to stay compliant."
+  },
+  {
+   "id": "aplus-574",
+   "domain": "ops",
+   "prompt": "A user purchased e-books on one reading app and finds they cannot open them in a different app or copy them to a colleague. What technology causes this?",
+   "choices": [
+    "File compression",
+    "Full-disk encryption",
+    "Open-source licensing terms",
+    "Digital rights management (DRM)"
+   ],
+   "answer": 3,
+   "explanation": "DRM restricts how purchased digital content can be copied, shared or used, often tying it to a specific account or app."
+  },
+  {
+   "id": "aplus-575",
+   "domain": "ops",
+   "prompt": "An IT team needs a database that records servers, software and network devices along with how they depend on each other. What is this called?",
+   "choices": [
+    "Ticketing system queue",
+    "Asset tag inventory list",
+    "Knowledge base article library",
+    "Configuration management database"
+   ],
+   "answer": 3,
+   "explanation": "A CMDB stores configuration items and the relationships between them, which helps assess the impact of changes and incidents."
+  },
+  {
+   "id": "aplus-576",
+   "domain": "ops",
+   "prompt": "An employee leaves the company today. Which document BEST ensures IT disables their accounts, collects their equipment and revokes their access?",
+   "choices": [
+    "A knowledge base article",
+    "A service level agreement (SLA)",
+    "An end-user termination checklist",
+    "A new user setup checklist"
+   ],
+   "answer": 2,
+   "explanation": "An offboarding (termination) checklist makes sure every account, device and access right is handled consistently when someone leaves."
+  },
+  {
+   "id": "aplus-577",
+   "domain": "ops",
+   "prompt": "A tier 1 help desk technician cannot resolve a complex server issue within the allowed time. What should the technician do?",
+   "choices": [
+    "Keep working on it without updating the ticket",
+    "Close the ticket and ask the user to call back",
+    "Tell the user the problem cannot be fixed",
+    "Escalate it to the next tier with notes"
+   ],
+   "answer": 3,
+   "explanation": "Escalation passes the issue to staff with more expertise, and clear notes on what was already tried prevent duplicated work."
+  },
+  {
+   "id": "aplus-578",
+   "domain": "ops",
+   "prompt": "A company wants staff to use generative AI to summarize confidential contracts. Which approach BEST protects the data?",
+   "choices": [
+    "Have staff use personal AI accounts",
+    "Use any free public chatbot service",
+    "Use a private, company-managed AI service",
+    "Remove page numbers before uploading files"
+   ],
+   "answer": 2,
+   "explanation": "A private or enterprise AI deployment keeps data under the company's control, while public AI tools may store or reuse what users submit."
+  },
+  {
+   "id": "aplus-579",
+   "domain": "ops",
+   "prompt": "A technician removes a RAM module from a working PC and needs to store it until it is reinstalled next week. How should it be stored?",
+   "choices": [
+    "Loose in a toolbox drawer",
+    "In an antistatic bag",
+    "In a plastic sandwich bag",
+    "Wrapped in a paper towel"
+   ],
+   "answer": 1,
+   "explanation": "Antistatic bags shield components from electrostatic discharge, which can damage memory even when no damage is visible."
   }
  ]
 }
