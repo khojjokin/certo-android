@@ -106,7 +106,7 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
             chosen = i
             answers[cur.id] = i
             store.record(cur, i, cert)
-            if (store.data.haptics) haptic.performHapticFeedback(if (i == cur.answer) HapticFeedbackType.Confirm else HapticFeedbackType.Reject)
+            haptic.performHapticFeedback(if (i == cur.answer) HapticFeedbackType.Confirm else HapticFeedbackType.Reject)
         } else {
             chosen = i
             answers[cur.id] = i

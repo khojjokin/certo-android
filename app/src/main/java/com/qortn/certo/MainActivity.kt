@@ -19,7 +19,7 @@ import com.qortn.certo.ui.CertoRoot
 import com.qortn.certo.ui.SplashScreen
 
 class MainActivity : ComponentActivity() {
-    /** The branded intro: shown at launch and after 10+ minutes away. */
+    /** The branded intro: shown once each time the app is opened fresh (never on top of a visible app). */
     private var showSplash by mutableStateOf(true)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +40,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onStart() {
         super.onStart()
-        val away = (application as CertoApp).leftAt
-        if (away > 0 && System.currentTimeMillis() - away >= AWAY_LIMIT_MS) showSplash = true
         (application as CertoApp).leftAt = 0
         val app = application as CertoApp
         app.scope.launch { app.auth.refreshState() }

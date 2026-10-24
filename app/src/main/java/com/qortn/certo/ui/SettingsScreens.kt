@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
@@ -52,23 +53,25 @@ import com.qortn.certo.data.StudyStore
 import com.qortn.certo.net.CertoApi
 import kotlinx.coroutines.launch
 
+/** Instagram-style section: small grey heading, flat rows, a hairline between sections. */
 @Composable
 private fun Group(title: String? = null, content: @Composable () -> Unit) {
-    if (title != null) Text(title, color = P.inkSoft, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(start = 4.dp, top = 18.dp, bottom = 8.dp))
-    Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(P.card).border(1.dp, P.stroke, RoundedCornerShape(18.dp))) { content() }
+    Box(Modifier.fillMaxWidth().padding(top = 6.dp).height(0.5.dp).background(P.stroke))
+    if (title != null) Text(title, color = P.inkSoft, fontSize = 14.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(start = 2.dp, top = 14.dp, bottom = 2.dp))
+    Column(Modifier.fillMaxWidth()) { content() }
 }
 
 @Composable
 private fun RowItem(icon: ImageVector, label: String, tint: Color = P.ink, value: String? = null, trailing: (@Composable () -> Unit)? = null, onClick: (() -> Unit)? = null) {
     Row(
-        Modifier.fillMaxWidth().then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier).padding(horizontal = 14.dp, vertical = 14.dp),
+        Modifier.fillMaxWidth().heightIn(min = 48.dp).then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier).padding(horizontal = 2.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Icon(icon, null, tint = if (tint == P.ink) Brand else tint, modifier = Modifier.size(20.dp))
-        Spacer(Modifier.width(12.dp))
+        Icon(icon, null, tint = tint, modifier = Modifier.size(22.dp))
+        Spacer(Modifier.width(14.dp))
         Text(label, color = tint, fontSize = 16.sp, modifier = Modifier.weight(1f))
-        value?.let { Text(it, color = P.inkSoft, fontSize = 15.sp) }
-        if (trailing != null) trailing() else if (onClick != null && value == null) Icon(Icons.Filled.ChevronRight, null, tint = P.inkFaint)
+        value?.let { Text(it, color = P.inkSoft, fontSize = 15.sp); Spacer(Modifier.width(4.dp)) }
+        if (trailing != null) trailing() else if (onClick != null) Icon(Icons.Filled.ChevronRight, null, tint = P.inkFaint, modifier = Modifier.size(20.dp))
     }
 }
 
@@ -92,8 +95,8 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
         Spacer(Modifier.height(8.dp))
         Text("Settings", color = P.ink, fontSize = 32.sp, fontWeight = FontWeight.Black)
 
-        Group {
-            Row(Modifier.fillMaxWidth().clickable { nav.push(Page.Account) }.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
+        Column {
+            Row(Modifier.fillMaxWidth().clickable { nav.push(Page.Account) }.padding(vertical = 14.dp, horizontal = 2.dp), verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(48.dp).clip(CircleShape).background(BrandGradient), contentAlignment = Alignment.Center) {
                     Text(user.name.split(" ").take(2).mapNotNull { it.firstOrNull()?.uppercase() }.joinToString(""), color = Color.White, fontWeight = FontWeight.Bold)
                 }
@@ -107,7 +110,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
         }
 
         if (store.subscriptionsEnabled) {
-            Group("Certo Premium") {
+            Group("Your account") {
                 if (store.hasPremium) RowItem(Icons.Filled.WorkspacePremium, "Premium active", value = "Google Play") {
                     context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/account/subscriptions?package=com.qortn.certo")))
                 }
@@ -116,7 +119,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
             }
         }
 
-        Group("Certification Paths") {
+        Group("Certification paths") {
             store.enrolledCerts.forEach { c ->
                 RowItem(certIcon(c.symbol), c.name, trailing = {
                     if (store.currentCert?.id == c.id) Icon(Icons.Filled.Check, null, tint = Brand)
@@ -125,7 +128,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
             RowItem(Icons.Filled.GridView, "Manage Paths") { nav.push(Page.ManagePaths) }
         }
 
-        Group("Study") {
+        Group("How you study") {
             RowItem(Icons.Filled.Flag, "Daily goal", value = "${store.data.dailyGoal} questions") {
                 val next = listOf(5, 10, 20, 30, 50).let { l -> l[(l.indexOf(store.data.dailyGoal) + 1) % l.size] }
                 store.update { it.copy(dailyGoal = next) }
@@ -140,15 +143,12 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                     app.applyReminder()
                 }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
             })
-            RowItem(Icons.Filled.Vibration, "Haptics", trailing = {
-                Switch(store.data.haptics, { on -> store.update { it.copy(haptics = on) } }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
-            })
             store.currentCert?.let { c ->
                 RowItem(Icons.Filled.RestartAlt, "Reset ${c.shortName} progress", tint = Bad) { confirmReset = true }
             }
         }
 
-        Group("AI study helper") {
+        Group("AI study buddy") {
             RowItem(Icons.Filled.SmartToy, "erha hints & answers", trailing = {
                 Switch(erhaOn, { on -> erhaOn = on; ErhaPrefs.setEnabled(context, on) }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
             })
@@ -171,7 +171,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
             Group("Admin") { RowItem(Icons.Filled.AdminPanelSettings, "Admin") { nav.push(Page.Admin) } }
         }
 
-        Group("Support & Legal") {
+        Group("Support and about") {
             RowItem(Icons.Filled.PrivacyTip, "Privacy Policy") { nav.push(Page.Legal(false)) }
             RowItem(Icons.Filled.Description, "Terms of Use") { nav.push(Page.Legal(true)) }
             RowItem(Icons.Filled.Forum, "Live chat with the Certo team", trailing = {
@@ -189,18 +189,13 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
             }
         }
 
-        Group {
-            RowItem(Icons.Filled.Logout, "Log out", tint = Bad) { scope.launch { auth.signOut() } }
-        }
-        Spacer(Modifier.height(10.dp))
-        Group {
-            RowItem(Icons.Filled.Delete, if (deleting) "Deleting…" else "Delete account", tint = Bad) { confirmDelete = true }
-        }
-
-        Spacer(Modifier.height(18.dp))
-        Group {
+        Group("About") {
             RowItem(Icons.Filled.Info, "Version", value = com.qortn.certo.BuildConfig.VERSION_NAME.split(".").take(2).joinToString("."))
             RowItem(Icons.Filled.AutoAwesome, "Made by", value = "Qortn")
+        }
+        Group("Login") {
+            Text("Log out", color = Brand, fontSize = 16.sp, modifier = Modifier.fillMaxWidth().clickable { scope.launch { auth.signOut() } }.padding(horizontal = 2.dp, vertical = 14.dp))
+            Text(if (deleting) "Deleting…" else "Delete account", color = Bad, fontSize = 16.sp, modifier = Modifier.fillMaxWidth().clickable { confirmDelete = true }.padding(horizontal = 2.dp, vertical = 14.dp))
         }
         Spacer(Modifier.height(30.dp))
     }
