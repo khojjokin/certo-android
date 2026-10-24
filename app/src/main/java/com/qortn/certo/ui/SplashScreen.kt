@@ -40,15 +40,30 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.coroutineScope
 
-/** Short branded intro: the Certo logo in the middle, "Made by Qortn" at the bottom. */
-@Composable
-fun SplashScreen(onFinish: () -> Unit) {
-    val logo = remember { Animatable(0f) }
-    val title = remember { Animatable(0f) }
-    val footer = remember { Animatable(0f) }
-    val glow = remember { Animatable(0f) }
+enum class SplashMode { Launch, Cover, Replay }
 
-    LaunchedEffect(Unit) {
+/**
+ * Short branded intro: the Certo logo in the middle, "Made by Qortn" at the bottom.
+ * [SplashMode.Cover] is drawn instantly and waits (shown when leaving the app, so the recents
+ * snapshot is the splash); [SplashMode.Replay] plays it again after a long break.
+ */
+@Composable
+fun SplashScreen(mode: SplashMode = SplashMode.Launch, onFinish: () -> Unit) {
+    val start = if (mode == SplashMode.Launch) 0f else 1f
+    val logo = remember { Animatable(start) }
+    val title = remember { Animatable(start) }
+    val footer = remember { Animatable(start) }
+    val glow = remember { Animatable(start) }
+
+    LaunchedEffect(mode) {
+        if (mode == SplashMode.Cover) return@LaunchedEffect
+        if (mode == SplashMode.Replay) {
+            logo.snapTo(1f); title.snapTo(1f); footer.snapTo(1f)
+            glow.snapTo(0.4f); glow.animateTo(1f, tween(900))
+            delay(300)
+            onFinish()
+            return@LaunchedEffect
+        }
         coroutineScope {
             launch { logo.animateTo(1f, spring(dampingRatio = 0.7f, stiffness = Spring.StiffnessLow)) }
             launch { glow.animateTo(1f, tween(1400)) }

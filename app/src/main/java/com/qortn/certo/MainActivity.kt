@@ -17,22 +17,26 @@ import androidx.compose.runtime.setValue
 import kotlinx.coroutines.flow.MutableSharedFlow
 import com.qortn.certo.ui.CertoRoot
 import com.qortn.certo.ui.SplashScreen
+import com.qortn.certo.ui.SplashMode
 
 class MainActivity : ComponentActivity() {
-    /** The branded intro: shown once each time the app is opened fresh (never on top of a visible app). */
+    /** The branded intro: at every launch, and again after 10+ minutes away. When the app is left it's
+     *  covered by the splash at once, so returning never shows the app before the splash. */
     private var showSplash by mutableStateOf(true)
+    private var splashMode by mutableStateOf(SplashMode.Launch)
+    private var launchDone = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         handle(intent)
         val app = application as CertoApp
-        if (savedInstanceState != null) showSplash = false   // rotation etc., not a fresh open
+        if (savedInstanceState != null) { showSplash = false; launchDone = true }   // rotation etc., not a fresh open
         setContent {
             Box {
                 CertoRoot(app, this@MainActivity)
                 AnimatedVisibility(visible = showSplash, enter = androidx.compose.animation.EnterTransition.None, exit = fadeOut(tween(450))) {
-                    SplashScreen { showSplash = false }
+                    SplashScreen(splashMode) { launchDone = true; showSplash = false }
                 }
             }
         }
@@ -40,6 +44,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onStart() {
         super.onStart()
+        val away = (application as CertoApp).leftAt
+        if (launchDone && showSplash && splashMode == SplashMode.Cover) {
+            if (away > 0 && System.currentTimeMillis() - away >= AWAY_LIMIT_MS) splashMode = SplashMode.Replay
+            else showSplash = false
+        }
         (application as CertoApp).leftAt = 0
         val app = application as CertoApp
         app.scope.launch { app.auth.refreshState() }
@@ -47,7 +56,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onStop() {
         super.onStop()
-        if (!isChangingConfigurations) (application as CertoApp).leftAt = System.currentTimeMillis()
+        if (!isChangingConfigurations) {
+            (application as CertoApp).leftAt = System.currentTimeMillis()
+            if (launchDone && !showSplash) { splashMode = SplashMode.Cover; showSplash = true }
+        }
         if (!isChangingConfigurations) {
             (application as CertoApp).flush()
             Nudges.scheduleAll(this)
