@@ -49,6 +49,7 @@ class MainActivity : ComponentActivity() {
             splashMode = SplashMode.Launch; showSplash = true
         }
         (application as CertoApp).leftAt = 0
+        (application as CertoApp).let { app -> app.scope.launch { app.refreshConfig() } }
         val app = application as CertoApp
         app.scope.launch { app.auth.refreshState() }
     }

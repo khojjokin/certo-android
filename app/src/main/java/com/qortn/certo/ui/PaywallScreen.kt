@@ -64,20 +64,22 @@ fun PaywallScreen(app: CertoApp, activity: Activity, onClose: () -> Unit, onLega
             Image(painterResource(R.drawable.certo_mark), null, Modifier.size(84.dp).clip(RoundedCornerShape(22.dp)))
             Spacer(Modifier.height(14.dp))
             Text("Certo Premium", color = P.ink, fontSize = 32.sp, fontWeight = FontWeight.Black)
-            Text("Every path. Every question.\nOne subscription.", color = P.inkSoft, fontSize = 17.sp, textAlign = TextAlign.Center)
+            Text("Every path. One plan.", color = P.inkSoft, fontSize = 17.sp, textAlign = TextAlign.Center, maxLines = 1)
             Spacer(Modifier.height(22.dp))
             val total = app.store.certs.size
             val qs = app.store.certs.sumOf { it.questions.size }
             listOf(
-                "All $total certification paths, plus every new one",
-                "%,d+ questions with explanations".format(qs),
-                "Exam Simulator and Weakest Domain practice",
-                "Full stats, streaks and readiness for every path",
+                "All $total cert paths",
+                "%,d+ questions".format(qs / 100 * 100),
+                "Exam simulator",
+                "Full stats and streaks",
+                "More erha AI help",
+                "No ads",
             ).forEach {
                 Row(Modifier.fillMaxWidth().padding(vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Filled.CheckCircle, null, tint = Brand, modifier = Modifier.size(22.dp))
                     Spacer(Modifier.width(12.dp))
-                    Text(it, color = P.ink, fontSize = 16.sp)
+                    Text(it, color = P.ink, fontSize = 16.sp, maxLines = 1)
                 }
             }
             Spacer(Modifier.height(20.dp))
@@ -114,7 +116,7 @@ fun PaywallScreen(app: CertoApp, activity: Activity, onClose: () -> Unit, onLega
         }
         Spacer(Modifier.height(10.dp))
         Text(
-            "Auto-renews ${pick?.let { "at ${it.price} ${it.period}" } ?: ""} until cancelled. Cancel anytime in Google Play › Subscriptions.",
+            "Renews automatically. Cancel anytime in Google Play.",
             color = P.inkFaint, fontSize = 12.sp, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
         )
         Row(Modifier.fillMaxWidth().padding(vertical = 10.dp), horizontalArrangement = Arrangement.Center) {

@@ -53,7 +53,14 @@ class CertoApp : Application() {
         billing.start()
         store.onSave = { json -> schedulePush(json) }
         createChannel()
-        scope.launch { CertoApi.subscriptionsEnabled()?.let { store.applySubscriptionsEnabled(it) } }
+        scope.launch { refreshConfig() }
+    }
+
+    /** The console's switches: subscriptions on or off, and ads. */
+    suspend fun refreshConfig() {
+        val row = CertoApi.publicConfig() ?: return
+        store.applySubscriptionsEnabled(row.optBoolean("subscriptions_enabled", true))
+        Ads.apply(this, row)
     }
 
     /** The account whose copy has been downloaded on this device; uploads are only allowed for it. */

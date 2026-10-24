@@ -202,7 +202,20 @@ class ClerkClient(context: Context, publishableKey: String) {
             ).resource()
             url = signIn.optJSONObject("first_factor_verification")?.optStringOrNull("external_verification_redirect_url")
         }
-        return signIn.getString("id") to (url ?: throw ClerkException(null, "Couldn't start sign-in. Please try again."))
+        val link = url ?: throw ClerkException(null, "Couldn't start sign-in. Please try again.")
+        return signIn.getString("id") to withAccountPicker(link)
+    }
+
+    /** Google picks the phone's main account on its own unless asked; this makes it show the account chooser. */
+    private fun withAccountPicker(link: String): String {
+        val uri = android.net.Uri.parse(link)
+        if (uri.host?.endsWith("google.com") != true) return link
+        val b = uri.buildUpon().clearQuery()
+        for (name in uri.queryParameterNames) {
+            if (name == "prompt") continue
+            for (v in uri.getQueryParameters(name)) b.appendQueryParameter(name, v)
+        }
+        return b.appendQueryParameter("prompt", "select_account").build().toString()
     }
 
     /** Finishes OAuth after the browser returns to the app. */

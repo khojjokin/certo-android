@@ -129,17 +129,18 @@ object CertoApi {
 
     suspend fun setSubscriptions(token: String, on: Boolean) { call("setSubscriptions", token, JSONObject().put("enabled", on)) }
 
-    suspend fun subscriptionsEnabled(): Boolean? = withContext(Dispatchers.IO) {
+    /** Switches set from the console, readable without signing in: subscriptions and ads. */
+    suspend fun publicConfig(): JSONObject? = withContext(Dispatchers.IO) {
         runCatching {
             val req = Request.Builder()
-                .url("${Backend.URL}/rest/v1/app_config?select=subscriptions_enabled")
+                .url("${Backend.URL}/rest/v1/app_config?select=subscriptions_enabled,ads_enabled,ads_banner,ads_chance,ads_android_banner_id,ads_android_interstitial_id")
                 .header("apikey", Backend.PUBLISHABLE_KEY)
                 .build()
-            http.newCall(req).execute().use { res ->
-                JSONArray(res.body?.string().orEmpty()).optJSONObject(0)?.optBoolean("subscriptions_enabled", true)
-            }
+            http.newCall(req).execute().use { res -> JSONArray(res.body?.string().orEmpty()).optJSONObject(0) }
         }.getOrNull()
     }
+
+    suspend fun subscriptionsEnabled(): Boolean? = publicConfig()?.optBoolean("subscriptions_enabled", true)
 }
 
 
