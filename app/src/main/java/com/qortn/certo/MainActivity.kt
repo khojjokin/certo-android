@@ -20,8 +20,8 @@ import com.qortn.certo.ui.SplashScreen
 import com.qortn.certo.ui.SplashMode
 
 class MainActivity : ComponentActivity() {
-    /** The branded intro: at every launch, and again after 10+ minutes away. When the app is left it's
-     *  covered by the splash at once, so returning never shows the app before the splash. */
+    /** The branded intro: at every launch, and again after 10+ minutes away (switched on in onStart,
+     *  before the app is visible). Shorter breaks go straight back to the app. */
     private var showSplash by mutableStateOf(true)
     private var splashMode by mutableStateOf(SplashMode.Launch)
     private var launchDone = false
@@ -45,9 +45,8 @@ class MainActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
         val away = (application as CertoApp).leftAt
-        if (launchDone && showSplash && splashMode == SplashMode.Cover) {
-            if (away > 0 && System.currentTimeMillis() - away >= AWAY_LIMIT_MS) splashMode = SplashMode.Replay
-            else showSplash = false
+        if (launchDone && !showSplash && away > 0 && System.currentTimeMillis() - away >= AWAY_LIMIT_MS) {
+            splashMode = SplashMode.Launch; showSplash = true
         }
         (application as CertoApp).leftAt = 0
         val app = application as CertoApp
@@ -58,7 +57,6 @@ class MainActivity : ComponentActivity() {
         super.onStop()
         if (!isChangingConfigurations) {
             (application as CertoApp).leftAt = System.currentTimeMillis()
-            if (launchDone && !showSplash) { splashMode = SplashMode.Cover; showSplash = true }
         }
         if (!isChangingConfigurations) {
             (application as CertoApp).flush()
