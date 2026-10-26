@@ -51,7 +51,7 @@ import com.qortn.certo.net.CertoApi
 import kotlinx.coroutines.launch
 
 @Composable
-fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywall: () -> Unit) {
+fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywall: () -> Unit, onFinished: () -> Unit = onClose) {
     val cert = page.cert
     val questions = page.questions
     val mode = page.mode
@@ -167,7 +167,7 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
         Spacer(Modifier.height(16.dp))
 
         if (finished || q == null) {
-            Results(store, page, answers, onClose, onPaywall)
+            Results(store, page, answers, onFinished, onPaywall)
             return@Column
         }
 

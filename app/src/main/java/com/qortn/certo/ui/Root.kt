@@ -121,7 +121,7 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
                 AnimatedContent(top, transitionSpec = { fadeIn() togetherWith fadeOut() }, label = "page") { page ->
                     Box(Modifier.fillMaxSize().background(P.bg)) {
                         when (page) {
-                            is Page.Quiz -> QuizScreen(store, page, onClose = { nav.pop(); com.qortn.certo.Ads.afterQuiz(activity, store.isPremium) }, onPaywall = { nav.pop(); nav.push(Page.Paywall) })
+                            is Page.Quiz -> QuizScreen(store, page, onClose = { nav.pop() }, onPaywall = { nav.pop(); nav.push(Page.Paywall) }, onFinished = { nav.pop(); com.qortn.certo.Ads.afterQuiz(activity, store.isPremium, page.questions.size) })
                             Page.Paywall -> PaywallScreen(app, activity, onClose = { nav.pop() }, onLegal = { nav.push(Page.Legal(it)) })
                             is Page.Legal -> LegalScreen(page.terms, onClose = { nav.pop() })
                             Page.Account -> AccountScreen(app, onClose = { nav.pop() })

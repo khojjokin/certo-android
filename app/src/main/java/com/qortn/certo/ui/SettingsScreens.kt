@@ -1,5 +1,7 @@
 package com.qortn.certo.ui
 
+import com.qortn.certo.findActivity
+
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
@@ -174,6 +176,10 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
         Group("Support and about") {
             RowItem(Icons.Filled.PrivacyTip, "Privacy Policy") { nav.push(Page.Legal(false)) }
             RowItem(Icons.Filled.Description, "Terms of Use") { nav.push(Page.Legal(true)) }
+            if (com.qortn.certo.Ads.privacyOptionsNeeded && !app.store.isPremium) {
+                val adContext = androidx.compose.ui.platform.LocalContext.current
+                RowItem(Icons.Filled.PrivacyTip, "Ad privacy") { adContext.findActivity()?.let { com.qortn.certo.Ads.showPrivacyOptions(it) } }
+            }
             RowItem(Icons.Filled.Forum, "Live chat with the Certo team", trailing = {
                 if (auth.state.supportUnread > 0) Text("${auth.state.supportUnread}", color = Color.White, fontSize = 12.sp, fontWeight = FontWeight.Bold,
                     modifier = Modifier.clip(CircleShape).background(Bad).padding(horizontal = 7.dp, vertical = 2.dp))

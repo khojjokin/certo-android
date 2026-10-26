@@ -150,7 +150,6 @@ fun MainTabs(app: CertoApp, nav: Nav) {
                 else -> SettingsTab(app, nav)
             }
         }
-        com.qortn.certo.AdBanner(store.isPremium)
         Row(
             Modifier.fillMaxWidth().background(P.bg).border(1.dp, P.stroke).navigationBarsPadding().padding(vertical = 6.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
@@ -328,6 +327,7 @@ fun StudyTab(store: StudyStore, nav: Nav) {
                 }
             }
         }
+        com.qortn.certo.AdCard(store.isPremium)
         Spacer(Modifier.height(24.dp))
     }
 }
@@ -410,6 +410,7 @@ fun LearnTab(store: StudyStore, nav: Nav) {
                 }
             }
         }
+        com.qortn.certo.AdCard(store.isPremium)
         Spacer(Modifier.height(24.dp))
     }
 }
