@@ -161,7 +161,9 @@ fun Context.findActivity(): Activity? {
 @Composable
 fun AdCard(isPremium: Boolean) {
     val context = LocalContext.current
-    LaunchedEffect(isPremium, Ads.enabled) { context.findActivity()?.let { Ads.prepare(it, isPremium) } }
+    // The consent form is a pop-up: never over the splash.
+    val splash = com.qortn.certo.ui.LocalSplashShowing.current
+    LaunchedEffect(isPremium, Ads.enabled, splash) { if (!splash) context.findActivity()?.let { Ads.prepare(it, isPremium) } }
     if (!Ads.showBanner(isPremium)) return
     val unit = Ads.bannerId
     val shape = RoundedCornerShape(20.dp)
@@ -180,6 +182,8 @@ fun AdCard(isPremium: Boolean) {
                         loadAd(AdRequest.Builder().build())
                     }
                 },
+                // Free the ad when the card leaves the screen (tab switch), or every visit leaks an AdView.
+                onRelease = { it.destroy() },
             )
         }
     }

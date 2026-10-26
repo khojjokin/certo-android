@@ -50,12 +50,15 @@ object Nudges {
     internal fun fire(c: Context, kind: Int) {
         val app = c.applicationContext as CertoApp
         val store = app.store
+        // Usually fired with the app closed: load the signed-in account's progress first (kept on the device).
+        val uid = app.auth.clerk.user?.id
+        store.ensureProfile(uid)
         val cert = store.currentCert
         val name = cert?.shortName ?: "your exam"
         val (title, body) = when (kind) {
             STREAK -> {
                 schedule(c, STREAK, if (enabled(c, "streak")) nextAt(20, 0) else null)
-                if (store.streak == 0 || store.todayCount > 0 || app.auth.user == null) return
+                if (store.streak == 0 || store.todayCount > 0 || uid == null) return
                 "🔥 Your ${store.streak}-day streak is at risk" to "Answer one $name question before midnight to keep it going."
             }
             FACT -> {

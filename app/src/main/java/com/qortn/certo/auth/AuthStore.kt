@@ -28,6 +28,10 @@ class AuthStore(context: Context) {
     val hasFreePremium: Boolean get() = (state.premiumUntil ?: 0L) > System.currentTimeMillis()
 
     suspend fun start() {
+        // Open straight into the app from the saved session (no wait on a slow or missing network);
+        // the check with Clerk below then confirms it, or signs out if the session has gone.
+        refresh()
+        if (user != null) loaded = true
         runCatching { clerk.load() }
         refresh()
         loaded = true
@@ -81,7 +85,7 @@ class AuthStore(context: Context) {
     suspend fun token(): String? = runCatching { clerk.token() }.getOrNull()
 
     suspend fun signOut() {
-        clerk.signOut()
+        runCatching { clerk.signOut() }
         user = null
         isAdmin = false
         state = MemberState()
@@ -93,6 +97,7 @@ class AuthStore(context: Context) {
         clerk.deleteUser()
         user = null
         isAdmin = false
+        state = MemberState()
     }
 
     suspend fun updateName(first: String, last: String?) {

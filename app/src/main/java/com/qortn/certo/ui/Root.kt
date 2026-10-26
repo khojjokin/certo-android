@@ -107,11 +107,12 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
                     }
                 }
             }
-            if (screen == "main") {
+            val splash = LocalSplashShowing.current
+            if (screen == "main" && !splash) {
                 val ctx = androidx.compose.ui.platform.LocalContext.current
                 LaunchedEffect(userId) { Achievements.evaluate(ctx, store) }
             }
-            auth.state.notices.firstOrNull()?.takeIf { auth.user != null }?.let { n ->
+            auth.state.notices.firstOrNull()?.takeIf { auth.user != null && !splash }?.let { n ->
                 NoticeDialog(n) { scope.launch { auth.acknowledge(n) } }
             }
 
@@ -132,7 +133,7 @@ fun CertoRoot(app: CertoApp, activity: Activity) {
                     }
                 }
             }
-            AchievementHost()
+            if (!splash) AchievementHost()
         }
     }
 }

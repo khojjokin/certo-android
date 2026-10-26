@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -104,9 +105,10 @@ fun WelcomeScreen(app: CertoApp, activity: Activity) {
         Spacer(Modifier.height(14.dp))
         Text("4,700+ questions across CompTIA, Cisco, Microsoft, AWS, ITIL and ISC2.", color = P.inkSoft, fontSize = 17.sp)
         Spacer(Modifier.height(18.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        // Scrolls sideways on narrow phones instead of cutting off the last chip.
+        Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             listOf("A+", "Network+", "Security+", "AWS", "CCNA").forEach {
-                Text(it, color = Brand, fontSize = 13.sp, fontWeight = FontWeight.SemiBold,
+                Text(it, color = Brand, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, maxLines = 1,
                     modifier = Modifier.clip(CircleShape).background(Brand.copy(alpha = 0.14f)).padding(horizontal = 10.dp, vertical = 5.dp))
             }
         }

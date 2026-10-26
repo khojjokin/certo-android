@@ -24,8 +24,11 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.OutlinedFlag
 import androidx.compose.material.icons.filled.Timer
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -106,7 +109,7 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
             chosen = i
             answers[cur.id] = i
             store.record(cur, i, cert)
-            haptic.performHapticFeedback(if (i == cur.answer) HapticFeedbackType.Confirm else HapticFeedbackType.Reject)
+            if (store.data.haptics) haptic.performHapticFeedback(if (i == cur.answer) HapticFeedbackType.Confirm else HapticFeedbackType.Reject)
         } else {
             chosen = i
             answers[cur.id] = i
@@ -122,8 +125,19 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
         Achievements.evaluate(achContext, store, correct, questions.size)
     }
 
-    // Timers: whole-exam countdown (simulator) or per-question (pop quiz).
-    LaunchedEffect(index, finished) {
+    // Leaving the exam simulator part-way loses its answers (they're only saved at the end), so ask first.
+    var confirmLeave by remember { mutableStateOf(false) }
+    val examInProgress = !finished && !mode.instantFeedback && answers.isNotEmpty()
+    fun close() {
+        if (examInProgress) confirmLeave = true else onClose()
+    }
+    if (androidx.activity.compose.LocalOnBackPressedDispatcherOwner.current != null) {   // absent in screenshot tests
+        androidx.activity.compose.BackHandler(enabled = examInProgress) { confirmLeave = true }
+    }
+
+    // Timers: whole-exam countdown (simulator) or per-question (pop quiz). The exam clock isn't restarted
+    // on every question (that dropped the part-second each time, so fast answering stopped the clock).
+    LaunchedEffect(if (totalLimit != null) -1 else index, finished) {
         if (finished) return@LaunchedEffect
         if (totalLimit == null && mode.perQuestionSeconds == null) return@LaunchedEffect
         while (secondsLeft > 0 && !finished) {
@@ -143,11 +157,11 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
 
     Column(Modifier.fillMaxSize().background(P.bg).systemBarsPadding().padding(horizontal = 18.dp)) {
         Row(Modifier.fillMaxWidth().padding(vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-            CircleIcon(Icons.Filled.Close, onClose)
+            CircleIcon(Icons.Filled.Close) { close() }
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
-                Text(mode.title, color = P.ink, fontWeight = FontWeight.Bold)
-                if (!finished) Text("Question ${index + 1} of ${questions.size}", color = P.inkSoft, fontSize = 12.sp)
+                Text(mode.title, color = P.ink, fontWeight = FontWeight.Bold, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                if (!finished) Text("Question ${index + 1} of ${questions.size}", color = P.inkSoft, fontSize = 12.sp, maxLines = 1)
             }
             if (!finished && (totalLimit != null || mode.perQuestionSeconds != null)) {
                 Row(verticalAlignment = Alignment.CenterVertically,
@@ -210,7 +224,7 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
                 ) {
                     ErhaAvatar(24.dp, animated = false)
                     Spacer(Modifier.width(8.dp))
-                    Text("Stuck? Get a hint from ", color = P.ink, fontSize = 14.sp)
+                    Text("Get a hint from ", color = P.ink, fontSize = 14.sp, maxLines = 1)
                     ErhaName(15)
                 }
             }
@@ -230,7 +244,8 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
                                 Text("Ask erha why", color = Brand, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
                             }
                             Spacer(Modifier.weight(1f))
-                            Text("Report", color = P.inkSoft, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.clickable { reporting = q })
+                            Text("Report", color = P.inkSoft, fontSize = 13.sp, fontWeight = FontWeight.SemiBold,
+                                modifier = Modifier.clip(CircleShape).clickable { reporting = q }.padding(horizontal = 10.dp, vertical = 8.dp))
                         }
                     }
                 }
@@ -248,6 +263,15 @@ fun QuizScreen(store: StudyStore, page: Page.Quiz, onClose: () -> Unit, onPaywal
         ErhaChatDialog(cert, question, explain = answered, picked = chosen?.takeIf { it >= 0 }) { erhaChat = null }
     }
     reporting?.let { ReportQuestionDialog(cert, it) { reporting = null } }
+    if (confirmLeave) {
+        AlertDialog(
+            onDismissRequest = { confirmLeave = false },
+            title = { Text("Leave the exam?") },
+            text = { Text("Your answers so far won't be saved.") },
+            confirmButton = { TextButton({ confirmLeave = false; onClose() }) { Text("Leave", color = Bad) } },
+            dismissButton = { TextButton({ confirmLeave = false }) { Text("Keep going") } },
+        )
+    }
     if (needConsent) {
         androidx.compose.ui.window.Dialog(onDismissRequest = { needConsent = false },
             properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false)) {
@@ -272,7 +296,7 @@ private fun Results(store: StudyStore, page: Page.Quiz, answers: Map<String, Int
         Text("$correct of $total correct · pass mark ${page.cert.passingPercent}%", color = P.inkSoft, textAlign = TextAlign.Center)
         Spacer(Modifier.weight(1f))
         if (store.subscriptionsEnabled && !store.hasPremium) {
-            SecondaryButton("Unlock every question with Premium", onClick = onPaywall)
+            SecondaryButton("Unlock all questions", onClick = onPaywall)
             Spacer(Modifier.height(10.dp))
         }
         PrimaryButton("Done", onClick = onClose)

@@ -40,6 +40,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.qortn.certo.CertoApp
@@ -49,14 +50,17 @@ import com.qortn.certo.R
 fun PaywallScreen(app: CertoApp, activity: Activity, onClose: () -> Unit, onLegal: (Boolean) -> Unit) {
     val billing = app.billing
     var selected by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(Unit) { billing.refresh() }
+    var loads by remember { mutableStateOf(0) }       // bumped by "Try again"
+    var loaded by remember { mutableStateOf(false) }
+    LaunchedEffect(loads) { loaded = false; runCatching { billing.refresh() }; loaded = true }
     LaunchedEffect(billing.isPremium) { if (billing.isPremium && billing.message == null) onClose() }
     val plans = billing.plans
     val pick = plans.firstOrNull { it.id == selected } ?: plans.firstOrNull()
 
     Column(Modifier.fillMaxSize().background(P.bg).systemBarsPadding().padding(horizontal = 22.dp)) {
         Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-            Text("Restore", color = P.inkSoft, fontWeight = FontWeight.SemiBold, modifier = Modifier.clickable { billing.restore() })
+            Text("Restore", color = P.inkSoft, fontWeight = FontWeight.SemiBold,
+                modifier = Modifier.clip(RoundedCornerShape(10.dp)).clickable { billing.restore() }.padding(horizontal = 8.dp, vertical = 10.dp))
             CircleIcon(Icons.Filled.Close, onClose)
         }
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -83,8 +87,13 @@ fun PaywallScreen(app: CertoApp, activity: Activity, onClose: () -> Unit, onLega
                 }
             }
             Spacer(Modifier.height(20.dp))
-            if (plans.isEmpty()) {
-                Text("Loading plans from Google Play…", color = P.inkSoft, fontSize = 14.sp)
+            if (plans.isEmpty() && !loaded) {
+                Text("Loading plans…", color = P.inkSoft, fontSize = 14.sp, maxLines = 1)
+            } else if (plans.isEmpty()) {
+                // Google Play unreachable (offline, or Play not ready yet): don't spin forever.
+                Text("Plans aren't available right now.", color = P.inkSoft, fontSize = 14.sp, maxLines = 1)
+                Text("Try again", color = Brand, fontWeight = FontWeight.SemiBold, fontSize = 14.sp,
+                    modifier = Modifier.clip(RoundedCornerShape(10.dp)).clickable { loads++ }.padding(horizontal = 12.dp, vertical = 10.dp))
             } else {
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     plans.forEach { plan ->
@@ -102,9 +111,9 @@ fun PaywallScreen(app: CertoApp, activity: Activity, onClose: () -> Unit, onLega
                                 Icon(if (on) Icons.Filled.CheckCircle else Icons.Filled.RadioButtonUnchecked, null, tint = if (on) Brand else P.inkFaint, modifier = Modifier.size(20.dp))
                             }
                             Spacer(Modifier.height(10.dp))
-                            Text(plan.title, color = P.ink, fontWeight = FontWeight.Bold)
-                            Text(plan.price, color = P.ink, fontSize = 22.sp, fontWeight = FontWeight.Black)
-                            Text(plan.period, color = P.inkSoft, fontSize = 12.sp)
+                            Text(plan.title, color = P.ink, fontWeight = FontWeight.Bold, maxLines = 1)
+                            Text(plan.price, color = P.ink, fontSize = 22.sp, fontWeight = FontWeight.Black, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                            Text(plan.period, color = P.inkSoft, fontSize = 12.sp, maxLines = 1)
                         }
                     }
                 }

@@ -11,11 +11,13 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.flow.MutableSharedFlow
 import com.qortn.certo.ui.CertoRoot
+import com.qortn.certo.ui.LocalSplashShowing
 import com.qortn.certo.ui.SplashScreen
 import com.qortn.certo.ui.SplashMode
 
@@ -31,12 +33,16 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         handle(intent)
         val app = application as CertoApp
-        if (savedInstanceState != null) { showSplash = false; launchDone = true }   // rotation etc., not a fresh open
+        // Rotation etc. is not a fresh open. A restore after the process was killed is, so the splash plays again.
+        if (savedInstanceState != null && app.splashShown) { showSplash = false; launchDone = true }
         setContent {
             Box {
-                CertoRoot(app, this@MainActivity)
+                // Dialogs (notices, celebrations, the ad consent form) wait until the splash has gone.
+                CompositionLocalProvider(LocalSplashShowing provides showSplash) {
+                    CertoRoot(app, this@MainActivity)
+                }
                 AnimatedVisibility(visible = showSplash, enter = androidx.compose.animation.EnterTransition.None, exit = fadeOut(tween(450))) {
-                    SplashScreen(splashMode) { launchDone = true; showSplash = false }
+                    SplashScreen(splashMode) { launchDone = true; app.splashShown = true; showSplash = false }
                 }
             }
         }
@@ -52,6 +58,7 @@ class MainActivity : ComponentActivity() {
         (application as CertoApp).let { app -> app.scope.launch { app.refreshConfig() } }
         val app = application as CertoApp
         app.scope.launch { app.auth.refreshState() }
+        app.scope.launch { app.pullIfNeeded() }
     }
 
     override fun onStop() {

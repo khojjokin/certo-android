@@ -122,7 +122,8 @@ object Achievements {
 @Composable
 fun AchievementHost() {
     val a = Achievements.queue.firstOrNull() ?: return
-    AchievementCelebration(a) { if (Achievements.queue.isNotEmpty()) Achievements.queue.removeAt(0) }
+    // Only remove this one: a double tap (or a tap as the 5s timer ends) must not skip the next celebration.
+    AchievementCelebration(a) { if (Achievements.queue.firstOrNull() === a) Achievements.queue.removeAt(0) }
 }
 
 @Composable

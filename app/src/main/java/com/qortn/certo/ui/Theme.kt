@@ -33,6 +33,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -119,7 +120,8 @@ fun PrimaryButton(
         contentAlignment = Alignment.Center,
     ) {
         if (busy) CircularProgressIndicator(Modifier.size(22.dp), color = fg, strokeWidth = 2.dp)
-        else Text(text, color = if (enabled) fg else P.inkSoft, fontWeight = FontWeight.Bold, fontSize = 17.sp)
+        else Text(text, color = if (enabled) fg else P.inkSoft, fontWeight = FontWeight.Bold, fontSize = 17.sp,
+            maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.padding(horizontal = 18.dp))
     }
 }
 
@@ -137,7 +139,7 @@ fun SecondaryButton(text: String, modifier: Modifier = Modifier, icon: (@Composa
         verticalAlignment = Alignment.CenterVertically,
     ) {
         if (icon != null) { icon(); Spacer(Modifier.size(10.dp)) }
-        Text(text, color = P.ink, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+        Text(text, color = P.ink, fontWeight = FontWeight.SemiBold, fontSize = 16.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
 }
 

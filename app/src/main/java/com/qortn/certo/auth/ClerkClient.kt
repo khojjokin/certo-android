@@ -51,8 +51,12 @@ class ClerkClient(context: Context, publishableKey: String) {
         get() = prefs.getString("deviceToken", null)
         set(v) { prefs.edit().putString("deviceToken", v).apply() }
 
-    var client: JSONObject? = null
-        private set
+    /** Kept on the device so an offline launch still knows who is signed in (instead of showing sign-in). */
+    var client: JSONObject? = prefs.getString("client", null)?.let { runCatching { JSONObject(it) }.getOrNull() }
+        private set(v) {
+            field = v
+            runCatching { prefs.edit().apply { if (v == null) remove("client") else putString("client", v.toString()) }.apply() }
+        }
 
     val sessionId: String? get() = client?.optStringOrNull("last_active_session_id")
 
@@ -123,7 +127,8 @@ class ClerkClient(context: Context, publishableKey: String) {
     suspend fun load() {
         val json = request("GET", "client")
         val c = json.optJSONObject("response")
-        client = if (c != null && c.has("id")) c else client
+        // A successful reply without a client means there is no session any more (e.g. signed out elsewhere).
+        client = if (c != null && c.has("id")) c else null
     }
 
     // MARK: Sign in

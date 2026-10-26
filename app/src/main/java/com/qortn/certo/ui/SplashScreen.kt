@@ -42,6 +42,9 @@ import kotlinx.coroutines.coroutineScope
 
 enum class SplashMode { Launch, Cover, Replay }
 
+/** True while the splash is on screen. Pop-ups wait for it so nothing shows before the splash has gone. */
+val LocalSplashShowing = androidx.compose.runtime.compositionLocalOf { false }
+
 /**
  * Short branded intro: the Certo logo in the middle, "Made by Qortn" at the bottom.
  * [SplashMode.Cover] is drawn instantly and waits (shown when leaving the app, so the recents

@@ -34,6 +34,18 @@ class StudyStore(private val context: Context) {
         tab = 0
     }
 
+    /** For reminders fired while the app isn't open: read the signed-in account's progress (the UI hasn't yet). */
+    fun ensureProfile(userId: String?) {
+        if (userId == null || storageKey != "appdata.none") return
+        storageKey = "appdata.user.$userId"
+        data = load(storageKey)
+    }
+
+    /** A short message at the bottom of the screen (e.g. a quiz mode with nothing in it yet). */
+    fun say(text: String) {
+        runCatching { android.widget.Toast.makeText(context, text, android.widget.Toast.LENGTH_SHORT).show() }
+    }
+
     private fun load(key: String): AppData = prefs.getString(key, null)?.let {
         runCatching { AppData.fromJson(JSONObject(it)) }.getOrNull()
     } ?: AppData()

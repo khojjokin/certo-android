@@ -32,6 +32,8 @@ class CertoApp : Application() {
     private var applyingRemote = false
     /** When the app last went to the background (for the 10-minute splash). */
     var leftAt: Long = 0
+    /** The launch splash has played in this process (a restore after the process was killed plays it again). */
+    var splashShown = false
 
     override fun onCreate() {
         super.onCreate()
@@ -66,9 +68,23 @@ class CertoApp : Application() {
     /** The account whose copy has been downloaded on this device; uploads are only allowed for it. */
     private var readyFor: String? = null
 
+    private var pulling = false
+
+    /** Back in the app: if the first download failed (e.g. offline at launch), try again so syncing can start. */
+    suspend fun pullIfNeeded() {
+        val id = auth.user?.id ?: return
+        if (readyFor != id) pull()
+    }
+
     /** After sign-in and on launch: the newer copy wins, so progress is never overwritten by an older or empty copy. */
     suspend fun pull() {
+        if (pulling) return
         val user = auth.user ?: return
+        pulling = true
+        try { pullFor(user) } finally { pulling = false }
+    }
+
+    private suspend fun pullFor(user: com.qortn.certo.auth.ClerkUser) {
         val token = auth.token() ?: return
         runCatching {
             val remote = CertoApi.fetchProgress(token)
@@ -156,6 +172,7 @@ class CertoApp : Application() {
 class ReminderReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         val app = context.applicationContext as CertoApp
+        app.store.ensureProfile(app.auth.clerk.user?.id)
         val cert = app.store.currentCert?.shortName ?: "your cert"
         val open = PendingIntent.getActivity(
             context, 0, Intent(context, MainActivity::class.java),

@@ -151,13 +151,15 @@ fun NoticeDialog(notice: MemberNotice, onAcknowledge: () -> Unit) {
 @Composable
 fun AnnouncementBanner(text: String, onClose: () -> Unit) {
     Row(
-        Modifier.fillMaxWidth().background(Brand.copy(alpha = 0.14f)).statusBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp),
+        Modifier.fillMaxWidth().background(Brand.copy(alpha = 0.14f)).statusBarsPadding().padding(start = 16.dp, end = 6.dp, top = 4.dp, bottom = 4.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(Icons.Filled.Campaign, null, tint = Brand, modifier = Modifier.size(18.dp))
         Spacer(Modifier.width(10.dp))
         Text(text, color = P.ink, fontSize = 13.sp, fontWeight = FontWeight.Medium, maxLines = 3, modifier = Modifier.weight(1f))
-        Icon(Icons.Filled.Close, "Dismiss", tint = P.inkSoft, modifier = Modifier.size(18.dp).clickable(onClick = onClose))
+        Box(Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onClose), contentAlignment = Alignment.Center) {
+            Icon(Icons.Filled.Close, "Dismiss", tint = P.inkSoft, modifier = Modifier.size(18.dp))
+        }
     }
 }
 

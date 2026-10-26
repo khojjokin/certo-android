@@ -96,7 +96,7 @@ fun OnboardingScreen(store: StudyStore) {
             Spacer(Modifier.height(8.dp))
         }
         PrimaryButton("Start studying", enabled = chosen != null) {
-            val cert = store.certs.first { it.id == chosen }
+            val cert = store.certs.firstOrNull { it.id == chosen } ?: return@PrimaryButton
             store.update { it.copy(onboarded = true, enrolled = listOf(cert.id), selectedCertID = cert.id) }
         }
         Spacer(Modifier.height(16.dp))
@@ -140,6 +140,8 @@ private val tabs = listOf(
 @Composable
 fun MainTabs(app: CertoApp, nav: Nav) {
     val store = app.store
+    // Back from another tab goes to Study first, instead of closing the app.
+    androidx.activity.compose.BackHandler(enabled = store.tab != 0 && nav.top == null) { store.tab = 0 }
     Column(Modifier.fillMaxSize().background(P.bg)) {
         Box(Modifier.weight(1f).statusBarsPadding()) {
             when (store.tab) {
@@ -161,7 +163,7 @@ fun MainTabs(app: CertoApp, nav: Nav) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Icon(t.icon, t.label, tint = if (on) Brand else P.inkFaint, modifier = Modifier.size(24.dp))
-                    Text(t.label, color = if (on) Brand else P.inkFaint, fontSize = 11.sp, fontWeight = FontWeight.SemiBold)
+                    Text(t.label, color = if (on) Brand else P.inkFaint, fontSize = 11.sp, fontWeight = FontWeight.SemiBold, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
             }
         }
@@ -171,7 +173,16 @@ fun MainTabs(app: CertoApp, nav: Nav) {
 fun startQuiz(store: StudyStore, nav: Nav, mode: QuizMode, cert: Certification) {
     if (store.isLocked(mode)) { nav.push(Page.Paywall); return }
     val qs = store.questionsFor(mode, cert)
-    if (qs.isEmpty()) return
+    if (qs.isEmpty()) {
+        // Never a dead tap: say why, or offer Premium when the questions are outside the free set.
+        when {
+            mode is QuizMode.LevelUp && !store.hasPremium && cert.questionsIn(mode.domain).isNotEmpty() -> nav.push(Page.Paywall)
+            mode == QuizMode.Missed -> store.say("No missed questions yet")
+            mode == QuizMode.Flagged -> store.say("No flagged questions yet")
+            else -> store.say("No questions here yet")
+        }
+        return
+    }
     nav.push(Page.Quiz(mode, cert, qs))
 }
 
@@ -184,18 +195,18 @@ private fun greeting(): String {
 fun StudyTab(store: StudyStore, nav: Nav) {
     val cert = store.currentCert ?: return
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp)) {
-        Row(Modifier.fillMaxWidth().padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Row(
-                Modifier.clip(CircleShape).background(P.card).border(1.dp, P.stroke, CircleShape)
+                Modifier.weight(1f, fill = false).clip(CircleShape).background(P.card).border(1.dp, P.stroke, CircleShape)
                     .clickable { nav.push(Page.SwitchPath) }.padding(horizontal = 12.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Icon(certIcon(cert.symbol), null, tint = cert.color, modifier = Modifier.size(18.dp))
                 Spacer(Modifier.width(6.dp))
-                Text(cert.name, color = P.ink, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                Text(cert.name, color = P.ink, fontWeight = FontWeight.SemiBold, fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false))
                 Icon(Icons.Filled.ExpandMore, null, tint = P.inkSoft, modifier = Modifier.size(18.dp))
             }
-            Spacer(Modifier.weight(1f))
+            Spacer(Modifier.width(12.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(Icons.Filled.LocalFireDepartment, null, tint = Warn, modifier = Modifier.size(18.dp))
                 Text("${store.streak}", color = P.ink, fontWeight = FontWeight.Bold)
@@ -221,10 +232,10 @@ fun StudyTab(store: StudyStore, nav: Nav) {
                         Spacer(Modifier.width(16.dp))
                         Column(Modifier.weight(1f)) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text("Exam readiness", color = P.ink, fontWeight = FontWeight.Bold, fontSize = 17.sp)
+                                Text("Exam readiness", color = P.ink, fontWeight = FontWeight.Bold, fontSize = 17.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false))
                                 Spacer(Modifier.width(8.dp))
                                 Text(
-                                    levelText, color = levelColor, fontSize = 11.sp, fontWeight = FontWeight.Bold,
+                                    levelText, color = levelColor, fontSize = 11.sp, fontWeight = FontWeight.Bold, maxLines = 1,
                                     modifier = Modifier.clip(CircleShape).background(levelColor.copy(alpha = 0.16f)).padding(horizontal = 7.dp, vertical = 2.dp),
                                 )
                             }
@@ -319,8 +330,8 @@ fun StudyTab(store: StudyStore, nav: Nav) {
                                     )
                                 }
                                 Spacer(Modifier.height(10.dp))
-                                Text(m.title, color = P.ink, fontWeight = FontWeight.Bold, fontSize = 15.sp, maxLines = 1)
-                                Text(m.subtitle, color = P.inkSoft, fontSize = 12.sp, maxLines = 2, lineHeight = 15.sp)
+                                Text(m.title, color = P.ink, fontWeight = FontWeight.Bold, fontSize = 15.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                                Text(m.subtitle, color = P.inkSoft, fontSize = 12.sp, maxLines = 2, lineHeight = 15.sp, overflow = TextOverflow.Ellipsis)
                             }
                         }
                     }
@@ -511,7 +522,7 @@ fun ReviewTab(store: StudyStore, nav: Nav) {
                     Modifier.weight(1f).clip(CircleShape).background(if (filter == i) P.cardRaised else Color.Transparent)
                         .clickable { filter = i }.padding(vertical = 8.dp),
                     contentAlignment = Alignment.Center,
-                ) { Text(label, color = if (filter == i) P.ink else P.inkSoft, fontSize = 13.sp, fontWeight = FontWeight.SemiBold) }
+                ) { Text(label, color = if (filter == i) P.ink else P.inkSoft, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, maxLines = 1, overflow = TextOverflow.Ellipsis) }
             }
         }
         Spacer(Modifier.height(12.dp))
@@ -520,7 +531,7 @@ fun ReviewTab(store: StudyStore, nav: Nav) {
                 Icon(Icons.Filled.Inbox, null, tint = P.inkFaint, modifier = Modifier.size(40.dp))
                 Spacer(Modifier.height(10.dp))
                 Text("Nothing here yet", color = P.ink, fontWeight = FontWeight.Bold)
-                Text("Answer some questions and they'll show up here for review.", color = P.inkSoft, fontSize = 13.sp)
+                Text("Answered questions show up here.", color = P.inkSoft, fontSize = 13.sp, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             }
         } else {
             if (filter == 1 && list.isNotEmpty()) {
@@ -539,11 +550,18 @@ fun ReviewTab(store: StudyStore, nav: Nav) {
                                 )
                                 Spacer(Modifier.width(10.dp))
                                 Text(q.prompt, color = P.ink, fontSize = 14.sp, modifier = Modifier.weight(1f))
-                                Icon(
-                                    if (p.flagged.contains(q.id)) Icons.Filled.Flag else Icons.Filled.OutlinedFlag, null,
-                                    tint = if (p.flagged.contains(q.id)) Warn else P.inkFaint,
-                                    modifier = Modifier.size(20.dp).clickable { store.toggleFlag(q, cert) },
-                                )
+                                // 40dp tap area around the small flag, so it's easy to hit.
+                                Box(
+                                    Modifier.size(40.dp).clip(CircleShape).clickable { store.toggleFlag(q, cert) },
+                                    contentAlignment = Alignment.Center,
+                                ) {
+                                    Icon(
+                                        if (p.flagged.contains(q.id)) Icons.Filled.Flag else Icons.Filled.OutlinedFlag,
+                                        if (p.flagged.contains(q.id)) "Unflag" else "Flag",
+                                        tint = if (p.flagged.contains(q.id)) Warn else P.inkFaint,
+                                        modifier = Modifier.size(20.dp),
+                                    )
+                                }
                             }
                             if (expanded == q.id) {
                                 Spacer(Modifier.height(8.dp))

@@ -4,6 +4,7 @@ import com.qortn.certo.findActivity
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -16,10 +17,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -44,9 +47,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.qortn.certo.CertoApp
@@ -71,8 +77,12 @@ private fun RowItem(icon: ImageVector, label: String, tint: Color = P.ink, value
     ) {
         Icon(icon, null, tint = tint, modifier = Modifier.size(22.dp))
         Spacer(Modifier.width(14.dp))
-        Text(label, color = tint, fontSize = 16.sp, modifier = Modifier.weight(1f))
-        value?.let { Text(it, color = P.inkSoft, fontSize = 15.sp); Spacer(Modifier.width(4.dp)) }
+        Text(label, color = tint, fontSize = 16.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
+        value?.let {
+            Spacer(Modifier.width(8.dp))
+            Text(it, color = P.inkSoft, fontSize = 15.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 180.dp))
+            Spacer(Modifier.width(4.dp))
+        }
         if (trailing != null) trailing() else if (onClick != null) Icon(Icons.Filled.ChevronRight, null, tint = P.inkFaint, modifier = Modifier.size(20.dp))
     }
 }
@@ -85,6 +95,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
     val scope = rememberCoroutineScope()
     var confirmDelete by remember { mutableStateOf(false) }
     var confirmReset by remember { mutableStateOf(false) }
+    var confirmLogout by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
     var deleting by remember { mutableStateOf(false) }
     var erhaOn by remember { mutableStateOf(ErhaPrefs.enabled(context)) }
@@ -104,8 +115,8 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                 }
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
-                    Text(user.name, color = P.ink, fontWeight = FontWeight.Bold)
-                    Text(user.email, color = P.inkSoft, fontSize = 13.sp)
+                    Text(user.name, color = P.ink, fontWeight = FontWeight.Bold, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(user.email, color = P.inkSoft, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
                 Icon(Icons.Filled.ChevronRight, null, tint = P.inkFaint)
             }
@@ -140,7 +151,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                     store.update { it.copy(remindersOn = on) }
                     listOf("streak", "facts", "comeback").forEach { k -> nudges[k] = on; com.qortn.certo.Nudges.setEnabled(context, k, on) }
                     if (on && android.os.Build.VERSION.SDK_INT >= 33) {
-                        (context as? android.app.Activity)?.requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 7)
+                        context.findActivity()?.requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 7)
                     }
                     app.applyReminder()
                 }, colors = SwitchDefaults.colors(checkedTrackColor = Brand))
@@ -180,7 +191,7 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
                 val adContext = androidx.compose.ui.platform.LocalContext.current
                 RowItem(Icons.Filled.PrivacyTip, "Ad privacy") { adContext.findActivity()?.let { com.qortn.certo.Ads.showPrivacyOptions(it) } }
             }
-            RowItem(Icons.Filled.Forum, "Live chat with the Certo team", trailing = {
+            RowItem(Icons.Filled.Forum, "Live chat", trailing = {
                 if (auth.state.supportUnread > 0) Text("${auth.state.supportUnread}", color = Color.White, fontSize = 12.sp, fontWeight = FontWeight.Bold,
                     modifier = Modifier.clip(CircleShape).background(Bad).padding(horizontal = 7.dp, vertical = 2.dp))
             }) { liveChat = true }
@@ -197,13 +208,12 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
 
         Group("About") {
             RowItem(Icons.Filled.Info, "Version", value = com.qortn.certo.BuildConfig.VERSION_NAME.split(".").take(2).joinToString("."))
-            RowItem(Icons.Filled.AutoAwesome, "Made by", value = "Qortn")
         }
         Group("Login") {
-            Text("Log out", color = Brand, fontSize = 16.sp, modifier = Modifier.fillMaxWidth().clickable { scope.launch { auth.signOut() } }.padding(horizontal = 2.dp, vertical = 14.dp))
-            Text(if (deleting) "Deleting…" else "Delete account", color = Bad, fontSize = 16.sp, modifier = Modifier.fillMaxWidth().clickable { confirmDelete = true }.padding(horizontal = 2.dp, vertical = 14.dp))
+            Text("Log out", color = Brand, fontSize = 16.sp, modifier = Modifier.fillMaxWidth().clickable { confirmLogout = true }.padding(horizontal = 2.dp, vertical = 14.dp))
+            Text(if (deleting) "Deleting…" else "Delete account", color = Bad, fontSize = 16.sp, modifier = Modifier.fillMaxWidth().clickable(enabled = !deleting) { confirmDelete = true }.padding(horizontal = 2.dp, vertical = 14.dp))
         }
-        Spacer(Modifier.height(30.dp))
+        MadeByQortn()
     }
 
     if (erhaChat) ErhaChatDialog(store.currentCert) { erhaChat = false }
@@ -239,16 +249,48 @@ fun SettingsTab(app: CertoApp, nav: Nav) {
             dismissButton = { TextButton({ confirmReset = false }) { Text("Cancel") } },
         )
     }
+    if (confirmLogout) {
+        AlertDialog(
+            onDismissRequest = { confirmLogout = false },
+            title = { Text("Log out?") },
+            text = { Text("Your progress is saved to your account.") },
+            confirmButton = { TextButton({ confirmLogout = false; scope.launch { auth.signOut() } }) { Text("Log out", color = Bad) } },
+            dismissButton = { TextButton({ confirmLogout = false }) { Text("Cancel") } },
+        )
+    }
     error?.let {
         AlertDialog(onDismissRequest = { error = null }, confirmButton = { TextButton({ error = null }) { Text("OK") } }, text = { Text(it) })
+    }
+    // Restore purchases reports back here (the paywall shows its own copy when it's open).
+    if (nav.top == null) app.billing.message?.let { msg ->
+        AlertDialog(onDismissRequest = { app.billing.message = null }, confirmButton = { TextButton({ app.billing.message = null }) { Text("OK") } }, text = { Text(msg) })
+    }
+}
+
+/** "Made by Qortn" with the Qortn logo, always at the bottom of Settings. */
+@Composable
+private fun MadeByQortn() {
+    Column(Modifier.fillMaxWidth().padding(top = 28.dp, bottom = 36.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Text("MADE BY", color = P.inkFaint, fontSize = 11.sp, fontWeight = FontWeight.SemiBold, letterSpacing = 2.5.sp, maxLines = 1)
+        Spacer(Modifier.height(8.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            // The logo file is white; on the White theme it's tinted dark so it doesn't vanish.
+            Image(
+                painterResource(com.qortn.certo.R.drawable.qortn_mark_white), contentDescription = "Qortn",
+                colorFilter = if (P.dark) null else ColorFilter.tint(P.ink), modifier = Modifier.size(26.dp),
+            )
+            Spacer(Modifier.width(8.dp))
+            Text("Qortn", color = P.ink, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, maxLines = 1)
+        }
     }
 }
 
 @Composable
 private fun PageScaffold(title: String, onClose: () -> Unit, content: @Composable () -> Unit) {
-    Column(Modifier.fillMaxSize().background(P.bg).systemBarsPadding().padding(horizontal = 16.dp)) {
+    // imePadding keeps Account's Save button above the keyboard.
+    Column(Modifier.fillMaxSize().background(P.bg).systemBarsPadding().imePadding().padding(horizontal = 16.dp)) {
         Row(Modifier.fillMaxWidth().padding(vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text(title, color = P.ink, fontSize = 26.sp, fontWeight = FontWeight.Black, modifier = Modifier.weight(1f))
+            Text(title, color = P.ink, fontSize = 26.sp, fontWeight = FontWeight.Black, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
             CircleIcon(Icons.Filled.Close, onClose)
         }
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState())) { content() }

@@ -119,8 +119,10 @@ class Billing(context: Context) {
     }
 
     fun restore() = scope.launch {
+        // Not connected to Google Play yet: say so, rather than wrongly reporting "no subscription".
+        if (!client.isReady) { message = "Couldn't reach Google Play. Check your connection and try again."; return@launch }
         busy = true
-        refresh()
+        runCatching { refresh() }
         busy = false
         message = if (isPremium) "Your Certo Premium subscription is active." else "No active subscription was found for this Google account."
     }
